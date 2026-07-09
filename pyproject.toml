@@ -1,0 +1,16 @@
+[project]
+name = "remnawave"
+version = "1.0.0"
+requires-python = ">=3.14"
+dependencies = ["openretcon", "pyyaml", "wreq"]
+
+[tool.uv.sources]
+openretcon = { git = "https://github.com/luwqz1/OpenRetcon", rev = "main" }
+
+[tool.pyright]
+typeCheckingMode = "basic"
+pythonPlatform = "All"
+pythonVersion = "3.14"
+reportMissingImports = true
+reportMissingTypeStubs = false
+reportSelfClsParameterName = false
