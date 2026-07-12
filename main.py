@@ -59,6 +59,7 @@ def nicification_specification(
     output_path: pathlib.Path = DEFAULT_OUTPUT_PATH,
     output_min_path: pathlib.Path = DEFAULT_MIN_OUTPUT_PATH,
     diff_path: pathlib.Path | None = None,
+    previous_output_path: pathlib.Path | None = None,
     update_nicifications: bool = False,
 ) -> int:
     nicifications = read_schema(nicifications_path)
@@ -66,13 +67,21 @@ def nicification_specification(
     document_type = document_type or nicifications.remnawave.schema_document_type
     payload = read_openapi_source(source)
     raw_document = decode_raw_openapi(payload, document_type)
+    previous_document: JSONObject | None = None
+    previous_output_path = previous_output_path or output_path
+    if previous_output_path.exists():
+        previous_document = decode_raw_openapi(previous_output_path.read_bytes())
 
     if update_nicifications:
         enum_updates = update_enum_nicifications(raw_document, nicifications)
         if enum_updates:
             write_schema(nicifications, nicifications_path)
 
-    result = nicificate_openapi_document(raw_document, nicifications)
+    result = nicificate_openapi_document(
+        raw_document,
+        nicifications,
+        previous_document=previous_document,
+    )
 
     decode_openapi_document(result.document, document_type)
     write_json(output_path, result.document)
@@ -100,6 +109,12 @@ def build_arg_parser() -> ArgumentParser:
     parser.add_argument("--output", type=pathlib.Path, default=DEFAULT_OUTPUT_PATH, help="Output OpenAPI JSON path.")
     parser.add_argument("--diff-output", type=pathlib.Path, default=None, help="Output diff report JSON path.")
     parser.add_argument(
+        "--previous-output",
+        type=pathlib.Path,
+        default=None,
+        help="Previous generated OpenAPI JSON used to retain removed elements as deprecated.",
+    )
+    parser.add_argument(
         "--update-nicifications",
         action="store_true",
         help="Update enum nicifications from the source OpenAPI document before building.",
@@ -116,6 +131,7 @@ if __name__ == "__main__":
             nicifications_path=args.nicifications,
             output_path=args.output,
             diff_path=args.diff_output,
+            previous_output_path=args.previous_output,
             update_nicifications=args.update_nicifications,
         ),
     )

@@ -127,6 +127,8 @@ def nicificate_openapi_document(
     document: JSONObject,
     nicifications: NicificatedSchema,
     /,
+    *,
+    previous_document: JSONObject | None = None,
 ) -> NicificationResult:
     improved = copy.deepcopy(document)
     before_deprecated = collect_deprecations(document)
@@ -146,7 +148,9 @@ def nicificate_openapi_document(
 
     inlined_map_object_components = inline_map_object_schema_components(improved)
     inline_object_changes = hoist_inline_objects(improved, nicifications)
+    restored_deprecations = restore_removed_elements(improved, previous_document) if previous_document else []
     deprecated_annotations = apply_deprecation_annotations(improved, nicifications)
+    deprecated_annotations = [*restored_deprecations, *deprecated_annotations]
     after_deprecated = collect_deprecations(improved)
     hoisted_response_components = [
         change for change in response_component_changes if change.get("action") == "hoisted"
@@ -947,6 +951,374 @@ def apply_deprecation_annotations(
                         annotations.append({"kind": "path", "path": path})
 
     return annotations
+
+
+def restore_removed_elements(
+    document: JSONObject,
+    previous_document: JSONObject,
+    /,
+) -> list[JSONObject]:
+    """Keep removed API surface from the previous generated schema as deprecated."""
+    annotations: list[JSONObject] = []
+    current_paths = document.get("paths")
+    previous_paths = previous_document.get("paths")
+
+    if not isinstance(current_paths, dict):
+        current_paths = {}
+        document["paths"] = current_paths
+
+    if isinstance(previous_paths, dict):
+        current_operation_ids = {
+            operation_id
+            for _, _, operation in iter_path_operations(document)
+            if (operation_id := _operation_id(operation)) is not None
+        }
+
+        for path, previous_path_item in previous_paths.items():
+            if not isinstance(previous_path_item, dict):
+                continue
+
+            path_item = current_paths.get(path)
+            if not isinstance(path_item, dict):
+                path_item = copy.deepcopy(previous_path_item)
+                current_paths[path] = path_item
+                path_restored = False
+
+                for method, operation in _path_item_operations(path_item):
+                    operation_id = _operation_id(operation)
+                    if operation_id is not None and operation_id in current_operation_ids:
+                        del path_item[method]
+                        continue
+
+                    _mark_deprecated(operation)
+                    annotations.append(_operation_annotation(path, method, operation))
+                    path_restored = True
+
+                if path_restored:
+                    _mark_path_item_parameters_deprecated(path_item, previous_document)
+                    path_item["x-deprecated"] = True
+                    annotations.append({"kind": "path", "path": path})
+                elif not _path_item_operations(path_item):
+                    del current_paths[path]
+                continue
+
+            for method, previous_operation in _path_item_operations(previous_path_item):
+                operation_id = _operation_id(previous_operation)
+                if operation_id is not None and operation_id in current_operation_ids:
+                    continue
+                if method in path_item:
+                    continue
+
+                restored_operation = copy.deepcopy(previous_operation)
+                _mark_deprecated(restored_operation)
+                path_item[method] = restored_operation
+                annotations.append(_operation_annotation(path, method, restored_operation))
+
+            _restore_removed_path_parameters(
+                path,
+                path_item,
+                previous_path_item,
+                document,
+                previous_document,
+                annotations,
+            )
+
+    _restore_removed_operation_parameters(document, previous_document, annotations)
+    _restore_removed_component_schemas(document, previous_document, annotations)
+    _restore_removed_parameter_components(document, previous_document, annotations)
+    _restore_missing_component_references(document, previous_document)
+    return annotations
+
+
+def _restore_removed_path_parameters(
+    path: str,
+    path_item: JSONObject,
+    previous_path_item: JSONObject,
+    document: JSONObject,
+    previous_document: JSONObject,
+    annotations: list[JSONObject],
+    /,
+) -> None:
+    _restore_removed_parameters(
+        path_item,
+        previous_path_item,
+        document=document,
+        previous_document=previous_document,
+        annotation_context={"kind": "parameter", "path": path, "method": None},
+        annotations=annotations,
+    )
+
+
+def _mark_path_item_parameters_deprecated(path_item: JSONObject, document: JSONObject, /) -> None:
+    parameters = path_item.get("parameters")
+    if not isinstance(parameters, list):
+        return
+
+    for index, parameter in enumerate(parameters):
+        materialized = _materialize_parameter(parameter, document)
+        if materialized is None:
+            continue
+        _mark_deprecated(materialized)
+        parameters[index] = materialized
+
+
+def _restore_removed_operation_parameters(
+    document: JSONObject,
+    previous_document: JSONObject,
+    annotations: list[JSONObject],
+    /,
+) -> None:
+    previous_operations = {
+        operation_id: (path, method, operation)
+        for path, method, operation in iter_path_operations(previous_document)
+        if (operation_id := _operation_id(operation)) is not None
+    }
+
+    for path, method, operation in iter_path_operations(document):
+        operation_id = _operation_id(operation)
+        if operation_id is None or operation_id not in previous_operations:
+            continue
+
+        _, _, previous_operation = previous_operations[operation_id]
+        _restore_removed_parameters(
+            operation,
+            previous_operation,
+            document=document,
+            previous_document=previous_document,
+            annotation_context={"kind": "parameter", "path": path, "method": method},
+            annotations=annotations,
+        )
+
+
+def _restore_removed_parameters(
+    target: JSONObject,
+    previous: JSONObject,
+    /,
+    *,
+    document: JSONObject,
+    previous_document: JSONObject,
+    annotation_context: JSONObject,
+    annotations: list[JSONObject],
+) -> None:
+    previous_parameters = previous.get("parameters")
+    if not isinstance(previous_parameters, list):
+        return
+
+    parameters = target.get("parameters")
+    if not isinstance(parameters, list):
+        parameters = []
+        target["parameters"] = parameters
+
+    current_parameter_keys = {
+        parameter_key
+        for parameter in parameters
+        if (parameter_key := _parameter_identity(parameter, document)) is not None
+    }
+    for index, previous_parameter in enumerate(previous_parameters):
+        parameter_key = _parameter_identity(previous_parameter, previous_document)
+        if parameter_key is not None and parameter_key in current_parameter_keys:
+            continue
+
+        restored_parameter = _materialize_parameter(previous_parameter, previous_document)
+        if restored_parameter is None:
+            continue
+
+        _mark_deprecated(restored_parameter)
+        parameters.append(restored_parameter)
+        if parameter_key is not None:
+            current_parameter_keys.add(parameter_key)
+        annotations.append(
+            {
+                **annotation_context,
+                "location": _json_str(restored_parameter.get("in")),
+                "name": _json_str(restored_parameter.get("name")) or f"parameter[{index}]",
+            }
+        )
+
+
+def _restore_removed_component_schemas(
+    document: JSONObject,
+    previous_document: JSONObject,
+    annotations: list[JSONObject],
+    /,
+) -> None:
+    schemas = _ensure_component_schemas(document)
+    previous_schemas = _component_schemas(previous_document)
+
+    for schema_name, previous_schema in previous_schemas.items():
+        schema = schemas.get(schema_name)
+        if schema is None:
+            schemas[schema_name] = _deprecated_schema_copy(previous_schema)
+            annotations.append({"kind": "schema", "schema": schema_name})
+            continue
+
+        _restore_removed_schema_properties(schema, previous_schema, schema_name, annotations)
+
+
+def _restore_removed_schema_properties(
+    schema: JSONObject,
+    previous_schema: JSONObject,
+    schema_name: str,
+    annotations: list[JSONObject],
+    /,
+) -> None:
+    properties = schema.get("properties")
+    previous_properties = previous_schema.get("properties")
+    if not isinstance(properties, dict) or not isinstance(previous_properties, dict):
+        return
+
+    for field_name, previous_field in previous_properties.items():
+        field = properties.get(field_name)
+        if not isinstance(field, dict):
+            if not isinstance(previous_field, dict):
+                continue
+            properties[field_name] = _deprecated_schema_copy(previous_field)
+            annotations.append({"kind": "field", "schema": schema_name, "field": field_name})
+            continue
+
+        if isinstance(previous_field, dict):
+            _restore_removed_schema_properties(field, previous_field, schema_name, annotations)
+
+
+def _restore_removed_parameter_components(
+    document: JSONObject,
+    previous_document: JSONObject,
+    annotations: list[JSONObject],
+    /,
+) -> None:
+    previous_parameters = _component_parameters(previous_document, create=False)
+    if not previous_parameters:
+        return
+
+    parameters = _component_parameters(document)
+    for parameter_name, previous_parameter in previous_parameters.items():
+        if parameter_name in parameters:
+            continue
+
+        parameters[parameter_name] = _deprecated_schema_copy(previous_parameter)
+        annotations.append({"kind": "parameter_component", "parameter": parameter_name})
+
+
+def _restore_missing_component_references(document: JSONObject, previous_document: JSONObject, /) -> None:
+    """Restore dependencies of retained deprecated operations without adding unrelated components."""
+    components = document.get("components")
+    previous_components = previous_document.get("components")
+    if not isinstance(components, dict) or not isinstance(previous_components, dict):
+        return
+
+    pending = list(_iter_component_references(document))
+    restored: set[tuple[str, str]] = set()
+    while pending:
+        section, name = pending.pop()
+        key = (section, name)
+        if key in restored:
+            continue
+        restored.add(key)
+
+        current_section = components.get(section)
+        previous_section = previous_components.get(section)
+        if not isinstance(previous_section, dict):
+            continue
+        if isinstance(current_section, dict) and name in current_section:
+            continue
+
+        previous_component = previous_section.get(name)
+        if not isinstance(previous_component, dict):
+            continue
+        if not isinstance(current_section, dict):
+            current_section = {}
+            components[section] = current_section
+
+        restored_component = copy.deepcopy(previous_component)
+        current_section[name] = restored_component
+        pending.extend(_iter_component_references(restored_component))
+
+
+def _iter_component_references(value: JSON, /) -> typing.Iterator[tuple[str, str]]:
+    if isinstance(value, dict):
+        ref = _json_str(value.get("$ref"))
+        if ref is not None and ref.startswith("#/components/"):
+            parts = ref.removeprefix("#/components/").split("/", maxsplit=1)
+            if len(parts) == 2 and parts[0] and parts[1]:
+                yield (parts[0], parts[1])
+        for child in value.values():
+            yield from _iter_component_references(child)
+    elif isinstance(value, list):
+        for child in value:
+            yield from _iter_component_references(child)
+
+
+def _path_item_operations(path_item: JSONObject, /) -> typing.Iterator[tuple[str, JSONObject]]:
+    for method, operation in list(path_item.items()):
+        if method in HTTP_METHODS and isinstance(operation, dict):
+            yield method, operation
+
+
+def _operation_id(operation: JSONObject, /) -> str | None:
+    operation_id = operation.get("operationId")
+    return operation_id if isinstance(operation_id, str) and "_" in operation_id else None
+
+
+def _operation_annotation(path: str, method: str, operation: JSONObject, /) -> JSONObject:
+    return {
+        "kind": "operation",
+        "path": path,
+        "method": method,
+        "operation_id": _json_str(operation.get("operationId")),
+    }
+
+
+def _mark_deprecated(value: JSONObject, /) -> None:
+    value["deprecated"] = True
+
+
+def _deprecated_schema_copy(schema: JSONObject, /) -> JSONObject:
+    copied = copy.deepcopy(schema)
+    if "$ref" in copied:
+        return {"allOf": [copied], "deprecated": True}
+
+    _mark_deprecated(copied)
+    return copied
+
+
+def _component_parameters(document: JSONObject, /, *, create: bool = True) -> dict[str, JSONObject]:
+    components = document.get("components")
+    if not isinstance(components, dict):
+        if not create:
+            return {}
+        components = {}
+        document["components"] = components
+
+    parameters = components.get("parameters")
+    if not isinstance(parameters, dict):
+        if not create:
+            return {}
+        parameters = {}
+        components["parameters"] = parameters
+
+    return typing.cast("dict[str, JSONObject]", parameters)
+
+
+def _parameter_identity(parameter: JSON, document: JSONObject, /) -> tuple[str, str] | None:
+    materialized = _materialize_parameter(parameter, document)
+    if materialized is None:
+        return None
+
+    location = _json_str(materialized.get("in"))
+    name = _json_str(materialized.get("name"))
+    return (location, name) if location is not None and name is not None else None
+
+
+def _materialize_parameter(parameter: JSON, document: JSONObject, /) -> JSONObject | None:
+    if not isinstance(parameter, dict):
+        return None
+
+    ref_name = _component_ref_name(_json_str(parameter.get("$ref")), "#/components/parameters/")
+    if ref_name is not None:
+        referenced_parameter = _component_parameters(document, create=False).get(ref_name)
+        return copy.deepcopy(referenced_parameter) if isinstance(referenced_parameter, dict) else None
+
+    return copy.deepcopy(parameter)
 
 
 def collect_deprecations(document: JSONObject, /) -> list[JSONObject]:
