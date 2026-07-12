@@ -1,0 +1,43 @@
+name: update oas schema
+
+on:
+  workflow_dispatch:
+    inputs:
+      flags:
+        description: additional flags for `python main.py`
+        required: false
+        default: ''
+        type: string
+
+  schedule:
+    - cron: '22 19 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+
+      - name: generate schema
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          EXTRA_FLAGS: ${{ inputs.flags }}
+        run: uv run python main.py $EXTRA_FLAGS
+
+      - name: commit generated schema
+        run: |
+          if git diff --quiet; then
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add remnawave.json remnawave.min.json remnawave.diff.json nicifications.yaml
+          git commit -m 'chore: update oas schema to the latest changes'
+          git push
