@@ -2,7 +2,7 @@
   "summary": {
     "deprecated_before": 0,
     "deprecated_after": 0,
-    "enum_updates": 210,
+    "enum_updates": 209,
     "error_code_updates": 6,
     "hoisted_error_responses": 24,
     "hoisted_responses": 209,
@@ -10,7 +10,7 @@
     "inlined_map_object_components": 0,
     "hoisted_inline_objects": 240,
     "reused_inline_objects": 419,
-    "deprecation_annotations": 0
+    "deprecation_annotations": 1
   },
   "deprecated": {
     "before": [],
@@ -642,21 +642,6 @@
         "ipv6",
         "ipv4-prefer",
         "ipv6-prefer"
-      ]
-    },
-    {
-      "action": "component",
-      "schema": "ErrorCode",
-      "nicification": "error_code",
-      "members": [
-        "UNAUTHORIZED_ERROR",
-        "FORBIDDEN_ERROR",
-        "INTERNAL_SERVER_ERROR"
-      ],
-      "values": [
-        "E401",
-        "E403",
-        "E500"
       ]
     },
     {
@@ -3279,6 +3264,8 @@
         "CREATE_INFRA_BILLING_NODE_MISSING_TARGET",
         "UNAUTHORIZED_ERROR",
         "FORBIDDEN_ERROR",
+        "E404",
+        "E451",
         "INTERNAL_SERVER_ERROR_2",
         "NODE_ERROR_WITH_MSG",
         "NODE_ERROR_500_WITH_MSG"
@@ -3513,6 +3500,8 @@
         "A230",
         "E401",
         "E403",
+        "E404",
+        "E451",
         "E500",
         "N001",
         "N002"
@@ -13740,5 +13729,10 @@
       "signature": "f00a3d2fab225bd2aa6c7c5f0bd903dd63ee0b2e20bd6b3f0e30fe315cdc2fb6"
     }
   ],
-  "deprecation_annotations": []
+  "deprecation_annotations": [
+    {
+      "kind": "schema",
+      "schema": "ErrorCode"
+    }
+  ]
 }
