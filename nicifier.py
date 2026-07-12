@@ -7,6 +7,7 @@ import re
 import typing
 from dataclasses import dataclass
 
+from error_codes import ErrorCode
 from nicifcations_schema import EnumSchema, NicificatedSchema
 
 type JSON = typing.Any
@@ -66,6 +67,7 @@ SCHEMA_SIGNATURE_IGNORED_KEYS: typing.Final = frozenset(
     )
 )
 ENUM_SCHEMA_REF_PREFIX: typing.Final = "#/components/schemas/"
+ERROR_CODE_ENUM_NAME: typing.Final = "ErrorCode"
 ENUM_REF_IGNORED_KEYS: typing.Final = frozenset(
     (
         "enum",
@@ -75,23 +77,6 @@ ENUM_REF_IGNORED_KEYS: typing.Final = frozenset(
         "x-enumNames",
     )
 )
-NEW_ENUM_NICIFICATION_OVERRIDES: typing.Final = {
-    ("age1", "age1pq1"): (
-        "response_rules_encryption_method",
-        "ResponseRulesEncryptionMethod",
-        "Encryption method for response modification.",
-    ),
-    ("dual", "ipv4", "ipv6", "ipv4-prefer", "ipv6-prefer"): (
-        "mihomo_ip_version",
-        "MihomoIpVersion",
-        "Mihomo IP version preference.",
-    ),
-    ("read", "write"): (
-        "api_token_endpoint_kind",
-        "ApiTokenEndpointKind",
-        "API token endpoint access kind.",
-    ),
-}
 
 
 class NicificationResult(typing.NamedTuple):
@@ -129,6 +114,7 @@ def nicificate_openapi_document(
     /,
     *,
     previous_document: JSONObject | None = None,
+    error_codes: typing.Sequence[ErrorCode] = (),
 ) -> NicificationResult:
     improved = copy.deepcopy(document)
     before_deprecated = collect_deprecations(document)
@@ -151,6 +137,7 @@ def nicificate_openapi_document(
     restored_deprecations = restore_removed_elements(improved, previous_document) if previous_document else []
     deprecated_annotations = apply_deprecation_annotations(improved, nicifications)
     deprecated_annotations = [*restored_deprecations, *deprecated_annotations]
+    error_code_changes = apply_error_code_enum(improved, error_codes)
     after_deprecated = collect_deprecations(improved)
     hoisted_response_components = [
         change for change in response_component_changes if change.get("action") == "hoisted"
@@ -173,6 +160,7 @@ def nicificate_openapi_document(
             "deprecated_before": len(before_deprecated),
             "deprecated_after": len(after_deprecated),
             "enum_updates": len(enum_changes),
+            "error_code_updates": len(error_code_changes),
             "hoisted_error_responses": len(hoisted_error_responses),
             "hoisted_responses": len(hoisted_response_components),
             "renamed_responses": len(renamed_response_components),
@@ -188,6 +176,7 @@ def nicificate_openapi_document(
             "removed": sorted(_diff_items(before_deprecated, after_deprecated), key=_diff_item_sort_key),
         },
         "enums": enum_changes,
+        "error_codes": error_code_changes,
         "error_responses": hoisted_error_responses,
         "responses": response_component_changes,
         "map_object_components": inlined_map_object_components,
@@ -195,6 +184,63 @@ def nicificate_openapi_document(
         "deprecation_annotations": deprecated_annotations,
     }
     return NicificationResult(document=improved, diff=diff)
+
+
+def apply_error_code_enum(document: JSONObject, error_codes: typing.Sequence[ErrorCode], /) -> list[JSONObject]:
+    if not error_codes:
+        return []
+
+    unique_codes: dict[str, ErrorCode] = {}
+    used_members: set[str] = set()
+
+    for error_code in sorted(error_codes, key=lambda item: (_error_code_sort_key(item.value), item.member)):
+        if error_code.value in unique_codes:
+            continue
+
+        member = _unique_enum_member_name(error_code.member, used_members)
+        unique_codes[error_code.value] = ErrorCode(
+            member=member,
+            value=error_code.value,
+            description=error_code.description,
+        )
+        used_members.add(member)
+
+    ordered_codes = sorted(unique_codes.values(), key=lambda error_code: _error_code_sort_key(error_code.value))
+    enum_schema = EnumSchema(
+        name=ERROR_CODE_ENUM_NAME,
+        members=[error_code.member for error_code in ordered_codes],
+        values=[error_code.value for error_code in ordered_codes],
+        description="Error code of the API.",
+        member_descriptions={
+            error_code.member: error_code.description
+            for error_code in ordered_codes
+            if error_code.description is not None
+        },
+    )
+    schemas = _ensure_component_schemas(document)
+    before = copy.deepcopy(schemas.get(ERROR_CODE_ENUM_NAME))
+    schemas[ERROR_CODE_ENUM_NAME] = _enum_component_schema(enum_schema)
+
+    changes: list[JSONObject] = []
+    if before != schemas[ERROR_CODE_ENUM_NAME]:
+        changes.append(
+            {
+                "action": "component",
+                "schema": ERROR_CODE_ENUM_NAME,
+                "members": typing.cast(JSON, enum_schema.members),
+                "values": typing.cast(JSON, enum_schema.values),
+            }
+        )
+
+    for pointer, schema in list(_string_error_code_fields(document, skip_component=ERROR_CODE_ENUM_NAME)):
+        if schema == {"$ref": f"{ENUM_SCHEMA_REF_PREFIX}{ERROR_CODE_ENUM_NAME}"}:
+            continue
+
+        schema.clear()
+        schema["$ref"] = f"{ENUM_SCHEMA_REF_PREFIX}{ERROR_CODE_ENUM_NAME}"
+        changes.append({"action": "referenced", "pointer": pointer, "ref": schema["$ref"]})
+
+    return changes
 
 
 def apply_enum_nicifications(
@@ -287,6 +333,7 @@ def update_enum_nicifications(
         if enum_key in nicifications.schema.enums:
             enum_schema = nicifications.schema.enums[enum_key]
             added_values = _append_enum_values(enum_schema, values, occurrence.schema)
+
             if added_values:
                 changes.append(
                     {
@@ -1523,6 +1570,54 @@ def _enum_component_schema(enum_schema: EnumSchema, /) -> JSONObject:
     return schema
 
 
+def _string_error_code_fields(
+    document: JSONObject,
+    /,
+    *,
+    skip_component: str | None = None,
+) -> typing.Iterator[tuple[str, JSONObject]]:
+    def visit(value: JSON, pointer: str, *, is_error_code_property: bool = False) -> typing.Iterator[tuple[str, JSONObject]]:
+        if not isinstance(value, dict):
+            if isinstance(value, list):
+                for index, child in enumerate(value):
+                    yield from visit(child, f"{pointer}/{index}")
+
+            return
+
+        if is_error_code_property and _is_string_schema(value):
+            yield pointer, value
+            return
+
+        for key, child in value.items():
+            if (
+                skip_component is not None
+                and pointer == "#/components/schemas"
+                and key == skip_component
+            ):
+                continue
+
+            yield from visit(
+                child,
+                f"{pointer}/{_json_pointer_escape(str(key))}",
+                is_error_code_property=key == "errorCode",
+            )
+
+    yield from visit(document, "#")
+
+
+def _is_string_schema(schema: JSONObject, /) -> bool:
+    if schema.get("type") == "string":
+        return True
+
+    enum_values = schema.get("enum")
+    return isinstance(enum_values, list) and all(isinstance(item, str) for item in enum_values)
+
+
+def _error_code_sort_key(value: str, /) -> tuple[str, int, str]:
+    match = re.fullmatch(r"([A-Za-z]+)(\d+)", value)
+    return (match.group(1), int(match.group(2)), value) if match else (value, -1, value)
+
+
 def _enum_json_schema_type(values: list[str | int | float] | tuple[str | int | float, ...], /) -> str:
     if values and all(isinstance(value, int) and not isinstance(value, bool) for value in values):
         return "integer"
@@ -1605,10 +1700,6 @@ def _new_enum_nicification_identity(
     occurrence: EnumOccurrence,
     /,
 ) -> tuple[str, str, str | None]:
-    override = NEW_ENUM_NICIFICATION_OVERRIDES.get(values)
-    if override is not None:
-        return override
-
     parent_name = occurrence.parent_model_name or "Schema"
     base_name = _contextual_schema_model_name(parent_name, occurrence.field_name).removesuffix("Dto")
     return _to_snake_case(base_name), base_name, None

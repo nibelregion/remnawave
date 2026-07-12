@@ -8,6 +8,7 @@ import msgspec
 import wreq.blocking as http
 from retcon.openapi.parser import decode_openapi_document
 
+from error_codes import collect_error_codes
 from nicifcations_schema import DEFAULT_SCHEMA_PATH, read_schema, write_schema
 from nicifier import JSONObject, nicificate_openapi_document, update_enum_nicifications
 
@@ -61,12 +62,14 @@ def nicification_specification(
     diff_path: pathlib.Path | None = None,
     previous_output_path: pathlib.Path | None = None,
     update_nicifications: bool = False,
+    github_token: str | None = None,
 ) -> int:
     nicifications = read_schema(nicifications_path)
     source = source or nicifications.remnawave.schema_url
     document_type = document_type or nicifications.remnawave.schema_document_type
     payload = read_openapi_source(source)
     raw_document = decode_raw_openapi(payload, document_type)
+    error_codes = collect_error_codes(github_token=github_token)
     previous_document: JSONObject | None = None
     previous_output_path = previous_output_path or output_path
     if previous_output_path.exists():
@@ -81,6 +84,7 @@ def nicification_specification(
         raw_document,
         nicifications,
         previous_document=previous_document,
+        error_codes=error_codes,
     )
 
     decode_openapi_document(result.document, document_type)
@@ -99,6 +103,11 @@ def build_arg_parser() -> ArgumentParser:
         default=None,
         choices=("json", "yaml"),
         help="Source OpenAPI document type. Defaults to nicifications.remnawave.schema_document_type.",
+    )
+    parser.add_argument(
+        "--github-token",
+        default=None,
+        help="GitHub token for Code Search; defaults to GITHUB_TOKEN or GH_TOKEN.",
     )
     parser.add_argument(
         "--nicifications",
@@ -133,5 +142,6 @@ if __name__ == "__main__":
             diff_path=args.diff_output,
             previous_output_path=args.previous_output,
             update_nicifications=args.update_nicifications,
+            github_token=args.github_token,
         ),
     )
