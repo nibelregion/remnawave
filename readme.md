@@ -1,4 +1,4 @@
-## nicificated remnawave oas3 schema
+## nicificated [remnawave](https://github.com/remnawave) oas3 schema
 
 <div align="center">
     <a href="https://www.openapis.org/"><img alt="oas version" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fnibelregion%2Fremnawave%2Frefs%2Fheads%2Fmain%2Fremnawave.json&query=%24.openapi&prefix=v&style=flat-square&logo=openapiinitiative&label=oas&labelColor=black&color=gray"></img></a>
@@ -11,5 +11,10 @@ nicifications:
 - no inline objects, only references to named objects
 - all removed controllers, fields, parameters, and objects are marked as `deprecated`
 - enums as separate objects with specific names
+
+urls:
+- [schema](https://raw.githubusercontent.com/nibelregion/remnawave/refs/heads/main/remnawave.json)
+- [schema min](https://raw.githubusercontent.com/nibelregion/remnawave/refs/heads/main/remnawave.min.json)
+- [diff](https://raw.githubusercontent.com/nibelregion/remnawave/refs/heads/main/remnawave.diff.json)
 
 enjoy ^_^
