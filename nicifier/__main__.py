@@ -10,7 +10,7 @@ from retcon.openapi.parser import decode_openapi_document
 
 from error_codes import collect_error_codes
 from nicifcations_schema import DEFAULT_SCHEMA_PATH, read_schema, write_schema
-from nicifier import JSONObject, nicificate_openapi_document, update_enum_nicifications
+from nicifier_schema import JSONObject, nicificate_openapi_document, update_enum_nicifications
 
 REMNA_OAS_URL: typing.Final = "https://cdn.remna.st/docs/openapi.json"
 REMNA_OAS_DOCUMENT_TYPE: typing.Final = "json"

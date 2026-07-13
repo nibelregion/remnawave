@@ -29,7 +29,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           EXTRA_FLAGS: ${{ inputs.flags }}
-        run: uv run python main.py $EXTRA_FLAGS
+        run: uv run python nicifier $EXTRA_FLAGS
 
       - name: commit generated schema
         run: |
