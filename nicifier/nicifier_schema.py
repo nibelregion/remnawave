@@ -634,7 +634,7 @@ def hoist_inline_objects(
     assigned_raw_names: dict[int, str] = {}
     assigned_model_names: dict[int, str] = {}
     assigned_parent_names: dict[int, str] = {}
-    schema_signatures: dict[str, str] = {}
+    schema_targets: dict[str, list[tuple[str, str | None]]] = {}
     hoisted: list[JSONObject] = []
 
     def assign_candidate_name(candidate: InlineObjectCandidate) -> tuple[str, str, str]:
@@ -668,29 +668,41 @@ def hoist_inline_objects(
                 else raw_model_name
             )
 
-        model_name = _unique_name(model_base_name, used_names)
-        used_names.add(model_name)
         assigned_raw_names[candidate_key] = raw_model_name
-        assigned_model_names[candidate_key] = model_name
+        assigned_model_names[candidate_key] = model_base_name
         assigned_parent_names[candidate_key] = parent_model_name
-        return raw_model_name, model_name, parent_model_name
+        return raw_model_name, model_base_name, parent_model_name
 
     for candidate in candidates:
         assign_candidate_name(candidate)
 
     for candidate in sorted(candidates, key=lambda item: item.pointer.count("/"), reverse=True):
-        raw_model_name, model_name, parent_model_name = assign_candidate_name(candidate)
+        raw_model_name, model_base_name, parent_model_name = assign_candidate_name(candidate)
         schema = copy.deepcopy(candidate.schema)
         signature = _schema_signature(schema)
-        reused_model_name = schema_signatures.get(signature)
+        configured_name = _object_nicification_name(raw_model_name, nicificated_schema)
+        matching_targets = schema_targets.get(signature, [])
+        if configured_name is None:
+            reused_model_name = matching_targets[0][0] if matching_targets else None
+        else:
+            reused_model_name = next(
+                (
+                    target_name
+                    for target_name, target_configured_name in matching_targets
+                    if target_configured_name == configured_name
+                ),
+                None,
+            )
 
         if reused_model_name is None:
+            model_name = _unique_name(model_base_name, used_names)
+            used_names.add(model_name)
             schemas[model_name] = schema
-            schema_signatures[signature] = model_name
+            schema_targets.setdefault(signature, []).append((model_name, configured_name))
             target_model_name = model_name
             action = "hoisted"
         else:
-            used_names.discard(model_name)
+            model_name = model_base_name
             target_model_name = reused_model_name
             action = "reused"
 
@@ -1971,11 +1983,23 @@ def _schema_signature(schema: JSONObject, /) -> str:
 
 def _schema_signature_value(value: JSON, /) -> JSON:
     if isinstance(value, dict):
-        return {
-            str(key): _schema_signature_value(child)
-            for key, child in value.items()
-            if not _is_schema_signature_ignored_key(str(key))
-        }
+        normalized: JSONObject = {}
+
+        for key, child in value.items():
+            key_name = str(key)
+            if _is_schema_signature_ignored_key(key_name):
+                continue
+
+            normalized_child = _schema_signature_value(child)
+            # OpenAPI defines `required` as a set, so member order must not prevent reuse.
+            if key_name == "required" and isinstance(normalized_child, list) and all(
+                isinstance(item, str) for item in normalized_child
+            ):
+                normalized_child = sorted(normalized_child)
+
+            normalized[key_name] = normalized_child
+
+        return normalized
 
     if isinstance(value, list):
         return [_schema_signature_value(item) for item in value]

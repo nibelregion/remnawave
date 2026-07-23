@@ -4,9 +4,9 @@ remnawave:
   schema:
     objects:
     - GetRawSubscriptionByShortUuidResponseHeaderDto:
-        name: TCPHeaderNoneDto
+        name: TcpHeaderNoneDto
     - GetRawSubscriptionByShortUuidResponseHeaderDto2:
-        name: TCPHeaderHTTPDto
+        name: TcpHeaderHttpDto
     - DropConnectionsRequestDropByDto:
         name: DropConnectionsRequestDropByUserUUIDDto
     - DropConnectionsRequestDropByDto2:
@@ -16,27 +16,27 @@ remnawave:
     - DropConnectionsRequestTargetNodesDto2:
         name: TargetSpecificNodesDto
     - GetRawSubscriptionByShortUuidResponseTransportOptionsDto:
-        name: TCPTransportDto
+        name: TcpTransportOptionsDto
     - GetRawSubscriptionByShortUuidResponseTransportOptionsDto2:
-        name: XHTTPTransportDto
+        name: XhttpTransportOptionsDto
     - GetRawSubscriptionByShortUuidResponseTransportOptionsDto3:
-        name: WSTransportDto
+        name: WsTransportOptionsDto
     - GetRawSubscriptionByShortUuidResponseTransportOptionsDto4:
-        name: XHTTPUpgradeTransportDto
+        name: HttpUpgradeTransportOptionsDto
     - GetRawSubscriptionByShortUuidResponseTransportOptionsDto5:
-        name: GRPCTransportDto
+        name: GrpcTransportOptionsDto
     - GetRawSubscriptionByShortUuidResponseTransportOptionsDto6:
-        name: KCPTransportDto
+        name: KcpTransportOptionsDto
     - GetRawSubscriptionByShortUuidResponseTransportOptionsDto7:
-        name: HysteriaTransportDto
+        name: HysteriaTransportOptionsDto
     - GetRawSubscriptionByShortUuidResponseProtocolOptionsDto:
-        name: VLESSProtocolDto
+        name: VlessProtocolOptionsDto
     - GetRawSubscriptionByShortUuidResponseProtocolOptionsDto2:
-        name: TrojanProtocolDto
+        name: TrojanProtocolOptionsDto
     - GetRawSubscriptionByShortUuidResponseProtocolOptionsDto3:
-        name: ShadowsocksProtocolDto
+        name: ShadowsocksProtocolOptionsDto
     - GetRawSubscriptionByShortUuidResponseProtocolOptionsDto4:
-        name: HysteriaProtocolDto
+        name: HysteriaProtocolOptionsDto
     - GetRawSubscriptionByShortUuidResponseSecurityOptionsDto:
         name: TlsSecurityOptionsDto
     - GetRawSubscriptionByShortUuidResponseSecurityOptionsDto2:
@@ -59,6 +59,208 @@ remnawave:
         name: NodeNotFoundErrorDto
     - NodeOrMetadataNotFoundErrorBodyDto2:
         name: MetadataNotFoundErrorDto
+    - GetAllHostsResponse:
+        name: HostsDto
+    - GetAllHwidDevicesResponseDevicesDto:
+        name: HwidUserDeviceDto
+    - TokensDto:
+        name: ApiTokensDto
+    - GetAllUsersResponseUsersDto:
+        name: ExtendedUsersDto
+    - GetAllUsersResponseActiveInternalSquadsDto:
+        name: BaseInternalSquadDto
+    - GetAllUsersResponseUserTrafficDto:
+        name: UserTrafficDto
+    - GetConfigProfilesResponseConfigProfilesDto:
+        name: ConfigProfileDto
+    - GetConfigProfilesResponseNodesDto:
+        name: InfraBillingAvailableNodeDto
+    - GetExternalSquadsResponseExternalSquadsDto:
+        name: ExternalSquadDto
+    - GetExternalSquadsResponseHostOverridesDto:
+        name: NullableExternalSquadHostOverridesDto
+    - GetExternalSquadsResponseSubscriptionSettingsDto:
+        name: NullableExternalSquadSubscriptionSettingsDto
+    - CreateInfraBillingHistoryRecordResponseRecordsDto:
+        name: InfraBillingHistoryRecordDto
+    - GetInfraBillingNodesResponseBillingNodesDto:
+        name: InfraBillingNodeDto
+    - ProvidersDto:
+        name: InfraProviderDto
+    - BandwidthLastTwoDaysDto:
+        name: BaseStatDto
+    - GetInternalSquadsResponseInternalSquadsDto:
+        name: InternalSquadDto
+    - GetNodePluginsResponseNodePluginsDto:
+        name: NodePluginDto
+    - GetSnippetsResponseSnippetsDto:
+        name: SnippetsDto
+    - GetSubscriptionPageConfigsResponseConfigsDto:
+        name: SubscriptionPageConfigDto
+    - SubscriptionsDto:
+        name: SubscriptionInfoDto
+    - GetSubscriptionRequestHistoryResponseRecordsDto:
+        name: SubscriptionRequestHistoryDto
+    - GetUserSubscriptionRequestHistoryResponseRecordsDto:
+        name: SubscriptionRequestHistoryDto
+    - GetTemplatesResponseTemplatesDto:
+        name: SubscriptionTemplateDto
+    - GetTorrentBlockerReportsResponseRecordsDto:
+        name: TorrentBlockerReportDto
+    - GetRemnawaveSettingsResponse:
+        name: RemnawaveSettingsDto
+    - GetSubscriptionSettingsResponse:
+        name: SubscriptionSettingsDto
+    - GetSubscriptionSettingsResponseCustomRemarksDto:
+        name: CustomRemarksDto
+    - DebugSrrMatcherRequestResponseRulesDto:
+        name: ResponseRulesConfigDto
+    - GetSubscriptionSettingsResponseRulesDto:
+        name: ResponseRuleDto
+    - GetSubscriptionSettingsResponseConditionsDto:
+        name: ResponseRuleConditionDto
+    - GetSubscriptionSettingsResponseResponseModificationsDto:
+        name: ResponseRuleModificationsDto
+    - GetSubscriptionSettingsResponseEncryptionDto:
+        name: ResponseRuleEncryptionDto
+    - GetSubscriptionSettingsResponseSettingsDto:
+        name: ResponseRuleSettingsDto
+    - UpdateRemnawaveSettingsRequestBrandingSettingsDto:
+        name: BrandingSettingsDto
+    - UpdateRemnawaveSettingsRequestOauth2SettingsDto:
+        name: Oauth2SettingsDto
+    - UpdateRemnawaveSettingsRequestPasskeySettingsDto:
+        name: PasskeySettingsDto
+    - UpdateRemnawaveSettingsRequestPasswordSettingsDto:
+        name: PasswordAuthSettingsDto
+    - UpdateExternalSquadRequestHostOverridesDto:
+        name: ExternalSquadHostOverridesDto
+    - UpdateExternalSquadRequestSubscriptionSettingsDto:
+        name: ExternalSquadSubscriptionSettingsDto
+    - UpdateSubscriptionSettingsRequestHwidSettingsDto:
+        name: HwidSettingsDto
+    - ResolvedProxyConfigsDto:
+        name: ResolvedProxyConfigDto
+    - GetRawSubscriptionByShortUuidResponseMetadataDto:
+        name: ProxyEntryMetadataDto
+    - RequestDto:
+        name: TcpHeaderHttpRequestDto
+    - GetRawSubscriptionByShortUuidResponse2:
+        name: TcpHeaderHttpResponseDto
+    - RemnawaveWebhookTorrentBlockerEventsNodeDto:
+        name: NodesDto
+    - RemnawaveWebhookTorrentBlockerEventsActiveInboundsDto:
+        name: ConfigProfileInboundsDto
+    - RemnawaveWebhookTorrentBlockerEventsProviderDto:
+        name: PartialInfraProviderDto
+    - RemnawaveWebhookTorrentBlockerEventsSystemDto:
+        name: NodeSystemDto
+    - RemnawaveWebhookTorrentBlockerEventsInfoDto:
+        name: NodeSystemInfoDto
+    - RemnawaveWebhookTorrentBlockerEventsStatsDto:
+        name: NodeSystemStatsDto
+    - RemnawaveWebhookTorrentBlockerEventsInterfaceDto:
+        name: NetworkInterfaceDto
+    - GetAllPasskeysResponse:
+        name: GetActivePasskeysResponseModelDto
+    - FetchIpsResponse:
+        name: FetchIpsResponseModelDto
+    - FetchUsersIpsResponse:
+        name: FetchUsersIpsResponseModelDto
+    - FetchIpsResultResponse:
+        name: FetchIpsResultResponseModelDto
+    - FetchUsersIpsResultResponse:
+        name: FetchUsersIpsResultResponseModelDto
+    - ProgressDto:
+        name: GetIpsListProgressDto
+    - FetchIpsResultResponseNodesDto:
+        name: GetIpsListNodeResultDto
+    - FetchUsersIpsResultResponseUsersDto:
+        name: GetUserIpListItemDto
+    - GenerateX25519Response:
+        name: GenerateX25519ResponseModelDto
+    - KeypairsDto:
+        name: X25519KeypairsResponseDataDto
+    - GetMetadataResponse:
+        name: GetMetadataResponseModelDto
+    - BuildDto:
+        name: GetMetadataResponseBuildDto
+    - GitDto:
+        name: GetMetadataResponseGitDto
+    - BackendDto:
+        name: GetMetadataResponseGitBackendDto
+    - FrontendDto:
+        name: GetMetadataResponseGitFrontendDto
+    - GetStatsResponse:
+        name: GetStatsResponseModelDto
+    - CpuDto:
+        name: GetStatsResponseCpuDto
+    - MemoryDto:
+        name: GetStatsResponseMemoryDto
+    - GetStatsResponseUsersDto:
+        name: GetStatsResponseUsersDto
+    - OnlineStatsDto:
+        name: GetStatsResponseOnlineStatsDto
+    - GetStatsResponseNodesDto:
+        name: GetStatsResponseNodesDto
+    - GetRecapResponse:
+        name: GetRecapResponseModelDto
+    - ThisMonthDto:
+        name: GetRecapResponseThisMonthDto
+    - TotalDto:
+        name: GetRecapResponseTotalDto
+    - GetRemnawaveHealthResponse:
+        name: GetRemnawaveHealthResponseModelDto
+    - RuntimeMetricsDto:
+        name: RuntimeMetricDto
+    - GetNodesMetricsResponse:
+        name: GetNodesStatsResponseModelDto
+    - GetNodesMetricsResponseNodesDto:
+        name: NodeMetricsDto
+    - InboundsStatsDto:
+        name: InboundStatsDto
+    - OutboundsStatsDto:
+        name: OutboundStatsDto
+    - GetNodesStatisticsResponse:
+        name: GetNodesStatisticsResponseModelDto
+    - LastSevenDaysDto:
+        name: NodeDayStatsDto
+    - GetBandwidthStatsResponse:
+        name: GetBandwidthStatsResponseModelDto
+    - GetLegacyStatsUserUsageResponse:
+        name: GetLegacyStatsUserUsageResponseModelDto
+    - GetLegacyStatsNodesUsersUsageResponse:
+        name: GetLegacyStatsNodesUsersUsageResponseModelDto
+    - GetStatsUserUsageResponse:
+        name: GetStatsUserUsageResponseModelDto
+    - GetStatsUserUsageResponseSeriesDto:
+        name: GetUniversalSeriesConvertedDto
+    - GetStatsUserUsageResponseTopNodesDto:
+        name: GetUniversalTopNodeConvertedDto
+    - GetStatsNodesUsageResponse:
+        name: GetStatsNodesUsageResponseModelDto
+    - GetStatsNodesUsageResponseSeriesDto:
+        name: GetStatsNodesUsageResponseSeriesDto
+    - GetStatsNodesUsageResponseTopNodesDto:
+        name: GetStatsNodesUsageResponseTopNodesDto
+    - GetStatsNodeUsersUsageResponse:
+        name: GetStatsNodesUsersUsageResponseModelDto
+    - GetStatsNodesUsersUsageResponse:
+        name: GetStatsNodesUsersUsageResponseModelDto
+    - GetStatsNodeUsersUsageResponseTopUsersDto:
+        name: GetUniversalTopUserConvertedDto
+    - GetStatsNodesUsersUsageResponseTopUsersDto:
+        name: GetUniversalTopUserConvertedDto
+    - GetSubscriptionRequestHistoryStatsResponse:
+        name: GetSubscriptionRequestHistoryStatsResponseModelDto
+    - GetUserAccessibleNodesResponse:
+        name: GetUserAccessibleNodesResponseModelDto
+    - ActiveNodesDto:
+        name: GetUserAccessibleNodesDto
+    - GetUsersStreamResponse:
+        name: GetUsersStreamResponseModelDto
+    - ResolveUserResponse:
+        name: ResolveUserResponseModelDto
     errors:
     - ConfigProfileNameAlreadyExistsOrInboundTagsAreNotUniqueInboundTagsMustBeUniqueInGlobalScopeError:
         name: ConfigProfileConflictError
