@@ -1,7 +1,8 @@
 import unittest
 
 from nicifcations_schema import NicificatedSchema, ObjectSchema, Remnawave, Schema
-from nicifier_schema import _schema_signature, hoist_inline_objects
+from nicifier_schema import _schema_signature, hoist_inline_objects, update_object_nicifications
+from source_cache import SchemaIndex, parse_ts_schemas
 
 
 class InlineObjectTests(unittest.TestCase):
@@ -62,6 +63,74 @@ class InlineObjectTests(unittest.TestCase):
             {"$ref": "#/components/schemas/NamedPayloadDto"},
         )
         self.assertEqual([change["action"] for change in changes], ["hoisted", "hoisted"])
+
+
+class UpdateObjectNicificationsTests(unittest.TestCase):
+    def test_inline_object_named_after_source_schema(self) -> None:
+        document = {
+            "components": {
+                "schemas": {
+                    "OwnerDto": {
+                        "type": "object",
+                        "properties": {
+                            "detail": {
+                                "type": "object",
+                                "properties": {
+                                    "nickname": {"type": "string"},
+                                    "avatarUrl": {"type": "string"},
+                                },
+                            },
+                        },
+                    },
+                }
+            }
+        }
+        index = SchemaIndex()
+        source = """
+        const ProfileSchema = z.object({
+            nickname: z.string(),
+            avatarUrl: z.string(),
+        });
+        """
+        for schema in parse_ts_schemas(source):
+            index.add(schema)
+
+        nicifications = NicificatedSchema(remnawave=Remnawave(), schema=Schema())
+        changes = update_object_nicifications(document, nicifications, index)
+
+        self.assertEqual(len(changes), 1)
+        self.assertEqual(changes[0]["name"], "ProfileDto")
+        raw_name = changes[0]["nicification"]
+        self.assertEqual(nicifications.schema.objects[raw_name].name, "ProfileDto")
+
+    def test_existing_object_mapping_is_preserved(self) -> None:
+        document = {
+            "components": {
+                "schemas": {
+                    "OwnerDto": {
+                        "type": "object",
+                        "properties": {
+                            "profile": {
+                                "type": "object",
+                                "properties": {"nickname": {"type": "string"}},
+                            },
+                        },
+                    },
+                }
+            }
+        }
+        index = SchemaIndex()
+        for schema in parse_ts_schemas("const ProfileSchema = z.object({ nickname: z.string() });"):
+            index.add(schema)
+
+        nicifications = NicificatedSchema(
+            remnawave=Remnawave(),
+            schema=Schema(objects={"OwnerProfileDto": ObjectSchema(name="KeepMeDto")}),
+        )
+        changes = update_object_nicifications(document, nicifications, index)
+
+        self.assertEqual(changes, [])
+        self.assertEqual(nicifications.schema.objects["OwnerProfileDto"].name, "KeepMeDto")
 
 
 if __name__ == "__main__":

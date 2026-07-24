@@ -8,7 +8,8 @@ import typing
 from dataclasses import dataclass
 
 from error_codes import ErrorCode
-from nicifcations_schema import EnumSchema, NicificatedSchema
+from nicifcations_schema import EnumSchema, NicificatedSchema, ObjectSchema
+from source_cache import SchemaIndex, object_fingerprint
 
 type JSON = typing.Any
 type JSONObject = dict[str, JSON]
@@ -364,6 +365,123 @@ def update_enum_nicifications(
     return changes
 
 
+def update_object_nicifications(
+    document: JSONObject,
+    nicifications: NicificatedSchema,
+    schema_index: SchemaIndex,
+    /,
+) -> list[JSONObject]:
+    """Name inline objects after the backend TypeScript schema they mirror.
+
+    The document is preprocessed exactly like a real build so the generated raw
+    names line up with the keys stored in ``nicifications.yaml``. Each inline
+    object is fingerprinted and, when it uniquely matches a source schema, the
+    resulting name is recorded. Existing entries are never overwritten.
+    """
+
+    staged = copy.deepcopy(document)
+    apply_enum_nicifications(staged, nicifications)
+
+    if nicifications.error_responses.enabled:
+        hoist_response_components(
+            staged,
+            nicificated_schema=nicifications,
+            min_occurrences=max(1, nicifications.error_responses.min_occurrences),
+        )
+        rename_referenced_response_components(staged, nicificated_schema=nicifications)
+
+    inline_map_object_schema_components(staged)
+
+    components = _ensure_components(staged)
+    schemas = components.setdefault("schemas", {})
+    if not isinstance(schemas, dict):
+        return []
+
+    plan = _plan_inline_object_names(staged, nicifications, schemas)
+    changes: list[JSONObject] = []
+    seen_raw_names: set[str] = set()
+
+    for candidate in sorted(plan.candidates, key=lambda item: item.pointer):
+        raw_model_name, _, _ = plan.names[id(candidate)]
+        if raw_model_name in seen_raw_names:
+            continue
+
+        seen_raw_names.add(raw_model_name)
+        if raw_model_name in nicifications.schema.objects:
+            continue
+
+        source_name = _source_object_name(candidate.schema, schema_index)
+        if source_name is None or source_name == raw_model_name:
+            continue
+
+        nicifications.schema.objects[raw_model_name] = ObjectSchema(name=source_name)
+        changes.append(
+            {
+                "action": "added",
+                "nicification": raw_model_name,
+                "name": source_name,
+                "source": candidate.pointer,
+            }
+        )
+
+    return changes
+
+
+def _source_object_name(schema: JSONObject, schema_index: SchemaIndex, /) -> str | None:
+    fingerprint = _openapi_object_fingerprint(schema)
+    if fingerprint is None:
+        return None
+
+    ts_name = schema_index.resolve(fingerprint)
+    return _object_model_name_from_source(ts_name) if ts_name is not None else None
+
+
+def _openapi_object_fingerprint(schema: JSONObject, /) -> tuple[typing.Any, ...] | None:
+    properties = schema.get("properties")
+    if not isinstance(properties, dict) or not properties:
+        return None
+
+    literals: list[tuple[str, str]] = []
+    for property_name, property_schema in properties.items():
+        if not isinstance(property_schema, dict):
+            continue
+
+        literal = _single_enum_literal(property_schema)
+        if literal is not None:
+            literals.append((str(property_name), literal))
+
+    # A single generic property (e.g. `{enabled}`) matches too many unrelated
+    # shapes to name safely, so a discriminating literal or a second property is
+    # required before an object is matched against the source schemas.
+    if len(properties) < 2 and not literals:
+        return None
+
+    return object_fingerprint((str(name) for name in properties), literals)
+
+
+def _single_enum_literal(schema: JSONObject, /) -> str | None:
+    enum_values = schema.get("enum")
+    if isinstance(enum_values, list) and len(enum_values) == 1:
+        return str(enum_values[0])
+
+    const_value = schema.get("const")
+    if const_value is not None and not isinstance(const_value, (dict, list)):
+        return str(const_value)
+
+    return None
+
+
+def _object_model_name_from_source(ts_name: str, /) -> str:
+    name = ts_name.removesuffix("Schema")
+    if not name:
+        return ts_name
+
+    if name.endswith(("Dto", "Object", "Model")):
+        return name
+
+    return f"{name}Dto"
+
+
 def hoist_error_responses(
     document: JSONObject,
     /,
@@ -613,38 +731,29 @@ def inline_map_object_schema_components(document: JSONObject, /) -> list[JSONObj
     return inlined
 
 
-def hoist_inline_objects(
+class InlineObjectPlan(typing.NamedTuple):
+    candidates: list[InlineObjectCandidate]
+    names: dict[int, tuple[str, str, str]]
+
+
+def _plan_inline_object_names(
     document: JSONObject,
     nicificated_schema: NicificatedSchema,
+    schemas: JSONObject,
     /,
-) -> list[JSONObject]:
-    components = _ensure_components(document)
-    schemas = components.setdefault("schemas", {})
-    if not isinstance(schemas, dict):
-        schemas = {}
-        components["schemas"] = schemas
-
+) -> InlineObjectPlan:
     candidates = _collect_inline_object_candidates(document, schemas)
     short_name_counts: dict[str, int] = {}
     for candidate in candidates:
         short_name_counts[candidate.short_name] = short_name_counts.get(candidate.short_name, 0) + 1
 
-    used_names = {str(name) for name in schemas}
-    used_nicification_names = set(used_names)
-    assigned_raw_names: dict[int, str] = {}
-    assigned_model_names: dict[int, str] = {}
-    assigned_parent_names: dict[int, str] = {}
-    schema_targets: dict[str, list[tuple[str, str | None]]] = {}
-    hoisted: list[JSONObject] = []
+    used_nicification_names = {str(name) for name in schemas}
+    assigned: dict[int, tuple[str, str, str]] = {}
 
     def assign_candidate_name(candidate: InlineObjectCandidate) -> tuple[str, str, str]:
         candidate_key = id(candidate)
-        if candidate_key in assigned_model_names:
-            return (
-                assigned_raw_names[candidate_key],
-                assigned_model_names[candidate_key],
-                assigned_parent_names[candidate_key],
-            )
+        if candidate_key in assigned:
+            return assigned[candidate_key]
 
         ancestor = _nearest_inline_object_ancestor(candidate, candidates)
         parent_model_name = candidate.parent_model_name
@@ -668,16 +777,35 @@ def hoist_inline_objects(
                 else raw_model_name
             )
 
-        assigned_raw_names[candidate_key] = raw_model_name
-        assigned_model_names[candidate_key] = model_base_name
-        assigned_parent_names[candidate_key] = parent_model_name
-        return raw_model_name, model_base_name, parent_model_name
+        assigned[candidate_key] = (raw_model_name, model_base_name, parent_model_name)
+        return assigned[candidate_key]
 
     for candidate in candidates:
         assign_candidate_name(candidate)
 
+    return InlineObjectPlan(candidates=candidates, names=assigned)
+
+
+def hoist_inline_objects(
+    document: JSONObject,
+    nicificated_schema: NicificatedSchema,
+    /,
+) -> list[JSONObject]:
+    components = _ensure_components(document)
+    schemas = components.setdefault("schemas", {})
+    if not isinstance(schemas, dict):
+        schemas = {}
+        components["schemas"] = schemas
+
+    plan = _plan_inline_object_names(document, nicificated_schema, schemas)
+    candidates = plan.candidates
+
+    used_names = {str(name) for name in schemas}
+    schema_targets: dict[str, list[tuple[str, str | None]]] = {}
+    hoisted: list[JSONObject] = []
+
     for candidate in sorted(candidates, key=lambda item: item.pointer.count("/"), reverse=True):
-        raw_model_name, model_base_name, parent_model_name = assign_candidate_name(candidate)
+        raw_model_name, model_base_name, parent_model_name = plan.names[id(candidate)]
         schema = copy.deepcopy(candidate.schema)
         signature = _schema_signature(schema)
         configured_name = _object_nicification_name(raw_model_name, nicificated_schema)
@@ -2269,4 +2397,5 @@ __all__ = (
     "inline_map_object_schema_components",
     "nicificate_openapi_document",
     "update_enum_nicifications",
+    "update_object_nicifications",
 )

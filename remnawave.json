@@ -6771,16 +6771,16 @@
         "type": "object",
         "properties": {
           "passkeySettings": {
-            "$ref": "#/components/schemas/PasskeySettingsDto"
+            "$ref": "#/components/schemas/PasskeySettingsDto2"
           },
           "oauth2Settings": {
-            "$ref": "#/components/schemas/Oauth2SettingsDto"
+            "$ref": "#/components/schemas/Oauth2SettingsDto2"
           },
           "passwordSettings": {
             "$ref": "#/components/schemas/PasswordAuthSettingsDto"
           },
           "brandingSettings": {
-            "$ref": "#/components/schemas/BrandingSettingsDto"
+            "$ref": "#/components/schemas/BrandingSettingsDto3"
           }
         }
       },
@@ -7047,7 +7047,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/GetSubscriptionPageConfigResponse"
+            "$ref": "#/components/schemas/SubscriptionPageConfigDto2"
           }
         },
         "required": [
@@ -7077,7 +7077,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/GetSubscriptionPageConfigResponse"
+            "$ref": "#/components/schemas/SubscriptionPageConfigDto2"
           }
         },
         "required": [
@@ -7161,7 +7161,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/GetSubscriptionPageConfigResponse"
+            "$ref": "#/components/schemas/SubscriptionPageConfigDto2"
           }
         },
         "required": [
@@ -8745,10 +8745,10 @@
             "nullable": true
           },
           "hwidSettings": {
-            "$ref": "#/components/schemas/ExternalSquadHwidSettingsDto"
+            "$ref": "#/components/schemas/HwidSettingsDto"
           },
           "customRemarks": {
-            "$ref": "#/components/schemas/ExternalSquadCustomRemarksDto"
+            "$ref": "#/components/schemas/CustomRemarksDto"
           },
           "subpageConfigUuid": {
             "type": "string",
@@ -9354,7 +9354,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/GetNodePluginResponse"
+            "$ref": "#/components/schemas/NodePluginDto2"
           }
         },
         "required": [
@@ -9384,7 +9384,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/GetNodePluginResponse"
+            "$ref": "#/components/schemas/NodePluginDto2"
           }
         },
         "required": [
@@ -9468,7 +9468,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/GetNodePluginResponse"
+            "$ref": "#/components/schemas/NodePluginDto2"
           }
         },
         "required": [
@@ -9647,7 +9647,7 @@
           "mihomoIpVersion": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/MihomoIpVersion"
+                "$ref": "#/components/schemas/MihomoIPVersion"
               }
             ],
             "nullable": true
@@ -9809,7 +9809,7 @@
           "mihomoIpVersion": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/MihomoIpVersion"
+                "$ref": "#/components/schemas/MihomoIPVersion"
               }
             ],
             "nullable": true
@@ -10112,7 +10112,7 @@
           "mihomoIpVersion": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/MihomoIpVersion"
+                "$ref": "#/components/schemas/MihomoIPVersion"
               }
             ],
             "nullable": true
@@ -10753,7 +10753,7 @@
         "type": "object",
         "properties": {
           "responseRules": {
-            "$ref": "#/components/schemas/ResponseRulesConfigDto"
+            "$ref": "#/components/schemas/ResponseRulesConfigDto2"
           }
         },
         "required": [
@@ -10828,7 +10828,7 @@
             "type": "boolean"
           },
           "customRemarks": {
-            "$ref": "#/components/schemas/CustomRemarksDto"
+            "$ref": "#/components/schemas/CustomRemarksDto2"
           },
           "customResponseHeaders": {
             "type": "object",
@@ -10840,10 +10840,10 @@
             "type": "boolean"
           },
           "responseRules": {
-            "$ref": "#/components/schemas/ResponseRulesConfigDto"
+            "$ref": "#/components/schemas/ResponseRulesConfigDto2"
           },
           "hwidSettings": {
-            "$ref": "#/components/schemas/HwidSettingsDto"
+            "$ref": "#/components/schemas/HwidSettingsDto2"
           }
         },
         "required": [
@@ -12056,7 +12056,10 @@
         "x-enumNames": [
           "TORRENT_BLOCKER_REPORT"
         ],
-        "description": "Torrent blocker event type."
+        "description": "Torrent blocker event type.",
+        "x-enum-descriptions": {
+          "TORRENT_BLOCKER_REPORT": "A torrent usage report was emitted by the torrent blocker."
+        }
       },
       "ErrorsEventType": {
         "type": "string",
@@ -12090,7 +12093,13 @@
           "BLOCK_IPS",
           "RECREATE_TABLES",
           "UNBLOCK_IPS"
-        ]
+        ],
+        "description": "Command executed by a node plugin.",
+        "x-enum-descriptions": {
+          "BLOCK_IPS": "Block the specified IP addresses on the target nodes.",
+          "RECREATE_TABLES": "Recreate the plugin's internal tables on the target nodes.",
+          "UNBLOCK_IPS": "Unblock the specified IP addresses on the target nodes."
+        }
       },
       "Protocol": {
         "type": "string",
@@ -12111,7 +12120,14 @@
           "TROJAN",
           "SHADOWSOCKS",
           "HYSTERIA"
-        ]
+        ],
+        "description": "Proxy protocol used by the connection.",
+        "x-enum-descriptions": {
+          "VLESS": "Lightweight stateless protocol without built-in encryption, typically paired with `TLS` or `REALITY`.",
+          "TROJAN": "Protocol that disguises traffic as regular `HTTPS` to evade detection.",
+          "SHADOWSOCKS": "Encrypted `SOCKS5` proxy protocol.",
+          "HYSTERIA": "`QUIC`-based protocol optimized for lossy, high-latency networks."
+        }
       },
       "Flow": {
         "type": "string",
@@ -12121,15 +12137,21 @@
           "xtls-rprx-vision-udp443"
         ],
         "x-enum-varnames": [
-          "NOTHING",
+          "NONE",
           "XTLS_RPRX_VISION",
           "XTLS_RPRX_VISION_UDP443"
         ],
         "x-enumNames": [
-          "NOTHING",
+          "NONE",
           "XTLS_RPRX_VISION",
           "XTLS_RPRX_VISION_UDP443"
-        ]
+        ],
+        "description": "Available connection flow modes.",
+        "x-enum-descriptions": {
+          "NONE": "No flow mode.",
+          "XTLS_RPRX_VISION": "Provides flow control and `TLS` masquerading for `TCP` traffic to mitigate active probing and fingerprinting by censors.",
+          "XTLS_RPRX_VISION_UDP443": "Optimizes flow control and masquerading specifically for `UDP` port `443` to prevent side-channel analysis of `HTTP/3` and `QUIC` connections."
+        }
       },
       "Security": {
         "type": "string",
@@ -12147,7 +12169,13 @@
           "TLS",
           "REALITY",
           "NONE"
-        ]
+        ],
+        "description": "Available transport security protocols.",
+        "x-enum-descriptions": {
+          "NONE": "Disables transport-layer security.",
+          "TLS": "Secures the connection using the TLS protocol.",
+          "REALITY": "Secures the connection using the REALITY protocol, which emulates TLS without requiring a valid server certificate."
+        }
       },
       "Transport": {
         "type": "string",
@@ -12177,7 +12205,17 @@
           "GRPC",
           "KCP",
           "HYSTERIA"
-        ]
+        ],
+        "description": "Transport layer carrying the proxy connection.",
+        "x-enum-descriptions": {
+          "TLS": "Raw `TCP` transport.",
+          "XHTTP": "`XHTTP` transport that multiplexes traffic over `HTTP`.",
+          "WS": "`WebSocket` transport.",
+          "HTTPUPGRADE": "`HTTP` Upgrade transport.",
+          "GRPC": "`gRPC` transport.",
+          "KCP": "`mKCP` transport built on top of `UDP`.",
+          "HYSTERIA": "`Hysteria` transport built on `QUIC`."
+        }
       },
       "TransportHeaderType": {
         "type": "string",
@@ -12192,7 +12230,12 @@
         "x-enumNames": [
           "HTTP",
           "NONE"
-        ]
+        ],
+        "description": "Header obfuscation applied to the `TCP` transport.",
+        "x-enum-descriptions": {
+          "HTTP": "Disguise traffic with a fake `HTTP` header.",
+          "NONE": "No header obfuscation."
+        }
       },
       "XHTTPMode": {
         "type": "string",
@@ -12213,7 +12256,14 @@
           "PACKET_UP",
           "STREAM_UP",
           "STREAM_ONE"
-        ]
+        ],
+        "description": "Data transmission mode of the `XHTTP` transport.",
+        "x-enum-descriptions": {
+          "AUTO": "Automatically select the transmission mode.",
+          "PACKET_UP": "Send uplink data as discrete packets.",
+          "STREAM_UP": "Send uplink data as a continuous stream.",
+          "STREAM_ONE": "Send both uplink and downlink over a single stream."
+        }
       },
       "EncryptionMethodType": {
         "type": "string",
@@ -12229,9 +12279,13 @@
           "AGE1",
           "AGE1PQ1"
         ],
-        "description": "Encryption method for response modification."
+        "description": "Encryption method for response modification.",
+        "x-enum-descriptions": {
+          "AGE1": "`age` X25519 encryption.",
+          "AGE1PQ1": "`age` post-quantum encryption."
+        }
       },
-      "APITokenEndpointKind": {
+      "APITokenScope": {
         "type": "string",
         "enum": [
           "read",
@@ -12245,9 +12299,13 @@
           "READ",
           "WRITE"
         ],
-        "description": "API token endpoint access kind."
+        "description": "Available API token permission scopes.",
+        "x-enum-descriptions": {
+          "READ": "Read-only access.",
+          "WRITE": "Read and write access."
+        }
       },
-      "MihomoIpVersion": {
+      "MihomoIPVersion": {
         "type": "string",
         "enum": [
           "dual",
@@ -12270,7 +12328,14 @@
           "IPV4_PREFER",
           "IPV6_PREFER"
         ],
-        "description": "Mihomo IP version preference."
+        "description": "Mihomo IP version preference.",
+        "x-enum-descriptions": {
+          "DUAL": "Use both `IPv4` and `IPv6`.",
+          "IPV4": "Use `IPv4` only.",
+          "IPV6": "Use `IPv6` only.",
+          "IPV4_PREFER": "Prefer `IPv4`, falling back to `IPv6`.",
+          "IPV6_PREFER": "Prefer `IPv6`, falling back to `IPv4`."
+        }
       },
       "TcpHeaderHttpRequestDto": {
         "type": "object",
@@ -13026,14 +13091,14 @@
           "activeInbounds"
         ]
       },
-      "GetApiTokenScopesResponseResourcesEndpointsDto": {
+      "EndpointScopeDto": {
         "type": "object",
         "properties": {
           "key": {
             "type": "string"
           },
           "kind": {
-            "$ref": "#/components/schemas/APITokenEndpointKind"
+            "$ref": "#/components/schemas/APITokenScope"
           },
           "method": {
             "type": "string"
@@ -13357,7 +13422,7 @@
           "mihomoIpVersion": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/MihomoIpVersion"
+                "$ref": "#/components/schemas/MihomoIPVersion"
               }
             ],
             "nullable": true
@@ -13527,7 +13592,7 @@
         },
         "nullable": true
       },
-      "ExternalSquadHwidSettingsDto": {
+      "HwidSettingsDto": {
         "type": "object",
         "properties": {
           "enabled": {
@@ -13549,7 +13614,7 @@
         ],
         "nullable": true
       },
-      "ExternalSquadCustomRemarksDto": {
+      "CustomRemarksDto": {
         "type": "object",
         "properties": {
           "expiredUsers": {
@@ -13834,7 +13899,7 @@
           "ips"
         ]
       },
-      "RemnawaveSettingsOauth2SettingsGithubDto": {
+      "Oauth2SettingsGithubDto": {
         "type": "object",
         "properties": {
           "enabled": {
@@ -13862,7 +13927,7 @@
           "allowedEmails"
         ]
       },
-      "RemnawaveSettingsOauth2SettingsPocketidDto": {
+      "Oauth2SettingsPocketidDto": {
         "type": "object",
         "properties": {
           "enabled": {
@@ -13895,7 +13960,7 @@
           "allowedEmails"
         ]
       },
-      "RemnawaveSettingsOauth2SettingsKeycloakDto": {
+      "Oauth2SettingsKeycloakDto": {
         "type": "object",
         "properties": {
           "enabled": {
@@ -13947,7 +14012,7 @@
           "allowedEmails": []
         }
       },
-      "RemnawaveSettingsOauth2SettingsGenericDto": {
+      "Oauth2SettingsGenericDto": {
         "type": "object",
         "properties": {
           "enabled": {
@@ -14004,7 +14069,7 @@
           "allowedEmails": []
         }
       },
-      "RemnawaveSettingsOauth2SettingsTelegramDto": {
+      "Oauth2SettingsTelegramDto": {
         "type": "object",
         "properties": {
           "enabled": {
@@ -14679,7 +14744,7 @@
           "encodedTemplateYaml"
         ]
       },
-      "GetApiTokenScopesResponseResourcesDto": {
+      "ResourceScopesDto": {
         "type": "object",
         "properties": {
           "resource": {
@@ -14694,7 +14759,7 @@
           "endpoints": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/GetApiTokenScopesResponseResourcesEndpointsDto"
+              "$ref": "#/components/schemas/EndpointScopeDto"
             }
           }
         },
@@ -14966,10 +15031,10 @@
             "nullable": true
           },
           "hwidSettings": {
-            "$ref": "#/components/schemas/ExternalSquadHwidSettingsDto"
+            "$ref": "#/components/schemas/HwidSettingsDto"
           },
           "customRemarks": {
-            "$ref": "#/components/schemas/ExternalSquadCustomRemarksDto"
+            "$ref": "#/components/schemas/CustomRemarksDto"
           },
           "subpageConfigUuid": {
             "type": "string",
@@ -15717,7 +15782,7 @@
           }
         }
       },
-      "RemnawaveSettingsPasskeySettingsDto": {
+      "PasskeySettingsDto": {
         "type": "object",
         "properties": {
           "enabled": {
@@ -15739,26 +15804,26 @@
         ],
         "nullable": true
       },
-      "RemnawaveSettingsOauth2SettingsDto": {
+      "Oauth2SettingsDto": {
         "type": "object",
         "properties": {
           "github": {
-            "$ref": "#/components/schemas/RemnawaveSettingsOauth2SettingsGithubDto"
+            "$ref": "#/components/schemas/Oauth2SettingsGithubDto"
           },
           "pocketid": {
-            "$ref": "#/components/schemas/RemnawaveSettingsOauth2SettingsPocketidDto"
+            "$ref": "#/components/schemas/Oauth2SettingsPocketidDto"
           },
           "yandex": {
-            "$ref": "#/components/schemas/RemnawaveSettingsOauth2SettingsGithubDto"
+            "$ref": "#/components/schemas/Oauth2SettingsGithubDto"
           },
           "keycloak": {
-            "$ref": "#/components/schemas/RemnawaveSettingsOauth2SettingsKeycloakDto"
+            "$ref": "#/components/schemas/Oauth2SettingsKeycloakDto"
           },
           "generic": {
-            "$ref": "#/components/schemas/RemnawaveSettingsOauth2SettingsGenericDto"
+            "$ref": "#/components/schemas/Oauth2SettingsGenericDto"
           },
           "telegram": {
-            "$ref": "#/components/schemas/RemnawaveSettingsOauth2SettingsTelegramDto"
+            "$ref": "#/components/schemas/Oauth2SettingsTelegramDto"
           }
         },
         "required": [
@@ -15780,7 +15845,7 @@
         ],
         "nullable": true
       },
-      "RemnawaveSettingsBrandingSettingsDto": {
+      "BrandingSettingsDto": {
         "type": "object",
         "properties": {
           "title": {
@@ -15819,7 +15884,7 @@
         ],
         "nullable": true
       },
-      "GetStatusResponseBrandingDto": {
+      "BrandingSettingsDto2": {
         "type": "object",
         "properties": {
           "title": {
@@ -16317,7 +16382,7 @@
           "distinctCountries"
         ]
       },
-      "CustomRemarksDto": {
+      "CustomRemarksDto2": {
         "type": "object",
         "properties": {
           "expiredUsers": {
@@ -16372,7 +16437,7 @@
           "HWIDNotSupported"
         ]
       },
-      "SubscriptionSettingsResponseRulesDto": {
+      "ResponseRulesConfigDto": {
         "type": "object",
         "properties": {
           "version": {
@@ -16890,7 +16955,7 @@
           "mihomoIpVersion": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/MihomoIpVersion"
+                "$ref": "#/components/schemas/MihomoIPVersion"
               }
             ],
             "nullable": true
@@ -17097,16 +17162,16 @@
         "type": "object",
         "properties": {
           "passkeySettings": {
-            "$ref": "#/components/schemas/RemnawaveSettingsPasskeySettingsDto"
+            "$ref": "#/components/schemas/PasskeySettingsDto"
           },
           "oauth2Settings": {
-            "$ref": "#/components/schemas/RemnawaveSettingsOauth2SettingsDto"
+            "$ref": "#/components/schemas/Oauth2SettingsDto"
           },
           "passwordSettings": {
             "$ref": "#/components/schemas/RemnawaveSettingsPasswordSettingsDto"
           },
           "brandingSettings": {
-            "$ref": "#/components/schemas/RemnawaveSettingsBrandingSettingsDto"
+            "$ref": "#/components/schemas/BrandingSettingsDto"
           }
         },
         "required": [
@@ -17116,7 +17181,7 @@
           "brandingSettings"
         ]
       },
-      "PasskeySettingsDto": {
+      "PasskeySettingsDto2": {
         "type": "object",
         "properties": {
           "enabled": {
@@ -17137,26 +17202,26 @@
           "origin"
         ]
       },
-      "Oauth2SettingsDto": {
+      "Oauth2SettingsDto2": {
         "type": "object",
         "properties": {
           "github": {
-            "$ref": "#/components/schemas/RemnawaveSettingsOauth2SettingsGithubDto"
+            "$ref": "#/components/schemas/Oauth2SettingsGithubDto"
           },
           "pocketid": {
-            "$ref": "#/components/schemas/RemnawaveSettingsOauth2SettingsPocketidDto"
+            "$ref": "#/components/schemas/Oauth2SettingsPocketidDto"
           },
           "yandex": {
-            "$ref": "#/components/schemas/RemnawaveSettingsOauth2SettingsGithubDto"
+            "$ref": "#/components/schemas/Oauth2SettingsGithubDto"
           },
           "keycloak": {
-            "$ref": "#/components/schemas/RemnawaveSettingsOauth2SettingsKeycloakDto"
+            "$ref": "#/components/schemas/Oauth2SettingsKeycloakDto"
           },
           "generic": {
-            "$ref": "#/components/schemas/RemnawaveSettingsOauth2SettingsGenericDto"
+            "$ref": "#/components/schemas/Oauth2SettingsGenericDto"
           },
           "telegram": {
-            "$ref": "#/components/schemas/RemnawaveSettingsOauth2SettingsTelegramDto"
+            "$ref": "#/components/schemas/Oauth2SettingsTelegramDto"
           }
         },
         "required": [
@@ -17176,7 +17241,7 @@
           "enabled"
         ]
       },
-      "BrandingSettingsDto": {
+      "BrandingSettingsDto3": {
         "type": "object",
         "properties": {
           "title": {
@@ -17243,7 +17308,7 @@
             "$ref": "#/components/schemas/GetStatusResponseAuthenticationDto"
           },
           "branding": {
-            "$ref": "#/components/schemas/GetStatusResponseBrandingDto"
+            "$ref": "#/components/schemas/BrandingSettingsDto2"
           }
         },
         "required": [
@@ -17284,7 +17349,7 @@
           "configs"
         ]
       },
-      "GetSubscriptionPageConfigResponse": {
+      "SubscriptionPageConfigDto2": {
         "type": "object",
         "properties": {
           "uuid": {
@@ -17681,7 +17746,7 @@
           "resources": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/GetApiTokenScopesResponseResourcesDto"
+              "$ref": "#/components/schemas/ResourceScopesDto"
             }
           }
         },
@@ -18031,7 +18096,7 @@
           "nodePlugins"
         ]
       },
-      "GetNodePluginResponse": {
+      "NodePluginDto2": {
         "type": "object",
         "properties": {
           "uuid": {
@@ -18460,7 +18525,7 @@
           "keypairs"
         ]
       },
-      "ResponseRulesConfigDto": {
+      "ResponseRulesConfigDto2": {
         "type": "object",
         "properties": {
           "version": {
@@ -18572,7 +18637,7 @@
             "type": "boolean"
           },
           "customRemarks": {
-            "$ref": "#/components/schemas/CustomRemarksDto"
+            "$ref": "#/components/schemas/CustomRemarksDto2"
           },
           "happAnnounce": {
             "type": "string",
@@ -18593,10 +18658,10 @@
             "type": "boolean"
           },
           "responseRules": {
-            "$ref": "#/components/schemas/SubscriptionSettingsResponseRulesDto"
+            "$ref": "#/components/schemas/ResponseRulesConfigDto"
           },
           "hwidSettings": {
-            "$ref": "#/components/schemas/ExternalSquadHwidSettingsDto"
+            "$ref": "#/components/schemas/HwidSettingsDto"
           },
           "createdAt": {
             "type": "string",
@@ -18626,7 +18691,7 @@
           "updatedAt"
         ]
       },
-      "HwidSettingsDto": {
+      "HwidSettingsDto2": {
         "type": "object",
         "properties": {
           "enabled": {
@@ -18821,6 +18886,577 @@
           "user",
           "report"
         ]
+      },
+      "PasswordAuthSettingsDto2": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "enabled"
+        ],
+        "nullable": true,
+        "deprecated": true
+      },
+      "APITokenEndpointKind": {
+        "type": "string",
+        "enum": [
+          "read",
+          "write"
+        ],
+        "x-enum-varnames": [
+          "READ",
+          "WRITE"
+        ],
+        "x-enumNames": [
+          "READ",
+          "WRITE"
+        ],
+        "description": "API token endpoint access kind.",
+        "deprecated": true
+      },
+      "MihomoIpVersion": {
+        "type": "string",
+        "enum": [
+          "dual",
+          "ipv4",
+          "ipv6",
+          "ipv4-prefer",
+          "ipv6-prefer"
+        ],
+        "x-enum-varnames": [
+          "DUAL",
+          "IPV4",
+          "IPV6",
+          "IPV4_PREFER",
+          "IPV6_PREFER"
+        ],
+        "x-enumNames": [
+          "DUAL",
+          "IPV4",
+          "IPV6",
+          "IPV4_PREFER",
+          "IPV6_PREFER"
+        ],
+        "description": "Mihomo IP version preference.",
+        "deprecated": true
+      },
+      "GetApiTokenScopesResponseResourcesEndpointsDto": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "kind": {
+            "$ref": "#/components/schemas/APITokenEndpointKind"
+          },
+          "method": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "key",
+          "kind",
+          "method",
+          "path",
+          "description"
+        ],
+        "deprecated": true
+      },
+      "ExternalSquadHwidSettingsDto": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "fallbackDeviceLimit": {
+            "type": "number"
+          },
+          "maxDevicesAnnounce": {
+            "type": "string",
+            "maxLength": 200,
+            "nullable": true
+          }
+        },
+        "required": [
+          "enabled",
+          "fallbackDeviceLimit",
+          "maxDevicesAnnounce"
+        ],
+        "nullable": true,
+        "deprecated": true
+      },
+      "ExternalSquadCustomRemarksDto": {
+        "type": "object",
+        "properties": {
+          "expiredUsers": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "limitedUsers": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "disabledUsers": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "emptyHosts": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "HWIDMaxDevicesExceeded": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "HWIDNotSupported": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "expiredUsers",
+          "limitedUsers",
+          "disabledUsers",
+          "emptyHosts",
+          "HWIDMaxDevicesExceeded",
+          "HWIDNotSupported"
+        ],
+        "nullable": true,
+        "deprecated": true
+      },
+      "RemnawaveSettingsOauth2SettingsGithubDto": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "clientId": {
+            "type": "string",
+            "nullable": true
+          },
+          "clientSecret": {
+            "type": "string",
+            "nullable": true
+          },
+          "allowedEmails": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "enabled",
+          "clientId",
+          "clientSecret",
+          "allowedEmails"
+        ],
+        "deprecated": true
+      },
+      "RemnawaveSettingsOauth2SettingsPocketidDto": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "clientId": {
+            "type": "string",
+            "nullable": true
+          },
+          "clientSecret": {
+            "type": "string",
+            "nullable": true
+          },
+          "plainDomain": {
+            "type": "string",
+            "nullable": true
+          },
+          "allowedEmails": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "enabled",
+          "clientId",
+          "clientSecret",
+          "plainDomain",
+          "allowedEmails"
+        ],
+        "deprecated": true
+      },
+      "RemnawaveSettingsOauth2SettingsKeycloakDto": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "realm": {
+            "type": "string",
+            "nullable": true
+          },
+          "clientId": {
+            "type": "string",
+            "nullable": true
+          },
+          "clientSecret": {
+            "type": "string",
+            "nullable": true
+          },
+          "frontendDomain": {
+            "type": "string",
+            "nullable": true
+          },
+          "keycloakDomain": {
+            "type": "string",
+            "nullable": true
+          },
+          "allowedEmails": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "enabled",
+          "realm",
+          "clientId",
+          "clientSecret",
+          "frontendDomain",
+          "keycloakDomain",
+          "allowedEmails"
+        ],
+        "default": {
+          "enabled": false,
+          "realm": null,
+          "frontendDomain": null,
+          "keycloakDomain": null,
+          "clientId": null,
+          "clientSecret": null,
+          "allowedEmails": []
+        },
+        "deprecated": true
+      },
+      "RemnawaveSettingsOauth2SettingsGenericDto": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "clientId": {
+            "type": "string",
+            "nullable": true
+          },
+          "clientSecret": {
+            "type": "string",
+            "nullable": true
+          },
+          "withPkce": {
+            "type": "boolean"
+          },
+          "authorizationUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "tokenUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "frontendDomain": {
+            "type": "string",
+            "nullable": true
+          },
+          "allowedEmails": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "enabled",
+          "clientId",
+          "clientSecret",
+          "withPkce",
+          "authorizationUrl",
+          "tokenUrl",
+          "frontendDomain",
+          "allowedEmails"
+        ],
+        "default": {
+          "enabled": false,
+          "frontendDomain": null,
+          "tokenUrl": null,
+          "clientId": null,
+          "clientSecret": null,
+          "withPkce": false,
+          "authorizationUrl": null,
+          "allowedEmails": []
+        },
+        "deprecated": true
+      },
+      "RemnawaveSettingsOauth2SettingsTelegramDto": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "clientId": {
+            "type": "string",
+            "nullable": true
+          },
+          "clientSecret": {
+            "type": "string",
+            "nullable": true
+          },
+          "allowedIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "frontendDomain": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": [
+          "enabled",
+          "clientId",
+          "clientSecret",
+          "allowedIds",
+          "frontendDomain"
+        ],
+        "default": {
+          "enabled": false,
+          "clientId": null,
+          "clientSecret": null,
+          "allowedIds": [],
+          "frontendDomain": null
+        },
+        "deprecated": true
+      },
+      "GetApiTokenScopesResponseResourcesDto": {
+        "type": "object",
+        "properties": {
+          "resource": {
+            "type": "string"
+          },
+          "resourceScopes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "endpoints": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetApiTokenScopesResponseResourcesEndpointsDto"
+            }
+          }
+        },
+        "required": [
+          "resource",
+          "resourceScopes",
+          "endpoints"
+        ],
+        "deprecated": true
+      },
+      "RemnawaveSettingsPasskeySettingsDto": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "rpId": {
+            "type": "string",
+            "nullable": true
+          },
+          "origin": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": [
+          "enabled",
+          "rpId",
+          "origin"
+        ],
+        "nullable": true,
+        "deprecated": true
+      },
+      "RemnawaveSettingsOauth2SettingsDto": {
+        "type": "object",
+        "properties": {
+          "github": {
+            "$ref": "#/components/schemas/RemnawaveSettingsOauth2SettingsGithubDto"
+          },
+          "pocketid": {
+            "$ref": "#/components/schemas/RemnawaveSettingsOauth2SettingsPocketidDto"
+          },
+          "yandex": {
+            "$ref": "#/components/schemas/RemnawaveSettingsOauth2SettingsGithubDto"
+          },
+          "keycloak": {
+            "$ref": "#/components/schemas/RemnawaveSettingsOauth2SettingsKeycloakDto"
+          },
+          "generic": {
+            "$ref": "#/components/schemas/RemnawaveSettingsOauth2SettingsGenericDto"
+          },
+          "telegram": {
+            "$ref": "#/components/schemas/RemnawaveSettingsOauth2SettingsTelegramDto"
+          }
+        },
+        "required": [
+          "github",
+          "pocketid",
+          "yandex"
+        ],
+        "nullable": true,
+        "deprecated": true
+      },
+      "RemnawaveSettingsBrandingSettingsDto": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "logoUrl": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true
+          }
+        },
+        "required": [
+          "title",
+          "logoUrl"
+        ],
+        "nullable": true,
+        "deprecated": true
+      },
+      "GetStatusResponseBrandingDto": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "logoUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": [
+          "title",
+          "logoUrl"
+        ],
+        "deprecated": true
+      },
+      "SubscriptionSettingsResponseRulesDto": {
+        "type": "object",
+        "properties": {
+          "version": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ResponseRulesVersion"
+              }
+            ],
+            "description": "{\"title\":\"Response Rules Config Version\",\"markdownDescription\":\"Version of the **response rules** config. Currently supported version is **1**.\"}"
+          },
+          "settings": {
+            "$ref": "#/components/schemas/ResponseRuleSettingsDto"
+          },
+          "rules": {
+            "description": "{\"title\":\"Response Rules\",\"markdownDescription\":\"Array of **response rules**. Rules are evaluated in order and the first rule that matches is applied. If no rule matches, request will be blocked by default.\\n\\n**Example:**\\n```json\\n[\\n  {\\n    \\\"name\\\": \\\"Blank rule\\\",\\n    \\\"description\\\": \\\"Blank rule\\\",\\n    \\\"operator\\\": \\\"AND\\\",\\n    \\\"enabled\\\": true,\\n    \\\"conditions\\\": [],\\n    \\\"responseType\\\": \\\"BLOCK\\\",\\n    \\\"responseModifications\\\": {\\n      \\\"headers\\\": []\\n    }\\n  }\\n]\\n```\",\"defaultSnippets\":[]}",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ResponseRuleDto"
+            }
+          }
+        },
+        "required": [
+          "version",
+          "rules"
+        ],
+        "nullable": true,
+        "deprecated": true
+      },
+      "GetSubscriptionPageConfigResponse": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "viewPosition": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "config": {}
+        },
+        "required": [
+          "uuid",
+          "viewPosition",
+          "name",
+          "config"
+        ],
+        "deprecated": true
+      },
+      "GetNodePluginResponse": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "viewPosition": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "pluginConfig": {}
+        },
+        "required": [
+          "uuid",
+          "viewPosition",
+          "name",
+          "pluginConfig"
+        ],
+        "deprecated": true
       },
       "TCPHeaderHTTPRequestDto": {
         "type": "object",

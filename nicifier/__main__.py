@@ -10,7 +10,13 @@ from retcon.openapi.parser import decode_openapi_document
 
 from error_codes import collect_error_codes
 from nicifcations_schema import DEFAULT_SCHEMA_PATH, read_schema, write_schema
-from nicifier_schema import JSONObject, nicificate_openapi_document, update_enum_nicifications
+from nicifier_schema import (
+    JSONObject,
+    nicificate_openapi_document,
+    update_enum_nicifications,
+    update_object_nicifications,
+)
+from source_cache import build_schema_index, resolve_source_dir
 
 REMNA_OAS_URL: typing.Final = "https://cdn.remna.st/docs/openapi.json"
 REMNA_OAS_DOCUMENT_TYPE: typing.Final = "json"
@@ -72,12 +78,19 @@ def nicification_specification(
     error_codes = collect_error_codes(github_token=github_token)
     previous_document: JSONObject | None = None
     previous_output_path = previous_output_path or output_path
+
     if previous_output_path.exists():
         previous_document = decode_raw_openapi(previous_output_path.read_bytes())
 
     if update_nicifications:
-        enum_updates = update_enum_nicifications(raw_document, nicifications)
-        if enum_updates:
+        changed = bool(update_enum_nicifications(raw_document, nicifications))
+        changed |= _update_object_nicifications_from_source(
+            raw_document,
+            nicifications,
+            github_token=github_token,
+        )
+
+        if changed:
             write_schema(nicifications, nicifications_path)
 
     result = nicificate_openapi_document(
@@ -93,6 +106,39 @@ def nicification_specification(
     write_json(diff_path or pathlib.Path(nicifications.diff.output_path), result.diff)
 
     return 0
+
+
+def _update_object_nicifications_from_source(
+    raw_document: JSONObject,
+    nicifications: typing.Any,
+    /,
+    *,
+    github_token: str | None,
+) -> bool:
+    version = _document_version(raw_document)
+    source_dir = resolve_source_dir(
+        version,
+        cache_dir=nicifications.remnawave.source.cache_dir,
+        repository=nicifications.remnawave.source.repository,
+        github_token=github_token,
+    )
+    if source_dir is None:
+        return False
+
+    schema_index = build_schema_index(source_dir)
+    return bool(update_object_nicifications(raw_document, nicifications, schema_index))
+
+
+def _document_version(raw_document: JSONObject, /) -> str | None:
+    info = raw_document.get("info")
+
+    if isinstance(info, dict):
+        version = info.get("version")
+
+        if isinstance(version, str) and version:
+            return version
+
+    return None
 
 
 def build_arg_parser() -> ArgumentParser:

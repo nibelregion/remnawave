@@ -1,7 +1,7 @@
 {
   "summary": {
     "deprecated_before": 0,
-    "deprecated_after": 135,
+    "deprecated_after": 156,
     "enum_updates": 209,
     "error_code_updates": 6,
     "hoisted_error_responses": 24,
@@ -10,11 +10,25 @@
     "inlined_map_object_components": 0,
     "hoisted_inline_objects": 243,
     "reused_inline_objects": 416,
-    "deprecation_annotations": 136
+    "deprecation_annotations": 155
   },
   "deprecated": {
     "before": [],
     "after": [
+      {
+        "kind": "enum",
+        "schema": "APITokenEndpointKind",
+        "pointer": "#/components/schemas/APITokenEndpointKind"
+      },
+      {
+        "kind": "enum",
+        "schema": "MihomoIpVersion",
+        "pointer": "#/components/schemas/MihomoIpVersion"
+      },
+      {
+        "kind": "schema",
+        "schema": "APITokenEndpointKind"
+      },
       {
         "kind": "schema",
         "schema": "CreateInfraBillingHistoryRecordResponseRecordsDto"
@@ -30,6 +44,14 @@
       {
         "kind": "schema",
         "schema": "DebugSrrMatcherRequestResponseRulesDto"
+      },
+      {
+        "kind": "schema",
+        "schema": "ExternalSquadCustomRemarksDto"
+      },
+      {
+        "kind": "schema",
+        "schema": "ExternalSquadHwidSettingsDto"
       },
       {
         "kind": "schema",
@@ -125,6 +147,14 @@
       },
       {
         "kind": "schema",
+        "schema": "GetApiTokenScopesResponseResourcesDto"
+      },
+      {
+        "kind": "schema",
+        "schema": "GetApiTokenScopesResponseResourcesEndpointsDto"
+      },
+      {
+        "kind": "schema",
         "schema": "GetBandwidthStatsResponse"
       },
       {
@@ -214,6 +244,10 @@
       {
         "kind": "schema",
         "schema": "GetMetadataResponse"
+      },
+      {
+        "kind": "schema",
+        "schema": "GetNodePluginResponse"
       },
       {
         "kind": "schema",
@@ -337,6 +371,14 @@
       },
       {
         "kind": "schema",
+        "schema": "GetStatusResponseBrandingDto"
+      },
+      {
+        "kind": "schema",
+        "schema": "GetSubscriptionPageConfigResponse"
+      },
+      {
+        "kind": "schema",
         "schema": "GetSubscriptionPageConfigsResponseConfigsDto"
       },
       {
@@ -449,6 +491,46 @@
       },
       {
         "kind": "schema",
+        "schema": "MihomoIpVersion"
+      },
+      {
+        "kind": "schema",
+        "schema": "PasswordAuthSettingsDto2"
+      },
+      {
+        "kind": "schema",
+        "schema": "RemnawaveSettingsBrandingSettingsDto"
+      },
+      {
+        "kind": "schema",
+        "schema": "RemnawaveSettingsOauth2SettingsDto"
+      },
+      {
+        "kind": "schema",
+        "schema": "RemnawaveSettingsOauth2SettingsGenericDto"
+      },
+      {
+        "kind": "schema",
+        "schema": "RemnawaveSettingsOauth2SettingsGithubDto"
+      },
+      {
+        "kind": "schema",
+        "schema": "RemnawaveSettingsOauth2SettingsKeycloakDto"
+      },
+      {
+        "kind": "schema",
+        "schema": "RemnawaveSettingsOauth2SettingsPocketidDto"
+      },
+      {
+        "kind": "schema",
+        "schema": "RemnawaveSettingsOauth2SettingsTelegramDto"
+      },
+      {
+        "kind": "schema",
+        "schema": "RemnawaveSettingsPasskeySettingsDto"
+      },
+      {
+        "kind": "schema",
         "schema": "RemnawaveWebhookTorrentBlockerEventsDataNodeConfigProfileActiveInboundsDto"
       },
       {
@@ -490,6 +572,10 @@
       {
         "kind": "schema",
         "schema": "ShadowsocksProtocolDto"
+      },
+      {
+        "kind": "schema",
+        "schema": "SubscriptionSettingsResponseRulesDto"
       },
       {
         "kind": "schema",
@@ -558,6 +644,20 @@
     ],
     "added": [
       {
+        "kind": "enum",
+        "schema": "APITokenEndpointKind",
+        "pointer": "#/components/schemas/APITokenEndpointKind"
+      },
+      {
+        "kind": "enum",
+        "schema": "MihomoIpVersion",
+        "pointer": "#/components/schemas/MihomoIpVersion"
+      },
+      {
+        "kind": "schema",
+        "schema": "APITokenEndpointKind"
+      },
+      {
         "kind": "schema",
         "schema": "CreateInfraBillingHistoryRecordResponseRecordsDto"
       },
@@ -572,6 +672,14 @@
       {
         "kind": "schema",
         "schema": "DebugSrrMatcherRequestResponseRulesDto"
+      },
+      {
+        "kind": "schema",
+        "schema": "ExternalSquadCustomRemarksDto"
+      },
+      {
+        "kind": "schema",
+        "schema": "ExternalSquadHwidSettingsDto"
       },
       {
         "kind": "schema",
@@ -667,6 +775,14 @@
       },
       {
         "kind": "schema",
+        "schema": "GetApiTokenScopesResponseResourcesDto"
+      },
+      {
+        "kind": "schema",
+        "schema": "GetApiTokenScopesResponseResourcesEndpointsDto"
+      },
+      {
+        "kind": "schema",
         "schema": "GetBandwidthStatsResponse"
       },
       {
@@ -756,6 +872,10 @@
       {
         "kind": "schema",
         "schema": "GetMetadataResponse"
+      },
+      {
+        "kind": "schema",
+        "schema": "GetNodePluginResponse"
       },
       {
         "kind": "schema",
@@ -879,6 +999,14 @@
       },
       {
         "kind": "schema",
+        "schema": "GetStatusResponseBrandingDto"
+      },
+      {
+        "kind": "schema",
+        "schema": "GetSubscriptionPageConfigResponse"
+      },
+      {
+        "kind": "schema",
         "schema": "GetSubscriptionPageConfigsResponseConfigsDto"
       },
       {
@@ -991,6 +1119,46 @@
       },
       {
         "kind": "schema",
+        "schema": "MihomoIpVersion"
+      },
+      {
+        "kind": "schema",
+        "schema": "PasswordAuthSettingsDto2"
+      },
+      {
+        "kind": "schema",
+        "schema": "RemnawaveSettingsBrandingSettingsDto"
+      },
+      {
+        "kind": "schema",
+        "schema": "RemnawaveSettingsOauth2SettingsDto"
+      },
+      {
+        "kind": "schema",
+        "schema": "RemnawaveSettingsOauth2SettingsGenericDto"
+      },
+      {
+        "kind": "schema",
+        "schema": "RemnawaveSettingsOauth2SettingsGithubDto"
+      },
+      {
+        "kind": "schema",
+        "schema": "RemnawaveSettingsOauth2SettingsKeycloakDto"
+      },
+      {
+        "kind": "schema",
+        "schema": "RemnawaveSettingsOauth2SettingsPocketidDto"
+      },
+      {
+        "kind": "schema",
+        "schema": "RemnawaveSettingsOauth2SettingsTelegramDto"
+      },
+      {
+        "kind": "schema",
+        "schema": "RemnawaveSettingsPasskeySettingsDto"
+      },
+      {
+        "kind": "schema",
         "schema": "RemnawaveWebhookTorrentBlockerEventsDataNodeConfigProfileActiveInboundsDto"
       },
       {
@@ -1032,6 +1200,10 @@
       {
         "kind": "schema",
         "schema": "ShadowsocksProtocolDto"
+      },
+      {
+        "kind": "schema",
+        "schema": "SubscriptionSettingsResponseRulesDto"
       },
       {
         "kind": "schema",
@@ -1603,7 +1775,7 @@
       "schema": "Flow",
       "nicification": "proxy_configs_options_flow",
       "members": [
-        "NOTHING",
+        "NONE",
         "XTLS_RPRX_VISION",
         "XTLS_RPRX_VISION_UDP443"
       ],
@@ -1696,7 +1868,7 @@
     },
     {
       "action": "component",
-      "schema": "APITokenEndpointKind",
+      "schema": "APITokenScope",
       "nicification": "api_token_endpoint_kind",
       "members": [
         "READ",
@@ -1709,7 +1881,7 @@
     },
     {
       "action": "component",
-      "schema": "MihomoIpVersion",
+      "schema": "MihomoIPVersion",
       "nicification": "mihomo_ip_version",
       "members": [
         "DUAL",
@@ -2545,10 +2717,10 @@
     },
     {
       "action": "referenced",
-      "schema": "MihomoIpVersion",
+      "schema": "MihomoIPVersion",
       "nicification": "mihomo_ip_version",
       "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/properties/clientOverrides/properties/mihomoIpVersion",
-      "ref": "#/components/schemas/MihomoIpVersion",
+      "ref": "#/components/schemas/MihomoIPVersion",
       "values": [
         "dual",
         "ipv4",
@@ -2664,10 +2836,10 @@
     },
     {
       "action": "referenced",
-      "schema": "APITokenEndpointKind",
+      "schema": "APITokenScope",
       "nicification": "api_token_endpoint_kind",
       "source": "#/components/schemas/GetApiTokenScopesResponseDto/properties/response/properties/resources/items/properties/endpoints/items/properties/kind",
-      "ref": "#/components/schemas/APITokenEndpointKind",
+      "ref": "#/components/schemas/APITokenScope",
       "values": [
         "read",
         "write"
@@ -2855,10 +3027,10 @@
     },
     {
       "action": "referenced",
-      "schema": "MihomoIpVersion",
+      "schema": "MihomoIPVersion",
       "nicification": "mihomo_ip_version",
       "source": "#/components/schemas/CreateHostRequestDto/properties/mihomoIpVersion",
-      "ref": "#/components/schemas/MihomoIpVersion",
+      "ref": "#/components/schemas/MihomoIPVersion",
       "values": [
         "dual",
         "ipv4",
@@ -2911,10 +3083,10 @@
     },
     {
       "action": "referenced",
-      "schema": "MihomoIpVersion",
+      "schema": "MihomoIPVersion",
       "nicification": "mihomo_ip_version",
       "source": "#/components/schemas/CreateHostResponseDto/properties/response/properties/mihomoIpVersion",
-      "ref": "#/components/schemas/MihomoIpVersion",
+      "ref": "#/components/schemas/MihomoIPVersion",
       "values": [
         "dual",
         "ipv4",
@@ -2967,10 +3139,10 @@
     },
     {
       "action": "referenced",
-      "schema": "MihomoIpVersion",
+      "schema": "MihomoIPVersion",
       "nicification": "mihomo_ip_version",
       "source": "#/components/schemas/UpdateHostRequestDto/properties/mihomoIpVersion",
-      "ref": "#/components/schemas/MihomoIpVersion",
+      "ref": "#/components/schemas/MihomoIPVersion",
       "values": [
         "dual",
         "ipv4",
@@ -3023,10 +3195,10 @@
     },
     {
       "action": "referenced",
-      "schema": "MihomoIpVersion",
+      "schema": "MihomoIPVersion",
       "nicification": "mihomo_ip_version",
       "source": "#/components/schemas/UpdateHostResponseDto/properties/response/properties/mihomoIpVersion",
-      "ref": "#/components/schemas/MihomoIpVersion",
+      "ref": "#/components/schemas/MihomoIPVersion",
       "values": [
         "dual",
         "ipv4",
@@ -3079,10 +3251,10 @@
     },
     {
       "action": "referenced",
-      "schema": "MihomoIpVersion",
+      "schema": "MihomoIPVersion",
       "nicification": "mihomo_ip_version",
       "source": "#/components/schemas/GetAllHostsResponseDto/properties/response/items/properties/mihomoIpVersion",
-      "ref": "#/components/schemas/MihomoIpVersion",
+      "ref": "#/components/schemas/MihomoIPVersion",
       "values": [
         "dual",
         "ipv4",
@@ -3135,10 +3307,10 @@
     },
     {
       "action": "referenced",
-      "schema": "MihomoIpVersion",
+      "schema": "MihomoIPVersion",
       "nicification": "mihomo_ip_version",
       "source": "#/components/schemas/GetOneHostResponseDto/properties/response/properties/mihomoIpVersion",
-      "ref": "#/components/schemas/MihomoIpVersion",
+      "ref": "#/components/schemas/MihomoIPVersion",
       "values": [
         "dual",
         "ipv4",
@@ -3191,10 +3363,10 @@
     },
     {
       "action": "referenced",
-      "schema": "MihomoIpVersion",
+      "schema": "MihomoIPVersion",
       "nicification": "mihomo_ip_version",
       "source": "#/components/schemas/BulkDeleteHostsResponseDto/properties/response/items/properties/mihomoIpVersion",
-      "ref": "#/components/schemas/MihomoIpVersion",
+      "ref": "#/components/schemas/MihomoIPVersion",
       "values": [
         "dual",
         "ipv4",
@@ -3247,10 +3419,10 @@
     },
     {
       "action": "referenced",
-      "schema": "MihomoIpVersion",
+      "schema": "MihomoIPVersion",
       "nicification": "mihomo_ip_version",
       "source": "#/components/schemas/BulkDisableHostsResponseDto/properties/response/items/properties/mihomoIpVersion",
-      "ref": "#/components/schemas/MihomoIpVersion",
+      "ref": "#/components/schemas/MihomoIPVersion",
       "values": [
         "dual",
         "ipv4",
@@ -3303,10 +3475,10 @@
     },
     {
       "action": "referenced",
-      "schema": "MihomoIpVersion",
+      "schema": "MihomoIPVersion",
       "nicification": "mihomo_ip_version",
       "source": "#/components/schemas/BulkEnableHostsResponseDto/properties/response/items/properties/mihomoIpVersion",
-      "ref": "#/components/schemas/MihomoIpVersion",
+      "ref": "#/components/schemas/MihomoIPVersion",
       "values": [
         "dual",
         "ipv4",
@@ -3359,10 +3531,10 @@
     },
     {
       "action": "referenced",
-      "schema": "MihomoIpVersion",
+      "schema": "MihomoIPVersion",
       "nicification": "mihomo_ip_version",
       "source": "#/components/schemas/UpdateManyHostsRequestDto/properties/mihomoIpVersion",
-      "ref": "#/components/schemas/MihomoIpVersion",
+      "ref": "#/components/schemas/MihomoIPVersion",
       "values": [
         "dual",
         "ipv4",
@@ -3415,10 +3587,10 @@
     },
     {
       "action": "referenced",
-      "schema": "MihomoIpVersion",
+      "schema": "MihomoIPVersion",
       "nicification": "mihomo_ip_version",
       "source": "#/components/schemas/UpdateManyHostsResponseDto/properties/response/items/properties/mihomoIpVersion",
-      "ref": "#/components/schemas/MihomoIpVersion",
+      "ref": "#/components/schemas/MihomoIPVersion",
       "values": [
         "dual",
         "ipv4",
@@ -8392,21 +8564,21 @@
     },
     {
       "action": "reused",
-      "name": "BulkDeleteHostsResponse",
+      "name": "HostsDto",
       "target": "HostsDto",
       "nicification": "BulkDeleteHostsResponse",
       "field": "response",
       "parent": "BulkDeleteHostsResponseDto",
       "source": "#/components/schemas/BulkDeleteHostsResponseDto/properties/response/items",
-      "signature": "b458d2f81f1e20c74783c56daadbb62f0a8af51cd85c45dc6004a2abaaeb6f2e"
+      "signature": "33024ad70ce0c37864365fe100b3ac3445c5927579da690ecb1b1c893c6fb479"
     },
     {
       "action": "reused",
-      "name": "BulkDeleteHostsResponseInboundDto",
+      "name": "HostsInboundDto",
       "target": "HostsInboundDto",
       "nicification": "BulkDeleteHostsResponseInboundDto",
       "field": "inbound",
-      "parent": "BulkDeleteHostsResponse",
+      "parent": "HostsDto",
       "source": "#/components/schemas/BulkDeleteHostsResponseDto/properties/response/items/properties/inbound",
       "signature": "8efbc2c29a4791e7d9c36f0e39e91188df128e3126155d82d2e917cd05cf1b77"
     },
@@ -8432,41 +8604,41 @@
     },
     {
       "action": "reused",
-      "name": "BulkDisableHostsResponse",
+      "name": "HostsDto",
       "target": "HostsDto",
       "nicification": "BulkDisableHostsResponse",
       "field": "response",
       "parent": "BulkDisableHostsResponseDto",
       "source": "#/components/schemas/BulkDisableHostsResponseDto/properties/response/items",
-      "signature": "b458d2f81f1e20c74783c56daadbb62f0a8af51cd85c45dc6004a2abaaeb6f2e"
+      "signature": "33024ad70ce0c37864365fe100b3ac3445c5927579da690ecb1b1c893c6fb479"
     },
     {
       "action": "reused",
-      "name": "BulkDisableHostsResponseInboundDto",
+      "name": "HostsInboundDto",
       "target": "HostsInboundDto",
       "nicification": "BulkDisableHostsResponseInboundDto",
       "field": "inbound",
-      "parent": "BulkDisableHostsResponse",
+      "parent": "HostsDto",
       "source": "#/components/schemas/BulkDisableHostsResponseDto/properties/response/items/properties/inbound",
       "signature": "8efbc2c29a4791e7d9c36f0e39e91188df128e3126155d82d2e917cd05cf1b77"
     },
     {
       "action": "reused",
-      "name": "BulkEnableHostsResponse",
+      "name": "HostsDto",
       "target": "HostsDto",
       "nicification": "BulkEnableHostsResponse",
       "field": "response",
       "parent": "BulkEnableHostsResponseDto",
       "source": "#/components/schemas/BulkEnableHostsResponseDto/properties/response/items",
-      "signature": "b458d2f81f1e20c74783c56daadbb62f0a8af51cd85c45dc6004a2abaaeb6f2e"
+      "signature": "33024ad70ce0c37864365fe100b3ac3445c5927579da690ecb1b1c893c6fb479"
     },
     {
       "action": "reused",
-      "name": "BulkEnableHostsResponseInboundDto",
+      "name": "HostsInboundDto",
       "target": "HostsInboundDto",
       "nicification": "BulkEnableHostsResponseInboundDto",
       "field": "inbound",
-      "parent": "BulkEnableHostsResponse",
+      "parent": "HostsDto",
       "source": "#/components/schemas/BulkEnableHostsResponseDto/properties/response/items/properties/inbound",
       "signature": "8efbc2c29a4791e7d9c36f0e39e91188df128e3126155d82d2e917cd05cf1b77"
     },
@@ -8562,8 +8734,8 @@
     },
     {
       "action": "reused",
-      "name": "CloneNodePluginResponse",
-      "target": "GetNodePluginResponse",
+      "name": "NodePluginDto",
+      "target": "NodePluginDto2",
       "nicification": "CloneNodePluginResponse",
       "field": "response",
       "parent": "CloneNodePluginResponseDto",
@@ -8572,8 +8744,8 @@
     },
     {
       "action": "reused",
-      "name": "CloneSubscriptionPageConfigResponse",
-      "target": "GetSubscriptionPageConfigResponse",
+      "name": "SubscriptionPageConfigDto",
+      "target": "SubscriptionPageConfigDto2",
       "nicification": "CloneSubscriptionPageConfigResponse",
       "field": "response",
       "parent": "CloneSubscriptionPageConfigResponseDto",
@@ -8602,7 +8774,7 @@
     },
     {
       "action": "reused",
-      "name": "CreateConfigProfileResponse",
+      "name": "ConfigProfileDto",
       "target": "ConfigProfileDto",
       "nicification": "CreateConfigProfileResponse",
       "field": "response",
@@ -8612,91 +8784,91 @@
     },
     {
       "action": "reused",
-      "name": "CreateConfigProfileResponseInboundsDto",
+      "name": "ConfigProfileInboundsDto",
       "target": "ConfigProfileInboundsDto",
       "nicification": "CreateConfigProfileResponseInboundsDto",
       "field": "inbounds",
-      "parent": "CreateConfigProfileResponse",
+      "parent": "ConfigProfileDto",
       "source": "#/components/schemas/CreateConfigProfileResponseDto/properties/response/properties/inbounds/items",
       "signature": "61a395b1c445955df25d2cfa7aa277c20e559d2f99317c61ea75e3a7a30337bd"
     },
     {
       "action": "reused",
-      "name": "CreateConfigProfileResponseNodesDto",
+      "name": "ConfigProfileNodesDto",
       "target": "InfraBillingAvailableNodeDto",
       "nicification": "CreateConfigProfileResponseNodesDto",
       "field": "nodes",
-      "parent": "CreateConfigProfileResponse",
+      "parent": "ConfigProfileDto",
       "source": "#/components/schemas/CreateConfigProfileResponseDto/properties/response/properties/nodes/items",
       "signature": "7d7938083d36703da7f3c59b6cd8e56344f3b1bd03a1afaed37ff18c505ed261"
     },
     {
       "action": "reused",
-      "name": "CreateExternalSquadResponse",
+      "name": "ExternalSquadDto",
       "target": "ExternalSquadDto",
       "nicification": "CreateExternalSquadResponse",
       "field": "response",
       "parent": "CreateExternalSquadResponseDto",
       "source": "#/components/schemas/CreateExternalSquadResponseDto/properties/response",
-      "signature": "63b6da4c73acd16694efb46f6f2bff5692f5a79de0a7f62f524ab4a9e495602a"
+      "signature": "50baa80493052a12b8df77cd9d034250960f1418f2d171d7a3ec6c51c4031d71"
     },
     {
       "action": "reused",
-      "name": "CreateExternalSquadResponseCustomRemarksDto",
-      "target": "ExternalSquadCustomRemarksDto",
+      "name": "CustomRemarksDto",
+      "target": "CustomRemarksDto",
       "nicification": "CreateExternalSquadResponseCustomRemarksDto",
       "field": "customRemarks",
-      "parent": "CreateExternalSquadResponse",
+      "parent": "ExternalSquadDto",
       "source": "#/components/schemas/CreateExternalSquadResponseDto/properties/response/properties/customRemarks",
       "signature": "0de2abfb0d30a1fc4acac91171a7c8fa1abe61825b01da0ef28054bff423c775"
     },
     {
       "action": "reused",
-      "name": "CreateExternalSquadResponseHostOverridesDto",
+      "name": "ExternalSquadHostOverridesDto",
       "target": "NullableExternalSquadHostOverridesDto",
       "nicification": "CreateExternalSquadResponseHostOverridesDto",
       "field": "hostOverrides",
-      "parent": "CreateExternalSquadResponse",
+      "parent": "ExternalSquadDto",
       "source": "#/components/schemas/CreateExternalSquadResponseDto/properties/response/properties/hostOverrides",
       "signature": "9a9ca2780eb641b8517e1481790f9a9e9ecb3dbc3bc140ed3fceb0d52f58f4df"
     },
     {
       "action": "reused",
-      "name": "CreateExternalSquadResponseHwidSettingsDto",
-      "target": "ExternalSquadHwidSettingsDto",
+      "name": "HwidSettingsDto",
+      "target": "HwidSettingsDto",
       "nicification": "CreateExternalSquadResponseHwidSettingsDto",
       "field": "hwidSettings",
-      "parent": "CreateExternalSquadResponse",
+      "parent": "ExternalSquadDto",
       "source": "#/components/schemas/CreateExternalSquadResponseDto/properties/response/properties/hwidSettings",
       "signature": "d9eb2adfba247c91fa1a93ade75dc1892d31d1ef04954ac698964edffe248b03"
     },
     {
       "action": "reused",
-      "name": "CreateExternalSquadResponseInfoDto",
+      "name": "ExternalSquadInfoDto",
       "target": "ExternalSquadInfoDto",
       "nicification": "CreateExternalSquadResponseInfoDto",
       "field": "info",
-      "parent": "CreateExternalSquadResponse",
+      "parent": "ExternalSquadDto",
       "source": "#/components/schemas/CreateExternalSquadResponseDto/properties/response/properties/info",
       "signature": "039e78ac0c627c9a8f4cc387a7e34722435ac0654fcb562052608da5fe847065"
     },
     {
       "action": "reused",
-      "name": "CreateExternalSquadResponseSubscriptionSettingsDto",
+      "name": "ExternalSquadSubscriptionSettingsDto",
       "target": "NullableExternalSquadSubscriptionSettingsDto",
       "nicification": "CreateExternalSquadResponseSubscriptionSettingsDto",
       "field": "subscriptionSettings",
-      "parent": "CreateExternalSquadResponse",
+      "parent": "ExternalSquadDto",
       "source": "#/components/schemas/CreateExternalSquadResponseDto/properties/response/properties/subscriptionSettings",
       "signature": "8a91d29cd3610b4260e8eb181d62bd74603f43d03409c8156ef148d39ec39bd2"
     },
     {
       "action": "reused",
-      "name": "CreateExternalSquadResponseTemplatesDto",
+      "name": "ExternalSquadTemplatesDto",
       "target": "ExternalSquadTemplatesDto",
       "nicification": "CreateExternalSquadResponseTemplatesDto",
       "field": "templates",
-      "parent": "CreateExternalSquadResponse",
+      "parent": "ExternalSquadDto",
       "source": "#/components/schemas/CreateExternalSquadResponseDto/properties/response/properties/templates/items",
       "signature": "7e5c6e3095b05e7aff8a6dd41b47285d3663fe0e3512ff9bee142e7122f8a657"
     },
@@ -8712,21 +8884,21 @@
     },
     {
       "action": "reused",
-      "name": "CreateHostResponse",
+      "name": "HostsDto",
       "target": "HostsDto",
       "nicification": "CreateHostResponse",
       "field": "response",
       "parent": "CreateHostResponseDto",
       "source": "#/components/schemas/CreateHostResponseDto/properties/response",
-      "signature": "b458d2f81f1e20c74783c56daadbb62f0a8af51cd85c45dc6004a2abaaeb6f2e"
+      "signature": "33024ad70ce0c37864365fe100b3ac3445c5927579da690ecb1b1c893c6fb479"
     },
     {
       "action": "reused",
-      "name": "CreateHostResponseInboundDto",
+      "name": "HostsInboundDto",
       "target": "HostsInboundDto",
       "nicification": "CreateHostResponseInboundDto",
       "field": "inbound",
-      "parent": "CreateHostResponse",
+      "parent": "HostsDto",
       "source": "#/components/schemas/CreateHostResponseDto/properties/response/properties/inbound",
       "signature": "8efbc2c29a4791e7d9c36f0e39e91188df128e3126155d82d2e917cd05cf1b77"
     },
@@ -8782,7 +8954,7 @@
     },
     {
       "action": "reused",
-      "name": "CreateInfraBillingNodeResponseBillingNodesDto",
+      "name": "InfraBillingNodeDto",
       "target": "InfraBillingNodeDto",
       "nicification": "CreateInfraBillingNodeResponseBillingNodesDto",
       "field": "billingNodes",
@@ -8792,21 +8964,21 @@
     },
     {
       "action": "reused",
-      "name": "CreateInfraBillingNodeResponseBillingNodesNodeDto",
+      "name": "InfraBillingNodeNodeDto",
       "target": "InfraBillingNodeNodeDto",
       "nicification": "CreateInfraBillingNodeResponseNodeDto",
       "field": "node",
-      "parent": "CreateInfraBillingNodeResponseBillingNodesDto",
+      "parent": "InfraBillingNodeDto",
       "source": "#/components/schemas/CreateInfraBillingNodeResponseDto/properties/response/properties/billingNodes/items/properties/node",
       "signature": "93e23d057f1b14f547a478825856f2c2d4593e744e52ea2f256ccf9b6255c4b6"
     },
     {
       "action": "reused",
-      "name": "CreateInfraBillingNodeResponseBillingNodesProviderDto",
+      "name": "InfraBillingNodeProviderDto",
       "target": "InfraBillingNodeProviderDto",
       "nicification": "CreateInfraBillingNodeResponseProviderDto",
       "field": "provider",
-      "parent": "CreateInfraBillingNodeResponseBillingNodesDto",
+      "parent": "InfraBillingNodeDto",
       "source": "#/components/schemas/CreateInfraBillingNodeResponseDto/properties/response/properties/billingNodes/items/properties/provider",
       "signature": "490c82b96d32bea1dde7797626fa0d086ca0bf85a0c9ccd6be1c1aeb2e1ea767"
     },
@@ -8822,7 +8994,7 @@
     },
     {
       "action": "reused",
-      "name": "CreateInfraProviderResponse",
+      "name": "InfraProviderDto",
       "target": "InfraProviderDto",
       "nicification": "CreateInfraProviderResponse",
       "field": "response",
@@ -8832,37 +9004,37 @@
     },
     {
       "action": "reused",
-      "name": "CreateInfraProviderResponseBillingHistoryDto",
+      "name": "InfraProviderBillingHistoryDto",
       "target": "InfraProviderBillingHistoryDto",
       "nicification": "CreateInfraProviderResponseBillingHistoryDto",
       "field": "billingHistory",
-      "parent": "CreateInfraProviderResponse",
+      "parent": "InfraProviderDto",
       "source": "#/components/schemas/CreateInfraProviderResponseDto/properties/response/properties/billingHistory",
       "signature": "19bb70b91a1c10f71b9c24f0484ec48be69ebff0257569de442ceb40b2f71f56"
     },
     {
       "action": "reused",
-      "name": "CreateInfraProviderResponseBillingNodesDto",
+      "name": "InfraProviderBillingNodesDto",
       "target": "InfraProviderBillingNodesDto",
       "nicification": "CreateInfraProviderResponseBillingNodesDto",
       "field": "billingNodes",
-      "parent": "CreateInfraProviderResponse",
+      "parent": "InfraProviderDto",
       "source": "#/components/schemas/CreateInfraProviderResponseDto/properties/response/properties/billingNodes/items",
       "signature": "b70d94a57815693dc89b9d05997b0ec152f4de5e747cc2334ced88ed74cd69de"
     },
     {
       "action": "reused",
-      "name": "CreateInfraProviderResponseBillingNodesDetailsDto",
+      "name": "InfraProviderBillingNodesDetailsDto",
       "target": "InfraProviderBillingNodesDetailsDto",
       "nicification": "CreateInfraProviderResponseDetailsDto",
       "field": "details",
-      "parent": "CreateInfraProviderResponseBillingNodesDto",
+      "parent": "InfraProviderBillingNodesDto",
       "source": "#/components/schemas/CreateInfraProviderResponseDto/properties/response/properties/billingNodes/items/properties/details",
       "signature": "92b391f731e7080063d012c687ece2ded9b133dda77ec4a57fd67567b0709ea9"
     },
     {
       "action": "reused",
-      "name": "CreateInternalSquadResponse",
+      "name": "InternalSquadDto",
       "target": "InternalSquadDto",
       "nicification": "CreateInternalSquadResponse",
       "field": "response",
@@ -8872,27 +9044,27 @@
     },
     {
       "action": "reused",
-      "name": "CreateInternalSquadResponseInboundsDto",
+      "name": "ConfigProfileInboundsDto",
       "target": "ConfigProfileInboundsDto",
       "nicification": "CreateInternalSquadResponseInboundsDto",
       "field": "inbounds",
-      "parent": "CreateInternalSquadResponse",
+      "parent": "InternalSquadDto",
       "source": "#/components/schemas/CreateInternalSquadResponseDto/properties/response/properties/inbounds/items",
       "signature": "61a395b1c445955df25d2cfa7aa277c20e559d2f99317c61ea75e3a7a30337bd"
     },
     {
       "action": "reused",
-      "name": "CreateInternalSquadResponseInfoDto",
+      "name": "InternalSquadInfoDto",
       "target": "InternalSquadInfoDto",
       "nicification": "CreateInternalSquadResponseInfoDto",
       "field": "info",
-      "parent": "CreateInternalSquadResponse",
+      "parent": "InternalSquadDto",
       "source": "#/components/schemas/CreateInternalSquadResponseDto/properties/response/properties/info",
       "signature": "8c666c1cc3b1ee033d4f16462a030e61cde1ac19164eb4a99bf64a4168155770"
     },
     {
       "action": "reused",
-      "name": "CreateNodePluginResponse",
+      "name": "NodePluginDto",
       "target": "NodePluginDto",
       "nicification": "CreateNodePluginResponse",
       "field": "response",
@@ -8912,7 +9084,7 @@
     },
     {
       "action": "reused",
-      "name": "CreateNodeResponse",
+      "name": "NodesDto",
       "target": "NodesDto",
       "nicification": "CreateNodeResponse",
       "field": "response",
@@ -8922,81 +9094,81 @@
     },
     {
       "action": "reused",
-      "name": "CreateNodeResponseConfigProfileDto",
+      "name": "NodesConfigProfileDto",
       "target": "NodesConfigProfileDto",
       "nicification": "CreateNodeResponseConfigProfileDto",
       "field": "configProfile",
-      "parent": "CreateNodeResponse",
+      "parent": "NodesDto",
       "source": "#/components/schemas/CreateNodeResponseDto/properties/response/properties/configProfile",
       "signature": "9f5c186ecff42bfd89cfd2bb7c7e4c73f6e3331585549b0fdb0cedc15d78c599"
     },
     {
       "action": "reused",
-      "name": "CreateNodeResponseConfigProfileActiveInboundsDto",
+      "name": "ConfigProfileInboundsDto",
       "target": "ConfigProfileInboundsDto",
       "nicification": "CreateNodeResponseActiveInboundsDto",
       "field": "activeInbounds",
-      "parent": "CreateNodeResponseConfigProfileDto",
+      "parent": "NodesConfigProfileDto",
       "source": "#/components/schemas/CreateNodeResponseDto/properties/response/properties/configProfile/properties/activeInbounds/items",
       "signature": "61a395b1c445955df25d2cfa7aa277c20e559d2f99317c61ea75e3a7a30337bd"
     },
     {
       "action": "reused",
-      "name": "CreateNodeResponseProviderDto",
+      "name": "PartialInfraProviderDto",
       "target": "PartialInfraProviderDto",
       "nicification": "CreateNodeResponseProviderDto",
       "field": "provider",
-      "parent": "CreateNodeResponse",
+      "parent": "NodesDto",
       "source": "#/components/schemas/CreateNodeResponseDto/properties/response/properties/provider",
       "signature": "dfa62d176586533aa8aaffec7a722c3087c9440f4573a94b9942b4d7c55a6a66"
     },
     {
       "action": "reused",
-      "name": "CreateNodeResponseSystemDto",
+      "name": "NodeSystemDto",
       "target": "NodeSystemDto",
       "nicification": "CreateNodeResponseSystemDto",
       "field": "system",
-      "parent": "CreateNodeResponse",
+      "parent": "NodesDto",
       "source": "#/components/schemas/CreateNodeResponseDto/properties/response/properties/system",
       "signature": "612edc2c9144df51157f7dd40f21fd65b4d91c12e6b5d626467a0838180f1caa"
     },
     {
       "action": "reused",
-      "name": "CreateNodeResponseSystemInfoDto",
+      "name": "NodeSystemInfoDto",
       "target": "NodeSystemInfoDto",
       "nicification": "CreateNodeResponseInfoDto",
       "field": "info",
-      "parent": "CreateNodeResponseSystemDto",
+      "parent": "NodeSystemDto",
       "source": "#/components/schemas/CreateNodeResponseDto/properties/response/properties/system/properties/info",
       "signature": "7dcd91f9ee867adfc3baf367edd92b99b59214a98074e74b113009c8db36980b"
     },
     {
       "action": "reused",
-      "name": "CreateNodeResponseSystemStatsDto",
+      "name": "NodeSystemStatsDto",
       "target": "NodeSystemStatsDto",
       "nicification": "CreateNodeResponseStatsDto",
       "field": "stats",
-      "parent": "CreateNodeResponseSystemDto",
+      "parent": "NodeSystemDto",
       "source": "#/components/schemas/CreateNodeResponseDto/properties/response/properties/system/properties/stats",
       "signature": "f8cb79ad1e403c4eca5d77fc64ccd79325518a9835a856bd4ffff0a1bd725f79"
     },
     {
       "action": "reused",
-      "name": "CreateNodeResponseSystemStatsInterfaceDto",
+      "name": "NetworkInterfaceDto",
       "target": "NetworkInterfaceDto",
       "nicification": "CreateNodeResponseInterfaceDto",
       "field": "interface",
-      "parent": "CreateNodeResponseSystemStatsDto",
+      "parent": "NodeSystemStatsDto",
       "source": "#/components/schemas/CreateNodeResponseDto/properties/response/properties/system/properties/stats/properties/interface",
       "signature": "dfb36121d4800ac1b7a194748ced4dee0bede773770ae2421433a7d06fcd5786"
     },
     {
       "action": "reused",
-      "name": "CreateNodeResponseVersionsDto",
+      "name": "NodesVersionsDto",
       "target": "NodesVersionsDto",
       "nicification": "CreateNodeResponseVersionsDto",
       "field": "versions",
-      "parent": "CreateNodeResponse",
+      "parent": "NodesDto",
       "source": "#/components/schemas/CreateNodeResponseDto/properties/response/properties/versions",
       "signature": "3efbd6bbbdb5fed0c734787646dd4539074b8e5d414515fe14eb517e50127af1"
     },
@@ -9022,7 +9194,7 @@
     },
     {
       "action": "reused",
-      "name": "CreateSnippetResponseSnippetsDto",
+      "name": "SnippetsDto",
       "target": "SnippetsDto",
       "nicification": "CreateSnippetResponseSnippetsDto",
       "field": "snippets",
@@ -9032,7 +9204,7 @@
     },
     {
       "action": "reused",
-      "name": "CreateSubscriptionPageConfigResponse",
+      "name": "SubscriptionPageConfigDto",
       "target": "SubscriptionPageConfigDto",
       "nicification": "CreateSubscriptionPageConfigResponse",
       "field": "response",
@@ -9042,7 +9214,7 @@
     },
     {
       "action": "reused",
-      "name": "CreateSubscriptionTemplateResponse",
+      "name": "SubscriptionTemplateDto",
       "target": "SubscriptionTemplateDto",
       "nicification": "CreateSubscriptionTemplateResponse",
       "field": "response",
@@ -9062,7 +9234,7 @@
     },
     {
       "action": "reused",
-      "name": "CreateUserHwidDeviceResponseDevicesDto",
+      "name": "HwidUserDeviceDto",
       "target": "HwidUserDeviceDto",
       "nicification": "CreateUserHwidDeviceResponseDevicesDto",
       "field": "devices",
@@ -9082,7 +9254,7 @@
     },
     {
       "action": "reused",
-      "name": "CreateUserResponseActiveInternalSquadsDto",
+      "name": "BaseInternalSquadDto",
       "target": "BaseInternalSquadDto",
       "nicification": "CreateUserResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
@@ -9092,7 +9264,7 @@
     },
     {
       "action": "reused",
-      "name": "CreateUserResponseUserTrafficDto",
+      "name": "UserTrafficDto",
       "target": "UserTrafficDto",
       "nicification": "CreateUserResponseUserTrafficDto",
       "field": "userTraffic",
@@ -9102,8 +9274,8 @@
     },
     {
       "action": "hoisted",
-      "name": "ResponseRulesConfigDto",
-      "target": "ResponseRulesConfigDto",
+      "name": "ResponseRulesConfigDto2",
+      "target": "ResponseRulesConfigDto2",
       "nicification": "DebugSrrMatcherRequestResponseRulesDto",
       "field": "responseRules",
       "parent": "DebugSrrMatcherRequestDto",
@@ -9142,7 +9314,7 @@
     },
     {
       "action": "reused",
-      "name": "ResponseRulesConfigRulesResponseModificationsEncryptionDto",
+      "name": "ResponseRuleEncryptionDto",
       "target": "ResponseRuleEncryptionDto",
       "nicification": "DebugSrrMatcherRequestEncryptionDto",
       "field": "encryption",
@@ -9212,7 +9384,7 @@
     },
     {
       "action": "reused",
-      "name": "DebugSrrMatcherResponseMatchedRuleResponseModificationsEncryptionDto",
+      "name": "ResponseRuleEncryptionDto",
       "target": "ResponseRuleEncryptionDto",
       "nicification": "DebugSrrMatcherResponseEncryptionDto",
       "field": "encryption",
@@ -9242,7 +9414,7 @@
     },
     {
       "action": "reused",
-      "name": "DeleteAllUserHwidDevicesResponseDevicesDto",
+      "name": "HwidUserDeviceDto",
       "target": "HwidUserDeviceDto",
       "nicification": "DeleteAllUserHwidDevicesResponseDevicesDto",
       "field": "devices",
@@ -9292,7 +9464,7 @@
     },
     {
       "action": "reused",
-      "name": "DeleteInfraBillingHistoryRecordByUuidResponseRecordsDto",
+      "name": "InfraBillingHistoryRecordDto",
       "target": "InfraBillingHistoryRecordDto",
       "nicification": "DeleteInfraBillingHistoryRecordByUuidResponseRecordsDto",
       "field": "records",
@@ -9302,11 +9474,11 @@
     },
     {
       "action": "reused",
-      "name": "DeleteInfraBillingHistoryRecordByUuidResponseRecordsProviderDto",
+      "name": "InfraBillingHistoryRecordProviderDto",
       "target": "InfraBillingHistoryRecordProviderDto",
       "nicification": "DeleteInfraBillingHistoryRecordByUuidResponseProviderDto",
       "field": "provider",
-      "parent": "DeleteInfraBillingHistoryRecordByUuidResponseRecordsDto",
+      "parent": "InfraBillingHistoryRecordDto",
       "source": "#/components/schemas/DeleteInfraBillingHistoryRecordByUuidResponseDto/properties/response/properties/records/items/properties/provider",
       "signature": "73ad040c9f1ef710dc4656a9277321cf6192f7e8dbf42b2a3703a0393f6e23d2"
     },
@@ -9332,7 +9504,7 @@
     },
     {
       "action": "reused",
-      "name": "DeleteInfraBillingNodeByUuidResponseBillingNodesDto",
+      "name": "InfraBillingNodeDto",
       "target": "InfraBillingNodeDto",
       "nicification": "DeleteInfraBillingNodeByUuidResponseBillingNodesDto",
       "field": "billingNodes",
@@ -9342,21 +9514,21 @@
     },
     {
       "action": "reused",
-      "name": "DeleteInfraBillingNodeByUuidResponseBillingNodesNodeDto",
+      "name": "InfraBillingNodeNodeDto",
       "target": "InfraBillingNodeNodeDto",
       "nicification": "DeleteInfraBillingNodeByUuidResponseNodeDto",
       "field": "node",
-      "parent": "DeleteInfraBillingNodeByUuidResponseBillingNodesDto",
+      "parent": "InfraBillingNodeDto",
       "source": "#/components/schemas/DeleteInfraBillingNodeByUuidResponseDto/properties/response/properties/billingNodes/items/properties/node",
       "signature": "93e23d057f1b14f547a478825856f2c2d4593e744e52ea2f256ccf9b6255c4b6"
     },
     {
       "action": "reused",
-      "name": "DeleteInfraBillingNodeByUuidResponseBillingNodesProviderDto",
+      "name": "InfraBillingNodeProviderDto",
       "target": "InfraBillingNodeProviderDto",
       "nicification": "DeleteInfraBillingNodeByUuidResponseProviderDto",
       "field": "provider",
-      "parent": "DeleteInfraBillingNodeByUuidResponseBillingNodesDto",
+      "parent": "InfraBillingNodeDto",
       "source": "#/components/schemas/DeleteInfraBillingNodeByUuidResponseDto/properties/response/properties/billingNodes/items/properties/provider",
       "signature": "490c82b96d32bea1dde7797626fa0d086ca0bf85a0c9ccd6be1c1aeb2e1ea767"
     },
@@ -9442,7 +9614,7 @@
     },
     {
       "action": "reused",
-      "name": "DeleteSnippetResponseSnippetsDto",
+      "name": "SnippetsDto",
       "target": "SnippetsDto",
       "nicification": "DeleteSnippetResponseSnippetsDto",
       "field": "snippets",
@@ -9482,7 +9654,7 @@
     },
     {
       "action": "reused",
-      "name": "DeleteUserHwidDeviceResponseDevicesDto",
+      "name": "HwidUserDeviceDto",
       "target": "HwidUserDeviceDto",
       "nicification": "DeleteUserHwidDeviceResponseDevicesDto",
       "field": "devices",
@@ -9502,7 +9674,7 @@
     },
     {
       "action": "reused",
-      "name": "DisableNodeResponse",
+      "name": "NodesDto",
       "target": "NodesDto",
       "nicification": "DisableNodeResponse",
       "field": "response",
@@ -9512,81 +9684,81 @@
     },
     {
       "action": "reused",
-      "name": "DisableNodeResponseConfigProfileDto",
+      "name": "NodesConfigProfileDto",
       "target": "NodesConfigProfileDto",
       "nicification": "DisableNodeResponseConfigProfileDto",
       "field": "configProfile",
-      "parent": "DisableNodeResponse",
+      "parent": "NodesDto",
       "source": "#/components/schemas/DisableNodeResponseDto/properties/response/properties/configProfile",
       "signature": "9f5c186ecff42bfd89cfd2bb7c7e4c73f6e3331585549b0fdb0cedc15d78c599"
     },
     {
       "action": "reused",
-      "name": "DisableNodeResponseConfigProfileActiveInboundsDto",
+      "name": "ConfigProfileInboundsDto",
       "target": "ConfigProfileInboundsDto",
       "nicification": "DisableNodeResponseActiveInboundsDto",
       "field": "activeInbounds",
-      "parent": "DisableNodeResponseConfigProfileDto",
+      "parent": "NodesConfigProfileDto",
       "source": "#/components/schemas/DisableNodeResponseDto/properties/response/properties/configProfile/properties/activeInbounds/items",
       "signature": "61a395b1c445955df25d2cfa7aa277c20e559d2f99317c61ea75e3a7a30337bd"
     },
     {
       "action": "reused",
-      "name": "DisableNodeResponseProviderDto",
+      "name": "PartialInfraProviderDto",
       "target": "PartialInfraProviderDto",
       "nicification": "DisableNodeResponseProviderDto",
       "field": "provider",
-      "parent": "DisableNodeResponse",
+      "parent": "NodesDto",
       "source": "#/components/schemas/DisableNodeResponseDto/properties/response/properties/provider",
       "signature": "dfa62d176586533aa8aaffec7a722c3087c9440f4573a94b9942b4d7c55a6a66"
     },
     {
       "action": "reused",
-      "name": "DisableNodeResponseSystemDto",
+      "name": "NodeSystemDto",
       "target": "NodeSystemDto",
       "nicification": "DisableNodeResponseSystemDto",
       "field": "system",
-      "parent": "DisableNodeResponse",
+      "parent": "NodesDto",
       "source": "#/components/schemas/DisableNodeResponseDto/properties/response/properties/system",
       "signature": "612edc2c9144df51157f7dd40f21fd65b4d91c12e6b5d626467a0838180f1caa"
     },
     {
       "action": "reused",
-      "name": "DisableNodeResponseSystemInfoDto",
+      "name": "NodeSystemInfoDto",
       "target": "NodeSystemInfoDto",
       "nicification": "DisableNodeResponseInfoDto",
       "field": "info",
-      "parent": "DisableNodeResponseSystemDto",
+      "parent": "NodeSystemDto",
       "source": "#/components/schemas/DisableNodeResponseDto/properties/response/properties/system/properties/info",
       "signature": "7dcd91f9ee867adfc3baf367edd92b99b59214a98074e74b113009c8db36980b"
     },
     {
       "action": "reused",
-      "name": "DisableNodeResponseSystemStatsDto",
+      "name": "NodeSystemStatsDto",
       "target": "NodeSystemStatsDto",
       "nicification": "DisableNodeResponseStatsDto",
       "field": "stats",
-      "parent": "DisableNodeResponseSystemDto",
+      "parent": "NodeSystemDto",
       "source": "#/components/schemas/DisableNodeResponseDto/properties/response/properties/system/properties/stats",
       "signature": "f8cb79ad1e403c4eca5d77fc64ccd79325518a9835a856bd4ffff0a1bd725f79"
     },
     {
       "action": "reused",
-      "name": "DisableNodeResponseSystemStatsInterfaceDto",
+      "name": "NetworkInterfaceDto",
       "target": "NetworkInterfaceDto",
       "nicification": "DisableNodeResponseInterfaceDto",
       "field": "interface",
-      "parent": "DisableNodeResponseSystemStatsDto",
+      "parent": "NodeSystemStatsDto",
       "source": "#/components/schemas/DisableNodeResponseDto/properties/response/properties/system/properties/stats/properties/interface",
       "signature": "dfb36121d4800ac1b7a194748ced4dee0bede773770ae2421433a7d06fcd5786"
     },
     {
       "action": "reused",
-      "name": "DisableNodeResponseVersionsDto",
+      "name": "NodesVersionsDto",
       "target": "NodesVersionsDto",
       "nicification": "DisableNodeResponseVersionsDto",
       "field": "versions",
-      "parent": "DisableNodeResponse",
+      "parent": "NodesDto",
       "source": "#/components/schemas/DisableNodeResponseDto/properties/response/properties/versions",
       "signature": "3efbd6bbbdb5fed0c734787646dd4539074b8e5d414515fe14eb517e50127af1"
     },
@@ -9602,7 +9774,7 @@
     },
     {
       "action": "reused",
-      "name": "DisableUserResponseActiveInternalSquadsDto",
+      "name": "BaseInternalSquadDto",
       "target": "BaseInternalSquadDto",
       "nicification": "DisableUserResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
@@ -9612,7 +9784,7 @@
     },
     {
       "action": "reused",
-      "name": "DisableUserResponseUserTrafficDto",
+      "name": "UserTrafficDto",
       "target": "UserTrafficDto",
       "nicification": "DisableUserResponseUserTrafficDto",
       "field": "userTraffic",
@@ -9672,7 +9844,7 @@
     },
     {
       "action": "reused",
-      "name": "EnableNodeResponse",
+      "name": "NodesDto",
       "target": "NodesDto",
       "nicification": "EnableNodeResponse",
       "field": "response",
@@ -9682,81 +9854,81 @@
     },
     {
       "action": "reused",
-      "name": "EnableNodeResponseConfigProfileDto",
+      "name": "NodesConfigProfileDto",
       "target": "NodesConfigProfileDto",
       "nicification": "EnableNodeResponseConfigProfileDto",
       "field": "configProfile",
-      "parent": "EnableNodeResponse",
+      "parent": "NodesDto",
       "source": "#/components/schemas/EnableNodeResponseDto/properties/response/properties/configProfile",
       "signature": "9f5c186ecff42bfd89cfd2bb7c7e4c73f6e3331585549b0fdb0cedc15d78c599"
     },
     {
       "action": "reused",
-      "name": "EnableNodeResponseConfigProfileActiveInboundsDto",
+      "name": "ConfigProfileInboundsDto",
       "target": "ConfigProfileInboundsDto",
       "nicification": "EnableNodeResponseActiveInboundsDto",
       "field": "activeInbounds",
-      "parent": "EnableNodeResponseConfigProfileDto",
+      "parent": "NodesConfigProfileDto",
       "source": "#/components/schemas/EnableNodeResponseDto/properties/response/properties/configProfile/properties/activeInbounds/items",
       "signature": "61a395b1c445955df25d2cfa7aa277c20e559d2f99317c61ea75e3a7a30337bd"
     },
     {
       "action": "reused",
-      "name": "EnableNodeResponseProviderDto",
+      "name": "PartialInfraProviderDto",
       "target": "PartialInfraProviderDto",
       "nicification": "EnableNodeResponseProviderDto",
       "field": "provider",
-      "parent": "EnableNodeResponse",
+      "parent": "NodesDto",
       "source": "#/components/schemas/EnableNodeResponseDto/properties/response/properties/provider",
       "signature": "dfa62d176586533aa8aaffec7a722c3087c9440f4573a94b9942b4d7c55a6a66"
     },
     {
       "action": "reused",
-      "name": "EnableNodeResponseSystemDto",
+      "name": "NodeSystemDto",
       "target": "NodeSystemDto",
       "nicification": "EnableNodeResponseSystemDto",
       "field": "system",
-      "parent": "EnableNodeResponse",
+      "parent": "NodesDto",
       "source": "#/components/schemas/EnableNodeResponseDto/properties/response/properties/system",
       "signature": "612edc2c9144df51157f7dd40f21fd65b4d91c12e6b5d626467a0838180f1caa"
     },
     {
       "action": "reused",
-      "name": "EnableNodeResponseSystemInfoDto",
+      "name": "NodeSystemInfoDto",
       "target": "NodeSystemInfoDto",
       "nicification": "EnableNodeResponseInfoDto",
       "field": "info",
-      "parent": "EnableNodeResponseSystemDto",
+      "parent": "NodeSystemDto",
       "source": "#/components/schemas/EnableNodeResponseDto/properties/response/properties/system/properties/info",
       "signature": "7dcd91f9ee867adfc3baf367edd92b99b59214a98074e74b113009c8db36980b"
     },
     {
       "action": "reused",
-      "name": "EnableNodeResponseSystemStatsDto",
+      "name": "NodeSystemStatsDto",
       "target": "NodeSystemStatsDto",
       "nicification": "EnableNodeResponseStatsDto",
       "field": "stats",
-      "parent": "EnableNodeResponseSystemDto",
+      "parent": "NodeSystemDto",
       "source": "#/components/schemas/EnableNodeResponseDto/properties/response/properties/system/properties/stats",
       "signature": "f8cb79ad1e403c4eca5d77fc64ccd79325518a9835a856bd4ffff0a1bd725f79"
     },
     {
       "action": "reused",
-      "name": "EnableNodeResponseSystemStatsInterfaceDto",
+      "name": "NetworkInterfaceDto",
       "target": "NetworkInterfaceDto",
       "nicification": "EnableNodeResponseInterfaceDto",
       "field": "interface",
-      "parent": "EnableNodeResponseSystemStatsDto",
+      "parent": "NodeSystemStatsDto",
       "source": "#/components/schemas/EnableNodeResponseDto/properties/response/properties/system/properties/stats/properties/interface",
       "signature": "dfb36121d4800ac1b7a194748ced4dee0bede773770ae2421433a7d06fcd5786"
     },
     {
       "action": "reused",
-      "name": "EnableNodeResponseVersionsDto",
+      "name": "NodesVersionsDto",
       "target": "NodesVersionsDto",
       "nicification": "EnableNodeResponseVersionsDto",
       "field": "versions",
-      "parent": "EnableNodeResponse",
+      "parent": "NodesDto",
       "source": "#/components/schemas/EnableNodeResponseDto/properties/response/properties/versions",
       "signature": "3efbd6bbbdb5fed0c734787646dd4539074b8e5d414515fe14eb517e50127af1"
     },
@@ -9772,7 +9944,7 @@
     },
     {
       "action": "reused",
-      "name": "EnableUserResponseActiveInternalSquadsDto",
+      "name": "BaseInternalSquadDto",
       "target": "BaseInternalSquadDto",
       "nicification": "EnableUserResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
@@ -9782,7 +9954,7 @@
     },
     {
       "action": "reused",
-      "name": "EnableUserResponseUserTrafficDto",
+      "name": "UserTrafficDto",
       "target": "UserTrafficDto",
       "nicification": "EnableUserResponseUserTrafficDto",
       "field": "userTraffic",
@@ -9968,7 +10140,7 @@
       "field": "response",
       "parent": "GetAllHostsResponseDto",
       "source": "#/components/schemas/GetAllHostsResponseDto/properties/response/items",
-      "signature": "b458d2f81f1e20c74783c56daadbb62f0a8af51cd85c45dc6004a2abaaeb6f2e"
+      "signature": "33024ad70ce0c37864365fe100b3ac3445c5927579da690ecb1b1c893c6fb479"
     },
     {
       "action": "hoisted",
@@ -10022,7 +10194,7 @@
     },
     {
       "action": "reused",
-      "name": "GetAllNodesResponse",
+      "name": "NodesDto",
       "target": "NodesDto",
       "nicification": "GetAllNodesResponse",
       "field": "response",
@@ -10032,81 +10204,81 @@
     },
     {
       "action": "reused",
-      "name": "GetAllNodesResponseConfigProfileDto",
+      "name": "NodesConfigProfileDto",
       "target": "NodesConfigProfileDto",
       "nicification": "GetAllNodesResponseConfigProfileDto",
       "field": "configProfile",
-      "parent": "GetAllNodesResponse",
+      "parent": "NodesDto",
       "source": "#/components/schemas/GetAllNodesResponseDto/properties/response/items/properties/configProfile",
       "signature": "9f5c186ecff42bfd89cfd2bb7c7e4c73f6e3331585549b0fdb0cedc15d78c599"
     },
     {
       "action": "reused",
-      "name": "GetAllNodesResponseConfigProfileActiveInboundsDto",
+      "name": "ConfigProfileInboundsDto",
       "target": "ConfigProfileInboundsDto",
       "nicification": "GetAllNodesResponseActiveInboundsDto",
       "field": "activeInbounds",
-      "parent": "GetAllNodesResponseConfigProfileDto",
+      "parent": "NodesConfigProfileDto",
       "source": "#/components/schemas/GetAllNodesResponseDto/properties/response/items/properties/configProfile/properties/activeInbounds/items",
       "signature": "61a395b1c445955df25d2cfa7aa277c20e559d2f99317c61ea75e3a7a30337bd"
     },
     {
       "action": "reused",
-      "name": "GetAllNodesResponseProviderDto",
+      "name": "PartialInfraProviderDto",
       "target": "PartialInfraProviderDto",
       "nicification": "GetAllNodesResponseProviderDto",
       "field": "provider",
-      "parent": "GetAllNodesResponse",
+      "parent": "NodesDto",
       "source": "#/components/schemas/GetAllNodesResponseDto/properties/response/items/properties/provider",
       "signature": "dfa62d176586533aa8aaffec7a722c3087c9440f4573a94b9942b4d7c55a6a66"
     },
     {
       "action": "reused",
-      "name": "GetAllNodesResponseSystemDto",
+      "name": "NodeSystemDto",
       "target": "NodeSystemDto",
       "nicification": "GetAllNodesResponseSystemDto",
       "field": "system",
-      "parent": "GetAllNodesResponse",
+      "parent": "NodesDto",
       "source": "#/components/schemas/GetAllNodesResponseDto/properties/response/items/properties/system",
       "signature": "612edc2c9144df51157f7dd40f21fd65b4d91c12e6b5d626467a0838180f1caa"
     },
     {
       "action": "reused",
-      "name": "GetAllNodesResponseSystemInfoDto",
+      "name": "NodeSystemInfoDto",
       "target": "NodeSystemInfoDto",
       "nicification": "GetAllNodesResponseInfoDto",
       "field": "info",
-      "parent": "GetAllNodesResponseSystemDto",
+      "parent": "NodeSystemDto",
       "source": "#/components/schemas/GetAllNodesResponseDto/properties/response/items/properties/system/properties/info",
       "signature": "7dcd91f9ee867adfc3baf367edd92b99b59214a98074e74b113009c8db36980b"
     },
     {
       "action": "reused",
-      "name": "GetAllNodesResponseSystemStatsDto",
+      "name": "NodeSystemStatsDto",
       "target": "NodeSystemStatsDto",
       "nicification": "GetAllNodesResponseStatsDto",
       "field": "stats",
-      "parent": "GetAllNodesResponseSystemDto",
+      "parent": "NodeSystemDto",
       "source": "#/components/schemas/GetAllNodesResponseDto/properties/response/items/properties/system/properties/stats",
       "signature": "f8cb79ad1e403c4eca5d77fc64ccd79325518a9835a856bd4ffff0a1bd725f79"
     },
     {
       "action": "reused",
-      "name": "GetAllNodesResponseSystemStatsInterfaceDto",
+      "name": "NetworkInterfaceDto",
       "target": "NetworkInterfaceDto",
       "nicification": "GetAllNodesResponseInterfaceDto",
       "field": "interface",
-      "parent": "GetAllNodesResponseSystemStatsDto",
+      "parent": "NodeSystemStatsDto",
       "source": "#/components/schemas/GetAllNodesResponseDto/properties/response/items/properties/system/properties/stats/properties/interface",
       "signature": "dfb36121d4800ac1b7a194748ced4dee0bede773770ae2421433a7d06fcd5786"
     },
     {
       "action": "reused",
-      "name": "GetAllNodesResponseVersionsDto",
+      "name": "NodesVersionsDto",
       "target": "NodesVersionsDto",
       "nicification": "GetAllNodesResponseVersionsDto",
       "field": "versions",
-      "parent": "GetAllNodesResponse",
+      "parent": "NodesDto",
       "source": "#/components/schemas/GetAllNodesResponseDto/properties/response/items/properties/versions",
       "signature": "3efbd6bbbdb5fed0c734787646dd4539074b8e5d414515fe14eb517e50127af1"
     },
@@ -10228,27 +10400,27 @@
       "field": "response",
       "parent": "GetApiTokenScopesResponseDto",
       "source": "#/components/schemas/GetApiTokenScopesResponseDto/properties/response",
-      "signature": "026c29771da8ea73d6d778bbca725acb430b886adef80f85f884ec9a62439204"
+      "signature": "81345e62fa6feb0790ec250e86c0783d5fceb269755dffcef1c5fbe183602fea"
     },
     {
       "action": "hoisted",
-      "name": "GetApiTokenScopesResponseResourcesDto",
-      "target": "GetApiTokenScopesResponseResourcesDto",
+      "name": "ResourceScopesDto",
+      "target": "ResourceScopesDto",
       "nicification": "ResourcesDto",
       "field": "resources",
       "parent": "GetApiTokenScopesResponse",
       "source": "#/components/schemas/GetApiTokenScopesResponseDto/properties/response/properties/resources/items",
-      "signature": "45abee8e6242133aa298fb9cd28c2d730e0d6cb8684989c4fba0fa83d0f41f5e"
+      "signature": "222fb20940d9e3ab8e1d961c0dbcd47e22f7a857b78c452db8531c8ff4b34df3"
     },
     {
       "action": "hoisted",
-      "name": "GetApiTokenScopesResponseResourcesEndpointsDto",
-      "target": "GetApiTokenScopesResponseResourcesEndpointsDto",
+      "name": "EndpointScopeDto",
+      "target": "EndpointScopeDto",
       "nicification": "EndpointsDto",
       "field": "endpoints",
-      "parent": "GetApiTokenScopesResponseResourcesDto",
+      "parent": "ResourceScopesDto",
       "source": "#/components/schemas/GetApiTokenScopesResponseDto/properties/response/properties/resources/items/properties/endpoints/items",
-      "signature": "3fc6806293ba5f2325b209249cae65d839f79190489e7d30c8f372d52f658028"
+      "signature": "887c5b7927a3f00d4ffaa4398985012ca3ce14d4ffed4fa70ed6db7dde18752b"
     },
     {
       "action": "hoisted",
@@ -10262,7 +10434,7 @@
     },
     {
       "action": "reused",
-      "name": "GetBandwidthStatsResponseModelBandwidthCalendarMonthDto",
+      "name": "BaseStatDto",
       "target": "BaseStatDto",
       "nicification": "BandwidthCalendarMonthDto",
       "field": "bandwidthCalendarMonth",
@@ -10272,7 +10444,7 @@
     },
     {
       "action": "reused",
-      "name": "GetBandwidthStatsResponseModelBandwidthCurrentYearDto",
+      "name": "BaseStatDto",
       "target": "BaseStatDto",
       "nicification": "BandwidthCurrentYearDto",
       "field": "bandwidthCurrentYear",
@@ -10282,7 +10454,7 @@
     },
     {
       "action": "reused",
-      "name": "GetBandwidthStatsResponseModelBandwidthLast30DaysDto",
+      "name": "BaseStatDto",
       "target": "BaseStatDto",
       "nicification": "BandwidthLast30DaysDto",
       "field": "bandwidthLast30Days",
@@ -10292,7 +10464,7 @@
     },
     {
       "action": "reused",
-      "name": "GetBandwidthStatsResponseModelBandwidthLastSevenDaysDto",
+      "name": "BaseStatDto",
       "target": "BaseStatDto",
       "nicification": "BandwidthLastSevenDaysDto",
       "field": "bandwidthLastSevenDays",
@@ -10312,7 +10484,7 @@
     },
     {
       "action": "reused",
-      "name": "GetComputedConfigProfileByUuidResponse",
+      "name": "ConfigProfileDto",
       "target": "ConfigProfileDto",
       "nicification": "GetComputedConfigProfileByUuidResponse",
       "field": "response",
@@ -10322,27 +10494,27 @@
     },
     {
       "action": "reused",
-      "name": "GetComputedConfigProfileByUuidResponseInboundsDto",
+      "name": "ConfigProfileInboundsDto",
       "target": "ConfigProfileInboundsDto",
       "nicification": "GetComputedConfigProfileByUuidResponseInboundsDto",
       "field": "inbounds",
-      "parent": "GetComputedConfigProfileByUuidResponse",
+      "parent": "ConfigProfileDto",
       "source": "#/components/schemas/GetComputedConfigProfileByUuidResponseDto/properties/response/properties/inbounds/items",
       "signature": "61a395b1c445955df25d2cfa7aa277c20e559d2f99317c61ea75e3a7a30337bd"
     },
     {
       "action": "reused",
-      "name": "GetComputedConfigProfileByUuidResponseNodesDto",
+      "name": "ConfigProfileNodesDto",
       "target": "InfraBillingAvailableNodeDto",
       "nicification": "GetComputedConfigProfileByUuidResponseNodesDto",
       "field": "nodes",
-      "parent": "GetComputedConfigProfileByUuidResponse",
+      "parent": "ConfigProfileDto",
       "source": "#/components/schemas/GetComputedConfigProfileByUuidResponseDto/properties/response/properties/nodes/items",
       "signature": "7d7938083d36703da7f3c59b6cd8e56344f3b1bd03a1afaed37ff18c505ed261"
     },
     {
       "action": "reused",
-      "name": "GetConfigProfileByUuidResponse",
+      "name": "ConfigProfileDto",
       "target": "ConfigProfileDto",
       "nicification": "GetConfigProfileByUuidResponse",
       "field": "response",
@@ -10352,21 +10524,21 @@
     },
     {
       "action": "reused",
-      "name": "GetConfigProfileByUuidResponseInboundsDto",
+      "name": "ConfigProfileInboundsDto",
       "target": "ConfigProfileInboundsDto",
       "nicification": "GetConfigProfileByUuidResponseInboundsDto",
       "field": "inbounds",
-      "parent": "GetConfigProfileByUuidResponse",
+      "parent": "ConfigProfileDto",
       "source": "#/components/schemas/GetConfigProfileByUuidResponseDto/properties/response/properties/inbounds/items",
       "signature": "61a395b1c445955df25d2cfa7aa277c20e559d2f99317c61ea75e3a7a30337bd"
     },
     {
       "action": "reused",
-      "name": "GetConfigProfileByUuidResponseNodesDto",
+      "name": "ConfigProfileNodesDto",
       "target": "InfraBillingAvailableNodeDto",
       "nicification": "GetConfigProfileByUuidResponseNodesDto",
       "field": "nodes",
-      "parent": "GetConfigProfileByUuidResponse",
+      "parent": "ConfigProfileDto",
       "source": "#/components/schemas/GetConfigProfileByUuidResponseDto/properties/response/properties/nodes/items",
       "signature": "7d7938083d36703da7f3c59b6cd8e56344f3b1bd03a1afaed37ff18c505ed261"
     },
@@ -10422,71 +10594,71 @@
     },
     {
       "action": "reused",
-      "name": "GetExternalSquadByUuidResponse",
+      "name": "ExternalSquadDto",
       "target": "ExternalSquadDto",
       "nicification": "GetExternalSquadByUuidResponse",
       "field": "response",
       "parent": "GetExternalSquadByUuidResponseDto",
       "source": "#/components/schemas/GetExternalSquadByUuidResponseDto/properties/response",
-      "signature": "63b6da4c73acd16694efb46f6f2bff5692f5a79de0a7f62f524ab4a9e495602a"
+      "signature": "50baa80493052a12b8df77cd9d034250960f1418f2d171d7a3ec6c51c4031d71"
     },
     {
       "action": "reused",
-      "name": "GetExternalSquadByUuidResponseCustomRemarksDto",
-      "target": "ExternalSquadCustomRemarksDto",
+      "name": "CustomRemarksDto",
+      "target": "CustomRemarksDto",
       "nicification": "GetExternalSquadByUuidResponseCustomRemarksDto",
       "field": "customRemarks",
-      "parent": "GetExternalSquadByUuidResponse",
+      "parent": "ExternalSquadDto",
       "source": "#/components/schemas/GetExternalSquadByUuidResponseDto/properties/response/properties/customRemarks",
       "signature": "0de2abfb0d30a1fc4acac91171a7c8fa1abe61825b01da0ef28054bff423c775"
     },
     {
       "action": "reused",
-      "name": "GetExternalSquadByUuidResponseHostOverridesDto",
+      "name": "ExternalSquadHostOverridesDto",
       "target": "NullableExternalSquadHostOverridesDto",
       "nicification": "GetExternalSquadByUuidResponseHostOverridesDto",
       "field": "hostOverrides",
-      "parent": "GetExternalSquadByUuidResponse",
+      "parent": "ExternalSquadDto",
       "source": "#/components/schemas/GetExternalSquadByUuidResponseDto/properties/response/properties/hostOverrides",
       "signature": "9a9ca2780eb641b8517e1481790f9a9e9ecb3dbc3bc140ed3fceb0d52f58f4df"
     },
     {
       "action": "reused",
-      "name": "GetExternalSquadByUuidResponseHwidSettingsDto",
-      "target": "ExternalSquadHwidSettingsDto",
+      "name": "HwidSettingsDto",
+      "target": "HwidSettingsDto",
       "nicification": "GetExternalSquadByUuidResponseHwidSettingsDto",
       "field": "hwidSettings",
-      "parent": "GetExternalSquadByUuidResponse",
+      "parent": "ExternalSquadDto",
       "source": "#/components/schemas/GetExternalSquadByUuidResponseDto/properties/response/properties/hwidSettings",
       "signature": "d9eb2adfba247c91fa1a93ade75dc1892d31d1ef04954ac698964edffe248b03"
     },
     {
       "action": "reused",
-      "name": "GetExternalSquadByUuidResponseInfoDto",
+      "name": "ExternalSquadInfoDto",
       "target": "ExternalSquadInfoDto",
       "nicification": "GetExternalSquadByUuidResponseInfoDto",
       "field": "info",
-      "parent": "GetExternalSquadByUuidResponse",
+      "parent": "ExternalSquadDto",
       "source": "#/components/schemas/GetExternalSquadByUuidResponseDto/properties/response/properties/info",
       "signature": "039e78ac0c627c9a8f4cc387a7e34722435ac0654fcb562052608da5fe847065"
     },
     {
       "action": "reused",
-      "name": "GetExternalSquadByUuidResponseSubscriptionSettingsDto",
+      "name": "ExternalSquadSubscriptionSettingsDto",
       "target": "NullableExternalSquadSubscriptionSettingsDto",
       "nicification": "GetExternalSquadByUuidResponseSubscriptionSettingsDto",
       "field": "subscriptionSettings",
-      "parent": "GetExternalSquadByUuidResponse",
+      "parent": "ExternalSquadDto",
       "source": "#/components/schemas/GetExternalSquadByUuidResponseDto/properties/response/properties/subscriptionSettings",
       "signature": "8a91d29cd3610b4260e8eb181d62bd74603f43d03409c8156ef148d39ec39bd2"
     },
     {
       "action": "reused",
-      "name": "GetExternalSquadByUuidResponseTemplatesDto",
+      "name": "ExternalSquadTemplatesDto",
       "target": "ExternalSquadTemplatesDto",
       "nicification": "GetExternalSquadByUuidResponseTemplatesDto",
       "field": "templates",
-      "parent": "GetExternalSquadByUuidResponse",
+      "parent": "ExternalSquadDto",
       "source": "#/components/schemas/GetExternalSquadByUuidResponseDto/properties/response/properties/templates/items",
       "signature": "7e5c6e3095b05e7aff8a6dd41b47285d3663fe0e3512ff9bee142e7122f8a657"
     },
@@ -10508,12 +10680,12 @@
       "field": "externalSquads",
       "parent": "GetExternalSquadsResponse",
       "source": "#/components/schemas/GetExternalSquadsResponseDto/properties/response/properties/externalSquads/items",
-      "signature": "63b6da4c73acd16694efb46f6f2bff5692f5a79de0a7f62f524ab4a9e495602a"
+      "signature": "50baa80493052a12b8df77cd9d034250960f1418f2d171d7a3ec6c51c4031d71"
     },
     {
       "action": "hoisted",
-      "name": "ExternalSquadCustomRemarksDto",
-      "target": "ExternalSquadCustomRemarksDto",
+      "name": "CustomRemarksDto",
+      "target": "CustomRemarksDto",
       "nicification": "GetExternalSquadsResponseCustomRemarksDto",
       "field": "customRemarks",
       "parent": "ExternalSquadDto",
@@ -10532,8 +10704,8 @@
     },
     {
       "action": "hoisted",
-      "name": "ExternalSquadHwidSettingsDto",
-      "target": "ExternalSquadHwidSettingsDto",
+      "name": "HwidSettingsDto",
+      "target": "HwidSettingsDto",
       "nicification": "GetExternalSquadsResponseHwidSettingsDto",
       "field": "hwidSettings",
       "parent": "ExternalSquadDto",
@@ -10642,7 +10814,7 @@
     },
     {
       "action": "reused",
-      "name": "GetInfraBillingHistoryRecordsResponseRecordsDto",
+      "name": "InfraBillingHistoryRecordDto",
       "target": "InfraBillingHistoryRecordDto",
       "nicification": "GetInfraBillingHistoryRecordsResponseRecordsDto",
       "field": "records",
@@ -10652,11 +10824,11 @@
     },
     {
       "action": "reused",
-      "name": "GetInfraBillingHistoryRecordsResponseRecordsProviderDto",
+      "name": "InfraBillingHistoryRecordProviderDto",
       "target": "InfraBillingHistoryRecordProviderDto",
       "nicification": "GetInfraBillingHistoryRecordsResponseProviderDto",
       "field": "provider",
-      "parent": "GetInfraBillingHistoryRecordsResponseRecordsDto",
+      "parent": "InfraBillingHistoryRecordDto",
       "source": "#/components/schemas/GetInfraBillingHistoryRecordsResponseDto/properties/response/properties/records/items/properties/provider",
       "signature": "73ad040c9f1ef710dc4656a9277321cf6192f7e8dbf42b2a3703a0393f6e23d2"
     },
@@ -10722,7 +10894,7 @@
     },
     {
       "action": "reused",
-      "name": "GetInfraProviderByUuidResponse",
+      "name": "InfraProviderDto",
       "target": "InfraProviderDto",
       "nicification": "GetInfraProviderByUuidResponse",
       "field": "response",
@@ -10732,31 +10904,31 @@
     },
     {
       "action": "reused",
-      "name": "GetInfraProviderByUuidResponseBillingHistoryDto",
+      "name": "InfraProviderBillingHistoryDto",
       "target": "InfraProviderBillingHistoryDto",
       "nicification": "GetInfraProviderByUuidResponseBillingHistoryDto",
       "field": "billingHistory",
-      "parent": "GetInfraProviderByUuidResponse",
+      "parent": "InfraProviderDto",
       "source": "#/components/schemas/GetInfraProviderByUuidResponseDto/properties/response/properties/billingHistory",
       "signature": "19bb70b91a1c10f71b9c24f0484ec48be69ebff0257569de442ceb40b2f71f56"
     },
     {
       "action": "reused",
-      "name": "GetInfraProviderByUuidResponseBillingNodesDto",
+      "name": "InfraProviderBillingNodesDto",
       "target": "InfraProviderBillingNodesDto",
       "nicification": "GetInfraProviderByUuidResponseBillingNodesDto",
       "field": "billingNodes",
-      "parent": "GetInfraProviderByUuidResponse",
+      "parent": "InfraProviderDto",
       "source": "#/components/schemas/GetInfraProviderByUuidResponseDto/properties/response/properties/billingNodes/items",
       "signature": "b70d94a57815693dc89b9d05997b0ec152f4de5e747cc2334ced88ed74cd69de"
     },
     {
       "action": "reused",
-      "name": "GetInfraProviderByUuidResponseBillingNodesDetailsDto",
+      "name": "InfraProviderBillingNodesDetailsDto",
       "target": "InfraProviderBillingNodesDetailsDto",
       "nicification": "GetInfraProviderByUuidResponseDetailsDto",
       "field": "details",
-      "parent": "GetInfraProviderByUuidResponseBillingNodesDto",
+      "parent": "InfraProviderBillingNodesDto",
       "source": "#/components/schemas/GetInfraProviderByUuidResponseDto/properties/response/properties/billingNodes/items/properties/details",
       "signature": "92b391f731e7080063d012c687ece2ded9b133dda77ec4a57fd67567b0709ea9"
     },
@@ -10832,7 +11004,7 @@
     },
     {
       "action": "reused",
-      "name": "GetInternalSquadByUuidResponse",
+      "name": "InternalSquadDto",
       "target": "InternalSquadDto",
       "nicification": "GetInternalSquadByUuidResponse",
       "field": "response",
@@ -10842,21 +11014,21 @@
     },
     {
       "action": "reused",
-      "name": "GetInternalSquadByUuidResponseInboundsDto",
+      "name": "ConfigProfileInboundsDto",
       "target": "ConfigProfileInboundsDto",
       "nicification": "GetInternalSquadByUuidResponseInboundsDto",
       "field": "inbounds",
-      "parent": "GetInternalSquadByUuidResponse",
+      "parent": "InternalSquadDto",
       "source": "#/components/schemas/GetInternalSquadByUuidResponseDto/properties/response/properties/inbounds/items",
       "signature": "61a395b1c445955df25d2cfa7aa277c20e559d2f99317c61ea75e3a7a30337bd"
     },
     {
       "action": "reused",
-      "name": "GetInternalSquadByUuidResponseInfoDto",
+      "name": "InternalSquadInfoDto",
       "target": "InternalSquadInfoDto",
       "nicification": "GetInternalSquadByUuidResponseInfoDto",
       "field": "info",
-      "parent": "GetInternalSquadByUuidResponse",
+      "parent": "InternalSquadDto",
       "source": "#/components/schemas/GetInternalSquadByUuidResponseDto/properties/response/properties/info",
       "signature": "8c666c1cc3b1ee033d4f16462a030e61cde1ac19164eb4a99bf64a4168155770"
     },
@@ -10882,7 +11054,7 @@
     },
     {
       "action": "reused",
-      "name": "InternalSquadInboundsDto",
+      "name": "ConfigProfileInboundsDto",
       "target": "ConfigProfileInboundsDto",
       "nicification": "GetInternalSquadsResponseInboundsDto",
       "field": "inbounds",
@@ -10992,8 +11164,8 @@
     },
     {
       "action": "hoisted",
-      "name": "GetNodePluginResponse",
-      "target": "GetNodePluginResponse",
+      "name": "NodePluginDto2",
+      "target": "NodePluginDto2",
       "nicification": "GetNodePluginResponse",
       "field": "response",
       "parent": "GetNodePluginResponseDto",
@@ -11082,27 +11254,27 @@
     },
     {
       "action": "reused",
-      "name": "GetOneHostResponse",
+      "name": "HostsDto",
       "target": "HostsDto",
       "nicification": "GetOneHostResponse",
       "field": "response",
       "parent": "GetOneHostResponseDto",
       "source": "#/components/schemas/GetOneHostResponseDto/properties/response",
-      "signature": "b458d2f81f1e20c74783c56daadbb62f0a8af51cd85c45dc6004a2abaaeb6f2e"
+      "signature": "33024ad70ce0c37864365fe100b3ac3445c5927579da690ecb1b1c893c6fb479"
     },
     {
       "action": "reused",
-      "name": "GetOneHostResponseInboundDto",
+      "name": "HostsInboundDto",
       "target": "HostsInboundDto",
       "nicification": "GetOneHostResponseInboundDto",
       "field": "inbound",
-      "parent": "GetOneHostResponse",
+      "parent": "HostsDto",
       "source": "#/components/schemas/GetOneHostResponseDto/properties/response/properties/inbound",
       "signature": "8efbc2c29a4791e7d9c36f0e39e91188df128e3126155d82d2e917cd05cf1b77"
     },
     {
       "action": "reused",
-      "name": "GetOneNodeResponse",
+      "name": "NodesDto",
       "target": "NodesDto",
       "nicification": "GetOneNodeResponse",
       "field": "response",
@@ -11112,81 +11284,81 @@
     },
     {
       "action": "reused",
-      "name": "GetOneNodeResponseConfigProfileDto",
+      "name": "NodesConfigProfileDto",
       "target": "NodesConfigProfileDto",
       "nicification": "GetOneNodeResponseConfigProfileDto",
       "field": "configProfile",
-      "parent": "GetOneNodeResponse",
+      "parent": "NodesDto",
       "source": "#/components/schemas/GetOneNodeResponseDto/properties/response/properties/configProfile",
       "signature": "9f5c186ecff42bfd89cfd2bb7c7e4c73f6e3331585549b0fdb0cedc15d78c599"
     },
     {
       "action": "reused",
-      "name": "GetOneNodeResponseConfigProfileActiveInboundsDto",
+      "name": "ConfigProfileInboundsDto",
       "target": "ConfigProfileInboundsDto",
       "nicification": "GetOneNodeResponseActiveInboundsDto",
       "field": "activeInbounds",
-      "parent": "GetOneNodeResponseConfigProfileDto",
+      "parent": "NodesConfigProfileDto",
       "source": "#/components/schemas/GetOneNodeResponseDto/properties/response/properties/configProfile/properties/activeInbounds/items",
       "signature": "61a395b1c445955df25d2cfa7aa277c20e559d2f99317c61ea75e3a7a30337bd"
     },
     {
       "action": "reused",
-      "name": "GetOneNodeResponseProviderDto",
+      "name": "PartialInfraProviderDto",
       "target": "PartialInfraProviderDto",
       "nicification": "GetOneNodeResponseProviderDto",
       "field": "provider",
-      "parent": "GetOneNodeResponse",
+      "parent": "NodesDto",
       "source": "#/components/schemas/GetOneNodeResponseDto/properties/response/properties/provider",
       "signature": "dfa62d176586533aa8aaffec7a722c3087c9440f4573a94b9942b4d7c55a6a66"
     },
     {
       "action": "reused",
-      "name": "GetOneNodeResponseSystemDto",
+      "name": "NodeSystemDto",
       "target": "NodeSystemDto",
       "nicification": "GetOneNodeResponseSystemDto",
       "field": "system",
-      "parent": "GetOneNodeResponse",
+      "parent": "NodesDto",
       "source": "#/components/schemas/GetOneNodeResponseDto/properties/response/properties/system",
       "signature": "612edc2c9144df51157f7dd40f21fd65b4d91c12e6b5d626467a0838180f1caa"
     },
     {
       "action": "reused",
-      "name": "GetOneNodeResponseSystemInfoDto",
+      "name": "NodeSystemInfoDto",
       "target": "NodeSystemInfoDto",
       "nicification": "GetOneNodeResponseInfoDto",
       "field": "info",
-      "parent": "GetOneNodeResponseSystemDto",
+      "parent": "NodeSystemDto",
       "source": "#/components/schemas/GetOneNodeResponseDto/properties/response/properties/system/properties/info",
       "signature": "7dcd91f9ee867adfc3baf367edd92b99b59214a98074e74b113009c8db36980b"
     },
     {
       "action": "reused",
-      "name": "GetOneNodeResponseSystemStatsDto",
+      "name": "NodeSystemStatsDto",
       "target": "NodeSystemStatsDto",
       "nicification": "GetOneNodeResponseStatsDto",
       "field": "stats",
-      "parent": "GetOneNodeResponseSystemDto",
+      "parent": "NodeSystemDto",
       "source": "#/components/schemas/GetOneNodeResponseDto/properties/response/properties/system/properties/stats",
       "signature": "f8cb79ad1e403c4eca5d77fc64ccd79325518a9835a856bd4ffff0a1bd725f79"
     },
     {
       "action": "reused",
-      "name": "GetOneNodeResponseSystemStatsInterfaceDto",
+      "name": "NetworkInterfaceDto",
       "target": "NetworkInterfaceDto",
       "nicification": "GetOneNodeResponseInterfaceDto",
       "field": "interface",
-      "parent": "GetOneNodeResponseSystemStatsDto",
+      "parent": "NodeSystemStatsDto",
       "source": "#/components/schemas/GetOneNodeResponseDto/properties/response/properties/system/properties/stats/properties/interface",
       "signature": "dfb36121d4800ac1b7a194748ced4dee0bede773770ae2421433a7d06fcd5786"
     },
     {
       "action": "reused",
-      "name": "GetOneNodeResponseVersionsDto",
+      "name": "NodesVersionsDto",
       "target": "NodesVersionsDto",
       "nicification": "GetOneNodeResponseVersionsDto",
       "field": "versions",
-      "parent": "GetOneNodeResponse",
+      "parent": "NodesDto",
       "source": "#/components/schemas/GetOneNodeResponseDto/properties/response/properties/versions",
       "signature": "3efbd6bbbdb5fed0c734787646dd4539074b8e5d414515fe14eb517e50127af1"
     },
@@ -11248,7 +11420,7 @@
       "field": "clientOverrides",
       "parent": "ResolvedProxyConfigDto",
       "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/properties/clientOverrides",
-      "signature": "3dc6c19f9ed859cdeacdc88577d7105e4454c15e0c6acae2a73d9737924a5d55"
+      "signature": "4c6b532d42f388e708dbe9bedad739b52badfc70eef38e9347219aaaba245e1e"
     },
     {
       "action": "hoisted",
@@ -11452,7 +11624,7 @@
     },
     {
       "action": "reused",
-      "name": "GetRawSubscriptionByShortUuidResponseUserActiveInternalSquadsDto",
+      "name": "BaseInternalSquadDto",
       "target": "BaseInternalSquadDto",
       "nicification": "GetRawSubscriptionByShortUuidResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
@@ -11462,7 +11634,7 @@
     },
     {
       "action": "reused",
-      "name": "GetRawSubscriptionByShortUuidResponseUserUserTrafficDto",
+      "name": "UserTrafficDto",
       "target": "UserTrafficDto",
       "nicification": "GetRawSubscriptionByShortUuidResponseUserTrafficDto",
       "field": "userTraffic",
@@ -11528,12 +11700,12 @@
       "field": "response",
       "parent": "GetRemnawaveSettingsResponseDto",
       "source": "#/components/schemas/GetRemnawaveSettingsResponseDto/properties/response",
-      "signature": "6b72a97f2b433665398c474231182c957a14a897eb5ab8539a5737fe21d4c7df"
+      "signature": "cea49b840ea89b5f22de6bbabb7a4a6294a92bd7f89d036e905041c733dfb952"
     },
     {
       "action": "hoisted",
-      "name": "RemnawaveSettingsBrandingSettingsDto",
-      "target": "RemnawaveSettingsBrandingSettingsDto",
+      "name": "BrandingSettingsDto",
+      "target": "BrandingSettingsDto",
       "nicification": "GetRemnawaveSettingsResponseBrandingSettingsDto",
       "field": "brandingSettings",
       "parent": "RemnawaveSettingsDto",
@@ -11542,78 +11714,78 @@
     },
     {
       "action": "hoisted",
-      "name": "RemnawaveSettingsOauth2SettingsDto",
-      "target": "RemnawaveSettingsOauth2SettingsDto",
+      "name": "Oauth2SettingsDto",
+      "target": "Oauth2SettingsDto",
       "nicification": "GetRemnawaveSettingsResponseOauth2SettingsDto",
       "field": "oauth2Settings",
       "parent": "RemnawaveSettingsDto",
       "source": "#/components/schemas/GetRemnawaveSettingsResponseDto/properties/response/properties/oauth2Settings",
-      "signature": "18d4560310107e412e2dd54fe10ab7c83210fc8a1c58f9801cf9a2bde735045d"
+      "signature": "3c7669c8d3aa3815fc76ef1ada14c7daec0b18d64b9d9a71991e4387aede19ee"
     },
     {
       "action": "hoisted",
-      "name": "RemnawaveSettingsOauth2SettingsGenericDto",
-      "target": "RemnawaveSettingsOauth2SettingsGenericDto",
+      "name": "Oauth2SettingsGenericDto",
+      "target": "Oauth2SettingsGenericDto",
       "nicification": "GetRemnawaveSettingsResponseGenericDto",
       "field": "generic",
-      "parent": "RemnawaveSettingsOauth2SettingsDto",
+      "parent": "Oauth2SettingsDto",
       "source": "#/components/schemas/GetRemnawaveSettingsResponseDto/properties/response/properties/oauth2Settings/properties/generic",
       "signature": "a8afa54daaf4d8f3854769261b8f20fd72b3e94675ae3b17485ca5238d26e15e"
     },
     {
       "action": "hoisted",
-      "name": "RemnawaveSettingsOauth2SettingsGithubDto",
-      "target": "RemnawaveSettingsOauth2SettingsGithubDto",
+      "name": "Oauth2SettingsGithubDto",
+      "target": "Oauth2SettingsGithubDto",
       "nicification": "GetRemnawaveSettingsResponseGithubDto",
       "field": "github",
-      "parent": "RemnawaveSettingsOauth2SettingsDto",
+      "parent": "Oauth2SettingsDto",
       "source": "#/components/schemas/GetRemnawaveSettingsResponseDto/properties/response/properties/oauth2Settings/properties/github",
       "signature": "3b2ed090eddbf4746fd1d94842461d51b8cb9c6a48b0658330c3e47338958f13"
     },
     {
       "action": "hoisted",
-      "name": "RemnawaveSettingsOauth2SettingsKeycloakDto",
-      "target": "RemnawaveSettingsOauth2SettingsKeycloakDto",
+      "name": "Oauth2SettingsKeycloakDto",
+      "target": "Oauth2SettingsKeycloakDto",
       "nicification": "GetRemnawaveSettingsResponseKeycloakDto",
       "field": "keycloak",
-      "parent": "RemnawaveSettingsOauth2SettingsDto",
+      "parent": "Oauth2SettingsDto",
       "source": "#/components/schemas/GetRemnawaveSettingsResponseDto/properties/response/properties/oauth2Settings/properties/keycloak",
       "signature": "87988f4d5325cc4d93448c65275411653953baa232474b1e3597af13149737a4"
     },
     {
       "action": "hoisted",
-      "name": "RemnawaveSettingsOauth2SettingsPocketidDto",
-      "target": "RemnawaveSettingsOauth2SettingsPocketidDto",
+      "name": "Oauth2SettingsPocketidDto",
+      "target": "Oauth2SettingsPocketidDto",
       "nicification": "GetRemnawaveSettingsResponsePocketidDto",
       "field": "pocketid",
-      "parent": "RemnawaveSettingsOauth2SettingsDto",
+      "parent": "Oauth2SettingsDto",
       "source": "#/components/schemas/GetRemnawaveSettingsResponseDto/properties/response/properties/oauth2Settings/properties/pocketid",
       "signature": "91cc466b6b65093036b7c64a3d717d420a6d4fece56aa07b9816154f551d9488"
     },
     {
       "action": "hoisted",
-      "name": "RemnawaveSettingsOauth2SettingsTelegramDto",
-      "target": "RemnawaveSettingsOauth2SettingsTelegramDto",
+      "name": "Oauth2SettingsTelegramDto",
+      "target": "Oauth2SettingsTelegramDto",
       "nicification": "GetRemnawaveSettingsResponseTelegramDto",
       "field": "telegram",
-      "parent": "RemnawaveSettingsOauth2SettingsDto",
+      "parent": "Oauth2SettingsDto",
       "source": "#/components/schemas/GetRemnawaveSettingsResponseDto/properties/response/properties/oauth2Settings/properties/telegram",
       "signature": "5af16ecff12436566d129d0327c9bbf1b6fe4162f1c520157506ce18748d4c88"
     },
     {
       "action": "reused",
-      "name": "RemnawaveSettingsOauth2SettingsYandexDto",
-      "target": "RemnawaveSettingsOauth2SettingsGithubDto",
+      "name": "Oauth2SettingsYandexDto",
+      "target": "Oauth2SettingsGithubDto",
       "nicification": "GetRemnawaveSettingsResponseYandexDto",
       "field": "yandex",
-      "parent": "RemnawaveSettingsOauth2SettingsDto",
+      "parent": "Oauth2SettingsDto",
       "source": "#/components/schemas/GetRemnawaveSettingsResponseDto/properties/response/properties/oauth2Settings/properties/yandex",
       "signature": "3b2ed090eddbf4746fd1d94842461d51b8cb9c6a48b0658330c3e47338958f13"
     },
     {
       "action": "hoisted",
-      "name": "RemnawaveSettingsPasskeySettingsDto",
-      "target": "RemnawaveSettingsPasskeySettingsDto",
+      "name": "PasskeySettingsDto",
+      "target": "PasskeySettingsDto",
       "nicification": "GetRemnawaveSettingsResponsePasskeySettingsDto",
       "field": "passkeySettings",
       "parent": "RemnawaveSettingsDto",
@@ -11818,7 +11990,7 @@
       "field": "response",
       "parent": "GetStatusResponseDto",
       "source": "#/components/schemas/GetStatusResponseDto/properties/response",
-      "signature": "2fb0adcc1abbef7ca28339c95c4071a194213bd6c88ce6ef764602c08dbee020"
+      "signature": "7c3f1dfd9fdebd4424bc9f05f5b0eb14618ce413f039001dcb839cef0f261621"
     },
     {
       "action": "hoisted",
@@ -11862,8 +12034,8 @@
     },
     {
       "action": "hoisted",
-      "name": "GetStatusResponseBrandingDto",
-      "target": "GetStatusResponseBrandingDto",
+      "name": "BrandingSettingsDto2",
+      "target": "BrandingSettingsDto2",
       "nicification": "BrandingDto",
       "field": "branding",
       "parent": "GetStatusResponse",
@@ -11882,7 +12054,7 @@
     },
     {
       "action": "reused",
-      "name": "GetSubscriptionByShortUuidProtectedResponse",
+      "name": "SubscriptionInfoDto",
       "target": "SubscriptionInfoDto",
       "nicification": "GetSubscriptionByShortUuidProtectedResponse",
       "field": "response",
@@ -11892,17 +12064,17 @@
     },
     {
       "action": "reused",
-      "name": "GetSubscriptionByShortUuidProtectedResponseUserDto",
+      "name": "SubscriptionInfoUserDto",
       "target": "SubscriptionInfoUserDto",
       "nicification": "GetSubscriptionByShortUuidProtectedResponseUserDto",
       "field": "user",
-      "parent": "GetSubscriptionByShortUuidProtectedResponse",
+      "parent": "SubscriptionInfoDto",
       "source": "#/components/schemas/GetSubscriptionByShortUuidProtectedResponseDto/properties/response/properties/user",
       "signature": "e1d38d8fcdadbc36bfccabb91a5b6d85984d678ca9b2b0fd33437f780d89552f"
     },
     {
       "action": "reused",
-      "name": "GetSubscriptionByUsernameResponse",
+      "name": "SubscriptionInfoDto",
       "target": "SubscriptionInfoDto",
       "nicification": "GetSubscriptionByUsernameResponse",
       "field": "response",
@@ -11912,17 +12084,17 @@
     },
     {
       "action": "reused",
-      "name": "GetSubscriptionByUsernameResponseUserDto",
+      "name": "SubscriptionInfoUserDto",
       "target": "SubscriptionInfoUserDto",
       "nicification": "GetSubscriptionByUsernameResponseUserDto",
       "field": "user",
-      "parent": "GetSubscriptionByUsernameResponse",
+      "parent": "SubscriptionInfoDto",
       "source": "#/components/schemas/GetSubscriptionByUsernameResponseDto/properties/response/properties/user",
       "signature": "e1d38d8fcdadbc36bfccabb91a5b6d85984d678ca9b2b0fd33437f780d89552f"
     },
     {
       "action": "reused",
-      "name": "GetSubscriptionByUuidResponse",
+      "name": "SubscriptionInfoDto",
       "target": "SubscriptionInfoDto",
       "nicification": "GetSubscriptionByUuidResponse",
       "field": "response",
@@ -11932,17 +12104,17 @@
     },
     {
       "action": "reused",
-      "name": "GetSubscriptionByUuidResponseUserDto",
+      "name": "SubscriptionInfoUserDto",
       "target": "SubscriptionInfoUserDto",
       "nicification": "GetSubscriptionByUuidResponseUserDto",
       "field": "user",
-      "parent": "GetSubscriptionByUuidResponse",
+      "parent": "SubscriptionInfoDto",
       "source": "#/components/schemas/GetSubscriptionByUuidResponseDto/properties/response/properties/user",
       "signature": "e1d38d8fcdadbc36bfccabb91a5b6d85984d678ca9b2b0fd33437f780d89552f"
     },
     {
       "action": "reused",
-      "name": "GetSubscriptionInfoResponse",
+      "name": "SubscriptionInfoDto",
       "target": "SubscriptionInfoDto",
       "nicification": "GetSubscriptionInfoResponse",
       "field": "response",
@@ -11952,18 +12124,18 @@
     },
     {
       "action": "reused",
-      "name": "GetSubscriptionInfoResponseUserDto",
+      "name": "SubscriptionInfoUserDto",
       "target": "SubscriptionInfoUserDto",
       "nicification": "GetSubscriptionInfoResponseUserDto",
       "field": "user",
-      "parent": "GetSubscriptionInfoResponse",
+      "parent": "SubscriptionInfoDto",
       "source": "#/components/schemas/GetSubscriptionInfoResponseDto/properties/response/properties/user",
       "signature": "e1d38d8fcdadbc36bfccabb91a5b6d85984d678ca9b2b0fd33437f780d89552f"
     },
     {
       "action": "hoisted",
-      "name": "GetSubscriptionPageConfigResponse",
-      "target": "GetSubscriptionPageConfigResponse",
+      "name": "SubscriptionPageConfigDto2",
+      "target": "SubscriptionPageConfigDto2",
       "nicification": "GetSubscriptionPageConfigResponse",
       "field": "response",
       "parent": "GetSubscriptionPageConfigResponseDto",
@@ -12048,12 +12220,12 @@
       "field": "response",
       "parent": "GetSubscriptionSettingsResponseDto",
       "source": "#/components/schemas/GetSubscriptionSettingsResponseDto/properties/response",
-      "signature": "d5f488d7fb15ce5003ced32f42d53c1d607eb83624648b549b4321f218f7564b"
+      "signature": "7b464e73ceb19830deb9e4b9c134ec0d3fbb24204aaefdaa9f4866b630d561d1"
     },
     {
       "action": "hoisted",
-      "name": "CustomRemarksDto",
-      "target": "CustomRemarksDto",
+      "name": "CustomRemarksDto2",
+      "target": "CustomRemarksDto2",
       "nicification": "GetSubscriptionSettingsResponseCustomRemarksDto",
       "field": "customRemarks",
       "parent": "SubscriptionSettingsDto",
@@ -12062,8 +12234,8 @@
     },
     {
       "action": "reused",
-      "name": "SubscriptionSettingsHwidSettingsDto",
-      "target": "ExternalSquadHwidSettingsDto",
+      "name": "HwidSettingsDto",
+      "target": "HwidSettingsDto",
       "nicification": "GetSubscriptionSettingsResponseHwidSettingsDto",
       "field": "hwidSettings",
       "parent": "SubscriptionSettingsDto",
@@ -12072,8 +12244,8 @@
     },
     {
       "action": "hoisted",
-      "name": "SubscriptionSettingsResponseRulesDto",
-      "target": "SubscriptionSettingsResponseRulesDto",
+      "name": "ResponseRulesConfigDto",
+      "target": "ResponseRulesConfigDto",
       "nicification": "GetSubscriptionSettingsResponseResponseRulesDto",
       "field": "responseRules",
       "parent": "SubscriptionSettingsDto",
@@ -12086,7 +12258,7 @@
       "target": "ResponseRuleDto",
       "nicification": "GetSubscriptionSettingsResponseRulesDto",
       "field": "rules",
-      "parent": "SubscriptionSettingsResponseRulesDto",
+      "parent": "ResponseRulesConfigDto",
       "source": "#/components/schemas/GetSubscriptionSettingsResponseDto/properties/response/properties/responseRules/properties/rules/items",
       "signature": "fe5c086ba34f2d01e9bb53598c6f800ca317a4d41ea20590753cef4e1d544b72"
     },
@@ -12136,13 +12308,13 @@
       "target": "ResponseRuleSettingsDto",
       "nicification": "GetSubscriptionSettingsResponseSettingsDto",
       "field": "settings",
-      "parent": "SubscriptionSettingsResponseRulesDto",
+      "parent": "ResponseRulesConfigDto",
       "source": "#/components/schemas/GetSubscriptionSettingsResponseDto/properties/response/properties/responseRules/properties/settings",
       "signature": "78f876f5818084e2240804e6c968a0ed69e1cfef43ad57726752d365cb69a4b4"
     },
     {
       "action": "reused",
-      "name": "GetTemplateResponse",
+      "name": "SubscriptionTemplateDto",
       "target": "SubscriptionTemplateDto",
       "nicification": "GetTemplateResponse",
       "field": "response",
@@ -12342,7 +12514,7 @@
     },
     {
       "action": "reused",
-      "name": "GetUserByEmailResponseActiveInternalSquadsDto",
+      "name": "BaseInternalSquadDto",
       "target": "BaseInternalSquadDto",
       "nicification": "GetUserByEmailResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
@@ -12352,7 +12524,7 @@
     },
     {
       "action": "reused",
-      "name": "GetUserByEmailResponseUserTrafficDto",
+      "name": "UserTrafficDto",
       "target": "UserTrafficDto",
       "nicification": "GetUserByEmailResponseUserTrafficDto",
       "field": "userTraffic",
@@ -12372,7 +12544,7 @@
     },
     {
       "action": "reused",
-      "name": "GetUserByIdResponseActiveInternalSquadsDto",
+      "name": "BaseInternalSquadDto",
       "target": "BaseInternalSquadDto",
       "nicification": "GetUserByIdResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
@@ -12382,7 +12554,7 @@
     },
     {
       "action": "reused",
-      "name": "GetUserByIdResponseUserTrafficDto",
+      "name": "UserTrafficDto",
       "target": "UserTrafficDto",
       "nicification": "GetUserByIdResponseUserTrafficDto",
       "field": "userTraffic",
@@ -12402,7 +12574,7 @@
     },
     {
       "action": "reused",
-      "name": "GetUserByShortUuidResponseActiveInternalSquadsDto",
+      "name": "BaseInternalSquadDto",
       "target": "BaseInternalSquadDto",
       "nicification": "GetUserByShortUuidResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
@@ -12412,7 +12584,7 @@
     },
     {
       "action": "reused",
-      "name": "GetUserByShortUuidResponseUserTrafficDto",
+      "name": "UserTrafficDto",
       "target": "UserTrafficDto",
       "nicification": "GetUserByShortUuidResponseUserTrafficDto",
       "field": "userTraffic",
@@ -12432,7 +12604,7 @@
     },
     {
       "action": "reused",
-      "name": "GetUserByTagResponseActiveInternalSquadsDto",
+      "name": "BaseInternalSquadDto",
       "target": "BaseInternalSquadDto",
       "nicification": "GetUserByTagResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
@@ -12442,7 +12614,7 @@
     },
     {
       "action": "reused",
-      "name": "GetUserByTagResponseUserTrafficDto",
+      "name": "UserTrafficDto",
       "target": "UserTrafficDto",
       "nicification": "GetUserByTagResponseUserTrafficDto",
       "field": "userTraffic",
@@ -12462,7 +12634,7 @@
     },
     {
       "action": "reused",
-      "name": "GetUserByTelegramIdResponseActiveInternalSquadsDto",
+      "name": "BaseInternalSquadDto",
       "target": "BaseInternalSquadDto",
       "nicification": "GetUserByTelegramIdResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
@@ -12472,7 +12644,7 @@
     },
     {
       "action": "reused",
-      "name": "GetUserByTelegramIdResponseUserTrafficDto",
+      "name": "UserTrafficDto",
       "target": "UserTrafficDto",
       "nicification": "GetUserByTelegramIdResponseUserTrafficDto",
       "field": "userTraffic",
@@ -12492,7 +12664,7 @@
     },
     {
       "action": "reused",
-      "name": "GetUserByUsernameResponseActiveInternalSquadsDto",
+      "name": "BaseInternalSquadDto",
       "target": "BaseInternalSquadDto",
       "nicification": "GetUserByUsernameResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
@@ -12502,7 +12674,7 @@
     },
     {
       "action": "reused",
-      "name": "GetUserByUsernameResponseUserTrafficDto",
+      "name": "UserTrafficDto",
       "target": "UserTrafficDto",
       "nicification": "GetUserByUsernameResponseUserTrafficDto",
       "field": "userTraffic",
@@ -12522,7 +12694,7 @@
     },
     {
       "action": "reused",
-      "name": "GetUserByUuidResponseActiveInternalSquadsDto",
+      "name": "BaseInternalSquadDto",
       "target": "BaseInternalSquadDto",
       "nicification": "GetUserByUuidResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
@@ -12532,7 +12704,7 @@
     },
     {
       "action": "reused",
-      "name": "GetUserByUuidResponseUserTrafficDto",
+      "name": "UserTrafficDto",
       "target": "UserTrafficDto",
       "nicification": "GetUserByUuidResponseUserTrafficDto",
       "field": "userTraffic",
@@ -12552,7 +12724,7 @@
     },
     {
       "action": "reused",
-      "name": "GetUserHwidDevicesResponseDevicesDto",
+      "name": "HwidUserDeviceDto",
       "target": "HwidUserDeviceDto",
       "nicification": "GetUserHwidDevicesResponseDevicesDto",
       "field": "devices",
@@ -12622,7 +12794,7 @@
     },
     {
       "action": "reused",
-      "name": "GetUsersStreamResponseModelUsersActiveInternalSquadsDto",
+      "name": "BaseInternalSquadDto",
       "target": "BaseInternalSquadDto",
       "nicification": "GetUsersStreamResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
@@ -12632,7 +12804,7 @@
     },
     {
       "action": "reused",
-      "name": "GetUsersStreamResponseModelUsersUserTrafficDto",
+      "name": "UserTrafficDto",
       "target": "UserTrafficDto",
       "nicification": "GetUsersStreamResponseUserTrafficDto",
       "field": "userTraffic",
@@ -12792,7 +12964,7 @@
     },
     {
       "action": "reused",
-      "name": "RemnawaveWebhookNodeEventsDataDto",
+      "name": "NodesDto",
       "target": "NodesDto",
       "nicification": "RemnawaveWebhookNodeEventsDataDto",
       "field": "data",
@@ -12802,81 +12974,81 @@
     },
     {
       "action": "reused",
-      "name": "RemnawaveWebhookNodeEventsDataConfigProfileDto",
+      "name": "NodesConfigProfileDto",
       "target": "NodesConfigProfileDto",
       "nicification": "RemnawaveWebhookNodeEventsConfigProfileDto",
       "field": "configProfile",
-      "parent": "RemnawaveWebhookNodeEventsDataDto",
+      "parent": "NodesDto",
       "source": "#/components/schemas/RemnawaveWebhookNodeEventsDto/properties/data/properties/configProfile",
       "signature": "9f5c186ecff42bfd89cfd2bb7c7e4c73f6e3331585549b0fdb0cedc15d78c599"
     },
     {
       "action": "reused",
-      "name": "RemnawaveWebhookNodeEventsDataConfigProfileActiveInboundsDto",
+      "name": "ConfigProfileInboundsDto",
       "target": "ConfigProfileInboundsDto",
       "nicification": "RemnawaveWebhookNodeEventsActiveInboundsDto",
       "field": "activeInbounds",
-      "parent": "RemnawaveWebhookNodeEventsDataConfigProfileDto",
+      "parent": "NodesConfigProfileDto",
       "source": "#/components/schemas/RemnawaveWebhookNodeEventsDto/properties/data/properties/configProfile/properties/activeInbounds/items",
       "signature": "61a395b1c445955df25d2cfa7aa277c20e559d2f99317c61ea75e3a7a30337bd"
     },
     {
       "action": "reused",
-      "name": "RemnawaveWebhookNodeEventsDataProviderDto",
+      "name": "PartialInfraProviderDto",
       "target": "PartialInfraProviderDto",
       "nicification": "RemnawaveWebhookNodeEventsProviderDto",
       "field": "provider",
-      "parent": "RemnawaveWebhookNodeEventsDataDto",
+      "parent": "NodesDto",
       "source": "#/components/schemas/RemnawaveWebhookNodeEventsDto/properties/data/properties/provider",
       "signature": "dfa62d176586533aa8aaffec7a722c3087c9440f4573a94b9942b4d7c55a6a66"
     },
     {
       "action": "reused",
-      "name": "RemnawaveWebhookNodeEventsDataSystemDto",
+      "name": "NodeSystemDto",
       "target": "NodeSystemDto",
       "nicification": "RemnawaveWebhookNodeEventsSystemDto",
       "field": "system",
-      "parent": "RemnawaveWebhookNodeEventsDataDto",
+      "parent": "NodesDto",
       "source": "#/components/schemas/RemnawaveWebhookNodeEventsDto/properties/data/properties/system",
       "signature": "612edc2c9144df51157f7dd40f21fd65b4d91c12e6b5d626467a0838180f1caa"
     },
     {
       "action": "reused",
-      "name": "RemnawaveWebhookNodeEventsDataSystemInfoDto",
+      "name": "NodeSystemInfoDto",
       "target": "NodeSystemInfoDto",
       "nicification": "RemnawaveWebhookNodeEventsInfoDto",
       "field": "info",
-      "parent": "RemnawaveWebhookNodeEventsDataSystemDto",
+      "parent": "NodeSystemDto",
       "source": "#/components/schemas/RemnawaveWebhookNodeEventsDto/properties/data/properties/system/properties/info",
       "signature": "7dcd91f9ee867adfc3baf367edd92b99b59214a98074e74b113009c8db36980b"
     },
     {
       "action": "reused",
-      "name": "RemnawaveWebhookNodeEventsDataSystemStatsDto",
+      "name": "NodeSystemStatsDto",
       "target": "NodeSystemStatsDto",
       "nicification": "RemnawaveWebhookNodeEventsStatsDto",
       "field": "stats",
-      "parent": "RemnawaveWebhookNodeEventsDataSystemDto",
+      "parent": "NodeSystemDto",
       "source": "#/components/schemas/RemnawaveWebhookNodeEventsDto/properties/data/properties/system/properties/stats",
       "signature": "f8cb79ad1e403c4eca5d77fc64ccd79325518a9835a856bd4ffff0a1bd725f79"
     },
     {
       "action": "reused",
-      "name": "RemnawaveWebhookNodeEventsDataSystemStatsInterfaceDto",
+      "name": "NetworkInterfaceDto",
       "target": "NetworkInterfaceDto",
       "nicification": "RemnawaveWebhookNodeEventsInterfaceDto",
       "field": "interface",
-      "parent": "RemnawaveWebhookNodeEventsDataSystemStatsDto",
+      "parent": "NodeSystemStatsDto",
       "source": "#/components/schemas/RemnawaveWebhookNodeEventsDto/properties/data/properties/system/properties/stats/properties/interface",
       "signature": "dfb36121d4800ac1b7a194748ced4dee0bede773770ae2421433a7d06fcd5786"
     },
     {
       "action": "reused",
-      "name": "RemnawaveWebhookNodeEventsDataVersionsDto",
+      "name": "NodesVersionsDto",
       "target": "NodesVersionsDto",
       "nicification": "RemnawaveWebhookNodeEventsVersionsDto",
       "field": "versions",
-      "parent": "RemnawaveWebhookNodeEventsDataDto",
+      "parent": "NodesDto",
       "source": "#/components/schemas/RemnawaveWebhookNodeEventsDto/properties/data/properties/versions",
       "signature": "3efbd6bbbdb5fed0c734787646dd4539074b8e5d414515fe14eb517e50127af1"
     },
@@ -13062,7 +13234,7 @@
     },
     {
       "action": "reused",
-      "name": "RemnawaveWebhookTorrentBlockerEventsDataUserActiveInternalSquadsDto",
+      "name": "BaseInternalSquadDto",
       "target": "BaseInternalSquadDto",
       "nicification": "RemnawaveWebhookTorrentBlockerEventsActiveInternalSquadsDto",
       "field": "activeInternalSquads",
@@ -13072,7 +13244,7 @@
     },
     {
       "action": "reused",
-      "name": "RemnawaveWebhookTorrentBlockerEventsDataUserUserTrafficDto",
+      "name": "UserTrafficDto",
       "target": "UserTrafficDto",
       "nicification": "RemnawaveWebhookTorrentBlockerEventsUserTrafficDto",
       "field": "userTraffic",
@@ -13092,7 +13264,7 @@
     },
     {
       "action": "reused",
-      "name": "RemnawaveWebhookUserEventsDataActiveInternalSquadsDto",
+      "name": "BaseInternalSquadDto",
       "target": "BaseInternalSquadDto",
       "nicification": "RemnawaveWebhookUserEventsActiveInternalSquadsDto",
       "field": "activeInternalSquads",
@@ -13102,7 +13274,7 @@
     },
     {
       "action": "reused",
-      "name": "RemnawaveWebhookUserEventsDataUserTrafficDto",
+      "name": "UserTrafficDto",
       "target": "UserTrafficDto",
       "nicification": "RemnawaveWebhookUserEventsUserTrafficDto",
       "field": "userTraffic",
@@ -13152,7 +13324,7 @@
     },
     {
       "action": "reused",
-      "name": "RemnawaveWebhookUserHwidDevicesEventsDataUserActiveInternalSquadsDto",
+      "name": "BaseInternalSquadDto",
       "target": "BaseInternalSquadDto",
       "nicification": "RemnawaveWebhookUserHwidDevicesEventsActiveInternalSquadsDto",
       "field": "activeInternalSquads",
@@ -13162,7 +13334,7 @@
     },
     {
       "action": "reused",
-      "name": "RemnawaveWebhookUserHwidDevicesEventsDataUserUserTrafficDto",
+      "name": "UserTrafficDto",
       "target": "UserTrafficDto",
       "nicification": "RemnawaveWebhookUserHwidDevicesEventsUserTrafficDto",
       "field": "userTraffic",
@@ -13212,7 +13384,7 @@
     },
     {
       "action": "reused",
-      "name": "ReorderConfigProfilesResponseConfigProfilesDto",
+      "name": "ConfigProfileDto",
       "target": "ConfigProfileDto",
       "nicification": "ReorderConfigProfilesResponseConfigProfilesDto",
       "field": "configProfiles",
@@ -13222,21 +13394,21 @@
     },
     {
       "action": "reused",
-      "name": "ReorderConfigProfilesResponseConfigProfilesInboundsDto",
+      "name": "ConfigProfileInboundsDto",
       "target": "ConfigProfileInboundsDto",
       "nicification": "ReorderConfigProfilesResponseInboundsDto",
       "field": "inbounds",
-      "parent": "ReorderConfigProfilesResponseConfigProfilesDto",
+      "parent": "ConfigProfileDto",
       "source": "#/components/schemas/ReorderConfigProfilesResponseDto/properties/response/properties/configProfiles/items/properties/inbounds/items",
       "signature": "61a395b1c445955df25d2cfa7aa277c20e559d2f99317c61ea75e3a7a30337bd"
     },
     {
       "action": "reused",
-      "name": "ReorderConfigProfilesResponseConfigProfilesNodesDto",
+      "name": "ConfigProfileNodesDto",
       "target": "InfraBillingAvailableNodeDto",
       "nicification": "ReorderConfigProfilesResponseNodesDto",
       "field": "nodes",
-      "parent": "ReorderConfigProfilesResponseConfigProfilesDto",
+      "parent": "ConfigProfileDto",
       "source": "#/components/schemas/ReorderConfigProfilesResponseDto/properties/response/properties/configProfiles/items/properties/nodes/items",
       "signature": "7d7938083d36703da7f3c59b6cd8e56344f3b1bd03a1afaed37ff18c505ed261"
     },
@@ -13262,71 +13434,71 @@
     },
     {
       "action": "reused",
-      "name": "ReorderExternalSquadsResponseExternalSquadsDto",
+      "name": "ExternalSquadDto",
       "target": "ExternalSquadDto",
       "nicification": "ReorderExternalSquadsResponseExternalSquadsDto",
       "field": "externalSquads",
       "parent": "ReorderExternalSquadsResponse",
       "source": "#/components/schemas/ReorderExternalSquadsResponseDto/properties/response/properties/externalSquads/items",
-      "signature": "63b6da4c73acd16694efb46f6f2bff5692f5a79de0a7f62f524ab4a9e495602a"
+      "signature": "50baa80493052a12b8df77cd9d034250960f1418f2d171d7a3ec6c51c4031d71"
     },
     {
       "action": "reused",
-      "name": "ReorderExternalSquadsResponseExternalSquadsCustomRemarksDto",
-      "target": "ExternalSquadCustomRemarksDto",
+      "name": "CustomRemarksDto",
+      "target": "CustomRemarksDto",
       "nicification": "ReorderExternalSquadsResponseCustomRemarksDto",
       "field": "customRemarks",
-      "parent": "ReorderExternalSquadsResponseExternalSquadsDto",
+      "parent": "ExternalSquadDto",
       "source": "#/components/schemas/ReorderExternalSquadsResponseDto/properties/response/properties/externalSquads/items/properties/customRemarks",
       "signature": "0de2abfb0d30a1fc4acac91171a7c8fa1abe61825b01da0ef28054bff423c775"
     },
     {
       "action": "reused",
-      "name": "ReorderExternalSquadsResponseExternalSquadsHostOverridesDto",
+      "name": "ExternalSquadHostOverridesDto",
       "target": "NullableExternalSquadHostOverridesDto",
       "nicification": "ReorderExternalSquadsResponseHostOverridesDto",
       "field": "hostOverrides",
-      "parent": "ReorderExternalSquadsResponseExternalSquadsDto",
+      "parent": "ExternalSquadDto",
       "source": "#/components/schemas/ReorderExternalSquadsResponseDto/properties/response/properties/externalSquads/items/properties/hostOverrides",
       "signature": "9a9ca2780eb641b8517e1481790f9a9e9ecb3dbc3bc140ed3fceb0d52f58f4df"
     },
     {
       "action": "reused",
-      "name": "ReorderExternalSquadsResponseExternalSquadsHwidSettingsDto",
-      "target": "ExternalSquadHwidSettingsDto",
+      "name": "HwidSettingsDto",
+      "target": "HwidSettingsDto",
       "nicification": "ReorderExternalSquadsResponseHwidSettingsDto",
       "field": "hwidSettings",
-      "parent": "ReorderExternalSquadsResponseExternalSquadsDto",
+      "parent": "ExternalSquadDto",
       "source": "#/components/schemas/ReorderExternalSquadsResponseDto/properties/response/properties/externalSquads/items/properties/hwidSettings",
       "signature": "d9eb2adfba247c91fa1a93ade75dc1892d31d1ef04954ac698964edffe248b03"
     },
     {
       "action": "reused",
-      "name": "ReorderExternalSquadsResponseExternalSquadsInfoDto",
+      "name": "ExternalSquadInfoDto",
       "target": "ExternalSquadInfoDto",
       "nicification": "ReorderExternalSquadsResponseInfoDto",
       "field": "info",
-      "parent": "ReorderExternalSquadsResponseExternalSquadsDto",
+      "parent": "ExternalSquadDto",
       "source": "#/components/schemas/ReorderExternalSquadsResponseDto/properties/response/properties/externalSquads/items/properties/info",
       "signature": "039e78ac0c627c9a8f4cc387a7e34722435ac0654fcb562052608da5fe847065"
     },
     {
       "action": "reused",
-      "name": "ReorderExternalSquadsResponseExternalSquadsSubscriptionSettingsDto",
+      "name": "ExternalSquadSubscriptionSettingsDto",
       "target": "NullableExternalSquadSubscriptionSettingsDto",
       "nicification": "ReorderExternalSquadsResponseSubscriptionSettingsDto",
       "field": "subscriptionSettings",
-      "parent": "ReorderExternalSquadsResponseExternalSquadsDto",
+      "parent": "ExternalSquadDto",
       "source": "#/components/schemas/ReorderExternalSquadsResponseDto/properties/response/properties/externalSquads/items/properties/subscriptionSettings",
       "signature": "8a91d29cd3610b4260e8eb181d62bd74603f43d03409c8156ef148d39ec39bd2"
     },
     {
       "action": "reused",
-      "name": "ReorderExternalSquadsResponseExternalSquadsTemplatesDto",
+      "name": "ExternalSquadTemplatesDto",
       "target": "ExternalSquadTemplatesDto",
       "nicification": "ReorderExternalSquadsResponseTemplatesDto",
       "field": "templates",
-      "parent": "ReorderExternalSquadsResponseExternalSquadsDto",
+      "parent": "ExternalSquadDto",
       "source": "#/components/schemas/ReorderExternalSquadsResponseDto/properties/response/properties/externalSquads/items/properties/templates/items",
       "signature": "7e5c6e3095b05e7aff8a6dd41b47285d3663fe0e3512ff9bee142e7122f8a657"
     },
@@ -13372,7 +13544,7 @@
     },
     {
       "action": "reused",
-      "name": "ReorderInternalSquadsResponseInternalSquadsDto",
+      "name": "InternalSquadDto",
       "target": "InternalSquadDto",
       "nicification": "ReorderInternalSquadsResponseInternalSquadsDto",
       "field": "internalSquads",
@@ -13382,21 +13554,21 @@
     },
     {
       "action": "reused",
-      "name": "ReorderInternalSquadsResponseInternalSquadsInboundsDto",
+      "name": "ConfigProfileInboundsDto",
       "target": "ConfigProfileInboundsDto",
       "nicification": "ReorderInternalSquadsResponseInboundsDto",
       "field": "inbounds",
-      "parent": "ReorderInternalSquadsResponseInternalSquadsDto",
+      "parent": "InternalSquadDto",
       "source": "#/components/schemas/ReorderInternalSquadsResponseDto/properties/response/properties/internalSquads/items/properties/inbounds/items",
       "signature": "61a395b1c445955df25d2cfa7aa277c20e559d2f99317c61ea75e3a7a30337bd"
     },
     {
       "action": "reused",
-      "name": "ReorderInternalSquadsResponseInternalSquadsInfoDto",
+      "name": "InternalSquadInfoDto",
       "target": "InternalSquadInfoDto",
       "nicification": "ReorderInternalSquadsResponseInfoDto",
       "field": "info",
-      "parent": "ReorderInternalSquadsResponseInternalSquadsDto",
+      "parent": "InternalSquadDto",
       "source": "#/components/schemas/ReorderInternalSquadsResponseDto/properties/response/properties/internalSquads/items/properties/info",
       "signature": "8c666c1cc3b1ee033d4f16462a030e61cde1ac19164eb4a99bf64a4168155770"
     },
@@ -13422,7 +13594,7 @@
     },
     {
       "action": "reused",
-      "name": "ReorderNodePluginsResponseNodePluginsDto",
+      "name": "NodePluginDto",
       "target": "NodePluginDto",
       "nicification": "ReorderNodePluginsResponseNodePluginsDto",
       "field": "nodePlugins",
@@ -13442,7 +13614,7 @@
     },
     {
       "action": "reused",
-      "name": "ReorderNodeResponse",
+      "name": "NodesDto",
       "target": "NodesDto",
       "nicification": "ReorderNodeResponse",
       "field": "response",
@@ -13452,81 +13624,81 @@
     },
     {
       "action": "reused",
-      "name": "ReorderNodeResponseConfigProfileDto",
+      "name": "NodesConfigProfileDto",
       "target": "NodesConfigProfileDto",
       "nicification": "ReorderNodeResponseConfigProfileDto",
       "field": "configProfile",
-      "parent": "ReorderNodeResponse",
+      "parent": "NodesDto",
       "source": "#/components/schemas/ReorderNodeResponseDto/properties/response/items/properties/configProfile",
       "signature": "9f5c186ecff42bfd89cfd2bb7c7e4c73f6e3331585549b0fdb0cedc15d78c599"
     },
     {
       "action": "reused",
-      "name": "ReorderNodeResponseConfigProfileActiveInboundsDto",
+      "name": "ConfigProfileInboundsDto",
       "target": "ConfigProfileInboundsDto",
       "nicification": "ReorderNodeResponseActiveInboundsDto",
       "field": "activeInbounds",
-      "parent": "ReorderNodeResponseConfigProfileDto",
+      "parent": "NodesConfigProfileDto",
       "source": "#/components/schemas/ReorderNodeResponseDto/properties/response/items/properties/configProfile/properties/activeInbounds/items",
       "signature": "61a395b1c445955df25d2cfa7aa277c20e559d2f99317c61ea75e3a7a30337bd"
     },
     {
       "action": "reused",
-      "name": "ReorderNodeResponseProviderDto",
+      "name": "PartialInfraProviderDto",
       "target": "PartialInfraProviderDto",
       "nicification": "ReorderNodeResponseProviderDto",
       "field": "provider",
-      "parent": "ReorderNodeResponse",
+      "parent": "NodesDto",
       "source": "#/components/schemas/ReorderNodeResponseDto/properties/response/items/properties/provider",
       "signature": "dfa62d176586533aa8aaffec7a722c3087c9440f4573a94b9942b4d7c55a6a66"
     },
     {
       "action": "reused",
-      "name": "ReorderNodeResponseSystemDto",
+      "name": "NodeSystemDto",
       "target": "NodeSystemDto",
       "nicification": "ReorderNodeResponseSystemDto",
       "field": "system",
-      "parent": "ReorderNodeResponse",
+      "parent": "NodesDto",
       "source": "#/components/schemas/ReorderNodeResponseDto/properties/response/items/properties/system",
       "signature": "612edc2c9144df51157f7dd40f21fd65b4d91c12e6b5d626467a0838180f1caa"
     },
     {
       "action": "reused",
-      "name": "ReorderNodeResponseSystemInfoDto",
+      "name": "NodeSystemInfoDto",
       "target": "NodeSystemInfoDto",
       "nicification": "ReorderNodeResponseInfoDto",
       "field": "info",
-      "parent": "ReorderNodeResponseSystemDto",
+      "parent": "NodeSystemDto",
       "source": "#/components/schemas/ReorderNodeResponseDto/properties/response/items/properties/system/properties/info",
       "signature": "7dcd91f9ee867adfc3baf367edd92b99b59214a98074e74b113009c8db36980b"
     },
     {
       "action": "reused",
-      "name": "ReorderNodeResponseSystemStatsDto",
+      "name": "NodeSystemStatsDto",
       "target": "NodeSystemStatsDto",
       "nicification": "ReorderNodeResponseStatsDto",
       "field": "stats",
-      "parent": "ReorderNodeResponseSystemDto",
+      "parent": "NodeSystemDto",
       "source": "#/components/schemas/ReorderNodeResponseDto/properties/response/items/properties/system/properties/stats",
       "signature": "f8cb79ad1e403c4eca5d77fc64ccd79325518a9835a856bd4ffff0a1bd725f79"
     },
     {
       "action": "reused",
-      "name": "ReorderNodeResponseSystemStatsInterfaceDto",
+      "name": "NetworkInterfaceDto",
       "target": "NetworkInterfaceDto",
       "nicification": "ReorderNodeResponseInterfaceDto",
       "field": "interface",
-      "parent": "ReorderNodeResponseSystemStatsDto",
+      "parent": "NodeSystemStatsDto",
       "source": "#/components/schemas/ReorderNodeResponseDto/properties/response/items/properties/system/properties/stats/properties/interface",
       "signature": "dfb36121d4800ac1b7a194748ced4dee0bede773770ae2421433a7d06fcd5786"
     },
     {
       "action": "reused",
-      "name": "ReorderNodeResponseVersionsDto",
+      "name": "NodesVersionsDto",
       "target": "NodesVersionsDto",
       "nicification": "ReorderNodeResponseVersionsDto",
       "field": "versions",
-      "parent": "ReorderNodeResponse",
+      "parent": "NodesDto",
       "source": "#/components/schemas/ReorderNodeResponseDto/properties/response/items/properties/versions",
       "signature": "3efbd6bbbdb5fed0c734787646dd4539074b8e5d414515fe14eb517e50127af1"
     },
@@ -13552,7 +13724,7 @@
     },
     {
       "action": "reused",
-      "name": "ReorderSubscriptionPageConfigsResponseConfigsDto",
+      "name": "SubscriptionPageConfigDto",
       "target": "SubscriptionPageConfigDto",
       "nicification": "ReorderSubscriptionPageConfigsResponseConfigsDto",
       "field": "configs",
@@ -13582,7 +13754,7 @@
     },
     {
       "action": "reused",
-      "name": "ReorderSubscriptionTemplatesResponseTemplatesDto",
+      "name": "SubscriptionTemplateDto",
       "target": "SubscriptionTemplateDto",
       "nicification": "ReorderSubscriptionTemplatesResponseTemplatesDto",
       "field": "templates",
@@ -13612,7 +13784,7 @@
     },
     {
       "action": "reused",
-      "name": "ResetUserTrafficResponseActiveInternalSquadsDto",
+      "name": "BaseInternalSquadDto",
       "target": "BaseInternalSquadDto",
       "nicification": "ResetUserTrafficResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
@@ -13622,7 +13794,7 @@
     },
     {
       "action": "reused",
-      "name": "ResetUserTrafficResponseUserTrafficDto",
+      "name": "UserTrafficDto",
       "target": "UserTrafficDto",
       "nicification": "ResetUserTrafficResponseUserTrafficDto",
       "field": "userTraffic",
@@ -13672,7 +13844,7 @@
     },
     {
       "action": "reused",
-      "name": "RevokeUserSubscriptionResponseActiveInternalSquadsDto",
+      "name": "BaseInternalSquadDto",
       "target": "BaseInternalSquadDto",
       "nicification": "RevokeUserSubscriptionResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
@@ -13682,7 +13854,7 @@
     },
     {
       "action": "reused",
-      "name": "RevokeUserSubscriptionResponseUserTrafficDto",
+      "name": "UserTrafficDto",
       "target": "UserTrafficDto",
       "nicification": "RevokeUserSubscriptionResponseUserTrafficDto",
       "field": "userTraffic",
@@ -13702,7 +13874,7 @@
     },
     {
       "action": "reused",
-      "name": "TruncateTorrentBlockerReportsResponseRecordsDto",
+      "name": "TorrentBlockerReportDto",
       "target": "TorrentBlockerReportDto",
       "nicification": "TruncateTorrentBlockerReportsResponseRecordsDto",
       "field": "records",
@@ -13712,51 +13884,51 @@
     },
     {
       "action": "reused",
-      "name": "TruncateTorrentBlockerReportsResponseRecordsNodeDto",
+      "name": "TorrentBlockerReportNodeDto",
       "target": "InfraBillingAvailableNodeDto",
       "nicification": "TruncateTorrentBlockerReportsResponseNodeDto",
       "field": "node",
-      "parent": "TruncateTorrentBlockerReportsResponseRecordsDto",
+      "parent": "TorrentBlockerReportDto",
       "source": "#/components/schemas/TruncateTorrentBlockerReportsResponseDto/properties/response/properties/records/items/properties/node",
       "signature": "7d7938083d36703da7f3c59b6cd8e56344f3b1bd03a1afaed37ff18c505ed261"
     },
     {
       "action": "reused",
-      "name": "TruncateTorrentBlockerReportsResponseRecordsReportDto",
+      "name": "TorrentBlockerReportReportDto",
       "target": "TorrentBlockerReportReportDto",
       "nicification": "TruncateTorrentBlockerReportsResponseReportDto",
       "field": "report",
-      "parent": "TruncateTorrentBlockerReportsResponseRecordsDto",
+      "parent": "TorrentBlockerReportDto",
       "source": "#/components/schemas/TruncateTorrentBlockerReportsResponseDto/properties/response/properties/records/items/properties/report",
       "signature": "8e6d43daaff83e4879ea561b9883e3dd8e27a2aa8638a01008fea3d459e89dc0"
     },
     {
       "action": "reused",
-      "name": "TruncateTorrentBlockerReportsResponseRecordsReportActionReportDto",
+      "name": "TorrentBlockerReportReportActionReportDto",
       "target": "TorrentBlockerReportReportActionReportDto",
       "nicification": "TruncateTorrentBlockerReportsResponseActionReportDto",
       "field": "actionReport",
-      "parent": "TruncateTorrentBlockerReportsResponseRecordsReportDto",
+      "parent": "TorrentBlockerReportReportDto",
       "source": "#/components/schemas/TruncateTorrentBlockerReportsResponseDto/properties/response/properties/records/items/properties/report/properties/actionReport",
       "signature": "797ee74b926e2702aa96a02086ed570ceac35e4b71d77688f622ef684b0ca823"
     },
     {
       "action": "reused",
-      "name": "TruncateTorrentBlockerReportsResponseRecordsReportXrayReportDto",
+      "name": "TorrentBlockerReportReportXrayReportDto",
       "target": "TorrentBlockerReportReportXrayReportDto",
       "nicification": "TruncateTorrentBlockerReportsResponseXrayReportDto",
       "field": "xrayReport",
-      "parent": "TruncateTorrentBlockerReportsResponseRecordsReportDto",
+      "parent": "TorrentBlockerReportReportDto",
       "source": "#/components/schemas/TruncateTorrentBlockerReportsResponseDto/properties/response/properties/records/items/properties/report/properties/xrayReport",
       "signature": "3f8640a796d871403174f51b1bcd71ec462fae6992fb3c2da0a9a4d92907f872"
     },
     {
       "action": "reused",
-      "name": "TruncateTorrentBlockerReportsResponseRecordsUserDto",
+      "name": "TorrentBlockerReportUserDto",
       "target": "TorrentBlockerReportUserDto",
       "nicification": "TruncateTorrentBlockerReportsResponseUserDto",
       "field": "user",
-      "parent": "TruncateTorrentBlockerReportsResponseRecordsDto",
+      "parent": "TorrentBlockerReportDto",
       "source": "#/components/schemas/TruncateTorrentBlockerReportsResponseDto/properties/response/properties/records/items/properties/user",
       "signature": "8cc0898d6ef408438a21f314ac3105411fa501c8260908573ab72139764a4d29"
     },
@@ -13772,7 +13944,7 @@
     },
     {
       "action": "reused",
-      "name": "UpdateConfigProfileResponse",
+      "name": "ConfigProfileDto",
       "target": "ConfigProfileDto",
       "nicification": "UpdateConfigProfileResponse",
       "field": "response",
@@ -13782,28 +13954,28 @@
     },
     {
       "action": "reused",
-      "name": "UpdateConfigProfileResponseInboundsDto",
+      "name": "ConfigProfileInboundsDto",
       "target": "ConfigProfileInboundsDto",
       "nicification": "UpdateConfigProfileResponseInboundsDto",
       "field": "inbounds",
-      "parent": "UpdateConfigProfileResponse",
+      "parent": "ConfigProfileDto",
       "source": "#/components/schemas/UpdateConfigProfileResponseDto/properties/response/properties/inbounds/items",
       "signature": "61a395b1c445955df25d2cfa7aa277c20e559d2f99317c61ea75e3a7a30337bd"
     },
     {
       "action": "reused",
-      "name": "UpdateConfigProfileResponseNodesDto",
+      "name": "ConfigProfileNodesDto",
       "target": "InfraBillingAvailableNodeDto",
       "nicification": "UpdateConfigProfileResponseNodesDto",
       "field": "nodes",
-      "parent": "UpdateConfigProfileResponse",
+      "parent": "ConfigProfileDto",
       "source": "#/components/schemas/UpdateConfigProfileResponseDto/properties/response/properties/nodes/items",
       "signature": "7d7938083d36703da7f3c59b6cd8e56344f3b1bd03a1afaed37ff18c505ed261"
     },
     {
       "action": "reused",
-      "name": "UpdateExternalSquadRequestCustomRemarksDto",
-      "target": "ExternalSquadCustomRemarksDto",
+      "name": "CustomRemarksDto",
+      "target": "CustomRemarksDto",
       "nicification": "UpdateExternalSquadRequestCustomRemarksDto",
       "field": "customRemarks",
       "parent": "UpdateExternalSquadRequestDto",
@@ -13822,8 +13994,8 @@
     },
     {
       "action": "reused",
-      "name": "UpdateExternalSquadRequestHwidSettingsDto",
-      "target": "ExternalSquadHwidSettingsDto",
+      "name": "HwidSettingsDto",
+      "target": "HwidSettingsDto",
       "nicification": "UpdateExternalSquadRequestHwidSettingsDto",
       "field": "hwidSettings",
       "parent": "UpdateExternalSquadRequestDto",
@@ -13852,71 +14024,71 @@
     },
     {
       "action": "reused",
-      "name": "UpdateExternalSquadResponse",
+      "name": "ExternalSquadDto",
       "target": "ExternalSquadDto",
       "nicification": "UpdateExternalSquadResponse",
       "field": "response",
       "parent": "UpdateExternalSquadResponseDto",
       "source": "#/components/schemas/UpdateExternalSquadResponseDto/properties/response",
-      "signature": "63b6da4c73acd16694efb46f6f2bff5692f5a79de0a7f62f524ab4a9e495602a"
+      "signature": "50baa80493052a12b8df77cd9d034250960f1418f2d171d7a3ec6c51c4031d71"
     },
     {
       "action": "reused",
-      "name": "UpdateExternalSquadResponseCustomRemarksDto",
-      "target": "ExternalSquadCustomRemarksDto",
+      "name": "CustomRemarksDto",
+      "target": "CustomRemarksDto",
       "nicification": "UpdateExternalSquadResponseCustomRemarksDto",
       "field": "customRemarks",
-      "parent": "UpdateExternalSquadResponse",
+      "parent": "ExternalSquadDto",
       "source": "#/components/schemas/UpdateExternalSquadResponseDto/properties/response/properties/customRemarks",
       "signature": "0de2abfb0d30a1fc4acac91171a7c8fa1abe61825b01da0ef28054bff423c775"
     },
     {
       "action": "reused",
-      "name": "UpdateExternalSquadResponseHostOverridesDto",
+      "name": "ExternalSquadHostOverridesDto",
       "target": "NullableExternalSquadHostOverridesDto",
       "nicification": "UpdateExternalSquadResponseHostOverridesDto",
       "field": "hostOverrides",
-      "parent": "UpdateExternalSquadResponse",
+      "parent": "ExternalSquadDto",
       "source": "#/components/schemas/UpdateExternalSquadResponseDto/properties/response/properties/hostOverrides",
       "signature": "9a9ca2780eb641b8517e1481790f9a9e9ecb3dbc3bc140ed3fceb0d52f58f4df"
     },
     {
       "action": "reused",
-      "name": "UpdateExternalSquadResponseHwidSettingsDto",
-      "target": "ExternalSquadHwidSettingsDto",
+      "name": "HwidSettingsDto",
+      "target": "HwidSettingsDto",
       "nicification": "UpdateExternalSquadResponseHwidSettingsDto",
       "field": "hwidSettings",
-      "parent": "UpdateExternalSquadResponse",
+      "parent": "ExternalSquadDto",
       "source": "#/components/schemas/UpdateExternalSquadResponseDto/properties/response/properties/hwidSettings",
       "signature": "d9eb2adfba247c91fa1a93ade75dc1892d31d1ef04954ac698964edffe248b03"
     },
     {
       "action": "reused",
-      "name": "UpdateExternalSquadResponseInfoDto",
+      "name": "ExternalSquadInfoDto",
       "target": "ExternalSquadInfoDto",
       "nicification": "UpdateExternalSquadResponseInfoDto",
       "field": "info",
-      "parent": "UpdateExternalSquadResponse",
+      "parent": "ExternalSquadDto",
       "source": "#/components/schemas/UpdateExternalSquadResponseDto/properties/response/properties/info",
       "signature": "039e78ac0c627c9a8f4cc387a7e34722435ac0654fcb562052608da5fe847065"
     },
     {
       "action": "reused",
-      "name": "UpdateExternalSquadResponseSubscriptionSettingsDto",
+      "name": "ExternalSquadSubscriptionSettingsDto",
       "target": "NullableExternalSquadSubscriptionSettingsDto",
       "nicification": "UpdateExternalSquadResponseSubscriptionSettingsDto",
       "field": "subscriptionSettings",
-      "parent": "UpdateExternalSquadResponse",
+      "parent": "ExternalSquadDto",
       "source": "#/components/schemas/UpdateExternalSquadResponseDto/properties/response/properties/subscriptionSettings",
       "signature": "8a91d29cd3610b4260e8eb181d62bd74603f43d03409c8156ef148d39ec39bd2"
     },
     {
       "action": "reused",
-      "name": "UpdateExternalSquadResponseTemplatesDto",
+      "name": "ExternalSquadTemplatesDto",
       "target": "ExternalSquadTemplatesDto",
       "nicification": "UpdateExternalSquadResponseTemplatesDto",
       "field": "templates",
-      "parent": "UpdateExternalSquadResponse",
+      "parent": "ExternalSquadDto",
       "source": "#/components/schemas/UpdateExternalSquadResponseDto/properties/response/properties/templates/items",
       "signature": "7e5c6e3095b05e7aff8a6dd41b47285d3663fe0e3512ff9bee142e7122f8a657"
     },
@@ -13932,21 +14104,21 @@
     },
     {
       "action": "reused",
-      "name": "UpdateHostResponse",
+      "name": "HostsDto",
       "target": "HostsDto",
       "nicification": "UpdateHostResponse",
       "field": "response",
       "parent": "UpdateHostResponseDto",
       "source": "#/components/schemas/UpdateHostResponseDto/properties/response",
-      "signature": "b458d2f81f1e20c74783c56daadbb62f0a8af51cd85c45dc6004a2abaaeb6f2e"
+      "signature": "33024ad70ce0c37864365fe100b3ac3445c5927579da690ecb1b1c893c6fb479"
     },
     {
       "action": "reused",
-      "name": "UpdateHostResponseInboundDto",
+      "name": "HostsInboundDto",
       "target": "HostsInboundDto",
       "nicification": "UpdateHostResponseInboundDto",
       "field": "inbound",
-      "parent": "UpdateHostResponse",
+      "parent": "HostsDto",
       "source": "#/components/schemas/UpdateHostResponseDto/properties/response/properties/inbound",
       "signature": "8efbc2c29a4791e7d9c36f0e39e91188df128e3126155d82d2e917cd05cf1b77"
     },
@@ -13972,7 +14144,7 @@
     },
     {
       "action": "reused",
-      "name": "UpdateInfraBillingNodeResponseBillingNodesDto",
+      "name": "InfraBillingNodeDto",
       "target": "InfraBillingNodeDto",
       "nicification": "UpdateInfraBillingNodeResponseBillingNodesDto",
       "field": "billingNodes",
@@ -13982,21 +14154,21 @@
     },
     {
       "action": "reused",
-      "name": "UpdateInfraBillingNodeResponseBillingNodesNodeDto",
+      "name": "InfraBillingNodeNodeDto",
       "target": "InfraBillingNodeNodeDto",
       "nicification": "UpdateInfraBillingNodeResponseNodeDto",
       "field": "node",
-      "parent": "UpdateInfraBillingNodeResponseBillingNodesDto",
+      "parent": "InfraBillingNodeDto",
       "source": "#/components/schemas/UpdateInfraBillingNodeResponseDto/properties/response/properties/billingNodes/items/properties/node",
       "signature": "93e23d057f1b14f547a478825856f2c2d4593e744e52ea2f256ccf9b6255c4b6"
     },
     {
       "action": "reused",
-      "name": "UpdateInfraBillingNodeResponseBillingNodesProviderDto",
+      "name": "InfraBillingNodeProviderDto",
       "target": "InfraBillingNodeProviderDto",
       "nicification": "UpdateInfraBillingNodeResponseProviderDto",
       "field": "provider",
-      "parent": "UpdateInfraBillingNodeResponseBillingNodesDto",
+      "parent": "InfraBillingNodeDto",
       "source": "#/components/schemas/UpdateInfraBillingNodeResponseDto/properties/response/properties/billingNodes/items/properties/provider",
       "signature": "490c82b96d32bea1dde7797626fa0d086ca0bf85a0c9ccd6be1c1aeb2e1ea767"
     },
@@ -14012,7 +14184,7 @@
     },
     {
       "action": "reused",
-      "name": "UpdateInfraProviderResponse",
+      "name": "InfraProviderDto",
       "target": "InfraProviderDto",
       "nicification": "UpdateInfraProviderResponse",
       "field": "response",
@@ -14022,37 +14194,37 @@
     },
     {
       "action": "reused",
-      "name": "UpdateInfraProviderResponseBillingHistoryDto",
+      "name": "InfraProviderBillingHistoryDto",
       "target": "InfraProviderBillingHistoryDto",
       "nicification": "UpdateInfraProviderResponseBillingHistoryDto",
       "field": "billingHistory",
-      "parent": "UpdateInfraProviderResponse",
+      "parent": "InfraProviderDto",
       "source": "#/components/schemas/UpdateInfraProviderResponseDto/properties/response/properties/billingHistory",
       "signature": "19bb70b91a1c10f71b9c24f0484ec48be69ebff0257569de442ceb40b2f71f56"
     },
     {
       "action": "reused",
-      "name": "UpdateInfraProviderResponseBillingNodesDto",
+      "name": "InfraProviderBillingNodesDto",
       "target": "InfraProviderBillingNodesDto",
       "nicification": "UpdateInfraProviderResponseBillingNodesDto",
       "field": "billingNodes",
-      "parent": "UpdateInfraProviderResponse",
+      "parent": "InfraProviderDto",
       "source": "#/components/schemas/UpdateInfraProviderResponseDto/properties/response/properties/billingNodes/items",
       "signature": "b70d94a57815693dc89b9d05997b0ec152f4de5e747cc2334ced88ed74cd69de"
     },
     {
       "action": "reused",
-      "name": "UpdateInfraProviderResponseBillingNodesDetailsDto",
+      "name": "InfraProviderBillingNodesDetailsDto",
       "target": "InfraProviderBillingNodesDetailsDto",
       "nicification": "UpdateInfraProviderResponseDetailsDto",
       "field": "details",
-      "parent": "UpdateInfraProviderResponseBillingNodesDto",
+      "parent": "InfraProviderBillingNodesDto",
       "source": "#/components/schemas/UpdateInfraProviderResponseDto/properties/response/properties/billingNodes/items/properties/details",
       "signature": "92b391f731e7080063d012c687ece2ded9b133dda77ec4a57fd67567b0709ea9"
     },
     {
       "action": "reused",
-      "name": "UpdateInternalSquadResponse",
+      "name": "InternalSquadDto",
       "target": "InternalSquadDto",
       "nicification": "UpdateInternalSquadResponse",
       "field": "response",
@@ -14062,21 +14234,21 @@
     },
     {
       "action": "reused",
-      "name": "UpdateInternalSquadResponseInboundsDto",
+      "name": "ConfigProfileInboundsDto",
       "target": "ConfigProfileInboundsDto",
       "nicification": "UpdateInternalSquadResponseInboundsDto",
       "field": "inbounds",
-      "parent": "UpdateInternalSquadResponse",
+      "parent": "InternalSquadDto",
       "source": "#/components/schemas/UpdateInternalSquadResponseDto/properties/response/properties/inbounds/items",
       "signature": "61a395b1c445955df25d2cfa7aa277c20e559d2f99317c61ea75e3a7a30337bd"
     },
     {
       "action": "reused",
-      "name": "UpdateInternalSquadResponseInfoDto",
+      "name": "InternalSquadInfoDto",
       "target": "InternalSquadInfoDto",
       "nicification": "UpdateInternalSquadResponseInfoDto",
       "field": "info",
-      "parent": "UpdateInternalSquadResponse",
+      "parent": "InternalSquadDto",
       "source": "#/components/schemas/UpdateInternalSquadResponseDto/properties/response/properties/info",
       "signature": "8c666c1cc3b1ee033d4f16462a030e61cde1ac19164eb4a99bf64a4168155770"
     },
@@ -14092,28 +14264,28 @@
     },
     {
       "action": "reused",
-      "name": "UpdateManyHostsResponse",
+      "name": "HostsDto",
       "target": "HostsDto",
       "nicification": "UpdateManyHostsResponse",
       "field": "response",
       "parent": "UpdateManyHostsResponseDto",
       "source": "#/components/schemas/UpdateManyHostsResponseDto/properties/response/items",
-      "signature": "b458d2f81f1e20c74783c56daadbb62f0a8af51cd85c45dc6004a2abaaeb6f2e"
+      "signature": "33024ad70ce0c37864365fe100b3ac3445c5927579da690ecb1b1c893c6fb479"
     },
     {
       "action": "reused",
-      "name": "UpdateManyHostsResponseInboundDto",
+      "name": "HostsInboundDto",
       "target": "HostsInboundDto",
       "nicification": "UpdateManyHostsResponseInboundDto",
       "field": "inbound",
-      "parent": "UpdateManyHostsResponse",
+      "parent": "HostsDto",
       "source": "#/components/schemas/UpdateManyHostsResponseDto/properties/response/items/properties/inbound",
       "signature": "8efbc2c29a4791e7d9c36f0e39e91188df128e3126155d82d2e917cd05cf1b77"
     },
     {
       "action": "reused",
-      "name": "UpdateNodePluginResponse",
-      "target": "GetNodePluginResponse",
+      "name": "NodePluginDto",
+      "target": "NodePluginDto2",
       "nicification": "UpdateNodePluginResponse",
       "field": "response",
       "parent": "UpdateNodePluginResponseDto",
@@ -14132,7 +14304,7 @@
     },
     {
       "action": "reused",
-      "name": "UpdateNodeResponse",
+      "name": "NodesDto",
       "target": "NodesDto",
       "nicification": "UpdateNodeResponse",
       "field": "response",
@@ -14142,81 +14314,81 @@
     },
     {
       "action": "reused",
-      "name": "UpdateNodeResponseConfigProfileDto",
+      "name": "NodesConfigProfileDto",
       "target": "NodesConfigProfileDto",
       "nicification": "UpdateNodeResponseConfigProfileDto",
       "field": "configProfile",
-      "parent": "UpdateNodeResponse",
+      "parent": "NodesDto",
       "source": "#/components/schemas/UpdateNodeResponseDto/properties/response/properties/configProfile",
       "signature": "9f5c186ecff42bfd89cfd2bb7c7e4c73f6e3331585549b0fdb0cedc15d78c599"
     },
     {
       "action": "reused",
-      "name": "UpdateNodeResponseConfigProfileActiveInboundsDto",
+      "name": "ConfigProfileInboundsDto",
       "target": "ConfigProfileInboundsDto",
       "nicification": "UpdateNodeResponseActiveInboundsDto",
       "field": "activeInbounds",
-      "parent": "UpdateNodeResponseConfigProfileDto",
+      "parent": "NodesConfigProfileDto",
       "source": "#/components/schemas/UpdateNodeResponseDto/properties/response/properties/configProfile/properties/activeInbounds/items",
       "signature": "61a395b1c445955df25d2cfa7aa277c20e559d2f99317c61ea75e3a7a30337bd"
     },
     {
       "action": "reused",
-      "name": "UpdateNodeResponseProviderDto",
+      "name": "PartialInfraProviderDto",
       "target": "PartialInfraProviderDto",
       "nicification": "UpdateNodeResponseProviderDto",
       "field": "provider",
-      "parent": "UpdateNodeResponse",
+      "parent": "NodesDto",
       "source": "#/components/schemas/UpdateNodeResponseDto/properties/response/properties/provider",
       "signature": "dfa62d176586533aa8aaffec7a722c3087c9440f4573a94b9942b4d7c55a6a66"
     },
     {
       "action": "reused",
-      "name": "UpdateNodeResponseSystemDto",
+      "name": "NodeSystemDto",
       "target": "NodeSystemDto",
       "nicification": "UpdateNodeResponseSystemDto",
       "field": "system",
-      "parent": "UpdateNodeResponse",
+      "parent": "NodesDto",
       "source": "#/components/schemas/UpdateNodeResponseDto/properties/response/properties/system",
       "signature": "612edc2c9144df51157f7dd40f21fd65b4d91c12e6b5d626467a0838180f1caa"
     },
     {
       "action": "reused",
-      "name": "UpdateNodeResponseSystemInfoDto",
+      "name": "NodeSystemInfoDto",
       "target": "NodeSystemInfoDto",
       "nicification": "UpdateNodeResponseInfoDto",
       "field": "info",
-      "parent": "UpdateNodeResponseSystemDto",
+      "parent": "NodeSystemDto",
       "source": "#/components/schemas/UpdateNodeResponseDto/properties/response/properties/system/properties/info",
       "signature": "7dcd91f9ee867adfc3baf367edd92b99b59214a98074e74b113009c8db36980b"
     },
     {
       "action": "reused",
-      "name": "UpdateNodeResponseSystemStatsDto",
+      "name": "NodeSystemStatsDto",
       "target": "NodeSystemStatsDto",
       "nicification": "UpdateNodeResponseStatsDto",
       "field": "stats",
-      "parent": "UpdateNodeResponseSystemDto",
+      "parent": "NodeSystemDto",
       "source": "#/components/schemas/UpdateNodeResponseDto/properties/response/properties/system/properties/stats",
       "signature": "f8cb79ad1e403c4eca5d77fc64ccd79325518a9835a856bd4ffff0a1bd725f79"
     },
     {
       "action": "reused",
-      "name": "UpdateNodeResponseSystemStatsInterfaceDto",
+      "name": "NetworkInterfaceDto",
       "target": "NetworkInterfaceDto",
       "nicification": "UpdateNodeResponseInterfaceDto",
       "field": "interface",
-      "parent": "UpdateNodeResponseSystemStatsDto",
+      "parent": "NodeSystemStatsDto",
       "source": "#/components/schemas/UpdateNodeResponseDto/properties/response/properties/system/properties/stats/properties/interface",
       "signature": "dfb36121d4800ac1b7a194748ced4dee0bede773770ae2421433a7d06fcd5786"
     },
     {
       "action": "reused",
-      "name": "UpdateNodeResponseVersionsDto",
+      "name": "NodesVersionsDto",
       "target": "NodesVersionsDto",
       "nicification": "UpdateNodeResponseVersionsDto",
       "field": "versions",
-      "parent": "UpdateNodeResponse",
+      "parent": "NodesDto",
       "source": "#/components/schemas/UpdateNodeResponseDto/properties/response/properties/versions",
       "signature": "3efbd6bbbdb5fed0c734787646dd4539074b8e5d414515fe14eb517e50127af1"
     },
@@ -14242,8 +14414,8 @@
     },
     {
       "action": "hoisted",
-      "name": "BrandingSettingsDto",
-      "target": "BrandingSettingsDto",
+      "name": "BrandingSettingsDto3",
+      "target": "BrandingSettingsDto3",
       "nicification": "UpdateRemnawaveSettingsRequestBrandingSettingsDto",
       "field": "brandingSettings",
       "parent": "UpdateRemnawaveSettingsRequestDto",
@@ -14252,18 +14424,18 @@
     },
     {
       "action": "hoisted",
-      "name": "Oauth2SettingsDto",
-      "target": "Oauth2SettingsDto",
+      "name": "Oauth2SettingsDto2",
+      "target": "Oauth2SettingsDto2",
       "nicification": "UpdateRemnawaveSettingsRequestOauth2SettingsDto",
       "field": "oauth2Settings",
       "parent": "UpdateRemnawaveSettingsRequestDto",
       "source": "#/components/schemas/UpdateRemnawaveSettingsRequestDto/properties/oauth2Settings",
-      "signature": "39999579f2b0965bef4de4fcc4e6074de6d27c1d1ef7053b10c92438346a017d"
+      "signature": "132a75b3d3bba4fa78c46803bbea6e0ee0c17e38d464f86cbce3e68acd3520f0"
     },
     {
       "action": "reused",
       "name": "Oauth2SettingsGenericDto",
-      "target": "RemnawaveSettingsOauth2SettingsGenericDto",
+      "target": "Oauth2SettingsGenericDto",
       "nicification": "UpdateRemnawaveSettingsRequestGenericDto",
       "field": "generic",
       "parent": "Oauth2SettingsDto",
@@ -14273,7 +14445,7 @@
     {
       "action": "reused",
       "name": "Oauth2SettingsGithubDto",
-      "target": "RemnawaveSettingsOauth2SettingsGithubDto",
+      "target": "Oauth2SettingsGithubDto",
       "nicification": "UpdateRemnawaveSettingsRequestGithubDto",
       "field": "github",
       "parent": "Oauth2SettingsDto",
@@ -14283,7 +14455,7 @@
     {
       "action": "reused",
       "name": "Oauth2SettingsKeycloakDto",
-      "target": "RemnawaveSettingsOauth2SettingsKeycloakDto",
+      "target": "Oauth2SettingsKeycloakDto",
       "nicification": "UpdateRemnawaveSettingsRequestKeycloakDto",
       "field": "keycloak",
       "parent": "Oauth2SettingsDto",
@@ -14293,7 +14465,7 @@
     {
       "action": "reused",
       "name": "Oauth2SettingsPocketidDto",
-      "target": "RemnawaveSettingsOauth2SettingsPocketidDto",
+      "target": "Oauth2SettingsPocketidDto",
       "nicification": "UpdateRemnawaveSettingsRequestPocketidDto",
       "field": "pocketid",
       "parent": "Oauth2SettingsDto",
@@ -14303,7 +14475,7 @@
     {
       "action": "reused",
       "name": "Oauth2SettingsTelegramDto",
-      "target": "RemnawaveSettingsOauth2SettingsTelegramDto",
+      "target": "Oauth2SettingsTelegramDto",
       "nicification": "UpdateRemnawaveSettingsRequestTelegramDto",
       "field": "telegram",
       "parent": "Oauth2SettingsDto",
@@ -14313,7 +14485,7 @@
     {
       "action": "reused",
       "name": "Oauth2SettingsYandexDto",
-      "target": "RemnawaveSettingsOauth2SettingsGithubDto",
+      "target": "Oauth2SettingsGithubDto",
       "nicification": "UpdateRemnawaveSettingsRequestYandexDto",
       "field": "yandex",
       "parent": "Oauth2SettingsDto",
@@ -14322,8 +14494,8 @@
     },
     {
       "action": "hoisted",
-      "name": "PasskeySettingsDto",
-      "target": "PasskeySettingsDto",
+      "name": "PasskeySettingsDto2",
+      "target": "PasskeySettingsDto2",
       "nicification": "UpdateRemnawaveSettingsRequestPasskeySettingsDto",
       "field": "passkeySettings",
       "parent": "UpdateRemnawaveSettingsRequestDto",
@@ -14342,111 +14514,111 @@
     },
     {
       "action": "reused",
-      "name": "UpdateRemnawaveSettingsResponse",
+      "name": "RemnawaveSettingsDto",
       "target": "RemnawaveSettingsDto",
       "nicification": "UpdateRemnawaveSettingsResponse",
       "field": "response",
       "parent": "UpdateRemnawaveSettingsResponseDto",
       "source": "#/components/schemas/UpdateRemnawaveSettingsResponseDto/properties/response",
-      "signature": "6b72a97f2b433665398c474231182c957a14a897eb5ab8539a5737fe21d4c7df"
+      "signature": "cea49b840ea89b5f22de6bbabb7a4a6294a92bd7f89d036e905041c733dfb952"
     },
     {
       "action": "reused",
-      "name": "UpdateRemnawaveSettingsResponseBrandingSettingsDto",
-      "target": "RemnawaveSettingsBrandingSettingsDto",
+      "name": "BrandingSettingsDto",
+      "target": "BrandingSettingsDto",
       "nicification": "UpdateRemnawaveSettingsResponseBrandingSettingsDto",
       "field": "brandingSettings",
-      "parent": "UpdateRemnawaveSettingsResponse",
+      "parent": "RemnawaveSettingsDto",
       "source": "#/components/schemas/UpdateRemnawaveSettingsResponseDto/properties/response/properties/brandingSettings",
       "signature": "b8b14a4ca23ae611f6b07d0963ed50da6a8a33f6ca38aed38b8dd29e86250828"
     },
     {
       "action": "reused",
-      "name": "UpdateRemnawaveSettingsResponseOauth2SettingsDto",
-      "target": "RemnawaveSettingsOauth2SettingsDto",
+      "name": "Oauth2SettingsDto",
+      "target": "Oauth2SettingsDto",
       "nicification": "UpdateRemnawaveSettingsResponseOauth2SettingsDto",
       "field": "oauth2Settings",
-      "parent": "UpdateRemnawaveSettingsResponse",
+      "parent": "RemnawaveSettingsDto",
       "source": "#/components/schemas/UpdateRemnawaveSettingsResponseDto/properties/response/properties/oauth2Settings",
-      "signature": "18d4560310107e412e2dd54fe10ab7c83210fc8a1c58f9801cf9a2bde735045d"
+      "signature": "3c7669c8d3aa3815fc76ef1ada14c7daec0b18d64b9d9a71991e4387aede19ee"
     },
     {
       "action": "reused",
-      "name": "UpdateRemnawaveSettingsResponseOauth2SettingsGenericDto",
-      "target": "RemnawaveSettingsOauth2SettingsGenericDto",
+      "name": "Oauth2SettingsGenericDto",
+      "target": "Oauth2SettingsGenericDto",
       "nicification": "UpdateRemnawaveSettingsResponseGenericDto",
       "field": "generic",
-      "parent": "UpdateRemnawaveSettingsResponseOauth2SettingsDto",
+      "parent": "Oauth2SettingsDto",
       "source": "#/components/schemas/UpdateRemnawaveSettingsResponseDto/properties/response/properties/oauth2Settings/properties/generic",
       "signature": "a8afa54daaf4d8f3854769261b8f20fd72b3e94675ae3b17485ca5238d26e15e"
     },
     {
       "action": "reused",
-      "name": "UpdateRemnawaveSettingsResponseOauth2SettingsGithubDto",
-      "target": "RemnawaveSettingsOauth2SettingsGithubDto",
+      "name": "Oauth2SettingsGithubDto",
+      "target": "Oauth2SettingsGithubDto",
       "nicification": "UpdateRemnawaveSettingsResponseGithubDto",
       "field": "github",
-      "parent": "UpdateRemnawaveSettingsResponseOauth2SettingsDto",
+      "parent": "Oauth2SettingsDto",
       "source": "#/components/schemas/UpdateRemnawaveSettingsResponseDto/properties/response/properties/oauth2Settings/properties/github",
       "signature": "3b2ed090eddbf4746fd1d94842461d51b8cb9c6a48b0658330c3e47338958f13"
     },
     {
       "action": "reused",
-      "name": "UpdateRemnawaveSettingsResponseOauth2SettingsKeycloakDto",
-      "target": "RemnawaveSettingsOauth2SettingsKeycloakDto",
+      "name": "Oauth2SettingsKeycloakDto",
+      "target": "Oauth2SettingsKeycloakDto",
       "nicification": "UpdateRemnawaveSettingsResponseKeycloakDto",
       "field": "keycloak",
-      "parent": "UpdateRemnawaveSettingsResponseOauth2SettingsDto",
+      "parent": "Oauth2SettingsDto",
       "source": "#/components/schemas/UpdateRemnawaveSettingsResponseDto/properties/response/properties/oauth2Settings/properties/keycloak",
       "signature": "87988f4d5325cc4d93448c65275411653953baa232474b1e3597af13149737a4"
     },
     {
       "action": "reused",
-      "name": "UpdateRemnawaveSettingsResponseOauth2SettingsPocketidDto",
-      "target": "RemnawaveSettingsOauth2SettingsPocketidDto",
+      "name": "Oauth2SettingsPocketidDto",
+      "target": "Oauth2SettingsPocketidDto",
       "nicification": "UpdateRemnawaveSettingsResponsePocketidDto",
       "field": "pocketid",
-      "parent": "UpdateRemnawaveSettingsResponseOauth2SettingsDto",
+      "parent": "Oauth2SettingsDto",
       "source": "#/components/schemas/UpdateRemnawaveSettingsResponseDto/properties/response/properties/oauth2Settings/properties/pocketid",
       "signature": "91cc466b6b65093036b7c64a3d717d420a6d4fece56aa07b9816154f551d9488"
     },
     {
       "action": "reused",
-      "name": "UpdateRemnawaveSettingsResponseOauth2SettingsTelegramDto",
-      "target": "RemnawaveSettingsOauth2SettingsTelegramDto",
+      "name": "Oauth2SettingsTelegramDto",
+      "target": "Oauth2SettingsTelegramDto",
       "nicification": "UpdateRemnawaveSettingsResponseTelegramDto",
       "field": "telegram",
-      "parent": "UpdateRemnawaveSettingsResponseOauth2SettingsDto",
+      "parent": "Oauth2SettingsDto",
       "source": "#/components/schemas/UpdateRemnawaveSettingsResponseDto/properties/response/properties/oauth2Settings/properties/telegram",
       "signature": "5af16ecff12436566d129d0327c9bbf1b6fe4162f1c520157506ce18748d4c88"
     },
     {
       "action": "reused",
-      "name": "UpdateRemnawaveSettingsResponseOauth2SettingsYandexDto",
-      "target": "RemnawaveSettingsOauth2SettingsGithubDto",
+      "name": "Oauth2SettingsYandexDto",
+      "target": "Oauth2SettingsGithubDto",
       "nicification": "UpdateRemnawaveSettingsResponseYandexDto",
       "field": "yandex",
-      "parent": "UpdateRemnawaveSettingsResponseOauth2SettingsDto",
+      "parent": "Oauth2SettingsDto",
       "source": "#/components/schemas/UpdateRemnawaveSettingsResponseDto/properties/response/properties/oauth2Settings/properties/yandex",
       "signature": "3b2ed090eddbf4746fd1d94842461d51b8cb9c6a48b0658330c3e47338958f13"
     },
     {
       "action": "reused",
-      "name": "UpdateRemnawaveSettingsResponsePasskeySettingsDto",
-      "target": "RemnawaveSettingsPasskeySettingsDto",
+      "name": "PasskeySettingsDto",
+      "target": "PasskeySettingsDto",
       "nicification": "UpdateRemnawaveSettingsResponsePasskeySettingsDto",
       "field": "passkeySettings",
-      "parent": "UpdateRemnawaveSettingsResponse",
+      "parent": "RemnawaveSettingsDto",
       "source": "#/components/schemas/UpdateRemnawaveSettingsResponseDto/properties/response/properties/passkeySettings",
       "signature": "833c60c676927fbe1ae289008e3ad2ffc3ae2f01a89e1f910ac38a10b25159df"
     },
     {
       "action": "reused",
-      "name": "UpdateRemnawaveSettingsResponsePasswordSettingsDto",
+      "name": "RemnawaveSettingsPasswordSettingsDto",
       "target": "RemnawaveSettingsPasswordSettingsDto",
       "nicification": "UpdateRemnawaveSettingsResponsePasswordSettingsDto",
       "field": "passwordSettings",
-      "parent": "UpdateRemnawaveSettingsResponse",
+      "parent": "RemnawaveSettingsDto",
       "source": "#/components/schemas/UpdateRemnawaveSettingsResponseDto/properties/response/properties/passwordSettings",
       "signature": "3d352fc113ac0560584bec12adb8e7c6e74a8d6ff2c078da8d0d0528a44225d4"
     },
@@ -14472,7 +14644,7 @@
     },
     {
       "action": "reused",
-      "name": "UpdateSnippetResponseSnippetsDto",
+      "name": "SnippetsDto",
       "target": "SnippetsDto",
       "nicification": "UpdateSnippetResponseSnippetsDto",
       "field": "snippets",
@@ -14482,8 +14654,8 @@
     },
     {
       "action": "reused",
-      "name": "UpdateSubscriptionPageConfigResponse",
-      "target": "GetSubscriptionPageConfigResponse",
+      "name": "SubscriptionPageConfigDto",
+      "target": "SubscriptionPageConfigDto2",
       "nicification": "UpdateSubscriptionPageConfigResponse",
       "field": "response",
       "parent": "UpdateSubscriptionPageConfigResponseDto",
@@ -14492,8 +14664,8 @@
     },
     {
       "action": "reused",
-      "name": "UpdateSubscriptionSettingsRequestCustomRemarksDto",
-      "target": "CustomRemarksDto",
+      "name": "CustomRemarksDto",
+      "target": "CustomRemarksDto2",
       "nicification": "UpdateSubscriptionSettingsRequestCustomRemarksDto",
       "field": "customRemarks",
       "parent": "UpdateSubscriptionSettingsRequestDto",
@@ -14502,8 +14674,8 @@
     },
     {
       "action": "hoisted",
-      "name": "HwidSettingsDto",
-      "target": "HwidSettingsDto",
+      "name": "HwidSettingsDto2",
+      "target": "HwidSettingsDto2",
       "nicification": "UpdateSubscriptionSettingsRequestHwidSettingsDto",
       "field": "hwidSettings",
       "parent": "UpdateSubscriptionSettingsRequestDto",
@@ -14512,8 +14684,8 @@
     },
     {
       "action": "reused",
-      "name": "UpdateSubscriptionSettingsRequestResponseRulesDto",
-      "target": "ResponseRulesConfigDto",
+      "name": "ResponseRulesConfigDto",
+      "target": "ResponseRulesConfigDto2",
       "nicification": "UpdateSubscriptionSettingsRequestResponseRulesDto",
       "field": "responseRules",
       "parent": "UpdateSubscriptionSettingsRequestDto",
@@ -14522,161 +14694,161 @@
     },
     {
       "action": "reused",
-      "name": "UpdateSubscriptionSettingsRequestResponseRulesRulesDto",
+      "name": "ResponseRulesConfigRulesDto",
       "target": "ResponseRuleDto",
       "nicification": "UpdateSubscriptionSettingsRequestRulesDto",
       "field": "rules",
-      "parent": "UpdateSubscriptionSettingsRequestResponseRulesDto",
+      "parent": "ResponseRulesConfigDto",
       "source": "#/components/schemas/UpdateSubscriptionSettingsRequestDto/properties/responseRules/properties/rules/items",
       "signature": "fe5c086ba34f2d01e9bb53598c6f800ca317a4d41ea20590753cef4e1d544b72"
     },
     {
       "action": "reused",
-      "name": "UpdateSubscriptionSettingsRequestResponseRulesRulesConditionsDto",
+      "name": "ResponseRulesConfigRulesConditionsDto",
       "target": "ResponseRuleConditionDto",
       "nicification": "UpdateSubscriptionSettingsRequestConditionsDto",
       "field": "conditions",
-      "parent": "UpdateSubscriptionSettingsRequestResponseRulesRulesDto",
+      "parent": "ResponseRulesConfigRulesDto",
       "source": "#/components/schemas/UpdateSubscriptionSettingsRequestDto/properties/responseRules/properties/rules/items/properties/conditions/items",
       "signature": "82553e74a30b35d0909508435f8942f11d140126f0111edb2031ea5d6e963e7e"
     },
     {
       "action": "reused",
-      "name": "UpdateSubscriptionSettingsRequestResponseRulesRulesResponseModificationsDto",
+      "name": "ResponseRulesConfigRulesResponseModificationsDto",
       "target": "ResponseRuleModificationsDto",
       "nicification": "UpdateSubscriptionSettingsRequestResponseModificationsDto",
       "field": "responseModifications",
-      "parent": "UpdateSubscriptionSettingsRequestResponseRulesRulesDto",
+      "parent": "ResponseRulesConfigRulesDto",
       "source": "#/components/schemas/UpdateSubscriptionSettingsRequestDto/properties/responseRules/properties/rules/items/properties/responseModifications",
       "signature": "bfbfb1ad8539b663274c14e73ab1c1ea574a5776c984e0655da8d7ae0dd54767"
     },
     {
       "action": "reused",
-      "name": "UpdateSubscriptionSettingsRequestResponseRulesRulesResponseModificationsEncryptionDto",
+      "name": "ResponseRuleEncryptionDto",
       "target": "ResponseRuleEncryptionDto",
       "nicification": "UpdateSubscriptionSettingsRequestEncryptionDto",
       "field": "encryption",
-      "parent": "UpdateSubscriptionSettingsRequestResponseRulesRulesResponseModificationsDto",
+      "parent": "ResponseRulesConfigRulesResponseModificationsDto",
       "source": "#/components/schemas/UpdateSubscriptionSettingsRequestDto/properties/responseRules/properties/rules/items/properties/responseModifications/properties/encryption",
       "signature": "c6e280eca4885cbd843bfcd997bea7e9ca29fdd9374c6dd19e9a133f949beb8d"
     },
     {
       "action": "reused",
-      "name": "UpdateSubscriptionSettingsRequestResponseRulesRulesResponseModificationsHeadersDto",
+      "name": "ResponseRulesConfigRulesResponseModificationsHeadersDto",
       "target": "ResponseRuleModificationsHeadersDto",
       "nicification": "UpdateSubscriptionSettingsRequestHeadersDto",
       "field": "headers",
-      "parent": "UpdateSubscriptionSettingsRequestResponseRulesRulesResponseModificationsDto",
+      "parent": "ResponseRulesConfigRulesResponseModificationsDto",
       "source": "#/components/schemas/UpdateSubscriptionSettingsRequestDto/properties/responseRules/properties/rules/items/properties/responseModifications/properties/headers/items",
       "signature": "db6a4c45babef09ea0465495814ab624e339b323a64f346932f8b59ae0a366ee"
     },
     {
       "action": "reused",
-      "name": "UpdateSubscriptionSettingsRequestResponseRulesSettingsDto",
+      "name": "ResponseRulesConfigSettingsDto",
       "target": "ResponseRuleSettingsDto",
       "nicification": "UpdateSubscriptionSettingsRequestSettingsDto",
       "field": "settings",
-      "parent": "UpdateSubscriptionSettingsRequestResponseRulesDto",
+      "parent": "ResponseRulesConfigDto",
       "source": "#/components/schemas/UpdateSubscriptionSettingsRequestDto/properties/responseRules/properties/settings",
       "signature": "78f876f5818084e2240804e6c968a0ed69e1cfef43ad57726752d365cb69a4b4"
     },
     {
       "action": "reused",
-      "name": "UpdateSubscriptionSettingsResponse",
+      "name": "SubscriptionSettingsDto",
       "target": "SubscriptionSettingsDto",
       "nicification": "UpdateSubscriptionSettingsResponse",
       "field": "response",
       "parent": "UpdateSubscriptionSettingsResponseDto",
       "source": "#/components/schemas/UpdateSubscriptionSettingsResponseDto/properties/response",
-      "signature": "d5f488d7fb15ce5003ced32f42d53c1d607eb83624648b549b4321f218f7564b"
+      "signature": "7b464e73ceb19830deb9e4b9c134ec0d3fbb24204aaefdaa9f4866b630d561d1"
     },
     {
       "action": "reused",
-      "name": "UpdateSubscriptionSettingsResponseCustomRemarksDto",
-      "target": "CustomRemarksDto",
+      "name": "CustomRemarksDto",
+      "target": "CustomRemarksDto2",
       "nicification": "UpdateSubscriptionSettingsResponseCustomRemarksDto",
       "field": "customRemarks",
-      "parent": "UpdateSubscriptionSettingsResponse",
+      "parent": "SubscriptionSettingsDto",
       "source": "#/components/schemas/UpdateSubscriptionSettingsResponseDto/properties/response/properties/customRemarks",
       "signature": "13481470e40b1dcea8a2490b768ed1c0312990c86121f5727550d94964ab6930"
     },
     {
       "action": "reused",
-      "name": "UpdateSubscriptionSettingsResponseHwidSettingsDto",
-      "target": "ExternalSquadHwidSettingsDto",
+      "name": "HwidSettingsDto",
+      "target": "HwidSettingsDto",
       "nicification": "UpdateSubscriptionSettingsResponseHwidSettingsDto",
       "field": "hwidSettings",
-      "parent": "UpdateSubscriptionSettingsResponse",
+      "parent": "SubscriptionSettingsDto",
       "source": "#/components/schemas/UpdateSubscriptionSettingsResponseDto/properties/response/properties/hwidSettings",
       "signature": "d9eb2adfba247c91fa1a93ade75dc1892d31d1ef04954ac698964edffe248b03"
     },
     {
       "action": "reused",
-      "name": "UpdateSubscriptionSettingsResponseResponseRulesDto",
-      "target": "SubscriptionSettingsResponseRulesDto",
+      "name": "ResponseRulesConfigDto",
+      "target": "ResponseRulesConfigDto",
       "nicification": "UpdateSubscriptionSettingsResponseResponseRulesDto",
       "field": "responseRules",
-      "parent": "UpdateSubscriptionSettingsResponse",
+      "parent": "SubscriptionSettingsDto",
       "source": "#/components/schemas/UpdateSubscriptionSettingsResponseDto/properties/response/properties/responseRules",
       "signature": "1f0c0e818216b28a04ee5f51d40cfaa014f4696a59d53bb363372d3207c28ca8"
     },
     {
       "action": "reused",
-      "name": "UpdateSubscriptionSettingsResponseResponseRulesRulesDto",
+      "name": "ResponseRulesConfigRulesDto",
       "target": "ResponseRuleDto",
       "nicification": "UpdateSubscriptionSettingsResponseRulesDto",
       "field": "rules",
-      "parent": "UpdateSubscriptionSettingsResponseResponseRulesDto",
+      "parent": "ResponseRulesConfigDto",
       "source": "#/components/schemas/UpdateSubscriptionSettingsResponseDto/properties/response/properties/responseRules/properties/rules/items",
       "signature": "fe5c086ba34f2d01e9bb53598c6f800ca317a4d41ea20590753cef4e1d544b72"
     },
     {
       "action": "reused",
-      "name": "UpdateSubscriptionSettingsResponseResponseRulesRulesConditionsDto",
+      "name": "ResponseRulesConfigRulesConditionsDto",
       "target": "ResponseRuleConditionDto",
       "nicification": "UpdateSubscriptionSettingsResponseConditionsDto",
       "field": "conditions",
-      "parent": "UpdateSubscriptionSettingsResponseResponseRulesRulesDto",
+      "parent": "ResponseRulesConfigRulesDto",
       "source": "#/components/schemas/UpdateSubscriptionSettingsResponseDto/properties/response/properties/responseRules/properties/rules/items/properties/conditions/items",
       "signature": "82553e74a30b35d0909508435f8942f11d140126f0111edb2031ea5d6e963e7e"
     },
     {
       "action": "reused",
-      "name": "UpdateSubscriptionSettingsResponseResponseRulesRulesResponseModificationsDto",
+      "name": "ResponseRulesConfigRulesResponseModificationsDto",
       "target": "ResponseRuleModificationsDto",
       "nicification": "UpdateSubscriptionSettingsResponseResponseModificationsDto",
       "field": "responseModifications",
-      "parent": "UpdateSubscriptionSettingsResponseResponseRulesRulesDto",
+      "parent": "ResponseRulesConfigRulesDto",
       "source": "#/components/schemas/UpdateSubscriptionSettingsResponseDto/properties/response/properties/responseRules/properties/rules/items/properties/responseModifications",
       "signature": "bfbfb1ad8539b663274c14e73ab1c1ea574a5776c984e0655da8d7ae0dd54767"
     },
     {
       "action": "reused",
-      "name": "UpdateSubscriptionSettingsResponseResponseRulesRulesResponseModificationsEncryptionDto",
+      "name": "ResponseRuleEncryptionDto",
       "target": "ResponseRuleEncryptionDto",
       "nicification": "UpdateSubscriptionSettingsResponseEncryptionDto",
       "field": "encryption",
-      "parent": "UpdateSubscriptionSettingsResponseResponseRulesRulesResponseModificationsDto",
+      "parent": "ResponseRulesConfigRulesResponseModificationsDto",
       "source": "#/components/schemas/UpdateSubscriptionSettingsResponseDto/properties/response/properties/responseRules/properties/rules/items/properties/responseModifications/properties/encryption",
       "signature": "c6e280eca4885cbd843bfcd997bea7e9ca29fdd9374c6dd19e9a133f949beb8d"
     },
     {
       "action": "reused",
-      "name": "UpdateSubscriptionSettingsResponseResponseRulesRulesResponseModificationsHeadersDto",
+      "name": "ResponseRulesConfigRulesResponseModificationsHeadersDto",
       "target": "ResponseRuleModificationsHeadersDto",
       "nicification": "UpdateSubscriptionSettingsResponseHeadersDto",
       "field": "headers",
-      "parent": "UpdateSubscriptionSettingsResponseResponseRulesRulesResponseModificationsDto",
+      "parent": "ResponseRulesConfigRulesResponseModificationsDto",
       "source": "#/components/schemas/UpdateSubscriptionSettingsResponseDto/properties/response/properties/responseRules/properties/rules/items/properties/responseModifications/properties/headers/items",
       "signature": "db6a4c45babef09ea0465495814ab624e339b323a64f346932f8b59ae0a366ee"
     },
     {
       "action": "reused",
-      "name": "UpdateSubscriptionSettingsResponseResponseRulesSettingsDto",
+      "name": "ResponseRulesConfigSettingsDto",
       "target": "ResponseRuleSettingsDto",
       "nicification": "UpdateSubscriptionSettingsResponseSettingsDto",
       "field": "settings",
-      "parent": "UpdateSubscriptionSettingsResponseResponseRulesDto",
+      "parent": "ResponseRulesConfigDto",
       "source": "#/components/schemas/UpdateSubscriptionSettingsResponseDto/properties/response/properties/responseRules/properties/settings",
       "signature": "78f876f5818084e2240804e6c968a0ed69e1cfef43ad57726752d365cb69a4b4"
     },
@@ -14692,7 +14864,7 @@
     },
     {
       "action": "reused",
-      "name": "UpdateTemplateResponse",
+      "name": "SubscriptionTemplateDto",
       "target": "SubscriptionTemplateDto",
       "nicification": "UpdateTemplateResponse",
       "field": "response",
@@ -14712,7 +14884,7 @@
     },
     {
       "action": "reused",
-      "name": "UpdateUserResponseActiveInternalSquadsDto",
+      "name": "BaseInternalSquadDto",
       "target": "BaseInternalSquadDto",
       "nicification": "UpdateUserResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
@@ -14722,7 +14894,7 @@
     },
     {
       "action": "reused",
-      "name": "UpdateUserResponseUserTrafficDto",
+      "name": "UserTrafficDto",
       "target": "UserTrafficDto",
       "nicification": "UpdateUserResponseUserTrafficDto",
       "field": "userTraffic",
@@ -14812,6 +14984,82 @@
     }
   ],
   "deprecation_annotations": [
+    {
+      "kind": "schema",
+      "schema": "PasswordAuthSettingsDto2"
+    },
+    {
+      "kind": "schema",
+      "schema": "APITokenEndpointKind"
+    },
+    {
+      "kind": "schema",
+      "schema": "MihomoIpVersion"
+    },
+    {
+      "kind": "schema",
+      "schema": "GetApiTokenScopesResponseResourcesEndpointsDto"
+    },
+    {
+      "kind": "schema",
+      "schema": "ExternalSquadHwidSettingsDto"
+    },
+    {
+      "kind": "schema",
+      "schema": "ExternalSquadCustomRemarksDto"
+    },
+    {
+      "kind": "schema",
+      "schema": "RemnawaveSettingsOauth2SettingsGithubDto"
+    },
+    {
+      "kind": "schema",
+      "schema": "RemnawaveSettingsOauth2SettingsPocketidDto"
+    },
+    {
+      "kind": "schema",
+      "schema": "RemnawaveSettingsOauth2SettingsKeycloakDto"
+    },
+    {
+      "kind": "schema",
+      "schema": "RemnawaveSettingsOauth2SettingsGenericDto"
+    },
+    {
+      "kind": "schema",
+      "schema": "RemnawaveSettingsOauth2SettingsTelegramDto"
+    },
+    {
+      "kind": "schema",
+      "schema": "GetApiTokenScopesResponseResourcesDto"
+    },
+    {
+      "kind": "schema",
+      "schema": "RemnawaveSettingsPasskeySettingsDto"
+    },
+    {
+      "kind": "schema",
+      "schema": "RemnawaveSettingsOauth2SettingsDto"
+    },
+    {
+      "kind": "schema",
+      "schema": "RemnawaveSettingsBrandingSettingsDto"
+    },
+    {
+      "kind": "schema",
+      "schema": "GetStatusResponseBrandingDto"
+    },
+    {
+      "kind": "schema",
+      "schema": "SubscriptionSettingsResponseRulesDto"
+    },
+    {
+      "kind": "schema",
+      "schema": "GetSubscriptionPageConfigResponse"
+    },
+    {
+      "kind": "schema",
+      "schema": "GetNodePluginResponse"
+    },
     {
       "kind": "schema",
       "schema": "TCPHeaderHTTPRequestDto"

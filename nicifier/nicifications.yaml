@@ -261,6 +261,396 @@ remnawave:
         name: GetUsersStreamResponseModelDto
     - ResolveUserResponse:
         name: ResolveUserResponseModelDto
+    - BulkDeleteHostsResponse:
+        name: HostsDto
+    - BulkDisableHostsResponse:
+        name: HostsDto
+    - BulkEnableHostsResponse:
+        name: HostsDto
+    - CloneNodePluginResponse:
+        name: NodePluginDto
+    - CloneSubscriptionPageConfigResponse:
+        name: SubscriptionPageConfigDto
+    - CreateConfigProfileResponse:
+        name: ConfigProfileDto
+    - CreateConfigProfileResponseInboundsDto:
+        name: ConfigProfileInboundsDto
+    - CreateExternalSquadResponse:
+        name: ExternalSquadDto
+    - CreateExternalSquadResponseCustomRemarksDto:
+        name: CustomRemarksDto
+    - CreateExternalSquadResponseHwidSettingsDto:
+        name: HwidSettingsDto
+    - CreateHostResponse:
+        name: HostsDto
+    - CreateInfraBillingNodeResponseBillingNodesDto:
+        name: InfraBillingNodeDto
+    - CreateInfraProviderResponse:
+        name: InfraProviderDto
+    - CreateInternalSquadResponse:
+        name: InternalSquadDto
+    - CreateInternalSquadResponseInboundsDto:
+        name: ConfigProfileInboundsDto
+    - CreateNodePluginResponse:
+        name: NodePluginDto
+    - CreateNodeResponse:
+        name: NodesDto
+    - CreateNodeResponseActiveInboundsDto:
+        name: ConfigProfileInboundsDto
+    - CreateNodeResponseProviderDto:
+        name: PartialInfraProviderDto
+    - CreateNodeResponseSystemDto:
+        name: NodeSystemDto
+    - CreateNodeResponseInfoDto:
+        name: NodeSystemInfoDto
+    - CreateNodeResponseStatsDto:
+        name: NodeSystemStatsDto
+    - CreateNodeResponseInterfaceDto:
+        name: NetworkInterfaceDto
+    - CreateSnippetResponseSnippetsDto:
+        name: SnippetsDto
+    - CreateSubscriptionPageConfigResponse:
+        name: SubscriptionPageConfigDto
+    - CreateSubscriptionTemplateResponse:
+        name: SubscriptionTemplateDto
+    - CreateUserHwidDeviceResponseDevicesDto:
+        name: HwidUserDeviceDto
+    - CreateUserResponseActiveInternalSquadsDto:
+        name: BaseInternalSquadDto
+    - CreateUserResponseUserTrafficDto:
+        name: UserTrafficDto
+    - DebugSrrMatcherRequestEncryptionDto:
+        name: ResponseRuleEncryptionDto
+    - DebugSrrMatcherResponseEncryptionDto:
+        name: ResponseRuleEncryptionDto
+    - DeleteAllUserHwidDevicesResponseDevicesDto:
+        name: HwidUserDeviceDto
+    - DeleteInfraBillingHistoryRecordByUuidResponseRecordsDto:
+        name: InfraBillingHistoryRecordDto
+    - DeleteInfraBillingNodeByUuidResponseBillingNodesDto:
+        name: InfraBillingNodeDto
+    - DeleteSnippetResponseSnippetsDto:
+        name: SnippetsDto
+    - DeleteUserHwidDeviceResponseDevicesDto:
+        name: HwidUserDeviceDto
+    - DisableNodeResponse:
+        name: NodesDto
+    - DisableNodeResponseActiveInboundsDto:
+        name: ConfigProfileInboundsDto
+    - DisableNodeResponseProviderDto:
+        name: PartialInfraProviderDto
+    - DisableNodeResponseSystemDto:
+        name: NodeSystemDto
+    - DisableNodeResponseInfoDto:
+        name: NodeSystemInfoDto
+    - DisableNodeResponseStatsDto:
+        name: NodeSystemStatsDto
+    - DisableNodeResponseInterfaceDto:
+        name: NetworkInterfaceDto
+    - DisableUserResponseActiveInternalSquadsDto:
+        name: BaseInternalSquadDto
+    - DisableUserResponseUserTrafficDto:
+        name: UserTrafficDto
+    - EnableNodeResponse:
+        name: NodesDto
+    - EnableNodeResponseActiveInboundsDto:
+        name: ConfigProfileInboundsDto
+    - EnableNodeResponseProviderDto:
+        name: PartialInfraProviderDto
+    - EnableNodeResponseSystemDto:
+        name: NodeSystemDto
+    - EnableNodeResponseInfoDto:
+        name: NodeSystemInfoDto
+    - EnableNodeResponseStatsDto:
+        name: NodeSystemStatsDto
+    - EnableNodeResponseInterfaceDto:
+        name: NetworkInterfaceDto
+    - EnableUserResponseActiveInternalSquadsDto:
+        name: BaseInternalSquadDto
+    - EnableUserResponseUserTrafficDto:
+        name: UserTrafficDto
+    - GetAllNodesResponse:
+        name: NodesDto
+    - GetAllNodesResponseActiveInboundsDto:
+        name: ConfigProfileInboundsDto
+    - GetAllNodesResponseProviderDto:
+        name: PartialInfraProviderDto
+    - GetAllNodesResponseSystemDto:
+        name: NodeSystemDto
+    - GetAllNodesResponseInfoDto:
+        name: NodeSystemInfoDto
+    - GetAllNodesResponseStatsDto:
+        name: NodeSystemStatsDto
+    - GetAllNodesResponseInterfaceDto:
+        name: NetworkInterfaceDto
+    - ResourcesDto:
+        name: ResourceScopesDto
+    - EndpointsDto:
+        name: EndpointScopeDto
+    - BandwidthCalendarMonthDto:
+        name: BaseStatDto
+    - BandwidthCurrentYearDto:
+        name: BaseStatDto
+    - BandwidthLast30DaysDto:
+        name: BaseStatDto
+    - BandwidthLastSevenDaysDto:
+        name: BaseStatDto
+    - GetComputedConfigProfileByUuidResponse:
+        name: ConfigProfileDto
+    - GetComputedConfigProfileByUuidResponseInboundsDto:
+        name: ConfigProfileInboundsDto
+    - GetConfigProfileByUuidResponse:
+        name: ConfigProfileDto
+    - GetConfigProfileByUuidResponseInboundsDto:
+        name: ConfigProfileInboundsDto
+    - GetConfigProfilesResponseInboundsDto:
+        name: ConfigProfileInboundsDto
+    - GetExternalSquadByUuidResponse:
+        name: ExternalSquadDto
+    - GetExternalSquadByUuidResponseCustomRemarksDto:
+        name: CustomRemarksDto
+    - GetExternalSquadByUuidResponseHwidSettingsDto:
+        name: HwidSettingsDto
+    - GetExternalSquadsResponseCustomRemarksDto:
+        name: CustomRemarksDto
+    - GetExternalSquadsResponseHwidSettingsDto:
+        name: HwidSettingsDto
+    - GetInfraBillingHistoryRecordsResponseRecordsDto:
+        name: InfraBillingHistoryRecordDto
+    - GetInfraProviderByUuidResponse:
+        name: InfraProviderDto
+    - GetInternalSquadByUuidResponse:
+        name: InternalSquadDto
+    - GetInternalSquadByUuidResponseInboundsDto:
+        name: ConfigProfileInboundsDto
+    - GetInternalSquadsResponseInboundsDto:
+        name: ConfigProfileInboundsDto
+    - GetNodePluginResponse:
+        name: NodePluginDto
+    - GetOneHostResponse:
+        name: HostsDto
+    - GetOneNodeResponse:
+        name: NodesDto
+    - GetOneNodeResponseActiveInboundsDto:
+        name: ConfigProfileInboundsDto
+    - GetOneNodeResponseProviderDto:
+        name: PartialInfraProviderDto
+    - GetOneNodeResponseSystemDto:
+        name: NodeSystemDto
+    - GetOneNodeResponseInfoDto:
+        name: NodeSystemInfoDto
+    - GetOneNodeResponseStatsDto:
+        name: NodeSystemStatsDto
+    - GetOneNodeResponseInterfaceDto:
+        name: NetworkInterfaceDto
+    - GetRawSubscriptionByShortUuidResponseActiveInternalSquadsDto:
+        name: BaseInternalSquadDto
+    - GetRawSubscriptionByShortUuidResponseUserTrafficDto:
+        name: UserTrafficDto
+    - GetRemnawaveSettingsResponseBrandingSettingsDto:
+        name: BrandingSettingsDto
+    - GetRemnawaveSettingsResponseOauth2SettingsDto:
+        name: Oauth2SettingsDto
+    - GetRemnawaveSettingsResponsePasskeySettingsDto:
+        name: PasskeySettingsDto
+    - BrandingDto:
+        name: BrandingSettingsDto
+    - GetSubscriptionByShortUuidProtectedResponse:
+        name: SubscriptionInfoDto
+    - GetSubscriptionByUsernameResponse:
+        name: SubscriptionInfoDto
+    - GetSubscriptionByUuidResponse:
+        name: SubscriptionInfoDto
+    - GetSubscriptionInfoResponse:
+        name: SubscriptionInfoDto
+    - GetSubscriptionPageConfigResponse:
+        name: SubscriptionPageConfigDto
+    - GetSubscriptionSettingsResponseHwidSettingsDto:
+        name: HwidSettingsDto
+    - GetSubscriptionSettingsResponseResponseRulesDto:
+        name: ResponseRulesConfigDto
+    - GetTemplateResponse:
+        name: SubscriptionTemplateDto
+    - GetUserByEmailResponseActiveInternalSquadsDto:
+        name: BaseInternalSquadDto
+    - GetUserByEmailResponseUserTrafficDto:
+        name: UserTrafficDto
+    - GetUserByIdResponseActiveInternalSquadsDto:
+        name: BaseInternalSquadDto
+    - GetUserByIdResponseUserTrafficDto:
+        name: UserTrafficDto
+    - GetUserByShortUuidResponseActiveInternalSquadsDto:
+        name: BaseInternalSquadDto
+    - GetUserByShortUuidResponseUserTrafficDto:
+        name: UserTrafficDto
+    - GetUserByTagResponseActiveInternalSquadsDto:
+        name: BaseInternalSquadDto
+    - GetUserByTagResponseUserTrafficDto:
+        name: UserTrafficDto
+    - GetUserByTelegramIdResponseActiveInternalSquadsDto:
+        name: BaseInternalSquadDto
+    - GetUserByTelegramIdResponseUserTrafficDto:
+        name: UserTrafficDto
+    - GetUserByUsernameResponseActiveInternalSquadsDto:
+        name: BaseInternalSquadDto
+    - GetUserByUsernameResponseUserTrafficDto:
+        name: UserTrafficDto
+    - GetUserByUuidResponseActiveInternalSquadsDto:
+        name: BaseInternalSquadDto
+    - GetUserByUuidResponseUserTrafficDto:
+        name: UserTrafficDto
+    - GetUserHwidDevicesResponseDevicesDto:
+        name: HwidUserDeviceDto
+    - GetUsersStreamResponseActiveInternalSquadsDto:
+        name: BaseInternalSquadDto
+    - GetUsersStreamResponseUserTrafficDto:
+        name: UserTrafficDto
+    - RemnawaveWebhookNodeEventsDataDto:
+        name: NodesDto
+    - RemnawaveWebhookNodeEventsActiveInboundsDto:
+        name: ConfigProfileInboundsDto
+    - RemnawaveWebhookNodeEventsProviderDto:
+        name: PartialInfraProviderDto
+    - RemnawaveWebhookNodeEventsSystemDto:
+        name: NodeSystemDto
+    - RemnawaveWebhookNodeEventsInfoDto:
+        name: NodeSystemInfoDto
+    - RemnawaveWebhookNodeEventsStatsDto:
+        name: NodeSystemStatsDto
+    - RemnawaveWebhookNodeEventsInterfaceDto:
+        name: NetworkInterfaceDto
+    - RemnawaveWebhookTorrentBlockerEventsActiveInternalSquadsDto:
+        name: BaseInternalSquadDto
+    - RemnawaveWebhookTorrentBlockerEventsUserTrafficDto:
+        name: UserTrafficDto
+    - RemnawaveWebhookUserEventsActiveInternalSquadsDto:
+        name: BaseInternalSquadDto
+    - RemnawaveWebhookUserEventsUserTrafficDto:
+        name: UserTrafficDto
+    - RemnawaveWebhookUserHwidDevicesEventsActiveInternalSquadsDto:
+        name: BaseInternalSquadDto
+    - RemnawaveWebhookUserHwidDevicesEventsUserTrafficDto:
+        name: UserTrafficDto
+    - ReorderConfigProfilesResponseConfigProfilesDto:
+        name: ConfigProfileDto
+    - ReorderConfigProfilesResponseInboundsDto:
+        name: ConfigProfileInboundsDto
+    - ReorderExternalSquadsResponseExternalSquadsDto:
+        name: ExternalSquadDto
+    - ReorderExternalSquadsResponseCustomRemarksDto:
+        name: CustomRemarksDto
+    - ReorderExternalSquadsResponseHwidSettingsDto:
+        name: HwidSettingsDto
+    - ReorderInternalSquadsResponseInternalSquadsDto:
+        name: InternalSquadDto
+    - ReorderInternalSquadsResponseInboundsDto:
+        name: ConfigProfileInboundsDto
+    - ReorderNodePluginsResponseNodePluginsDto:
+        name: NodePluginDto
+    - ReorderNodeResponse:
+        name: NodesDto
+    - ReorderNodeResponseActiveInboundsDto:
+        name: ConfigProfileInboundsDto
+    - ReorderNodeResponseProviderDto:
+        name: PartialInfraProviderDto
+    - ReorderNodeResponseSystemDto:
+        name: NodeSystemDto
+    - ReorderNodeResponseInfoDto:
+        name: NodeSystemInfoDto
+    - ReorderNodeResponseStatsDto:
+        name: NodeSystemStatsDto
+    - ReorderNodeResponseInterfaceDto:
+        name: NetworkInterfaceDto
+    - ReorderSubscriptionPageConfigsResponseConfigsDto:
+        name: SubscriptionPageConfigDto
+    - ReorderSubscriptionTemplatesResponseTemplatesDto:
+        name: SubscriptionTemplateDto
+    - ResetUserTrafficResponseActiveInternalSquadsDto:
+        name: BaseInternalSquadDto
+    - ResetUserTrafficResponseUserTrafficDto:
+        name: UserTrafficDto
+    - RevokeUserSubscriptionResponseActiveInternalSquadsDto:
+        name: BaseInternalSquadDto
+    - RevokeUserSubscriptionResponseUserTrafficDto:
+        name: UserTrafficDto
+    - TruncateTorrentBlockerReportsResponseRecordsDto:
+        name: TorrentBlockerReportDto
+    - UpdateConfigProfileResponse:
+        name: ConfigProfileDto
+    - UpdateConfigProfileResponseInboundsDto:
+        name: ConfigProfileInboundsDto
+    - UpdateExternalSquadRequestCustomRemarksDto:
+        name: CustomRemarksDto
+    - UpdateExternalSquadRequestHwidSettingsDto:
+        name: HwidSettingsDto
+    - UpdateExternalSquadResponse:
+        name: ExternalSquadDto
+    - UpdateExternalSquadResponseCustomRemarksDto:
+        name: CustomRemarksDto
+    - UpdateExternalSquadResponseHwidSettingsDto:
+        name: HwidSettingsDto
+    - UpdateHostResponse:
+        name: HostsDto
+    - UpdateInfraBillingNodeResponseBillingNodesDto:
+        name: InfraBillingNodeDto
+    - UpdateInfraProviderResponse:
+        name: InfraProviderDto
+    - UpdateInternalSquadResponse:
+        name: InternalSquadDto
+    - UpdateInternalSquadResponseInboundsDto:
+        name: ConfigProfileInboundsDto
+    - UpdateManyHostsResponse:
+        name: HostsDto
+    - UpdateNodePluginResponse:
+        name: NodePluginDto
+    - UpdateNodeResponse:
+        name: NodesDto
+    - UpdateNodeResponseActiveInboundsDto:
+        name: ConfigProfileInboundsDto
+    - UpdateNodeResponseProviderDto:
+        name: PartialInfraProviderDto
+    - UpdateNodeResponseSystemDto:
+        name: NodeSystemDto
+    - UpdateNodeResponseInfoDto:
+        name: NodeSystemInfoDto
+    - UpdateNodeResponseStatsDto:
+        name: NodeSystemStatsDto
+    - UpdateNodeResponseInterfaceDto:
+        name: NetworkInterfaceDto
+    - UpdateRemnawaveSettingsResponse:
+        name: RemnawaveSettingsDto
+    - UpdateRemnawaveSettingsResponseBrandingSettingsDto:
+        name: BrandingSettingsDto
+    - UpdateRemnawaveSettingsResponseOauth2SettingsDto:
+        name: Oauth2SettingsDto
+    - UpdateRemnawaveSettingsResponsePasskeySettingsDto:
+        name: PasskeySettingsDto
+    - UpdateSnippetResponseSnippetsDto:
+        name: SnippetsDto
+    - UpdateSubscriptionPageConfigResponse:
+        name: SubscriptionPageConfigDto
+    - UpdateSubscriptionSettingsRequestCustomRemarksDto:
+        name: CustomRemarksDto
+    - UpdateSubscriptionSettingsRequestResponseRulesDto:
+        name: ResponseRulesConfigDto
+    - UpdateSubscriptionSettingsRequestEncryptionDto:
+        name: ResponseRuleEncryptionDto
+    - UpdateSubscriptionSettingsResponse:
+        name: SubscriptionSettingsDto
+    - UpdateSubscriptionSettingsResponseCustomRemarksDto:
+        name: CustomRemarksDto
+    - UpdateSubscriptionSettingsResponseHwidSettingsDto:
+        name: HwidSettingsDto
+    - UpdateSubscriptionSettingsResponseResponseRulesDto:
+        name: ResponseRulesConfigDto
+    - UpdateSubscriptionSettingsResponseEncryptionDto:
+        name: ResponseRuleEncryptionDto
+    - UpdateTemplateResponse:
+        name: SubscriptionTemplateDto
+    - UpdateUserResponseActiveInternalSquadsDto:
+        name: BaseInternalSquadDto
+    - UpdateUserResponseUserTrafficDto:
+        name: UserTrafficDto
     errors:
     - ConfigProfileNameAlreadyExistsOrInboundTagsAreNotUniqueInboundTagsMustBeUniqueInGlobalScopeError:
         name: ConfigProfileConflictError
@@ -367,25 +757,16 @@ remnawave:
         - NOT_REGEX
         description: Operator to use for comparing the `headerName` with `value`.
         member_descriptions:
-          EQUALS: Performs an exact comparison between the header value and specified
-            string. `string === value`.
-          NOT_EQUALS: Ensures the header value does not exactly match the specified
-            string. `string !== value`.
-          CONTAINS: Checks if the header value contains the specified string as a
-            substring. `string.includes()`.
-          NOT_CONTAINS: Verifies the header value does not contain the specified string
-            as a substring. `!string.includes()`.
-          STARTS_WITH: Validates that the header value begins with the specified string.
-            `string.startsWith()`.
-          NOT_STARTS_WITH: Validates that the header value does not begin with the
-            specified string. `!string.startsWith()`.
+          EQUALS: Performs an exact comparison between the header value and specified string. `string === value`.
+          NOT_EQUALS: Ensures the header value does not exactly match the specified string. `string !== value`.
+          CONTAINS: Checks if the header value contains the specified string as a substring. `string.includes()`.
+          NOT_CONTAINS: Verifies the header value does not contain the specified string as a substring. `!string.includes()`.
+          STARTS_WITH: Validates that the header value begins with the specified string. `string.startsWith()`.
+          NOT_STARTS_WITH: Validates that the header value does not begin with the specified string. `!string.startsWith()`.
           ENDS_WITH: Confirms the header value ends with the specified string. `string.endsWith()`.
-          NOT_ENDS_WITH: Confirms the header value does not end with the specified
-            string. `!string.endsWith()`.
-          REGEX: Evaluates if the header value matches the specified regular expression
-            pattern. `regex.test()`.
-          NOT_REGEX: Evaluates if the header value does not match the specified regular
-            expression pattern. `!regex.test()`.
+          NOT_ENDS_WITH: Confirms the header value does not end with the specified string. `!string.endsWith()`.
+          REGEX: Evaluates if the header value matches the specified regular expression pattern. `regex.test()`.
+          NOT_REGEX: Evaluates if the header value does not match the specified regular expression pattern. `!regex.test()`.
     - fingerprint:
         name: Fingerprint
         members:
@@ -667,12 +1048,9 @@ remnawave:
           INFRA_BILLING_NODE_PAYMENT_IN_48HRS: Node payment is due in 48 hours.
           INFRA_BILLING_NODE_PAYMENT_IN_24HRS: Node payment is due in 24 hours.
           INFRA_BILLING_NODE_PAYMENT_DUE_TODAY: Node payment is due today.
-          INFRA_BILLING_NODE_PAYMENT_OVERDUE_24HRS: Node payment is overdue by 24
-            hours.
-          INFRA_BILLING_NODE_PAYMENT_OVERDUE_48HRS: Node payment is overdue by 48
-            hours.
-          INFRA_BILLING_NODE_PAYMENT_OVERDUE_7_DAYS: Node payment is overdue by 7
-            days.
+          INFRA_BILLING_NODE_PAYMENT_OVERDUE_24HRS: Node payment is overdue by 24 hours.
+          INFRA_BILLING_NODE_PAYMENT_OVERDUE_48HRS: Node payment is overdue by 48 hours.
+          INFRA_BILLING_NODE_PAYMENT_OVERDUE_7_DAYS: Node payment is overdue by 7 days.
     - service_event_type:
         name: ServiceEventType
         members:
@@ -800,6 +1178,8 @@ remnawave:
         values:
         - torrent_blocker.report
         description: Torrent blocker event type.
+        member_descriptions:
+          TORRENT_BLOCKER_REPORT: A torrent usage report was emitted by the torrent blocker.
     - errors_event_type:
         name: ErrorsEventType
         members:
@@ -808,8 +1188,7 @@ remnawave:
         - errors.bandwidth_usage_threshold_reached_max_notifications
         description: Error event type.
         member_descriptions:
-          BANDWIDTH_USAGE_THRESHOLD_REACHED_MAX_NOTIFICATIONS: Maximum bandwidth usage
-            threshold notifications reached.
+          BANDWIDTH_USAGE_THRESHOLD_REACHED_MAX_NOTIFICATIONS: Maximum bandwidth usage threshold notifications reached.
     - plugin_executor_command:
         name: PluginExecutorCommand
         members:
@@ -820,6 +1199,11 @@ remnawave:
         - blockIps
         - recreateTables
         - unblockIps
+        description: Command executed by a node plugin.
+        member_descriptions:
+          BLOCK_IPS: Block the specified IP addresses on the target nodes.
+          RECREATE_TABLES: Recreate the plugin's internal tables on the target nodes.
+          UNBLOCK_IPS: Unblock the specified IP addresses on the target nodes.
     - proxy_configs_protocol:
         name: Protocol
         members:
@@ -832,16 +1216,27 @@ remnawave:
         - trojan
         - shadowsocks
         - hysteria
+        description: Proxy protocol used by the connection.
+        member_descriptions:
+          VLESS: Lightweight stateless protocol without built-in encryption, typically paired with `TLS` or `REALITY`.
+          TROJAN: Protocol that disguises traffic as regular `HTTPS` to evade detection.
+          SHADOWSOCKS: Encrypted `SOCKS5` proxy protocol.
+          HYSTERIA: '`QUIC`-based protocol optimized for lossy, high-latency networks.'
     - proxy_configs_options_flow:
         name: Flow
         members:
-        - NOTHING
+        - NONE
         - XTLS_RPRX_VISION
         - XTLS_RPRX_VISION_UDP443
         values:
         - ''
         - xtls-rprx-vision
         - xtls-rprx-vision-udp443
+        description: Available connection flow modes.
+        member_descriptions:
+          NONE: No flow mode.
+          XTLS_RPRX_VISION: Provides flow control and `TLS` masquerading for `TCP` traffic to mitigate active probing and fingerprinting by censors.
+          XTLS_RPRX_VISION_UDP443: Optimizes flow control and masquerading specifically for `UDP` port `443` to prevent side-channel analysis of `HTTP/3` and `QUIC` connections.
     - proxy_configs_security:
         name: Security
         members:
@@ -852,6 +1247,11 @@ remnawave:
         - tls
         - reality
         - none
+        description: Available transport security protocols.
+        member_descriptions:
+          NONE: Disables transport-layer security.
+          TLS: Secures the connection using the TLS protocol.
+          REALITY: Secures the connection using the REALITY protocol, which emulates TLS without requiring a valid server certificate.
     - proxy_configs_transport:
         name: Transport
         members:
@@ -870,6 +1270,15 @@ remnawave:
         - grpc
         - kcp
         - hysteria
+        description: Transport layer carrying the proxy connection.
+        member_descriptions:
+          TLS: Raw `TCP` transport.
+          XHTTP: '`XHTTP` transport that multiplexes traffic over `HTTP`.'
+          WS: '`WebSocket` transport.'
+          HTTPUPGRADE: '`HTTP` Upgrade transport.'
+          GRPC: '`gRPC` transport.'
+          KCP: '`mKCP` transport built on top of `UDP`.'
+          HYSTERIA: '`Hysteria` transport built on `QUIC`.'
     - proxy_configs_transport_options_header:
         name: TransportHeaderType
         members:
@@ -878,6 +1287,10 @@ remnawave:
         values:
         - http
         - none
+        description: Header obfuscation applied to the `TCP` transport.
+        member_descriptions:
+          HTTP: Disguise traffic with a fake `HTTP` header.
+          NONE: No header obfuscation.
     - proxy_configs_transport_options_mode:
         name: XHTTPMode
         members:
@@ -890,6 +1303,12 @@ remnawave:
         - packet-up
         - stream-up
         - stream-one
+        description: Data transmission mode of the `XHTTP` transport.
+        member_descriptions:
+          AUTO: Automatically select the transmission mode.
+          PACKET_UP: Send uplink data as discrete packets.
+          STREAM_UP: Send uplink data as a continuous stream.
+          STREAM_ONE: Send both uplink and downlink over a single stream.
     - response_rules_encryption_method:
         name: EncryptionMethodType
         members:
@@ -899,17 +1318,23 @@ remnawave:
         - age1
         - age1pq1
         description: Encryption method for response modification.
+        member_descriptions:
+          AGE1: '`age` X25519 encryption.'
+          AGE1PQ1: '`age` post-quantum encryption.'
     - api_token_endpoint_kind:
-        name: APITokenEndpointKind
+        name: APITokenScope
         members:
         - READ
         - WRITE
         values:
         - read
         - write
-        description: API token endpoint access kind.
+        description: Available API token permission scopes.
+        member_descriptions:
+          READ: Read-only access.
+          WRITE: Read and write access.
     - mihomo_ip_version:
-        name: MihomoIpVersion
+        name: MihomoIPVersion
         members:
         - DUAL
         - IPV4
@@ -923,6 +1348,12 @@ remnawave:
         - ipv4-prefer
         - ipv6-prefer
         description: Mihomo IP version preference.
+        member_descriptions:
+          DUAL: Use both `IPv4` and `IPv6`.
+          IPV4: Use `IPv4` only.
+          IPV6: Use `IPv6` only.
+          IPV4_PREFER: Prefer `IPv4`, falling back to `IPv6`.
+          IPV6_PREFER: Prefer `IPv6`, falling back to `IPv4`.
 error_responses:
   enabled: true
   min_occurrences: 1

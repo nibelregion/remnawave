@@ -134,15 +134,20 @@ dmypy.json
 *.db-shm
 *.db-wal
 
-# pytest
+# pytest cache
 .pytest_cache
 
-# ruff
+# ruff cache
 .ruff_cache
 
+# Env
 .vscode
 local
-
 pyvenv.cfg
 
+# basedpyright cache
 .basedpyright
+
+# Cached backend release source used to mine object names
+.source-cache/
+nicifier/.source-cache/

@@ -6,16 +6,24 @@ import msgspec
 DEFAULT_SCHEMA_PATH: typing.Final = pathlib.Path(__file__).with_name("nicifications.yaml")
 DEFAULT_REMNA_SCHEMA_URL: typing.Final = "https://cdn.remna.st/docs/openapi.json"
 DEFAULT_REMNA_SCHEMA_DOCUMENT_TYPE: typing.Final = "json"
+DEFAULT_SOURCE_REPOSITORY: typing.Final = "remnawave/backend"
+DEFAULT_SOURCE_CACHE_DIR: typing.Final = str(pathlib.Path(__file__).with_name(".source-cache"))
 
 
 class Model(msgspec.Struct, omit_defaults=True):
     pass
 
 
+class Source(Model):
+    repository: str = DEFAULT_SOURCE_REPOSITORY
+    cache_dir: str = DEFAULT_SOURCE_CACHE_DIR
+
+
 class Remnawave(Model):
     errors_schema_url: str = "#/components/responses"
     schema_url: str = DEFAULT_REMNA_SCHEMA_URL
     schema_document_type: typing.Literal["json", "yaml"] = DEFAULT_REMNA_SCHEMA_DOCUMENT_TYPE
+    source: Source = msgspec.field(default_factory=Source)
 
 
 class EnumSchema(Model):
@@ -143,6 +151,14 @@ def write_schema(schema: NicificatedSchema, path: pathlib.Path | None = None, /)
     }
     if schema.remnawave.schema_url != DEFAULT_REMNA_SCHEMA_URL:
         remnawave_data["schema_url"] = schema.remnawave.schema_url
+
+    source_data: dict[str, typing.Any] = {}
+    if schema.remnawave.source.repository != DEFAULT_SOURCE_REPOSITORY:
+        source_data["repository"] = schema.remnawave.source.repository
+    if schema.remnawave.source.cache_dir != DEFAULT_SOURCE_CACHE_DIR:
+        source_data["cache_dir"] = schema.remnawave.source.cache_dir
+    if source_data:
+        remnawave_data["source"] = source_data
 
     document = {
         "remnawave": remnawave_data,
