@@ -28,7 +28,7 @@ jobs:
       - name: generate schema
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          EXTRA_FLAGS: ${{ inputs.flags }}
+          EXTRA_FLAGS: ${{ inputs.flags }} --update-nicifications
         run: uv run python nicifier $EXTRA_FLAGS
 
       - name: commit generated schema
