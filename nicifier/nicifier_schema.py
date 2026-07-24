@@ -121,6 +121,7 @@ def nicificate_openapi_document(
     before_deprecated = collect_deprecations(document)
 
     enum_changes = apply_enum_nicifications(improved, nicifications)
+    content_type_changes = apply_response_content_types(improved, nicifications)
 
     response_component_changes: list[JSONObject] = []
     if nicifications.error_responses.enabled:
@@ -161,6 +162,7 @@ def nicificate_openapi_document(
             "deprecated_before": len(before_deprecated),
             "deprecated_after": len(after_deprecated),
             "enum_updates": len(enum_changes),
+            "response_content_types": len(content_type_changes),
             "error_code_updates": len(error_code_changes),
             "hoisted_error_responses": len(hoisted_error_responses),
             "hoisted_responses": len(hoisted_response_components),
@@ -177,6 +179,7 @@ def nicificate_openapi_document(
             "removed": sorted(_diff_items(before_deprecated, after_deprecated), key=_diff_item_sort_key),
         },
         "enums": enum_changes,
+        "response_content_types": content_type_changes,
         "error_codes": error_code_changes,
         "error_responses": hoisted_error_responses,
         "responses": response_component_changes,
@@ -185,6 +188,56 @@ def nicificate_openapi_document(
         "deprecation_annotations": deprecated_annotations,
     }
     return NicificationResult(document=improved, diff=diff)
+
+
+def apply_response_content_types(
+    document: JSONObject,
+    nicifications: NicificatedSchema,
+    /,
+) -> list[JSONObject]:
+    """Give configured endpoints an explicit response media type.
+
+    Runs before response hoisting so an endpoint that renders `text/html` is
+    documented as such instead of being folded into the empty ``OkResponse``.
+    """
+
+    overrides = getattr(nicifications, "response_content_types", None)
+    if not overrides:
+        return []
+
+    index = {(entry.path, str(entry.status)): entry for entry in overrides}
+    changes: list[JSONObject] = []
+
+    for path, method, operation in iter_path_operations(document):
+        responses = operation.get("responses")
+        if not isinstance(responses, dict):
+            continue
+
+        for status_code in list(responses):
+            entry = index.get((path, str(status_code)))
+            if entry is None:
+                continue
+
+            response = responses[status_code]
+            if not isinstance(response, dict) or _response_ref(response):
+                continue
+
+            content_schema: JSONObject = {"type": entry.type}
+            response["content"] = {entry.media_type: {"schema": content_schema}}
+            if entry.description is not None:
+                response["description"] = entry.description
+
+            changes.append(
+                {
+                    "action": "content-type",
+                    "path": path,
+                    "method": method,
+                    "status_code": str(status_code),
+                    "media_type": entry.media_type,
+                }
+            )
+
+    return changes
 
 
 def apply_error_code_enum(document: JSONObject, error_codes: typing.Sequence[ErrorCode], /) -> list[JSONObject]:
@@ -381,6 +434,7 @@ def update_object_nicifications(
 
     staged = copy.deepcopy(document)
     apply_enum_nicifications(staged, nicifications)
+    apply_response_content_types(staged, nicifications)
 
     if nicifications.error_responses.enabled:
         hoist_response_components(
@@ -2395,6 +2449,7 @@ __all__ = (
     "hoist_inline_objects",
     "hoist_response_components",
     "inline_map_object_schema_components",
+    "apply_response_content_types",
     "nicificate_openapi_document",
     "update_enum_nicifications",
     "update_object_nicifications",

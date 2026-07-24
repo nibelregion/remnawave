@@ -1362,3 +1362,10 @@ deprecations:
   annotate_paths: true
 diff:
   output_path: remnawave.diff.json
+response_content_types:
+- path: /api/sub/{shortUuid}
+  media_type: text/html
+  description: Rendered subscription page.
+- path: /api/sub/{shortUuid}/{clientType}
+  media_type: text/html
+  description: Rendered subscription page for the requested client type.

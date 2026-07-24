@@ -1825,7 +1825,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/OkResponse"
+            "$ref": "#/components/responses/RenderedSubscriptionPageResponse"
           }
         },
         "tags": [
@@ -1858,7 +1858,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/OkResponse"
+            "$ref": "#/components/responses/RenderedSubscriptionPageForTheRequestedClientTypeResponse"
           }
         },
         "tags": [
@@ -19893,9 +19893,6 @@
       "ExternalSquadAlreadyExistsError": {
         "description": "External squad already exists"
       },
-      "OkResponse": {
-        "description": ""
-      },
       "SnippetNotFoundError": {
         "description": "Snippet not found"
       },
@@ -19945,6 +19942,16 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/LoginResponseDto"
+            }
+          }
+        }
+      },
+      "RenderedSubscriptionPageForTheRequestedClientTypeResponse": {
+        "description": "Rendered subscription page for the requested client type.",
+        "content": {
+          "text/html": {
+            "schema": {
+              "type": "string"
             }
           }
         }
@@ -20385,6 +20392,16 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/DeleteConfigProfileResponseDto"
+            }
+          }
+        }
+      },
+      "RenderedSubscriptionPageResponse": {
+        "description": "Rendered subscription page.",
+        "content": {
+          "text/html": {
+            "schema": {
+              "type": "string"
             }
           }
         }

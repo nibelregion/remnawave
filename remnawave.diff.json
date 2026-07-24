@@ -3,9 +3,10 @@
     "deprecated_before": 0,
     "deprecated_after": 0,
     "enum_updates": 209,
+    "response_content_types": 2,
     "error_code_updates": 6,
     "hoisted_error_responses": 24,
-    "hoisted_responses": 209,
+    "hoisted_responses": 210,
     "renamed_responses": 0,
     "inlined_map_object_components": 0,
     "hoisted_inline_objects": 243,
@@ -3030,6 +3031,22 @@
       ]
     }
   ],
+  "response_content_types": [
+    {
+      "action": "content-type",
+      "path": "/api/sub/{shortUuid}",
+      "method": "get",
+      "status_code": "200",
+      "media_type": "text/html"
+    },
+    {
+      "action": "content-type",
+      "path": "/api/sub/{shortUuid}/{clientType}",
+      "method": "get",
+      "status_code": "200",
+      "media_type": "text/html"
+    }
+  ],
   "error_codes": [
     {
       "action": "component",
@@ -4783,19 +4800,6 @@
     },
     {
       "action": "hoisted",
-      "name": "OkResponse",
-      "nicification": "OkResponse",
-      "status_code": "200",
-      "is_error": false,
-      "occurrences": 2,
-      "locations": [
-        "#/paths/~1api~1sub~1{shortUuid}/get/responses/200",
-        "#/paths/~1api~1sub~1{shortUuid}~1{clientType}/get/responses/200"
-      ],
-      "signature": "c654130ad25d9355c881fa2648592294b9d5c6c2948d927ac795203a90db3dde"
-    },
-    {
-      "action": "hoisted",
       "name": "SnippetNotFoundError",
       "nicification": "SnippetNotFoundError",
       "status_code": "404",
@@ -4866,6 +4870,18 @@
         "#/paths/~1api~1auth~1login/post/responses/default"
       ],
       "signature": "03ae19979797c2cf8f243de7e01c147d3d5ebd13905165e07de815defcb65033"
+    },
+    {
+      "action": "hoisted",
+      "name": "RenderedSubscriptionPageForTheRequestedClientTypeResponse",
+      "nicification": "RenderedSubscriptionPageForTheRequestedClientTypeResponse",
+      "status_code": "200",
+      "is_error": false,
+      "occurrences": 1,
+      "locations": [
+        "#/paths/~1api~1sub~1{shortUuid}~1{clientType}/get/responses/200"
+      ],
+      "signature": "04f217da63e02b4d2ee2353db325b411d8a8e9b4ef07360585e08b581029478a"
     },
     {
       "action": "hoisted",
@@ -5394,6 +5410,18 @@
         "#/paths/~1api~1config-profiles~1{uuid}/delete/responses/200"
       ],
       "signature": "3e71566df205b4824113e8a5a9c56b1c5f7f1597b259c79f099648edd051cf15"
+    },
+    {
+      "action": "hoisted",
+      "name": "RenderedSubscriptionPageResponse",
+      "nicification": "RenderedSubscriptionPageResponse",
+      "status_code": "200",
+      "is_error": false,
+      "occurrences": 1,
+      "locations": [
+        "#/paths/~1api~1sub~1{shortUuid}/get/responses/200"
+      ],
+      "signature": "3fd0b6817f2b5a04a1d822e783c7725ab9d3b30564b52ddac84605278ae8c172"
     },
     {
       "action": "hoisted",

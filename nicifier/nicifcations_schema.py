@@ -67,12 +67,31 @@ class Diff(Model):
     output_path: str = "remnawave.diff.json"
 
 
+class ResponseContentType(Model):
+    """Force a specific media type on a response the backend leaves untyped.
+
+    Some endpoints (e.g. the subscription pages) return rendered `text/html`
+    but the generated OpenAPI marks the response as an empty body, so it gets
+    collapsed into the shared ``OkResponse``. Declaring the media type here
+    keeps the documented content honest.
+    """
+
+    path: str
+    media_type: str
+    status: str = "200"
+    type: str = "string"
+    description: str | None = None
+
+
 class NicificatedSchema(Model):
     remnawave: Remnawave
     schema: Schema
     error_responses: ErrorResponses = msgspec.field(default_factory=ErrorResponses)
     deprecations: Deprecations = msgspec.field(default_factory=Deprecations)
     diff: Diff = msgspec.field(default_factory=Diff)
+    response_content_types: list[ResponseContentType] = msgspec.field(
+        default_factory=list[ResponseContentType],
+    )
 
 
 def read_schema(path: pathlib.Path | None = None, /) -> NicificatedSchema:
@@ -173,7 +192,27 @@ def write_schema(schema: NicificatedSchema, path: pathlib.Path | None = None, /)
         "diff": {"output_path": schema.diff.output_path},
     }
 
+    if schema.response_content_types:
+        document["response_content_types"] = [
+            _response_content_type_data(entry) for entry in schema.response_content_types
+        ]
+
     path.write_bytes(msgspec.yaml.encode(document))
+
+
+def _response_content_type_data(entry: ResponseContentType, /) -> dict[str, typing.Any]:
+    data: dict[str, typing.Any] = {"path": entry.path, "media_type": entry.media_type}
+
+    if entry.status != "200":
+        data["status"] = entry.status
+
+    if entry.type != "string":
+        data["type"] = entry.type
+
+    if entry.description is not None:
+        data["description"] = entry.description
+
+    return data
 
 
 __all__ = ("read_schema", "write_schema")
