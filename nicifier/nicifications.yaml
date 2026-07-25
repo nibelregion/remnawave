@@ -51,6 +51,12 @@ remnawave:
         name: TargetAllConnectedNodesDto
     - PluginExecutorRequestTargetNodesDto2:
         name: TargetSpecificNodesDto
+    - ForbiddenErrorBodyDto:
+        name: RegistrationErrorDto
+    - ErrorsDto:
+        name: ValidationErrorItem
+    - UserNotFoundErrorBodyDto:
+        name: SubscriptionUserNotFoundErrorDto
     - UserOrMetadataNotFoundErrorBodyDto:
         name: UserNotFoundErrorDto
     - UserOrMetadataNotFoundErrorBodyDto2:

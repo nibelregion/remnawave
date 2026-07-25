@@ -136,6 +136,18 @@ def nicificate_openapi_document(
 
     inlined_map_object_components = inline_map_object_schema_components(improved)
     inline_object_changes = hoist_inline_objects(improved, nicifications)
+
+    if nicifications.error_responses.enabled:
+        # Inline error bodies only became `$ref`s above, so error responses can
+        # finally be named after the component they reference.
+        response_component_changes.extend(
+            rename_error_response_components_from_refs(
+                improved,
+                nicificated_schema=nicifications,
+                hoisted_changes=response_component_changes,
+            )
+        )
+
     restored_deprecations = restore_removed_elements(improved, previous_document) if previous_document else []
     deprecated_annotations = apply_deprecation_annotations(improved, nicifications)
     deprecated_annotations = [*restored_deprecations, *deprecated_annotations]
@@ -146,6 +158,9 @@ def nicificate_openapi_document(
     ]
     renamed_response_components = [
         change for change in response_component_changes if change.get("action") == "renamed"
+    ]
+    renamed_from_ref_responses = [
+        change for change in response_component_changes if change.get("action") == "renamed_from_ref"
     ]
     hoisted_error_responses = [
         change for change in hoisted_response_components if change.get("is_error") is True
@@ -167,6 +182,7 @@ def nicificate_openapi_document(
             "hoisted_error_responses": len(hoisted_error_responses),
             "hoisted_responses": len(hoisted_response_components),
             "renamed_responses": len(renamed_response_components),
+            "renamed_from_ref_responses": len(renamed_from_ref_responses),
             "inlined_map_object_components": len(inlined_map_object_components),
             "hoisted_inline_objects": len(hoisted_inline_objects),
             "reused_inline_objects": len(reused_inline_objects),
@@ -559,7 +575,7 @@ def hoist_response_components(
     min_occurrences: int,
     include_non_error: bool = True,
 ) -> list[JSONObject]:
-    groups: dict[str, list[tuple[JSONObject, str, JSONObject, str]]] = {}
+    groups: dict[str, list[tuple[JSONObject, str, JSONObject, str, JSONObject]]] = {}
 
     for path, method, operation in iter_path_operations(document):
         responses = operation.get("responses")
@@ -579,7 +595,9 @@ def hoist_response_components(
 
             signature = _response_signature(raw_response)
             location = f"#/paths/{_json_pointer_escape(path)}/{method}/responses/{_json_pointer_escape(status_code)}"
-            groups.setdefault(signature, []).append((responses, status_code, raw_response, location))
+            groups.setdefault(signature, []).append(
+                (responses, status_code, raw_response, location, operation)
+            )
 
     components = _ensure_components(document)
     component_responses = components.setdefault("responses", {})
@@ -598,7 +616,11 @@ def hoist_response_components(
 
         first_status = occurrences[0][1]
         first_response = copy.deepcopy(occurrences[0][2])
-        raw_response_name = _unique_name(_raw_response_name(first_status, first_response), used_nicification_names)
+        first_operation = occurrences[0][4]
+        raw_response_name = _unique_name(
+            _raw_response_name(first_status, first_response, first_operation),
+            used_nicification_names,
+        )
         used_nicification_names.add(raw_response_name)
         is_error = _is_error_status(first_status)
         response_name = _unique_response_name(raw_response_name, used_names, nicificated_schema, is_error=is_error)
@@ -606,7 +628,7 @@ def hoist_response_components(
         component_responses[response_name] = typing.cast(JSON, first_response)
 
         locations: list[str] = []
-        for responses, status_code, _, location in occurrences:
+        for responses, status_code, _, location, _ in occurrences:
             responses[status_code] = {"$ref": f"{COMPONENT_RESPONSE_PREFIX}{response_name}"}
             locations.append(location)
 
@@ -707,6 +729,142 @@ def rename_referenced_response_components(
     return renamed
 
 
+def rename_error_response_components_from_refs(
+    document: JSONObject,
+    /,
+    *,
+    nicificated_schema: NicificatedSchema,
+    hoisted_changes: typing.Sequence[JSONObject] = (),
+) -> list[JSONObject]:
+    components = document.get("components")
+    if not isinstance(components, dict):
+        return []
+
+    component_responses = components.get("responses")
+    if not isinstance(component_responses, dict):
+        return []
+
+    nicification_names = {
+        str(change["name"]): str(change.get("nicification", ""))
+        for change in hoisted_changes
+        if change.get("action") == "hoisted" and isinstance(change.get("name"), str)
+    }
+    error_component_names = _error_status_response_component_names(document)
+
+    proposals: dict[str, list[tuple[str, str]]] = {}
+    for name in component_responses:
+        response = component_responses[name]
+        if not isinstance(response, dict):
+            continue
+
+        current_name = str(name)
+        if current_name not in error_component_names:
+            continue
+
+        raw_name = nicification_names.get(current_name, current_name)
+        if raw_name in nicificated_schema.schema.errors:
+            continue
+
+        ref_name = _direct_response_schema_ref_name(response)
+        if ref_name is None:
+            continue
+
+        proposed = f"{ref_name}Schema"
+        if proposed == current_name:
+            continue
+
+        proposals.setdefault(proposed, []).append((current_name, ref_name))
+
+    used_names = {str(name) for name in component_responses}
+    renamed: list[JSONObject] = []
+
+    for proposed, candidates in sorted(proposals.items()):
+        current_name, _ = min(
+            candidates,
+            key=lambda item: (not item[1].startswith(item[0]), item[0]),
+        )
+
+        if proposed in used_names:
+            continue
+
+        component_responses[proposed] = component_responses.pop(current_name)
+        used_names.discard(current_name)
+        used_names.add(proposed)
+        _replace_response_references(document, current_name, proposed)
+        renamed.append(
+            {
+                "action": "renamed_from_ref",
+                "name": proposed,
+                "old_name": current_name,
+                "is_error": True,
+            }
+        )
+
+    return renamed
+
+
+def _error_status_response_component_names(document: JSONObject, /) -> set[str]:
+    error_names: set[str] = set()
+    success_names: set[str] = set()
+
+    for _, _, operation in iter_path_operations(document):
+        responses = operation.get("responses")
+        if not isinstance(responses, dict):
+            continue
+
+        for status_code, response in responses.items():
+            if not isinstance(response, dict):
+                continue
+
+            component_name = _response_component_ref_name(_response_ref(response))
+            if component_name is None:
+                continue
+
+            if _is_error_status(str(status_code)):
+                error_names.add(component_name)
+            else:
+                success_names.add(component_name)
+
+    return error_names - success_names
+
+
+def _direct_response_schema_ref_name(response: JSONObject, /) -> str | None:
+    content = response.get("content")
+    if not isinstance(content, dict) or len(content) != 1:
+        return None
+
+    for media in content.values():
+        if not isinstance(media, dict):
+            return None
+
+        schema = media.get("schema")
+        if not isinstance(schema, dict):
+            return None
+
+        return _schema_component_ref_name(_schema_ref(schema))
+
+    return None
+
+
+def _replace_response_references(document: JSONObject, old_name: str, new_name: str, /) -> None:
+    old_ref = f"{COMPONENT_RESPONSE_PREFIX}{old_name}"
+    new_ref = f"{COMPONENT_RESPONSE_PREFIX}{new_name}"
+
+    def visit(value: JSON) -> None:
+        if isinstance(value, dict):
+            if value.get("$ref") == old_ref:
+                value["$ref"] = new_ref
+
+            for child in value.values():
+                visit(child)
+        elif isinstance(value, list):
+            for child in value:
+                visit(child)
+
+    visit(document.get("paths"))
+    visit(document.get("components"))
+
+
 def hoist_duplicate_error_responses(
     document: JSONObject,
     /,
@@ -788,6 +946,7 @@ def inline_map_object_schema_components(document: JSONObject, /) -> list[JSONObj
 class InlineObjectPlan(typing.NamedTuple):
     candidates: list[InlineObjectCandidate]
     names: dict[int, tuple[str, str, str]]
+    configured: dict[int, str]
 
 
 def _plan_inline_object_names(
@@ -803,6 +962,7 @@ def _plan_inline_object_names(
 
     used_nicification_names = {str(name) for name in schemas}
     assigned: dict[int, tuple[str, str, str]] = {}
+    configured: dict[int, str] = {}
 
     def assign_candidate_name(candidate: InlineObjectCandidate) -> tuple[str, str, str]:
         candidate_key = id(candidate)
@@ -822,14 +982,21 @@ def _plan_inline_object_names(
         raw_model_name = _unique_name(raw_base_name, used_nicification_names)
         used_nicification_names.add(raw_model_name)
 
-        configured_name = _object_nicification_name(raw_model_name, nicificated_schema)
-        model_base_name = configured_name
-        if model_base_name is None:
-            model_base_name = (
-                _contextual_schema_model_name(parent_model_name, candidate.field_name)
-                if ancestor is not None
-                else raw_model_name
-            )
+        contextual_name = (
+            _contextual_schema_model_name(parent_model_name, candidate.field_name)
+            if ancestor is not None
+            else raw_model_name
+        )
+        configured_name = _object_nicification_name(
+            raw_model_name,
+            nicificated_schema,
+            contextual_name,
+            contextual_name.replace("ErrorBody", "Error"),
+        )
+        model_base_name = configured_name if configured_name is not None else contextual_name
+
+        if configured_name is not None:
+            configured[candidate_key] = configured_name
 
         assigned[candidate_key] = (raw_model_name, model_base_name, parent_model_name)
         return assigned[candidate_key]
@@ -837,7 +1004,49 @@ def _plan_inline_object_names(
     for candidate in candidates:
         assign_candidate_name(candidate)
 
-    return InlineObjectPlan(candidates=candidates, names=assigned)
+    _drop_redundant_error_body_infix(assigned, schemas, configured)
+    return InlineObjectPlan(candidates=candidates, names=assigned, configured=configured)
+
+
+def _drop_redundant_error_body_infix(
+    assigned: dict[int, tuple[str, str, str]],
+    schemas: JSONObject,
+    configured: dict[int, str],
+    /,
+) -> None:
+    """Shorten `...ErrorBodyDto` model names when the plain name is free.
+
+    The `Body` infix only exists because the hoisted schema came from a media
+    type body, so it is noise whenever nothing else claims the shorter name. It
+    is kept where two distinct error bodies would otherwise collapse into one
+    name, and raw nicification keys are left untouched so `nicifications.yaml`
+    keeps matching.
+    """
+
+    grouped: dict[str, list[int]] = {}
+    for candidate_key, (_, model_name, _) in assigned.items():
+        if candidate_key in configured:
+            continue
+
+        grouped.setdefault(model_name, []).append(candidate_key)
+
+    reserved = {
+        str(name)
+        for name, schema in schemas.items()
+        # A deprecated leftover kept only for backwards compatibility should not
+        # block the shorter name for a schema that is actually referenced.
+        if not (isinstance(schema, dict) and schema.get("deprecated") is True)
+    } | {model_name for _, model_name, _ in assigned.values()}
+
+    for model_name in sorted(grouped):
+        stripped = model_name.replace("ErrorBody", "Error")
+        if stripped == model_name or stripped in reserved:
+            continue
+
+        reserved.add(stripped)
+        for candidate_key in grouped[model_name]:
+            raw_name, _, parent_name = assigned[candidate_key]
+            assigned[candidate_key] = (raw_name, stripped, parent_name)
 
 
 def hoist_inline_objects(
@@ -862,7 +1071,9 @@ def hoist_inline_objects(
         raw_model_name, model_base_name, parent_model_name = plan.names[id(candidate)]
         schema = copy.deepcopy(candidate.schema)
         signature = _schema_signature(schema)
-        configured_name = _object_nicification_name(raw_model_name, nicificated_schema)
+        # Reuse the name the planning phase settled on, so a nicification keyed
+        # by the final name pins identity just like a raw keyed one.
+        configured_name = plan.configured.get(id(candidate))
         matching_targets = schema_targets.get(signature, [])
         if configured_name is None:
             reused_model_name = matching_targets[0][0] if matching_targets else None
@@ -2211,6 +2422,7 @@ def _raw_response_name(
     status_code: str,
     response: JSONObject,
     /,
+    operation: JSONObject | None = None,
 ) -> str:
     if not _is_error_status(status_code):
         ref_schema_name = _response_schema_ref_name(response)
@@ -2235,11 +2447,25 @@ def _raw_response_name(
         and not description_name.startswith(status_name)
         and not status_name.startswith(description_name)
     ):
-        base = description_name.removesuffix("Error") + ("ErrorDto" if "content" in response else "Error")
-    else:
-        base = status_name.removesuffix("Error") + "Error"
+        return description_name.removesuffix("Error") + ("ErrorDto" if "content" in response else "Error")
 
-    return base
+    if not description_name and operation is not None:
+        operation_name = _operation_method_name(operation)
+        if operation_name:
+            return f"{operation_name}{status_name.removesuffix('Error')}Error"
+
+    return status_name.removesuffix("Error") + "Error"
+
+
+def _operation_method_name(operation: JSONObject, /) -> str | None:
+    """Derive a name from the method half of a `Controller_method` operationId."""
+
+    operation_id = operation.get("operationId")
+    if not isinstance(operation_id, str) or not operation_id:
+        return None
+
+    _, separator, method_part = operation_id.partition("_")
+    return _to_pascal_case(method_part if separator else operation_id) or None
 
 
 def _unique_response_name(
@@ -2320,9 +2546,27 @@ def _unique_object_name(
     return _unique_name(configured_name, used_names)
 
 
-def _object_nicification_name(raw_name: str, nicificated_schema: NicificatedSchema, /) -> str | None:
-    nicification = nicificated_schema.schema.objects.get(raw_name)
-    return nicification.name if nicification is not None else None
+def _object_nicification_name(
+    raw_name: str,
+    nicificated_schema: NicificatedSchema,
+    /,
+    *fallback_names: str,
+) -> str | None:
+    """Resolve a configured object name by raw key, then by any fallback key.
+
+    Raw keys are pointer derived and never appear in the emitted document, so a
+    nicification may also be keyed by the name a schema actually ends up with.
+    """
+
+    for name in (raw_name, *fallback_names):
+        if not name:
+            continue
+
+        nicification = nicificated_schema.schema.objects.get(name)
+        if nicification is not None:
+            return nicification.name
+
+    return None
 
 
 def _unique_name(name: str, used_names: set[str], /) -> str:
@@ -2451,6 +2695,7 @@ __all__ = (
     "inline_map_object_schema_components",
     "apply_response_content_types",
     "nicificate_openapi_document",
+    "rename_error_response_components_from_refs",
     "update_enum_nicifications",
     "update_object_nicifications",
 )

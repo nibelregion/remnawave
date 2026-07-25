@@ -8,6 +8,7 @@
     "hoisted_error_responses": 24,
     "hoisted_responses": 210,
     "renamed_responses": 0,
+    "renamed_from_ref_responses": 6,
     "inlined_map_object_components": 0,
     "hoisted_inline_objects": 243,
     "reused_inline_objects": 416,
@@ -3541,12 +3542,12 @@
     },
     {
       "action": "referenced",
-      "pointer": "#/components/schemas/ServerErrorBodyDto/properties/errorCode",
+      "pointer": "#/components/schemas/ServerErrorDto/properties/errorCode",
       "ref": "#/components/schemas/ErrorCode"
     },
     {
       "action": "referenced",
-      "pointer": "#/components/schemas/UserNotFoundErrorBodyDto/properties/errorCode",
+      "pointer": "#/components/schemas/SubscriptionUserNotFoundErrorDto/properties/errorCode",
       "ref": "#/components/schemas/ErrorCode"
     }
   ],
@@ -7162,14 +7163,50 @@
         "#/paths/~1api~1hosts~1bulk~1disable/post/responses/200"
       ],
       "signature": "fe2c78dfc2de0f29f4182fdbc7f08fd992eda63c6737cc52c352866435826a69"
+    },
+    {
+      "action": "renamed_from_ref",
+      "name": "NodeNotFoundErrorDtoSchema",
+      "old_name": "NodeNotFoundSeeErrorCodeForMoreDetailsErrorDto",
+      "is_error": true
+    },
+    {
+      "action": "renamed_from_ref",
+      "name": "RegistrationErrorDtoSchema",
+      "old_name": "ForbiddenError",
+      "is_error": true
+    },
+    {
+      "action": "renamed_from_ref",
+      "name": "ServerErrorDtoSchema",
+      "old_name": "ServerErrorDto",
+      "is_error": true
+    },
+    {
+      "action": "renamed_from_ref",
+      "name": "SubscriptionUserNotFoundErrorDtoSchema",
+      "old_name": "UserNotFoundErrorDto",
+      "is_error": true
+    },
+    {
+      "action": "renamed_from_ref",
+      "name": "UserNotFoundErrorDtoSchema",
+      "old_name": "UserNotFoundSeeErrorCodeForMoreDetailsErrorDto",
+      "is_error": true
+    },
+    {
+      "action": "renamed_from_ref",
+      "name": "ValidationErrorDtoSchema",
+      "old_name": "ValidationErrorDto",
+      "is_error": true
     }
   ],
   "map_object_components": [],
   "inline_objects": [
     {
       "action": "hoisted",
-      "name": "ForbiddenErrorBodyDto",
-      "target": "ForbiddenErrorBodyDto",
+      "name": "RegistrationErrorDto",
+      "target": "RegistrationErrorDto",
       "nicification": "ForbiddenErrorBodyDto",
       "field": "body",
       "parent": "ForbiddenError",
@@ -7178,7 +7215,7 @@
     },
     {
       "action": "reused",
-      "name": "NodeNotFoundSeeErrorCodeForMoreDetailsErrorBodyDto",
+      "name": "NodeNotFoundSeeErrorCodeForMoreDetailsErrorDto",
       "target": "NodeNotFoundErrorDto",
       "nicification": "NodeNotFoundSeeErrorCodeForMoreDetailsErrorBodyDto",
       "field": "body",
@@ -7208,8 +7245,8 @@
     },
     {
       "action": "hoisted",
-      "name": "ServerErrorBodyDto",
-      "target": "ServerErrorBodyDto",
+      "name": "ServerErrorDto",
+      "target": "ServerErrorDto",
       "nicification": "ServerErrorBodyDto",
       "field": "body",
       "parent": "ServerErrorDto",
@@ -7218,8 +7255,8 @@
     },
     {
       "action": "reused",
-      "name": "UnauthorizedErrorBodyDto",
-      "target": "ForbiddenErrorBodyDto",
+      "name": "UnauthorizedErrorDto",
+      "target": "RegistrationErrorDto",
       "nicification": "UnauthorizedErrorBodyDto",
       "field": "body",
       "parent": "UnauthorizedError",
@@ -7228,8 +7265,8 @@
     },
     {
       "action": "hoisted",
-      "name": "UserNotFoundErrorBodyDto",
-      "target": "UserNotFoundErrorBodyDto",
+      "name": "SubscriptionUserNotFoundErrorDto",
+      "target": "SubscriptionUserNotFoundErrorDto",
       "nicification": "UserNotFoundErrorBodyDto",
       "field": "body",
       "parent": "UserNotFoundErrorDto",
@@ -7238,7 +7275,7 @@
     },
     {
       "action": "reused",
-      "name": "UserNotFoundSeeErrorCodeForMoreDetailsErrorBodyDto",
+      "name": "UserNotFoundSeeErrorCodeForMoreDetailsErrorDto",
       "target": "UserNotFoundErrorDto",
       "nicification": "UserNotFoundSeeErrorCodeForMoreDetailsErrorBodyDto",
       "field": "body",
@@ -7268,18 +7305,18 @@
     },
     {
       "action": "hoisted",
-      "name": "ValidationErrorBodyDto",
-      "target": "ValidationErrorBodyDto",
+      "name": "ValidationErrorDto",
+      "target": "ValidationErrorDto",
       "nicification": "ValidationErrorBodyDto",
       "field": "body",
       "parent": "ValidationErrorDto",
       "source": "#/components/responses/ValidationErrorDto/content/application~1json/schema",
-      "signature": "2b410a667a62e5ba47eb5e8bab06c7baaf2a5a08784aac0242f4608182622d29"
+      "signature": "63133126764bcb0d9e98744fad2336bd5f35dc99a93d754bd36b7888fc86a516"
     },
     {
       "action": "hoisted",
-      "name": "ValidationErrorBodyErrorsDto",
-      "target": "ValidationErrorBodyErrorsDto",
+      "name": "ValidationErrorItem",
+      "target": "ValidationErrorItem",
       "nicification": "ErrorsDto",
       "field": "errors",
       "parent": "ValidationErrorBodyDto",

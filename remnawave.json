@@ -10,10 +10,10 @@
             "$ref": "#/components/responses/OkGetRemnawaveSettingsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -44,10 +44,10 @@
             "$ref": "#/components/responses/OkUpdateRemnawaveSettingsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -67,10 +67,10 @@
         "parameters": [],
         "responses": {
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           },
           "default": {
             "$ref": "#/components/responses/OkGetPasskeyRegistrationOptionsResponse"
@@ -103,10 +103,10 @@
         },
         "responses": {
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           },
           "default": {
             "$ref": "#/components/responses/OkVerifyPasskeyRegistrationResponse"
@@ -129,10 +129,10 @@
         "parameters": [],
         "responses": {
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           },
           "default": {
             "$ref": "#/components/responses/OkGetAllPasskeysResponse"
@@ -163,10 +163,10 @@
         },
         "responses": {
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           },
           "default": {
             "$ref": "#/components/responses/OkDeletePasskeyResponse"
@@ -197,10 +197,10 @@
         },
         "responses": {
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           },
           "default": {
             "$ref": "#/components/responses/OkUpdatePasskeyResponse"
@@ -233,13 +233,13 @@
         },
         "responses": {
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "401": {
             "$ref": "#/components/responses/UnauthorizedError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           },
           "default": {
             "$ref": "#/components/responses/OkLoginResponse"
@@ -267,13 +267,13 @@
         },
         "responses": {
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "403": {
-            "$ref": "#/components/responses/ForbiddenError"
+            "$ref": "#/components/responses/RegistrationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           },
           "default": {
             "$ref": "#/components/responses/OkRegisterResponse"
@@ -291,10 +291,10 @@
         "parameters": [],
         "responses": {
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           },
           "default": {
             "$ref": "#/components/responses/OkGetStatusResponse"
@@ -322,10 +322,10 @@
         },
         "responses": {
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           },
           "default": {
             "$ref": "#/components/responses/OkOAuth2AuthorizeResponse"
@@ -353,10 +353,10 @@
         },
         "responses": {
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           },
           "default": {
             "$ref": "#/components/responses/OkOAuth2CallbackResponse"
@@ -374,10 +374,10 @@
         "parameters": [],
         "responses": {
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           },
           "default": {
             "$ref": "#/components/responses/OkGetPasskeyAuthenticationOptionsResponse"
@@ -405,10 +405,10 @@
         },
         "responses": {
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           },
           "default": {
             "$ref": "#/components/responses/OkVerifyPasskeyAuthenticationResponse"
@@ -429,10 +429,10 @@
             "$ref": "#/components/responses/OkGetSubscriptionPageConfigsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -463,10 +463,10 @@
             "$ref": "#/components/responses/OkUpdateSubscriptionPageConfigResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -497,10 +497,10 @@
             "$ref": "#/components/responses/OkCreateSubscriptionPageConfigResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -533,10 +533,10 @@
             "$ref": "#/components/responses/OkGetSubscriptionPageConfigResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -567,10 +567,10 @@
             "$ref": "#/components/responses/OkDeleteSubscriptionPageConfigResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -603,10 +603,10 @@
             "$ref": "#/components/responses/OkReorderSubscriptionPageConfigsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -639,10 +639,10 @@
             "$ref": "#/components/responses/OkCloneSubscriptionPageConfigResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -675,10 +675,10 @@
             "$ref": "#/components/responses/CreatedCreateUserResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -709,10 +709,10 @@
             "$ref": "#/components/responses/OkUpdateUserResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -752,10 +752,10 @@
             "$ref": "#/components/responses/OkGetAllUsersResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -788,13 +788,13 @@
             "$ref": "#/components/responses/OkDeleteUserResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/UserNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -825,13 +825,13 @@
             "$ref": "#/components/responses/OkGetUserByUuidResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/UserNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -873,10 +873,10 @@
             "$ref": "#/components/responses/OkGetUsersStreamResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -899,10 +899,10 @@
             "$ref": "#/components/responses/OkGetAllTagsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -935,13 +935,13 @@
             "$ref": "#/components/responses/OkGetUserAccessibleNodesResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/UserNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -974,13 +974,13 @@
             "$ref": "#/components/responses/OkGetUserSubscriptionRequestHistoryResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/UserNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -1013,13 +1013,13 @@
             "$ref": "#/components/responses/OkGetUserByShortUuidResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/UserNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -1052,13 +1052,13 @@
             "$ref": "#/components/responses/OkGetUserByUsernameResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/UserNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -1091,13 +1091,13 @@
             "$ref": "#/components/responses/OkGetUserByIdResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/UserNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -1130,10 +1130,10 @@
             "$ref": "#/components/responses/OkGetUserByTelegramIdResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -1166,10 +1166,10 @@
             "$ref": "#/components/responses/OkGetUserByEmailResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -1203,10 +1203,10 @@
             "$ref": "#/components/responses/OkGetUserByTagResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -1249,13 +1249,13 @@
             "$ref": "#/components/responses/OkRevokeUserSubscriptionResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/UserNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -1288,13 +1288,13 @@
             "$ref": "#/components/responses/OkDisableUserResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/UserNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -1327,13 +1327,13 @@
             "$ref": "#/components/responses/OkEnableUserResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/UserNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -1366,13 +1366,13 @@
             "$ref": "#/components/responses/OkResetUserTrafficResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/UserNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -1405,13 +1405,13 @@
             "$ref": "#/components/responses/OkResolveUserResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/UserNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -1444,10 +1444,10 @@
             "$ref": "#/components/responses/OkBulkDeleteUsersByStatusResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -1480,10 +1480,10 @@
             "$ref": "#/components/responses/OkBulkDeleteUsersResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -1516,10 +1516,10 @@
             "$ref": "#/components/responses/OkBulkRevokeUsersSubscriptionResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -1552,10 +1552,10 @@
             "$ref": "#/components/responses/OkBulkResetTrafficUsersResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -1588,10 +1588,10 @@
             "$ref": "#/components/responses/OkBulkUpdateUsersResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -1624,10 +1624,10 @@
             "$ref": "#/components/responses/OkBulkUpdateUsersSquadsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -1661,10 +1661,10 @@
             "$ref": "#/components/responses/OkBulkExtendExpirationDateResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -1697,10 +1697,10 @@
             "$ref": "#/components/responses/OkBulkAllUpdateUsersResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -1724,10 +1724,10 @@
             "$ref": "#/components/responses/OkBulkAllResetTrafficUsersResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -1761,10 +1761,10 @@
             "$ref": "#/components/responses/OkBulkAllExtendExpirationDateResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -1797,10 +1797,10 @@
             "$ref": "#/components/responses/OkGetSubscriptionInfoResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "summary": "Get Subscription Info by Short UUID",
@@ -1896,10 +1896,10 @@
             "$ref": "#/components/responses/OkGetAllSubscriptionsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -1932,13 +1932,13 @@
             "$ref": "#/components/responses/OkGetSubscriptionByUsernameResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
-            "$ref": "#/components/responses/UserNotFoundErrorDto"
+            "$ref": "#/components/responses/SubscriptionUserNotFoundErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -1971,13 +1971,13 @@
             "$ref": "#/components/responses/OkGetSubscriptionByShortUuidProtectedResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
-            "$ref": "#/components/responses/UserNotFoundErrorDto"
+            "$ref": "#/components/responses/SubscriptionUserNotFoundErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -2010,13 +2010,13 @@
             "$ref": "#/components/responses/OkGetSubscriptionByUuidResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
-            "$ref": "#/components/responses/UserNotFoundErrorDto"
+            "$ref": "#/components/responses/SubscriptionUserNotFoundErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -2058,10 +2058,10 @@
             "$ref": "#/components/responses/OkGetRawSubscriptionByShortUuidResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -2104,10 +2104,10 @@
             "$ref": "#/components/responses/OkGetSubpageConfigByShortUuidResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -2140,10 +2140,10 @@
             "$ref": "#/components/responses/OkGetConnectionKeysByUuidResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -2166,10 +2166,10 @@
             "$ref": "#/components/responses/OkGetTemplatesResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -2200,10 +2200,10 @@
             "$ref": "#/components/responses/OkUpdateTemplateResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -2234,10 +2234,10 @@
             "$ref": "#/components/responses/OkCreateSubscriptionTemplateResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -2270,10 +2270,10 @@
             "$ref": "#/components/responses/OkGetTemplateResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -2304,10 +2304,10 @@
             "$ref": "#/components/responses/OkDeleteSubscriptionTemplateResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -2340,10 +2340,10 @@
             "$ref": "#/components/responses/OkReorderSubscriptionTemplatesResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -2377,10 +2377,10 @@
             "$ref": "#/components/responses/CreatedCreateApiTokenResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -2402,10 +2402,10 @@
             "$ref": "#/components/responses/OkFindAllApiTokensResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -2439,10 +2439,10 @@
             "$ref": "#/components/responses/OkDeleteApiTokenResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -2466,10 +2466,10 @@
             "$ref": "#/components/responses/OkGetApiTokenScopesResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -2492,10 +2492,10 @@
             "$ref": "#/components/responses/OkGetConfigProfilesResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -2526,13 +2526,13 @@
             "$ref": "#/components/responses/CreatedCreateConfigProfileResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "409": {
             "$ref": "#/components/responses/ConfigProfileConflictError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -2563,7 +2563,7 @@
             "$ref": "#/components/responses/OkUpdateConfigProfileResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/ConfigProfileNotFoundError"
@@ -2572,7 +2572,7 @@
             "$ref": "#/components/responses/ConfigProfileConflictError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -2595,10 +2595,10 @@
             "$ref": "#/components/responses/OkGetAllInboundsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -2630,13 +2630,13 @@
             "$ref": "#/components/responses/OkGetInboundsByProfileUuidResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/ConfigProfileNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -2668,13 +2668,13 @@
             "$ref": "#/components/responses/OkGetConfigProfileByUuidResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/ConfigProfileNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -2704,13 +2704,13 @@
             "$ref": "#/components/responses/OkDeleteConfigProfileResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/ConfigProfileNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -2742,13 +2742,13 @@
             "$ref": "#/components/responses/OkGetComputedConfigProfileByUuidResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/ConfigProfileNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -2781,10 +2781,10 @@
             "$ref": "#/components/responses/OkReorderConfigProfilesResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -2807,10 +2807,10 @@
             "$ref": "#/components/responses/OkGetSnippetsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -2841,13 +2841,13 @@
             "$ref": "#/components/responses/OkDeleteSnippetResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/SnippetNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -2878,13 +2878,13 @@
             "$ref": "#/components/responses/CreatedCreateSnippetResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "409": {
             "$ref": "#/components/responses/SnippetNameAlreadyExistsError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -2915,7 +2915,7 @@
             "$ref": "#/components/responses/OkUpdateSnippetResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/SnippetNotFoundError"
@@ -2924,7 +2924,7 @@
             "$ref": "#/components/responses/SnippetNameAlreadyExistsError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -2947,10 +2947,10 @@
             "$ref": "#/components/responses/OkGetInternalSquadsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -2981,13 +2981,13 @@
             "$ref": "#/components/responses/CreatedCreateInternalSquadResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "409": {
             "$ref": "#/components/responses/InternalSquadAlreadyExistsError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -3018,7 +3018,7 @@
             "$ref": "#/components/responses/OkUpdateInternalSquadResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/InternalSquadNotFoundError"
@@ -3027,7 +3027,7 @@
             "$ref": "#/components/responses/InternalSquadAlreadyExistsError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -3059,10 +3059,10 @@
             "$ref": "#/components/responses/OkGetInternalSquadByUuidResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -3092,13 +3092,13 @@
             "$ref": "#/components/responses/OkDeleteInternalSquadResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/InternalSquadNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -3131,13 +3131,13 @@
             "$ref": "#/components/responses/OkGetInternalSquadAccessibleNodesResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/InternalSquadNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -3169,13 +3169,13 @@
             "$ref": "#/components/responses/OkAddUsersToInternalSquadResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/InternalSquadNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -3207,13 +3207,13 @@
             "$ref": "#/components/responses/OkRemoveUsersFromInternalSquadResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/InternalSquadNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -3246,10 +3246,10 @@
             "$ref": "#/components/responses/OkReorderInternalSquadsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -3272,10 +3272,10 @@
             "$ref": "#/components/responses/OkGetExternalSquadsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -3306,13 +3306,13 @@
             "$ref": "#/components/responses/CreatedCreateExternalSquadResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "409": {
             "$ref": "#/components/responses/ExternalSquadAlreadyExistsError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -3343,7 +3343,7 @@
             "$ref": "#/components/responses/OkUpdateExternalSquadResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/ExternalSquadNotFoundError"
@@ -3352,7 +3352,7 @@
             "$ref": "#/components/responses/ExternalSquadAlreadyExistsError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -3384,10 +3384,10 @@
             "$ref": "#/components/responses/OkGetExternalSquadByUuidResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -3417,13 +3417,13 @@
             "$ref": "#/components/responses/OkDeleteExternalSquadResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/ExternalSquadNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -3455,13 +3455,13 @@
             "$ref": "#/components/responses/OkAddUsersToExternalSquadResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/ExternalSquadNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -3493,13 +3493,13 @@
             "$ref": "#/components/responses/OkRemoveUsersFromExternalSquadResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/ExternalSquadNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -3532,10 +3532,10 @@
             "$ref": "#/components/responses/OkReorderExternalSquadsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -3558,10 +3558,10 @@
             "$ref": "#/components/responses/OkGetPubKeyResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -3584,10 +3584,10 @@
             "$ref": "#/components/responses/OkGetAllNodesTagsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -3620,10 +3620,10 @@
             "$ref": "#/components/responses/CreatedCreateNodeResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -3644,10 +3644,10 @@
             "$ref": "#/components/responses/OkGetAllNodesResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -3678,10 +3678,10 @@
             "$ref": "#/components/responses/OkUpdateNodeResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -3714,10 +3714,10 @@
             "$ref": "#/components/responses/OkGetOneNodeResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -3748,10 +3748,10 @@
             "$ref": "#/components/responses/OkDeleteNodeResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -3784,10 +3784,10 @@
             "$ref": "#/components/responses/OkEnableNodeResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -3820,10 +3820,10 @@
             "$ref": "#/components/responses/OkDisableNodeResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -3866,10 +3866,10 @@
             "$ref": "#/components/responses/OkRestartNodeResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -3902,10 +3902,10 @@
             "$ref": "#/components/responses/OkResetNodeTrafficResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -3938,10 +3938,10 @@
             "$ref": "#/components/responses/OkRestartAllNodesResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -3974,10 +3974,10 @@
             "$ref": "#/components/responses/OkReorderNodeResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -4010,10 +4010,10 @@
             "$ref": "#/components/responses/OkProfileModificationResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -4046,10 +4046,10 @@
             "$ref": "#/components/responses/OkBulkNodesActionsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -4082,10 +4082,10 @@
             "$ref": "#/components/responses/OkBulkNodesUpdateResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -4127,10 +4127,10 @@
             "$ref": "#/components/responses/OkGetTorrentBlockerReportsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -4153,10 +4153,10 @@
             "$ref": "#/components/responses/OkGetTorrentBlockerReportsStatsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -4179,10 +4179,10 @@
             "$ref": "#/components/responses/OkTruncateTorrentBlockerReportsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -4205,10 +4205,10 @@
             "$ref": "#/components/responses/OkGetNodePluginsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -4239,10 +4239,10 @@
             "$ref": "#/components/responses/OkUpdateNodePluginResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -4273,10 +4273,10 @@
             "$ref": "#/components/responses/OkCreateNodePluginResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -4309,10 +4309,10 @@
             "$ref": "#/components/responses/OkGetNodePluginResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -4343,10 +4343,10 @@
             "$ref": "#/components/responses/OkDeleteNodePluginResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -4379,10 +4379,10 @@
             "$ref": "#/components/responses/OkReorderNodePluginsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -4415,10 +4415,10 @@
             "$ref": "#/components/responses/OkCloneNodePluginResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -4451,10 +4451,10 @@
             "$ref": "#/components/responses/OkPluginExecutorResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -4477,10 +4477,10 @@
             "$ref": "#/components/responses/OkGetAllHostTagsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -4513,10 +4513,10 @@
             "$ref": "#/components/responses/CreatedCreateHostResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -4547,10 +4547,10 @@
             "$ref": "#/components/responses/OkUpdateHostResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -4571,10 +4571,10 @@
             "$ref": "#/components/responses/OkGetAllHostsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -4607,10 +4607,10 @@
             "$ref": "#/components/responses/OkGetOneHostResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -4641,13 +4641,13 @@
             "$ref": "#/components/responses/OkDeleteHostResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/HostNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -4680,10 +4680,10 @@
             "$ref": "#/components/responses/OkReorderHostResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -4716,10 +4716,10 @@
             "$ref": "#/components/responses/OkBulkDeleteHostsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -4752,10 +4752,10 @@
             "$ref": "#/components/responses/OkBulkDisableHostsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -4788,10 +4788,10 @@
             "$ref": "#/components/responses/OkBulkEnableHostsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -4824,10 +4824,10 @@
             "$ref": "#/components/responses/OkUpdateManyHostsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -4880,10 +4880,10 @@
             "$ref": "#/components/responses/OkGetLegacyStatsNodesUsersUsageResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -4947,10 +4947,10 @@
             "$ref": "#/components/responses/OkGetStatsNodeUsersUsageResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -5015,10 +5015,10 @@
             "$ref": "#/components/responses/OkGetStatsNodesUsersUsageResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -5071,13 +5071,13 @@
             "$ref": "#/components/responses/OkGetLegacyStatsUserUsageResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/UserNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -5141,10 +5141,10 @@
             "$ref": "#/components/responses/OkGetStatsUserUsageResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -5186,10 +5186,10 @@
             "$ref": "#/components/responses/OkGetAllHwidDevicesResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -5220,13 +5220,13 @@
             "$ref": "#/components/responses/OkCreateUserHwidDeviceResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/OneOfRequestedResourcesNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -5259,13 +5259,13 @@
             "$ref": "#/components/responses/OkDeleteUserHwidDeviceResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/OneOfRequestedResourcesNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -5298,13 +5298,13 @@
             "$ref": "#/components/responses/OkDeleteAllUserHwidDevicesResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/OneOfRequestedResourcesNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -5327,10 +5327,10 @@
             "$ref": "#/components/responses/OkGetHwidDevicesStatsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -5372,10 +5372,10 @@
             "$ref": "#/components/responses/OkGetTopUsersByHwidDevicesResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -5408,13 +5408,13 @@
             "$ref": "#/components/responses/OkGetUserHwidDevicesResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/OneOfRequestedResourcesNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -5469,10 +5469,10 @@
             "$ref": "#/components/responses/OkGetStatsNodesUsageResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -5495,10 +5495,10 @@
             "$ref": "#/components/responses/OkGetInfraProvidersResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -5529,10 +5529,10 @@
             "$ref": "#/components/responses/CreatedCreateInfraProviderResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -5563,10 +5563,10 @@
             "$ref": "#/components/responses/OkUpdateInfraProviderResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -5598,13 +5598,13 @@
             "$ref": "#/components/responses/OkGetInfraProviderByUuidResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/InfraProviderNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -5634,10 +5634,10 @@
             "$ref": "#/components/responses/OkDeleteInfraProviderByUuidResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -5670,10 +5670,10 @@
             "$ref": "#/components/responses/CreatedCreateInfraBillingHistoryRecordResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -5694,10 +5694,10 @@
             "$ref": "#/components/responses/OkGetInfraBillingHistoryRecordsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -5729,10 +5729,10 @@
             "$ref": "#/components/responses/OkDeleteInfraBillingHistoryRecordByUuidResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -5755,10 +5755,10 @@
             "$ref": "#/components/responses/OkGetInfraBillingNodesResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -5789,10 +5789,10 @@
             "$ref": "#/components/responses/OkUpdateInfraBillingNodeResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -5823,10 +5823,10 @@
             "$ref": "#/components/responses/CreatedCreateInfraBillingNodeResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -5858,10 +5858,10 @@
             "$ref": "#/components/responses/OkDeleteInfraBillingNodeByUuidResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -5903,10 +5903,10 @@
             "$ref": "#/components/responses/OkGetSubscriptionRequestHistoryResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -5929,10 +5929,10 @@
             "$ref": "#/components/responses/OkGetSubscriptionRequestHistoryStatsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -5955,10 +5955,10 @@
             "$ref": "#/components/responses/OkGetMetadataResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -5981,10 +5981,10 @@
             "$ref": "#/components/responses/OkGetStatsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -6007,10 +6007,10 @@
             "$ref": "#/components/responses/OkGetBandwidthStatsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -6033,10 +6033,10 @@
             "$ref": "#/components/responses/OkGetNodesStatisticsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -6059,10 +6059,10 @@
             "$ref": "#/components/responses/OkGetRemnawaveHealthResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -6085,10 +6085,10 @@
             "$ref": "#/components/responses/OkGetNodesMetricsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -6111,10 +6111,10 @@
             "$ref": "#/components/responses/OkGenerateX25519Response"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -6147,10 +6147,10 @@
             "$ref": "#/components/responses/CreatedDebugSrrMatcherResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -6173,10 +6173,10 @@
             "$ref": "#/components/responses/OkGetRecapResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -6199,10 +6199,10 @@
             "$ref": "#/components/responses/OkGetSubscriptionSettingsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -6233,10 +6233,10 @@
             "$ref": "#/components/responses/OkUpdateSubscriptionSettingsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -6269,13 +6269,13 @@
             "$ref": "#/components/responses/OkFetchIpsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/UserNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -6308,13 +6308,13 @@
             "$ref": "#/components/responses/OkFetchIpsResultResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/JobNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -6347,13 +6347,13 @@
             "$ref": "#/components/responses/OkDropConnectionsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/UserNotFoundConnectedNodesNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -6386,13 +6386,13 @@
             "$ref": "#/components/responses/OkFetchUsersIpsResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/NodeNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -6425,13 +6425,13 @@
             "$ref": "#/components/responses/OkFetchUsersIpsResultResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/JobNotFoundError"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -6464,13 +6464,13 @@
             "$ref": "#/components/responses/OkGetUserMetadataResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/UserOrMetadataNotFoundErrorDto"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -6511,13 +6511,13 @@
             "$ref": "#/components/responses/OkUpsertUserMetadataResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
-            "$ref": "#/components/responses/UserNotFoundSeeErrorCodeForMoreDetailsErrorDto"
+            "$ref": "#/components/responses/UserNotFoundErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -6550,13 +6550,13 @@
             "$ref": "#/components/responses/OkGetNodeMetadataResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
             "$ref": "#/components/responses/NodeOrMetadataNotFoundErrorDto"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -6597,13 +6597,13 @@
             "$ref": "#/components/responses/OkUpsertNodeMetadataResponse"
           },
           "400": {
-            "$ref": "#/components/responses/ValidationErrorDto"
+            "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
-            "$ref": "#/components/responses/NodeNotFoundSeeErrorCodeForMoreDetailsErrorDto"
+            "$ref": "#/components/responses/NodeNotFoundErrorDtoSchema"
           },
           "500": {
-            "$ref": "#/components/responses/ServerErrorDto"
+            "$ref": "#/components/responses/ServerErrorDtoSchema"
           }
         },
         "security": [
@@ -14294,7 +14294,7 @@
         ],
         "nullable": true
       },
-      "ValidationErrorBodyErrorsDto": {
+      "ValidationErrorItem": {
         "type": "object",
         "properties": {
           "validation": {
@@ -17081,7 +17081,7 @@
           "date"
         ]
       },
-      "ValidationErrorBodyDto": {
+      "ValidationErrorDto": {
         "type": "object",
         "properties": {
           "message": {
@@ -17094,7 +17094,7 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ValidationErrorBodyErrorsDto"
+              "$ref": "#/components/schemas/ValidationErrorItem"
             },
             "example": [
               {
@@ -17109,7 +17109,7 @@
           }
         }
       },
-      "ServerErrorBodyDto": {
+      "ServerErrorDto": {
         "type": "object",
         "properties": {
           "timestamp": {
@@ -17126,7 +17126,7 @@
           }
         }
       },
-      "UserNotFoundErrorBodyDto": {
+      "SubscriptionUserNotFoundErrorDto": {
         "type": "object",
         "properties": {
           "timestamp": {
@@ -17144,7 +17144,7 @@
           }
         }
       },
-      "ForbiddenErrorBodyDto": {
+      "RegistrationErrorDto": {
         "type": "object",
         "properties": {
           "statusCode": {
@@ -19836,26 +19836,6 @@
       }
     },
     "responses": {
-      "ValidationErrorDto": {
-        "description": "Validation error",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/ValidationErrorBodyDto"
-            }
-          }
-        }
-      },
-      "ServerErrorDto": {
-        "description": "Server error",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/ServerErrorBodyDto"
-            }
-          }
-        }
-      },
       "UserNotFoundError": {
         "description": "User not found"
       },
@@ -19870,16 +19850,6 @@
       },
       "ExternalSquadNotFoundError": {
         "description": "External squad not found"
-      },
-      "UserNotFoundErrorDto": {
-        "description": "User not found",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/UserNotFoundErrorBodyDto"
-            }
-          }
-        }
       },
       "InternalSquadAlreadyExistsError": {
         "description": "Internal squad already exists"
@@ -20005,16 +19975,6 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/GetStatsNodesUsageResponseDto"
-            }
-          }
-        }
-      },
-      "ForbiddenError": {
-        "description": "Forbidden - Registration is not allowed",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/ForbiddenErrorBodyDto"
             }
           }
         }
@@ -20475,16 +20435,6 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/UpdateRemnawaveSettingsResponseDto"
-            }
-          }
-        }
-      },
-      "UserNotFoundSeeErrorCodeForMoreDetailsErrorDto": {
-        "description": "User not found (see errorCode for more details)",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/UserNotFoundErrorDto"
             }
           }
         }
@@ -21469,16 +21419,6 @@
           }
         }
       },
-      "NodeNotFoundSeeErrorCodeForMoreDetailsErrorDto": {
-        "description": "Node not found (see errorCode for more details)",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/NodeNotFoundErrorDto"
-            }
-          }
-        }
-      },
       "CreatedCreateConfigProfileResponse": {
         "description": "Config profile created successfully",
         "content": {
@@ -21577,7 +21517,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/ForbiddenErrorBodyDto"
+              "$ref": "#/components/schemas/RegistrationErrorDto"
             }
           }
         }
@@ -21841,6 +21781,66 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/BulkDisableHostsResponseDto"
+            }
+          }
+        }
+      },
+      "NodeNotFoundErrorDtoSchema": {
+        "description": "Node not found (see errorCode for more details)",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/NodeNotFoundErrorDto"
+            }
+          }
+        }
+      },
+      "RegistrationErrorDtoSchema": {
+        "description": "Forbidden - Registration is not allowed",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/RegistrationErrorDto"
+            }
+          }
+        }
+      },
+      "ServerErrorDtoSchema": {
+        "description": "Server error",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ServerErrorDto"
+            }
+          }
+        }
+      },
+      "SubscriptionUserNotFoundErrorDtoSchema": {
+        "description": "User not found",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/SubscriptionUserNotFoundErrorDto"
+            }
+          }
+        }
+      },
+      "UserNotFoundErrorDtoSchema": {
+        "description": "User not found (see errorCode for more details)",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/UserNotFoundErrorDto"
+            }
+          }
+        }
+      },
+      "ValidationErrorDtoSchema": {
+        "description": "Validation error",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ValidationErrorDto"
             }
           }
         }
