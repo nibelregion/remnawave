@@ -1073,17 +1073,19 @@ remnawave:
           SERVICE_LOGIN_ATTEMPT_FAILED: Login attempt failed.
           SERVICE_LOGIN_ATTEMPT_SUCCESS: Login attempt succeeded.
           SERVICE_SUBPAGE_CONFIG_CHANGED: Subpage configuration changed.
+          API_TOKEN_CREATED: API token was created.
+          API_TOKEN_DELETED: API token was deleted.
     - node_event_type:
         name: NodeEventType
         members:
         - CREATED
         - MODIFIED
         - DISABLED
-        - NODE_ENABLED
-        - NODE_DELETED
-        - NODE_CONNECTION_LOST
-        - NODE_CONNECTION_RESTORED
-        - NODE_TRAFFIC_NOTIFY
+        - ENABLED
+        - DELETED
+        - CONNECTION_LOST
+        - CONNECTION_RESTORED
+        - TRAFFIC_NOTIFY
         values:
         - node.created
         - node.modified
@@ -1171,6 +1173,7 @@ remnawave:
           FIRST_CONNECTED: User connected for the first time.
           BANDWIDTH_USAGE_THRESHOLD_REACHED: User reached the bandwidth usage threshold.
           NOT_CONNECTED: User has not connected.
+          EXPIRATION: User expiration notification.
     - torrent_blocker_event_type:
         name: TorrentBlockerEventType
         members:

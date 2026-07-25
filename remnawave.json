@@ -11899,7 +11899,9 @@
           "SERVICE_PANEL_STARTED": "Panel service started.",
           "SERVICE_LOGIN_ATTEMPT_FAILED": "Login attempt failed.",
           "SERVICE_LOGIN_ATTEMPT_SUCCESS": "Login attempt succeeded.",
-          "SERVICE_SUBPAGE_CONFIG_CHANGED": "Subpage configuration changed."
+          "SERVICE_SUBPAGE_CONFIG_CHANGED": "Subpage configuration changed.",
+          "API_TOKEN_CREATED": "API token was created.",
+          "API_TOKEN_DELETED": "API token was deleted."
         }
       },
       "NodeEventType": {
@@ -11918,21 +11920,21 @@
           "CREATED",
           "MODIFIED",
           "DISABLED",
-          "NODE_ENABLED",
-          "NODE_DELETED",
-          "NODE_CONNECTION_LOST",
-          "NODE_CONNECTION_RESTORED",
-          "NODE_TRAFFIC_NOTIFY"
+          "ENABLED",
+          "DELETED",
+          "CONNECTION_LOST",
+          "CONNECTION_RESTORED",
+          "TRAFFIC_NOTIFY"
         ],
         "x-enumNames": [
           "CREATED",
           "MODIFIED",
           "DISABLED",
-          "NODE_ENABLED",
-          "NODE_DELETED",
-          "NODE_CONNECTION_LOST",
-          "NODE_CONNECTION_RESTORED",
-          "NODE_TRAFFIC_NOTIFY"
+          "ENABLED",
+          "DELETED",
+          "CONNECTION_LOST",
+          "CONNECTION_RESTORED",
+          "TRAFFIC_NOTIFY"
         ],
         "description": "Node event type.",
         "x-enum-descriptions": {
@@ -12042,7 +12044,8 @@
           "EXPIRED_24_HOURS_AGO": "User expired 24 hours ago.",
           "FIRST_CONNECTED": "User connected for the first time.",
           "BANDWIDTH_USAGE_THRESHOLD_REACHED": "User reached the bandwidth usage threshold.",
-          "NOT_CONNECTED": "User has not connected."
+          "NOT_CONNECTED": "User has not connected.",
+          "EXPIRATION": "User expiration notification."
         }
       },
       "TorrentBlockerEventType": {
@@ -19353,11 +19356,11 @@
           "UPDATE_HOSTS_ERROR",
           "INVALID_API_TOKEN_SCOPE",
           "CREATE_INFRA_BILLING_NODE_MISSING_TARGET",
-          "UNAUTHORIZED_ERROR",
-          "FORBIDDEN_ERROR",
+          "E401",
+          "E403",
           "E404",
           "E451",
-          "INTERNAL_SERVER_ERROR_2",
+          "E500",
           "NODE_ERROR_WITH_MSG",
           "NODE_ERROR_500_WITH_MSG"
         ],
@@ -19589,11 +19592,11 @@
           "UPDATE_HOSTS_ERROR",
           "INVALID_API_TOKEN_SCOPE",
           "CREATE_INFRA_BILLING_NODE_MISSING_TARGET",
-          "UNAUTHORIZED_ERROR",
-          "FORBIDDEN_ERROR",
+          "E401",
+          "E403",
           "E404",
           "E451",
-          "INTERNAL_SERVER_ERROR_2",
+          "E500",
           "NODE_ERROR_WITH_MSG",
           "NODE_ERROR_500_WITH_MSG"
         ],
@@ -19826,9 +19829,9 @@
           "UPDATE_HOSTS_ERROR": "Update hosts error. HTTP 500.",
           "INVALID_API_TOKEN_SCOPE": "One or more provided API token scopes are invalid. HTTP 400.",
           "CREATE_INFRA_BILLING_NODE_MISSING_TARGET": "Either nodeUuid or name must be provided. HTTP 400.",
-          "UNAUTHORIZED_ERROR": "Unauthorized. HTTP 401.",
-          "FORBIDDEN_ERROR": "Forbidden. HTTP 403.",
-          "INTERNAL_SERVER_ERROR_2": "Internal server error. HTTP 500."
+          "E401": "Unauthorized. HTTP 401.",
+          "E403": "Forbidden. HTTP 403.",
+          "E500": "Internal server error. HTTP 500."
         }
       }
     },

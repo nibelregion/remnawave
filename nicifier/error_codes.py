@@ -27,17 +27,17 @@ class ErrorCode:
 
 NICIFICATED_ERROR_CODES: typing.Final = (
     ErrorCode(
-        "UNAUTHORIZED_ERROR",
+        "E401",
         "E401",
         "Unauthorized. HTTP 401.",
     ),
     ErrorCode(
-        "FORBIDDEN_ERROR",
+        "E403",
         "E403",
         "Forbidden. HTTP 403.",
     ),
     ErrorCode(
-        "INTERNAL_SERVER_ERROR",
+        "E500",
         "E500",
         "Internal server error. HTTP 500.",
     ),
