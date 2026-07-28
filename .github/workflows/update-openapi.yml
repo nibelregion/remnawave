@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       flags:
-        description: additional flags for `python main.py`
+        description: additional flags for `nicifier`
         required: false
         default: ''
         type: string
@@ -28,8 +28,8 @@ jobs:
       - name: generate schema
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          EXTRA_FLAGS: ${{ inputs.flags }} --update-nicifications
-        run: uv run python nicifier $EXTRA_FLAGS
+          EXTRA_FLAGS: ${{ inputs.flags }}
+        run: uv run python nicifier --update-nicifications $EXTRA_FLAGS
 
       - name: commit generated schema
         run: |
@@ -39,5 +39,5 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add remnawave.json remnawave.min.json remnawave.diff.json nicifier/nicifications.yaml
-          git commit -m 'chore: update oas schema to the latest changes'
+          git commit -m 'chore(schema): update oas schema to the latest changes'
           git push
