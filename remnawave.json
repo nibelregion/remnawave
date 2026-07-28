@@ -6350,7 +6350,7 @@
             "$ref": "#/components/responses/ValidationErrorDtoSchema"
           },
           "404": {
-            "$ref": "#/components/responses/UserNotFoundConnectedNodesNotFoundError"
+            "$ref": "#/components/responses/UserOrConnectedNodesNotFoundError"
           },
           "500": {
             "$ref": "#/components/responses/ServerErrorDtoSchema"
@@ -21126,7 +21126,7 @@
           }
         }
       },
-      "UserNotFoundConnectedNodesNotFoundError": {
+      "UserOrConnectedNodesNotFoundError": {
         "description": "User not found // Connected nodes not found"
       },
       "OkCreateUserHwidDeviceResponse": {

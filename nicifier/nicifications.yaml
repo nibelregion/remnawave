@@ -658,6 +658,8 @@ remnawave:
     - UpdateUserResponseUserTrafficDto:
         name: UserTrafficDto
     errors:
+    - UserNotFoundConnectedNodesNotFoundError:
+        name: UserOrConnectedNodesNotFoundError
     - ConfigProfileNameAlreadyExistsOrInboundTagsAreNotUniqueInboundTagsMustBeUniqueInGlobalScopeError:
         name: ConfigProfileConflictError
     - NodeOrMetadataNotFoundSeeErrorCodeForMoreDetailsErrorDto:
