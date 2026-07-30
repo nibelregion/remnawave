@@ -7222,7 +7222,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/ExtendedUsersDto"
+            "$ref": "#/components/schemas/UserDto"
           }
         },
         "required": [
@@ -7321,7 +7321,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/ExtendedUsersDto"
+            "$ref": "#/components/schemas/UserDto"
           }
         },
         "required": [
@@ -7359,7 +7359,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/ExtendedUsersDto"
+            "$ref": "#/components/schemas/UserDto"
           }
         },
         "required": [
@@ -7370,7 +7370,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/ExtendedUsersDto"
+            "$ref": "#/components/schemas/UserDto"
           }
         },
         "required": [
@@ -7381,7 +7381,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/ExtendedUsersDto"
+            "$ref": "#/components/schemas/UserDto"
           }
         },
         "required": [
@@ -7392,7 +7392,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/ExtendedUsersDto"
+            "$ref": "#/components/schemas/UserDto"
           }
         },
         "required": [
@@ -10195,7 +10195,7 @@
             "format": "date-time"
           },
           "data": {
-            "$ref": "#/components/schemas/ExtendedUsersDto"
+            "$ref": "#/components/schemas/UserDto"
           },
           "meta": {
             "$ref": "#/components/schemas/MetaDto"
@@ -12185,7 +12185,7 @@
           "rawInbound"
         ]
       },
-      "BaseInternalSquadDto": {
+      "UserActiveInternalSquadDto": {
         "type": "object",
         "properties": {
           "uuid": {
@@ -13502,7 +13502,7 @@
           "config"
         ]
       },
-      "ExtendedUsersDto": {
+      "UserDto": {
         "type": "object",
         "properties": {
           "uuid": {
@@ -13607,7 +13607,7 @@
           "activeInternalSquads": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/BaseInternalSquadDto"
+              "$ref": "#/components/schemas/UserActiveInternalSquadDto"
             }
           },
           "userTraffic": {
@@ -16516,7 +16516,7 @@
           "users": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ExtendedUsersDto"
+              "$ref": "#/components/schemas/UserDto"
             }
           },
           "total": {
@@ -16534,7 +16534,7 @@
           "users": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ExtendedUsersDto"
+              "$ref": "#/components/schemas/UserDto"
             }
           },
           "nextCursor": {
@@ -16735,7 +16735,7 @@
         "type": "object",
         "properties": {
           "user": {
-            "$ref": "#/components/schemas/ExtendedUsersDto"
+            "$ref": "#/components/schemas/UserDto"
           },
           "convertedUserInfo": {
             "$ref": "#/components/schemas/RawSubscriptionByShortUuidResponseConvertedUserInfoDto"
@@ -17933,7 +17933,7 @@
         "type": "object",
         "properties": {
           "user": {
-            "$ref": "#/components/schemas/ExtendedUsersDto"
+            "$ref": "#/components/schemas/UserDto"
           },
           "hwidUserDevice": {
             "$ref": "#/components/schemas/HwidUserDeviceDto"
@@ -18003,7 +18003,7 @@
             "$ref": "#/components/schemas/NodesDto"
           },
           "user": {
-            "$ref": "#/components/schemas/ExtendedUsersDto"
+            "$ref": "#/components/schemas/UserDto"
           },
           "report": {
             "$ref": "#/components/schemas/TorrentBlockerReportReportDto"
@@ -18147,7 +18147,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/ExtendedUsersDto"
+            "$ref": "#/components/schemas/UserDto"
           }
         },
         "required": [
@@ -18158,7 +18158,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/ExtendedUsersDto"
+            "$ref": "#/components/schemas/UserDto"
           }
         },
         "required": [
@@ -18169,7 +18169,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/ExtendedUsersDto"
+            "$ref": "#/components/schemas/UserDto"
           }
         },
         "required": [
@@ -18180,7 +18180,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/ExtendedUsersDto"
+            "$ref": "#/components/schemas/UserDto"
           }
         },
         "required": [
@@ -18193,7 +18193,7 @@
           "response": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ExtendedUsersDto"
+              "$ref": "#/components/schemas/UserDto"
             }
           }
         },
@@ -18207,7 +18207,7 @@
           "response": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ExtendedUsersDto"
+              "$ref": "#/components/schemas/UserDto"
             }
           }
         },
@@ -18221,7 +18221,7 @@
           "response": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ExtendedUsersDto"
+              "$ref": "#/components/schemas/UserDto"
             }
           }
         },

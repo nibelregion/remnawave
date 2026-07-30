@@ -8371,17 +8371,17 @@
     {
       "action": "reused",
       "name": "CreateUserResponse",
-      "target": "ExtendedUsersDto",
+      "target": "UserDto",
       "nicification": "CreateUserResponse",
       "field": "response",
       "parent": "CreateUserResponseDto",
       "source": "#/components/schemas/CreateUserResponseDto/properties/response",
-      "signature": "41823d8770deef8cb6058a95bf0c15528369433c21fabef40c45c53a1c91c3b5"
+      "signature": "47bfe47a866e52045463f57f7f1f9f82b68048802a53782da0fea6a8ab7c7dab"
     },
     {
       "action": "reused",
-      "name": "BaseInternalSquadDto",
-      "target": "BaseInternalSquadDto",
+      "name": "UserActiveInternalSquadDto",
+      "target": "UserActiveInternalSquadDto",
       "nicification": "CreateUserResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
       "parent": "CreateUserResponse",
@@ -8891,17 +8891,17 @@
     {
       "action": "reused",
       "name": "DisableUserResponse",
-      "target": "ExtendedUsersDto",
+      "target": "UserDto",
       "nicification": "DisableUserResponse",
       "field": "response",
       "parent": "DisableUserResponseDto",
       "source": "#/components/schemas/DisableUserResponseDto/properties/response",
-      "signature": "41823d8770deef8cb6058a95bf0c15528369433c21fabef40c45c53a1c91c3b5"
+      "signature": "47bfe47a866e52045463f57f7f1f9f82b68048802a53782da0fea6a8ab7c7dab"
     },
     {
       "action": "reused",
-      "name": "BaseInternalSquadDto",
-      "target": "BaseInternalSquadDto",
+      "name": "UserActiveInternalSquadDto",
+      "target": "UserActiveInternalSquadDto",
       "nicification": "DisableUserResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
       "parent": "DisableUserResponse",
@@ -9061,17 +9061,17 @@
     {
       "action": "reused",
       "name": "EnableUserResponse",
-      "target": "ExtendedUsersDto",
+      "target": "UserDto",
       "nicification": "EnableUserResponse",
       "field": "response",
       "parent": "EnableUserResponseDto",
       "source": "#/components/schemas/EnableUserResponseDto/properties/response",
-      "signature": "41823d8770deef8cb6058a95bf0c15528369433c21fabef40c45c53a1c91c3b5"
+      "signature": "47bfe47a866e52045463f57f7f1f9f82b68048802a53782da0fea6a8ab7c7dab"
     },
     {
       "action": "reused",
-      "name": "BaseInternalSquadDto",
-      "target": "BaseInternalSquadDto",
+      "name": "UserActiveInternalSquadDto",
+      "target": "UserActiveInternalSquadDto",
       "nicification": "EnableUserResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
       "parent": "EnableUserResponse",
@@ -9486,25 +9486,25 @@
       "field": "response",
       "parent": "GetAllUsersResponseDto",
       "source": "#/components/schemas/GetAllUsersResponseDto/properties/response",
-      "signature": "09a57dbd64943ecd803ed4217621ccb36714672a17106d37c2b9c5d2c13cf280"
+      "signature": "95efaa91118705c2a6ac30efc4071f9f42928cceb5b745da14843dda0a5fd2ac"
     },
     {
       "action": "hoisted",
-      "name": "ExtendedUsersDto",
-      "target": "ExtendedUsersDto",
+      "name": "UserDto",
+      "target": "UserDto",
       "nicification": "GetAllUsersResponseUsersDto",
       "field": "users",
       "parent": "AllUsersResponse",
       "source": "#/components/schemas/GetAllUsersResponseDto/properties/response/properties/users/items",
-      "signature": "41823d8770deef8cb6058a95bf0c15528369433c21fabef40c45c53a1c91c3b5"
+      "signature": "47bfe47a866e52045463f57f7f1f9f82b68048802a53782da0fea6a8ab7c7dab"
     },
     {
       "action": "hoisted",
-      "name": "BaseInternalSquadDto",
-      "target": "BaseInternalSquadDto",
+      "name": "UserActiveInternalSquadDto",
+      "target": "UserActiveInternalSquadDto",
       "nicification": "GetAllUsersResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
-      "parent": "ExtendedUsersDto",
+      "parent": "UserDto",
       "source": "#/components/schemas/GetAllUsersResponseDto/properties/response/properties/users/items/properties/activeInternalSquads/items",
       "signature": "c58b50885bb7761d19b4854110c90821aab89228fbd2860cd5c827d0fd729b58"
     },
@@ -9514,7 +9514,7 @@
       "target": "UserTrafficDto",
       "nicification": "GetAllUsersResponseUserTrafficDto",
       "field": "userTraffic",
-      "parent": "ExtendedUsersDto",
+      "parent": "UserDto",
       "source": "#/components/schemas/GetAllUsersResponseDto/properties/response/properties/users/items/properties/userTraffic",
       "signature": "b68e5f5b2c0e4912502921638da0ec8234e13780e6ad290c380350c35d46e3b1"
     },
@@ -10506,7 +10506,7 @@
       "field": "response",
       "parent": "GetRawSubscriptionByShortUuidResponseDto",
       "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response",
-      "signature": "67f303401cafcb7e5db352586edbd49b3bac89867d544d809dc045a9b8f96643"
+      "signature": "f0dd3ad42302841082923579defcba7766d7d1bc5c7d2fc2946fe33bef49d4b8"
     },
     {
       "action": "hoisted",
@@ -10741,17 +10741,17 @@
     {
       "action": "reused",
       "name": "RawSubscriptionByShortUuidResponseUserDto",
-      "target": "ExtendedUsersDto",
+      "target": "UserDto",
       "nicification": "GetRawSubscriptionByShortUuidResponseUserDto",
       "field": "user",
       "parent": "RawSubscriptionByShortUuidResponse",
       "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/user",
-      "signature": "41823d8770deef8cb6058a95bf0c15528369433c21fabef40c45c53a1c91c3b5"
+      "signature": "47bfe47a866e52045463f57f7f1f9f82b68048802a53782da0fea6a8ab7c7dab"
     },
     {
       "action": "reused",
-      "name": "BaseInternalSquadDto",
-      "target": "BaseInternalSquadDto",
+      "name": "UserActiveInternalSquadDto",
+      "target": "UserActiveInternalSquadDto",
       "nicification": "GetRawSubscriptionByShortUuidResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
       "parent": "RawSubscriptionByShortUuidResponseUserDto",
@@ -11631,17 +11631,17 @@
     {
       "action": "reused",
       "name": "UserByEmailResponse",
-      "target": "ExtendedUsersDto",
+      "target": "UserDto",
       "nicification": "GetUserByEmailResponse",
       "field": "response",
       "parent": "GetUserByEmailResponseDto",
       "source": "#/components/schemas/GetUserByEmailResponseDto/properties/response/items",
-      "signature": "41823d8770deef8cb6058a95bf0c15528369433c21fabef40c45c53a1c91c3b5"
+      "signature": "47bfe47a866e52045463f57f7f1f9f82b68048802a53782da0fea6a8ab7c7dab"
     },
     {
       "action": "reused",
-      "name": "BaseInternalSquadDto",
-      "target": "BaseInternalSquadDto",
+      "name": "UserActiveInternalSquadDto",
+      "target": "UserActiveInternalSquadDto",
       "nicification": "GetUserByEmailResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
       "parent": "UserByEmailResponse",
@@ -11661,17 +11661,17 @@
     {
       "action": "reused",
       "name": "UserByIdResponse",
-      "target": "ExtendedUsersDto",
+      "target": "UserDto",
       "nicification": "GetUserByIdResponse",
       "field": "response",
       "parent": "GetUserByIdResponseDto",
       "source": "#/components/schemas/GetUserByIdResponseDto/properties/response",
-      "signature": "41823d8770deef8cb6058a95bf0c15528369433c21fabef40c45c53a1c91c3b5"
+      "signature": "47bfe47a866e52045463f57f7f1f9f82b68048802a53782da0fea6a8ab7c7dab"
     },
     {
       "action": "reused",
-      "name": "BaseInternalSquadDto",
-      "target": "BaseInternalSquadDto",
+      "name": "UserActiveInternalSquadDto",
+      "target": "UserActiveInternalSquadDto",
       "nicification": "GetUserByIdResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
       "parent": "UserByIdResponse",
@@ -11691,17 +11691,17 @@
     {
       "action": "reused",
       "name": "UserByShortUuidResponse",
-      "target": "ExtendedUsersDto",
+      "target": "UserDto",
       "nicification": "GetUserByShortUuidResponse",
       "field": "response",
       "parent": "GetUserByShortUuidResponseDto",
       "source": "#/components/schemas/GetUserByShortUuidResponseDto/properties/response",
-      "signature": "41823d8770deef8cb6058a95bf0c15528369433c21fabef40c45c53a1c91c3b5"
+      "signature": "47bfe47a866e52045463f57f7f1f9f82b68048802a53782da0fea6a8ab7c7dab"
     },
     {
       "action": "reused",
-      "name": "BaseInternalSquadDto",
-      "target": "BaseInternalSquadDto",
+      "name": "UserActiveInternalSquadDto",
+      "target": "UserActiveInternalSquadDto",
       "nicification": "GetUserByShortUuidResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
       "parent": "UserByShortUuidResponse",
@@ -11721,17 +11721,17 @@
     {
       "action": "reused",
       "name": "UserByTagResponse",
-      "target": "ExtendedUsersDto",
+      "target": "UserDto",
       "nicification": "GetUserByTagResponse",
       "field": "response",
       "parent": "GetUserByTagResponseDto",
       "source": "#/components/schemas/GetUserByTagResponseDto/properties/response/items",
-      "signature": "41823d8770deef8cb6058a95bf0c15528369433c21fabef40c45c53a1c91c3b5"
+      "signature": "47bfe47a866e52045463f57f7f1f9f82b68048802a53782da0fea6a8ab7c7dab"
     },
     {
       "action": "reused",
-      "name": "BaseInternalSquadDto",
-      "target": "BaseInternalSquadDto",
+      "name": "UserActiveInternalSquadDto",
+      "target": "UserActiveInternalSquadDto",
       "nicification": "GetUserByTagResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
       "parent": "UserByTagResponse",
@@ -11751,17 +11751,17 @@
     {
       "action": "reused",
       "name": "UserByTelegramIdResponse",
-      "target": "ExtendedUsersDto",
+      "target": "UserDto",
       "nicification": "GetUserByTelegramIdResponse",
       "field": "response",
       "parent": "GetUserByTelegramIdResponseDto",
       "source": "#/components/schemas/GetUserByTelegramIdResponseDto/properties/response/items",
-      "signature": "41823d8770deef8cb6058a95bf0c15528369433c21fabef40c45c53a1c91c3b5"
+      "signature": "47bfe47a866e52045463f57f7f1f9f82b68048802a53782da0fea6a8ab7c7dab"
     },
     {
       "action": "reused",
-      "name": "BaseInternalSquadDto",
-      "target": "BaseInternalSquadDto",
+      "name": "UserActiveInternalSquadDto",
+      "target": "UserActiveInternalSquadDto",
       "nicification": "GetUserByTelegramIdResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
       "parent": "UserByTelegramIdResponse",
@@ -11781,17 +11781,17 @@
     {
       "action": "reused",
       "name": "UserByUsernameResponse",
-      "target": "ExtendedUsersDto",
+      "target": "UserDto",
       "nicification": "GetUserByUsernameResponse",
       "field": "response",
       "parent": "GetUserByUsernameResponseDto",
       "source": "#/components/schemas/GetUserByUsernameResponseDto/properties/response",
-      "signature": "41823d8770deef8cb6058a95bf0c15528369433c21fabef40c45c53a1c91c3b5"
+      "signature": "47bfe47a866e52045463f57f7f1f9f82b68048802a53782da0fea6a8ab7c7dab"
     },
     {
       "action": "reused",
-      "name": "BaseInternalSquadDto",
-      "target": "BaseInternalSquadDto",
+      "name": "UserActiveInternalSquadDto",
+      "target": "UserActiveInternalSquadDto",
       "nicification": "GetUserByUsernameResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
       "parent": "UserByUsernameResponse",
@@ -11811,17 +11811,17 @@
     {
       "action": "reused",
       "name": "UserByUuidResponse",
-      "target": "ExtendedUsersDto",
+      "target": "UserDto",
       "nicification": "GetUserByUuidResponse",
       "field": "response",
       "parent": "GetUserByUuidResponseDto",
       "source": "#/components/schemas/GetUserByUuidResponseDto/properties/response",
-      "signature": "41823d8770deef8cb6058a95bf0c15528369433c21fabef40c45c53a1c91c3b5"
+      "signature": "47bfe47a866e52045463f57f7f1f9f82b68048802a53782da0fea6a8ab7c7dab"
     },
     {
       "action": "reused",
-      "name": "BaseInternalSquadDto",
-      "target": "BaseInternalSquadDto",
+      "name": "UserActiveInternalSquadDto",
+      "target": "UserActiveInternalSquadDto",
       "nicification": "GetUserByUuidResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
       "parent": "UserByUuidResponse",
@@ -11906,22 +11906,22 @@
       "field": "response",
       "parent": "GetUsersStreamResponseDto",
       "source": "#/components/schemas/GetUsersStreamResponseDto/properties/response",
-      "signature": "e4cd3cd008430c0fb1232ea6d8645937e0a513e2718eb86c44dc0c9387f8dd18"
+      "signature": "dd1350efb6994da1cf08166b249d6e30d5e57916d42daa5c7e1d4e32ce5efd16"
     },
     {
       "action": "reused",
       "name": "UsersStreamResponseModelUsersDto",
-      "target": "ExtendedUsersDto",
+      "target": "UserDto",
       "nicification": "GetUsersStreamResponseUsersDto",
       "field": "users",
       "parent": "GetUsersStreamResponseModelDto",
       "source": "#/components/schemas/GetUsersStreamResponseDto/properties/response/properties/users/items",
-      "signature": "41823d8770deef8cb6058a95bf0c15528369433c21fabef40c45c53a1c91c3b5"
+      "signature": "47bfe47a866e52045463f57f7f1f9f82b68048802a53782da0fea6a8ab7c7dab"
     },
     {
       "action": "reused",
-      "name": "BaseInternalSquadDto",
-      "target": "BaseInternalSquadDto",
+      "name": "UserActiveInternalSquadDto",
+      "target": "UserActiveInternalSquadDto",
       "nicification": "GetUsersStreamResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
       "parent": "UsersStreamResponseModelUsersDto",
@@ -12226,7 +12226,7 @@
       "field": "data",
       "parent": "RemnawaveWebhookTorrentBlockerEventsDto",
       "source": "#/components/schemas/RemnawaveWebhookTorrentBlockerEventsDto/properties/data",
-      "signature": "f997f6eb3cf5b00a5938221a6668aa773432e642b654bbccccf24cd432cbc749"
+      "signature": "6eeb56c320e6067ddf26d7e4ec969651969449cf8867da90c658f71a61f9e517"
     },
     {
       "action": "hoisted",
@@ -12351,17 +12351,17 @@
     {
       "action": "reused",
       "name": "RemnawaveWebhookTorrentBlockerEventsDataUserDto",
-      "target": "ExtendedUsersDto",
+      "target": "UserDto",
       "nicification": "RemnawaveWebhookTorrentBlockerEventsUserDto",
       "field": "user",
       "parent": "RemnawaveWebhookTorrentBlockerEventsDataDto",
       "source": "#/components/schemas/RemnawaveWebhookTorrentBlockerEventsDto/properties/data/properties/user",
-      "signature": "41823d8770deef8cb6058a95bf0c15528369433c21fabef40c45c53a1c91c3b5"
+      "signature": "47bfe47a866e52045463f57f7f1f9f82b68048802a53782da0fea6a8ab7c7dab"
     },
     {
       "action": "reused",
-      "name": "BaseInternalSquadDto",
-      "target": "BaseInternalSquadDto",
+      "name": "UserActiveInternalSquadDto",
+      "target": "UserActiveInternalSquadDto",
       "nicification": "RemnawaveWebhookTorrentBlockerEventsActiveInternalSquadsDto",
       "field": "activeInternalSquads",
       "parent": "RemnawaveWebhookTorrentBlockerEventsDataUserDto",
@@ -12381,17 +12381,17 @@
     {
       "action": "reused",
       "name": "RemnawaveWebhookUserEventsDataDto",
-      "target": "ExtendedUsersDto",
+      "target": "UserDto",
       "nicification": "RemnawaveWebhookUserEventsDataDto",
       "field": "data",
       "parent": "RemnawaveWebhookUserEventsDto",
       "source": "#/components/schemas/RemnawaveWebhookUserEventsDto/properties/data",
-      "signature": "41823d8770deef8cb6058a95bf0c15528369433c21fabef40c45c53a1c91c3b5"
+      "signature": "47bfe47a866e52045463f57f7f1f9f82b68048802a53782da0fea6a8ab7c7dab"
     },
     {
       "action": "reused",
-      "name": "BaseInternalSquadDto",
-      "target": "BaseInternalSquadDto",
+      "name": "UserActiveInternalSquadDto",
+      "target": "UserActiveInternalSquadDto",
       "nicification": "RemnawaveWebhookUserEventsActiveInternalSquadsDto",
       "field": "activeInternalSquads",
       "parent": "RemnawaveWebhookUserEventsDataDto",
@@ -12426,7 +12426,7 @@
       "field": "data",
       "parent": "RemnawaveWebhookUserHwidDevicesEventsDto",
       "source": "#/components/schemas/RemnawaveWebhookUserHwidDevicesEventsDto/properties/data",
-      "signature": "e8273171cf5f8fe373c2cbef2b452c9fe350b54ebdcbfdaadd52cc8bd05d4d57"
+      "signature": "f2b204417cda36abd2892d08f32579fcf330ac0c32cdb295d02c084e06908b4b"
     },
     {
       "action": "reused",
@@ -12441,17 +12441,17 @@
     {
       "action": "reused",
       "name": "RemnawaveWebhookUserHwidDevicesEventsDataUserDto",
-      "target": "ExtendedUsersDto",
+      "target": "UserDto",
       "nicification": "RemnawaveWebhookUserHwidDevicesEventsUserDto",
       "field": "user",
       "parent": "RemnawaveWebhookUserHwidDevicesEventsDataDto",
       "source": "#/components/schemas/RemnawaveWebhookUserHwidDevicesEventsDto/properties/data/properties/user",
-      "signature": "41823d8770deef8cb6058a95bf0c15528369433c21fabef40c45c53a1c91c3b5"
+      "signature": "47bfe47a866e52045463f57f7f1f9f82b68048802a53782da0fea6a8ab7c7dab"
     },
     {
       "action": "reused",
-      "name": "BaseInternalSquadDto",
-      "target": "BaseInternalSquadDto",
+      "name": "UserActiveInternalSquadDto",
+      "target": "UserActiveInternalSquadDto",
       "nicification": "RemnawaveWebhookUserHwidDevicesEventsActiveInternalSquadsDto",
       "field": "activeInternalSquads",
       "parent": "RemnawaveWebhookUserHwidDevicesEventsDataUserDto",
@@ -12901,17 +12901,17 @@
     {
       "action": "reused",
       "name": "ResetUserTrafficResponse",
-      "target": "ExtendedUsersDto",
+      "target": "UserDto",
       "nicification": "ResetUserTrafficResponse",
       "field": "response",
       "parent": "ResetUserTrafficResponseDto",
       "source": "#/components/schemas/ResetUserTrafficResponseDto/properties/response",
-      "signature": "41823d8770deef8cb6058a95bf0c15528369433c21fabef40c45c53a1c91c3b5"
+      "signature": "47bfe47a866e52045463f57f7f1f9f82b68048802a53782da0fea6a8ab7c7dab"
     },
     {
       "action": "reused",
-      "name": "BaseInternalSquadDto",
-      "target": "BaseInternalSquadDto",
+      "name": "UserActiveInternalSquadDto",
+      "target": "UserActiveInternalSquadDto",
       "nicification": "ResetUserTrafficResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
       "parent": "ResetUserTrafficResponse",
@@ -12961,17 +12961,17 @@
     {
       "action": "reused",
       "name": "RevokeUserSubscriptionResponse",
-      "target": "ExtendedUsersDto",
+      "target": "UserDto",
       "nicification": "RevokeUserSubscriptionResponse",
       "field": "response",
       "parent": "RevokeUserSubscriptionResponseDto",
       "source": "#/components/schemas/RevokeUserSubscriptionResponseDto/properties/response",
-      "signature": "41823d8770deef8cb6058a95bf0c15528369433c21fabef40c45c53a1c91c3b5"
+      "signature": "47bfe47a866e52045463f57f7f1f9f82b68048802a53782da0fea6a8ab7c7dab"
     },
     {
       "action": "reused",
-      "name": "BaseInternalSquadDto",
-      "target": "BaseInternalSquadDto",
+      "name": "UserActiveInternalSquadDto",
+      "target": "UserActiveInternalSquadDto",
       "nicification": "RevokeUserSubscriptionResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
       "parent": "RevokeUserSubscriptionResponse",
@@ -14001,17 +14001,17 @@
     {
       "action": "reused",
       "name": "UpdateUserResponse",
-      "target": "ExtendedUsersDto",
+      "target": "UserDto",
       "nicification": "UpdateUserResponse",
       "field": "response",
       "parent": "UpdateUserResponseDto",
       "source": "#/components/schemas/UpdateUserResponseDto/properties/response",
-      "signature": "41823d8770deef8cb6058a95bf0c15528369433c21fabef40c45c53a1c91c3b5"
+      "signature": "47bfe47a866e52045463f57f7f1f9f82b68048802a53782da0fea6a8ab7c7dab"
     },
     {
       "action": "reused",
-      "name": "BaseInternalSquadDto",
-      "target": "BaseInternalSquadDto",
+      "name": "UserActiveInternalSquadDto",
+      "target": "UserActiveInternalSquadDto",
       "nicification": "UpdateUserResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
       "parent": "UpdateUserResponse",

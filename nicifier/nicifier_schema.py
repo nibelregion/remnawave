@@ -2659,17 +2659,38 @@ def _object_nicification_name(
 
     Raw keys are pointer derived and never appear in the emitted document, so a
     nicification may also be keyed by the name a schema actually ends up with.
+    Configured names may themselves be keys, allowing one reusable override to
+    rename every object that previously resolved to an intermediate name.
     """
 
     for name in (raw_name, *fallback_names):
         if not name:
             continue
 
-        nicification = nicificated_schema.schema.objects.get(name)
-        if nicification is not None:
-            return nicification.name
+        resolved_name = _resolve_object_nicification(name, nicificated_schema)
+        if resolved_name is not None:
+            return resolved_name
 
     return None
+
+
+def _resolve_object_nicification(name: str, nicificated_schema: NicificatedSchema, /) -> str | None:
+    current_name = name
+    visited: set[str] = set()
+
+    while (nicification := nicificated_schema.schema.objects.get(current_name)) is not None:
+        if current_name in visited:
+            chain = " -> ".join((*sorted(visited), current_name))
+            raise ValueError(f"Cyclic object nicification: {chain}")
+
+        visited.add(current_name)
+        next_name = nicification.name
+        if next_name == current_name:
+            return current_name
+
+        current_name = next_name
+
+    return current_name if visited else None
 
 
 def _unique_name(name: str, used_names: set[str], /) -> str:

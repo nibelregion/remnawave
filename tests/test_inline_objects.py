@@ -71,6 +71,42 @@ class InlineObjectTests(unittest.TestCase):
         )
         self.assertEqual([change["action"] for change in changes], ["hoisted", "hoisted"])
 
+    def test_object_nicification_resolves_name_aliases(self) -> None:
+        document = {
+            "components": {
+                "schemas": {
+                    "OwnerDto": {
+                        "type": "object",
+                        "properties": {
+                            "payload": {
+                                "type": "object",
+                                "properties": {"enabled": {"type": "boolean"}},
+                            }
+                        },
+                    }
+                }
+            }
+        }
+        nicifications = NicificatedSchema(
+            remnawave=Remnawave(),
+            schema=Schema(
+                objects={
+                    "OwnerPayloadDto": ObjectSchema(name="SharedPayloadDto"),
+                    "SharedPayloadDto": ObjectSchema(name="PayloadDto"),
+                }
+            ),
+        )
+
+        hoist_inline_objects(document, nicifications)
+
+        schemas = document["components"]["schemas"]
+        self.assertIn("PayloadDto", schemas)
+        self.assertNotIn("SharedPayloadDto", schemas)
+        self.assertEqual(
+            schemas["OwnerDto"]["properties"]["payload"],
+            {"$ref": "#/components/schemas/PayloadDto"},
+        )
+
     def test_get_prefix_is_omitted_from_reused_response_object_name(self) -> None:
         payload = {
             "type": "object",
