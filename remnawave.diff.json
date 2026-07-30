@@ -13,7 +13,7 @@
     "inlined_map_object_components": 0,
     "hoisted_inline_objects": 243,
     "reused_inline_objects": 416,
-    "deprecation_annotations": 0
+    "deprecation_annotations": 1
   },
   "deprecated": {
     "before": [],
@@ -14109,5 +14109,10 @@
       "signature": "f00a3d2fab225bd2aa6c7c5f0bd903dd63ee0b2e20bd6b3f0e30fe315cdc2fb6"
     }
   ],
-  "deprecation_annotations": []
+  "deprecation_annotations": [
+    {
+      "kind": "schema",
+      "schema": "ErrorCode"
+    }
+  ]
 }
