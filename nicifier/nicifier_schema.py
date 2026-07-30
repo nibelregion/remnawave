@@ -149,10 +149,10 @@ def nicificate_openapi_document(
             )
         )
 
+    error_code_changes = apply_error_code_enum(improved, error_codes)
     restored_deprecations = restore_removed_elements(improved, previous_document) if previous_document else []
     deprecated_annotations = apply_deprecation_annotations(improved, nicifications)
     deprecated_annotations = [*restored_deprecations, *deprecated_annotations]
-    error_code_changes = apply_error_code_enum(improved, error_codes)
     after_deprecated = collect_deprecations(improved)
     hoisted_response_components = [
         change for change in response_component_changes if change.get("action") == "hoisted"

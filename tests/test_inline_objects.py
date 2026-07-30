@@ -1,5 +1,6 @@
 import unittest
 
+from error_codes import ErrorCode
 from nicifcations_schema import NicificatedSchema, ObjectSchema, Remnawave, Schema
 from nicifier_schema import (
     _schema_signature,
@@ -240,6 +241,32 @@ class InlineObjectTests(unittest.TestCase):
         self.assertNotIn("GetWidgetResponseDto", schemas)
         self.assertNotIn(
             {"kind": "schema", "schema": "GetWidgetResponseDto"},
+            result.diff["deprecation_annotations"],
+        )
+
+    def test_error_code_component_is_not_restored_as_deprecated(self) -> None:
+        document = {"components": {"schemas": {}}}
+        previous_document = {
+            "components": {
+                "schemas": {
+                    "ErrorCode": {"type": "string", "enum": ["OLD"]},
+                }
+            }
+        }
+        nicifications = NicificatedSchema(remnawave=Remnawave(), schema=Schema())
+
+        result = nicificate_openapi_document(
+            document,
+            nicifications,
+            previous_document=previous_document,
+            error_codes=[ErrorCode(member="CURRENT", value="CURRENT")],
+        )
+
+        error_code = result.document["components"]["schemas"]["ErrorCode"]
+        self.assertEqual(error_code["enum"], ["CURRENT"])
+        self.assertIsNot(error_code.get("deprecated"), True)
+        self.assertNotIn(
+            {"kind": "schema", "schema": "ErrorCode"},
             result.diff["deprecation_annotations"],
         )
 
