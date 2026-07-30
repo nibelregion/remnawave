@@ -657,6 +657,26 @@ remnawave:
         name: BaseInternalSquadDto
     - UpdateUserResponseUserTrafficDto:
         name: UserTrafficDto
+    - GetUserMetadataResponse:
+        name: MetadataResponse
+    - GetConfigProfilesResponse:
+        name: ConfigProfilesResponse
+    - GetAllInboundsResponse:
+        name: InboundsResponse
+    - GetExternalSquadsResponse:
+        name: ExternalSquadsResponse
+    - GetInternalSquadsResponse:
+        name: InternalSquadsResponse
+    - GetInfraBillingNodesResponse:
+        name: InfraBillingNodesResponse
+    - BulkDeleteUsersByStatusResponse:
+        name: BulkDeleteUsersResponse
+    - GetTorrentBlockerReportsResponse:
+        name: TorrentBlockerReportsResponse
+    - ExtendedUsersDto:
+        name: UserDto
+    - BaseInternalSquadDto:
+        name: UserActiveInternalSquadDto
     errors:
     - UserNotFoundConnectedNodesNotFoundError:
         name: UserOrConnectedNodesNotFoundError

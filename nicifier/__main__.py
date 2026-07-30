@@ -1,13 +1,11 @@
+import json
 import pathlib
 import typing
-import json
 from argparse import ArgumentParser
 from sys import exit
 
 import msgspec
 import wreq.blocking as http
-from retcon.openapi.parser import decode_openapi_document
-
 from error_codes import collect_error_codes
 from nicifcations_schema import DEFAULT_SCHEMA_PATH, read_schema, write_schema
 from nicifier_schema import (
@@ -16,6 +14,7 @@ from nicifier_schema import (
     update_enum_nicifications,
     update_object_nicifications,
 )
+from retcon.openapi.parser import decode_openapi_document
 from source_cache import build_schema_index, resolve_source_dir
 
 REMNA_OAS_URL: typing.Final = "https://cdn.remna.st/docs/openapi.json"
@@ -61,24 +60,27 @@ def write_json(path: pathlib.Path, document: JSONObject, /, *, indent: int | Non
 def nicification_specification(
     *,
     source: str | None = None,
-    document_type: typing.Literal["json", "yaml"] | None = None,
     nicifications_path: pathlib.Path = DEFAULT_SCHEMA_PATH,
     output_path: pathlib.Path = DEFAULT_OUTPUT_PATH,
     output_min_path: pathlib.Path = DEFAULT_MIN_OUTPUT_PATH,
     diff_path: pathlib.Path | None = None,
     previous_output_path: pathlib.Path | None = None,
     update_nicifications: bool = False,
-    github_token: str | None = None,
 ) -> int:
     nicifications = read_schema(nicifications_path)
     source = source or nicifications.remnawave.schema_url
-    document_type = document_type or nicifications.remnawave.schema_document_type
+    document_type = nicifications.remnawave.schema_document_type
     payload = read_openapi_source(source)
     raw_document = decode_raw_openapi(payload, document_type)
-    error_codes = collect_error_codes(github_token=github_token)
-    previous_document: JSONObject | None = None
-    previous_output_path = previous_output_path or output_path
 
+    source_dir = _resolve_backend_source(raw_document, nicifications)
+    if source_dir is None:
+        raise LookupError("Unable to download backend release source.")
+
+    error_codes = collect_error_codes(source_dir)
+    previous_document: JSONObject | None = None
+
+    previous_output_path = previous_output_path or output_path
     if previous_output_path.exists():
         previous_document = decode_raw_openapi(previous_output_path.read_bytes())
 
@@ -87,7 +89,7 @@ def nicification_specification(
         changed |= _update_object_nicifications_from_source(
             raw_document,
             nicifications,
-            github_token=github_token,
+            source_dir=source_dir,
         )
 
         if changed:
@@ -113,20 +115,19 @@ def _update_object_nicifications_from_source(
     nicifications: typing.Any,
     /,
     *,
-    github_token: str | None,
+    source_dir: str,
 ) -> bool:
+    schema_index = build_schema_index(source_dir)
+    return bool(update_object_nicifications(raw_document, nicifications, schema_index))
+
+
+def _resolve_backend_source(raw_document: JSONObject, nicifications: typing.Any, /) -> str | None:
     version = _document_version(raw_document)
-    source_dir = resolve_source_dir(
+    return resolve_source_dir(
         version,
         cache_dir=nicifications.remnawave.source.cache_dir,
         repository=nicifications.remnawave.source.repository,
-        github_token=github_token,
     )
-    if source_dir is None:
-        return False
-
-    schema_index = build_schema_index(source_dir)
-    return bool(update_object_nicifications(raw_document, nicifications, schema_index))
 
 
 def _document_version(raw_document: JSONObject, /) -> str | None:
@@ -141,53 +142,40 @@ def _document_version(raw_document: JSONObject, /) -> str | None:
     return None
 
 
-def build_arg_parser() -> ArgumentParser:
-    parser = ArgumentParser(description="Build a nicificated Remnawave OpenAPI schema.")
-    parser.add_argument("--source", default=None, help="OpenAPI URL or local path.")
+if __name__ == "__main__":
+    parser = ArgumentParser(description="build a nicificated remnawave oas3 schema")
+    parser.add_argument("-s", "--source", default=None, help="openapi url or local path to JSON document")
     parser.add_argument(
-        "--document-type",
-        default=None,
-        choices=("json", "yaml"),
-        help="Source OpenAPI document type. Defaults to nicifications.remnawave.schema_document_type.",
-    )
-    parser.add_argument(
-        "--github-token",
-        default=None,
-        help="GitHub token for Code Search; defaults to GITHUB_TOKEN or GH_TOKEN.",
-    )
-    parser.add_argument(
+        "-n",
         "--nicifications",
         type=pathlib.Path,
         default=DEFAULT_SCHEMA_PATH,
-        help="Path to nicifications YAML/JSON.",
+        help="path to nicifications YAML/JSON",
     )
-    parser.add_argument("--output", type=pathlib.Path, default=DEFAULT_OUTPUT_PATH, help="Output OpenAPI JSON path.")
-    parser.add_argument("--diff-output", type=pathlib.Path, default=None, help="Output diff report JSON path.")
+    parser.add_argument("-o", "--output", type=pathlib.Path, default=DEFAULT_OUTPUT_PATH, help="out openapi JSON path")
+    parser.add_argument("-d", "--diff-output", type=pathlib.Path, default=None, help="out diff report JSON path")
     parser.add_argument(
+        "-p",
         "--previous-output",
         type=pathlib.Path,
         default=None,
-        help="Previous generated OpenAPI JSON used to retain removed elements as deprecated.",
+        help="prev generated openapi JSON used to retain removed elements as deprecated",
     )
     parser.add_argument(
+        "-u",
         "--update-nicifications",
         action="store_true",
-        help="Update enum nicifications from the source OpenAPI document before building.",
+        default=False,
+        help="update nicifications from the source openapi document before building",
     )
-    return parser
-
-
-if __name__ == "__main__":
-    args = build_arg_parser().parse_args()
+    args = parser.parse_args()
     exit(
         nicification_specification(
             source=args.source,
-            document_type=args.document_type,
             nicifications_path=args.nicifications,
             output_path=args.output,
             diff_path=args.diff_output,
             previous_output_path=args.previous_output,
             update_nicifications=args.update_nicifications,
-            github_token=args.github_token,
         ),
     )

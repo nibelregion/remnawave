@@ -1,6 +1,11 @@
 import unittest
 
-from source_cache import SchemaIndex, build_schema_index, object_fingerprint, parse_ts_schemas
+from source_cache import (
+    SchemaIndex,
+    build_schema_index,
+    object_fingerprint,
+    parse_ts_schemas,
+)
 
 
 class ParseTsSchemasTests(unittest.TestCase):

@@ -253,11 +253,10 @@ def resolve_source_dir(
     *,
     cache_dir: str,
     repository: str = BACKEND_REPOSITORY,
-    github_token: str | None = None,
 ) -> str | None:
-    tag = version if version and _tag_exists(repository, version, github_token=github_token) else None
+    tag = version if version and _tag_exists(repository, version) else None
     if tag is None:
-        tag = _latest_release_tag(repository, github_token=github_token)
+        tag = _latest_release_tag(repository)
 
     if tag is None:
         return None
@@ -268,7 +267,7 @@ def resolve_source_dir(
     if os.path.isfile(ready_marker):
         return destination
 
-    payload = _download_tarball(repository, tag, github_token=github_token)
+    payload = _download_tarball(repository, tag)
     if payload is None:
         return None
 
@@ -279,15 +278,15 @@ def resolve_source_dir(
     return destination
 
 
-def _tag_exists(repository: str, tag: str, /, *, github_token: str | None) -> bool:
+def _tag_exists(repository: str, tag: str, /) -> bool:
     url = f"{GITHUB_API_URL}/repos/{repository}/git/ref/tags/{tag}"
-    response = _request(url, github_token=github_token)
+    response = _request(url)
     return response is not None and response.status.as_int() == 200
 
 
-def _latest_release_tag(repository: str, /, *, github_token: str | None) -> str | None:
+def _latest_release_tag(repository: str, /) -> str | None:
     url = f"{GITHUB_API_URL}/repos/{repository}/releases/latest"
-    response = _request(url, github_token=github_token)
+    response = _request(url)
     if response is None or response.status.as_int() != 200:
         return None
 
@@ -298,9 +297,9 @@ def _latest_release_tag(repository: str, /, *, github_token: str | None) -> str 
     return tag if isinstance(tag, str) and tag else None
 
 
-def _download_tarball(repository: str, tag: str, /, *, github_token: str | None) -> bytes | None:
+def _download_tarball(repository: str, tag: str, /) -> bytes | None:
     url = f"{CODELOAD_URL}/{repository}/tar.gz/refs/tags/{tag}"
-    response = _request(url, github_token=github_token)
+    response = _request(url)
     if response is None or response.status.as_int() != 200:
         return None
 
@@ -372,12 +371,8 @@ def _safe_component(value: str, /) -> str:
     return re.sub(r"[^0-9A-Za-z._-]+", "_", value) or "unknown"
 
 
-def _request(url: str, /, *, github_token: str | None) -> typing.Any:
-    token = github_token or os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
+def _request(url: str, /) -> typing.Any:
     headers = {"Accept": "application/vnd.github+json", "User-Agent": "remnawave-openapi"}
-
-    if token:
-        headers["Authorization"] = f"Bearer {token}"
 
     try:
         return http.get(url, headers=headers)

@@ -1,7 +1,13 @@
 import unittest
 
 from nicifcations_schema import NicificatedSchema, ObjectSchema, Remnawave, Schema
-from nicifier_schema import _schema_signature, hoist_inline_objects, update_object_nicifications
+from nicifier_schema import (
+    _schema_signature,
+    hoist_inline_objects,
+    nicificate_openapi_document,
+    rename_response_schema_components,
+    update_object_nicifications,
+)
 from source_cache import SchemaIndex, parse_ts_schemas
 
 
@@ -63,6 +69,179 @@ class InlineObjectTests(unittest.TestCase):
             {"$ref": "#/components/schemas/NamedPayloadDto"},
         )
         self.assertEqual([change["action"] for change in changes], ["hoisted", "hoisted"])
+
+    def test_get_prefix_is_omitted_from_reused_response_object_name(self) -> None:
+        payload = {
+            "type": "object",
+            "properties": {
+                "detail": {
+                    "type": "object",
+                    "properties": {"enabled": {"type": "boolean"}},
+                }
+            },
+        }
+        document = {
+            "components": {
+                "schemas": {
+                    "GetWidgetResponseDto": {
+                        "type": "object",
+                        "properties": {"response": payload},
+                    },
+                    "GetWidgetByIdResponseDto": {
+                        "type": "object",
+                        "properties": {"response": payload},
+                    },
+                }
+            }
+        }
+        nicifications = NicificatedSchema(remnawave=Remnawave(), schema=Schema())
+
+        hoist_inline_objects(document, nicifications)
+
+        schemas = document["components"]["schemas"]
+        self.assertIn("WidgetResponse", schemas)
+        self.assertIn("WidgetResponseDetailDto", schemas)
+        self.assertNotIn("GetWidgetResponse", schemas)
+        self.assertEqual(
+            schemas["GetWidgetResponseDto"]["properties"]["response"],
+            {"$ref": "#/components/schemas/WidgetResponse"},
+        )
+        self.assertEqual(
+            schemas["GetWidgetByIdResponseDto"]["properties"]["response"],
+            {"$ref": "#/components/schemas/WidgetResponse"},
+        )
+
+    def test_get_prefix_is_retained_when_general_name_collides(self) -> None:
+        document = {
+            "components": {
+                "schemas": {
+                    "WidgetResponse": {
+                        "type": "object",
+                        "properties": {"existing": {"type": "string"}},
+                    },
+                    "GetWidgetResponseDto": {
+                        "type": "object",
+                        "properties": {
+                            "response": {
+                                "type": "object",
+                                "properties": {"enabled": {"type": "boolean"}},
+                            }
+                        },
+                    },
+                    "OtherResponseDto": {
+                        "type": "object",
+                        "properties": {
+                            "response": {
+                                "type": "object",
+                                "properties": {"count": {"type": "number"}},
+                            }
+                        },
+                    },
+                }
+            }
+        }
+        nicifications = NicificatedSchema(remnawave=Remnawave(), schema=Schema())
+
+        hoist_inline_objects(document, nicifications)
+
+        schemas = document["components"]["schemas"]
+        self.assertIn("GetWidgetResponse", schemas)
+        self.assertNotIn("WidgetResponse2", schemas)
+        self.assertEqual(
+            schemas["GetWidgetResponseDto"]["properties"]["response"],
+            {"$ref": "#/components/schemas/GetWidgetResponse"},
+        )
+
+    def test_response_wrapper_schema_omits_get_prefix_and_updates_references(self) -> None:
+        document = {
+            "components": {
+                "schemas": {
+                    "GetWidgetResponseDto": {
+                        "type": "object",
+                        "properties": {"response": {"type": "string"}},
+                    },
+                    "OwnerDto": {
+                        "type": "object",
+                        "properties": {
+                            "widget": {"$ref": "#/components/schemas/GetWidgetResponseDto"}
+                        },
+                    },
+                }
+            },
+            "paths": {
+                "/widgets": {
+                    "get": {
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {"$ref": "#/components/schemas/GetWidgetResponseDto"}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+        }
+
+        changes = rename_response_schema_components(document)
+
+        schemas = document["components"]["schemas"]
+        self.assertEqual(changes, [{"old_name": "GetWidgetResponseDto", "name": "WidgetResponseDto"}])
+        self.assertIn("WidgetResponseDto", schemas)
+        self.assertNotIn("GetWidgetResponseDto", schemas)
+        self.assertEqual(
+            schemas["OwnerDto"]["properties"]["widget"],
+            {"$ref": "#/components/schemas/WidgetResponseDto"},
+        )
+        self.assertEqual(
+            document["paths"]["/widgets"]["get"]["responses"]["200"]["content"]["application/json"]["schema"],
+            {"$ref": "#/components/schemas/WidgetResponseDto"},
+        )
+
+    def test_response_wrapper_schema_keeps_get_prefix_on_collision(self) -> None:
+        document = {
+            "components": {
+                "schemas": {
+                    "WidgetResponseDto": {"type": "object", "properties": {"id": {"type": "string"}}},
+                    "GetWidgetResponseDto": {
+                        "type": "object",
+                        "properties": {"response": {"type": "string"}},
+                    },
+                }
+            }
+        }
+
+        self.assertEqual(rename_response_schema_components(document), [])
+        self.assertIn("GetWidgetResponseDto", document["components"]["schemas"])
+
+    def test_renamed_response_wrapper_is_not_restored_as_deprecated(self) -> None:
+        document = {
+            "components": {
+                "schemas": {
+                    "GetWidgetResponseDto": {
+                        "type": "object",
+                        "properties": {"response": {"type": "string"}},
+                    }
+                }
+            }
+        }
+        nicifications = NicificatedSchema(remnawave=Remnawave(), schema=Schema())
+
+        result = nicificate_openapi_document(
+            document,
+            nicifications,
+            previous_document=document,
+        )
+
+        schemas = result.document["components"]["schemas"]
+        self.assertIn("WidgetResponseDto", schemas)
+        self.assertNotIn("GetWidgetResponseDto", schemas)
+        self.assertNotIn(
+            {"kind": "schema", "schema": "GetWidgetResponseDto"},
+            result.diff["deprecation_annotations"],
+        )
 
 
 class UpdateObjectNicificationsTests(unittest.TestCase):

@@ -6756,17 +6756,6 @@
       }
     },
     "schemas": {
-      "GetRemnawaveSettingsResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/RemnawaveSettingsDto"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
       "UpdateRemnawaveSettingsRequestDto": {
         "type": "object",
         "properties": {
@@ -6795,15 +6784,6 @@
           "response"
         ]
       },
-      "GetPasskeyRegistrationOptionsResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {}
-        },
-        "required": [
-          "response"
-        ]
-      },
       "VerifyPasskeyRegistrationRequestDto": {
         "type": "object",
         "properties": {
@@ -6818,17 +6798,6 @@
         "properties": {
           "response": {
             "$ref": "#/components/schemas/VerifyPasskeyRegistrationResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetAllPasskeysResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetActivePasskeysResponseModelDto"
           }
         },
         "required": [
@@ -6940,17 +6909,6 @@
           "response"
         ]
       },
-      "GetStatusResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetStatusResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
       "OAuth2AuthorizeRequestDto": {
         "type": "object",
         "properties": {
@@ -7003,15 +6961,6 @@
           "response"
         ]
       },
-      "GetPasskeyAuthenticationOptionsResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {}
-        },
-        "required": [
-          "response"
-        ]
-      },
       "VerifyPasskeyAuthenticationRequestDto": {
         "type": "object",
         "properties": {
@@ -7026,28 +6975,6 @@
         "properties": {
           "response": {
             "$ref": "#/components/schemas/LoginResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetSubscriptionPageConfigsResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetSubscriptionPageConfigsResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetSubscriptionPageConfigResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/SubscriptionPageConfigDto2"
           }
         },
         "required": [
@@ -7138,7 +7065,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/GetSubscriptionPageConfigsResponse"
+            "$ref": "#/components/schemas/SubscriptionPageConfigsResponse"
           }
         },
         "required": [
@@ -7412,147 +7339,6 @@
           "response"
         ]
       },
-      "GetAllUsersResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetAllUsersResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetUsersStreamResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetUsersStreamResponseModelDto"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetAllTagsResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetAllTagsResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetUserAccessibleNodesResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetUserAccessibleNodesResponseModelDto"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetUserSubscriptionRequestHistoryResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetUserSubscriptionRequestHistoryResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetUserByShortUuidResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/ExtendedUsersDto"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetUserByUuidResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/ExtendedUsersDto"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetUserByUsernameResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/ExtendedUsersDto"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetUserByIdResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/ExtendedUsersDto"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetUserByTelegramIdResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ExtendedUsersDto"
-            }
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetUserByEmailResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ExtendedUsersDto"
-            }
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetUserByTagResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ExtendedUsersDto"
-            }
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
       "RevokeUserSubscriptionBodyDto": {
         "type": "object",
         "properties": {
@@ -7659,7 +7445,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/BulkDeleteUsersByStatusResponse"
+            "$ref": "#/components/schemas/BulkDeleteUsersResponse"
           }
         },
         "required": [
@@ -7687,7 +7473,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/BulkDeleteUsersByStatusResponse"
+            "$ref": "#/components/schemas/BulkDeleteUsersResponse"
           }
         },
         "required": [
@@ -7715,7 +7501,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/BulkDeleteUsersByStatusResponse"
+            "$ref": "#/components/schemas/BulkDeleteUsersResponse"
           }
         },
         "required": [
@@ -7743,7 +7529,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/BulkDeleteUsersByStatusResponse"
+            "$ref": "#/components/schemas/BulkDeleteUsersResponse"
           }
         },
         "required": [
@@ -7775,7 +7561,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/BulkDeleteUsersByStatusResponse"
+            "$ref": "#/components/schemas/BulkDeleteUsersResponse"
           }
         },
         "required": [
@@ -7811,7 +7597,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/BulkDeleteUsersByStatusResponse"
+            "$ref": "#/components/schemas/BulkDeleteUsersResponse"
           }
         },
         "required": [
@@ -7847,7 +7633,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/BulkDeleteUsersByStatusResponse"
+            "$ref": "#/components/schemas/BulkDeleteUsersResponse"
           }
         },
         "required": [
@@ -7957,72 +7743,6 @@
           "response"
         ]
       },
-      "GetSubscriptionInfoResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/SubscriptionInfoDto"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetAllSubscriptionsResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetAllSubscriptionsResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetSubscriptionByUsernameResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/SubscriptionInfoDto"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetSubscriptionByShortUuidProtectedResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/SubscriptionInfoDto"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetSubscriptionByUuidResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/SubscriptionInfoDto"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetRawSubscriptionByShortUuidResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetRawSubscriptionByShortUuidResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
       "GetSubpageConfigByShortUuidRequestBodyDto": {
         "type": "object",
         "properties": {
@@ -8035,50 +7755,6 @@
         },
         "required": [
           "requestHeaders"
-        ]
-      },
-      "GetSubpageConfigByShortUuidResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetSubpageConfigByShortUuidResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetConnectionKeysByUuidResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetConnectionKeysByUuidResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetTemplatesResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetTemplatesResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetTemplateResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/SubscriptionTemplateDto"
-          }
-        },
-        "required": [
-          "response"
         ]
       },
       "UpdateTemplateRequestDto": {
@@ -8095,7 +7771,7 @@
             "pattern": "^[A-Za-z0-9_\\s-]+$"
           },
           "templateJson": {
-            "$ref": "#/components/schemas/GetUserMetadataResponseMetadataDto"
+            "$ref": "#/components/schemas/MetadataResponseMetadataDto"
           },
           "encodedTemplateYaml": {
             "type": "string"
@@ -8174,7 +7850,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/GetTemplatesResponse"
+            "$ref": "#/components/schemas/TemplatesResponse"
           }
         },
         "required": [
@@ -8231,77 +7907,11 @@
           "response"
         ]
       },
-      "GetApiTokenScopesResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetApiTokenScopesResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
       "FindAllApiTokensResponseDto": {
         "type": "object",
         "properties": {
           "response": {
             "$ref": "#/components/schemas/FindAllApiTokensResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetConfigProfilesResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetConfigProfilesResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetAllInboundsResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetAllInboundsResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetInboundsByProfileUuidResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetAllInboundsResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetConfigProfileByUuidResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/ConfigProfileDto"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetComputedConfigProfileByUuidResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/ConfigProfileDto"
           }
         },
         "required": [
@@ -8329,7 +7939,7 @@
             "pattern": "^[A-Za-z0-9_\\s-]+$"
           },
           "config": {
-            "$ref": "#/components/schemas/GetUserMetadataResponseMetadataDto"
+            "$ref": "#/components/schemas/MetadataResponseMetadataDto"
           }
         },
         "required": [
@@ -8362,7 +7972,7 @@
             "pattern": "^[A-Za-z0-9_\\s-]+$"
           },
           "config": {
-            "$ref": "#/components/schemas/GetUserMetadataResponseMetadataDto"
+            "$ref": "#/components/schemas/MetadataResponseMetadataDto"
           }
         },
         "required": [
@@ -8398,18 +8008,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/GetConfigProfilesResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetSnippetsResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetSnippetsResponse"
+            "$ref": "#/components/schemas/ConfigProfilesResponse"
           }
         },
         "required": [
@@ -8434,7 +8033,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/GetSnippetsResponse"
+            "$ref": "#/components/schemas/SnippetsResponse"
           }
         },
         "required": [
@@ -8453,7 +8052,7 @@
           "snippet": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/GetUserMetadataResponseMetadataDto"
+              "$ref": "#/components/schemas/MetadataResponseMetadataDto"
             }
           }
         },
@@ -8466,7 +8065,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/GetSnippetsResponse"
+            "$ref": "#/components/schemas/SnippetsResponse"
           }
         },
         "required": [
@@ -8485,7 +8084,7 @@
           "snippet": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/GetUserMetadataResponseMetadataDto"
+              "$ref": "#/components/schemas/MetadataResponseMetadataDto"
             }
           }
         },
@@ -8498,29 +8097,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/GetSnippetsResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetInternalSquadsResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetInternalSquadsResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetInternalSquadByUuidResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/InternalSquadDto"
+            "$ref": "#/components/schemas/SnippetsResponse"
           }
         },
         "required": [
@@ -8554,17 +8131,6 @@
         "properties": {
           "response": {
             "$ref": "#/components/schemas/InternalSquadDto"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetInternalSquadAccessibleNodesResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetInternalSquadAccessibleNodesResponse"
           }
         },
         "required": [
@@ -8658,29 +8224,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/GetInternalSquadsResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetExternalSquadsResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetExternalSquadsResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetExternalSquadByUuidResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/ExternalSquadDto"
+            "$ref": "#/components/schemas/InternalSquadsResponse"
           }
         },
         "required": [
@@ -8822,29 +8366,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/GetExternalSquadsResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetPubKeyResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetPubKeyResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetAllNodesTagsResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetAllTagsResponse"
+            "$ref": "#/components/schemas/ExternalSquadsResponse"
           }
         },
         "required": [
@@ -8951,31 +8473,6 @@
         ]
       },
       "CreateNodeResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/NodesDto"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetAllNodesResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/NodesDto"
-            }
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetOneNodeResponseDto": {
         "type": "object",
         "properties": {
           "response": {
@@ -9306,55 +8803,11 @@
           "response"
         ]
       },
-      "GetTorrentBlockerReportsResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetTorrentBlockerReportsResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetTorrentBlockerReportsStatsResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetTorrentBlockerReportsStatsResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
       "TruncateTorrentBlockerReportsResponseDto": {
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/GetTorrentBlockerReportsResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetNodePluginsResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetNodePluginsResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetNodePluginResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/NodePluginDto2"
+            "$ref": "#/components/schemas/TorrentBlockerReportsResponse"
           }
         },
         "required": [
@@ -9445,7 +8898,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/GetNodePluginsResponse"
+            "$ref": "#/components/schemas/NodePluginsResponse"
           }
         },
         "required": [
@@ -9512,17 +8965,6 @@
         "properties": {
           "response": {
             "$ref": "#/components/schemas/BulkAllUpdateUsersResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetAllHostTagsResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetAllTagsResponse"
           }
         },
         "required": [
@@ -9857,31 +9299,6 @@
           "response"
         ]
       },
-      "GetAllHostsResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/HostsDto"
-            }
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetOneHostResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/HostsDto"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
       "ReorderHostRequestDto": {
         "type": "object",
         "properties": {
@@ -10171,31 +9588,6 @@
           "response"
         ]
       },
-      "GetLegacyStatsNodesUsersUsageResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetLegacyStatsNodesUsersUsageResponseModelDto"
-            }
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetStatsNodeUsersUsageResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetStatsNodesUsersUsageResponseModelDto"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
       "GetStatsNodesUsersUsageRequestDto": {
         "type": "object",
         "properties": {
@@ -10210,53 +9602,6 @@
         },
         "required": [
           "nodesUuids"
-        ]
-      },
-      "GetStatsNodesUsersUsageResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetStatsNodesUsersUsageResponseModelDto"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetLegacyStatsUserUsageResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetLegacyStatsUserUsageResponseModelDto"
-            }
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetStatsUserUsageResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetStatsUserUsageResponseModelDto"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetAllHwidDevicesResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetAllHwidDevicesResponse"
-          }
-        },
-        "required": [
-          "response"
         ]
       },
       "CreateUserHwidDeviceRequestDto": {
@@ -10294,7 +9639,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/GetAllHwidDevicesResponse"
+            "$ref": "#/components/schemas/AllHwidDevicesResponse"
           }
         },
         "required": [
@@ -10321,7 +9666,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/GetAllHwidDevicesResponse"
+            "$ref": "#/components/schemas/AllHwidDevicesResponse"
           }
         },
         "required": [
@@ -10344,73 +9689,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/GetAllHwidDevicesResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetHwidDevicesStatsResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetHwidDevicesStatsResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetTopUsersByHwidDevicesResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetTopUsersByHwidDevicesResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetUserHwidDevicesResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetAllHwidDevicesResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetStatsNodesUsageResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetStatsNodesUsageResponseModelDto"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetInfraProvidersResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetInfraProvidersResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetInfraProviderByUuidResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/InfraProviderDto"
+            "$ref": "#/components/schemas/AllHwidDevicesResponse"
           }
         },
         "required": [
@@ -10533,33 +9812,11 @@
           "response"
         ]
       },
-      "GetInfraBillingHistoryRecordsResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/CreateInfraBillingHistoryRecordResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
       "DeleteInfraBillingHistoryRecordByUuidResponseDto": {
         "type": "object",
         "properties": {
           "response": {
             "$ref": "#/components/schemas/CreateInfraBillingHistoryRecordResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetInfraBillingNodesResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetInfraBillingNodesResponse"
           }
         },
         "required": [
@@ -10590,7 +9847,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/GetInfraBillingNodesResponse"
+            "$ref": "#/components/schemas/InfraBillingNodesResponse"
           }
         },
         "required": [
@@ -10632,7 +9889,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/GetInfraBillingNodesResponse"
+            "$ref": "#/components/schemas/InfraBillingNodesResponse"
           }
         },
         "required": [
@@ -10643,95 +9900,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/GetInfraBillingNodesResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetSubscriptionRequestHistoryResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetUserSubscriptionRequestHistoryResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetSubscriptionRequestHistoryStatsResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetSubscriptionRequestHistoryStatsResponseModelDto"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetMetadataResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetMetadataResponseModelDto"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetStatsResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetStatsResponseModelDto"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetBandwidthStatsResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetBandwidthStatsResponseModelDto"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetNodesStatisticsResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetNodesStatisticsResponseModelDto"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetRemnawaveHealthResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetRemnawaveHealthResponseModelDto"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetNodesMetricsResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetNodesStatsResponseModelDto"
+            "$ref": "#/components/schemas/InfraBillingNodesResponse"
           }
         },
         "required": [
@@ -10765,28 +9934,6 @@
         "properties": {
           "response": {
             "$ref": "#/components/schemas/DebugSrrMatcherResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetRecapResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetRecapResponseModelDto"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetSubscriptionSettingsResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/SubscriptionSettingsDto"
           }
         },
         "required": [
@@ -10945,22 +10092,11 @@
           "response"
         ]
       },
-      "GetUserMetadataResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetUserMetadataResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
       "UpsertUserMetadataRequestBodyDto": {
         "type": "object",
         "properties": {
           "metadata": {
-            "$ref": "#/components/schemas/GetUserMetadataResponseMetadataDto"
+            "$ref": "#/components/schemas/MetadataResponseMetadataDto"
           }
         },
         "required": [
@@ -10971,18 +10107,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/GetUserMetadataResponse"
-          }
-        },
-        "required": [
-          "response"
-        ]
-      },
-      "GetNodeMetadataResponseDto": {
-        "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/GetUserMetadataResponse"
+            "$ref": "#/components/schemas/MetadataResponse"
           }
         },
         "required": [
@@ -10993,7 +10118,7 @@
         "type": "object",
         "properties": {
           "metadata": {
-            "$ref": "#/components/schemas/GetUserMetadataResponseMetadataDto"
+            "$ref": "#/components/schemas/MetadataResponseMetadataDto"
           }
         },
         "required": [
@@ -11004,7 +10129,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/GetUserMetadataResponse"
+            "$ref": "#/components/schemas/MetadataResponse"
           }
         },
         "required": [
@@ -12515,7 +11640,7 @@
           "caseSensitive"
         ]
       },
-      "GetIpsListNodeResultIpsDto": {
+      "IpsListNodeResultIpsDto": {
         "type": "object",
         "properties": {
           "ip": {
@@ -13076,7 +12201,7 @@
           "name"
         ]
       },
-      "GetUserAccessibleNodesActiveSquadsDto": {
+      "UserAccessibleNodesActiveSquadsDto": {
         "type": "object",
         "properties": {
           "squadName": {
@@ -13157,7 +12282,7 @@
           "templateType"
         ]
       },
-      "GetHwidDevicesStatsResponseByPlatformByAppDto": {
+      "HwidDevicesStatsResponseByPlatformByAppDto": {
         "type": "object",
         "properties": {
           "app": {
@@ -13873,7 +12998,7 @@
           "ips": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/GetIpsListNodeResultIpsDto"
+              "$ref": "#/components/schemas/IpsListNodeResultIpsDto"
             }
           }
         },
@@ -13893,7 +13018,7 @@
           "ips": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/GetIpsListNodeResultIpsDto"
+              "$ref": "#/components/schemas/IpsListNodeResultIpsDto"
             }
           }
         },
@@ -14112,7 +13237,7 @@
           "frontendDomain": null
         }
       },
-      "GetStatusResponseAuthenticationPasskeyDto": {
+      "StatusResponseAuthenticationPasskeyDto": {
         "type": "object",
         "properties": {
           "enabled": {
@@ -14123,7 +13248,7 @@
           "enabled"
         ]
       },
-      "GetStatusResponseAuthenticationOauth2Dto": {
+      "StatusResponseAuthenticationOauth2Dto": {
         "type": "object",
         "properties": {
           "providers": {
@@ -14137,7 +13262,7 @@
           "providers"
         ]
       },
-      "GetRawSubscriptionByShortUuidResponseConvertedUserInfoHwidCheckupDto": {
+      "RawSubscriptionByShortUuidResponseConvertedUserInfoHwidCheckupDto": {
         "type": "object",
         "properties": {
           "subscriptionAllowed": {
@@ -14326,7 +13451,7 @@
           "path"
         ]
       },
-      "GetActivePasskeysResponseModelPasskeysDto": {
+      "ActivePasskeysResponseModelPasskeysDto": {
         "type": "object",
         "properties": {
           "id": {
@@ -14536,7 +13661,7 @@
           "activeSquads": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/GetUserAccessibleNodesActiveSquadsDto"
+              "$ref": "#/components/schemas/UserAccessibleNodesActiveSquadsDto"
             }
           }
         },
@@ -14856,7 +13981,7 @@
           "updatedAt"
         ]
       },
-      "GetAllInboundsResponseInboundsDto": {
+      "InboundsResponseInboundsDto": {
         "type": "object",
         "properties": {
           "uuid": {
@@ -14962,7 +14087,7 @@
           "updatedAt"
         ]
       },
-      "GetInternalSquadAccessibleNodesResponseAccessibleNodesDto": {
+      "InternalSquadAccessibleNodesResponseAccessibleNodesDto": {
         "type": "object",
         "properties": {
           "uuid": {
@@ -15105,7 +14230,7 @@
           "createdAt"
         ]
       },
-      "GetTorrentBlockerReportsStatsResponseTopUsersDto": {
+      "TorrentBlockerReportsStatsResponseTopUsersDto": {
         "type": "object",
         "properties": {
           "uuid": {
@@ -15129,7 +14254,7 @@
           "total"
         ]
       },
-      "GetTorrentBlockerReportsStatsResponseTopNodesDto": {
+      "TorrentBlockerReportsStatsResponseTopNodesDto": {
         "type": "object",
         "properties": {
           "uuid": {
@@ -15332,7 +14457,7 @@
           "updatedAt"
         ]
       },
-      "GetHwidDevicesStatsResponseByPlatformDto": {
+      "HwidDevicesStatsResponseByPlatformDto": {
         "type": "object",
         "properties": {
           "platform": {
@@ -15344,7 +14469,7 @@
           "byApp": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/GetHwidDevicesStatsResponseByPlatformByAppDto"
+              "$ref": "#/components/schemas/HwidDevicesStatsResponseByPlatformByAppDto"
             }
           }
         },
@@ -15354,7 +14479,7 @@
           "byApp"
         ]
       },
-      "GetTopUsersByHwidDevicesResponseUsersDto": {
+      "TopUsersByHwidDevicesResponseUsersDto": {
         "type": "object",
         "properties": {
           "userUuid": {
@@ -15569,7 +14694,7 @@
           "updatedAt"
         ]
       },
-      "GetSubscriptionRequestHistoryStatsResponseModelHourlyRequestStatsDto": {
+      "SubscriptionRequestHistoryStatsResponseModelHourlyRequestStatsDto": {
         "type": "object",
         "properties": {
           "dateTime": {
@@ -15867,17 +14992,17 @@
         ],
         "nullable": true
       },
-      "GetStatusResponseAuthenticationDto": {
+      "StatusResponseAuthenticationDto": {
         "type": "object",
         "properties": {
           "passkey": {
-            "$ref": "#/components/schemas/GetStatusResponseAuthenticationPasskeyDto"
+            "$ref": "#/components/schemas/StatusResponseAuthenticationPasskeyDto"
           },
           "oauth2": {
-            "$ref": "#/components/schemas/GetStatusResponseAuthenticationOauth2Dto"
+            "$ref": "#/components/schemas/StatusResponseAuthenticationOauth2Dto"
           },
           "password": {
-            "$ref": "#/components/schemas/GetStatusResponseAuthenticationPasskeyDto"
+            "$ref": "#/components/schemas/StatusResponseAuthenticationPasskeyDto"
           }
         },
         "required": [
@@ -15904,7 +15029,7 @@
           "logoUrl"
         ]
       },
-      "GetRawSubscriptionByShortUuidResponseConvertedUserInfoDto": {
+      "RawSubscriptionByShortUuidResponseConvertedUserInfoDto": {
         "type": "object",
         "properties": {
           "daysLeft": {
@@ -15920,7 +15045,7 @@
             "type": "string"
           },
           "hwidCheckup": {
-            "$ref": "#/components/schemas/GetRawSubscriptionByShortUuidResponseConvertedUserInfoHwidCheckupDto"
+            "$ref": "#/components/schemas/RawSubscriptionByShortUuidResponseConvertedUserInfoHwidCheckupDto"
           }
         },
         "required": [
@@ -15952,7 +15077,7 @@
           "swaggerPath"
         ]
       },
-      "GetTorrentBlockerReportsStatsResponseStatsDto": {
+      "TorrentBlockerReportsStatsResponseStatsDto": {
         "type": "object",
         "properties": {
           "distinctNodes": {
@@ -16110,7 +15235,7 @@
           "nodeUuids"
         ]
       },
-      "GetHwidDevicesStatsResponseStatsDto": {
+      "HwidDevicesStatsResponseStatsDto": {
         "type": "object",
         "properties": {
           "totalUniqueDevices": {
@@ -16129,7 +15254,7 @@
           "averageHwidDevicesPerUser"
         ]
       },
-      "GetInfraBillingNodesResponseStatsDto": {
+      "InfraBillingNodesResponseStatsDto": {
         "type": "object",
         "properties": {
           "upcomingNodesCount": {
@@ -16600,7 +15725,7 @@
         ],
         "nullable": true
       },
-      "GetUserMetadataResponseMetadataDto": {
+      "MetadataResponseMetadataDto": {
         "type": "object",
         "properties": {}
       },
@@ -17279,7 +16404,7 @@
           "passkeys": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/GetActivePasskeysResponseModelPasskeysDto"
+              "$ref": "#/components/schemas/ActivePasskeysResponseModelPasskeysDto"
             }
           }
         },
@@ -17298,7 +16423,7 @@
           "accessToken"
         ]
       },
-      "GetStatusResponse": {
+      "StatusResponse": {
         "type": "object",
         "properties": {
           "isLoginAllowed": {
@@ -17308,7 +16433,7 @@
             "type": "boolean"
           },
           "authentication": {
-            "$ref": "#/components/schemas/GetStatusResponseAuthenticationDto"
+            "$ref": "#/components/schemas/StatusResponseAuthenticationDto"
           },
           "branding": {
             "$ref": "#/components/schemas/BrandingSettingsDto2"
@@ -17334,7 +16459,7 @@
           "authorizationUrl"
         ]
       },
-      "GetSubscriptionPageConfigsResponse": {
+      "SubscriptionPageConfigsResponse": {
         "type": "object",
         "properties": {
           "total": {
@@ -17385,7 +16510,7 @@
           "isDeleted"
         ]
       },
-      "GetAllUsersResponse": {
+      "AllUsersResponse": {
         "type": "object",
         "properties": {
           "users": {
@@ -17428,7 +16553,7 @@
           "hasMore"
         ]
       },
-      "GetAllTagsResponse": {
+      "AllTagsResponse": {
         "type": "object",
         "properties": {
           "tags": {
@@ -17461,7 +16586,7 @@
           "activeNodes"
         ]
       },
-      "GetUserSubscriptionRequestHistoryResponse": {
+      "UserSubscriptionRequestHistoryResponse": {
         "type": "object",
         "properties": {
           "total": {
@@ -17503,7 +16628,7 @@
           "shortUuid"
         ]
       },
-      "BulkDeleteUsersByStatusResponse": {
+      "BulkDeleteUsersResponse": {
         "type": "object",
         "properties": {
           "affectedRows": {
@@ -17588,7 +16713,7 @@
           "eventSent"
         ]
       },
-      "GetAllSubscriptionsResponse": {
+      "AllSubscriptionsResponse": {
         "type": "object",
         "properties": {
           "subscriptions": {
@@ -17606,14 +16731,14 @@
           "total"
         ]
       },
-      "GetRawSubscriptionByShortUuidResponse": {
+      "RawSubscriptionByShortUuidResponse": {
         "type": "object",
         "properties": {
           "user": {
             "$ref": "#/components/schemas/ExtendedUsersDto"
           },
           "convertedUserInfo": {
-            "$ref": "#/components/schemas/GetRawSubscriptionByShortUuidResponseConvertedUserInfoDto"
+            "$ref": "#/components/schemas/RawSubscriptionByShortUuidResponseConvertedUserInfoDto"
           },
           "headers": {
             "type": "object",
@@ -17635,7 +16760,7 @@
           "resolvedProxyConfigs"
         ]
       },
-      "GetSubpageConfigByShortUuidResponse": {
+      "SubpageConfigByShortUuidResponse": {
         "type": "object",
         "properties": {
           "subpageConfigUuid": {
@@ -17652,7 +16777,7 @@
           "webpageAllowed"
         ]
       },
-      "GetConnectionKeysByUuidResponse": {
+      "ConnectionKeysByUuidResponse": {
         "type": "object",
         "properties": {
           "enabledKeys": {
@@ -17680,7 +16805,7 @@
           "disabledKeys"
         ]
       },
-      "GetTemplatesResponse": {
+      "TemplatesResponse": {
         "type": "object",
         "properties": {
           "total": {
@@ -17740,7 +16865,7 @@
           "token"
         ]
       },
-      "GetApiTokenScopesResponse": {
+      "ApiTokenScopesResponse": {
         "type": "object",
         "properties": {
           "wildcard": {
@@ -17776,7 +16901,7 @@
           "docs"
         ]
       },
-      "GetConfigProfilesResponse": {
+      "ConfigProfilesResponse": {
         "type": "object",
         "properties": {
           "total": {
@@ -17794,7 +16919,7 @@
           "configProfiles"
         ]
       },
-      "GetAllInboundsResponse": {
+      "InboundsResponse": {
         "type": "object",
         "properties": {
           "total": {
@@ -17803,7 +16928,7 @@
           "inbounds": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/GetAllInboundsResponseInboundsDto"
+              "$ref": "#/components/schemas/InboundsResponseInboundsDto"
             }
           }
         },
@@ -17812,7 +16937,7 @@
           "inbounds"
         ]
       },
-      "GetSnippetsResponse": {
+      "SnippetsResponse": {
         "type": "object",
         "properties": {
           "total": {
@@ -17830,7 +16955,7 @@
           "snippets"
         ]
       },
-      "GetInternalSquadsResponse": {
+      "InternalSquadsResponse": {
         "type": "object",
         "properties": {
           "total": {
@@ -17848,7 +16973,7 @@
           "internalSquads"
         ]
       },
-      "GetInternalSquadAccessibleNodesResponse": {
+      "InternalSquadAccessibleNodesResponse": {
         "type": "object",
         "properties": {
           "squadUuid": {
@@ -17858,7 +16983,7 @@
           "accessibleNodes": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/GetInternalSquadAccessibleNodesResponseAccessibleNodesDto"
+              "$ref": "#/components/schemas/InternalSquadAccessibleNodesResponseAccessibleNodesDto"
             }
           }
         },
@@ -17867,7 +16992,7 @@
           "accessibleNodes"
         ]
       },
-      "GetExternalSquadsResponse": {
+      "ExternalSquadsResponse": {
         "type": "object",
         "properties": {
           "total": {
@@ -17939,7 +17064,7 @@
           }
         }
       },
-      "GetPubKeyResponse": {
+      "PubKeyResponse": {
         "type": "object",
         "properties": {
           "pubKey": {
@@ -18038,7 +17163,7 @@
           }
         }
       },
-      "GetTorrentBlockerReportsResponse": {
+      "TorrentBlockerReportsResponse": {
         "type": "object",
         "properties": {
           "records": {
@@ -18056,22 +17181,22 @@
           "total"
         ]
       },
-      "GetTorrentBlockerReportsStatsResponse": {
+      "TorrentBlockerReportsStatsResponse": {
         "type": "object",
         "properties": {
           "stats": {
-            "$ref": "#/components/schemas/GetTorrentBlockerReportsStatsResponseStatsDto"
+            "$ref": "#/components/schemas/TorrentBlockerReportsStatsResponseStatsDto"
           },
           "topUsers": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/GetTorrentBlockerReportsStatsResponseTopUsersDto"
+              "$ref": "#/components/schemas/TorrentBlockerReportsStatsResponseTopUsersDto"
             }
           },
           "topNodes": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/GetTorrentBlockerReportsStatsResponseTopNodesDto"
+              "$ref": "#/components/schemas/TorrentBlockerReportsStatsResponseTopNodesDto"
             }
           }
         },
@@ -18081,7 +17206,7 @@
           "topNodes"
         ]
       },
-      "GetNodePluginsResponse": {
+      "NodePluginsResponse": {
         "type": "object",
         "properties": {
           "total": {
@@ -18212,7 +17337,7 @@
           "series"
         ]
       },
-      "GetAllHwidDevicesResponse": {
+      "AllHwidDevicesResponse": {
         "type": "object",
         "properties": {
           "devices": {
@@ -18230,17 +17355,17 @@
           "total"
         ]
       },
-      "GetHwidDevicesStatsResponse": {
+      "HwidDevicesStatsResponse": {
         "type": "object",
         "properties": {
           "byPlatform": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/GetHwidDevicesStatsResponseByPlatformDto"
+              "$ref": "#/components/schemas/HwidDevicesStatsResponseByPlatformDto"
             }
           },
           "stats": {
-            "$ref": "#/components/schemas/GetHwidDevicesStatsResponseStatsDto"
+            "$ref": "#/components/schemas/HwidDevicesStatsResponseStatsDto"
           }
         },
         "required": [
@@ -18248,13 +17373,13 @@
           "stats"
         ]
       },
-      "GetTopUsersByHwidDevicesResponse": {
+      "TopUsersByHwidDevicesResponse": {
         "type": "object",
         "properties": {
           "users": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/GetTopUsersByHwidDevicesResponseUsersDto"
+              "$ref": "#/components/schemas/TopUsersByHwidDevicesResponseUsersDto"
             }
           },
           "total": {
@@ -18301,7 +17426,7 @@
           "series"
         ]
       },
-      "GetInfraProvidersResponse": {
+      "InfraProvidersResponse": {
         "type": "object",
         "properties": {
           "total": {
@@ -18337,7 +17462,7 @@
           "total"
         ]
       },
-      "GetInfraBillingNodesResponse": {
+      "InfraBillingNodesResponse": {
         "type": "object",
         "properties": {
           "totalBillingNodes": {
@@ -18359,7 +17484,7 @@
             "type": "number"
           },
           "stats": {
-            "$ref": "#/components/schemas/GetInfraBillingNodesResponseStatsDto"
+            "$ref": "#/components/schemas/InfraBillingNodesResponseStatsDto"
           }
         },
         "required": [
@@ -18376,13 +17501,13 @@
           "byParsedApp": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/GetHwidDevicesStatsResponseByPlatformByAppDto"
+              "$ref": "#/components/schemas/HwidDevicesStatsResponseByPlatformByAppDto"
             }
           },
           "hourlyRequestStats": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/GetSubscriptionRequestHistoryStatsResponseModelHourlyRequestStatsDto"
+              "$ref": "#/components/schemas/SubscriptionRequestHistoryStatsResponseModelHourlyRequestStatsDto"
             }
           }
         },
@@ -18779,11 +17904,11 @@
           "result"
         ]
       },
-      "GetUserMetadataResponse": {
+      "MetadataResponse": {
         "type": "object",
         "properties": {
           "metadata": {
-            "$ref": "#/components/schemas/GetUserMetadataResponseMetadataDto"
+            "$ref": "#/components/schemas/MetadataResponseMetadataDto"
           }
         },
         "required": [
@@ -18888,6 +18013,881 @@
           "node",
           "user",
           "report"
+        ]
+      },
+      "RemnawaveSettingsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/RemnawaveSettingsDto"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "PasskeyRegistrationOptionsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {}
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "AllPasskeysResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/GetActivePasskeysResponseModelDto"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "StatusResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/StatusResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "PasskeyAuthenticationOptionsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {}
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "SubscriptionPageConfigsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/SubscriptionPageConfigsResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "SubscriptionPageConfigResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/SubscriptionPageConfigDto2"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "AllUsersResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/AllUsersResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "UsersStreamResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/GetUsersStreamResponseModelDto"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "AllTagsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/AllTagsResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "UserAccessibleNodesResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/GetUserAccessibleNodesResponseModelDto"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "UserSubscriptionRequestHistoryResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/UserSubscriptionRequestHistoryResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "UserByShortUuidResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/ExtendedUsersDto"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "UserByUuidResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/ExtendedUsersDto"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "UserByUsernameResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/ExtendedUsersDto"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "UserByIdResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/ExtendedUsersDto"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "UserByTelegramIdResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ExtendedUsersDto"
+            }
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "UserByEmailResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ExtendedUsersDto"
+            }
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "UserByTagResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ExtendedUsersDto"
+            }
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "SubscriptionInfoResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/SubscriptionInfoDto"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "AllSubscriptionsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/AllSubscriptionsResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "SubscriptionByUsernameResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/SubscriptionInfoDto"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "SubscriptionByShortUuidProtectedResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/SubscriptionInfoDto"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "SubscriptionByUuidResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/SubscriptionInfoDto"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "RawSubscriptionByShortUuidResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/RawSubscriptionByShortUuidResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "SubpageConfigByShortUuidResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/SubpageConfigByShortUuidResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "ConnectionKeysByUuidResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/ConnectionKeysByUuidResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "TemplatesResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/TemplatesResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "TemplateResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/SubscriptionTemplateDto"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "ApiTokenScopesResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/ApiTokenScopesResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "ConfigProfilesResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/ConfigProfilesResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "AllInboundsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/InboundsResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "InboundsByProfileUuidResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/InboundsResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "ConfigProfileByUuidResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/ConfigProfileDto"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "ComputedConfigProfileByUuidResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/ConfigProfileDto"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "SnippetsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/SnippetsResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "InternalSquadsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/InternalSquadsResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "InternalSquadByUuidResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/InternalSquadDto"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "InternalSquadAccessibleNodesResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/InternalSquadAccessibleNodesResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "ExternalSquadsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/ExternalSquadsResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "ExternalSquadByUuidResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/ExternalSquadDto"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "PubKeyResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/PubKeyResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "AllNodesTagsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/AllTagsResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "AllNodesResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NodesDto"
+            }
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "OneNodeResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/NodesDto"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "TorrentBlockerReportsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/TorrentBlockerReportsResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "TorrentBlockerReportsStatsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/TorrentBlockerReportsStatsResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "NodePluginsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/NodePluginsResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "NodePluginResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/NodePluginDto2"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "AllHostTagsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/AllTagsResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "AllHostsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/HostsDto"
+            }
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "OneHostResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/HostsDto"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "LegacyStatsNodesUsersUsageResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetLegacyStatsNodesUsersUsageResponseModelDto"
+            }
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "StatsNodeUsersUsageResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/GetStatsNodesUsersUsageResponseModelDto"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "StatsNodesUsersUsageResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/GetStatsNodesUsersUsageResponseModelDto"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "LegacyStatsUserUsageResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetLegacyStatsUserUsageResponseModelDto"
+            }
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "StatsUserUsageResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/GetStatsUserUsageResponseModelDto"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "AllHwidDevicesResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/AllHwidDevicesResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "HwidDevicesStatsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/HwidDevicesStatsResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "TopUsersByHwidDevicesResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/TopUsersByHwidDevicesResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "UserHwidDevicesResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/AllHwidDevicesResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "StatsNodesUsageResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/GetStatsNodesUsageResponseModelDto"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "InfraProvidersResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/InfraProvidersResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "InfraProviderByUuidResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/InfraProviderDto"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "InfraBillingHistoryRecordsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/CreateInfraBillingHistoryRecordResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "InfraBillingNodesResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/InfraBillingNodesResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "SubscriptionRequestHistoryResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/UserSubscriptionRequestHistoryResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "SubscriptionRequestHistoryStatsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/GetSubscriptionRequestHistoryStatsResponseModelDto"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "MetadataResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/GetMetadataResponseModelDto"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "StatsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/GetStatsResponseModelDto"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "BandwidthStatsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/GetBandwidthStatsResponseModelDto"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "NodesStatisticsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/GetNodesStatisticsResponseModelDto"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "RemnawaveHealthResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/GetRemnawaveHealthResponseModelDto"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "NodesMetricsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/GetNodesStatsResponseModelDto"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "RecapResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/GetRecapResponseModelDto"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "SubscriptionSettingsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/SubscriptionSettingsDto"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "UserMetadataResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/MetadataResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "NodeMetadataResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/MetadataResponse"
+          }
+        },
+        "required": [
+          "response"
         ]
       },
       "ErrorCode": {
@@ -19874,7 +19874,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetSubscriptionRequestHistoryResponseDto"
+              "$ref": "#/components/schemas/SubscriptionRequestHistoryResponseDto"
             }
           }
         }
@@ -19954,7 +19954,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetConfigProfileByUuidResponseDto"
+              "$ref": "#/components/schemas/ConfigProfileByUuidResponseDto"
             }
           }
         }
@@ -19974,7 +19974,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetStatsNodesUsageResponseDto"
+              "$ref": "#/components/schemas/StatsNodesUsageResponseDto"
             }
           }
         }
@@ -20064,7 +20064,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetInternalSquadsResponseDto"
+              "$ref": "#/components/schemas/InternalSquadsResponseDto"
             }
           }
         }
@@ -20124,7 +20124,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetUserHwidDevicesResponseDto"
+              "$ref": "#/components/schemas/UserHwidDevicesResponseDto"
             }
           }
         }
@@ -20154,7 +20154,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetUserByUuidResponseDto"
+              "$ref": "#/components/schemas/UserByUuidResponseDto"
             }
           }
         }
@@ -20164,7 +20164,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetStatusResponseDto"
+              "$ref": "#/components/schemas/StatusResponseDto"
             }
           }
         }
@@ -20194,7 +20194,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetMetadataResponseDto"
+              "$ref": "#/components/schemas/MetadataResponseDto"
             }
           }
         }
@@ -20204,7 +20204,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetStatsNodeUsersUsageResponseDto"
+              "$ref": "#/components/schemas/StatsNodeUsersUsageResponseDto"
             }
           }
         }
@@ -20224,7 +20224,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetPubKeyResponseDto"
+              "$ref": "#/components/schemas/PubKeyResponseDto"
             }
           }
         }
@@ -20234,7 +20234,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetOneHostResponseDto"
+              "$ref": "#/components/schemas/OneHostResponseDto"
             }
           }
         }
@@ -20254,7 +20254,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetAllNodesTagsResponseDto"
+              "$ref": "#/components/schemas/AllNodesTagsResponseDto"
             }
           }
         }
@@ -20264,7 +20264,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetUserByIdResponseDto"
+              "$ref": "#/components/schemas/UserByIdResponseDto"
             }
           }
         }
@@ -20304,7 +20304,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetUserByEmailResponseDto"
+              "$ref": "#/components/schemas/UserByEmailResponseDto"
             }
           }
         }
@@ -20384,7 +20384,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetSubscriptionByShortUuidProtectedResponseDto"
+              "$ref": "#/components/schemas/SubscriptionByShortUuidProtectedResponseDto"
             }
           }
         }
@@ -20404,7 +20404,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetUserByShortUuidResponseDto"
+              "$ref": "#/components/schemas/UserByShortUuidResponseDto"
             }
           }
         }
@@ -20444,7 +20444,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetAllUsersResponseDto"
+              "$ref": "#/components/schemas/AllUsersResponseDto"
             }
           }
         }
@@ -20454,7 +20454,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetLegacyStatsUserUsageResponseDto"
+              "$ref": "#/components/schemas/LegacyStatsUserUsageResponseDto"
             }
           }
         }
@@ -20514,7 +20514,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetInternalSquadByUuidResponseDto"
+              "$ref": "#/components/schemas/InternalSquadByUuidResponseDto"
             }
           }
         }
@@ -20534,7 +20534,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetTemplatesResponseDto"
+              "$ref": "#/components/schemas/TemplatesResponseDto"
             }
           }
         }
@@ -20554,7 +20554,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetSubscriptionRequestHistoryStatsResponseDto"
+              "$ref": "#/components/schemas/SubscriptionRequestHistoryStatsResponseDto"
             }
           }
         }
@@ -20581,7 +20581,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetExternalSquadsResponseDto"
+              "$ref": "#/components/schemas/ExternalSquadsResponseDto"
             }
           }
         }
@@ -20601,7 +20601,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetOneNodeResponseDto"
+              "$ref": "#/components/schemas/OneNodeResponseDto"
             }
           }
         }
@@ -20611,7 +20611,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetTopUsersByHwidDevicesResponseDto"
+              "$ref": "#/components/schemas/TopUsersByHwidDevicesResponseDto"
             }
           }
         }
@@ -20621,7 +20621,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetSubscriptionByUuidResponseDto"
+              "$ref": "#/components/schemas/SubscriptionByUuidResponseDto"
             }
           }
         }
@@ -20641,7 +20641,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetSubscriptionByUsernameResponseDto"
+              "$ref": "#/components/schemas/SubscriptionByUsernameResponseDto"
             }
           }
         }
@@ -20651,7 +20651,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetAllTagsResponseDto"
+              "$ref": "#/components/schemas/AllTagsResponseDto"
             }
           }
         }
@@ -20681,7 +20681,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetInfraBillingNodesResponseDto"
+              "$ref": "#/components/schemas/InfraBillingNodesResponseDto"
             }
           }
         }
@@ -20701,7 +20701,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetNodePluginResponseDto"
+              "$ref": "#/components/schemas/NodePluginResponseDto"
             }
           }
         }
@@ -20711,7 +20711,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetConnectionKeysByUuidResponseDto"
+              "$ref": "#/components/schemas/ConnectionKeysByUuidResponseDto"
             }
           }
         }
@@ -20751,7 +20751,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetSubpageConfigByShortUuidResponseDto"
+              "$ref": "#/components/schemas/SubpageConfigByShortUuidResponseDto"
             }
           }
         }
@@ -20781,7 +20781,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetInfraProvidersResponseDto"
+              "$ref": "#/components/schemas/InfraProvidersResponseDto"
             }
           }
         }
@@ -20791,7 +20791,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto"
+              "$ref": "#/components/schemas/RawSubscriptionByShortUuidResponseDto"
             }
           }
         }
@@ -20801,7 +20801,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetSnippetsResponseDto"
+              "$ref": "#/components/schemas/SnippetsResponseDto"
             }
           }
         }
@@ -20821,7 +20821,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetAllHostsResponseDto"
+              "$ref": "#/components/schemas/AllHostsResponseDto"
             }
           }
         }
@@ -20841,7 +20841,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetRemnawaveSettingsResponseDto"
+              "$ref": "#/components/schemas/RemnawaveSettingsResponseDto"
             }
           }
         }
@@ -20891,7 +20891,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetConfigProfilesResponseDto"
+              "$ref": "#/components/schemas/ConfigProfilesResponseDto"
             }
           }
         }
@@ -20911,7 +20911,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetSubscriptionPageConfigsResponseDto"
+              "$ref": "#/components/schemas/SubscriptionPageConfigsResponseDto"
             }
           }
         }
@@ -20921,7 +20921,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetStatsResponseDto"
+              "$ref": "#/components/schemas/StatsResponseDto"
             }
           }
         }
@@ -20961,7 +20961,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetNodesStatisticsResponseDto"
+              "$ref": "#/components/schemas/NodesStatisticsResponseDto"
             }
           }
         }
@@ -20981,7 +20981,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetPasskeyRegistrationOptionsResponseDto"
+              "$ref": "#/components/schemas/PasskeyRegistrationOptionsResponseDto"
             }
           }
         }
@@ -20991,7 +20991,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetInfraProviderByUuidResponseDto"
+              "$ref": "#/components/schemas/InfraProviderByUuidResponseDto"
             }
           }
         }
@@ -21001,7 +21001,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetUserByUsernameResponseDto"
+              "$ref": "#/components/schemas/UserByUsernameResponseDto"
             }
           }
         }
@@ -21011,7 +21011,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetTorrentBlockerReportsStatsResponseDto"
+              "$ref": "#/components/schemas/TorrentBlockerReportsStatsResponseDto"
             }
           }
         }
@@ -21021,7 +21021,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetLegacyStatsNodesUsersUsageResponseDto"
+              "$ref": "#/components/schemas/LegacyStatsNodesUsersUsageResponseDto"
             }
           }
         }
@@ -21031,7 +21031,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetAllInboundsResponseDto"
+              "$ref": "#/components/schemas/AllInboundsResponseDto"
             }
           }
         }
@@ -21051,7 +21051,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetComputedConfigProfileByUuidResponseDto"
+              "$ref": "#/components/schemas/ComputedConfigProfileByUuidResponseDto"
             }
           }
         }
@@ -21061,7 +21061,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetNodesMetricsResponseDto"
+              "$ref": "#/components/schemas/NodesMetricsResponseDto"
             }
           }
         }
@@ -21081,7 +21081,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetExternalSquadByUuidResponseDto"
+              "$ref": "#/components/schemas/ExternalSquadByUuidResponseDto"
             }
           }
         }
@@ -21154,7 +21154,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetUsersStreamResponseDto"
+              "$ref": "#/components/schemas/UsersStreamResponseDto"
             }
           }
         }
@@ -21204,7 +21204,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetSubscriptionInfoResponseDto"
+              "$ref": "#/components/schemas/SubscriptionInfoResponseDto"
             }
           }
         }
@@ -21214,7 +21214,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetBandwidthStatsResponseDto"
+              "$ref": "#/components/schemas/BandwidthStatsResponseDto"
             }
           }
         }
@@ -21224,7 +21224,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetTemplateResponseDto"
+              "$ref": "#/components/schemas/TemplateResponseDto"
             }
           }
         }
@@ -21234,7 +21234,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetInternalSquadAccessibleNodesResponseDto"
+              "$ref": "#/components/schemas/InternalSquadAccessibleNodesResponseDto"
             }
           }
         }
@@ -21244,7 +21244,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetUserByTelegramIdResponseDto"
+              "$ref": "#/components/schemas/UserByTelegramIdResponseDto"
             }
           }
         }
@@ -21254,7 +21254,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetHwidDevicesStatsResponseDto"
+              "$ref": "#/components/schemas/HwidDevicesStatsResponseDto"
             }
           }
         }
@@ -21264,7 +21264,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetAllHwidDevicesResponseDto"
+              "$ref": "#/components/schemas/AllHwidDevicesResponseDto"
             }
           }
         }
@@ -21284,7 +21284,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetRemnawaveHealthResponseDto"
+              "$ref": "#/components/schemas/RemnawaveHealthResponseDto"
             }
           }
         }
@@ -21294,7 +21294,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetAllNodesResponseDto"
+              "$ref": "#/components/schemas/AllNodesResponseDto"
             }
           }
         }
@@ -21334,7 +21334,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetStatsUserUsageResponseDto"
+              "$ref": "#/components/schemas/StatsUserUsageResponseDto"
             }
           }
         }
@@ -21364,7 +21364,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetTorrentBlockerReportsResponseDto"
+              "$ref": "#/components/schemas/TorrentBlockerReportsResponseDto"
             }
           }
         }
@@ -21374,7 +21374,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetAllHostTagsResponseDto"
+              "$ref": "#/components/schemas/AllHostTagsResponseDto"
             }
           }
         }
@@ -21414,7 +21414,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetApiTokenScopesResponseDto"
+              "$ref": "#/components/schemas/ApiTokenScopesResponseDto"
             }
           }
         }
@@ -21464,7 +21464,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetUserSubscriptionRequestHistoryResponseDto"
+              "$ref": "#/components/schemas/UserSubscriptionRequestHistoryResponseDto"
             }
           }
         }
@@ -21497,7 +21497,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetSubscriptionPageConfigResponseDto"
+              "$ref": "#/components/schemas/SubscriptionPageConfigResponseDto"
             }
           }
         }
@@ -21507,7 +21507,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetAllSubscriptionsResponseDto"
+              "$ref": "#/components/schemas/AllSubscriptionsResponseDto"
             }
           }
         }
@@ -21527,7 +21527,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetUserByTagResponseDto"
+              "$ref": "#/components/schemas/UserByTagResponseDto"
             }
           }
         }
@@ -21547,7 +21547,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetInboundsByProfileUuidResponseDto"
+              "$ref": "#/components/schemas/InboundsByProfileUuidResponseDto"
             }
           }
         }
@@ -21557,7 +21557,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetPasskeyAuthenticationOptionsResponseDto"
+              "$ref": "#/components/schemas/PasskeyAuthenticationOptionsResponseDto"
             }
           }
         }
@@ -21577,7 +21577,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetNodeMetadataResponseDto"
+              "$ref": "#/components/schemas/NodeMetadataResponseDto"
             }
           }
         }
@@ -21587,7 +21587,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetNodePluginsResponseDto"
+              "$ref": "#/components/schemas/NodePluginsResponseDto"
             }
           }
         }
@@ -21597,7 +21597,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetUserMetadataResponseDto"
+              "$ref": "#/components/schemas/UserMetadataResponseDto"
             }
           }
         }
@@ -21607,7 +21607,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetRecapResponseDto"
+              "$ref": "#/components/schemas/RecapResponseDto"
             }
           }
         }
@@ -21690,7 +21690,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetUserAccessibleNodesResponseDto"
+              "$ref": "#/components/schemas/UserAccessibleNodesResponseDto"
             }
           }
         }
@@ -21740,7 +21740,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetInfraBillingHistoryRecordsResponseDto"
+              "$ref": "#/components/schemas/InfraBillingHistoryRecordsResponseDto"
             }
           }
         }
@@ -21750,7 +21750,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetAllPasskeysResponseDto"
+              "$ref": "#/components/schemas/AllPasskeysResponseDto"
             }
           }
         }
@@ -21760,7 +21760,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetStatsNodesUsersUsageResponseDto"
+              "$ref": "#/components/schemas/StatsNodesUsersUsageResponseDto"
             }
           }
         }
@@ -21770,7 +21770,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetSubscriptionSettingsResponseDto"
+              "$ref": "#/components/schemas/SubscriptionSettingsResponseDto"
             }
           }
         }

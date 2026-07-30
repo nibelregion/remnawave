@@ -9,10 +9,11 @@
     "hoisted_responses": 210,
     "renamed_responses": 0,
     "renamed_from_ref_responses": 6,
+    "renamed_response_schema_components": 78,
     "inlined_map_object_components": 0,
     "hoisted_inline_objects": 243,
     "reused_inline_objects": 416,
-    "deprecation_annotations": 1
+    "deprecation_annotations": 0
   },
   "deprecated": {
     "before": [],
@@ -7201,6 +7202,320 @@
       "is_error": true
     }
   ],
+  "response_schema_components": [
+    {
+      "old_name": "GetRemnawaveSettingsResponseDto",
+      "name": "RemnawaveSettingsResponseDto"
+    },
+    {
+      "old_name": "GetPasskeyRegistrationOptionsResponseDto",
+      "name": "PasskeyRegistrationOptionsResponseDto"
+    },
+    {
+      "old_name": "GetAllPasskeysResponseDto",
+      "name": "AllPasskeysResponseDto"
+    },
+    {
+      "old_name": "GetStatusResponseDto",
+      "name": "StatusResponseDto"
+    },
+    {
+      "old_name": "GetPasskeyAuthenticationOptionsResponseDto",
+      "name": "PasskeyAuthenticationOptionsResponseDto"
+    },
+    {
+      "old_name": "GetSubscriptionPageConfigsResponseDto",
+      "name": "SubscriptionPageConfigsResponseDto"
+    },
+    {
+      "old_name": "GetSubscriptionPageConfigResponseDto",
+      "name": "SubscriptionPageConfigResponseDto"
+    },
+    {
+      "old_name": "GetAllUsersResponseDto",
+      "name": "AllUsersResponseDto"
+    },
+    {
+      "old_name": "GetUsersStreamResponseDto",
+      "name": "UsersStreamResponseDto"
+    },
+    {
+      "old_name": "GetAllTagsResponseDto",
+      "name": "AllTagsResponseDto"
+    },
+    {
+      "old_name": "GetUserAccessibleNodesResponseDto",
+      "name": "UserAccessibleNodesResponseDto"
+    },
+    {
+      "old_name": "GetUserSubscriptionRequestHistoryResponseDto",
+      "name": "UserSubscriptionRequestHistoryResponseDto"
+    },
+    {
+      "old_name": "GetUserByShortUuidResponseDto",
+      "name": "UserByShortUuidResponseDto"
+    },
+    {
+      "old_name": "GetUserByUuidResponseDto",
+      "name": "UserByUuidResponseDto"
+    },
+    {
+      "old_name": "GetUserByUsernameResponseDto",
+      "name": "UserByUsernameResponseDto"
+    },
+    {
+      "old_name": "GetUserByIdResponseDto",
+      "name": "UserByIdResponseDto"
+    },
+    {
+      "old_name": "GetUserByTelegramIdResponseDto",
+      "name": "UserByTelegramIdResponseDto"
+    },
+    {
+      "old_name": "GetUserByEmailResponseDto",
+      "name": "UserByEmailResponseDto"
+    },
+    {
+      "old_name": "GetUserByTagResponseDto",
+      "name": "UserByTagResponseDto"
+    },
+    {
+      "old_name": "GetSubscriptionInfoResponseDto",
+      "name": "SubscriptionInfoResponseDto"
+    },
+    {
+      "old_name": "GetAllSubscriptionsResponseDto",
+      "name": "AllSubscriptionsResponseDto"
+    },
+    {
+      "old_name": "GetSubscriptionByUsernameResponseDto",
+      "name": "SubscriptionByUsernameResponseDto"
+    },
+    {
+      "old_name": "GetSubscriptionByShortUuidProtectedResponseDto",
+      "name": "SubscriptionByShortUuidProtectedResponseDto"
+    },
+    {
+      "old_name": "GetSubscriptionByUuidResponseDto",
+      "name": "SubscriptionByUuidResponseDto"
+    },
+    {
+      "old_name": "GetRawSubscriptionByShortUuidResponseDto",
+      "name": "RawSubscriptionByShortUuidResponseDto"
+    },
+    {
+      "old_name": "GetSubpageConfigByShortUuidResponseDto",
+      "name": "SubpageConfigByShortUuidResponseDto"
+    },
+    {
+      "old_name": "GetConnectionKeysByUuidResponseDto",
+      "name": "ConnectionKeysByUuidResponseDto"
+    },
+    {
+      "old_name": "GetTemplatesResponseDto",
+      "name": "TemplatesResponseDto"
+    },
+    {
+      "old_name": "GetTemplateResponseDto",
+      "name": "TemplateResponseDto"
+    },
+    {
+      "old_name": "GetApiTokenScopesResponseDto",
+      "name": "ApiTokenScopesResponseDto"
+    },
+    {
+      "old_name": "GetConfigProfilesResponseDto",
+      "name": "ConfigProfilesResponseDto"
+    },
+    {
+      "old_name": "GetAllInboundsResponseDto",
+      "name": "AllInboundsResponseDto"
+    },
+    {
+      "old_name": "GetInboundsByProfileUuidResponseDto",
+      "name": "InboundsByProfileUuidResponseDto"
+    },
+    {
+      "old_name": "GetConfigProfileByUuidResponseDto",
+      "name": "ConfigProfileByUuidResponseDto"
+    },
+    {
+      "old_name": "GetComputedConfigProfileByUuidResponseDto",
+      "name": "ComputedConfigProfileByUuidResponseDto"
+    },
+    {
+      "old_name": "GetSnippetsResponseDto",
+      "name": "SnippetsResponseDto"
+    },
+    {
+      "old_name": "GetInternalSquadsResponseDto",
+      "name": "InternalSquadsResponseDto"
+    },
+    {
+      "old_name": "GetInternalSquadByUuidResponseDto",
+      "name": "InternalSquadByUuidResponseDto"
+    },
+    {
+      "old_name": "GetInternalSquadAccessibleNodesResponseDto",
+      "name": "InternalSquadAccessibleNodesResponseDto"
+    },
+    {
+      "old_name": "GetExternalSquadsResponseDto",
+      "name": "ExternalSquadsResponseDto"
+    },
+    {
+      "old_name": "GetExternalSquadByUuidResponseDto",
+      "name": "ExternalSquadByUuidResponseDto"
+    },
+    {
+      "old_name": "GetPubKeyResponseDto",
+      "name": "PubKeyResponseDto"
+    },
+    {
+      "old_name": "GetAllNodesTagsResponseDto",
+      "name": "AllNodesTagsResponseDto"
+    },
+    {
+      "old_name": "GetAllNodesResponseDto",
+      "name": "AllNodesResponseDto"
+    },
+    {
+      "old_name": "GetOneNodeResponseDto",
+      "name": "OneNodeResponseDto"
+    },
+    {
+      "old_name": "GetTorrentBlockerReportsResponseDto",
+      "name": "TorrentBlockerReportsResponseDto"
+    },
+    {
+      "old_name": "GetTorrentBlockerReportsStatsResponseDto",
+      "name": "TorrentBlockerReportsStatsResponseDto"
+    },
+    {
+      "old_name": "GetNodePluginsResponseDto",
+      "name": "NodePluginsResponseDto"
+    },
+    {
+      "old_name": "GetNodePluginResponseDto",
+      "name": "NodePluginResponseDto"
+    },
+    {
+      "old_name": "GetAllHostTagsResponseDto",
+      "name": "AllHostTagsResponseDto"
+    },
+    {
+      "old_name": "GetAllHostsResponseDto",
+      "name": "AllHostsResponseDto"
+    },
+    {
+      "old_name": "GetOneHostResponseDto",
+      "name": "OneHostResponseDto"
+    },
+    {
+      "old_name": "GetLegacyStatsNodesUsersUsageResponseDto",
+      "name": "LegacyStatsNodesUsersUsageResponseDto"
+    },
+    {
+      "old_name": "GetStatsNodeUsersUsageResponseDto",
+      "name": "StatsNodeUsersUsageResponseDto"
+    },
+    {
+      "old_name": "GetStatsNodesUsersUsageResponseDto",
+      "name": "StatsNodesUsersUsageResponseDto"
+    },
+    {
+      "old_name": "GetLegacyStatsUserUsageResponseDto",
+      "name": "LegacyStatsUserUsageResponseDto"
+    },
+    {
+      "old_name": "GetStatsUserUsageResponseDto",
+      "name": "StatsUserUsageResponseDto"
+    },
+    {
+      "old_name": "GetAllHwidDevicesResponseDto",
+      "name": "AllHwidDevicesResponseDto"
+    },
+    {
+      "old_name": "GetHwidDevicesStatsResponseDto",
+      "name": "HwidDevicesStatsResponseDto"
+    },
+    {
+      "old_name": "GetTopUsersByHwidDevicesResponseDto",
+      "name": "TopUsersByHwidDevicesResponseDto"
+    },
+    {
+      "old_name": "GetUserHwidDevicesResponseDto",
+      "name": "UserHwidDevicesResponseDto"
+    },
+    {
+      "old_name": "GetStatsNodesUsageResponseDto",
+      "name": "StatsNodesUsageResponseDto"
+    },
+    {
+      "old_name": "GetInfraProvidersResponseDto",
+      "name": "InfraProvidersResponseDto"
+    },
+    {
+      "old_name": "GetInfraProviderByUuidResponseDto",
+      "name": "InfraProviderByUuidResponseDto"
+    },
+    {
+      "old_name": "GetInfraBillingHistoryRecordsResponseDto",
+      "name": "InfraBillingHistoryRecordsResponseDto"
+    },
+    {
+      "old_name": "GetInfraBillingNodesResponseDto",
+      "name": "InfraBillingNodesResponseDto"
+    },
+    {
+      "old_name": "GetSubscriptionRequestHistoryResponseDto",
+      "name": "SubscriptionRequestHistoryResponseDto"
+    },
+    {
+      "old_name": "GetSubscriptionRequestHistoryStatsResponseDto",
+      "name": "SubscriptionRequestHistoryStatsResponseDto"
+    },
+    {
+      "old_name": "GetMetadataResponseDto",
+      "name": "MetadataResponseDto"
+    },
+    {
+      "old_name": "GetStatsResponseDto",
+      "name": "StatsResponseDto"
+    },
+    {
+      "old_name": "GetBandwidthStatsResponseDto",
+      "name": "BandwidthStatsResponseDto"
+    },
+    {
+      "old_name": "GetNodesStatisticsResponseDto",
+      "name": "NodesStatisticsResponseDto"
+    },
+    {
+      "old_name": "GetRemnawaveHealthResponseDto",
+      "name": "RemnawaveHealthResponseDto"
+    },
+    {
+      "old_name": "GetNodesMetricsResponseDto",
+      "name": "NodesMetricsResponseDto"
+    },
+    {
+      "old_name": "GetRecapResponseDto",
+      "name": "RecapResponseDto"
+    },
+    {
+      "old_name": "GetSubscriptionSettingsResponseDto",
+      "name": "SubscriptionSettingsResponseDto"
+    },
+    {
+      "old_name": "GetUserMetadataResponseDto",
+      "name": "UserMetadataResponseDto"
+    },
+    {
+      "old_name": "GetNodeMetadataResponseDto",
+      "name": "NodeMetadataResponseDto"
+    }
+  ],
   "map_object_components": [],
   "inline_objects": [
     {
@@ -7395,8 +7710,8 @@
     },
     {
       "action": "hoisted",
-      "name": "BulkDeleteUsersByStatusResponse",
-      "target": "BulkDeleteUsersByStatusResponse",
+      "name": "BulkDeleteUsersResponse",
+      "target": "BulkDeleteUsersResponse",
       "nicification": "BulkDeleteUsersByStatusResponse",
       "field": "response",
       "parent": "BulkDeleteUsersByStatusResponseDto",
@@ -7406,7 +7721,7 @@
     {
       "action": "reused",
       "name": "BulkDeleteUsersResponse",
-      "target": "BulkDeleteUsersByStatusResponse",
+      "target": "BulkDeleteUsersResponse",
       "nicification": "BulkDeleteUsersResponse",
       "field": "response",
       "parent": "BulkDeleteUsersResponseDto",
@@ -7456,7 +7771,7 @@
     {
       "action": "reused",
       "name": "BulkExtendExpirationDateResponse",
-      "target": "BulkDeleteUsersByStatusResponse",
+      "target": "BulkDeleteUsersResponse",
       "nicification": "BulkExtendExpirationDateResponse",
       "field": "response",
       "parent": "BulkExtendExpirationDateResponseDto",
@@ -7496,7 +7811,7 @@
     {
       "action": "reused",
       "name": "BulkResetTrafficUsersResponse",
-      "target": "BulkDeleteUsersByStatusResponse",
+      "target": "BulkDeleteUsersResponse",
       "nicification": "BulkResetTrafficUsersResponse",
       "field": "response",
       "parent": "BulkResetTrafficUsersResponseDto",
@@ -7506,7 +7821,7 @@
     {
       "action": "reused",
       "name": "BulkRevokeUsersSubscriptionResponse",
-      "target": "BulkDeleteUsersByStatusResponse",
+      "target": "BulkDeleteUsersResponse",
       "nicification": "BulkRevokeUsersSubscriptionResponse",
       "field": "response",
       "parent": "BulkRevokeUsersSubscriptionResponseDto",
@@ -7526,7 +7841,7 @@
     {
       "action": "reused",
       "name": "BulkUpdateUsersResponse",
-      "target": "BulkDeleteUsersByStatusResponse",
+      "target": "BulkDeleteUsersResponse",
       "nicification": "BulkUpdateUsersResponse",
       "field": "response",
       "parent": "BulkUpdateUsersResponseDto",
@@ -7536,7 +7851,7 @@
     {
       "action": "reused",
       "name": "BulkUpdateUsersSquadsResponse",
-      "target": "BulkDeleteUsersByStatusResponse",
+      "target": "BulkDeleteUsersResponse",
       "nicification": "BulkUpdateUsersSquadsResponse",
       "field": "response",
       "parent": "BulkUpdateUsersSquadsResponseDto",
@@ -7576,7 +7891,7 @@
     {
       "action": "reused",
       "name": "CreateConfigProfileRequestConfigDto",
-      "target": "GetUserMetadataResponseMetadataDto",
+      "target": "MetadataResponseMetadataDto",
       "nicification": "CreateConfigProfileRequestConfigDto",
       "field": "config",
       "parent": "CreateConfigProfileRequestDto",
@@ -7746,12 +8061,12 @@
     {
       "action": "reused",
       "name": "CreateInfraBillingNodeResponse",
-      "target": "GetInfraBillingNodesResponse",
+      "target": "InfraBillingNodesResponse",
       "nicification": "CreateInfraBillingNodeResponse",
       "field": "response",
       "parent": "CreateInfraBillingNodeResponseDto",
       "source": "#/components/schemas/CreateInfraBillingNodeResponseDto/properties/response",
-      "signature": "80579eed4fe5e03335e7bb0d6e0e4e000560df6a605498c4a247896fda65304c"
+      "signature": "f91abaf5edf93e3915f98b85abd4427941e3a6439ce543183c47a748357c2eac"
     },
     {
       "action": "reused",
@@ -7796,7 +8111,7 @@
     {
       "action": "reused",
       "name": "CreateInfraBillingNodeResponseStatsDto",
-      "target": "GetInfraBillingNodesResponseStatsDto",
+      "target": "InfraBillingNodesResponseStatsDto",
       "nicification": "CreateInfraBillingNodeResponseStatsDto",
       "field": "stats",
       "parent": "CreateInfraBillingNodeResponse",
@@ -7986,7 +8301,7 @@
     {
       "action": "reused",
       "name": "CreateSnippetRequestSnippetDto",
-      "target": "GetUserMetadataResponseMetadataDto",
+      "target": "MetadataResponseMetadataDto",
       "nicification": "CreateSnippetRequestSnippetDto",
       "field": "snippet",
       "parent": "CreateSnippetRequestDto",
@@ -7996,7 +8311,7 @@
     {
       "action": "reused",
       "name": "CreateSnippetResponse",
-      "target": "GetSnippetsResponse",
+      "target": "SnippetsResponse",
       "nicification": "CreateSnippetResponse",
       "field": "response",
       "parent": "CreateSnippetResponseDto",
@@ -8036,7 +8351,7 @@
     {
       "action": "reused",
       "name": "CreateUserHwidDeviceResponse",
-      "target": "GetAllHwidDevicesResponse",
+      "target": "AllHwidDevicesResponse",
       "nicification": "CreateUserHwidDeviceResponse",
       "field": "response",
       "parent": "CreateUserHwidDeviceResponseDto",
@@ -8216,7 +8531,7 @@
     {
       "action": "reused",
       "name": "DeleteAllUserHwidDevicesResponse",
-      "target": "GetAllHwidDevicesResponse",
+      "target": "AllHwidDevicesResponse",
       "nicification": "DeleteAllUserHwidDevicesResponse",
       "field": "response",
       "parent": "DeleteAllUserHwidDevicesResponseDto",
@@ -8296,12 +8611,12 @@
     {
       "action": "reused",
       "name": "DeleteInfraBillingNodeByUuidResponse",
-      "target": "GetInfraBillingNodesResponse",
+      "target": "InfraBillingNodesResponse",
       "nicification": "DeleteInfraBillingNodeByUuidResponse",
       "field": "response",
       "parent": "DeleteInfraBillingNodeByUuidResponseDto",
       "source": "#/components/schemas/DeleteInfraBillingNodeByUuidResponseDto/properties/response",
-      "signature": "80579eed4fe5e03335e7bb0d6e0e4e000560df6a605498c4a247896fda65304c"
+      "signature": "f91abaf5edf93e3915f98b85abd4427941e3a6439ce543183c47a748357c2eac"
     },
     {
       "action": "reused",
@@ -8346,7 +8661,7 @@
     {
       "action": "reused",
       "name": "DeleteInfraBillingNodeByUuidResponseStatsDto",
-      "target": "GetInfraBillingNodesResponseStatsDto",
+      "target": "InfraBillingNodesResponseStatsDto",
       "nicification": "DeleteInfraBillingNodeByUuidResponseStatsDto",
       "field": "stats",
       "parent": "DeleteInfraBillingNodeByUuidResponse",
@@ -8401,12 +8716,12 @@
       "field": "response",
       "parent": "DeletePasskeyResponseDto",
       "source": "#/components/schemas/DeletePasskeyResponseDto/properties/response",
-      "signature": "84af431ca434f961e31b3e01a58b2134556465637f89991d056f1a429653b585"
+      "signature": "0d0d053329260b753793f7c31d44efa753cfe280b82da5d0415a5a3f0cef66ee"
     },
     {
       "action": "reused",
       "name": "DeletePasskeyResponsePasskeysDto",
-      "target": "GetActivePasskeysResponseModelPasskeysDto",
+      "target": "ActivePasskeysResponseModelPasskeysDto",
       "nicification": "DeletePasskeyResponsePasskeysDto",
       "field": "passkeys",
       "parent": "DeletePasskeyResponse",
@@ -8416,7 +8731,7 @@
     {
       "action": "reused",
       "name": "DeleteSnippetResponse",
-      "target": "GetSnippetsResponse",
+      "target": "SnippetsResponse",
       "nicification": "DeleteSnippetResponse",
       "field": "response",
       "parent": "DeleteSnippetResponseDto",
@@ -8456,7 +8771,7 @@
     {
       "action": "reused",
       "name": "DeleteUserHwidDeviceResponse",
-      "target": "GetAllHwidDevicesResponse",
+      "target": "AllHwidDevicesResponse",
       "nicification": "DeleteUserHwidDeviceResponse",
       "field": "response",
       "parent": "DeleteUserHwidDeviceResponseDto",
@@ -8821,12 +9136,12 @@
       "field": "nodes",
       "parent": "FetchIpsResultResponseModelResultDto",
       "source": "#/components/schemas/FetchIpsResultResponseDto/properties/response/properties/result/properties/nodes/items",
-      "signature": "2681e02fcf9c332df3608037efcebb580946752b81c53e419c1593b2699ba151"
+      "signature": "ed1032ec18b7758e373c6a25638545c8f3701d20fde1180f9fe8e7caadf248ca"
     },
     {
       "action": "hoisted",
-      "name": "GetIpsListNodeResultIpsDto",
-      "target": "GetIpsListNodeResultIpsDto",
+      "name": "IpsListNodeResultIpsDto",
+      "target": "IpsListNodeResultIpsDto",
       "nicification": "FetchIpsResultResponseIpsDto",
       "field": "ips",
       "parent": "GetIpsListNodeResultDto",
@@ -8871,12 +9186,12 @@
       "field": "users",
       "parent": "FetchUsersIpsResultResponseModelResultDto",
       "source": "#/components/schemas/FetchUsersIpsResultResponseDto/properties/response/properties/result/properties/users/items",
-      "signature": "f30a2f6a6ca4dbd7a4c4a18192a8c58232a0492906c3e1fa31818820cbb1557e"
+      "signature": "c33596efa725a08eafbe00cc0c8b87cfe9a5733802a49368678de895816a749b"
     },
     {
       "action": "reused",
-      "name": "GetUserIpListItemIpsDto",
-      "target": "GetIpsListNodeResultIpsDto",
+      "name": "UserIpListItemIpsDto",
+      "target": "IpsListNodeResultIpsDto",
       "nicification": "FetchUsersIpsResultResponseIpsDto",
       "field": "ips",
       "parent": "GetUserIpListItemDto",
@@ -8935,8 +9250,8 @@
     },
     {
       "action": "reused",
-      "name": "GetAllHostTagsResponse",
-      "target": "GetAllTagsResponse",
+      "name": "AllHostTagsResponse",
+      "target": "AllTagsResponse",
       "nicification": "GetAllHostTagsResponse",
       "field": "response",
       "parent": "GetAllHostTagsResponseDto",
@@ -8965,8 +9280,8 @@
     },
     {
       "action": "hoisted",
-      "name": "GetAllHwidDevicesResponse",
-      "target": "GetAllHwidDevicesResponse",
+      "name": "AllHwidDevicesResponse",
+      "target": "AllHwidDevicesResponse",
       "nicification": "GetAllHwidDevicesResponse",
       "field": "response",
       "parent": "GetAllHwidDevicesResponseDto",
@@ -8979,27 +9294,27 @@
       "target": "HwidUserDeviceDto",
       "nicification": "GetAllHwidDevicesResponseDevicesDto",
       "field": "devices",
-      "parent": "GetAllHwidDevicesResponse",
+      "parent": "AllHwidDevicesResponse",
       "source": "#/components/schemas/GetAllHwidDevicesResponseDto/properties/response/properties/devices/items",
       "signature": "f1b21fc08882544351928e551df9174780b1d4d6f10c2f94839d208ed5f138a2"
     },
     {
       "action": "hoisted",
-      "name": "GetAllInboundsResponse",
-      "target": "GetAllInboundsResponse",
+      "name": "InboundsResponse",
+      "target": "InboundsResponse",
       "nicification": "GetAllInboundsResponse",
       "field": "response",
       "parent": "GetAllInboundsResponseDto",
       "source": "#/components/schemas/GetAllInboundsResponseDto/properties/response",
-      "signature": "3cb5b694c02a8d08ba039566cd08a2033bdabe303c8e1999d88f61347c2742f2"
+      "signature": "7c31016faae40406b93f9ef859f1336d974b196ef0440ab428dd8c9e1356bc8b"
     },
     {
       "action": "hoisted",
-      "name": "GetAllInboundsResponseInboundsDto",
-      "target": "GetAllInboundsResponseInboundsDto",
+      "name": "InboundsResponseInboundsDto",
+      "target": "InboundsResponseInboundsDto",
       "nicification": "GetAllInboundsResponseInboundsDto",
       "field": "inbounds",
-      "parent": "GetAllInboundsResponse",
+      "parent": "InboundsResponse",
       "source": "#/components/schemas/GetAllInboundsResponseDto/properties/response/properties/inbounds/items",
       "signature": "0dacd55857f5aeb1bf483248ecb4b47c9931a40e78514ebe18904d3125bf8c99"
     },
@@ -9095,8 +9410,8 @@
     },
     {
       "action": "reused",
-      "name": "GetAllNodesTagsResponse",
-      "target": "GetAllTagsResponse",
+      "name": "AllNodesTagsResponse",
+      "target": "AllTagsResponse",
       "nicification": "GetAllNodesTagsResponse",
       "field": "response",
       "parent": "GetAllNodesTagsResponseDto",
@@ -9111,12 +9426,12 @@
       "field": "response",
       "parent": "GetAllPasskeysResponseDto",
       "source": "#/components/schemas/GetAllPasskeysResponseDto/properties/response",
-      "signature": "84af431ca434f961e31b3e01a58b2134556465637f89991d056f1a429653b585"
+      "signature": "0d0d053329260b753793f7c31d44efa753cfe280b82da5d0415a5a3f0cef66ee"
     },
     {
       "action": "hoisted",
-      "name": "GetActivePasskeysResponseModelPasskeysDto",
-      "target": "GetActivePasskeysResponseModelPasskeysDto",
+      "name": "ActivePasskeysResponseModelPasskeysDto",
+      "target": "ActivePasskeysResponseModelPasskeysDto",
       "nicification": "GetAllPasskeysResponsePasskeysDto",
       "field": "passkeys",
       "parent": "GetActivePasskeysResponseModelDto",
@@ -9125,8 +9440,8 @@
     },
     {
       "action": "hoisted",
-      "name": "GetAllSubscriptionsResponse",
-      "target": "GetAllSubscriptionsResponse",
+      "name": "AllSubscriptionsResponse",
+      "target": "AllSubscriptionsResponse",
       "nicification": "GetAllSubscriptionsResponse",
       "field": "response",
       "parent": "GetAllSubscriptionsResponseDto",
@@ -9139,7 +9454,7 @@
       "target": "SubscriptionInfoDto",
       "nicification": "SubscriptionsDto",
       "field": "subscriptions",
-      "parent": "GetAllSubscriptionsResponse",
+      "parent": "AllSubscriptionsResponse",
       "source": "#/components/schemas/GetAllSubscriptionsResponseDto/properties/response/properties/subscriptions/items",
       "signature": "b1160bb335e0bf0398c67b1bf8095cf294a293f9562f14f3bf5d4b56a00d700c"
     },
@@ -9155,8 +9470,8 @@
     },
     {
       "action": "hoisted",
-      "name": "GetAllTagsResponse",
-      "target": "GetAllTagsResponse",
+      "name": "AllTagsResponse",
+      "target": "AllTagsResponse",
       "nicification": "GetAllTagsResponse",
       "field": "response",
       "parent": "GetAllTagsResponseDto",
@@ -9165,8 +9480,8 @@
     },
     {
       "action": "hoisted",
-      "name": "GetAllUsersResponse",
-      "target": "GetAllUsersResponse",
+      "name": "AllUsersResponse",
+      "target": "AllUsersResponse",
       "nicification": "GetAllUsersResponse",
       "field": "response",
       "parent": "GetAllUsersResponseDto",
@@ -9179,7 +9494,7 @@
       "target": "ExtendedUsersDto",
       "nicification": "GetAllUsersResponseUsersDto",
       "field": "users",
-      "parent": "GetAllUsersResponse",
+      "parent": "AllUsersResponse",
       "source": "#/components/schemas/GetAllUsersResponseDto/properties/response/properties/users/items",
       "signature": "41823d8770deef8cb6058a95bf0c15528369433c21fabef40c45c53a1c91c3b5"
     },
@@ -9205,8 +9520,8 @@
     },
     {
       "action": "hoisted",
-      "name": "GetApiTokenScopesResponse",
-      "target": "GetApiTokenScopesResponse",
+      "name": "ApiTokenScopesResponse",
+      "target": "ApiTokenScopesResponse",
       "nicification": "GetApiTokenScopesResponse",
       "field": "response",
       "parent": "GetApiTokenScopesResponseDto",
@@ -9219,7 +9534,7 @@
       "target": "ResourceScopesDto",
       "nicification": "ResourcesDto",
       "field": "resources",
-      "parent": "GetApiTokenScopesResponse",
+      "parent": "ApiTokenScopesResponse",
       "source": "#/components/schemas/GetApiTokenScopesResponseDto/properties/response/properties/resources/items",
       "signature": "222fb20940d9e3ab8e1d961c0dbcd47e22f7a857b78c452db8531c8ff4b34df3"
     },
@@ -9355,8 +9670,8 @@
     },
     {
       "action": "hoisted",
-      "name": "GetConfigProfilesResponse",
-      "target": "GetConfigProfilesResponse",
+      "name": "ConfigProfilesResponse",
+      "target": "ConfigProfilesResponse",
       "nicification": "GetConfigProfilesResponse",
       "field": "response",
       "parent": "GetConfigProfilesResponseDto",
@@ -9369,7 +9684,7 @@
       "target": "ConfigProfileDto",
       "nicification": "GetConfigProfilesResponseConfigProfilesDto",
       "field": "configProfiles",
-      "parent": "GetConfigProfilesResponse",
+      "parent": "ConfigProfilesResponse",
       "source": "#/components/schemas/GetConfigProfilesResponseDto/properties/response/properties/configProfiles/items",
       "signature": "ce135284fe173b50abaf2cdecfbff9351eeb6ff22181ca86494f4cebc6eceb5c"
     },
@@ -9395,8 +9710,8 @@
     },
     {
       "action": "hoisted",
-      "name": "GetConnectionKeysByUuidResponse",
-      "target": "GetConnectionKeysByUuidResponse",
+      "name": "ConnectionKeysByUuidResponse",
+      "target": "ConnectionKeysByUuidResponse",
       "nicification": "GetConnectionKeysByUuidResponse",
       "field": "response",
       "parent": "GetConnectionKeysByUuidResponseDto",
@@ -9475,8 +9790,8 @@
     },
     {
       "action": "hoisted",
-      "name": "GetExternalSquadsResponse",
-      "target": "GetExternalSquadsResponse",
+      "name": "ExternalSquadsResponse",
+      "target": "ExternalSquadsResponse",
       "nicification": "GetExternalSquadsResponse",
       "field": "response",
       "parent": "GetExternalSquadsResponseDto",
@@ -9489,7 +9804,7 @@
       "target": "ExternalSquadDto",
       "nicification": "GetExternalSquadsResponseExternalSquadsDto",
       "field": "externalSquads",
-      "parent": "GetExternalSquadsResponse",
+      "parent": "ExternalSquadsResponse",
       "source": "#/components/schemas/GetExternalSquadsResponseDto/properties/response/properties/externalSquads/items",
       "signature": "50baa80493052a12b8df77cd9d034250960f1418f2d171d7a3ec6c51c4031d71"
     },
@@ -9555,67 +9870,67 @@
     },
     {
       "action": "hoisted",
-      "name": "GetHwidDevicesStatsResponse",
-      "target": "GetHwidDevicesStatsResponse",
+      "name": "HwidDevicesStatsResponse",
+      "target": "HwidDevicesStatsResponse",
       "nicification": "GetHwidDevicesStatsResponse",
       "field": "response",
       "parent": "GetHwidDevicesStatsResponseDto",
       "source": "#/components/schemas/GetHwidDevicesStatsResponseDto/properties/response",
-      "signature": "2287ce73b0bcfe575ac9fabe136616c9b430c175eb53d94651e50aad83979848"
+      "signature": "a63b611eba34ab1f92892a2871cb1efe95c24c7014fa2628afee076d66fc5d8d"
     },
     {
       "action": "hoisted",
-      "name": "GetHwidDevicesStatsResponseByPlatformDto",
-      "target": "GetHwidDevicesStatsResponseByPlatformDto",
+      "name": "HwidDevicesStatsResponseByPlatformDto",
+      "target": "HwidDevicesStatsResponseByPlatformDto",
       "nicification": "ByPlatformDto",
       "field": "byPlatform",
-      "parent": "GetHwidDevicesStatsResponse",
+      "parent": "HwidDevicesStatsResponse",
       "source": "#/components/schemas/GetHwidDevicesStatsResponseDto/properties/response/properties/byPlatform/items",
-      "signature": "71842f1e053d72f171ac1ad5f2babd6b8831e007307a32fca0b0422aa8a3bf0b"
+      "signature": "7eb48b9f68672bbe451b00479b1dda28ff0fa49bc2dcbffcabde5fef6e14e1dd"
     },
     {
       "action": "hoisted",
-      "name": "GetHwidDevicesStatsResponseByPlatformByAppDto",
-      "target": "GetHwidDevicesStatsResponseByPlatformByAppDto",
+      "name": "HwidDevicesStatsResponseByPlatformByAppDto",
+      "target": "HwidDevicesStatsResponseByPlatformByAppDto",
       "nicification": "ByAppDto",
       "field": "byApp",
-      "parent": "GetHwidDevicesStatsResponseByPlatformDto",
+      "parent": "HwidDevicesStatsResponseByPlatformDto",
       "source": "#/components/schemas/GetHwidDevicesStatsResponseDto/properties/response/properties/byPlatform/items/properties/byApp/items",
       "signature": "f33d224e118c48544dad4cecaa900917a63156abaee2fda44c5b1309210acc8c"
     },
     {
       "action": "hoisted",
-      "name": "GetHwidDevicesStatsResponseStatsDto",
-      "target": "GetHwidDevicesStatsResponseStatsDto",
+      "name": "HwidDevicesStatsResponseStatsDto",
+      "target": "HwidDevicesStatsResponseStatsDto",
       "nicification": "GetHwidDevicesStatsResponseStatsDto",
       "field": "stats",
-      "parent": "GetHwidDevicesStatsResponse",
+      "parent": "HwidDevicesStatsResponse",
       "source": "#/components/schemas/GetHwidDevicesStatsResponseDto/properties/response/properties/stats",
       "signature": "9f7d950ae31c531a431f5e0847f3445a15455b9882baa209d1690690831efaf4"
     },
     {
       "action": "reused",
-      "name": "GetInboundsByProfileUuidResponse",
-      "target": "GetAllInboundsResponse",
+      "name": "InboundsByProfileUuidResponse",
+      "target": "InboundsResponse",
       "nicification": "GetInboundsByProfileUuidResponse",
       "field": "response",
       "parent": "GetInboundsByProfileUuidResponseDto",
       "source": "#/components/schemas/GetInboundsByProfileUuidResponseDto/properties/response",
-      "signature": "3cb5b694c02a8d08ba039566cd08a2033bdabe303c8e1999d88f61347c2742f2"
+      "signature": "7c31016faae40406b93f9ef859f1336d974b196ef0440ab428dd8c9e1356bc8b"
     },
     {
       "action": "reused",
-      "name": "GetInboundsByProfileUuidResponseInboundsDto",
-      "target": "GetAllInboundsResponseInboundsDto",
+      "name": "InboundsByProfileUuidResponseInboundsDto",
+      "target": "InboundsResponseInboundsDto",
       "nicification": "GetInboundsByProfileUuidResponseInboundsDto",
       "field": "inbounds",
-      "parent": "GetInboundsByProfileUuidResponse",
+      "parent": "InboundsByProfileUuidResponse",
       "source": "#/components/schemas/GetInboundsByProfileUuidResponseDto/properties/response/properties/inbounds/items",
       "signature": "0dacd55857f5aeb1bf483248ecb4b47c9931a40e78514ebe18904d3125bf8c99"
     },
     {
       "action": "reused",
-      "name": "GetInfraBillingHistoryRecordsResponse",
+      "name": "InfraBillingHistoryRecordsResponse",
       "target": "CreateInfraBillingHistoryRecordResponse",
       "nicification": "GetInfraBillingHistoryRecordsResponse",
       "field": "response",
@@ -9629,7 +9944,7 @@
       "target": "InfraBillingHistoryRecordDto",
       "nicification": "GetInfraBillingHistoryRecordsResponseRecordsDto",
       "field": "records",
-      "parent": "GetInfraBillingHistoryRecordsResponse",
+      "parent": "InfraBillingHistoryRecordsResponse",
       "source": "#/components/schemas/GetInfraBillingHistoryRecordsResponseDto/properties/response/properties/records/items",
       "signature": "53bbdbb0a6afce55afe3eba7ef322f6a38dbc9b0edf85a9c3c0ac7118433ace8"
     },
@@ -9645,21 +9960,21 @@
     },
     {
       "action": "hoisted",
-      "name": "GetInfraBillingNodesResponse",
-      "target": "GetInfraBillingNodesResponse",
+      "name": "InfraBillingNodesResponse",
+      "target": "InfraBillingNodesResponse",
       "nicification": "GetInfraBillingNodesResponse",
       "field": "response",
       "parent": "GetInfraBillingNodesResponseDto",
       "source": "#/components/schemas/GetInfraBillingNodesResponseDto/properties/response",
-      "signature": "80579eed4fe5e03335e7bb0d6e0e4e000560df6a605498c4a247896fda65304c"
+      "signature": "f91abaf5edf93e3915f98b85abd4427941e3a6439ce543183c47a748357c2eac"
     },
     {
       "action": "reused",
-      "name": "GetInfraBillingNodesResponseAvailableBillingNodesDto",
+      "name": "InfraBillingNodesResponseAvailableBillingNodesDto",
       "target": "InfraBillingAvailableNodeDto",
       "nicification": "GetInfraBillingNodesResponseAvailableBillingNodesDto",
       "field": "availableBillingNodes",
-      "parent": "GetInfraBillingNodesResponse",
+      "parent": "InfraBillingNodesResponse",
       "source": "#/components/schemas/GetInfraBillingNodesResponseDto/properties/response/properties/availableBillingNodes/items",
       "signature": "7d7938083d36703da7f3c59b6cd8e56344f3b1bd03a1afaed37ff18c505ed261"
     },
@@ -9669,7 +9984,7 @@
       "target": "InfraBillingNodeDto",
       "nicification": "GetInfraBillingNodesResponseBillingNodesDto",
       "field": "billingNodes",
-      "parent": "GetInfraBillingNodesResponse",
+      "parent": "InfraBillingNodesResponse",
       "source": "#/components/schemas/GetInfraBillingNodesResponseDto/properties/response/properties/billingNodes/items",
       "signature": "1e9e066d1fcbbf8d8fa24c84bc44cd2466486f26c4c5518464ce07290c4f7a89"
     },
@@ -9695,11 +10010,11 @@
     },
     {
       "action": "hoisted",
-      "name": "GetInfraBillingNodesResponseStatsDto",
-      "target": "GetInfraBillingNodesResponseStatsDto",
+      "name": "InfraBillingNodesResponseStatsDto",
+      "target": "InfraBillingNodesResponseStatsDto",
       "nicification": "GetInfraBillingNodesResponseStatsDto",
       "field": "stats",
-      "parent": "GetInfraBillingNodesResponse",
+      "parent": "InfraBillingNodesResponse",
       "source": "#/components/schemas/GetInfraBillingNodesResponseDto/properties/response/properties/stats",
       "signature": "56b7119839f1dfd93b4fe3724ecd873f5f4cbab40a4d04a08d86d9162710b31b"
     },
@@ -9745,8 +10060,8 @@
     },
     {
       "action": "hoisted",
-      "name": "GetInfraProvidersResponse",
-      "target": "GetInfraProvidersResponse",
+      "name": "InfraProvidersResponse",
+      "target": "InfraProvidersResponse",
       "nicification": "GetInfraProvidersResponse",
       "field": "response",
       "parent": "GetInfraProvidersResponseDto",
@@ -9759,7 +10074,7 @@
       "target": "InfraProviderDto",
       "nicification": "ProvidersDto",
       "field": "providers",
-      "parent": "GetInfraProvidersResponse",
+      "parent": "InfraProvidersResponse",
       "source": "#/components/schemas/GetInfraProvidersResponseDto/properties/response/properties/providers/items",
       "signature": "b4807a977c865097f89a911dc0deaafab4aff24fb724f344b2bd7139499726b8"
     },
@@ -9795,21 +10110,21 @@
     },
     {
       "action": "hoisted",
-      "name": "GetInternalSquadAccessibleNodesResponse",
-      "target": "GetInternalSquadAccessibleNodesResponse",
+      "name": "InternalSquadAccessibleNodesResponse",
+      "target": "InternalSquadAccessibleNodesResponse",
       "nicification": "GetInternalSquadAccessibleNodesResponse",
       "field": "response",
       "parent": "GetInternalSquadAccessibleNodesResponseDto",
       "source": "#/components/schemas/GetInternalSquadAccessibleNodesResponseDto/properties/response",
-      "signature": "44fbe076da3523306d8e9c3af6a8f0c8e3892a99528641a2b96ed0146aab85f4"
+      "signature": "a8fb635b2ab65d06dc7bb2c43e6a887236d73025f5f1ec394ffa8763c8489c02"
     },
     {
       "action": "hoisted",
-      "name": "GetInternalSquadAccessibleNodesResponseAccessibleNodesDto",
-      "target": "GetInternalSquadAccessibleNodesResponseAccessibleNodesDto",
+      "name": "InternalSquadAccessibleNodesResponseAccessibleNodesDto",
+      "target": "InternalSquadAccessibleNodesResponseAccessibleNodesDto",
       "nicification": "AccessibleNodesDto",
       "field": "accessibleNodes",
-      "parent": "GetInternalSquadAccessibleNodesResponse",
+      "parent": "InternalSquadAccessibleNodesResponse",
       "source": "#/components/schemas/GetInternalSquadAccessibleNodesResponseDto/properties/response/properties/accessibleNodes/items",
       "signature": "1326d240737a8e994fa90b2a51c80923ef0aa85606913fdfc629cc7e475e2ac5"
     },
@@ -9845,8 +10160,8 @@
     },
     {
       "action": "hoisted",
-      "name": "GetInternalSquadsResponse",
-      "target": "GetInternalSquadsResponse",
+      "name": "InternalSquadsResponse",
+      "target": "InternalSquadsResponse",
       "nicification": "GetInternalSquadsResponse",
       "field": "response",
       "parent": "GetInternalSquadsResponseDto",
@@ -9859,7 +10174,7 @@
       "target": "InternalSquadDto",
       "nicification": "GetInternalSquadsResponseInternalSquadsDto",
       "field": "internalSquads",
-      "parent": "GetInternalSquadsResponse",
+      "parent": "InternalSquadsResponse",
       "source": "#/components/schemas/GetInternalSquadsResponseDto/properties/response/properties/internalSquads/items",
       "signature": "7202be061443688ce43ea1c42a2266cb24914d0f89abf6bb47dc76063246d781"
     },
@@ -9955,21 +10270,21 @@
     },
     {
       "action": "reused",
-      "name": "GetNodeMetadataResponse",
-      "target": "GetUserMetadataResponse",
+      "name": "NodeMetadataResponse",
+      "target": "MetadataResponse",
       "nicification": "GetNodeMetadataResponse",
       "field": "response",
       "parent": "GetNodeMetadataResponseDto",
       "source": "#/components/schemas/GetNodeMetadataResponseDto/properties/response",
-      "signature": "c32a745e07b2bcb681a1defca7f8547edff8e4036a73c6c1bff2941cf273502c"
+      "signature": "d7d85aa719c8da8f0fbf562fa94d5d0b5d1a5ef5f77f711df337689f55e76506"
     },
     {
       "action": "reused",
-      "name": "GetNodeMetadataResponseMetadataDto",
-      "target": "GetUserMetadataResponseMetadataDto",
+      "name": "NodeMetadataResponseMetadataDto",
+      "target": "MetadataResponseMetadataDto",
       "nicification": "GetNodeMetadataResponseMetadataDto",
       "field": "metadata",
-      "parent": "GetNodeMetadataResponse",
+      "parent": "NodeMetadataResponse",
       "source": "#/components/schemas/GetNodeMetadataResponseDto/properties/response/properties/metadata",
       "signature": "efddc7bd8bbcef73a14eb1ace1ffdaec81e518ef1e13c1e9271d0b8acb694a49"
     },
@@ -9985,8 +10300,8 @@
     },
     {
       "action": "hoisted",
-      "name": "GetNodePluginsResponse",
-      "target": "GetNodePluginsResponse",
+      "name": "NodePluginsResponse",
+      "target": "NodePluginsResponse",
       "nicification": "GetNodePluginsResponse",
       "field": "response",
       "parent": "GetNodePluginsResponseDto",
@@ -9999,7 +10314,7 @@
       "target": "NodePluginDto",
       "nicification": "GetNodePluginsResponseNodePluginsDto",
       "field": "nodePlugins",
-      "parent": "GetNodePluginsResponse",
+      "parent": "NodePluginsResponse",
       "source": "#/components/schemas/GetNodePluginsResponseDto/properties/response/properties/nodePlugins/items",
       "signature": "6a8d0d7cacaa614b14fecec0084768990f16e21d27cdef26e1cd48e4652ebe52"
     },
@@ -10175,8 +10490,8 @@
     },
     {
       "action": "hoisted",
-      "name": "GetPubKeyResponse",
-      "target": "GetPubKeyResponse",
+      "name": "PubKeyResponse",
+      "target": "PubKeyResponse",
       "nicification": "GetPubKeyResponse",
       "field": "response",
       "parent": "GetPubKeyResponseDto",
@@ -10185,31 +10500,31 @@
     },
     {
       "action": "hoisted",
-      "name": "GetRawSubscriptionByShortUuidResponse",
-      "target": "GetRawSubscriptionByShortUuidResponse",
+      "name": "RawSubscriptionByShortUuidResponse",
+      "target": "RawSubscriptionByShortUuidResponse",
       "nicification": "GetRawSubscriptionByShortUuidResponse",
       "field": "response",
       "parent": "GetRawSubscriptionByShortUuidResponseDto",
       "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response",
-      "signature": "0bd476339e211d3018e57940326c74169ea3bad9016bd031651e62555e5812d1"
+      "signature": "67f303401cafcb7e5db352586edbd49b3bac89867d544d809dc045a9b8f96643"
     },
     {
       "action": "hoisted",
-      "name": "GetRawSubscriptionByShortUuidResponseConvertedUserInfoDto",
-      "target": "GetRawSubscriptionByShortUuidResponseConvertedUserInfoDto",
+      "name": "RawSubscriptionByShortUuidResponseConvertedUserInfoDto",
+      "target": "RawSubscriptionByShortUuidResponseConvertedUserInfoDto",
       "nicification": "ConvertedUserInfoDto",
       "field": "convertedUserInfo",
-      "parent": "GetRawSubscriptionByShortUuidResponse",
+      "parent": "RawSubscriptionByShortUuidResponse",
       "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/convertedUserInfo",
-      "signature": "f3c2ba866c7deee8d5266e8501621691b827063b22340d74f1266818bed7b77e"
+      "signature": "d45fc5c40fca8c27287523d976799d2d66c239cb41050763fec284317e2f7eac"
     },
     {
       "action": "hoisted",
-      "name": "GetRawSubscriptionByShortUuidResponseConvertedUserInfoHwidCheckupDto",
-      "target": "GetRawSubscriptionByShortUuidResponseConvertedUserInfoHwidCheckupDto",
+      "name": "RawSubscriptionByShortUuidResponseConvertedUserInfoHwidCheckupDto",
+      "target": "RawSubscriptionByShortUuidResponseConvertedUserInfoHwidCheckupDto",
       "nicification": "HwidCheckupDto",
       "field": "hwidCheckup",
-      "parent": "GetRawSubscriptionByShortUuidResponseConvertedUserInfoDto",
+      "parent": "RawSubscriptionByShortUuidResponseConvertedUserInfoDto",
       "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/convertedUserInfo/properties/hwidCheckup",
       "signature": "6eb9f980200f7fda798a7bfea9ae4920cc0151836d26a66830093258ef1e499f"
     },
@@ -10219,7 +10534,7 @@
       "target": "ResolvedProxyConfigDto",
       "nicification": "ResolvedProxyConfigsDto",
       "field": "resolvedProxyConfigs",
-      "parent": "GetRawSubscriptionByShortUuidResponse",
+      "parent": "RawSubscriptionByShortUuidResponse",
       "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items",
       "signature": "53472b9e3239c7d7daa305364ecba6085afb57c80398eb70b40920e71020e3b4"
     },
@@ -10425,11 +10740,11 @@
     },
     {
       "action": "reused",
-      "name": "GetRawSubscriptionByShortUuidResponseUserDto",
+      "name": "RawSubscriptionByShortUuidResponseUserDto",
       "target": "ExtendedUsersDto",
       "nicification": "GetRawSubscriptionByShortUuidResponseUserDto",
       "field": "user",
-      "parent": "GetRawSubscriptionByShortUuidResponse",
+      "parent": "RawSubscriptionByShortUuidResponse",
       "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/user",
       "signature": "41823d8770deef8cb6058a95bf0c15528369433c21fabef40c45c53a1c91c3b5"
     },
@@ -10439,7 +10754,7 @@
       "target": "BaseInternalSquadDto",
       "nicification": "GetRawSubscriptionByShortUuidResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
-      "parent": "GetRawSubscriptionByShortUuidResponseUserDto",
+      "parent": "RawSubscriptionByShortUuidResponseUserDto",
       "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/user/properties/activeInternalSquads/items",
       "signature": "c58b50885bb7761d19b4854110c90821aab89228fbd2860cd5c827d0fd729b58"
     },
@@ -10449,7 +10764,7 @@
       "target": "UserTrafficDto",
       "nicification": "GetRawSubscriptionByShortUuidResponseUserTrafficDto",
       "field": "userTraffic",
-      "parent": "GetRawSubscriptionByShortUuidResponseUserDto",
+      "parent": "RawSubscriptionByShortUuidResponseUserDto",
       "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/user/properties/userTraffic",
       "signature": "b68e5f5b2c0e4912502921638da0ec8234e13780e6ad290c380350c35d46e3b1"
     },
@@ -10615,8 +10930,8 @@
     },
     {
       "action": "hoisted",
-      "name": "GetSnippetsResponse",
-      "target": "GetSnippetsResponse",
+      "name": "SnippetsResponse",
+      "target": "SnippetsResponse",
       "nicification": "GetSnippetsResponse",
       "field": "response",
       "parent": "GetSnippetsResponseDto",
@@ -10629,7 +10944,7 @@
       "target": "SnippetsDto",
       "nicification": "GetSnippetsResponseSnippetsDto",
       "field": "snippets",
-      "parent": "GetSnippetsResponse",
+      "parent": "SnippetsResponse",
       "source": "#/components/schemas/GetSnippetsResponseDto/properties/response/properties/snippets/items",
       "signature": "0d42c6c36ee173ff441bb83d2036fc0c787163b2572380cf25d4d0f4345dff80"
     },
@@ -10795,51 +11110,51 @@
     },
     {
       "action": "hoisted",
-      "name": "GetStatusResponse",
-      "target": "GetStatusResponse",
+      "name": "StatusResponse",
+      "target": "StatusResponse",
       "nicification": "GetStatusResponse",
       "field": "response",
       "parent": "GetStatusResponseDto",
       "source": "#/components/schemas/GetStatusResponseDto/properties/response",
-      "signature": "7c3f1dfd9fdebd4424bc9f05f5b0eb14618ce413f039001dcb839cef0f261621"
+      "signature": "1528077a822c12176ebaadddfcf0d1e30fa69eace28962f3b963cc9d55fb0ed8"
     },
     {
       "action": "hoisted",
-      "name": "GetStatusResponseAuthenticationDto",
-      "target": "GetStatusResponseAuthenticationDto",
+      "name": "StatusResponseAuthenticationDto",
+      "target": "StatusResponseAuthenticationDto",
       "nicification": "AuthenticationDto",
       "field": "authentication",
-      "parent": "GetStatusResponse",
+      "parent": "StatusResponse",
       "source": "#/components/schemas/GetStatusResponseDto/properties/response/properties/authentication",
-      "signature": "be83ded42391785c2fb49484dabfb6432af78b4de3aeac7503f2f9dff34ce4bb"
+      "signature": "d454ac1edee92971f6af9b64f980a38680728ac0a738fa592351cbafe752051a"
     },
     {
       "action": "hoisted",
-      "name": "GetStatusResponseAuthenticationOauth2Dto",
-      "target": "GetStatusResponseAuthenticationOauth2Dto",
+      "name": "StatusResponseAuthenticationOauth2Dto",
+      "target": "StatusResponseAuthenticationOauth2Dto",
       "nicification": "Oauth2Dto",
       "field": "oauth2",
-      "parent": "GetStatusResponseAuthenticationDto",
+      "parent": "StatusResponseAuthenticationDto",
       "source": "#/components/schemas/GetStatusResponseDto/properties/response/properties/authentication/properties/oauth2",
       "signature": "75cba33e001a02e51b71bd4581cc6f16caf7e1897882a1243947f8d3d5e765b0"
     },
     {
       "action": "hoisted",
-      "name": "GetStatusResponseAuthenticationPasskeyDto",
-      "target": "GetStatusResponseAuthenticationPasskeyDto",
+      "name": "StatusResponseAuthenticationPasskeyDto",
+      "target": "StatusResponseAuthenticationPasskeyDto",
       "nicification": "PasskeyDto",
       "field": "passkey",
-      "parent": "GetStatusResponseAuthenticationDto",
+      "parent": "StatusResponseAuthenticationDto",
       "source": "#/components/schemas/GetStatusResponseDto/properties/response/properties/authentication/properties/passkey",
       "signature": "7a360f55297d55d27c75c763edc05997a55d24c21583c783d41fd0c58ead8b4d"
     },
     {
       "action": "reused",
-      "name": "GetStatusResponseAuthenticationPasswordDto",
-      "target": "GetStatusResponseAuthenticationPasskeyDto",
+      "name": "StatusResponseAuthenticationPasswordDto",
+      "target": "StatusResponseAuthenticationPasskeyDto",
       "nicification": "PasswordDto",
       "field": "password",
-      "parent": "GetStatusResponseAuthenticationDto",
+      "parent": "StatusResponseAuthenticationDto",
       "source": "#/components/schemas/GetStatusResponseDto/properties/response/properties/authentication/properties/password",
       "signature": "7a360f55297d55d27c75c763edc05997a55d24c21583c783d41fd0c58ead8b4d"
     },
@@ -10849,14 +11164,14 @@
       "target": "BrandingSettingsDto2",
       "nicification": "BrandingDto",
       "field": "branding",
-      "parent": "GetStatusResponse",
+      "parent": "StatusResponse",
       "source": "#/components/schemas/GetStatusResponseDto/properties/response/properties/branding",
       "signature": "ab2a69e3189997f781ff182a82649c8e87ef7c172be87cf00150294b8861b23b"
     },
     {
       "action": "hoisted",
-      "name": "GetSubpageConfigByShortUuidResponse",
-      "target": "GetSubpageConfigByShortUuidResponse",
+      "name": "SubpageConfigByShortUuidResponse",
+      "target": "SubpageConfigByShortUuidResponse",
       "nicification": "GetSubpageConfigByShortUuidResponse",
       "field": "response",
       "parent": "GetSubpageConfigByShortUuidResponseDto",
@@ -10955,8 +11270,8 @@
     },
     {
       "action": "hoisted",
-      "name": "GetSubscriptionPageConfigsResponse",
-      "target": "GetSubscriptionPageConfigsResponse",
+      "name": "SubscriptionPageConfigsResponse",
+      "target": "SubscriptionPageConfigsResponse",
       "nicification": "GetSubscriptionPageConfigsResponse",
       "field": "response",
       "parent": "GetSubscriptionPageConfigsResponseDto",
@@ -10969,14 +11284,14 @@
       "target": "SubscriptionPageConfigDto",
       "nicification": "GetSubscriptionPageConfigsResponseConfigsDto",
       "field": "configs",
-      "parent": "GetSubscriptionPageConfigsResponse",
+      "parent": "SubscriptionPageConfigsResponse",
       "source": "#/components/schemas/GetSubscriptionPageConfigsResponseDto/properties/response/properties/configs/items",
       "signature": "62c44763d50f4d1f999450a74fa6b7162a638a3e3806ed03a39e833d8260dfe8"
     },
     {
       "action": "reused",
-      "name": "GetSubscriptionRequestHistoryResponse",
-      "target": "GetUserSubscriptionRequestHistoryResponse",
+      "name": "SubscriptionRequestHistoryResponse",
+      "target": "UserSubscriptionRequestHistoryResponse",
       "nicification": "GetSubscriptionRequestHistoryResponse",
       "field": "response",
       "parent": "GetSubscriptionRequestHistoryResponseDto",
@@ -10989,7 +11304,7 @@
       "target": "SubscriptionRequestHistoryDto",
       "nicification": "GetSubscriptionRequestHistoryResponseRecordsDto",
       "field": "records",
-      "parent": "GetSubscriptionRequestHistoryResponse",
+      "parent": "SubscriptionRequestHistoryResponse",
       "source": "#/components/schemas/GetSubscriptionRequestHistoryResponseDto/properties/response/properties/records/items",
       "signature": "9fb3ebb561d9ab26a0a1ee236f82252a027d49f39830ad509d882c8905b1e021"
     },
@@ -11001,12 +11316,12 @@
       "field": "response",
       "parent": "GetSubscriptionRequestHistoryStatsResponseDto",
       "source": "#/components/schemas/GetSubscriptionRequestHistoryStatsResponseDto/properties/response",
-      "signature": "52ac97c5f8b6b37815a65b7ba6dbc63401cefe3b4812a6e3f476581ca9d31d96"
+      "signature": "4de55d5ba266abc5d25fd3e434b4b3ca806c94bd19231f8cf2b67f81f7660d1c"
     },
     {
       "action": "reused",
-      "name": "GetSubscriptionRequestHistoryStatsResponseModelByParsedAppDto",
-      "target": "GetHwidDevicesStatsResponseByPlatformByAppDto",
+      "name": "SubscriptionRequestHistoryStatsResponseModelByParsedAppDto",
+      "target": "HwidDevicesStatsResponseByPlatformByAppDto",
       "nicification": "ByParsedAppDto",
       "field": "byParsedApp",
       "parent": "GetSubscriptionRequestHistoryStatsResponseModelDto",
@@ -11015,8 +11330,8 @@
     },
     {
       "action": "hoisted",
-      "name": "GetSubscriptionRequestHistoryStatsResponseModelHourlyRequestStatsDto",
-      "target": "GetSubscriptionRequestHistoryStatsResponseModelHourlyRequestStatsDto",
+      "name": "SubscriptionRequestHistoryStatsResponseModelHourlyRequestStatsDto",
+      "target": "SubscriptionRequestHistoryStatsResponseModelHourlyRequestStatsDto",
       "nicification": "HourlyRequestStatsDto",
       "field": "hourlyRequestStats",
       "parent": "GetSubscriptionRequestHistoryStatsResponseModelDto",
@@ -11135,8 +11450,8 @@
     },
     {
       "action": "hoisted",
-      "name": "GetTemplatesResponse",
-      "target": "GetTemplatesResponse",
+      "name": "TemplatesResponse",
+      "target": "TemplatesResponse",
       "nicification": "GetTemplatesResponse",
       "field": "response",
       "parent": "GetTemplatesResponseDto",
@@ -11149,34 +11464,34 @@
       "target": "SubscriptionTemplateDto",
       "nicification": "GetTemplatesResponseTemplatesDto",
       "field": "templates",
-      "parent": "GetTemplatesResponse",
+      "parent": "TemplatesResponse",
       "source": "#/components/schemas/GetTemplatesResponseDto/properties/response/properties/templates/items",
       "signature": "ce2205ee224e5942573d8b8595a7718e2b5e65c023d87cb920d8c97fcb0e4e61"
     },
     {
       "action": "hoisted",
-      "name": "GetTopUsersByHwidDevicesResponse",
-      "target": "GetTopUsersByHwidDevicesResponse",
+      "name": "TopUsersByHwidDevicesResponse",
+      "target": "TopUsersByHwidDevicesResponse",
       "nicification": "GetTopUsersByHwidDevicesResponse",
       "field": "response",
       "parent": "GetTopUsersByHwidDevicesResponseDto",
       "source": "#/components/schemas/GetTopUsersByHwidDevicesResponseDto/properties/response",
-      "signature": "57bd401f4d62b7195aa710eb68d762da030f7c15b3e821203ddcd835fc1df29f"
+      "signature": "4f4096064e50235089ab9ef96b7b22cb3657334fd70115fa45d678129630423c"
     },
     {
       "action": "hoisted",
-      "name": "GetTopUsersByHwidDevicesResponseUsersDto",
-      "target": "GetTopUsersByHwidDevicesResponseUsersDto",
+      "name": "TopUsersByHwidDevicesResponseUsersDto",
+      "target": "TopUsersByHwidDevicesResponseUsersDto",
       "nicification": "GetTopUsersByHwidDevicesResponseUsersDto",
       "field": "users",
-      "parent": "GetTopUsersByHwidDevicesResponse",
+      "parent": "TopUsersByHwidDevicesResponse",
       "source": "#/components/schemas/GetTopUsersByHwidDevicesResponseDto/properties/response/properties/users/items",
       "signature": "485169ec2ffdba05bf8b1c20703794847e95f7ab71576a20837f8c86843ea1f1"
     },
     {
       "action": "hoisted",
-      "name": "GetTorrentBlockerReportsResponse",
-      "target": "GetTorrentBlockerReportsResponse",
+      "name": "TorrentBlockerReportsResponse",
+      "target": "TorrentBlockerReportsResponse",
       "nicification": "GetTorrentBlockerReportsResponse",
       "field": "response",
       "parent": "GetTorrentBlockerReportsResponseDto",
@@ -11189,7 +11504,7 @@
       "target": "TorrentBlockerReportDto",
       "nicification": "GetTorrentBlockerReportsResponseRecordsDto",
       "field": "records",
-      "parent": "GetTorrentBlockerReportsResponse",
+      "parent": "TorrentBlockerReportsResponse",
       "source": "#/components/schemas/GetTorrentBlockerReportsResponseDto/properties/response/properties/records/items",
       "signature": "69b49c7de85e7061998740b7269523a7c3fe7c4e79cb82c3af30228ede2874bb"
     },
@@ -11245,41 +11560,41 @@
     },
     {
       "action": "hoisted",
-      "name": "GetTorrentBlockerReportsStatsResponse",
-      "target": "GetTorrentBlockerReportsStatsResponse",
+      "name": "TorrentBlockerReportsStatsResponse",
+      "target": "TorrentBlockerReportsStatsResponse",
       "nicification": "GetTorrentBlockerReportsStatsResponse",
       "field": "response",
       "parent": "GetTorrentBlockerReportsStatsResponseDto",
       "source": "#/components/schemas/GetTorrentBlockerReportsStatsResponseDto/properties/response",
-      "signature": "29742c57cf68bb5a9efae7cc8f289abca9152a719899682f947d776f91fce484"
+      "signature": "dc97cccc3f5f6b8489f0acf44f6930188ce488d69102a87d322e7968f817b52d"
     },
     {
       "action": "hoisted",
-      "name": "GetTorrentBlockerReportsStatsResponseStatsDto",
-      "target": "GetTorrentBlockerReportsStatsResponseStatsDto",
+      "name": "TorrentBlockerReportsStatsResponseStatsDto",
+      "target": "TorrentBlockerReportsStatsResponseStatsDto",
       "nicification": "GetTorrentBlockerReportsStatsResponseStatsDto",
       "field": "stats",
-      "parent": "GetTorrentBlockerReportsStatsResponse",
+      "parent": "TorrentBlockerReportsStatsResponse",
       "source": "#/components/schemas/GetTorrentBlockerReportsStatsResponseDto/properties/response/properties/stats",
       "signature": "2104e7a1091b4ff4cf68251d227b34ae95ffddc6c8c4c432305b32274a511852"
     },
     {
       "action": "hoisted",
-      "name": "GetTorrentBlockerReportsStatsResponseTopNodesDto",
-      "target": "GetTorrentBlockerReportsStatsResponseTopNodesDto",
+      "name": "TorrentBlockerReportsStatsResponseTopNodesDto",
+      "target": "TorrentBlockerReportsStatsResponseTopNodesDto",
       "nicification": "GetTorrentBlockerReportsStatsResponseTopNodesDto",
       "field": "topNodes",
-      "parent": "GetTorrentBlockerReportsStatsResponse",
+      "parent": "TorrentBlockerReportsStatsResponse",
       "source": "#/components/schemas/GetTorrentBlockerReportsStatsResponseDto/properties/response/properties/topNodes/items",
       "signature": "30be895cfccc92cc29024749bc72f25cd0c341b1a6afd75f849e4777238444a4"
     },
     {
       "action": "hoisted",
-      "name": "GetTorrentBlockerReportsStatsResponseTopUsersDto",
-      "target": "GetTorrentBlockerReportsStatsResponseTopUsersDto",
+      "name": "TorrentBlockerReportsStatsResponseTopUsersDto",
+      "target": "TorrentBlockerReportsStatsResponseTopUsersDto",
       "nicification": "GetTorrentBlockerReportsStatsResponseTopUsersDto",
       "field": "topUsers",
-      "parent": "GetTorrentBlockerReportsStatsResponse",
+      "parent": "TorrentBlockerReportsStatsResponse",
       "source": "#/components/schemas/GetTorrentBlockerReportsStatsResponseDto/properties/response/properties/topUsers/items",
       "signature": "b39b2d540e6fcb6c7c20a8ab6730a551f95ef351e5c72d7433758551dc87db32"
     },
@@ -11301,12 +11616,12 @@
       "field": "activeNodes",
       "parent": "GetUserAccessibleNodesResponseModelDto",
       "source": "#/components/schemas/GetUserAccessibleNodesResponseDto/properties/response/properties/activeNodes/items",
-      "signature": "e38ded1dee1cff1d4d44c81b0aebdc323c5025650e7cf385769d5152550c5898"
+      "signature": "4bcc275abcff49516789e21a1f7bc2e883432aa60f6f92f98f432f13eba3e208"
     },
     {
       "action": "hoisted",
-      "name": "GetUserAccessibleNodesActiveSquadsDto",
-      "target": "GetUserAccessibleNodesActiveSquadsDto",
+      "name": "UserAccessibleNodesActiveSquadsDto",
+      "target": "UserAccessibleNodesActiveSquadsDto",
       "nicification": "ActiveSquadsDto",
       "field": "activeSquads",
       "parent": "GetUserAccessibleNodesDto",
@@ -11315,7 +11630,7 @@
     },
     {
       "action": "reused",
-      "name": "GetUserByEmailResponse",
+      "name": "UserByEmailResponse",
       "target": "ExtendedUsersDto",
       "nicification": "GetUserByEmailResponse",
       "field": "response",
@@ -11329,7 +11644,7 @@
       "target": "BaseInternalSquadDto",
       "nicification": "GetUserByEmailResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
-      "parent": "GetUserByEmailResponse",
+      "parent": "UserByEmailResponse",
       "source": "#/components/schemas/GetUserByEmailResponseDto/properties/response/items/properties/activeInternalSquads/items",
       "signature": "c58b50885bb7761d19b4854110c90821aab89228fbd2860cd5c827d0fd729b58"
     },
@@ -11339,13 +11654,13 @@
       "target": "UserTrafficDto",
       "nicification": "GetUserByEmailResponseUserTrafficDto",
       "field": "userTraffic",
-      "parent": "GetUserByEmailResponse",
+      "parent": "UserByEmailResponse",
       "source": "#/components/schemas/GetUserByEmailResponseDto/properties/response/items/properties/userTraffic",
       "signature": "b68e5f5b2c0e4912502921638da0ec8234e13780e6ad290c380350c35d46e3b1"
     },
     {
       "action": "reused",
-      "name": "GetUserByIdResponse",
+      "name": "UserByIdResponse",
       "target": "ExtendedUsersDto",
       "nicification": "GetUserByIdResponse",
       "field": "response",
@@ -11359,7 +11674,7 @@
       "target": "BaseInternalSquadDto",
       "nicification": "GetUserByIdResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
-      "parent": "GetUserByIdResponse",
+      "parent": "UserByIdResponse",
       "source": "#/components/schemas/GetUserByIdResponseDto/properties/response/properties/activeInternalSquads/items",
       "signature": "c58b50885bb7761d19b4854110c90821aab89228fbd2860cd5c827d0fd729b58"
     },
@@ -11369,13 +11684,13 @@
       "target": "UserTrafficDto",
       "nicification": "GetUserByIdResponseUserTrafficDto",
       "field": "userTraffic",
-      "parent": "GetUserByIdResponse",
+      "parent": "UserByIdResponse",
       "source": "#/components/schemas/GetUserByIdResponseDto/properties/response/properties/userTraffic",
       "signature": "b68e5f5b2c0e4912502921638da0ec8234e13780e6ad290c380350c35d46e3b1"
     },
     {
       "action": "reused",
-      "name": "GetUserByShortUuidResponse",
+      "name": "UserByShortUuidResponse",
       "target": "ExtendedUsersDto",
       "nicification": "GetUserByShortUuidResponse",
       "field": "response",
@@ -11389,7 +11704,7 @@
       "target": "BaseInternalSquadDto",
       "nicification": "GetUserByShortUuidResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
-      "parent": "GetUserByShortUuidResponse",
+      "parent": "UserByShortUuidResponse",
       "source": "#/components/schemas/GetUserByShortUuidResponseDto/properties/response/properties/activeInternalSquads/items",
       "signature": "c58b50885bb7761d19b4854110c90821aab89228fbd2860cd5c827d0fd729b58"
     },
@@ -11399,13 +11714,13 @@
       "target": "UserTrafficDto",
       "nicification": "GetUserByShortUuidResponseUserTrafficDto",
       "field": "userTraffic",
-      "parent": "GetUserByShortUuidResponse",
+      "parent": "UserByShortUuidResponse",
       "source": "#/components/schemas/GetUserByShortUuidResponseDto/properties/response/properties/userTraffic",
       "signature": "b68e5f5b2c0e4912502921638da0ec8234e13780e6ad290c380350c35d46e3b1"
     },
     {
       "action": "reused",
-      "name": "GetUserByTagResponse",
+      "name": "UserByTagResponse",
       "target": "ExtendedUsersDto",
       "nicification": "GetUserByTagResponse",
       "field": "response",
@@ -11419,7 +11734,7 @@
       "target": "BaseInternalSquadDto",
       "nicification": "GetUserByTagResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
-      "parent": "GetUserByTagResponse",
+      "parent": "UserByTagResponse",
       "source": "#/components/schemas/GetUserByTagResponseDto/properties/response/items/properties/activeInternalSquads/items",
       "signature": "c58b50885bb7761d19b4854110c90821aab89228fbd2860cd5c827d0fd729b58"
     },
@@ -11429,13 +11744,13 @@
       "target": "UserTrafficDto",
       "nicification": "GetUserByTagResponseUserTrafficDto",
       "field": "userTraffic",
-      "parent": "GetUserByTagResponse",
+      "parent": "UserByTagResponse",
       "source": "#/components/schemas/GetUserByTagResponseDto/properties/response/items/properties/userTraffic",
       "signature": "b68e5f5b2c0e4912502921638da0ec8234e13780e6ad290c380350c35d46e3b1"
     },
     {
       "action": "reused",
-      "name": "GetUserByTelegramIdResponse",
+      "name": "UserByTelegramIdResponse",
       "target": "ExtendedUsersDto",
       "nicification": "GetUserByTelegramIdResponse",
       "field": "response",
@@ -11449,7 +11764,7 @@
       "target": "BaseInternalSquadDto",
       "nicification": "GetUserByTelegramIdResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
-      "parent": "GetUserByTelegramIdResponse",
+      "parent": "UserByTelegramIdResponse",
       "source": "#/components/schemas/GetUserByTelegramIdResponseDto/properties/response/items/properties/activeInternalSquads/items",
       "signature": "c58b50885bb7761d19b4854110c90821aab89228fbd2860cd5c827d0fd729b58"
     },
@@ -11459,13 +11774,13 @@
       "target": "UserTrafficDto",
       "nicification": "GetUserByTelegramIdResponseUserTrafficDto",
       "field": "userTraffic",
-      "parent": "GetUserByTelegramIdResponse",
+      "parent": "UserByTelegramIdResponse",
       "source": "#/components/schemas/GetUserByTelegramIdResponseDto/properties/response/items/properties/userTraffic",
       "signature": "b68e5f5b2c0e4912502921638da0ec8234e13780e6ad290c380350c35d46e3b1"
     },
     {
       "action": "reused",
-      "name": "GetUserByUsernameResponse",
+      "name": "UserByUsernameResponse",
       "target": "ExtendedUsersDto",
       "nicification": "GetUserByUsernameResponse",
       "field": "response",
@@ -11479,7 +11794,7 @@
       "target": "BaseInternalSquadDto",
       "nicification": "GetUserByUsernameResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
-      "parent": "GetUserByUsernameResponse",
+      "parent": "UserByUsernameResponse",
       "source": "#/components/schemas/GetUserByUsernameResponseDto/properties/response/properties/activeInternalSquads/items",
       "signature": "c58b50885bb7761d19b4854110c90821aab89228fbd2860cd5c827d0fd729b58"
     },
@@ -11489,13 +11804,13 @@
       "target": "UserTrafficDto",
       "nicification": "GetUserByUsernameResponseUserTrafficDto",
       "field": "userTraffic",
-      "parent": "GetUserByUsernameResponse",
+      "parent": "UserByUsernameResponse",
       "source": "#/components/schemas/GetUserByUsernameResponseDto/properties/response/properties/userTraffic",
       "signature": "b68e5f5b2c0e4912502921638da0ec8234e13780e6ad290c380350c35d46e3b1"
     },
     {
       "action": "reused",
-      "name": "GetUserByUuidResponse",
+      "name": "UserByUuidResponse",
       "target": "ExtendedUsersDto",
       "nicification": "GetUserByUuidResponse",
       "field": "response",
@@ -11509,7 +11824,7 @@
       "target": "BaseInternalSquadDto",
       "nicification": "GetUserByUuidResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
-      "parent": "GetUserByUuidResponse",
+      "parent": "UserByUuidResponse",
       "source": "#/components/schemas/GetUserByUuidResponseDto/properties/response/properties/activeInternalSquads/items",
       "signature": "c58b50885bb7761d19b4854110c90821aab89228fbd2860cd5c827d0fd729b58"
     },
@@ -11519,14 +11834,14 @@
       "target": "UserTrafficDto",
       "nicification": "GetUserByUuidResponseUserTrafficDto",
       "field": "userTraffic",
-      "parent": "GetUserByUuidResponse",
+      "parent": "UserByUuidResponse",
       "source": "#/components/schemas/GetUserByUuidResponseDto/properties/response/properties/userTraffic",
       "signature": "b68e5f5b2c0e4912502921638da0ec8234e13780e6ad290c380350c35d46e3b1"
     },
     {
       "action": "reused",
-      "name": "GetUserHwidDevicesResponse",
-      "target": "GetAllHwidDevicesResponse",
+      "name": "UserHwidDevicesResponse",
+      "target": "AllHwidDevicesResponse",
       "nicification": "GetUserHwidDevicesResponse",
       "field": "response",
       "parent": "GetUserHwidDevicesResponseDto",
@@ -11539,34 +11854,34 @@
       "target": "HwidUserDeviceDto",
       "nicification": "GetUserHwidDevicesResponseDevicesDto",
       "field": "devices",
-      "parent": "GetUserHwidDevicesResponse",
+      "parent": "UserHwidDevicesResponse",
       "source": "#/components/schemas/GetUserHwidDevicesResponseDto/properties/response/properties/devices/items",
       "signature": "f1b21fc08882544351928e551df9174780b1d4d6f10c2f94839d208ed5f138a2"
     },
     {
       "action": "hoisted",
-      "name": "GetUserMetadataResponse",
-      "target": "GetUserMetadataResponse",
+      "name": "MetadataResponse",
+      "target": "MetadataResponse",
       "nicification": "GetUserMetadataResponse",
       "field": "response",
       "parent": "GetUserMetadataResponseDto",
       "source": "#/components/schemas/GetUserMetadataResponseDto/properties/response",
-      "signature": "c32a745e07b2bcb681a1defca7f8547edff8e4036a73c6c1bff2941cf273502c"
+      "signature": "d7d85aa719c8da8f0fbf562fa94d5d0b5d1a5ef5f77f711df337689f55e76506"
     },
     {
       "action": "hoisted",
-      "name": "GetUserMetadataResponseMetadataDto",
-      "target": "GetUserMetadataResponseMetadataDto",
+      "name": "MetadataResponseMetadataDto",
+      "target": "MetadataResponseMetadataDto",
       "nicification": "GetUserMetadataResponseMetadataDto",
       "field": "metadata",
-      "parent": "GetUserMetadataResponse",
+      "parent": "MetadataResponse",
       "source": "#/components/schemas/GetUserMetadataResponseDto/properties/response/properties/metadata",
       "signature": "efddc7bd8bbcef73a14eb1ace1ffdaec81e518ef1e13c1e9271d0b8acb694a49"
     },
     {
       "action": "hoisted",
-      "name": "GetUserSubscriptionRequestHistoryResponse",
-      "target": "GetUserSubscriptionRequestHistoryResponse",
+      "name": "UserSubscriptionRequestHistoryResponse",
+      "target": "UserSubscriptionRequestHistoryResponse",
       "nicification": "GetUserSubscriptionRequestHistoryResponse",
       "field": "response",
       "parent": "GetUserSubscriptionRequestHistoryResponseDto",
@@ -11579,7 +11894,7 @@
       "target": "SubscriptionRequestHistoryDto",
       "nicification": "GetUserSubscriptionRequestHistoryResponseRecordsDto",
       "field": "records",
-      "parent": "GetUserSubscriptionRequestHistoryResponse",
+      "parent": "UserSubscriptionRequestHistoryResponse",
       "source": "#/components/schemas/GetUserSubscriptionRequestHistoryResponseDto/properties/response/properties/records/items",
       "signature": "9fb3ebb561d9ab26a0a1ee236f82252a027d49f39830ad509d882c8905b1e021"
     },
@@ -11595,7 +11910,7 @@
     },
     {
       "action": "reused",
-      "name": "GetUsersStreamResponseModelUsersDto",
+      "name": "UsersStreamResponseModelUsersDto",
       "target": "ExtendedUsersDto",
       "nicification": "GetUsersStreamResponseUsersDto",
       "field": "users",
@@ -11609,7 +11924,7 @@
       "target": "BaseInternalSquadDto",
       "nicification": "GetUsersStreamResponseActiveInternalSquadsDto",
       "field": "activeInternalSquads",
-      "parent": "GetUsersStreamResponseModelUsersDto",
+      "parent": "UsersStreamResponseModelUsersDto",
       "source": "#/components/schemas/GetUsersStreamResponseDto/properties/response/properties/users/items/properties/activeInternalSquads/items",
       "signature": "c58b50885bb7761d19b4854110c90821aab89228fbd2860cd5c827d0fd729b58"
     },
@@ -11619,7 +11934,7 @@
       "target": "UserTrafficDto",
       "nicification": "GetUsersStreamResponseUserTrafficDto",
       "field": "userTraffic",
-      "parent": "GetUsersStreamResponseModelUsersDto",
+      "parent": "UsersStreamResponseModelUsersDto",
       "source": "#/components/schemas/GetUsersStreamResponseDto/properties/response/properties/users/items/properties/userTraffic",
       "signature": "b68e5f5b2c0e4912502921638da0ec8234e13780e6ad290c380350c35d46e3b1"
     },
@@ -12186,7 +12501,7 @@
     {
       "action": "reused",
       "name": "ReorderConfigProfilesResponse",
-      "target": "GetConfigProfilesResponse",
+      "target": "ConfigProfilesResponse",
       "nicification": "ReorderConfigProfilesResponse",
       "field": "response",
       "parent": "ReorderConfigProfilesResponseDto",
@@ -12236,7 +12551,7 @@
     {
       "action": "reused",
       "name": "ReorderExternalSquadsResponse",
-      "target": "GetExternalSquadsResponse",
+      "target": "ExternalSquadsResponse",
       "nicification": "ReorderExternalSquadsResponse",
       "field": "response",
       "parent": "ReorderExternalSquadsResponseDto",
@@ -12346,7 +12661,7 @@
     {
       "action": "reused",
       "name": "ReorderInternalSquadsResponse",
-      "target": "GetInternalSquadsResponse",
+      "target": "InternalSquadsResponse",
       "nicification": "ReorderInternalSquadsResponse",
       "field": "response",
       "parent": "ReorderInternalSquadsResponseDto",
@@ -12396,7 +12711,7 @@
     {
       "action": "reused",
       "name": "ReorderNodePluginsResponse",
-      "target": "GetNodePluginsResponse",
+      "target": "NodePluginsResponse",
       "nicification": "ReorderNodePluginsResponse",
       "field": "response",
       "parent": "ReorderNodePluginsResponseDto",
@@ -12526,7 +12841,7 @@
     {
       "action": "reused",
       "name": "ReorderSubscriptionPageConfigsResponse",
-      "target": "GetSubscriptionPageConfigsResponse",
+      "target": "SubscriptionPageConfigsResponse",
       "nicification": "ReorderSubscriptionPageConfigsResponse",
       "field": "response",
       "parent": "ReorderSubscriptionPageConfigsResponseDto",
@@ -12556,7 +12871,7 @@
     {
       "action": "reused",
       "name": "ReorderSubscriptionTemplatesResponse",
-      "target": "GetTemplatesResponse",
+      "target": "TemplatesResponse",
       "nicification": "ReorderSubscriptionTemplatesResponse",
       "field": "response",
       "parent": "ReorderSubscriptionTemplatesResponseDto",
@@ -12676,7 +12991,7 @@
     {
       "action": "reused",
       "name": "TruncateTorrentBlockerReportsResponse",
-      "target": "GetTorrentBlockerReportsResponse",
+      "target": "TorrentBlockerReportsResponse",
       "nicification": "TruncateTorrentBlockerReportsResponse",
       "field": "response",
       "parent": "TruncateTorrentBlockerReportsResponseDto",
@@ -12746,7 +13061,7 @@
     {
       "action": "reused",
       "name": "UpdateConfigProfileRequestConfigDto",
-      "target": "GetUserMetadataResponseMetadataDto",
+      "target": "MetadataResponseMetadataDto",
       "nicification": "UpdateConfigProfileRequestConfigDto",
       "field": "config",
       "parent": "UpdateConfigProfileRequestDto",
@@ -12936,12 +13251,12 @@
     {
       "action": "reused",
       "name": "UpdateInfraBillingNodeResponse",
-      "target": "GetInfraBillingNodesResponse",
+      "target": "InfraBillingNodesResponse",
       "nicification": "UpdateInfraBillingNodeResponse",
       "field": "response",
       "parent": "UpdateInfraBillingNodeResponseDto",
       "source": "#/components/schemas/UpdateInfraBillingNodeResponseDto/properties/response",
-      "signature": "80579eed4fe5e03335e7bb0d6e0e4e000560df6a605498c4a247896fda65304c"
+      "signature": "f91abaf5edf93e3915f98b85abd4427941e3a6439ce543183c47a748357c2eac"
     },
     {
       "action": "reused",
@@ -12986,7 +13301,7 @@
     {
       "action": "reused",
       "name": "UpdateInfraBillingNodeResponseStatsDto",
-      "target": "GetInfraBillingNodesResponseStatsDto",
+      "target": "InfraBillingNodesResponseStatsDto",
       "nicification": "UpdateInfraBillingNodeResponseStatsDto",
       "field": "stats",
       "parent": "UpdateInfraBillingNodeResponse",
@@ -13211,12 +13526,12 @@
       "field": "response",
       "parent": "UpdatePasskeyResponseDto",
       "source": "#/components/schemas/UpdatePasskeyResponseDto/properties/response",
-      "signature": "84af431ca434f961e31b3e01a58b2134556465637f89991d056f1a429653b585"
+      "signature": "0d0d053329260b753793f7c31d44efa753cfe280b82da5d0415a5a3f0cef66ee"
     },
     {
       "action": "reused",
       "name": "UpdatePasskeyResponsePasskeysDto",
-      "target": "GetActivePasskeysResponseModelPasskeysDto",
+      "target": "ActivePasskeysResponseModelPasskeysDto",
       "nicification": "UpdatePasskeyResponsePasskeysDto",
       "field": "passkeys",
       "parent": "UpdatePasskeyResponse",
@@ -13436,7 +13751,7 @@
     {
       "action": "reused",
       "name": "UpdateSnippetRequestSnippetDto",
-      "target": "GetUserMetadataResponseMetadataDto",
+      "target": "MetadataResponseMetadataDto",
       "nicification": "UpdateSnippetRequestSnippetDto",
       "field": "snippet",
       "parent": "UpdateSnippetRequestDto",
@@ -13446,7 +13761,7 @@
     {
       "action": "reused",
       "name": "UpdateSnippetResponse",
-      "target": "GetSnippetsResponse",
+      "target": "SnippetsResponse",
       "nicification": "UpdateSnippetResponse",
       "field": "response",
       "parent": "UpdateSnippetResponseDto",
@@ -13666,7 +13981,7 @@
     {
       "action": "reused",
       "name": "TemplateJsonDto",
-      "target": "GetUserMetadataResponseMetadataDto",
+      "target": "MetadataResponseMetadataDto",
       "nicification": "TemplateJsonDto",
       "field": "templateJson",
       "parent": "UpdateTemplateRequestDto",
@@ -13716,7 +14031,7 @@
     {
       "action": "reused",
       "name": "UpsertNodeMetadataRequestBodyMetadataDto",
-      "target": "GetUserMetadataResponseMetadataDto",
+      "target": "MetadataResponseMetadataDto",
       "nicification": "UpsertNodeMetadataRequestBodyMetadataDto",
       "field": "metadata",
       "parent": "UpsertNodeMetadataRequestBodyDto",
@@ -13726,17 +14041,17 @@
     {
       "action": "reused",
       "name": "UpsertNodeMetadataResponse",
-      "target": "GetUserMetadataResponse",
+      "target": "MetadataResponse",
       "nicification": "UpsertNodeMetadataResponse",
       "field": "response",
       "parent": "UpsertNodeMetadataResponseDto",
       "source": "#/components/schemas/UpsertNodeMetadataResponseDto/properties/response",
-      "signature": "c32a745e07b2bcb681a1defca7f8547edff8e4036a73c6c1bff2941cf273502c"
+      "signature": "d7d85aa719c8da8f0fbf562fa94d5d0b5d1a5ef5f77f711df337689f55e76506"
     },
     {
       "action": "reused",
       "name": "UpsertNodeMetadataResponseMetadataDto",
-      "target": "GetUserMetadataResponseMetadataDto",
+      "target": "MetadataResponseMetadataDto",
       "nicification": "UpsertNodeMetadataResponseMetadataDto",
       "field": "metadata",
       "parent": "UpsertNodeMetadataResponse",
@@ -13746,7 +14061,7 @@
     {
       "action": "reused",
       "name": "UpsertUserMetadataRequestBodyMetadataDto",
-      "target": "GetUserMetadataResponseMetadataDto",
+      "target": "MetadataResponseMetadataDto",
       "nicification": "UpsertUserMetadataRequestBodyMetadataDto",
       "field": "metadata",
       "parent": "UpsertUserMetadataRequestBodyDto",
@@ -13756,17 +14071,17 @@
     {
       "action": "reused",
       "name": "UpsertUserMetadataResponse",
-      "target": "GetUserMetadataResponse",
+      "target": "MetadataResponse",
       "nicification": "UpsertUserMetadataResponse",
       "field": "response",
       "parent": "UpsertUserMetadataResponseDto",
       "source": "#/components/schemas/UpsertUserMetadataResponseDto/properties/response",
-      "signature": "c32a745e07b2bcb681a1defca7f8547edff8e4036a73c6c1bff2941cf273502c"
+      "signature": "d7d85aa719c8da8f0fbf562fa94d5d0b5d1a5ef5f77f711df337689f55e76506"
     },
     {
       "action": "reused",
       "name": "UpsertUserMetadataResponseMetadataDto",
-      "target": "GetUserMetadataResponseMetadataDto",
+      "target": "MetadataResponseMetadataDto",
       "nicification": "UpsertUserMetadataResponseMetadataDto",
       "field": "metadata",
       "parent": "UpsertUserMetadataResponse",
@@ -13794,10 +14109,5 @@
       "signature": "f00a3d2fab225bd2aa6c7c5f0bd903dd63ee0b2e20bd6b3f0e30fe315cdc2fb6"
     }
   ],
-  "deprecation_annotations": [
-    {
-      "kind": "schema",
-      "schema": "ErrorCode"
-    }
-  ]
+  "deprecation_annotations": []
 }

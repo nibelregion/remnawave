@@ -1,6 +1,11 @@
 import unittest
 
-from nicifcations_schema import NicificatedSchema, Remnawave, ResponseContentType, Schema
+from nicifcations_schema import (
+    NicificatedSchema,
+    Remnawave,
+    ResponseContentType,
+    Schema,
+)
 from nicifier_schema import apply_response_content_types, hoist_response_components
 
 

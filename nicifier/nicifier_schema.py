@@ -136,6 +136,7 @@ def nicificate_openapi_document(
 
     inlined_map_object_components = inline_map_object_schema_components(improved)
     inline_object_changes = hoist_inline_objects(improved, nicifications)
+    response_schema_component_changes = rename_response_schema_components(improved)
 
     if nicifications.error_responses.enabled:
         # Inline error bodies only became `$ref`s above, so error responses can
@@ -183,6 +184,7 @@ def nicificate_openapi_document(
             "hoisted_responses": len(hoisted_response_components),
             "renamed_responses": len(renamed_response_components),
             "renamed_from_ref_responses": len(renamed_from_ref_responses),
+            "renamed_response_schema_components": len(response_schema_component_changes),
             "inlined_map_object_components": len(inlined_map_object_components),
             "hoisted_inline_objects": len(hoisted_inline_objects),
             "reused_inline_objects": len(reused_inline_objects),
@@ -199,6 +201,7 @@ def nicificate_openapi_document(
         "error_codes": error_code_changes,
         "error_responses": hoisted_error_responses,
         "responses": response_component_changes,
+        "response_schema_components": response_schema_component_changes,
         "map_object_components": inlined_map_object_components,
         "inline_objects": inline_object_changes,
         "deprecation_annotations": deprecated_annotations,
@@ -865,6 +868,78 @@ def _replace_response_references(document: JSONObject, old_name: str, new_name: 
     visit(document.get("components"))
 
 
+def rename_response_schema_components(document: JSONObject, /) -> list[JSONObject]:
+    """Remove a redundant ``Get`` prefix from response-wrapper schemas.
+
+    Source OpenAPI commonly names envelope schemas like
+    ``GetUsersResponseDto`` even though their only payload field is
+    ``response``.  Unlike endpoint operations, component names are shared API
+    types, so prefer the more general ``UsersResponseDto`` name.  The original
+    name is kept when the general name is already claimed.
+    """
+
+    components = document.get("components")
+    if not isinstance(components, dict):
+        return []
+
+    schemas = components.get("schemas")
+    if not isinstance(schemas, dict):
+        return []
+
+    renamed: list[JSONObject] = []
+    used_names = {str(name) for name in schemas}
+    for current_name, schema in list(schemas.items()):
+        if not isinstance(schema, dict) or not _is_response_wrapper_schema(schema):
+            continue
+
+        old_name = str(current_name)
+        new_name = _without_get_prefix(old_name)
+        if new_name == old_name:
+            continue
+
+        existing = schemas.get(new_name)
+        if new_name in used_names:
+            # A previous generated document may contain the already-renamed
+            # component only as a deprecated compatibility placeholder. The
+            # current source schema supersedes it; real components still win.
+            if not (isinstance(existing, dict) and existing.get("deprecated") is True):
+                continue
+
+            del schemas[new_name]
+            used_names.remove(new_name)
+
+        schemas[new_name] = schemas.pop(current_name)
+        used_names.remove(old_name)
+        used_names.add(new_name)
+        _replace_schema_references(document, old_name, new_name)
+        renamed.append({"old_name": old_name, "name": new_name})
+
+    return renamed
+
+
+def _is_response_wrapper_schema(schema: JSONObject, /) -> bool:
+    properties = schema.get("properties")
+    return isinstance(properties, dict) and "response" in properties
+
+
+def _replace_schema_references(document: JSONObject, old_name: str, new_name: str, /) -> None:
+    old_ref = f"#/components/schemas/{old_name}"
+    new_ref = f"#/components/schemas/{new_name}"
+
+    def visit(value: JSON) -> None:
+        if isinstance(value, dict):
+            if value.get("$ref") == old_ref:
+                value["$ref"] = new_ref
+
+            for child in value.values():
+                visit(child)
+        elif isinstance(value, list):
+            for child in value:
+                visit(child)
+
+    visit(document)
+
+
 def hoist_duplicate_error_responses(
     document: JSONObject,
     /,
@@ -963,6 +1038,14 @@ def _plan_inline_object_names(
     used_nicification_names = {str(name) for name in schemas}
     assigned: dict[int, tuple[str, str, str]] = {}
     configured: dict[int, str] = {}
+    planned_model_signatures: dict[str, str] = {}
+
+    def available_model_name(name: str, signature: str) -> bool:
+        if name in schemas:
+            return False
+
+        planned_signature = planned_model_signatures.get(name)
+        return planned_signature is None or planned_signature == signature
 
     def assign_candidate_name(candidate: InlineObjectCandidate) -> tuple[str, str, str]:
         candidate_key = id(candidate)
@@ -993,11 +1076,21 @@ def _plan_inline_object_names(
             contextual_name,
             contextual_name.replace("ErrorBody", "Error"),
         )
-        model_base_name = configured_name if configured_name is not None else contextual_name
+        signature = _schema_signature(candidate.schema)
+        if configured_name is not None:
+            model_base_name = configured_name
+        else:
+            general_name = _without_get_prefix(contextual_name)
+            model_base_name = (
+                general_name
+                if available_model_name(general_name, signature)
+                else contextual_name
+            )
 
         if configured_name is not None:
             configured[candidate_key] = configured_name
 
+        planned_model_signatures.setdefault(model_base_name, signature)
         assigned[candidate_key] = (raw_model_name, model_base_name, parent_model_name)
         return assigned[candidate_key]
 
@@ -1600,6 +1693,16 @@ def _restore_removed_component_schemas(
     for schema_name, previous_schema in previous_schemas.items():
         schema = schemas.get(schema_name)
         if schema is None:
+            renamed_name = _without_get_prefix(schema_name)
+            renamed_schema = schemas.get(renamed_name)
+            if (
+                renamed_name != schema_name
+                and isinstance(renamed_schema, dict)
+                and _is_response_wrapper_schema(previous_schema)
+                and _is_response_wrapper_schema(renamed_schema)
+            ):
+                continue
+
             schemas[schema_name] = _deprecated_schema_copy(previous_schema)
             annotations.append({"kind": "schema", "schema": schema_name})
             continue
@@ -2668,6 +2771,13 @@ def _contextual_schema_model_name(parent_model_name: str, field_name: str, /) ->
     return f"{parent}{field}"
 
 
+def _without_get_prefix(name: str, /) -> str:
+    if re.match(r"^Get(?=[A-Z0-9])", name):
+        return name.removeprefix("Get")
+
+    return name
+
+
 def _json_pointer_escape(value: str, /) -> str:
     return value.replace("~", "~0").replace("/", "~1")
 
@@ -2695,6 +2805,7 @@ __all__ = (
     "inline_map_object_schema_components",
     "apply_response_content_types",
     "nicificate_openapi_document",
+    "rename_response_schema_components",
     "rename_error_response_components_from_refs",
     "update_enum_nicifications",
     "update_object_nicifications",

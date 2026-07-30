@@ -1,21 +1,18 @@
 from __future__ import annotations
 
-import json
 import os
 import re
 import typing
-import urllib.parse
 from dataclasses import dataclass
 
-import wreq.blocking as http
-
-ERRORS_SOURCE_URL: typing.Final = (
-    "https://raw.githubusercontent.com/remnawave/backend/main/"
-    "libs/contract/constants/errors/errors.ts"
-)
-GITHUB_API_URL: typing.Final = "https://api.github.com"
-BACKEND_REPOSITORY: typing.Final = "remnawave/backend"
 ERROR_CODE_EXCEPTION: typing.Final = "HttpExceptionWithErrorCodeType"
+ERRORS_SOURCE_PATH: typing.Final = (
+    "libs",
+    "contract",
+    "constants",
+    "errors",
+    "errors.ts",
+)
 
 
 @dataclass(frozen=True, slots=True)
@@ -44,16 +41,13 @@ NICIFICATED_ERROR_CODES: typing.Final = (
 )
 
 
-def collect_error_codes(*, github_token: str | None = None) -> list[ErrorCode]:
-    source = _download_text(ERRORS_SOURCE_URL, github_token=github_token)
-
-    if not source:
-        raise LookupError("Unable to download source.")
+def collect_error_codes(source_dir: str, /) -> list[ErrorCode]:
+    source = _read_errors_source(source_dir)
 
     declared = parse_declared_error_codes(source)
     declared.extend(NICIFICATED_ERROR_CODES)
 
-    literals = search_literal_error_codes(github_token=github_token)
+    literals = search_literal_error_codes(source_dir)
     known_values = {error.value for error in declared}
 
     declared.extend(
@@ -97,64 +91,32 @@ def _error_entries(source: str, /) -> typing.Iterator[tuple[str, str]]:
         start = body_end + 1
 
 
-def search_literal_error_codes(*, github_token: str | None = None) -> set[str]:
-    query = f"{ERROR_CODE_EXCEPTION} repo:{BACKEND_REPOSITORY}"
-    params = urllib.parse.urlencode({"q": query, "per_page": 100})
-    result = _download_json(f"{GITHUB_API_URL}/search/code?{params}", github_token=github_token)
-
-    if not result:
-        # gh's code search requires authentication for some callers, so the ERRORS
-        # const remains a complete baseline when a token is not configured
-        return set()
-
-    items = result.get("items")
-
-    if not isinstance(items, list):
-        return set()
-
+def search_literal_error_codes(source_dir: str, /) -> set[str]:
     values: set[str] = set()
+    for current, directories, files in os.walk(source_dir):
+        directories[:] = [
+            directory for directory in directories if directory not in {".git", "node_modules"}
+        ]
+        for filename in files:
+            if not filename.endswith(".ts"):
+                continue
 
-    for item in items:
-        if not isinstance(item, dict) or not isinstance(item.get("path"), str):
-            continue
-
-        source_url = (
-            f"https://raw.githubusercontent.com/{BACKEND_REPOSITORY}/main/{item['path']}"
-        )
-        source = _download_text(source_url, github_token=github_token)
-
-        if source:
-            values.update(_literal_exception_error_codes(source))
+            try:
+                with open(os.path.join(current, filename), encoding="utf-8") as handle:
+                    values.update(_literal_exception_error_codes(handle.read()))
+            except OSError:
+                continue
 
     return values
 
 
-def _download_json(url: str, /, *, github_token: str | None = None) -> dict[str, typing.Any] | None:
-    text = _download_text(url, github_token=github_token)
-
-    if text is None:
-        return None
-
-    value = json.loads(text)
-    if not isinstance(value, dict):
-        raise ValueError(f"Expected JSON object from {url}")
-
-    return typing.cast("dict[str, typing.Any]", value)
-
-
-def _download_text(url: str, /, *, github_token: str | None = None) -> str | None:
-    token = github_token or os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
-    headers = {"Accept": "application/vnd.github+json", "User-Agent": "remnawave-openapi"}
-
-    if token:
-        headers["Authorization"] = f"Bearer {token}"
-
-    response = http.get(url, headers=headers)
-
-    if response.status.as_int() in {401, 403}:
-        return None
-
-    return response.raise_for_status() or response.text("utf-8")
+def _read_errors_source(source_dir: str, /) -> str:
+    path = os.path.join(source_dir, *ERRORS_SOURCE_PATH)
+    try:
+        with open(path, encoding="utf-8") as handle:
+            return handle.read()
+    except OSError as error:
+        raise LookupError(f"Unable to read backend error codes from {path}") from error
 
 
 def _errors_constant_block(source: str, /) -> str:
