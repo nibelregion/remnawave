@@ -67,6 +67,25 @@ SCHEMA_SIGNATURE_IGNORED_KEYS: typing.Final = frozenset(
         "title",
     )
 )
+# These keywords describe the particular property where an inline object is
+# used.  They must not become part of a shared component's structural schema.
+INLINE_OBJECT_USAGE_KEYS: typing.Final = frozenset(
+    (
+        "$comment",
+        "default",
+        "deprecated",
+        "description",
+        "example",
+        "examples",
+        "externalDocs",
+        "nullable",
+        "readOnly",
+        "summary",
+        "title",
+        "writeOnly",
+        "xml",
+    )
+)
 ENUM_SCHEMA_REF_PREFIX: typing.Final = "#/components/schemas/"
 ERROR_CODE_ENUM_NAME: typing.Final = "ErrorCode"
 ENUM_REF_IGNORED_KEYS: typing.Final = frozenset(
@@ -844,7 +863,7 @@ def _direct_response_schema_ref_name(response: JSONObject, /) -> str | None:
         if not isinstance(schema, dict):
             return None
 
-        return _schema_component_ref_name(_schema_ref(schema))
+        return _schema_component_ref_name(_schema_ref_or_allof(schema))
 
     return None
 
@@ -1022,6 +1041,7 @@ class InlineObjectPlan(typing.NamedTuple):
     candidates: list[InlineObjectCandidate]
     names: dict[int, tuple[str, str, str]]
     configured: dict[int, str]
+    equivalent_to: dict[int, str]
 
 
 def _plan_inline_object_names(
@@ -1038,6 +1058,7 @@ def _plan_inline_object_names(
     used_nicification_names = {str(name) for name in schemas}
     assigned: dict[int, tuple[str, str, str]] = {}
     configured: dict[int, str] = {}
+    equivalent_to: dict[int, str] = {}
     planned_model_signatures: dict[str, str] = {}
 
     def available_model_name(name: str, signature: str) -> bool:
@@ -1076,7 +1097,7 @@ def _plan_inline_object_names(
             contextual_name,
             contextual_name.replace("ErrorBody", "Error"),
         )
-        signature = _schema_signature(candidate.schema)
+        signature = _schema_signature(_inline_object_component_schema(candidate.schema))
         if configured_name is not None:
             model_base_name = configured_name
         else:
@@ -1089,6 +1110,14 @@ def _plan_inline_object_names(
 
         if configured_name is not None:
             configured[candidate_key] = configured_name
+            equivalent_name = _object_nicification_equivalent_to(
+                raw_model_name,
+                nicificated_schema,
+                contextual_name,
+                contextual_name.replace("ErrorBody", "Error"),
+            )
+            if equivalent_name is not None:
+                equivalent_to[candidate_key] = equivalent_name
 
         planned_model_signatures.setdefault(model_base_name, signature)
         assigned[candidate_key] = (raw_model_name, model_base_name, parent_model_name)
@@ -1098,7 +1127,12 @@ def _plan_inline_object_names(
         assign_candidate_name(candidate)
 
     _drop_redundant_error_body_infix(assigned, schemas, configured)
-    return InlineObjectPlan(candidates=candidates, names=assigned, configured=configured)
+    return InlineObjectPlan(
+        candidates=candidates,
+        names=assigned,
+        configured=configured,
+        equivalent_to=equivalent_to,
+    )
 
 
 def _drop_redundant_error_body_infix(
@@ -1162,12 +1196,20 @@ def hoist_inline_objects(
 
     for candidate in sorted(candidates, key=lambda item: item.pointer.count("/"), reverse=True):
         raw_model_name, model_base_name, parent_model_name = plan.names[id(candidate)]
-        schema = copy.deepcopy(candidate.schema)
+        schema = _inline_object_component_schema(candidate.schema)
         signature = _schema_signature(schema)
         # Reuse the name the planning phase settled on, so a nicification keyed
         # by the final name pins identity just like a raw keyed one.
         configured_name = plan.configured.get(id(candidate))
         matching_targets = schema_targets.get(signature, [])
+        equivalent_name = plan.equivalent_to.get(id(candidate))
+        if equivalent_name is not None:
+            matching_targets = [
+                target
+                for targets in schema_targets.values()
+                for target in targets
+                if target[0] == equivalent_name or target[1] == equivalent_name
+            ]
         if configured_name is None:
             reused_model_name = matching_targets[0][0] if matching_targets else None
         else:
@@ -1192,7 +1234,11 @@ def hoist_inline_objects(
             target_model_name = reused_model_name
             action = "reused"
 
-        _replace_container_child(candidate.container, candidate.key, {"$ref": f"#/components/schemas/{target_model_name}"})
+        _replace_container_child(
+            candidate.container,
+            candidate.key,
+            _inline_object_reference_schema(candidate.schema, target_model_name),
+        )
         hoisted.append(
             {
                 "action": action,
@@ -2472,6 +2518,33 @@ def _response_signature(response: JSONObject, /) -> str:
     return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
 
 
+def _inline_object_component_schema(schema: JSONObject, /) -> JSONObject:
+    """Return the structural part of an inline object for a shared component."""
+
+    return {
+        str(key): copy.deepcopy(value)
+        for key, value in schema.items()
+        if str(key) not in INLINE_OBJECT_USAGE_KEYS and not str(key).startswith("x-")
+    }
+
+
+def _inline_object_reference_schema(schema: JSONObject, model_name: str, /) -> JSONObject:
+    """Build a reference while retaining metadata belonging to the use site."""
+
+    metadata = {
+        str(key): copy.deepcopy(value)
+        for key, value in schema.items()
+        if str(key) in INLINE_OBJECT_USAGE_KEYS or str(key).startswith("x-")
+    }
+    reference: JSONObject = {"$ref": f"#/components/schemas/{model_name}"}
+    if not metadata:
+        return reference
+
+    # OpenAPI 3.0 ignores siblings next to $ref. allOf keeps the reference
+    # valid while allowing nullable/description/default/etc. to stay local.
+    return {"allOf": [reference], **metadata}
+
+
 def _schema_signature(schema: JSONObject, /) -> str:
     canonical = _canonical_json(_schema_signature_value(schema))
     return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
@@ -2598,7 +2671,7 @@ def _response_schema_ref_name(response: JSONObject, /) -> str | None:
         if not isinstance(schema, dict):
             continue
 
-        schema_name = _schema_component_ref_name(_schema_ref(schema))
+        schema_name = _schema_component_ref_name(_schema_ref_or_allof(schema))
         if schema_name is not None:
             return schema_name
 
@@ -2610,7 +2683,7 @@ def _response_schema_ref_name(response: JSONObject, /) -> str | None:
         if not isinstance(schema, dict):
             continue
 
-        schema_name = _schema_component_ref_name(_schema_ref(schema))
+        schema_name = _schema_component_ref_name(_schema_ref_or_allof(schema))
         if schema_name is not None:
             return schema_name
 
@@ -2629,6 +2702,20 @@ def _response_component_ref_name(ref: str | None, /) -> str | None:
 
 def _schema_component_ref_name(ref: str | None, /) -> str | None:
     return _component_ref_name(ref, "#/components/schemas/")
+
+
+def _schema_ref_or_allof(schema: JSONObject, /) -> str | None:
+    """Read a component ref directly or from the OpenAPI 3.0 metadata wrapper."""
+
+    direct_ref = _schema_ref(schema)
+    if direct_ref is not None:
+        return direct_ref
+
+    all_of = schema.get("allOf")
+    if not isinstance(all_of, list) or len(all_of) != 1 or not isinstance(all_of[0], dict):
+        return None
+
+    return _schema_ref(typing.cast(JSONObject, all_of[0]))
 
 
 def _component_ref_name(ref: str | None, prefix: str, /) -> str | None:
@@ -2670,6 +2757,23 @@ def _object_nicification_name(
         resolved_name = _resolve_object_nicification(name, nicificated_schema)
         if resolved_name is not None:
             return resolved_name
+
+    return None
+
+
+def _object_nicification_equivalent_to(
+    raw_name: str,
+    nicificated_schema: NicificatedSchema,
+    /,
+    *fallback_names: str,
+) -> str | None:
+    for name in (raw_name, *fallback_names):
+        if not name:
+            continue
+        nicification = nicificated_schema.schema.objects.get(name)
+        if nicification is None or nicification.equivalent_to is None:
+            continue
+        return _resolve_object_nicification(nicification.equivalent_to, nicificated_schema) or nicification.equivalent_to
 
     return None
 

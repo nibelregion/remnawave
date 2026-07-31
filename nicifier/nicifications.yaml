@@ -275,8 +275,10 @@ remnawave:
         name: HostsDto
     - CloneNodePluginResponse:
         name: NodePluginDto
+        equivalent_to: NodePluginDto
     - CloneSubscriptionPageConfigResponse:
         name: SubscriptionPageConfigDto
+        equivalent_to: SubscriptionPageConfigDto
     - CreateConfigProfileResponse:
         name: ConfigProfileDto
     - CreateConfigProfileResponseInboundsDto:
@@ -433,6 +435,7 @@ remnawave:
         name: ConfigProfileInboundsDto
     - GetNodePluginResponse:
         name: NodePluginDto
+        equivalent_to: NodePluginDto
     - GetOneHostResponse:
         name: HostsDto
     - GetOneNodeResponse:
@@ -461,6 +464,7 @@ remnawave:
         name: PasskeySettingsDto
     - BrandingDto:
         name: BrandingSettingsDto
+        equivalent_to: BrandingSettingsDto
     - GetSubscriptionByShortUuidProtectedResponse:
         name: SubscriptionInfoDto
     - GetSubscriptionByUsernameResponse:
@@ -471,6 +475,7 @@ remnawave:
         name: SubscriptionInfoDto
     - GetSubscriptionPageConfigResponse:
         name: SubscriptionPageConfigDto
+        equivalent_to: SubscriptionPageConfigDto
     - GetSubscriptionSettingsResponseHwidSettingsDto:
         name: HwidSettingsDto
     - GetSubscriptionSettingsResponseResponseRulesDto:
@@ -609,6 +614,7 @@ remnawave:
         name: HostsDto
     - UpdateNodePluginResponse:
         name: NodePluginDto
+        equivalent_to: NodePluginDto
     - UpdateNodeResponse:
         name: NodesDto
     - UpdateNodeResponseActiveInboundsDto:
@@ -635,6 +641,7 @@ remnawave:
         name: SnippetsDto
     - UpdateSubscriptionPageConfigResponse:
         name: SubscriptionPageConfigDto
+        equivalent_to: SubscriptionPageConfigDto
     - UpdateSubscriptionSettingsRequestCustomRemarksDto:
         name: CustomRemarksDto
     - UpdateSubscriptionSettingsRequestResponseRulesDto:

@@ -13,6 +13,122 @@ from source_cache import SchemaIndex, parse_ts_schemas
 
 
 class InlineObjectTests(unittest.TestCase):
+    def test_identical_inline_objects_share_component_and_keep_use_site_metadata(self) -> None:
+        first_inline = {
+            "type": "object",
+            "description": "required remarks",
+            "properties": {"text": {"type": "string"}},
+            "required": ["text"],
+        }
+        second_inline = {
+            "type": "object",
+            "nullable": True,
+            "description": "optional remarks",
+            "properties": {"text": {"type": "string"}},
+            "required": ["text"],
+        }
+        third_inline = {**first_inline, "nullable": True}
+        document = {
+            "components": {
+                "schemas": {
+                    "FirstDto": {
+                        "type": "object",
+                        "properties": {"customRemarks": first_inline},
+                        "required": ["customRemarks"],
+                    },
+                    "SecondDto": {
+                        "type": "object",
+                        "properties": {"customRemarks": second_inline},
+                    },
+                    "ThirdDto": {
+                        "type": "object",
+                        "properties": {"customRemarks": third_inline},
+                        "required": ["customRemarks"],
+                    },
+                    "FourthDto": {
+                        "type": "object",
+                        "properties": {"customRemarks": first_inline},
+                    },
+                }
+            }
+        }
+        nicifications = NicificatedSchema(
+            remnawave=Remnawave(),
+            schema=Schema(objects={"FirstCustomRemarksDto": ObjectSchema(name="CustomRemarksDto")}),
+        )
+
+        hoist_inline_objects(document, nicifications)
+
+        schemas = document["components"]["schemas"]
+        self.assertIn("CustomRemarksDto", schemas)
+        self.assertNotIn("CustomRemarksDto2", schemas)
+        self.assertNotIn("nullable", schemas["CustomRemarksDto"])
+        self.assertNotIn("description", schemas["CustomRemarksDto"])
+        first_property = schemas["FirstDto"]["properties"]["customRemarks"]
+        self.assertEqual(first_property["allOf"], [{"$ref": "#/components/schemas/CustomRemarksDto"}])
+        self.assertEqual(first_property["description"], "required remarks")
+        second_property = schemas["SecondDto"]["properties"]["customRemarks"]
+        self.assertEqual(second_property["allOf"], [{"$ref": "#/components/schemas/CustomRemarksDto"}])
+        self.assertTrue(second_property["nullable"])
+        self.assertEqual(second_property["description"], "optional remarks")
+        self.assertEqual(schemas["FirstDto"]["required"], ["customRemarks"])
+        third_property = schemas["ThirdDto"]["properties"]["customRemarks"]
+        self.assertTrue(third_property["nullable"])
+        self.assertEqual(schemas["ThirdDto"]["required"], ["customRemarks"])
+        self.assertEqual(
+            schemas["FourthDto"]["properties"]["customRemarks"]["description"],
+            "required remarks",
+        )
+        self.assertNotIn("customRemarks", schemas["FourthDto"].get("required", []))
+
+    def test_equivalent_to_reuses_component_with_different_structure_signature(self) -> None:
+        document = {
+            "components": {
+                "schemas": {
+                    "FirstDto": {
+                        "type": "object",
+                        "properties": {
+                            "branding": {
+                                "type": "object",
+                                "properties": {"logoUrl": {"type": "string", "format": "uri"}},
+                            }
+                        },
+                    },
+                    "SecondDto": {
+                        "type": "object",
+                        "properties": {
+                            "branding": {
+                                "type": "object",
+                                "properties": {"logoUrl": {"type": "string"}},
+                            }
+                        },
+                    },
+                }
+            }
+        }
+        nicifications = NicificatedSchema(
+            remnawave=Remnawave(),
+            schema=Schema(
+                objects={
+                    "FirstBrandingDto": ObjectSchema(name="BrandingSettingsDto"),
+                    "SecondBrandingDto": ObjectSchema(
+                        name="BrandingSettingsDto",
+                        equivalent_to="BrandingSettingsDto",
+                    ),
+                }
+            ),
+        )
+
+        hoist_inline_objects(document, nicifications)
+
+        schemas = document["components"]["schemas"]
+        self.assertIn("BrandingSettingsDto", schemas)
+        self.assertNotIn("BrandingSettingsDto2", schemas)
+        self.assertEqual(
+            schemas["SecondDto"]["properties"]["branding"],
+            {"$ref": "#/components/schemas/BrandingSettingsDto"},
+        )
+
     def test_required_order_does_not_change_signature(self) -> None:
         first = {
             "type": "object",

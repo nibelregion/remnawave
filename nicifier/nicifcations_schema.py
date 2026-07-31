@@ -41,6 +41,7 @@ class ErrorSchema(Model):
 
 class ObjectSchema(Model):
     name: str
+    equivalent_to: str | None = None
 
 
 class Schema(Model):
@@ -138,7 +139,10 @@ def write_schema(schema: NicificatedSchema, path: pathlib.Path | None = None, /)
     objects: list[dict[str, typing.Any]] = []
 
     for object_key, object_schema in schema.schema.objects.items():
-        objects.append({object_key: {"name": object_schema.name}})
+        object_data: dict[str, typing.Any] = {"name": object_schema.name}
+        if object_schema.equivalent_to is not None:
+            object_data["equivalent_to"] = object_schema.equivalent_to
+        objects.append({object_key: object_data})
 
     for error_key, error_schema in schema.schema.errors.items():
         error_data: dict[str, typing.Any] = {"name": error_schema.name}

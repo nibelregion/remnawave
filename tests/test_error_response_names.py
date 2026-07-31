@@ -70,6 +70,25 @@ class RenameFromRefTests(unittest.TestCase):
             "#/components/responses/NodeNotFoundErrorDtoSchema",
         )
 
+    def test_metadata_wrapped_ref_still_drives_component_name(self) -> None:
+        document = _document(
+            {
+                "description": "User not found (see errorCode for more details)",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "allOf": [{"$ref": "#/components/schemas/UserNotFoundErrorDto"}],
+                            "example": {"errorCode": "A025"},
+                        }
+                    }
+                },
+            }
+        )
+
+        changes = self._hoist_and_rename(document, _nicifications())
+
+        self.assertEqual([change["name"] for change in changes], ["UserNotFoundErrorDtoSchema"])
+
     def test_union_body_keeps_the_description_name(self) -> None:
         document = _document(
             {

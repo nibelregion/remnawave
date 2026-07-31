@@ -11,8 +11,8 @@
     "renamed_from_ref_responses": 6,
     "renamed_response_schema_components": 78,
     "inlined_map_object_components": 0,
-    "hoisted_inline_objects": 243,
-    "reused_inline_objects": 416,
+    "hoisted_inline_objects": 231,
+    "reused_inline_objects": 428,
     "deprecation_annotations": 0
   },
   "deprecated": {
@@ -7861,7 +7861,7 @@
     {
       "action": "reused",
       "name": "NodePluginDto",
-      "target": "NodePluginDto2",
+      "target": "NodePluginDto",
       "nicification": "CloneNodePluginResponse",
       "field": "response",
       "parent": "CloneNodePluginResponseDto",
@@ -7871,7 +7871,7 @@
     {
       "action": "reused",
       "name": "SubscriptionPageConfigDto",
-      "target": "SubscriptionPageConfigDto2",
+      "target": "SubscriptionPageConfigDto",
       "nicification": "CloneSubscriptionPageConfigResponse",
       "field": "response",
       "parent": "CloneSubscriptionPageConfigResponseDto",
@@ -7936,7 +7936,7 @@
       "field": "response",
       "parent": "CreateExternalSquadResponseDto",
       "source": "#/components/schemas/CreateExternalSquadResponseDto/properties/response",
-      "signature": "50baa80493052a12b8df77cd9d034250960f1418f2d171d7a3ec6c51c4031d71"
+      "signature": "56728a6e9bedc34a0ec827bf23afa3a72ebef1383db726d2c5735a325a67f793"
     },
     {
       "action": "reused",
@@ -7946,7 +7946,7 @@
       "field": "customRemarks",
       "parent": "ExternalSquadDto",
       "source": "#/components/schemas/CreateExternalSquadResponseDto/properties/response/properties/customRemarks",
-      "signature": "0de2abfb0d30a1fc4acac91171a7c8fa1abe61825b01da0ef28054bff423c775"
+      "signature": "13481470e40b1dcea8a2490b768ed1c0312990c86121f5727550d94964ab6930"
     },
     {
       "action": "reused",
@@ -7956,7 +7956,7 @@
       "field": "hostOverrides",
       "parent": "ExternalSquadDto",
       "source": "#/components/schemas/CreateExternalSquadResponseDto/properties/response/properties/hostOverrides",
-      "signature": "9a9ca2780eb641b8517e1481790f9a9e9ecb3dbc3bc140ed3fceb0d52f58f4df"
+      "signature": "9fcf459065200af0da9aa08ad2f4a0cf6c9af6938a1bfad03d90e54270d5580e"
     },
     {
       "action": "reused",
@@ -7966,7 +7966,7 @@
       "field": "hwidSettings",
       "parent": "ExternalSquadDto",
       "source": "#/components/schemas/CreateExternalSquadResponseDto/properties/response/properties/hwidSettings",
-      "signature": "d9eb2adfba247c91fa1a93ade75dc1892d31d1ef04954ac698964edffe248b03"
+      "signature": "aadc9cd0dce3d78677730a7bd2c94ed57bc0db0e8bb657c1b98c5fa34407d8e5"
     },
     {
       "action": "reused",
@@ -7986,7 +7986,7 @@
       "field": "subscriptionSettings",
       "parent": "ExternalSquadDto",
       "source": "#/components/schemas/CreateExternalSquadResponseDto/properties/response/properties/subscriptionSettings",
-      "signature": "8a91d29cd3610b4260e8eb181d62bd74603f43d03409c8156ef148d39ec39bd2"
+      "signature": "05dacbfed07ba3ed8c829c96c4ad0ec312f197e8265b5b9ae977b99b1c236812"
     },
     {
       "action": "reused",
@@ -8086,17 +8086,17 @@
       "field": "billingNodes",
       "parent": "CreateInfraBillingNodeResponse",
       "source": "#/components/schemas/CreateInfraBillingNodeResponseDto/properties/response/properties/billingNodes/items",
-      "signature": "1e9e066d1fcbbf8d8fa24c84bc44cd2466486f26c4c5518464ce07290c4f7a89"
+      "signature": "231fa3c1b7f500069a1e39ece1a2c810489285f65b2c5e0e71bf6422b0d7a41f"
     },
     {
       "action": "reused",
       "name": "InfraBillingNodeNodeDto",
-      "target": "InfraBillingNodeNodeDto",
+      "target": "InfraBillingAvailableNodeDto",
       "nicification": "CreateInfraBillingNodeResponseNodeDto",
       "field": "node",
       "parent": "InfraBillingNodeDto",
       "source": "#/components/schemas/CreateInfraBillingNodeResponseDto/properties/response/properties/billingNodes/items/properties/node",
-      "signature": "93e23d057f1b14f547a478825856f2c2d4593e744e52ea2f256ccf9b6255c4b6"
+      "signature": "7d7938083d36703da7f3c59b6cd8e56344f3b1bd03a1afaed37ff18c505ed261"
     },
     {
       "action": "reused",
@@ -8146,7 +8146,7 @@
       "field": "billingNodes",
       "parent": "InfraProviderDto",
       "source": "#/components/schemas/CreateInfraProviderResponseDto/properties/response/properties/billingNodes/items",
-      "signature": "b70d94a57815693dc89b9d05997b0ec152f4de5e747cc2334ced88ed74cd69de"
+      "signature": "61927569212102825ce6ca508d7b2845d29bc8f59545f46bf69511a1e68a3203"
     },
     {
       "action": "reused",
@@ -8156,7 +8156,7 @@
       "field": "details",
       "parent": "InfraProviderBillingNodesDto",
       "source": "#/components/schemas/CreateInfraProviderResponseDto/properties/response/properties/billingNodes/items/properties/details",
-      "signature": "92b391f731e7080063d012c687ece2ded9b133dda77ec4a57fd67567b0709ea9"
+      "signature": "22b8fb68c45c404708989d63971343631e74da8ec264c12aa321ae07aa6cd4ac"
     },
     {
       "action": "reused",
@@ -8216,7 +8216,7 @@
       "field": "response",
       "parent": "CreateNodeResponseDto",
       "source": "#/components/schemas/CreateNodeResponseDto/properties/response",
-      "signature": "86ba3049e6baa85d16b4725aa26907251e1c9a0559f2a35b714f7cf2707c4d22"
+      "signature": "1e29f86deacc33c4487c1566af44c485cb591f38c5daa7838deb73d367c23e64"
     },
     {
       "action": "reused",
@@ -8246,7 +8246,7 @@
       "field": "provider",
       "parent": "NodesDto",
       "source": "#/components/schemas/CreateNodeResponseDto/properties/response/properties/provider",
-      "signature": "dfa62d176586533aa8aaffec7a722c3087c9440f4573a94b9942b4d7c55a6a66"
+      "signature": "590b8593abe924ebd3704af5504afa940305fab6340b050952ea177c30cd621f"
     },
     {
       "action": "reused",
@@ -8256,7 +8256,7 @@
       "field": "system",
       "parent": "NodesDto",
       "source": "#/components/schemas/CreateNodeResponseDto/properties/response/properties/system",
-      "signature": "612edc2c9144df51157f7dd40f21fd65b4d91c12e6b5d626467a0838180f1caa"
+      "signature": "3c87dd3daa5ec7ed5911b6300ae2cf6cae88f4067ea0ee17df253c9ca9a9e253"
     },
     {
       "action": "reused",
@@ -8276,7 +8276,7 @@
       "field": "stats",
       "parent": "NodeSystemDto",
       "source": "#/components/schemas/CreateNodeResponseDto/properties/response/properties/system/properties/stats",
-      "signature": "f8cb79ad1e403c4eca5d77fc64ccd79325518a9835a856bd4ffff0a1bd725f79"
+      "signature": "685fd912bd40fd5cc732b612f78c818216255f75eae9f9f6650fd90300a32e14"
     },
     {
       "action": "reused",
@@ -8286,7 +8286,7 @@
       "field": "interface",
       "parent": "NodeSystemStatsDto",
       "source": "#/components/schemas/CreateNodeResponseDto/properties/response/properties/system/properties/stats/properties/interface",
-      "signature": "dfb36121d4800ac1b7a194748ced4dee0bede773770ae2421433a7d06fcd5786"
+      "signature": "ea527135db048b3a52081669fe6f3a755f9a81f22f882abf49a8ff5624bc5030"
     },
     {
       "action": "reused",
@@ -8296,7 +8296,7 @@
       "field": "versions",
       "parent": "NodesDto",
       "source": "#/components/schemas/CreateNodeResponseDto/properties/response/properties/versions",
-      "signature": "3efbd6bbbdb5fed0c734787646dd4539074b8e5d414515fe14eb517e50127af1"
+      "signature": "2d1275a6ab29435050a2eb3b6f9ecc1b90316a93e0a0173d9c602d30579a702e"
     },
     {
       "action": "reused",
@@ -8399,14 +8399,14 @@
       "signature": "b68e5f5b2c0e4912502921638da0ec8234e13780e6ad290c380350c35d46e3b1"
     },
     {
-      "action": "hoisted",
-      "name": "ResponseRulesConfigDto2",
-      "target": "ResponseRulesConfigDto2",
+      "action": "reused",
+      "name": "ResponseRulesConfigDto",
+      "target": "ResponseRulesConfigDto",
       "nicification": "DebugSrrMatcherRequestResponseRulesDto",
       "field": "responseRules",
       "parent": "DebugSrrMatcherRequestDto",
       "source": "#/components/schemas/DebugSrrMatcherRequestDto/properties/responseRules",
-      "signature": "b4db7c79004d12adef90ffbbc0566775add99a13fd803e9925883b871b35da53"
+      "signature": "4193b9ca5fbfc06f02bd972e8776fefc2041cf986b6f1a3b4613fd1b29238406"
     },
     {
       "action": "reused",
@@ -8416,7 +8416,7 @@
       "field": "rules",
       "parent": "ResponseRulesConfigDto",
       "source": "#/components/schemas/DebugSrrMatcherRequestDto/properties/responseRules/properties/rules/items",
-      "signature": "fe5c086ba34f2d01e9bb53598c6f800ca317a4d41ea20590753cef4e1d544b72"
+      "signature": "19aaba711c5fad8ed8e54ce0e871abb8c478f17d895db1c1e5653280627a66ab"
     },
     {
       "action": "reused",
@@ -8436,7 +8436,7 @@
       "field": "responseModifications",
       "parent": "ResponseRulesConfigRulesDto",
       "source": "#/components/schemas/DebugSrrMatcherRequestDto/properties/responseRules/properties/rules/items/properties/responseModifications",
-      "signature": "bfbfb1ad8539b663274c14e73ab1c1ea574a5776c984e0655da8d7ae0dd54767"
+      "signature": "2b4d875a066c4138af3a06eaa0cac2cf453d66581d2ec03db9dbf35d2fce4ccf"
     },
     {
       "action": "reused",
@@ -8476,17 +8476,17 @@
       "field": "response",
       "parent": "DebugSrrMatcherResponseDto",
       "source": "#/components/schemas/DebugSrrMatcherResponseDto/properties/response",
-      "signature": "ebe4713d857f8b53efe55a32cc3a6993e9c1c87f64850082f945f16b8601177f"
+      "signature": "b9f6f1f908efd728db8a8a18520a261d2ea139f8aa46395ab9a1bf12b2dc89c2"
     },
     {
-      "action": "hoisted",
+      "action": "reused",
       "name": "DebugSrrMatcherResponseMatchedRuleDto",
-      "target": "DebugSrrMatcherResponseMatchedRuleDto",
+      "target": "ResponseRuleDto",
       "nicification": "MatchedRuleDto",
       "field": "matchedRule",
       "parent": "DebugSrrMatcherResponse",
       "source": "#/components/schemas/DebugSrrMatcherResponseDto/properties/response/properties/matchedRule",
-      "signature": "d0bab2c9660506d892c4d3123a90c4d5c08a6390ab892a74e66b4a16bd05ba4c"
+      "signature": "19aaba711c5fad8ed8e54ce0e871abb8c478f17d895db1c1e5653280627a66ab"
     },
     {
       "action": "reused",
@@ -8506,7 +8506,7 @@
       "field": "responseModifications",
       "parent": "DebugSrrMatcherResponseMatchedRuleDto",
       "source": "#/components/schemas/DebugSrrMatcherResponseDto/properties/response/properties/matchedRule/properties/responseModifications",
-      "signature": "bfbfb1ad8539b663274c14e73ab1c1ea574a5776c984e0655da8d7ae0dd54767"
+      "signature": "2b4d875a066c4138af3a06eaa0cac2cf453d66581d2ec03db9dbf35d2fce4ccf"
     },
     {
       "action": "reused",
@@ -8636,17 +8636,17 @@
       "field": "billingNodes",
       "parent": "DeleteInfraBillingNodeByUuidResponse",
       "source": "#/components/schemas/DeleteInfraBillingNodeByUuidResponseDto/properties/response/properties/billingNodes/items",
-      "signature": "1e9e066d1fcbbf8d8fa24c84bc44cd2466486f26c4c5518464ce07290c4f7a89"
+      "signature": "231fa3c1b7f500069a1e39ece1a2c810489285f65b2c5e0e71bf6422b0d7a41f"
     },
     {
       "action": "reused",
       "name": "InfraBillingNodeNodeDto",
-      "target": "InfraBillingNodeNodeDto",
+      "target": "InfraBillingAvailableNodeDto",
       "nicification": "DeleteInfraBillingNodeByUuidResponseNodeDto",
       "field": "node",
       "parent": "InfraBillingNodeDto",
       "source": "#/components/schemas/DeleteInfraBillingNodeByUuidResponseDto/properties/response/properties/billingNodes/items/properties/node",
-      "signature": "93e23d057f1b14f547a478825856f2c2d4593e744e52ea2f256ccf9b6255c4b6"
+      "signature": "7d7938083d36703da7f3c59b6cd8e56344f3b1bd03a1afaed37ff18c505ed261"
     },
     {
       "action": "reused",
@@ -8806,7 +8806,7 @@
       "field": "response",
       "parent": "DisableNodeResponseDto",
       "source": "#/components/schemas/DisableNodeResponseDto/properties/response",
-      "signature": "86ba3049e6baa85d16b4725aa26907251e1c9a0559f2a35b714f7cf2707c4d22"
+      "signature": "1e29f86deacc33c4487c1566af44c485cb591f38c5daa7838deb73d367c23e64"
     },
     {
       "action": "reused",
@@ -8836,7 +8836,7 @@
       "field": "provider",
       "parent": "NodesDto",
       "source": "#/components/schemas/DisableNodeResponseDto/properties/response/properties/provider",
-      "signature": "dfa62d176586533aa8aaffec7a722c3087c9440f4573a94b9942b4d7c55a6a66"
+      "signature": "590b8593abe924ebd3704af5504afa940305fab6340b050952ea177c30cd621f"
     },
     {
       "action": "reused",
@@ -8846,7 +8846,7 @@
       "field": "system",
       "parent": "NodesDto",
       "source": "#/components/schemas/DisableNodeResponseDto/properties/response/properties/system",
-      "signature": "612edc2c9144df51157f7dd40f21fd65b4d91c12e6b5d626467a0838180f1caa"
+      "signature": "3c87dd3daa5ec7ed5911b6300ae2cf6cae88f4067ea0ee17df253c9ca9a9e253"
     },
     {
       "action": "reused",
@@ -8866,7 +8866,7 @@
       "field": "stats",
       "parent": "NodeSystemDto",
       "source": "#/components/schemas/DisableNodeResponseDto/properties/response/properties/system/properties/stats",
-      "signature": "f8cb79ad1e403c4eca5d77fc64ccd79325518a9835a856bd4ffff0a1bd725f79"
+      "signature": "685fd912bd40fd5cc732b612f78c818216255f75eae9f9f6650fd90300a32e14"
     },
     {
       "action": "reused",
@@ -8876,7 +8876,7 @@
       "field": "interface",
       "parent": "NodeSystemStatsDto",
       "source": "#/components/schemas/DisableNodeResponseDto/properties/response/properties/system/properties/stats/properties/interface",
-      "signature": "dfb36121d4800ac1b7a194748ced4dee0bede773770ae2421433a7d06fcd5786"
+      "signature": "ea527135db048b3a52081669fe6f3a755f9a81f22f882abf49a8ff5624bc5030"
     },
     {
       "action": "reused",
@@ -8886,7 +8886,7 @@
       "field": "versions",
       "parent": "NodesDto",
       "source": "#/components/schemas/DisableNodeResponseDto/properties/response/properties/versions",
-      "signature": "3efbd6bbbdb5fed0c734787646dd4539074b8e5d414515fe14eb517e50127af1"
+      "signature": "2d1275a6ab29435050a2eb3b6f9ecc1b90316a93e0a0173d9c602d30579a702e"
     },
     {
       "action": "reused",
@@ -8976,7 +8976,7 @@
       "field": "response",
       "parent": "EnableNodeResponseDto",
       "source": "#/components/schemas/EnableNodeResponseDto/properties/response",
-      "signature": "86ba3049e6baa85d16b4725aa26907251e1c9a0559f2a35b714f7cf2707c4d22"
+      "signature": "1e29f86deacc33c4487c1566af44c485cb591f38c5daa7838deb73d367c23e64"
     },
     {
       "action": "reused",
@@ -9006,7 +9006,7 @@
       "field": "provider",
       "parent": "NodesDto",
       "source": "#/components/schemas/EnableNodeResponseDto/properties/response/properties/provider",
-      "signature": "dfa62d176586533aa8aaffec7a722c3087c9440f4573a94b9942b4d7c55a6a66"
+      "signature": "590b8593abe924ebd3704af5504afa940305fab6340b050952ea177c30cd621f"
     },
     {
       "action": "reused",
@@ -9016,7 +9016,7 @@
       "field": "system",
       "parent": "NodesDto",
       "source": "#/components/schemas/EnableNodeResponseDto/properties/response/properties/system",
-      "signature": "612edc2c9144df51157f7dd40f21fd65b4d91c12e6b5d626467a0838180f1caa"
+      "signature": "3c87dd3daa5ec7ed5911b6300ae2cf6cae88f4067ea0ee17df253c9ca9a9e253"
     },
     {
       "action": "reused",
@@ -9036,7 +9036,7 @@
       "field": "stats",
       "parent": "NodeSystemDto",
       "source": "#/components/schemas/EnableNodeResponseDto/properties/response/properties/system/properties/stats",
-      "signature": "f8cb79ad1e403c4eca5d77fc64ccd79325518a9835a856bd4ffff0a1bd725f79"
+      "signature": "685fd912bd40fd5cc732b612f78c818216255f75eae9f9f6650fd90300a32e14"
     },
     {
       "action": "reused",
@@ -9046,7 +9046,7 @@
       "field": "interface",
       "parent": "NodeSystemStatsDto",
       "source": "#/components/schemas/EnableNodeResponseDto/properties/response/properties/system/properties/stats/properties/interface",
-      "signature": "dfb36121d4800ac1b7a194748ced4dee0bede773770ae2421433a7d06fcd5786"
+      "signature": "ea527135db048b3a52081669fe6f3a755f9a81f22f882abf49a8ff5624bc5030"
     },
     {
       "action": "reused",
@@ -9056,7 +9056,7 @@
       "field": "versions",
       "parent": "NodesDto",
       "source": "#/components/schemas/EnableNodeResponseDto/properties/response/properties/versions",
-      "signature": "3efbd6bbbdb5fed0c734787646dd4539074b8e5d414515fe14eb517e50127af1"
+      "signature": "2d1275a6ab29435050a2eb3b6f9ecc1b90316a93e0a0173d9c602d30579a702e"
     },
     {
       "action": "reused",
@@ -9106,7 +9106,7 @@
       "field": "response",
       "parent": "FetchIpsResultResponseDto",
       "source": "#/components/schemas/FetchIpsResultResponseDto/properties/response",
-      "signature": "54c8e2f50ae90fa5451b5533dbec6357eacbae61c06e832f76db47ef51f7dc32"
+      "signature": "75b9943276781e28c866d85e09c0c859f5d59d6d33a4033261757ea187123d02"
     },
     {
       "action": "hoisted",
@@ -9126,7 +9126,7 @@
       "field": "result",
       "parent": "FetchIpsResultResponseModelDto",
       "source": "#/components/schemas/FetchIpsResultResponseDto/properties/response/properties/result",
-      "signature": "57c367a1ceaf5809592b90f37595283982de03aaf92c6eab39d9e2c52621116c"
+      "signature": "64686d885d4d444879442bd35479b5d0613d096efaa843a98e43dd5dcce7f027"
     },
     {
       "action": "hoisted",
@@ -9166,7 +9166,7 @@
       "field": "response",
       "parent": "FetchUsersIpsResultResponseDto",
       "source": "#/components/schemas/FetchUsersIpsResultResponseDto/properties/response",
-      "signature": "87943b9272d2a0557378eb9972fce80857c12450041912cf953bc0b942017366"
+      "signature": "008c038c81d90b12d62d19dab0de6257a21d9cae89e114e68ef53b990a5c7084"
     },
     {
       "action": "hoisted",
@@ -9176,7 +9176,7 @@
       "field": "result",
       "parent": "FetchUsersIpsResultResponseModelDto",
       "source": "#/components/schemas/FetchUsersIpsResultResponseDto/properties/response/properties/result",
-      "signature": "27fe450c9ddd4ada03febaa7d61ab1960c50d9f4430221bd2314de16e6ee247e"
+      "signature": "2b422c4c9cd2742ec919579a7d57312a2048afa5f1ac3872429a9bcfc1998c09"
     },
     {
       "action": "hoisted",
@@ -9326,7 +9326,7 @@
       "field": "response",
       "parent": "GetAllNodesResponseDto",
       "source": "#/components/schemas/GetAllNodesResponseDto/properties/response/items",
-      "signature": "86ba3049e6baa85d16b4725aa26907251e1c9a0559f2a35b714f7cf2707c4d22"
+      "signature": "1e29f86deacc33c4487c1566af44c485cb591f38c5daa7838deb73d367c23e64"
     },
     {
       "action": "reused",
@@ -9356,7 +9356,7 @@
       "field": "provider",
       "parent": "NodesDto",
       "source": "#/components/schemas/GetAllNodesResponseDto/properties/response/items/properties/provider",
-      "signature": "dfa62d176586533aa8aaffec7a722c3087c9440f4573a94b9942b4d7c55a6a66"
+      "signature": "590b8593abe924ebd3704af5504afa940305fab6340b050952ea177c30cd621f"
     },
     {
       "action": "reused",
@@ -9366,7 +9366,7 @@
       "field": "system",
       "parent": "NodesDto",
       "source": "#/components/schemas/GetAllNodesResponseDto/properties/response/items/properties/system",
-      "signature": "612edc2c9144df51157f7dd40f21fd65b4d91c12e6b5d626467a0838180f1caa"
+      "signature": "3c87dd3daa5ec7ed5911b6300ae2cf6cae88f4067ea0ee17df253c9ca9a9e253"
     },
     {
       "action": "reused",
@@ -9386,7 +9386,7 @@
       "field": "stats",
       "parent": "NodeSystemDto",
       "source": "#/components/schemas/GetAllNodesResponseDto/properties/response/items/properties/system/properties/stats",
-      "signature": "f8cb79ad1e403c4eca5d77fc64ccd79325518a9835a856bd4ffff0a1bd725f79"
+      "signature": "685fd912bd40fd5cc732b612f78c818216255f75eae9f9f6650fd90300a32e14"
     },
     {
       "action": "reused",
@@ -9396,7 +9396,7 @@
       "field": "interface",
       "parent": "NodeSystemStatsDto",
       "source": "#/components/schemas/GetAllNodesResponseDto/properties/response/items/properties/system/properties/stats/properties/interface",
-      "signature": "dfb36121d4800ac1b7a194748ced4dee0bede773770ae2421433a7d06fcd5786"
+      "signature": "ea527135db048b3a52081669fe6f3a755f9a81f22f882abf49a8ff5624bc5030"
     },
     {
       "action": "reused",
@@ -9406,7 +9406,7 @@
       "field": "versions",
       "parent": "NodesDto",
       "source": "#/components/schemas/GetAllNodesResponseDto/properties/response/items/properties/versions",
-      "signature": "3efbd6bbbdb5fed0c734787646dd4539074b8e5d414515fe14eb517e50127af1"
+      "signature": "2d1275a6ab29435050a2eb3b6f9ecc1b90316a93e0a0173d9c602d30579a702e"
     },
     {
       "action": "reused",
@@ -9726,7 +9726,7 @@
       "field": "response",
       "parent": "GetExternalSquadByUuidResponseDto",
       "source": "#/components/schemas/GetExternalSquadByUuidResponseDto/properties/response",
-      "signature": "50baa80493052a12b8df77cd9d034250960f1418f2d171d7a3ec6c51c4031d71"
+      "signature": "56728a6e9bedc34a0ec827bf23afa3a72ebef1383db726d2c5735a325a67f793"
     },
     {
       "action": "reused",
@@ -9736,7 +9736,7 @@
       "field": "customRemarks",
       "parent": "ExternalSquadDto",
       "source": "#/components/schemas/GetExternalSquadByUuidResponseDto/properties/response/properties/customRemarks",
-      "signature": "0de2abfb0d30a1fc4acac91171a7c8fa1abe61825b01da0ef28054bff423c775"
+      "signature": "13481470e40b1dcea8a2490b768ed1c0312990c86121f5727550d94964ab6930"
     },
     {
       "action": "reused",
@@ -9746,7 +9746,7 @@
       "field": "hostOverrides",
       "parent": "ExternalSquadDto",
       "source": "#/components/schemas/GetExternalSquadByUuidResponseDto/properties/response/properties/hostOverrides",
-      "signature": "9a9ca2780eb641b8517e1481790f9a9e9ecb3dbc3bc140ed3fceb0d52f58f4df"
+      "signature": "9fcf459065200af0da9aa08ad2f4a0cf6c9af6938a1bfad03d90e54270d5580e"
     },
     {
       "action": "reused",
@@ -9756,7 +9756,7 @@
       "field": "hwidSettings",
       "parent": "ExternalSquadDto",
       "source": "#/components/schemas/GetExternalSquadByUuidResponseDto/properties/response/properties/hwidSettings",
-      "signature": "d9eb2adfba247c91fa1a93ade75dc1892d31d1ef04954ac698964edffe248b03"
+      "signature": "aadc9cd0dce3d78677730a7bd2c94ed57bc0db0e8bb657c1b98c5fa34407d8e5"
     },
     {
       "action": "reused",
@@ -9776,7 +9776,7 @@
       "field": "subscriptionSettings",
       "parent": "ExternalSquadDto",
       "source": "#/components/schemas/GetExternalSquadByUuidResponseDto/properties/response/properties/subscriptionSettings",
-      "signature": "8a91d29cd3610b4260e8eb181d62bd74603f43d03409c8156ef148d39ec39bd2"
+      "signature": "05dacbfed07ba3ed8c829c96c4ad0ec312f197e8265b5b9ae977b99b1c236812"
     },
     {
       "action": "reused",
@@ -9806,7 +9806,7 @@
       "field": "externalSquads",
       "parent": "ExternalSquadsResponse",
       "source": "#/components/schemas/GetExternalSquadsResponseDto/properties/response/properties/externalSquads/items",
-      "signature": "50baa80493052a12b8df77cd9d034250960f1418f2d171d7a3ec6c51c4031d71"
+      "signature": "56728a6e9bedc34a0ec827bf23afa3a72ebef1383db726d2c5735a325a67f793"
     },
     {
       "action": "hoisted",
@@ -9816,7 +9816,7 @@
       "field": "customRemarks",
       "parent": "ExternalSquadDto",
       "source": "#/components/schemas/GetExternalSquadsResponseDto/properties/response/properties/externalSquads/items/properties/customRemarks",
-      "signature": "0de2abfb0d30a1fc4acac91171a7c8fa1abe61825b01da0ef28054bff423c775"
+      "signature": "13481470e40b1dcea8a2490b768ed1c0312990c86121f5727550d94964ab6930"
     },
     {
       "action": "hoisted",
@@ -9826,7 +9826,7 @@
       "field": "hostOverrides",
       "parent": "ExternalSquadDto",
       "source": "#/components/schemas/GetExternalSquadsResponseDto/properties/response/properties/externalSquads/items/properties/hostOverrides",
-      "signature": "9a9ca2780eb641b8517e1481790f9a9e9ecb3dbc3bc140ed3fceb0d52f58f4df"
+      "signature": "9fcf459065200af0da9aa08ad2f4a0cf6c9af6938a1bfad03d90e54270d5580e"
     },
     {
       "action": "hoisted",
@@ -9836,7 +9836,7 @@
       "field": "hwidSettings",
       "parent": "ExternalSquadDto",
       "source": "#/components/schemas/GetExternalSquadsResponseDto/properties/response/properties/externalSquads/items/properties/hwidSettings",
-      "signature": "d9eb2adfba247c91fa1a93ade75dc1892d31d1ef04954ac698964edffe248b03"
+      "signature": "aadc9cd0dce3d78677730a7bd2c94ed57bc0db0e8bb657c1b98c5fa34407d8e5"
     },
     {
       "action": "hoisted",
@@ -9856,7 +9856,7 @@
       "field": "subscriptionSettings",
       "parent": "ExternalSquadDto",
       "source": "#/components/schemas/GetExternalSquadsResponseDto/properties/response/properties/externalSquads/items/properties/subscriptionSettings",
-      "signature": "8a91d29cd3610b4260e8eb181d62bd74603f43d03409c8156ef148d39ec39bd2"
+      "signature": "05dacbfed07ba3ed8c829c96c4ad0ec312f197e8265b5b9ae977b99b1c236812"
     },
     {
       "action": "hoisted",
@@ -9986,17 +9986,17 @@
       "field": "billingNodes",
       "parent": "InfraBillingNodesResponse",
       "source": "#/components/schemas/GetInfraBillingNodesResponseDto/properties/response/properties/billingNodes/items",
-      "signature": "1e9e066d1fcbbf8d8fa24c84bc44cd2466486f26c4c5518464ce07290c4f7a89"
+      "signature": "231fa3c1b7f500069a1e39ece1a2c810489285f65b2c5e0e71bf6422b0d7a41f"
     },
     {
-      "action": "hoisted",
+      "action": "reused",
       "name": "InfraBillingNodeNodeDto",
-      "target": "InfraBillingNodeNodeDto",
+      "target": "InfraBillingAvailableNodeDto",
       "nicification": "GetInfraBillingNodesResponseNodeDto",
       "field": "node",
       "parent": "InfraBillingNodeDto",
       "source": "#/components/schemas/GetInfraBillingNodesResponseDto/properties/response/properties/billingNodes/items/properties/node",
-      "signature": "93e23d057f1b14f547a478825856f2c2d4593e744e52ea2f256ccf9b6255c4b6"
+      "signature": "7d7938083d36703da7f3c59b6cd8e56344f3b1bd03a1afaed37ff18c505ed261"
     },
     {
       "action": "hoisted",
@@ -10046,7 +10046,7 @@
       "field": "billingNodes",
       "parent": "InfraProviderDto",
       "source": "#/components/schemas/GetInfraProviderByUuidResponseDto/properties/response/properties/billingNodes/items",
-      "signature": "b70d94a57815693dc89b9d05997b0ec152f4de5e747cc2334ced88ed74cd69de"
+      "signature": "61927569212102825ce6ca508d7b2845d29bc8f59545f46bf69511a1e68a3203"
     },
     {
       "action": "reused",
@@ -10056,7 +10056,7 @@
       "field": "details",
       "parent": "InfraProviderBillingNodesDto",
       "source": "#/components/schemas/GetInfraProviderByUuidResponseDto/properties/response/properties/billingNodes/items/properties/details",
-      "signature": "92b391f731e7080063d012c687ece2ded9b133dda77ec4a57fd67567b0709ea9"
+      "signature": "22b8fb68c45c404708989d63971343631e74da8ec264c12aa321ae07aa6cd4ac"
     },
     {
       "action": "hoisted",
@@ -10096,7 +10096,7 @@
       "field": "billingNodes",
       "parent": "InfraProviderDto",
       "source": "#/components/schemas/GetInfraProvidersResponseDto/properties/response/properties/providers/items/properties/billingNodes/items",
-      "signature": "b70d94a57815693dc89b9d05997b0ec152f4de5e747cc2334ced88ed74cd69de"
+      "signature": "61927569212102825ce6ca508d7b2845d29bc8f59545f46bf69511a1e68a3203"
     },
     {
       "action": "hoisted",
@@ -10106,7 +10106,7 @@
       "field": "details",
       "parent": "InfraProviderBillingNodesDto",
       "source": "#/components/schemas/GetInfraProvidersResponseDto/properties/response/properties/providers/items/properties/billingNodes/items/properties/details",
-      "signature": "92b391f731e7080063d012c687ece2ded9b133dda77ec4a57fd67567b0709ea9"
+      "signature": "22b8fb68c45c404708989d63971343631e74da8ec264c12aa321ae07aa6cd4ac"
     },
     {
       "action": "hoisted",
@@ -10289,9 +10289,9 @@
       "signature": "efddc7bd8bbcef73a14eb1ace1ffdaec81e518ef1e13c1e9271d0b8acb694a49"
     },
     {
-      "action": "hoisted",
-      "name": "NodePluginDto2",
-      "target": "NodePluginDto2",
+      "action": "reused",
+      "name": "NodePluginDto",
+      "target": "NodePluginDto",
       "nicification": "GetNodePluginResponse",
       "field": "response",
       "parent": "GetNodePluginResponseDto",
@@ -10406,7 +10406,7 @@
       "field": "response",
       "parent": "GetOneNodeResponseDto",
       "source": "#/components/schemas/GetOneNodeResponseDto/properties/response",
-      "signature": "86ba3049e6baa85d16b4725aa26907251e1c9a0559f2a35b714f7cf2707c4d22"
+      "signature": "1e29f86deacc33c4487c1566af44c485cb591f38c5daa7838deb73d367c23e64"
     },
     {
       "action": "reused",
@@ -10436,7 +10436,7 @@
       "field": "provider",
       "parent": "NodesDto",
       "source": "#/components/schemas/GetOneNodeResponseDto/properties/response/properties/provider",
-      "signature": "dfa62d176586533aa8aaffec7a722c3087c9440f4573a94b9942b4d7c55a6a66"
+      "signature": "590b8593abe924ebd3704af5504afa940305fab6340b050952ea177c30cd621f"
     },
     {
       "action": "reused",
@@ -10446,7 +10446,7 @@
       "field": "system",
       "parent": "NodesDto",
       "source": "#/components/schemas/GetOneNodeResponseDto/properties/response/properties/system",
-      "signature": "612edc2c9144df51157f7dd40f21fd65b4d91c12e6b5d626467a0838180f1caa"
+      "signature": "3c87dd3daa5ec7ed5911b6300ae2cf6cae88f4067ea0ee17df253c9ca9a9e253"
     },
     {
       "action": "reused",
@@ -10466,7 +10466,7 @@
       "field": "stats",
       "parent": "NodeSystemDto",
       "source": "#/components/schemas/GetOneNodeResponseDto/properties/response/properties/system/properties/stats",
-      "signature": "f8cb79ad1e403c4eca5d77fc64ccd79325518a9835a856bd4ffff0a1bd725f79"
+      "signature": "685fd912bd40fd5cc732b612f78c818216255f75eae9f9f6650fd90300a32e14"
     },
     {
       "action": "reused",
@@ -10476,7 +10476,7 @@
       "field": "interface",
       "parent": "NodeSystemStatsDto",
       "source": "#/components/schemas/GetOneNodeResponseDto/properties/response/properties/system/properties/stats/properties/interface",
-      "signature": "dfb36121d4800ac1b7a194748ced4dee0bede773770ae2421433a7d06fcd5786"
+      "signature": "ea527135db048b3a52081669fe6f3a755f9a81f22f882abf49a8ff5624bc5030"
     },
     {
       "action": "reused",
@@ -10486,7 +10486,7 @@
       "field": "versions",
       "parent": "NodesDto",
       "source": "#/components/schemas/GetOneNodeResponseDto/properties/response/properties/versions",
-      "signature": "3efbd6bbbdb5fed0c734787646dd4539074b8e5d414515fe14eb517e50127af1"
+      "signature": "2d1275a6ab29435050a2eb3b6f9ecc1b90316a93e0a0173d9c602d30579a702e"
     },
     {
       "action": "hoisted",
@@ -10516,7 +10516,7 @@
       "field": "convertedUserInfo",
       "parent": "RawSubscriptionByShortUuidResponse",
       "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/convertedUserInfo",
-      "signature": "d45fc5c40fca8c27287523d976799d2d66c239cb41050763fec284317e2f7eac"
+      "signature": "7df92fb401073ea28443d24544b0d6be9cb3f95288b988034cbc13348aa92635"
     },
     {
       "action": "hoisted",
@@ -10526,7 +10526,7 @@
       "field": "hwidCheckup",
       "parent": "RawSubscriptionByShortUuidResponseConvertedUserInfoDto",
       "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/convertedUserInfo/properties/hwidCheckup",
-      "signature": "6eb9f980200f7fda798a7bfea9ae4920cc0151836d26a66830093258ef1e499f"
+      "signature": "8270a93da1f95c626e83923834554da27ba9d69d4f774ea5749d1c5e74abb0b5"
     },
     {
       "action": "hoisted",
@@ -10826,7 +10826,7 @@
       "field": "response",
       "parent": "GetRemnawaveSettingsResponseDto",
       "source": "#/components/schemas/GetRemnawaveSettingsResponseDto/properties/response",
-      "signature": "cea49b840ea89b5f22de6bbabb7a4a6294a92bd7f89d036e905041c733dfb952"
+      "signature": "e2a30d6c70ed569f409fbad31137f08382fac739c1bb8a5639502e2fabfa8852"
     },
     {
       "action": "hoisted",
@@ -10836,7 +10836,7 @@
       "field": "brandingSettings",
       "parent": "RemnawaveSettingsDto",
       "source": "#/components/schemas/GetRemnawaveSettingsResponseDto/properties/response/properties/brandingSettings",
-      "signature": "b8b14a4ca23ae611f6b07d0963ed50da6a8a33f6ca38aed38b8dd29e86250828"
+      "signature": "8d047dad3dc6f1772ac0f8850e23371dc3d241a5499414bcf712ec59326df4ec"
     },
     {
       "action": "hoisted",
@@ -10846,7 +10846,7 @@
       "field": "oauth2Settings",
       "parent": "RemnawaveSettingsDto",
       "source": "#/components/schemas/GetRemnawaveSettingsResponseDto/properties/response/properties/oauth2Settings",
-      "signature": "3c7669c8d3aa3815fc76ef1ada14c7daec0b18d64b9d9a71991e4387aede19ee"
+      "signature": "d1c9b69afb80e5ef398864a3a6fa03d4aa38fcabbe24ca0b721e7f20c81585dd"
     },
     {
       "action": "hoisted",
@@ -10856,7 +10856,7 @@
       "field": "generic",
       "parent": "Oauth2SettingsDto",
       "source": "#/components/schemas/GetRemnawaveSettingsResponseDto/properties/response/properties/oauth2Settings/properties/generic",
-      "signature": "a8afa54daaf4d8f3854769261b8f20fd72b3e94675ae3b17485ca5238d26e15e"
+      "signature": "b26bc8413cd286eed1a908d8a1d4ed9dd5f54fe9887938f2ab757f53865a51ce"
     },
     {
       "action": "hoisted",
@@ -10876,7 +10876,7 @@
       "field": "keycloak",
       "parent": "Oauth2SettingsDto",
       "source": "#/components/schemas/GetRemnawaveSettingsResponseDto/properties/response/properties/oauth2Settings/properties/keycloak",
-      "signature": "87988f4d5325cc4d93448c65275411653953baa232474b1e3597af13149737a4"
+      "signature": "bbd464d38ca285bb669c504037421a159a428bb869bdfd13abaa1252cc16f6cb"
     },
     {
       "action": "hoisted",
@@ -10896,7 +10896,7 @@
       "field": "telegram",
       "parent": "Oauth2SettingsDto",
       "source": "#/components/schemas/GetRemnawaveSettingsResponseDto/properties/response/properties/oauth2Settings/properties/telegram",
-      "signature": "5af16ecff12436566d129d0327c9bbf1b6fe4162f1c520157506ce18748d4c88"
+      "signature": "3f9f5be6f209dd01545e1ea6ef4c69610f6275ef6014b5c711155cd13b29feef"
     },
     {
       "action": "reused",
@@ -10916,17 +10916,17 @@
       "field": "passkeySettings",
       "parent": "RemnawaveSettingsDto",
       "source": "#/components/schemas/GetRemnawaveSettingsResponseDto/properties/response/properties/passkeySettings",
-      "signature": "833c60c676927fbe1ae289008e3ad2ffc3ae2f01a89e1f910ac38a10b25159df"
+      "signature": "bdb152a262143c020a69c0ce2f13df2d403a3aa7c8a1fc9a04ce63b743ed4dee"
     },
     {
-      "action": "hoisted",
+      "action": "reused",
       "name": "RemnawaveSettingsPasswordSettingsDto",
-      "target": "RemnawaveSettingsPasswordSettingsDto",
+      "target": "StatusResponseAuthenticationPasskeyDto",
       "nicification": "GetRemnawaveSettingsResponsePasswordSettingsDto",
       "field": "passwordSettings",
       "parent": "RemnawaveSettingsDto",
       "source": "#/components/schemas/GetRemnawaveSettingsResponseDto/properties/response/properties/passwordSettings",
-      "signature": "3d352fc113ac0560584bec12adb8e7c6e74a8d6ff2c078da8d0d0528a44225d4"
+      "signature": "7a360f55297d55d27c75c763edc05997a55d24c21583c783d41fd0c58ead8b4d"
     },
     {
       "action": "hoisted",
@@ -11116,7 +11116,7 @@
       "field": "response",
       "parent": "GetStatusResponseDto",
       "source": "#/components/schemas/GetStatusResponseDto/properties/response",
-      "signature": "1528077a822c12176ebaadddfcf0d1e30fa69eace28962f3b963cc9d55fb0ed8"
+      "signature": "acd189c6414b4e0f8cb9433ca242f6b9ecc3d962b1b445469e168c8898de17bf"
     },
     {
       "action": "hoisted",
@@ -11126,7 +11126,7 @@
       "field": "authentication",
       "parent": "StatusResponse",
       "source": "#/components/schemas/GetStatusResponseDto/properties/response/properties/authentication",
-      "signature": "d454ac1edee92971f6af9b64f980a38680728ac0a738fa592351cbafe752051a"
+      "signature": "88cd0f3d7f7b49695f28ab7408d4b252be88c50364c2bf763409f2bae77b8ac2"
     },
     {
       "action": "hoisted",
@@ -11159,9 +11159,9 @@
       "signature": "7a360f55297d55d27c75c763edc05997a55d24c21583c783d41fd0c58ead8b4d"
     },
     {
-      "action": "hoisted",
-      "name": "BrandingSettingsDto2",
-      "target": "BrandingSettingsDto2",
+      "action": "reused",
+      "name": "BrandingSettingsDto",
+      "target": "BrandingSettingsDto",
       "nicification": "BrandingDto",
       "field": "branding",
       "parent": "StatusResponse",
@@ -11259,9 +11259,9 @@
       "signature": "e1d38d8fcdadbc36bfccabb91a5b6d85984d678ca9b2b0fd33437f780d89552f"
     },
     {
-      "action": "hoisted",
-      "name": "SubscriptionPageConfigDto2",
-      "target": "SubscriptionPageConfigDto2",
+      "action": "reused",
+      "name": "SubscriptionPageConfigDto",
+      "target": "SubscriptionPageConfigDto",
       "nicification": "GetSubscriptionPageConfigResponse",
       "field": "response",
       "parent": "GetSubscriptionPageConfigResponseDto",
@@ -11346,12 +11346,12 @@
       "field": "response",
       "parent": "GetSubscriptionSettingsResponseDto",
       "source": "#/components/schemas/GetSubscriptionSettingsResponseDto/properties/response",
-      "signature": "7b464e73ceb19830deb9e4b9c134ec0d3fbb24204aaefdaa9f4866b630d561d1"
+      "signature": "19a51527d91f9fa9b4f59cc89a5e54f71a22be239d29dcf0d2a7725261808ffd"
     },
     {
-      "action": "hoisted",
-      "name": "CustomRemarksDto2",
-      "target": "CustomRemarksDto2",
+      "action": "reused",
+      "name": "CustomRemarksDto",
+      "target": "CustomRemarksDto",
       "nicification": "GetSubscriptionSettingsResponseCustomRemarksDto",
       "field": "customRemarks",
       "parent": "SubscriptionSettingsDto",
@@ -11366,7 +11366,7 @@
       "field": "hwidSettings",
       "parent": "SubscriptionSettingsDto",
       "source": "#/components/schemas/GetSubscriptionSettingsResponseDto/properties/response/properties/hwidSettings",
-      "signature": "d9eb2adfba247c91fa1a93ade75dc1892d31d1ef04954ac698964edffe248b03"
+      "signature": "aadc9cd0dce3d78677730a7bd2c94ed57bc0db0e8bb657c1b98c5fa34407d8e5"
     },
     {
       "action": "hoisted",
@@ -11376,7 +11376,7 @@
       "field": "responseRules",
       "parent": "SubscriptionSettingsDto",
       "source": "#/components/schemas/GetSubscriptionSettingsResponseDto/properties/response/properties/responseRules",
-      "signature": "1f0c0e818216b28a04ee5f51d40cfaa014f4696a59d53bb363372d3207c28ca8"
+      "signature": "4193b9ca5fbfc06f02bd972e8776fefc2041cf986b6f1a3b4613fd1b29238406"
     },
     {
       "action": "hoisted",
@@ -11386,7 +11386,7 @@
       "field": "rules",
       "parent": "ResponseRulesConfigDto",
       "source": "#/components/schemas/GetSubscriptionSettingsResponseDto/properties/response/properties/responseRules/properties/rules/items",
-      "signature": "fe5c086ba34f2d01e9bb53598c6f800ca317a4d41ea20590753cef4e1d544b72"
+      "signature": "19aaba711c5fad8ed8e54ce0e871abb8c478f17d895db1c1e5653280627a66ab"
     },
     {
       "action": "hoisted",
@@ -11406,7 +11406,7 @@
       "field": "responseModifications",
       "parent": "ResponseRuleDto",
       "source": "#/components/schemas/GetSubscriptionSettingsResponseDto/properties/response/properties/responseRules/properties/rules/items/properties/responseModifications",
-      "signature": "bfbfb1ad8539b663274c14e73ab1c1ea574a5776c984e0655da8d7ae0dd54767"
+      "signature": "2b4d875a066c4138af3a06eaa0cac2cf453d66581d2ec03db9dbf35d2fce4ccf"
     },
     {
       "action": "hoisted",
@@ -12096,7 +12096,7 @@
       "field": "data",
       "parent": "RemnawaveWebhookNodeEventsDto",
       "source": "#/components/schemas/RemnawaveWebhookNodeEventsDto/properties/data",
-      "signature": "86ba3049e6baa85d16b4725aa26907251e1c9a0559f2a35b714f7cf2707c4d22"
+      "signature": "1e29f86deacc33c4487c1566af44c485cb591f38c5daa7838deb73d367c23e64"
     },
     {
       "action": "reused",
@@ -12126,7 +12126,7 @@
       "field": "provider",
       "parent": "NodesDto",
       "source": "#/components/schemas/RemnawaveWebhookNodeEventsDto/properties/data/properties/provider",
-      "signature": "dfa62d176586533aa8aaffec7a722c3087c9440f4573a94b9942b4d7c55a6a66"
+      "signature": "590b8593abe924ebd3704af5504afa940305fab6340b050952ea177c30cd621f"
     },
     {
       "action": "reused",
@@ -12136,7 +12136,7 @@
       "field": "system",
       "parent": "NodesDto",
       "source": "#/components/schemas/RemnawaveWebhookNodeEventsDto/properties/data/properties/system",
-      "signature": "612edc2c9144df51157f7dd40f21fd65b4d91c12e6b5d626467a0838180f1caa"
+      "signature": "3c87dd3daa5ec7ed5911b6300ae2cf6cae88f4067ea0ee17df253c9ca9a9e253"
     },
     {
       "action": "reused",
@@ -12156,7 +12156,7 @@
       "field": "stats",
       "parent": "NodeSystemDto",
       "source": "#/components/schemas/RemnawaveWebhookNodeEventsDto/properties/data/properties/system/properties/stats",
-      "signature": "f8cb79ad1e403c4eca5d77fc64ccd79325518a9835a856bd4ffff0a1bd725f79"
+      "signature": "685fd912bd40fd5cc732b612f78c818216255f75eae9f9f6650fd90300a32e14"
     },
     {
       "action": "reused",
@@ -12166,7 +12166,7 @@
       "field": "interface",
       "parent": "NodeSystemStatsDto",
       "source": "#/components/schemas/RemnawaveWebhookNodeEventsDto/properties/data/properties/system/properties/stats/properties/interface",
-      "signature": "dfb36121d4800ac1b7a194748ced4dee0bede773770ae2421433a7d06fcd5786"
+      "signature": "ea527135db048b3a52081669fe6f3a755f9a81f22f882abf49a8ff5624bc5030"
     },
     {
       "action": "reused",
@@ -12176,7 +12176,7 @@
       "field": "versions",
       "parent": "NodesDto",
       "source": "#/components/schemas/RemnawaveWebhookNodeEventsDto/properties/data/properties/versions",
-      "signature": "3efbd6bbbdb5fed0c734787646dd4539074b8e5d414515fe14eb517e50127af1"
+      "signature": "2d1275a6ab29435050a2eb3b6f9ecc1b90316a93e0a0173d9c602d30579a702e"
     },
     {
       "action": "hoisted",
@@ -12236,7 +12236,7 @@
       "field": "node",
       "parent": "RemnawaveWebhookTorrentBlockerEventsDataDto",
       "source": "#/components/schemas/RemnawaveWebhookTorrentBlockerEventsDto/properties/data/properties/node",
-      "signature": "86ba3049e6baa85d16b4725aa26907251e1c9a0559f2a35b714f7cf2707c4d22"
+      "signature": "1e29f86deacc33c4487c1566af44c485cb591f38c5daa7838deb73d367c23e64"
     },
     {
       "action": "hoisted",
@@ -12266,7 +12266,7 @@
       "field": "provider",
       "parent": "NodesDto",
       "source": "#/components/schemas/RemnawaveWebhookTorrentBlockerEventsDto/properties/data/properties/node/properties/provider",
-      "signature": "dfa62d176586533aa8aaffec7a722c3087c9440f4573a94b9942b4d7c55a6a66"
+      "signature": "590b8593abe924ebd3704af5504afa940305fab6340b050952ea177c30cd621f"
     },
     {
       "action": "hoisted",
@@ -12276,7 +12276,7 @@
       "field": "system",
       "parent": "NodesDto",
       "source": "#/components/schemas/RemnawaveWebhookTorrentBlockerEventsDto/properties/data/properties/node/properties/system",
-      "signature": "612edc2c9144df51157f7dd40f21fd65b4d91c12e6b5d626467a0838180f1caa"
+      "signature": "3c87dd3daa5ec7ed5911b6300ae2cf6cae88f4067ea0ee17df253c9ca9a9e253"
     },
     {
       "action": "hoisted",
@@ -12296,7 +12296,7 @@
       "field": "stats",
       "parent": "NodeSystemDto",
       "source": "#/components/schemas/RemnawaveWebhookTorrentBlockerEventsDto/properties/data/properties/node/properties/system/properties/stats",
-      "signature": "f8cb79ad1e403c4eca5d77fc64ccd79325518a9835a856bd4ffff0a1bd725f79"
+      "signature": "685fd912bd40fd5cc732b612f78c818216255f75eae9f9f6650fd90300a32e14"
     },
     {
       "action": "hoisted",
@@ -12306,7 +12306,7 @@
       "field": "interface",
       "parent": "NodeSystemStatsDto",
       "source": "#/components/schemas/RemnawaveWebhookTorrentBlockerEventsDto/properties/data/properties/node/properties/system/properties/stats/properties/interface",
-      "signature": "dfb36121d4800ac1b7a194748ced4dee0bede773770ae2421433a7d06fcd5786"
+      "signature": "ea527135db048b3a52081669fe6f3a755f9a81f22f882abf49a8ff5624bc5030"
     },
     {
       "action": "hoisted",
@@ -12316,7 +12316,7 @@
       "field": "versions",
       "parent": "NodesDto",
       "source": "#/components/schemas/RemnawaveWebhookTorrentBlockerEventsDto/properties/data/properties/node/properties/versions",
-      "signature": "3efbd6bbbdb5fed0c734787646dd4539074b8e5d414515fe14eb517e50127af1"
+      "signature": "2d1275a6ab29435050a2eb3b6f9ecc1b90316a93e0a0173d9c602d30579a702e"
     },
     {
       "action": "reused",
@@ -12416,7 +12416,7 @@
       "field": "meta",
       "parent": "RemnawaveWebhookUserEventsDto",
       "source": "#/components/schemas/RemnawaveWebhookUserEventsDto/properties/meta",
-      "signature": "1119af5cea65e1920cad8fd572b87cada4948199901040d9b879ba6d7927bf0a"
+      "signature": "ee243d360e6c16f186896757079b6f0ccabfc9782f061c681ad3d5561459adc5"
     },
     {
       "action": "hoisted",
@@ -12566,7 +12566,7 @@
       "field": "externalSquads",
       "parent": "ReorderExternalSquadsResponse",
       "source": "#/components/schemas/ReorderExternalSquadsResponseDto/properties/response/properties/externalSquads/items",
-      "signature": "50baa80493052a12b8df77cd9d034250960f1418f2d171d7a3ec6c51c4031d71"
+      "signature": "56728a6e9bedc34a0ec827bf23afa3a72ebef1383db726d2c5735a325a67f793"
     },
     {
       "action": "reused",
@@ -12576,7 +12576,7 @@
       "field": "customRemarks",
       "parent": "ExternalSquadDto",
       "source": "#/components/schemas/ReorderExternalSquadsResponseDto/properties/response/properties/externalSquads/items/properties/customRemarks",
-      "signature": "0de2abfb0d30a1fc4acac91171a7c8fa1abe61825b01da0ef28054bff423c775"
+      "signature": "13481470e40b1dcea8a2490b768ed1c0312990c86121f5727550d94964ab6930"
     },
     {
       "action": "reused",
@@ -12586,7 +12586,7 @@
       "field": "hostOverrides",
       "parent": "ExternalSquadDto",
       "source": "#/components/schemas/ReorderExternalSquadsResponseDto/properties/response/properties/externalSquads/items/properties/hostOverrides",
-      "signature": "9a9ca2780eb641b8517e1481790f9a9e9ecb3dbc3bc140ed3fceb0d52f58f4df"
+      "signature": "9fcf459065200af0da9aa08ad2f4a0cf6c9af6938a1bfad03d90e54270d5580e"
     },
     {
       "action": "reused",
@@ -12596,7 +12596,7 @@
       "field": "hwidSettings",
       "parent": "ExternalSquadDto",
       "source": "#/components/schemas/ReorderExternalSquadsResponseDto/properties/response/properties/externalSquads/items/properties/hwidSettings",
-      "signature": "d9eb2adfba247c91fa1a93ade75dc1892d31d1ef04954ac698964edffe248b03"
+      "signature": "aadc9cd0dce3d78677730a7bd2c94ed57bc0db0e8bb657c1b98c5fa34407d8e5"
     },
     {
       "action": "reused",
@@ -12616,7 +12616,7 @@
       "field": "subscriptionSettings",
       "parent": "ExternalSquadDto",
       "source": "#/components/schemas/ReorderExternalSquadsResponseDto/properties/response/properties/externalSquads/items/properties/subscriptionSettings",
-      "signature": "8a91d29cd3610b4260e8eb181d62bd74603f43d03409c8156ef148d39ec39bd2"
+      "signature": "05dacbfed07ba3ed8c829c96c4ad0ec312f197e8265b5b9ae977b99b1c236812"
     },
     {
       "action": "reused",
@@ -12746,7 +12746,7 @@
       "field": "response",
       "parent": "ReorderNodeResponseDto",
       "source": "#/components/schemas/ReorderNodeResponseDto/properties/response/items",
-      "signature": "86ba3049e6baa85d16b4725aa26907251e1c9a0559f2a35b714f7cf2707c4d22"
+      "signature": "1e29f86deacc33c4487c1566af44c485cb591f38c5daa7838deb73d367c23e64"
     },
     {
       "action": "reused",
@@ -12776,7 +12776,7 @@
       "field": "provider",
       "parent": "NodesDto",
       "source": "#/components/schemas/ReorderNodeResponseDto/properties/response/items/properties/provider",
-      "signature": "dfa62d176586533aa8aaffec7a722c3087c9440f4573a94b9942b4d7c55a6a66"
+      "signature": "590b8593abe924ebd3704af5504afa940305fab6340b050952ea177c30cd621f"
     },
     {
       "action": "reused",
@@ -12786,7 +12786,7 @@
       "field": "system",
       "parent": "NodesDto",
       "source": "#/components/schemas/ReorderNodeResponseDto/properties/response/items/properties/system",
-      "signature": "612edc2c9144df51157f7dd40f21fd65b4d91c12e6b5d626467a0838180f1caa"
+      "signature": "3c87dd3daa5ec7ed5911b6300ae2cf6cae88f4067ea0ee17df253c9ca9a9e253"
     },
     {
       "action": "reused",
@@ -12806,7 +12806,7 @@
       "field": "stats",
       "parent": "NodeSystemDto",
       "source": "#/components/schemas/ReorderNodeResponseDto/properties/response/items/properties/system/properties/stats",
-      "signature": "f8cb79ad1e403c4eca5d77fc64ccd79325518a9835a856bd4ffff0a1bd725f79"
+      "signature": "685fd912bd40fd5cc732b612f78c818216255f75eae9f9f6650fd90300a32e14"
     },
     {
       "action": "reused",
@@ -12816,7 +12816,7 @@
       "field": "interface",
       "parent": "NodeSystemStatsDto",
       "source": "#/components/schemas/ReorderNodeResponseDto/properties/response/items/properties/system/properties/stats/properties/interface",
-      "signature": "dfb36121d4800ac1b7a194748ced4dee0bede773770ae2421433a7d06fcd5786"
+      "signature": "ea527135db048b3a52081669fe6f3a755f9a81f22f882abf49a8ff5624bc5030"
     },
     {
       "action": "reused",
@@ -12826,7 +12826,7 @@
       "field": "versions",
       "parent": "NodesDto",
       "source": "#/components/schemas/ReorderNodeResponseDto/properties/response/items/properties/versions",
-      "signature": "3efbd6bbbdb5fed0c734787646dd4539074b8e5d414515fe14eb517e50127af1"
+      "signature": "2d1275a6ab29435050a2eb3b6f9ecc1b90316a93e0a0173d9c602d30579a702e"
     },
     {
       "action": "hoisted",
@@ -13106,7 +13106,7 @@
       "field": "customRemarks",
       "parent": "UpdateExternalSquadRequestDto",
       "source": "#/components/schemas/UpdateExternalSquadRequestDto/properties/customRemarks",
-      "signature": "0de2abfb0d30a1fc4acac91171a7c8fa1abe61825b01da0ef28054bff423c775"
+      "signature": "13481470e40b1dcea8a2490b768ed1c0312990c86121f5727550d94964ab6930"
     },
     {
       "action": "hoisted",
@@ -13126,7 +13126,7 @@
       "field": "hwidSettings",
       "parent": "UpdateExternalSquadRequestDto",
       "source": "#/components/schemas/UpdateExternalSquadRequestDto/properties/hwidSettings",
-      "signature": "d9eb2adfba247c91fa1a93ade75dc1892d31d1ef04954ac698964edffe248b03"
+      "signature": "aadc9cd0dce3d78677730a7bd2c94ed57bc0db0e8bb657c1b98c5fa34407d8e5"
     },
     {
       "action": "hoisted",
@@ -13156,7 +13156,7 @@
       "field": "response",
       "parent": "UpdateExternalSquadResponseDto",
       "source": "#/components/schemas/UpdateExternalSquadResponseDto/properties/response",
-      "signature": "50baa80493052a12b8df77cd9d034250960f1418f2d171d7a3ec6c51c4031d71"
+      "signature": "56728a6e9bedc34a0ec827bf23afa3a72ebef1383db726d2c5735a325a67f793"
     },
     {
       "action": "reused",
@@ -13166,7 +13166,7 @@
       "field": "customRemarks",
       "parent": "ExternalSquadDto",
       "source": "#/components/schemas/UpdateExternalSquadResponseDto/properties/response/properties/customRemarks",
-      "signature": "0de2abfb0d30a1fc4acac91171a7c8fa1abe61825b01da0ef28054bff423c775"
+      "signature": "13481470e40b1dcea8a2490b768ed1c0312990c86121f5727550d94964ab6930"
     },
     {
       "action": "reused",
@@ -13176,7 +13176,7 @@
       "field": "hostOverrides",
       "parent": "ExternalSquadDto",
       "source": "#/components/schemas/UpdateExternalSquadResponseDto/properties/response/properties/hostOverrides",
-      "signature": "9a9ca2780eb641b8517e1481790f9a9e9ecb3dbc3bc140ed3fceb0d52f58f4df"
+      "signature": "9fcf459065200af0da9aa08ad2f4a0cf6c9af6938a1bfad03d90e54270d5580e"
     },
     {
       "action": "reused",
@@ -13186,7 +13186,7 @@
       "field": "hwidSettings",
       "parent": "ExternalSquadDto",
       "source": "#/components/schemas/UpdateExternalSquadResponseDto/properties/response/properties/hwidSettings",
-      "signature": "d9eb2adfba247c91fa1a93ade75dc1892d31d1ef04954ac698964edffe248b03"
+      "signature": "aadc9cd0dce3d78677730a7bd2c94ed57bc0db0e8bb657c1b98c5fa34407d8e5"
     },
     {
       "action": "reused",
@@ -13206,7 +13206,7 @@
       "field": "subscriptionSettings",
       "parent": "ExternalSquadDto",
       "source": "#/components/schemas/UpdateExternalSquadResponseDto/properties/response/properties/subscriptionSettings",
-      "signature": "8a91d29cd3610b4260e8eb181d62bd74603f43d03409c8156ef148d39ec39bd2"
+      "signature": "05dacbfed07ba3ed8c829c96c4ad0ec312f197e8265b5b9ae977b99b1c236812"
     },
     {
       "action": "reused",
@@ -13276,17 +13276,17 @@
       "field": "billingNodes",
       "parent": "UpdateInfraBillingNodeResponse",
       "source": "#/components/schemas/UpdateInfraBillingNodeResponseDto/properties/response/properties/billingNodes/items",
-      "signature": "1e9e066d1fcbbf8d8fa24c84bc44cd2466486f26c4c5518464ce07290c4f7a89"
+      "signature": "231fa3c1b7f500069a1e39ece1a2c810489285f65b2c5e0e71bf6422b0d7a41f"
     },
     {
       "action": "reused",
       "name": "InfraBillingNodeNodeDto",
-      "target": "InfraBillingNodeNodeDto",
+      "target": "InfraBillingAvailableNodeDto",
       "nicification": "UpdateInfraBillingNodeResponseNodeDto",
       "field": "node",
       "parent": "InfraBillingNodeDto",
       "source": "#/components/schemas/UpdateInfraBillingNodeResponseDto/properties/response/properties/billingNodes/items/properties/node",
-      "signature": "93e23d057f1b14f547a478825856f2c2d4593e744e52ea2f256ccf9b6255c4b6"
+      "signature": "7d7938083d36703da7f3c59b6cd8e56344f3b1bd03a1afaed37ff18c505ed261"
     },
     {
       "action": "reused",
@@ -13336,7 +13336,7 @@
       "field": "billingNodes",
       "parent": "InfraProviderDto",
       "source": "#/components/schemas/UpdateInfraProviderResponseDto/properties/response/properties/billingNodes/items",
-      "signature": "b70d94a57815693dc89b9d05997b0ec152f4de5e747cc2334ced88ed74cd69de"
+      "signature": "61927569212102825ce6ca508d7b2845d29bc8f59545f46bf69511a1e68a3203"
     },
     {
       "action": "reused",
@@ -13346,7 +13346,7 @@
       "field": "details",
       "parent": "InfraProviderBillingNodesDto",
       "source": "#/components/schemas/UpdateInfraProviderResponseDto/properties/response/properties/billingNodes/items/properties/details",
-      "signature": "92b391f731e7080063d012c687ece2ded9b133dda77ec4a57fd67567b0709ea9"
+      "signature": "22b8fb68c45c404708989d63971343631e74da8ec264c12aa321ae07aa6cd4ac"
     },
     {
       "action": "reused",
@@ -13411,7 +13411,7 @@
     {
       "action": "reused",
       "name": "NodePluginDto",
-      "target": "NodePluginDto2",
+      "target": "NodePluginDto",
       "nicification": "UpdateNodePluginResponse",
       "field": "response",
       "parent": "UpdateNodePluginResponseDto",
@@ -13436,7 +13436,7 @@
       "field": "response",
       "parent": "UpdateNodeResponseDto",
       "source": "#/components/schemas/UpdateNodeResponseDto/properties/response",
-      "signature": "86ba3049e6baa85d16b4725aa26907251e1c9a0559f2a35b714f7cf2707c4d22"
+      "signature": "1e29f86deacc33c4487c1566af44c485cb591f38c5daa7838deb73d367c23e64"
     },
     {
       "action": "reused",
@@ -13466,7 +13466,7 @@
       "field": "provider",
       "parent": "NodesDto",
       "source": "#/components/schemas/UpdateNodeResponseDto/properties/response/properties/provider",
-      "signature": "dfa62d176586533aa8aaffec7a722c3087c9440f4573a94b9942b4d7c55a6a66"
+      "signature": "590b8593abe924ebd3704af5504afa940305fab6340b050952ea177c30cd621f"
     },
     {
       "action": "reused",
@@ -13476,7 +13476,7 @@
       "field": "system",
       "parent": "NodesDto",
       "source": "#/components/schemas/UpdateNodeResponseDto/properties/response/properties/system",
-      "signature": "612edc2c9144df51157f7dd40f21fd65b4d91c12e6b5d626467a0838180f1caa"
+      "signature": "3c87dd3daa5ec7ed5911b6300ae2cf6cae88f4067ea0ee17df253c9ca9a9e253"
     },
     {
       "action": "reused",
@@ -13496,7 +13496,7 @@
       "field": "stats",
       "parent": "NodeSystemDto",
       "source": "#/components/schemas/UpdateNodeResponseDto/properties/response/properties/system/properties/stats",
-      "signature": "f8cb79ad1e403c4eca5d77fc64ccd79325518a9835a856bd4ffff0a1bd725f79"
+      "signature": "685fd912bd40fd5cc732b612f78c818216255f75eae9f9f6650fd90300a32e14"
     },
     {
       "action": "reused",
@@ -13506,7 +13506,7 @@
       "field": "interface",
       "parent": "NodeSystemStatsDto",
       "source": "#/components/schemas/UpdateNodeResponseDto/properties/response/properties/system/properties/stats/properties/interface",
-      "signature": "dfb36121d4800ac1b7a194748ced4dee0bede773770ae2421433a7d06fcd5786"
+      "signature": "ea527135db048b3a52081669fe6f3a755f9a81f22f882abf49a8ff5624bc5030"
     },
     {
       "action": "reused",
@@ -13516,7 +13516,7 @@
       "field": "versions",
       "parent": "NodesDto",
       "source": "#/components/schemas/UpdateNodeResponseDto/properties/response/properties/versions",
-      "signature": "3efbd6bbbdb5fed0c734787646dd4539074b8e5d414515fe14eb517e50127af1"
+      "signature": "2d1275a6ab29435050a2eb3b6f9ecc1b90316a93e0a0173d9c602d30579a702e"
     },
     {
       "action": "reused",
@@ -13539,9 +13539,9 @@
       "signature": "4345caba91869d4f3f6c699e5e2180e93ce3341e82b7133329b50407d414b245"
     },
     {
-      "action": "hoisted",
-      "name": "BrandingSettingsDto3",
-      "target": "BrandingSettingsDto3",
+      "action": "reused",
+      "name": "BrandingSettingsDto",
+      "target": "BrandingSettingsDto",
       "nicification": "UpdateRemnawaveSettingsRequestBrandingSettingsDto",
       "field": "brandingSettings",
       "parent": "UpdateRemnawaveSettingsRequestDto",
@@ -13549,14 +13549,14 @@
       "signature": "8d047dad3dc6f1772ac0f8850e23371dc3d241a5499414bcf712ec59326df4ec"
     },
     {
-      "action": "hoisted",
-      "name": "Oauth2SettingsDto2",
-      "target": "Oauth2SettingsDto2",
+      "action": "reused",
+      "name": "Oauth2SettingsDto",
+      "target": "Oauth2SettingsDto",
       "nicification": "UpdateRemnawaveSettingsRequestOauth2SettingsDto",
       "field": "oauth2Settings",
       "parent": "UpdateRemnawaveSettingsRequestDto",
       "source": "#/components/schemas/UpdateRemnawaveSettingsRequestDto/properties/oauth2Settings",
-      "signature": "132a75b3d3bba4fa78c46803bbea6e0ee0c17e38d464f86cbce3e68acd3520f0"
+      "signature": "d1c9b69afb80e5ef398864a3a6fa03d4aa38fcabbe24ca0b721e7f20c81585dd"
     },
     {
       "action": "reused",
@@ -13566,7 +13566,7 @@
       "field": "generic",
       "parent": "Oauth2SettingsDto",
       "source": "#/components/schemas/UpdateRemnawaveSettingsRequestDto/properties/oauth2Settings/properties/generic",
-      "signature": "a8afa54daaf4d8f3854769261b8f20fd72b3e94675ae3b17485ca5238d26e15e"
+      "signature": "b26bc8413cd286eed1a908d8a1d4ed9dd5f54fe9887938f2ab757f53865a51ce"
     },
     {
       "action": "reused",
@@ -13586,7 +13586,7 @@
       "field": "keycloak",
       "parent": "Oauth2SettingsDto",
       "source": "#/components/schemas/UpdateRemnawaveSettingsRequestDto/properties/oauth2Settings/properties/keycloak",
-      "signature": "87988f4d5325cc4d93448c65275411653953baa232474b1e3597af13149737a4"
+      "signature": "bbd464d38ca285bb669c504037421a159a428bb869bdfd13abaa1252cc16f6cb"
     },
     {
       "action": "reused",
@@ -13606,7 +13606,7 @@
       "field": "telegram",
       "parent": "Oauth2SettingsDto",
       "source": "#/components/schemas/UpdateRemnawaveSettingsRequestDto/properties/oauth2Settings/properties/telegram",
-      "signature": "5af16ecff12436566d129d0327c9bbf1b6fe4162f1c520157506ce18748d4c88"
+      "signature": "3f9f5be6f209dd01545e1ea6ef4c69610f6275ef6014b5c711155cd13b29feef"
     },
     {
       "action": "reused",
@@ -13619,9 +13619,9 @@
       "signature": "3b2ed090eddbf4746fd1d94842461d51b8cb9c6a48b0658330c3e47338958f13"
     },
     {
-      "action": "hoisted",
-      "name": "PasskeySettingsDto2",
-      "target": "PasskeySettingsDto2",
+      "action": "reused",
+      "name": "PasskeySettingsDto",
+      "target": "PasskeySettingsDto",
       "nicification": "UpdateRemnawaveSettingsRequestPasskeySettingsDto",
       "field": "passkeySettings",
       "parent": "UpdateRemnawaveSettingsRequestDto",
@@ -13646,7 +13646,7 @@
       "field": "response",
       "parent": "UpdateRemnawaveSettingsResponseDto",
       "source": "#/components/schemas/UpdateRemnawaveSettingsResponseDto/properties/response",
-      "signature": "cea49b840ea89b5f22de6bbabb7a4a6294a92bd7f89d036e905041c733dfb952"
+      "signature": "e2a30d6c70ed569f409fbad31137f08382fac739c1bb8a5639502e2fabfa8852"
     },
     {
       "action": "reused",
@@ -13656,7 +13656,7 @@
       "field": "brandingSettings",
       "parent": "RemnawaveSettingsDto",
       "source": "#/components/schemas/UpdateRemnawaveSettingsResponseDto/properties/response/properties/brandingSettings",
-      "signature": "b8b14a4ca23ae611f6b07d0963ed50da6a8a33f6ca38aed38b8dd29e86250828"
+      "signature": "8d047dad3dc6f1772ac0f8850e23371dc3d241a5499414bcf712ec59326df4ec"
     },
     {
       "action": "reused",
@@ -13666,7 +13666,7 @@
       "field": "oauth2Settings",
       "parent": "RemnawaveSettingsDto",
       "source": "#/components/schemas/UpdateRemnawaveSettingsResponseDto/properties/response/properties/oauth2Settings",
-      "signature": "3c7669c8d3aa3815fc76ef1ada14c7daec0b18d64b9d9a71991e4387aede19ee"
+      "signature": "d1c9b69afb80e5ef398864a3a6fa03d4aa38fcabbe24ca0b721e7f20c81585dd"
     },
     {
       "action": "reused",
@@ -13676,7 +13676,7 @@
       "field": "generic",
       "parent": "Oauth2SettingsDto",
       "source": "#/components/schemas/UpdateRemnawaveSettingsResponseDto/properties/response/properties/oauth2Settings/properties/generic",
-      "signature": "a8afa54daaf4d8f3854769261b8f20fd72b3e94675ae3b17485ca5238d26e15e"
+      "signature": "b26bc8413cd286eed1a908d8a1d4ed9dd5f54fe9887938f2ab757f53865a51ce"
     },
     {
       "action": "reused",
@@ -13696,7 +13696,7 @@
       "field": "keycloak",
       "parent": "Oauth2SettingsDto",
       "source": "#/components/schemas/UpdateRemnawaveSettingsResponseDto/properties/response/properties/oauth2Settings/properties/keycloak",
-      "signature": "87988f4d5325cc4d93448c65275411653953baa232474b1e3597af13149737a4"
+      "signature": "bbd464d38ca285bb669c504037421a159a428bb869bdfd13abaa1252cc16f6cb"
     },
     {
       "action": "reused",
@@ -13716,7 +13716,7 @@
       "field": "telegram",
       "parent": "Oauth2SettingsDto",
       "source": "#/components/schemas/UpdateRemnawaveSettingsResponseDto/properties/response/properties/oauth2Settings/properties/telegram",
-      "signature": "5af16ecff12436566d129d0327c9bbf1b6fe4162f1c520157506ce18748d4c88"
+      "signature": "3f9f5be6f209dd01545e1ea6ef4c69610f6275ef6014b5c711155cd13b29feef"
     },
     {
       "action": "reused",
@@ -13736,17 +13736,17 @@
       "field": "passkeySettings",
       "parent": "RemnawaveSettingsDto",
       "source": "#/components/schemas/UpdateRemnawaveSettingsResponseDto/properties/response/properties/passkeySettings",
-      "signature": "833c60c676927fbe1ae289008e3ad2ffc3ae2f01a89e1f910ac38a10b25159df"
+      "signature": "bdb152a262143c020a69c0ce2f13df2d403a3aa7c8a1fc9a04ce63b743ed4dee"
     },
     {
       "action": "reused",
       "name": "RemnawaveSettingsPasswordSettingsDto",
-      "target": "RemnawaveSettingsPasswordSettingsDto",
+      "target": "StatusResponseAuthenticationPasskeyDto",
       "nicification": "UpdateRemnawaveSettingsResponsePasswordSettingsDto",
       "field": "passwordSettings",
       "parent": "RemnawaveSettingsDto",
       "source": "#/components/schemas/UpdateRemnawaveSettingsResponseDto/properties/response/properties/passwordSettings",
-      "signature": "3d352fc113ac0560584bec12adb8e7c6e74a8d6ff2c078da8d0d0528a44225d4"
+      "signature": "7a360f55297d55d27c75c763edc05997a55d24c21583c783d41fd0c58ead8b4d"
     },
     {
       "action": "reused",
@@ -13781,7 +13781,7 @@
     {
       "action": "reused",
       "name": "SubscriptionPageConfigDto",
-      "target": "SubscriptionPageConfigDto2",
+      "target": "SubscriptionPageConfigDto",
       "nicification": "UpdateSubscriptionPageConfigResponse",
       "field": "response",
       "parent": "UpdateSubscriptionPageConfigResponseDto",
@@ -13791,7 +13791,7 @@
     {
       "action": "reused",
       "name": "CustomRemarksDto",
-      "target": "CustomRemarksDto2",
+      "target": "CustomRemarksDto",
       "nicification": "UpdateSubscriptionSettingsRequestCustomRemarksDto",
       "field": "customRemarks",
       "parent": "UpdateSubscriptionSettingsRequestDto",
@@ -13799,9 +13799,9 @@
       "signature": "13481470e40b1dcea8a2490b768ed1c0312990c86121f5727550d94964ab6930"
     },
     {
-      "action": "hoisted",
-      "name": "HwidSettingsDto2",
-      "target": "HwidSettingsDto2",
+      "action": "reused",
+      "name": "HwidSettingsDto",
+      "target": "HwidSettingsDto",
       "nicification": "UpdateSubscriptionSettingsRequestHwidSettingsDto",
       "field": "hwidSettings",
       "parent": "UpdateSubscriptionSettingsRequestDto",
@@ -13811,12 +13811,12 @@
     {
       "action": "reused",
       "name": "ResponseRulesConfigDto",
-      "target": "ResponseRulesConfigDto2",
+      "target": "ResponseRulesConfigDto",
       "nicification": "UpdateSubscriptionSettingsRequestResponseRulesDto",
       "field": "responseRules",
       "parent": "UpdateSubscriptionSettingsRequestDto",
       "source": "#/components/schemas/UpdateSubscriptionSettingsRequestDto/properties/responseRules",
-      "signature": "b4db7c79004d12adef90ffbbc0566775add99a13fd803e9925883b871b35da53"
+      "signature": "4193b9ca5fbfc06f02bd972e8776fefc2041cf986b6f1a3b4613fd1b29238406"
     },
     {
       "action": "reused",
@@ -13826,7 +13826,7 @@
       "field": "rules",
       "parent": "ResponseRulesConfigDto",
       "source": "#/components/schemas/UpdateSubscriptionSettingsRequestDto/properties/responseRules/properties/rules/items",
-      "signature": "fe5c086ba34f2d01e9bb53598c6f800ca317a4d41ea20590753cef4e1d544b72"
+      "signature": "19aaba711c5fad8ed8e54ce0e871abb8c478f17d895db1c1e5653280627a66ab"
     },
     {
       "action": "reused",
@@ -13846,7 +13846,7 @@
       "field": "responseModifications",
       "parent": "ResponseRulesConfigRulesDto",
       "source": "#/components/schemas/UpdateSubscriptionSettingsRequestDto/properties/responseRules/properties/rules/items/properties/responseModifications",
-      "signature": "bfbfb1ad8539b663274c14e73ab1c1ea574a5776c984e0655da8d7ae0dd54767"
+      "signature": "2b4d875a066c4138af3a06eaa0cac2cf453d66581d2ec03db9dbf35d2fce4ccf"
     },
     {
       "action": "reused",
@@ -13886,12 +13886,12 @@
       "field": "response",
       "parent": "UpdateSubscriptionSettingsResponseDto",
       "source": "#/components/schemas/UpdateSubscriptionSettingsResponseDto/properties/response",
-      "signature": "7b464e73ceb19830deb9e4b9c134ec0d3fbb24204aaefdaa9f4866b630d561d1"
+      "signature": "19a51527d91f9fa9b4f59cc89a5e54f71a22be239d29dcf0d2a7725261808ffd"
     },
     {
       "action": "reused",
       "name": "CustomRemarksDto",
-      "target": "CustomRemarksDto2",
+      "target": "CustomRemarksDto",
       "nicification": "UpdateSubscriptionSettingsResponseCustomRemarksDto",
       "field": "customRemarks",
       "parent": "SubscriptionSettingsDto",
@@ -13906,7 +13906,7 @@
       "field": "hwidSettings",
       "parent": "SubscriptionSettingsDto",
       "source": "#/components/schemas/UpdateSubscriptionSettingsResponseDto/properties/response/properties/hwidSettings",
-      "signature": "d9eb2adfba247c91fa1a93ade75dc1892d31d1ef04954ac698964edffe248b03"
+      "signature": "aadc9cd0dce3d78677730a7bd2c94ed57bc0db0e8bb657c1b98c5fa34407d8e5"
     },
     {
       "action": "reused",
@@ -13916,7 +13916,7 @@
       "field": "responseRules",
       "parent": "SubscriptionSettingsDto",
       "source": "#/components/schemas/UpdateSubscriptionSettingsResponseDto/properties/response/properties/responseRules",
-      "signature": "1f0c0e818216b28a04ee5f51d40cfaa014f4696a59d53bb363372d3207c28ca8"
+      "signature": "4193b9ca5fbfc06f02bd972e8776fefc2041cf986b6f1a3b4613fd1b29238406"
     },
     {
       "action": "reused",
@@ -13926,7 +13926,7 @@
       "field": "rules",
       "parent": "ResponseRulesConfigDto",
       "source": "#/components/schemas/UpdateSubscriptionSettingsResponseDto/properties/response/properties/responseRules/properties/rules/items",
-      "signature": "fe5c086ba34f2d01e9bb53598c6f800ca317a4d41ea20590753cef4e1d544b72"
+      "signature": "19aaba711c5fad8ed8e54ce0e871abb8c478f17d895db1c1e5653280627a66ab"
     },
     {
       "action": "reused",
@@ -13946,7 +13946,7 @@
       "field": "responseModifications",
       "parent": "ResponseRulesConfigRulesDto",
       "source": "#/components/schemas/UpdateSubscriptionSettingsResponseDto/properties/response/properties/responseRules/properties/rules/items/properties/responseModifications",
-      "signature": "bfbfb1ad8539b663274c14e73ab1c1ea574a5776c984e0655da8d7ae0dd54767"
+      "signature": "2b4d875a066c4138af3a06eaa0cac2cf453d66581d2ec03db9dbf35d2fce4ccf"
     },
     {
       "action": "reused",
