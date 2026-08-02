@@ -2272,6 +2272,7 @@ remnawave:
         - ADD_MANY_USERS_TO_INTERNAL_SQUAD_ERROR
         - REMOVE_MANY_USERS_FROM_INTERNAL_SQUAD_ERROR
         - GET_STATS_DIGEST_ERROR
+        - BULK_DELETE_USERS_BY_USER_IDS_ERROR
         values:
         - Server error
         - Login error
@@ -2433,6 +2434,7 @@ remnawave:
         - Add many users to internal squad error
         - Remove many users from internal squad error
         - Get stats digest error
+        - Bulk delete users by user IDs error
 error_responses:
   enabled: true
   min_occurrences: 1

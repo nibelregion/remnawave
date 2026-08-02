@@ -4,7 +4,7 @@
     "deprecated_after": 0,
     "enum_updates": 165,
     "response_content_types": 2,
-    "error_code_updates": 3,
+    "error_code_updates": 4,
     "hoisted_error_responses": 7,
     "hoisted_responses": 141,
     "renamed_responses": 0,
@@ -1423,7 +1423,8 @@
         "GET_INTERNAL_SQUAD_USAGE_ERROR",
         "ADD_MANY_USERS_TO_INTERNAL_SQUAD_ERROR",
         "REMOVE_MANY_USERS_FROM_INTERNAL_SQUAD_ERROR",
-        "GET_STATS_DIGEST_ERROR"
+        "GET_STATS_DIGEST_ERROR",
+        "BULK_DELETE_USERS_BY_USER_IDS_ERROR"
       ],
       "values": [
         "Server error",
@@ -1585,7 +1586,8 @@
         "Get internal squad usage error",
         "Add many users to internal squad error",
         "Remove many users from internal squad error",
-        "Get stats digest error"
+        "Get stats digest error",
+        "Bulk delete users by user IDs error"
       ]
     },
     {
@@ -3172,7 +3174,7 @@
       ]
     },
     {
-      "action": "referenced",
+      "action": "variant_referenced",
       "schema": "RemnawaveInternalServerErrorMessage",
       "nicification": "remnawave_internal_server_error_message",
       "source": "#/components/schemas/RemnawaveInternalServerErrorDto/properties/message",
@@ -3236,7 +3238,7 @@
         "Delete hosts error",
         "Bulk enable hosts error",
         "Bulk disable hosts error",
-        "Bulk delete users by UUID error",
+        "Bulk delete users by user IDs error",
         "Bulk revoke users subscription error",
         "Bulk reset user traffic error",
         "Bulk update users error",
@@ -3510,7 +3512,7 @@
       ]
     },
     {
-      "action": "referenced",
+      "action": "variant_referenced",
       "schema": "RemnawaveBadRequestErrorMessage",
       "nicification": "remnawave_bad_request_error_message",
       "source": "#/components/schemas/RemnawaveBadRequestErrorDto/properties/message",
@@ -3550,7 +3552,6 @@
         "Reserved subpage config cannot be deleted",
         "Invalid subscription page config",
         "Invalid Remnawave injector",
-        "Invalid node plugin config",
         "Node plugin name already exists",
         "One or more provided API token scopes are invalid",
         "Either nodeUuid or name must be provided",
@@ -3558,7 +3559,7 @@
       ]
     },
     {
-      "action": "referenced",
+      "action": "variant_referenced",
       "schema": "RemnawaveBadRequestErrorErrorCode",
       "nicification": "remnawave_bad_request_error_error_code",
       "source": "#/components/schemas/RemnawaveBadRequestErrorDto/properties/errorCode",
@@ -3599,7 +3600,6 @@
         "A212",
         "A215",
         "A216",
-        "A222",
         "A223",
         "A229",
         "A230",
@@ -3807,7 +3807,7 @@
         "DELETE_HOSTS_ERROR",
         "BULK_ENABLE_HOSTS_ERROR",
         "BULK_DISABLE_HOSTS_ERROR",
-        "BULK_DELETE_USERS_BY_UUID_ERROR",
+        "BULK_DELETE_USERS_BY_USER_IDS_ERROR",
         "BULK_REVOKE_USERS_SUBSCRIPTION_ERROR",
         "BULK_RESET_USER_TRAFFIC_ERROR",
         "BULK_UPDATE_USERS_ERROR",
@@ -4211,6 +4211,11 @@
     {
       "action": "referenced",
       "pointer": "#/components/schemas/RemnawaveInternalServerErrorDto/properties/errorCode",
+      "ref": "#/components/schemas/ErrorCode"
+    },
+    {
+      "action": "referenced",
+      "pointer": "#/components/schemas/RemnawaveBadRequestErrorDto/properties/errorCode",
       "ref": "#/components/schemas/ErrorCode"
     },
     {
@@ -9286,7 +9291,7 @@
       "field": "response",
       "parent": "GetNodesResponseDto",
       "source": "#/components/schemas/GetNodesResponseDto/properties/response/items",
-      "signature": "047506204f2f213fd0032cd81abbeac33719a7a0805f79a70cd57b395440d786"
+      "signature": "4cfd8479203659ccccd3c17f3db3e009482ee912b134632c7e47b73289c0fc99"
     },
     {
       "action": "reused",
@@ -10316,7 +10321,7 @@
       "field": "records",
       "parent": "SubscriptionRequestHistoryResponse",
       "source": "#/components/schemas/GetSubscriptionRequestHistoryResponseDto/properties/response/properties/records/items",
-      "signature": "3a00261cc567189dd8e98a0ea879ea50e565ce6deb7a5ad6ffc0762257eeff8d"
+      "signature": "34657b0f2d29f6ca0e277020fdf2f5d6c638a789f90172b260b9a2a7d8a9d802"
     },
     {
       "action": "hoisted",
@@ -10736,7 +10741,7 @@
       "field": "records",
       "parent": "UserSubscriptionRequestHistoryResponse",
       "source": "#/components/schemas/GetUserSubscriptionRequestHistoryResponseDto/properties/response/properties/records/items",
-      "signature": "43eb9339cb5fa93a446983f64da3de58bffb72d24fa181c2f2a4de12034ff020"
+      "signature": "ee199d1e30e8e67ab7e916b2859ddb6d9f5f039159e4ce2aec6ebac5f3e0f6c5"
     },
     {
       "action": "hoisted",
@@ -10866,7 +10871,7 @@
       "field": "response",
       "parent": "NodeResponseDto",
       "source": "#/components/schemas/NodeResponseDto/properties/response",
-      "signature": "047506204f2f213fd0032cd81abbeac33719a7a0805f79a70cd57b395440d786"
+      "signature": "4cfd8479203659ccccd3c17f3db3e009482ee912b134632c7e47b73289c0fc99"
     },
     {
       "action": "reused",
@@ -11086,7 +11091,7 @@
       "field": "data",
       "parent": "RemnawaveWebhookNodeEventsDto",
       "source": "#/components/schemas/RemnawaveWebhookNodeEventsDto/properties/data",
-      "signature": "047506204f2f213fd0032cd81abbeac33719a7a0805f79a70cd57b395440d786"
+      "signature": "4cfd8479203659ccccd3c17f3db3e009482ee912b134632c7e47b73289c0fc99"
     },
     {
       "action": "reused",
@@ -11226,7 +11231,7 @@
       "field": "node",
       "parent": "RemnawaveWebhookTorrentBlockerEventsDataDto",
       "source": "#/components/schemas/RemnawaveWebhookTorrentBlockerEventsDto/properties/data/properties/node",
-      "signature": "047506204f2f213fd0032cd81abbeac33719a7a0805f79a70cd57b395440d786"
+      "signature": "4cfd8479203659ccccd3c17f3db3e009482ee912b134632c7e47b73289c0fc99"
     },
     {
       "action": "hoisted",
@@ -11716,7 +11721,7 @@
       "field": "response",
       "parent": "ReorderNodesResponseDto",
       "source": "#/components/schemas/ReorderNodesResponseDto/properties/response/items",
-      "signature": "047506204f2f213fd0032cd81abbeac33719a7a0805f79a70cd57b395440d786"
+      "signature": "4cfd8479203659ccccd3c17f3db3e009482ee912b134632c7e47b73289c0fc99"
     },
     {
       "action": "reused",
