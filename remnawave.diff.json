@@ -6,12 +6,12 @@
     "response_content_types": 2,
     "error_code_updates": 4,
     "hoisted_error_responses": 7,
-    "hoisted_responses": 141,
+    "hoisted_responses": 142,
     "renamed_responses": 0,
     "renamed_from_ref_responses": 2,
-    "renamed_response_schema_components": 73,
+    "renamed_response_schema_components": 74,
     "inlined_map_object_components": 0,
-    "hoisted_inline_objects": 235,
+    "hoisted_inline_objects": 239,
     "reused_inline_objects": 295,
     "deprecation_annotations": 0
   },
@@ -4231,7 +4231,7 @@
       "nicification": "BadRequestError",
       "status_code": "400",
       "is_error": true,
-      "occurrences": 189,
+      "occurrences": 190,
       "locations": [
         "#/paths/~1api~1remnawave-settings/get/responses/400",
         "#/paths/~1api~1remnawave-settings/patch/responses/400",
@@ -4401,6 +4401,7 @@
         "#/paths/~1api~1subscription-request-history/get/responses/400",
         "#/paths/~1api~1subscription-request-history~1stats/get/responses/400",
         "#/paths/~1api~1system~1metadata/get/responses/400",
+        "#/paths/~1api~1system~1configuration/get/responses/400",
         "#/paths/~1api~1system~1stats/get/responses/400",
         "#/paths/~1api~1system~1stats~1bandwidth/get/responses/400",
         "#/paths/~1api~1system~1stats~1nodes/get/responses/400",
@@ -4431,7 +4432,7 @@
       "nicification": "ResourceNotFoundErrorDto",
       "status_code": "404",
       "is_error": true,
-      "occurrences": 189,
+      "occurrences": 190,
       "locations": [
         "#/paths/~1api~1remnawave-settings/get/responses/404",
         "#/paths/~1api~1remnawave-settings/patch/responses/404",
@@ -4601,6 +4602,7 @@
         "#/paths/~1api~1subscription-request-history/get/responses/404",
         "#/paths/~1api~1subscription-request-history~1stats/get/responses/404",
         "#/paths/~1api~1system~1metadata/get/responses/404",
+        "#/paths/~1api~1system~1configuration/get/responses/404",
         "#/paths/~1api~1system~1stats/get/responses/404",
         "#/paths/~1api~1system~1stats~1bandwidth/get/responses/404",
         "#/paths/~1api~1system~1stats~1nodes/get/responses/404",
@@ -4631,7 +4633,7 @@
       "nicification": "InternalServerError",
       "status_code": "500",
       "is_error": true,
-      "occurrences": 189,
+      "occurrences": 190,
       "locations": [
         "#/paths/~1api~1remnawave-settings/get/responses/500",
         "#/paths/~1api~1remnawave-settings/patch/responses/500",
@@ -4801,6 +4803,7 @@
         "#/paths/~1api~1subscription-request-history/get/responses/500",
         "#/paths/~1api~1subscription-request-history~1stats/get/responses/500",
         "#/paths/~1api~1system~1metadata/get/responses/500",
+        "#/paths/~1api~1system~1configuration/get/responses/500",
         "#/paths/~1api~1system~1stats/get/responses/500",
         "#/paths/~1api~1system~1stats~1bandwidth/get/responses/500",
         "#/paths/~1api~1system~1stats~1nodes/get/responses/500",
@@ -4885,7 +4888,7 @@
       "nicification": "BadRequestError",
       "status_code": "400",
       "is_error": true,
-      "occurrences": 189,
+      "occurrences": 190,
       "locations": [
         "#/paths/~1api~1remnawave-settings/get/responses/400",
         "#/paths/~1api~1remnawave-settings/patch/responses/400",
@@ -5055,6 +5058,7 @@
         "#/paths/~1api~1subscription-request-history/get/responses/400",
         "#/paths/~1api~1subscription-request-history~1stats/get/responses/400",
         "#/paths/~1api~1system~1metadata/get/responses/400",
+        "#/paths/~1api~1system~1configuration/get/responses/400",
         "#/paths/~1api~1system~1stats/get/responses/400",
         "#/paths/~1api~1system~1stats~1bandwidth/get/responses/400",
         "#/paths/~1api~1system~1stats~1nodes/get/responses/400",
@@ -5085,7 +5089,7 @@
       "nicification": "ResourceNotFoundErrorDto",
       "status_code": "404",
       "is_error": true,
-      "occurrences": 189,
+      "occurrences": 190,
       "locations": [
         "#/paths/~1api~1remnawave-settings/get/responses/404",
         "#/paths/~1api~1remnawave-settings/patch/responses/404",
@@ -5255,6 +5259,7 @@
         "#/paths/~1api~1subscription-request-history/get/responses/404",
         "#/paths/~1api~1subscription-request-history~1stats/get/responses/404",
         "#/paths/~1api~1system~1metadata/get/responses/404",
+        "#/paths/~1api~1system~1configuration/get/responses/404",
         "#/paths/~1api~1system~1stats/get/responses/404",
         "#/paths/~1api~1system~1stats~1bandwidth/get/responses/404",
         "#/paths/~1api~1system~1stats~1nodes/get/responses/404",
@@ -5285,7 +5290,7 @@
       "nicification": "InternalServerError",
       "status_code": "500",
       "is_error": true,
-      "occurrences": 189,
+      "occurrences": 190,
       "locations": [
         "#/paths/~1api~1remnawave-settings/get/responses/500",
         "#/paths/~1api~1remnawave-settings/patch/responses/500",
@@ -5455,6 +5460,7 @@
         "#/paths/~1api~1subscription-request-history/get/responses/500",
         "#/paths/~1api~1subscription-request-history~1stats/get/responses/500",
         "#/paths/~1api~1system~1metadata/get/responses/500",
+        "#/paths/~1api~1system~1configuration/get/responses/500",
         "#/paths/~1api~1system~1stats/get/responses/500",
         "#/paths/~1api~1system~1stats~1bandwidth/get/responses/500",
         "#/paths/~1api~1system~1stats~1nodes/get/responses/500",
@@ -6668,6 +6674,18 @@
     },
     {
       "action": "hoisted",
+      "name": "OkGetConfigurationResponse",
+      "nicification": "OkGetConfigurationResponse",
+      "status_code": "200",
+      "is_error": false,
+      "occurrences": 1,
+      "locations": [
+        "#/paths/~1api~1system~1configuration/get/responses/200"
+      ],
+      "signature": "a94376d3b96e5f2f13cd5c73b4d9b1bc62fbbac575523e650922fb3e0df9a6b2"
+    },
+    {
+      "action": "hoisted",
       "name": "CreatedHostResponse",
       "nicification": "CreatedHostResponse",
       "status_code": "201",
@@ -7455,6 +7473,10 @@
     {
       "old_name": "GetMetadataResponseDto",
       "name": "MetadataResponseDto"
+    },
+    {
+      "old_name": "GetConfigurationResponseDto",
+      "name": "ConfigurationResponseDto"
     },
     {
       "old_name": "GetStatsResponseDto",
@@ -8492,6 +8514,46 @@
       "parent": "ConfigProfileDto",
       "source": "#/components/schemas/GetConfigProfilesResponseDto/properties/response/properties/configProfiles/items/properties/nodes/items",
       "signature": "27e9b6fefd2065d852d56a716d1a8cfdd2471cecfb3a59545a1a488609903bdd"
+    },
+    {
+      "action": "hoisted",
+      "name": "ConfigurationResponse",
+      "target": "ConfigurationResponse",
+      "nicification": "GetConfigurationResponse",
+      "field": "response",
+      "parent": "GetConfigurationResponseDto",
+      "source": "#/components/schemas/GetConfigurationResponseDto/properties/response",
+      "signature": "a0724eea737269b46693ac85dc8dc19f873a0f22cf58c4901fe98759bc703a56"
+    },
+    {
+      "action": "hoisted",
+      "name": "ConfigurationResponseMiscDto",
+      "target": "ConfigurationResponseMiscDto",
+      "nicification": "MiscDto",
+      "field": "misc",
+      "parent": "ConfigurationResponse",
+      "source": "#/components/schemas/GetConfigurationResponseDto/properties/response/properties/misc",
+      "signature": "eeacbb2f9902a5ec477ff22f3e4ba81225f78ed397a198ad68980951e534b0ba"
+    },
+    {
+      "action": "hoisted",
+      "name": "ConfigurationResponseNotificationsDto",
+      "target": "ConfigurationResponseNotificationsDto",
+      "nicification": "NotificationsDto",
+      "field": "notifications",
+      "parent": "ConfigurationResponse",
+      "source": "#/components/schemas/GetConfigurationResponseDto/properties/response/properties/notifications",
+      "signature": "67effc1bf5e177040ff032204cde2c41b96a2e23251b765946ca5b1a34db8911"
+    },
+    {
+      "action": "hoisted",
+      "name": "ConfigurationResponseServiceDto",
+      "target": "ConfigurationResponseServiceDto",
+      "nicification": "ServiceDto",
+      "field": "service",
+      "parent": "ConfigurationResponse",
+      "source": "#/components/schemas/GetConfigurationResponseDto/properties/response/properties/service",
+      "signature": "11312a374391020a59fc2c22bdea2a7e0c6ab9a23b43858173fca32644b3a77b"
     },
     {
       "action": "hoisted",

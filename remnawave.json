@@ -7023,6 +7023,36 @@
         ]
       }
     },
+    "/api/system/configuration": {
+      "get": {
+        "description": "Returns some of the configuration values.",
+        "operationId": "SystemController_getConfiguration",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OkGetConfigurationResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequestError"
+          },
+          "404": {
+            "$ref": "#/components/responses/RemnawaveNotFoundErrorDtoSchema"
+          },
+          "500": {
+            "$ref": "#/components/responses/RemnawaveInternalServerErrorDtoSchema"
+          }
+        },
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "summary": "Get Remnawave Configuration",
+        "tags": [
+          "System Controller"
+        ]
+      }
+    },
     "/api/system/stats": {
       "get": {
         "operationId": "SystemController_getStats",
@@ -7796,9 +7826,9 @@
     }
   },
   "info": {
-    "title": "Remnawave API v3.1.0",
+    "title": "Remnawave API v3.2.0",
     "description": "\nRemnawave is a powerful proxy managment tool, built on top of Xray-core, with a focus on simplicity and ease of use.\n\n## Resources\n* https://t.me/remnawave\n* https://github.com/remnawave\n* https://docs.rw\n",
-    "version": "3.1.0",
+    "version": "3.2.0",
     "contact": {},
     "license": {
       "name": "AGPL-3.0",
@@ -18371,6 +18401,93 @@
           "frontend"
         ]
       },
+      "ConfigurationResponseNotificationsDto": {
+        "type": "object",
+        "properties": {
+          "webhook": {
+            "type": "boolean",
+            "description": "WEBHOOK_ENABLED"
+          },
+          "bandwidthUsage": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "description": "BANDWIDTH_USAGE_NOTIFICATIONS_THRESHOLD",
+            "nullable": true
+          },
+          "notConnectedAfter": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "description": "NOT_CONNECTED_USERS_NOTIFICATIONS_AFTER_HOURS",
+            "nullable": true
+          },
+          "expirationNotifications": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "description": "EXPIRATION_NOTIFICATIONS",
+            "nullable": true
+          }
+        },
+        "required": [
+          "webhook",
+          "bandwidthUsage",
+          "notConnectedAfter",
+          "expirationNotifications"
+        ]
+      },
+      "ConfigurationResponseServiceDto": {
+        "type": "object",
+        "properties": {
+          "cleanUsageHistory": {
+            "type": "boolean",
+            "description": "SERVICE_CLEAN_USAGE_HISTORY"
+          },
+          "disableUserUsageRecords": {
+            "type": "boolean",
+            "description": "SERVICE_DISABLE_USER_USAGE_RECORDS"
+          },
+          "disableSrhRecords": {
+            "type": "boolean",
+            "description": "SERVICE_DISABLE_SRH_RECORDS"
+          },
+          "exportToRedisStream": {
+            "type": "boolean",
+            "description": "EXPORT_TO_STREAM_ENABLED"
+          }
+        },
+        "required": [
+          "cleanUsageHistory",
+          "disableUserUsageRecords",
+          "disableSrhRecords",
+          "exportToRedisStream"
+        ]
+      },
+      "ConfigurationResponseMiscDto": {
+        "type": "object",
+        "properties": {
+          "shortUuidLength": {
+            "type": "number",
+            "description": "SHORT_UUID_LENGTH"
+          },
+          "subPublicDomain": {
+            "type": "string"
+          },
+          "userUsageIgnoreBelowBytes": {
+            "type": "number",
+            "description": "USER_USAGE_IGNORE_BELOW_BYTES"
+          }
+        },
+        "required": [
+          "shortUuidLength",
+          "subPublicDomain",
+          "userUsageIgnoreBelowBytes"
+        ]
+      },
       "GetStatsResponseCpuDto": {
         "type": "object",
         "properties": {
@@ -20418,6 +20535,25 @@
           "git"
         ]
       },
+      "ConfigurationResponse": {
+        "type": "object",
+        "properties": {
+          "notifications": {
+            "$ref": "#/components/schemas/ConfigurationResponseNotificationsDto"
+          },
+          "service": {
+            "$ref": "#/components/schemas/ConfigurationResponseServiceDto"
+          },
+          "misc": {
+            "$ref": "#/components/schemas/ConfigurationResponseMiscDto"
+          }
+        },
+        "required": [
+          "notifications",
+          "service",
+          "misc"
+        ]
+      },
       "GetStatsResponseModelDto": {
         "type": "object",
         "properties": {
@@ -21559,6 +21695,17 @@
         "properties": {
           "response": {
             "$ref": "#/components/schemas/GetMetadataResponseModelDto"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "ConfigurationResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/ConfigurationResponse"
           }
         },
         "required": [
@@ -23563,6 +23710,16 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/UpdateConfigProfileResponseDto"
+            }
+          }
+        }
+      },
+      "OkGetConfigurationResponse": {
+        "description": "Operation successful",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ConfigurationResponseDto"
             }
           }
         }
