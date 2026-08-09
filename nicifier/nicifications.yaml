@@ -790,6 +790,20 @@ remnawave:
         name: BaseInternalSquadDto
     - UserResponseUserTrafficDto:
         name: UserTrafficDto
+    - CreateNodeBodyIpsDto:
+        name: NodeIpDto
+    - GetNodesResponseIpsDto:
+        name: NodeIpDto
+    - NodeResponseIpsDto:
+        name: NodeIpDto
+    - RemnawaveWebhookNodeEventsIpsDto:
+        name: NodeIpDto
+    - RemnawaveWebhookTorrentBlockerEventsIpsDto:
+        name: NodeIpDto
+    - ReorderNodesResponseIpsDto:
+        name: NodeIpDto
+    - UpdateNodeBodyIpsDto:
+        name: NodeIpDto
     errors:
     - UserNotFoundConnectedNodesNotFoundError:
         name: UserOrConnectedNodesNotFoundError
@@ -1064,11 +1078,31 @@ remnawave:
         - DISABLED
         - LIMITED
         - EXPIRED
+        - INBOUND
+        - OUTBOUND
+        - MANAGEMENT
+        - TRANSIT
+        - MONITORING
+        - RESERVE
+        - BLOCKED
+        - FLAGGED
+        - DEPRECATED
+        - UNKNOWN
         values:
         - ACTIVE
         - DISABLED
         - LIMITED
         - EXPIRED
+        - INBOUND
+        - OUTBOUND
+        - MANAGEMENT
+        - TRANSIT
+        - MONITORING
+        - RESERVE
+        - BLOCKED
+        - FLAGGED
+        - DEPRECATED
+        - UNKNOWN
         description: User account status.
         member_descriptions:
           ACTIVE: User account is active.

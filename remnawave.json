@@ -1019,7 +1019,24 @@
             "in": "query",
             "description": "Status to filter users by",
             "schema": {
-              "$ref": "#/components/schemas/Status"
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Status"
+                }
+              ],
+              "enum": [
+                "ACTIVE",
+                "DISABLED",
+                "LIMITED",
+                "EXPIRED"
+              ],
+              "x-enum-ref": "#/components/schemas/Status",
+              "x-enum-members": [
+                "ACTIVE",
+                "DISABLED",
+                "LIMITED",
+                "EXPIRED"
+              ]
             }
           },
           {
@@ -7826,9 +7843,9 @@
     }
   },
   "info": {
-    "title": "Remnawave API v3.2.1",
+    "title": "Remnawave API v3.2.2",
     "description": "\nRemnawave is a powerful proxy managment tool, built on top of Xray-core, with a focus on simplicity and ease of use.\n\n## Resources\n* https://t.me/remnawave\n* https://github.com/remnawave\n* https://docs.rw\n",
-    "version": "3.2.1",
+    "version": "3.2.2",
     "contact": {},
     "license": {
       "name": "AGPL-3.0",
@@ -8301,6 +8318,19 @@
                 "$ref": "#/components/schemas/Status"
               }
             ],
+            "enum": [
+              "ACTIVE",
+              "DISABLED",
+              "LIMITED",
+              "EXPIRED"
+            ],
+            "x-enum-ref": "#/components/schemas/Status",
+            "x-enum-members": [
+              "ACTIVE",
+              "DISABLED",
+              "LIMITED",
+              "EXPIRED"
+            ],
             "description": "Optional. User account status. Defaults to ACTIVE.",
             "default": "ACTIVE"
           },
@@ -8318,7 +8348,7 @@
             "description": "Optional. UUID for VLESS protocol. Must be a valid UUID format.",
             "type": "string",
             "format": "uuid",
-            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})$"
           },
           "ssPassword": {
             "description": "Optional. Password for Shadowsocks protocol. Must be 8-32 characters.",
@@ -8567,7 +8597,24 @@
         "type": "object",
         "properties": {
           "status": {
-            "$ref": "#/components/schemas/Status"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Status"
+              }
+            ],
+            "enum": [
+              "ACTIVE",
+              "DISABLED",
+              "LIMITED",
+              "EXPIRED"
+            ],
+            "x-enum-ref": "#/components/schemas/Status",
+            "x-enum-members": [
+              "ACTIVE",
+              "DISABLED",
+              "LIMITED",
+              "EXPIRED"
+            ]
           }
         },
         "required": [
@@ -8693,7 +8740,24 @@
         "type": "object",
         "properties": {
           "status": {
-            "$ref": "#/components/schemas/Status"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Status"
+              }
+            ],
+            "enum": [
+              "ACTIVE",
+              "DISABLED",
+              "LIMITED",
+              "EXPIRED"
+            ],
+            "x-enum-ref": "#/components/schemas/Status",
+            "x-enum-members": [
+              "ACTIVE",
+              "DISABLED",
+              "LIMITED",
+              "EXPIRED"
+            ]
           },
           "trafficLimitBytes": {
             "type": "number",
@@ -9403,6 +9467,13 @@
           "note": {
             "type": "string",
             "maxLength": 255
+          },
+          "ips": {
+            "maxItems": 64,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NodeIpDto"
+            }
           }
         },
         "required": [
@@ -9508,6 +9579,13 @@
             "type": "string",
             "maxLength": 255,
             "nullable": true
+          },
+          "ips": {
+            "maxItems": 64,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NodeIpDto"
+            }
           }
         },
         "required": [
@@ -12193,19 +12271,49 @@
           "ACTIVE",
           "DISABLED",
           "LIMITED",
-          "EXPIRED"
+          "EXPIRED",
+          "INBOUND",
+          "OUTBOUND",
+          "MANAGEMENT",
+          "TRANSIT",
+          "MONITORING",
+          "RESERVE",
+          "BLOCKED",
+          "FLAGGED",
+          "DEPRECATED",
+          "UNKNOWN"
         ],
         "x-enum-varnames": [
           "ACTIVE",
           "DISABLED",
           "LIMITED",
-          "EXPIRED"
+          "EXPIRED",
+          "INBOUND",
+          "OUTBOUND",
+          "MANAGEMENT",
+          "TRANSIT",
+          "MONITORING",
+          "RESERVE",
+          "BLOCKED",
+          "FLAGGED",
+          "DEPRECATED",
+          "UNKNOWN"
         ],
         "x-enumNames": [
           "ACTIVE",
           "DISABLED",
           "LIMITED",
-          "EXPIRED"
+          "EXPIRED",
+          "INBOUND",
+          "OUTBOUND",
+          "MANAGEMENT",
+          "TRANSIT",
+          "MONITORING",
+          "RESERVE",
+          "BLOCKED",
+          "FLAGGED",
+          "DEPRECATED",
+          "UNKNOWN"
         ],
         "description": "User account status.",
         "x-enum-descriptions": {
@@ -15469,7 +15577,24 @@
             "type": "boolean"
           },
           "userStatus": {
-            "$ref": "#/components/schemas/Status"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Status"
+              }
+            ],
+            "enum": [
+              "ACTIVE",
+              "DISABLED",
+              "LIMITED",
+              "EXPIRED"
+            ],
+            "x-enum-ref": "#/components/schemas/Status",
+            "x-enum-members": [
+              "ACTIVE",
+              "DISABLED",
+              "LIMITED",
+              "EXPIRED"
+            ]
           },
           "trafficLimitStrategy": {
             "$ref": "#/components/schemas/TrafficLimitStrategy"
@@ -16041,6 +16166,61 @@
           "ips"
         ]
       },
+      "NodeIpDto": {
+        "type": "object",
+        "properties": {
+          "ip": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "ipv4",
+                "pattern": "^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])$"
+              },
+              {
+                "type": "string",
+                "format": "ipv6",
+                "pattern": "^(([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:))$"
+              }
+            ]
+          },
+          "status": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Status"
+              }
+            ],
+            "enum": [
+              "INBOUND",
+              "OUTBOUND",
+              "MANAGEMENT",
+              "TRANSIT",
+              "MONITORING",
+              "RESERVE",
+              "BLOCKED",
+              "FLAGGED",
+              "DEPRECATED",
+              "UNKNOWN"
+            ],
+            "x-enum-ref": "#/components/schemas/Status",
+            "x-enum-members": [
+              "INBOUND",
+              "OUTBOUND",
+              "MANAGEMENT",
+              "TRANSIT",
+              "MONITORING",
+              "RESERVE",
+              "BLOCKED",
+              "FLAGGED",
+              "DEPRECATED",
+              "UNKNOWN"
+            ]
+          }
+        },
+        "required": [
+          "ip",
+          "status"
+        ]
+      },
       "Oauth2SettingsGithubDto": {
         "type": "object",
         "properties": {
@@ -16491,7 +16671,24 @@
             "type": "string"
           },
           "status": {
-            "$ref": "#/components/schemas/Status"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Status"
+              }
+            ],
+            "enum": [
+              "ACTIVE",
+              "DISABLED",
+              "LIMITED",
+              "EXPIRED"
+            ],
+            "x-enum-ref": "#/components/schemas/Status",
+            "x-enum-members": [
+              "ACTIVE",
+              "DISABLED",
+              "LIMITED",
+              "EXPIRED"
+            ]
           },
           "trafficLimitBytes": {
             "type": "number"
@@ -16545,7 +16742,7 @@
           "vlessUuid": {
             "type": "string",
             "format": "uuid",
-            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})$"
           },
           "ssPassword": {
             "type": "string"
@@ -19010,6 +19207,13 @@
               "type": "string"
             }
           },
+          "ips": {
+            "maxItems": 64,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NodeIpDto"
+            }
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time",
@@ -19092,6 +19296,7 @@
           "consumptionMultiplier",
           "nodeConsumptionMultiplier",
           "tags",
+          "ips",
           "createdAt",
           "updatedAt",
           "configProfile",
@@ -19650,7 +19855,24 @@
         "type": "object",
         "properties": {
           "status": {
-            "$ref": "#/components/schemas/Status"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Status"
+              }
+            ],
+            "enum": [
+              "ACTIVE",
+              "DISABLED",
+              "LIMITED",
+              "EXPIRED"
+            ],
+            "x-enum-ref": "#/components/schemas/Status",
+            "x-enum-members": [
+              "ACTIVE",
+              "DISABLED",
+              "LIMITED",
+              "EXPIRED"
+            ]
           },
           "trafficLimitBytes": {
             "type": "number",
