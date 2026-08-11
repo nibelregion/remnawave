@@ -855,7 +855,8 @@
         "A232",
         "A233",
         "A234",
-        "A236"
+        "A236",
+        "A237"
       ],
       "values": [
         "A007",
@@ -1041,7 +1042,8 @@
         "A232",
         "A233",
         "A234",
-        "A236"
+        "A236",
+        "A237"
       ]
     },
     {
@@ -1444,7 +1446,8 @@
         "ADD_MANY_USERS_TO_INTERNAL_SQUAD_ERROR",
         "REMOVE_MANY_USERS_FROM_INTERNAL_SQUAD_ERROR",
         "GET_STATS_DIGEST_ERROR",
-        "BULK_DELETE_USERS_BY_USER_IDS_ERROR"
+        "BULK_DELETE_USERS_BY_USER_IDS_ERROR",
+        "SYNC_SNIPPET_ERROR"
       ],
       "values": [
         "Server error",
@@ -1607,7 +1610,8 @@
         "Add many users to internal squad error",
         "Remove many users from internal squad error",
         "Get stats digest error",
-        "Bulk delete users by user IDs error"
+        "Bulk delete users by user IDs error",
+        "Sync snippet error"
       ]
     },
     {
@@ -3492,7 +3496,8 @@
         "Get internal squad usage error",
         "Add many users to internal squad error",
         "Remove many users from internal squad error",
-        "Get stats digest error"
+        "Get stats digest error",
+        "Sync snippet error"
       ]
     },
     {
@@ -3661,7 +3666,8 @@
         "A232",
         "A233",
         "A234",
-        "A236"
+        "A236",
+        "A237"
       ]
     },
     {
@@ -4111,6 +4117,7 @@
         "REMOVE_MANY_USERS_FROM_INTERNAL_SQUAD_ERROR",
         "GET_STATS_DIGEST_INVALID_RANGE",
         "GET_STATS_DIGEST_ERROR",
+        "SYNC_SNIPPET_ERROR",
         "E401",
         "E403",
         "E404",
@@ -4352,6 +4359,7 @@
         "A234",
         "A235",
         "A236",
+        "A237",
         "E401",
         "E403",
         "E404",
@@ -4384,7 +4392,7 @@
       "nicification": "BadRequestError",
       "status_code": "400",
       "is_error": true,
-      "occurrences": 190,
+      "occurrences": 191,
       "locations": [
         "#/paths/~1api~1remnawave-settings/get/responses/400",
         "#/paths/~1api~1remnawave-settings/patch/responses/400",
@@ -4467,6 +4475,7 @@
         "#/paths/~1api~1snippets/delete/responses/400",
         "#/paths/~1api~1snippets/post/responses/400",
         "#/paths/~1api~1snippets/patch/responses/400",
+        "#/paths/~1api~1snippets~1actions~1sync/post/responses/400",
         "#/paths/~1api~1internal-squads/get/responses/400",
         "#/paths/~1api~1internal-squads/post/responses/400",
         "#/paths/~1api~1internal-squads/patch/responses/400",
@@ -4585,7 +4594,7 @@
       "nicification": "ResourceNotFoundErrorDto",
       "status_code": "404",
       "is_error": true,
-      "occurrences": 190,
+      "occurrences": 191,
       "locations": [
         "#/paths/~1api~1remnawave-settings/get/responses/404",
         "#/paths/~1api~1remnawave-settings/patch/responses/404",
@@ -4668,6 +4677,7 @@
         "#/paths/~1api~1snippets/delete/responses/404",
         "#/paths/~1api~1snippets/post/responses/404",
         "#/paths/~1api~1snippets/patch/responses/404",
+        "#/paths/~1api~1snippets~1actions~1sync/post/responses/404",
         "#/paths/~1api~1internal-squads/get/responses/404",
         "#/paths/~1api~1internal-squads/post/responses/404",
         "#/paths/~1api~1internal-squads/patch/responses/404",
@@ -4786,7 +4796,7 @@
       "nicification": "InternalServerError",
       "status_code": "500",
       "is_error": true,
-      "occurrences": 190,
+      "occurrences": 191,
       "locations": [
         "#/paths/~1api~1remnawave-settings/get/responses/500",
         "#/paths/~1api~1remnawave-settings/patch/responses/500",
@@ -4869,6 +4879,7 @@
         "#/paths/~1api~1snippets/delete/responses/500",
         "#/paths/~1api~1snippets/post/responses/500",
         "#/paths/~1api~1snippets/patch/responses/500",
+        "#/paths/~1api~1snippets~1actions~1sync/post/responses/500",
         "#/paths/~1api~1internal-squads/get/responses/500",
         "#/paths/~1api~1internal-squads/post/responses/500",
         "#/paths/~1api~1internal-squads/patch/responses/500",
@@ -5041,7 +5052,7 @@
       "nicification": "BadRequestError",
       "status_code": "400",
       "is_error": true,
-      "occurrences": 190,
+      "occurrences": 191,
       "locations": [
         "#/paths/~1api~1remnawave-settings/get/responses/400",
         "#/paths/~1api~1remnawave-settings/patch/responses/400",
@@ -5124,6 +5135,7 @@
         "#/paths/~1api~1snippets/delete/responses/400",
         "#/paths/~1api~1snippets/post/responses/400",
         "#/paths/~1api~1snippets/patch/responses/400",
+        "#/paths/~1api~1snippets~1actions~1sync/post/responses/400",
         "#/paths/~1api~1internal-squads/get/responses/400",
         "#/paths/~1api~1internal-squads/post/responses/400",
         "#/paths/~1api~1internal-squads/patch/responses/400",
@@ -5242,7 +5254,7 @@
       "nicification": "ResourceNotFoundErrorDto",
       "status_code": "404",
       "is_error": true,
-      "occurrences": 190,
+      "occurrences": 191,
       "locations": [
         "#/paths/~1api~1remnawave-settings/get/responses/404",
         "#/paths/~1api~1remnawave-settings/patch/responses/404",
@@ -5325,6 +5337,7 @@
         "#/paths/~1api~1snippets/delete/responses/404",
         "#/paths/~1api~1snippets/post/responses/404",
         "#/paths/~1api~1snippets/patch/responses/404",
+        "#/paths/~1api~1snippets~1actions~1sync/post/responses/404",
         "#/paths/~1api~1internal-squads/get/responses/404",
         "#/paths/~1api~1internal-squads/post/responses/404",
         "#/paths/~1api~1internal-squads/patch/responses/404",
@@ -5443,7 +5456,7 @@
       "nicification": "InternalServerError",
       "status_code": "500",
       "is_error": true,
-      "occurrences": 190,
+      "occurrences": 191,
       "locations": [
         "#/paths/~1api~1remnawave-settings/get/responses/500",
         "#/paths/~1api~1remnawave-settings/patch/responses/500",
@@ -5526,6 +5539,7 @@
         "#/paths/~1api~1snippets/delete/responses/500",
         "#/paths/~1api~1snippets/post/responses/500",
         "#/paths/~1api~1snippets/patch/responses/500",
+        "#/paths/~1api~1snippets~1actions~1sync/post/responses/500",
         "#/paths/~1api~1internal-squads/get/responses/500",
         "#/paths/~1api~1internal-squads/post/responses/500",
         "#/paths/~1api~1internal-squads/patch/responses/500",
@@ -5682,7 +5696,7 @@
       "nicification": "OperationAcceptedAndWillBeProcessedInBackgroundResponse",
       "status_code": "202",
       "is_error": false,
-      "occurrences": 17,
+      "occurrences": 18,
       "locations": [
         "#/paths/~1api~1users~1bulk~1delete-by-status/post/responses/202",
         "#/paths/~1api~1users~1bulk~1revoke-subscription/post/responses/202",
@@ -5691,6 +5705,7 @@
         "#/paths/~1api~1users~1bulk~1all~1update/post/responses/202",
         "#/paths/~1api~1users~1bulk~1all~1reset-traffic/post/responses/202",
         "#/paths/~1api~1users~1bulk~1all~1extend-expiration-date/post/responses/202",
+        "#/paths/~1api~1snippets~1actions~1sync/post/responses/202",
         "#/paths/~1api~1internal-squads~1{uuid}~1bulk-actions~1add-users/post/responses/202",
         "#/paths/~1api~1internal-squads~1{uuid}~1bulk-actions~1remove-users/delete/responses/202",
         "#/paths/~1api~1internal-squads~1{uuid}~1bulk-actions~1add-many-users/post/responses/202",
@@ -9766,7 +9781,7 @@
       "field": "securityOptions",
       "parent": "ResolvedProxyConfigDto",
       "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/properties/securityOptions/anyOf/0",
-      "signature": "71f3e694582e55409630769d56c83386fad967f9a632caadc62ecd0dfa82dd3f"
+      "signature": "70269572719c9a3ab7807d236d4d04421af5eb162d67d51bf6c3d77cdf071e9f"
     },
     {
       "action": "hoisted",

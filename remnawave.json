@@ -3194,6 +3194,46 @@
         ]
       }
     },
+    "/api/snippets/actions/sync": {
+      "post": {
+        "description": "Trigger the sync of a snippet to all config profiles that reference it. Nodes which use affected config profiles will be restarted.",
+        "operationId": "SnippetsController_syncSnippet",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SyncSnippetBodyDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "$ref": "#/components/responses/OperationAcceptedAndWillBeProcessedInBackgroundResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequestError"
+          },
+          "404": {
+            "$ref": "#/components/responses/RemnawaveNotFoundErrorDtoSchema"
+          },
+          "500": {
+            "$ref": "#/components/responses/RemnawaveInternalServerErrorDtoSchema"
+          }
+        },
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "summary": "Sync snippet to affected config profiles",
+        "tags": [
+          "Snippets Controller"
+        ]
+      }
+    },
     "/api/internal-squads": {
       "get": {
         "operationId": "InternalSquadController_getInternalSquads",
@@ -7843,9 +7883,9 @@
     }
   },
   "info": {
-    "title": "Remnawave API v3.2.2",
+    "title": "Remnawave API v3.2.3",
     "description": "\nRemnawave is a powerful proxy managment tool, built on top of Xray-core, with a focus on simplicity and ease of use.\n\n## Resources\n* https://t.me/remnawave\n* https://github.com/remnawave\n* https://docs.rw\n",
-    "version": "3.2.2",
+    "version": "3.2.3",
     "contact": {},
     "license": {
       "name": "AGPL-3.0",
@@ -9049,6 +9089,20 @@
         },
         "required": [
           "response"
+        ]
+      },
+      "SyncSnippetBodyDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 255,
+            "pattern": "^[A-Za-z0-9_\\s-]+$"
+          }
+        },
+        "required": [
+          "name"
         ]
       },
       "DeleteSnippetBodyDto": {
@@ -11443,7 +11497,8 @@
               "Get internal squad usage error",
               "Add many users to internal squad error",
               "Remove many users from internal squad error",
-              "Get stats digest error"
+              "Get stats digest error",
+              "Sync snippet error"
             ],
             "x-enum-ref": "#/components/schemas/RemnawaveInternalServerErrorMessage",
             "x-enum-members": [
@@ -11606,7 +11661,8 @@
               "GET_INTERNAL_SQUAD_USAGE_ERROR",
               "ADD_MANY_USERS_TO_INTERNAL_SQUAD_ERROR",
               "REMOVE_MANY_USERS_FROM_INTERNAL_SQUAD_ERROR",
-              "GET_STATS_DIGEST_ERROR"
+              "GET_STATS_DIGEST_ERROR",
+              "SYNC_SNIPPET_ERROR"
             ],
             "description": "Human-readable error message."
           },
@@ -13173,7 +13229,8 @@
           "A232",
           "A233",
           "A234",
-          "A236"
+          "A236",
+          "A237"
         ],
         "x-enum-varnames": [
           "A007",
@@ -13359,7 +13416,8 @@
           "A232",
           "A233",
           "A234",
-          "A236"
+          "A236",
+          "A237"
         ],
         "x-enumNames": [
           "A007",
@@ -13545,7 +13603,8 @@
           "A232",
           "A233",
           "A234",
-          "A236"
+          "A236",
+          "A237"
         ]
       },
       "RemnawaveNotFoundErrorMessage": {
@@ -14050,7 +14109,8 @@
           "Add many users to internal squad error",
           "Remove many users from internal squad error",
           "Get stats digest error",
-          "Bulk delete users by user IDs error"
+          "Bulk delete users by user IDs error",
+          "Sync snippet error"
         ],
         "x-enum-varnames": [
           "SERVER_ERROR",
@@ -14213,7 +14273,8 @@
           "ADD_MANY_USERS_TO_INTERNAL_SQUAD_ERROR",
           "REMOVE_MANY_USERS_FROM_INTERNAL_SQUAD_ERROR",
           "GET_STATS_DIGEST_ERROR",
-          "BULK_DELETE_USERS_BY_USER_IDS_ERROR"
+          "BULK_DELETE_USERS_BY_USER_IDS_ERROR",
+          "SYNC_SNIPPET_ERROR"
         ],
         "x-enumNames": [
           "SERVER_ERROR",
@@ -14376,7 +14437,8 @@
           "ADD_MANY_USERS_TO_INTERNAL_SQUAD_ERROR",
           "REMOVE_MANY_USERS_FROM_INTERNAL_SQUAD_ERROR",
           "GET_STATS_DIGEST_ERROR",
-          "BULK_DELETE_USERS_BY_USER_IDS_ERROR"
+          "BULK_DELETE_USERS_BY_USER_IDS_ERROR",
+          "SYNC_SNIPPET_ERROR"
         ]
       },
       "TcpHeaderHttpRequestDto": {
@@ -14913,6 +14975,10 @@
           },
           "echSockopt": {
             "nullable": true
+          },
+          "cipherSuites": {
+            "type": "string",
+            "nullable": true
           }
         },
         "required": [
@@ -14924,7 +14990,8 @@
           "serverName",
           "echConfigList",
           "echForceQuery",
-          "echSockopt"
+          "echSockopt",
+          "cipherSuites"
         ]
       },
       "RealitySecurityOptionsDto": {
@@ -22290,6 +22357,7 @@
           "A234",
           "A235",
           "A236",
+          "A237",
           "E401",
           "E403",
           "E404",
@@ -22531,6 +22599,7 @@
           "REMOVE_MANY_USERS_FROM_INTERNAL_SQUAD_ERROR",
           "GET_STATS_DIGEST_INVALID_RANGE",
           "GET_STATS_DIGEST_ERROR",
+          "SYNC_SNIPPET_ERROR",
           "E401",
           "E403",
           "E404",
@@ -22772,6 +22841,7 @@
           "REMOVE_MANY_USERS_FROM_INTERNAL_SQUAD_ERROR",
           "GET_STATS_DIGEST_INVALID_RANGE",
           "GET_STATS_DIGEST_ERROR",
+          "SYNC_SNIPPET_ERROR",
           "E401",
           "E403",
           "E404",
@@ -23014,6 +23084,7 @@
           "REMOVE_MANY_USERS_FROM_INTERNAL_SQUAD_ERROR": "Remove many users from internal squad error. HTTP 500.",
           "GET_STATS_DIGEST_INVALID_RANGE": "Start date must be before or equal to end date. HTTP 400.",
           "GET_STATS_DIGEST_ERROR": "Get stats digest error. HTTP 500.",
+          "SYNC_SNIPPET_ERROR": "Sync snippet error. HTTP 500.",
           "E401": "Unauthorized. HTTP 401.",
           "E403": "Forbidden. HTTP 403.",
           "E500": "Internal server error. HTTP 500."

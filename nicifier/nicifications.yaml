@@ -1738,6 +1738,7 @@ remnawave:
         - A233
         - A234
         - A236
+        - A237
         values:
         - A007
         - A011
@@ -1923,6 +1924,7 @@ remnawave:
         - A233
         - A234
         - A236
+        - A237
     - remnawave_not_found_error_message:
         name: RemnawaveNotFoundErrorMessage
         members:
@@ -2307,6 +2309,7 @@ remnawave:
         - REMOVE_MANY_USERS_FROM_INTERNAL_SQUAD_ERROR
         - GET_STATS_DIGEST_ERROR
         - BULK_DELETE_USERS_BY_USER_IDS_ERROR
+        - SYNC_SNIPPET_ERROR
         values:
         - Server error
         - Login error
@@ -2469,6 +2472,7 @@ remnawave:
         - Remove many users from internal squad error
         - Get stats digest error
         - Bulk delete users by user IDs error
+        - Sync snippet error
 error_responses:
   enabled: true
   min_occurrences: 1
