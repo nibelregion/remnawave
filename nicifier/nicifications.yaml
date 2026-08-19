@@ -804,6 +804,54 @@ remnawave:
         name: NodeIpDto
     - UpdateNodeBodyIpsDto:
         name: NodeIpDto
+    - CreateNodeIntegrationResponse:
+        name: NodeIntegrationDto
+    - CreateSharedListResponse:
+        name: SharedListsDto
+    - ImageDto:
+        name: GeocheckImageDto
+    - GetNodeIntegrationResponse:
+        name: NodeIntegrationDto
+    - NodeIntegrationsDto:
+        name: NodeIntegrationDto
+    - GetRawSubscriptionByShortUuidResponseResolvedProxyConfigsDto:
+        name: ResolvedProxyConfigBaseDto
+    - GetRawSubscriptionByShortUuidResponseResolvedProxyConfigsDto2:
+        name: VlessProtocolDto
+    - GetRawSubscriptionByShortUuidResponseResolvedProxyConfigsDto3:
+        name: TrojanProtocolDto
+    - GetRawSubscriptionByShortUuidResponseResolvedProxyConfigsDto4:
+        name: ShadowsocksProtocolDto
+    - GetRawSubscriptionByShortUuidResponseResolvedProxyConfigsDto5:
+        name: HysteriaProtocolDto
+    - GetRawSubscriptionByShortUuidResponseResolvedProxyConfigsDto6:
+        name: TcpTransportDto
+    - GetRawSubscriptionByShortUuidResponseResolvedProxyConfigsDto7:
+        name: XHttpTransportDto
+    - GetRawSubscriptionByShortUuidResponseResolvedProxyConfigsDto8:
+        name: WsTransportDto
+    - GetRawSubscriptionByShortUuidResponseResolvedProxyConfigsDto9:
+        name: HttpUpgradeTransportDto
+    - GetRawSubscriptionByShortUuidResponseResolvedProxyConfigsDto10:
+        name: GrpcTransportDto
+    - GetRawSubscriptionByShortUuidResponseResolvedProxyConfigsDto11:
+        name: KcpTransportDto
+    - GetRawSubscriptionByShortUuidResponseResolvedProxyConfigsDto12:
+        name: HysteriaTransportDto
+    - GetRawSubscriptionByShortUuidResponseResolvedProxyConfigsDto13:
+        name: TlsSecurityDto
+    - GetRawSubscriptionByShortUuidResponseResolvedProxyConfigsDto14:
+        name: RealitySecurityDto
+    - GetRawSubscriptionByShortUuidResponseResolvedProxyConfigsDto15:
+        name: NoneSecurityDto
+    - GetSharedListResponse:
+        name: SharedListsDto
+    - SharedListsDto:
+        name: SharedListPreviewDto
+    - UpdateNodeIntegrationResponse:
+        name: NodeIntegrationDto
+    - UpdateSharedListResponse:
+        name: SharedListsDto
     errors:
     - UserNotFoundConnectedNodesNotFoundError:
         name: UserOrConnectedNodesNotFoundError
@@ -1739,6 +1787,18 @@ remnawave:
         - A234
         - A236
         - A237
+        - A238
+        - A245
+        - A239
+        - A240
+        - A241
+        - A242
+        - A243
+        - A247
+        - A248
+        - A249
+        - A250
+        - A251
         values:
         - A007
         - A011
@@ -1925,6 +1985,18 @@ remnawave:
         - A234
         - A236
         - A237
+        - A238
+        - A245
+        - A239
+        - A240
+        - A241
+        - A242
+        - A243
+        - A247
+        - A248
+        - A249
+        - A250
+        - A251
     - remnawave_not_found_error_message:
         name: RemnawaveNotFoundErrorMessage
         members:
@@ -1953,6 +2025,8 @@ remnawave:
         - CONNECTED_NODES_NOT_FOUND
         - NODE_PLUGIN_NOT_FOUND
         - METADATA_NOT_FOUND
+        - NODE_INTEGRATION_NOT_FOUND
+        - SHARED_LIST_NOT_FOUND
         values:
         - Requested token not found
         - Node not found
@@ -1979,6 +2053,8 @@ remnawave:
         - Connected nodes not found
         - Node plugin not found
         - Metadata not found
+        - Node integration not found
+        - Shared list not found
     - remnawave_bad_request_error_message:
         name: RemnawaveBadRequestErrorMessage
         members:
@@ -2021,6 +2097,8 @@ remnawave:
         - ONE_OR_MORE_PROVIDED_API_TOKEN_SCOPES_ARE_INVALID
         - EITHER_NODE_UUID_OR_NAME_MUST_BE_PROVIDED
         - START_DATE_MUST_BE_BEFORE_OR_EQUAL_TO_END_DATE
+        - NODE_INTEGRATION_NAME_ALREADY_EXISTS
+        - SHARED_LIST_NAME_ALREADY_EXISTS
         values:
         - User username already exists
         - User short UUID already exists
@@ -2061,6 +2139,8 @@ remnawave:
         - One or more provided API token scopes are invalid
         - Either nodeUuid or name must be provided
         - Start date must be before or equal to end date
+        - Node integration name already exists
+        - Shared list name already exists
     - remnawave_bad_request_error_error_code:
         name: RemnawaveBadRequestErrorErrorCode
         members:
@@ -2104,6 +2184,8 @@ remnawave:
         - A229
         - A230
         - A235
+        - A244
+        - A246
         values:
         - A019
         - A020
@@ -2145,6 +2227,8 @@ remnawave:
         - A229
         - A230
         - A235
+        - A244
+        - A246
     - remnawave_internal_server_error_message:
         name: RemnawaveInternalServerErrorMessage
         members:
@@ -2310,6 +2394,16 @@ remnawave:
         - GET_STATS_DIGEST_ERROR
         - BULK_DELETE_USERS_BY_USER_IDS_ERROR
         - SYNC_SNIPPET_ERROR
+        - GET_ALL_NODE_INTEGRATIONS_ERROR
+        - GET_NODE_INTEGRATION_BY_UUID_ERROR
+        - CREATE_NODE_INTEGRATION_ERROR
+        - UPDATE_NODE_INTEGRATION_ERROR
+        - DELETE_NODE_INTEGRATION_ERROR
+        - GET_ALL_SHARED_LISTS_ERROR
+        - GET_SHARED_LIST_BY_NAME_ERROR
+        - CREATE_SHARED_LIST_ERROR
+        - UPDATE_SHARED_LIST_ERROR
+        - DELETE_SHARED_LIST_ERROR
         values:
         - Server error
         - Login error
@@ -2473,6 +2567,16 @@ remnawave:
         - Get stats digest error
         - Bulk delete users by user IDs error
         - Sync snippet error
+        - Get all node integrations error
+        - Get node integration by UUID error
+        - Create node integration error
+        - Update node integration error
+        - Delete node integration error
+        - Get all shared lists error
+        - Get shared list by name error
+        - Create shared list error
+        - Update shared list error
+        - Delete shared list error
 error_responses:
   enabled: true
   min_occurrences: 1

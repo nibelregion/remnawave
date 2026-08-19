@@ -1,24 +1,50 @@
 {
   "summary": {
     "deprecated_before": 0,
-    "deprecated_after": 0,
-    "enum_updates": 172,
+    "deprecated_after": 3,
+    "enum_updates": 183,
     "response_content_types": 2,
     "error_code_updates": 4,
     "hoisted_error_responses": 7,
-    "hoisted_responses": 142,
+    "hoisted_responses": 152,
     "renamed_responses": 0,
     "renamed_from_ref_responses": 2,
-    "renamed_response_schema_components": 74,
+    "renamed_response_schema_components": 78,
     "inlined_map_object_components": 0,
-    "hoisted_inline_objects": 240,
-    "reused_inline_objects": 301,
-    "deprecation_annotations": 0
+    "hoisted_inline_objects": 301,
+    "reused_inline_objects": 347,
+    "deprecation_annotations": 3
   },
   "deprecated": {
     "before": [],
-    "after": [],
-    "added": [],
+    "after": [
+      {
+        "kind": "schema",
+        "schema": "ResolvedProxyConfigClientOverridesDto"
+      },
+      {
+        "kind": "schema",
+        "schema": "ResolvedProxyConfigDto"
+      },
+      {
+        "kind": "schema",
+        "schema": "ResolvedProxyConfigStreamOverridesDto"
+      }
+    ],
+    "added": [
+      {
+        "kind": "schema",
+        "schema": "ResolvedProxyConfigClientOverridesDto"
+      },
+      {
+        "kind": "schema",
+        "schema": "ResolvedProxyConfigDto"
+      },
+      {
+        "kind": "schema",
+        "schema": "ResolvedProxyConfigStreamOverridesDto"
+      }
+    ],
     "removed": []
   },
   "enums": [
@@ -856,7 +882,19 @@
         "A233",
         "A234",
         "A236",
-        "A237"
+        "A237",
+        "A238",
+        "A245",
+        "A239",
+        "A240",
+        "A241",
+        "A242",
+        "A243",
+        "A247",
+        "A248",
+        "A249",
+        "A250",
+        "A251"
       ],
       "values": [
         "A007",
@@ -1043,7 +1081,19 @@
         "A233",
         "A234",
         "A236",
-        "A237"
+        "A237",
+        "A238",
+        "A245",
+        "A239",
+        "A240",
+        "A241",
+        "A242",
+        "A243",
+        "A247",
+        "A248",
+        "A249",
+        "A250",
+        "A251"
       ]
     },
     {
@@ -1075,7 +1125,9 @@
         "JOB_RESULT_FETCH_FAILED_OR_JOB_NOT_FOUND",
         "CONNECTED_NODES_NOT_FOUND",
         "NODE_PLUGIN_NOT_FOUND",
-        "METADATA_NOT_FOUND"
+        "METADATA_NOT_FOUND",
+        "NODE_INTEGRATION_NOT_FOUND",
+        "SHARED_LIST_NOT_FOUND"
       ],
       "values": [
         "Requested token not found",
@@ -1102,7 +1154,9 @@
         "Job result fetch failed or job not found",
         "Connected nodes not found",
         "Node plugin not found",
-        "Metadata not found"
+        "Metadata not found",
+        "Node integration not found",
+        "Shared list not found"
       ]
     },
     {
@@ -1148,7 +1202,9 @@
         "NODE_PLUGIN_NAME_ALREADY_EXISTS",
         "ONE_OR_MORE_PROVIDED_API_TOKEN_SCOPES_ARE_INVALID",
         "EITHER_NODE_UUID_OR_NAME_MUST_BE_PROVIDED",
-        "START_DATE_MUST_BE_BEFORE_OR_EQUAL_TO_END_DATE"
+        "START_DATE_MUST_BE_BEFORE_OR_EQUAL_TO_END_DATE",
+        "NODE_INTEGRATION_NAME_ALREADY_EXISTS",
+        "SHARED_LIST_NAME_ALREADY_EXISTS"
       ],
       "values": [
         "User username already exists",
@@ -1189,7 +1245,9 @@
         "Node plugin name already exists",
         "One or more provided API token scopes are invalid",
         "Either nodeUuid or name must be provided",
-        "Start date must be before or equal to end date"
+        "Start date must be before or equal to end date",
+        "Node integration name already exists",
+        "Shared list name already exists"
       ]
     },
     {
@@ -1236,7 +1294,9 @@
         "A223",
         "A229",
         "A230",
-        "A235"
+        "A235",
+        "A244",
+        "A246"
       ],
       "values": [
         "A019",
@@ -1278,7 +1338,9 @@
         "A223",
         "A229",
         "A230",
-        "A235"
+        "A235",
+        "A244",
+        "A246"
       ]
     },
     {
@@ -1447,7 +1509,17 @@
         "REMOVE_MANY_USERS_FROM_INTERNAL_SQUAD_ERROR",
         "GET_STATS_DIGEST_ERROR",
         "BULK_DELETE_USERS_BY_USER_IDS_ERROR",
-        "SYNC_SNIPPET_ERROR"
+        "SYNC_SNIPPET_ERROR",
+        "GET_ALL_NODE_INTEGRATIONS_ERROR",
+        "GET_NODE_INTEGRATION_BY_UUID_ERROR",
+        "CREATE_NODE_INTEGRATION_ERROR",
+        "UPDATE_NODE_INTEGRATION_ERROR",
+        "DELETE_NODE_INTEGRATION_ERROR",
+        "GET_ALL_SHARED_LISTS_ERROR",
+        "GET_SHARED_LIST_BY_NAME_ERROR",
+        "CREATE_SHARED_LIST_ERROR",
+        "UPDATE_SHARED_LIST_ERROR",
+        "DELETE_SHARED_LIST_ERROR"
       ],
       "values": [
         "Server error",
@@ -1611,7 +1683,17 @@
         "Remove many users from internal squad error",
         "Get stats digest error",
         "Bulk delete users by user IDs error",
-        "Sync snippet error"
+        "Sync snippet error",
+        "Get all node integrations error",
+        "Get node integration by UUID error",
+        "Create node integration error",
+        "Update node integration error",
+        "Delete node integration error",
+        "Get all shared lists error",
+        "Get shared list by name error",
+        "Create shared list error",
+        "Update shared list error",
+        "Delete shared list error"
       ]
     },
     {
@@ -2050,22 +2132,34 @@
     },
     {
       "action": "referenced",
+      "schema": "TemplateType",
+      "nicification": "template_type",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/0/properties/metadata/properties/excludeFromSubscriptionTypes/items",
+      "ref": "#/components/schemas/TemplateType",
+      "values": [
+        "XRAY_JSON",
+        "XRAY_BASE64",
+        "MIHOMO",
+        "STASH",
+        "CLASH",
+        "SINGBOX"
+      ]
+    },
+    {
+      "action": "variant_referenced",
       "schema": "Protocol",
       "nicification": "proxy_configs_protocol",
-      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/properties/protocol",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/1/oneOf/0/properties/protocol",
       "ref": "#/components/schemas/Protocol",
       "values": [
-        "vless",
-        "trojan",
-        "shadowsocks",
-        "hysteria"
+        "vless"
       ]
     },
     {
       "action": "referenced",
       "schema": "Flow",
       "nicification": "proxy_configs_options_flow",
-      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/properties/protocolOptions/anyOf/0/properties/flow",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/1/oneOf/0/properties/protocolOptions/properties/flow",
       "ref": "#/components/schemas/Flow",
       "values": [
         "",
@@ -2074,26 +2168,50 @@
       ]
     },
     {
-      "action": "referenced",
+      "action": "variant_referenced",
+      "schema": "Protocol",
+      "nicification": "proxy_configs_protocol",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/1/oneOf/1/properties/protocol",
+      "ref": "#/components/schemas/Protocol",
+      "values": [
+        "trojan"
+      ]
+    },
+    {
+      "action": "variant_referenced",
+      "schema": "Protocol",
+      "nicification": "proxy_configs_protocol",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/1/oneOf/2/properties/protocol",
+      "ref": "#/components/schemas/Protocol",
+      "values": [
+        "shadowsocks"
+      ]
+    },
+    {
+      "action": "variant_referenced",
+      "schema": "Protocol",
+      "nicification": "proxy_configs_protocol",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/1/oneOf/3/properties/protocol",
+      "ref": "#/components/schemas/Protocol",
+      "values": [
+        "hysteria"
+      ]
+    },
+    {
+      "action": "variant_referenced",
       "schema": "Transport",
       "nicification": "proxy_configs_transport",
-      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/properties/transport",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/2/oneOf/0/properties/transport",
       "ref": "#/components/schemas/Transport",
       "values": [
-        "tcp",
-        "xhttp",
-        "ws",
-        "httpupgrade",
-        "grpc",
-        "kcp",
-        "hysteria"
+        "tcp"
       ]
     },
     {
       "action": "variant_referenced",
       "schema": "TransportHeaderType",
       "nicification": "proxy_configs_transport_options_header",
-      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/properties/transportOptions/anyOf/0/properties/header/oneOf/0/properties/type",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/2/oneOf/0/properties/transportOptions/properties/header/oneOf/0/properties/type",
       "ref": "#/components/schemas/TransportHeaderType",
       "values": [
         "none"
@@ -2103,17 +2221,27 @@
       "action": "variant_referenced",
       "schema": "TransportHeaderType",
       "nicification": "proxy_configs_transport_options_header",
-      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/properties/transportOptions/anyOf/0/properties/header/oneOf/1/properties/type",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/2/oneOf/0/properties/transportOptions/properties/header/oneOf/1/properties/type",
       "ref": "#/components/schemas/TransportHeaderType",
       "values": [
         "http"
       ]
     },
     {
+      "action": "variant_referenced",
+      "schema": "Transport",
+      "nicification": "proxy_configs_transport",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/2/oneOf/1/properties/transport",
+      "ref": "#/components/schemas/Transport",
+      "values": [
+        "xhttp"
+      ]
+    },
+    {
       "action": "referenced",
       "schema": "XHTTPMode",
       "nicification": "proxy_configs_transport_options_mode",
-      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/properties/transportOptions/anyOf/1/properties/mode",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/2/oneOf/1/properties/transportOptions/properties/mode",
       "ref": "#/components/schemas/XHTTPMode",
       "values": [
         "auto",
@@ -2123,30 +2251,83 @@
       ]
     },
     {
-      "action": "referenced",
-      "schema": "Security",
-      "nicification": "proxy_configs_security",
-      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/properties/security",
-      "ref": "#/components/schemas/Security",
+      "action": "variant_referenced",
+      "schema": "Transport",
+      "nicification": "proxy_configs_transport",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/2/oneOf/2/properties/transport",
+      "ref": "#/components/schemas/Transport",
       "values": [
-        "tls",
-        "reality",
-        "none"
+        "ws"
       ]
     },
     {
-      "action": "referenced",
-      "schema": "TemplateType",
-      "nicification": "template_type",
-      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/properties/metadata/properties/excludeFromSubscriptionTypes/items",
-      "ref": "#/components/schemas/TemplateType",
+      "action": "variant_referenced",
+      "schema": "Transport",
+      "nicification": "proxy_configs_transport",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/2/oneOf/3/properties/transport",
+      "ref": "#/components/schemas/Transport",
       "values": [
-        "XRAY_JSON",
-        "XRAY_BASE64",
-        "MIHOMO",
-        "STASH",
-        "CLASH",
-        "SINGBOX"
+        "httpupgrade"
+      ]
+    },
+    {
+      "action": "variant_referenced",
+      "schema": "Transport",
+      "nicification": "proxy_configs_transport",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/2/oneOf/4/properties/transport",
+      "ref": "#/components/schemas/Transport",
+      "values": [
+        "grpc"
+      ]
+    },
+    {
+      "action": "variant_referenced",
+      "schema": "Transport",
+      "nicification": "proxy_configs_transport",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/2/oneOf/5/properties/transport",
+      "ref": "#/components/schemas/Transport",
+      "values": [
+        "kcp"
+      ]
+    },
+    {
+      "action": "variant_referenced",
+      "schema": "Transport",
+      "nicification": "proxy_configs_transport",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/2/oneOf/6/properties/transport",
+      "ref": "#/components/schemas/Transport",
+      "values": [
+        "hysteria"
+      ]
+    },
+    {
+      "action": "variant_referenced",
+      "schema": "Security",
+      "nicification": "proxy_configs_security",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/3/oneOf/0/properties/security",
+      "ref": "#/components/schemas/Security",
+      "values": [
+        "tls"
+      ]
+    },
+    {
+      "action": "variant_referenced",
+      "schema": "Security",
+      "nicification": "proxy_configs_security",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/3/oneOf/1/properties/security",
+      "ref": "#/components/schemas/Security",
+      "values": [
+        "reality"
+      ]
+    },
+    {
+      "action": "variant_referenced",
+      "schema": "Security",
+      "nicification": "proxy_configs_security",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/3/oneOf/2/properties/security",
+      "ref": "#/components/schemas/Security",
+      "values": [
+        "none"
       ]
     },
     {
@@ -3497,7 +3678,17 @@
         "Add many users to internal squad error",
         "Remove many users from internal squad error",
         "Get stats digest error",
-        "Sync snippet error"
+        "Sync snippet error",
+        "Get all node integrations error",
+        "Get node integration by UUID error",
+        "Create node integration error",
+        "Update node integration error",
+        "Delete node integration error",
+        "Get all shared lists error",
+        "Get shared list by name error",
+        "Create shared list error",
+        "Update shared list error",
+        "Delete shared list error"
       ]
     },
     {
@@ -3667,7 +3858,17 @@
         "A233",
         "A234",
         "A236",
-        "A237"
+        "A237",
+        "A239",
+        "A240",
+        "A241",
+        "A242",
+        "A243",
+        "A247",
+        "A248",
+        "A249",
+        "A250",
+        "A251"
       ]
     },
     {
@@ -3714,7 +3915,9 @@
         "Node plugin name already exists",
         "One or more provided API token scopes are invalid",
         "Either nodeUuid or name must be provided",
-        "Start date must be before or equal to end date"
+        "Start date must be before or equal to end date",
+        "Node integration name already exists",
+        "Shared list name already exists"
       ]
     },
     {
@@ -3762,7 +3965,9 @@
         "A223",
         "A229",
         "A230",
-        "A235"
+        "A235",
+        "A244",
+        "A246"
       ]
     },
     {
@@ -3796,7 +4001,9 @@
         "Job result fetch failed or job not found",
         "Connected nodes not found",
         "Node plugin not found",
-        "Metadata not found"
+        "Metadata not found",
+        "Node integration not found",
+        "Shared list not found"
       ]
     },
     {
@@ -3830,7 +4037,9 @@
         "A218",
         "A219",
         "A220",
-        "A226"
+        "A226",
+        "A238",
+        "A245"
       ]
     },
     {
@@ -4118,6 +4327,21 @@
         "GET_STATS_DIGEST_INVALID_RANGE",
         "GET_STATS_DIGEST_ERROR",
         "SYNC_SNIPPET_ERROR",
+        "NODE_INTEGRATION_NOT_FOUND",
+        "GET_ALL_NODE_INTEGRATIONS_ERROR",
+        "GET_NODE_INTEGRATION_BY_UUID_ERROR",
+        "CREATE_NODE_INTEGRATION_ERROR",
+        "UPDATE_NODE_INTEGRATION_ERROR",
+        "DELETE_NODE_INTEGRATION_ERROR",
+        "NODE_INTEGRATION_NAME_ALREADY_EXISTS",
+        "SHARED_LIST_NOT_FOUND",
+        "SHARED_LIST_NAME_ALREADY_EXISTS",
+        "GET_ALL_SHARED_LISTS_ERROR",
+        "GET_SHARED_LIST_BY_NAME_ERROR",
+        "CREATE_SHARED_LIST_ERROR",
+        "UPDATE_SHARED_LIST_ERROR",
+        "DELETE_SHARED_LIST_ERROR",
+        "INVALID_SHARED_LIST_CONFIG",
         "E401",
         "E403",
         "E404",
@@ -4360,6 +4584,21 @@
         "A235",
         "A236",
         "A237",
+        "A238",
+        "A239",
+        "A240",
+        "A241",
+        "A242",
+        "A243",
+        "A244",
+        "A245",
+        "A246",
+        "A247",
+        "A248",
+        "A249",
+        "A250",
+        "A251",
+        "A252",
         "E401",
         "E403",
         "E404",
@@ -4392,7 +4631,7 @@
       "nicification": "BadRequestError",
       "status_code": "400",
       "is_error": true,
-      "occurrences": 191,
+      "occurrences": 205,
       "locations": [
         "#/paths/~1api~1remnawave-settings/get/responses/400",
         "#/paths/~1api~1remnawave-settings/patch/responses/400",
@@ -4517,6 +4756,12 @@
         "#/paths/~1api~1node-plugins~1torrent-blocker/get/responses/400",
         "#/paths/~1api~1node-plugins~1torrent-blocker~1stats/get/responses/400",
         "#/paths/~1api~1node-plugins~1torrent-blocker~1truncate/delete/responses/400",
+        "#/paths/~1api~1node-plugins~1shared-lists/get/responses/400",
+        "#/paths/~1api~1node-plugins~1shared-lists/post/responses/400",
+        "#/paths/~1api~1node-plugins~1shared-lists/patch/responses/400",
+        "#/paths/~1api~1node-plugins~1shared-lists~1{name}/get/responses/400",
+        "#/paths/~1api~1node-plugins~1shared-lists~1{name}/delete/responses/400",
+        "#/paths/~1api~1node-plugins~1shared-lists~1actions~1sync/post/responses/400",
         "#/paths/~1api~1node-plugins/get/responses/400",
         "#/paths/~1api~1node-plugins/patch/responses/400",
         "#/paths/~1api~1node-plugins/post/responses/400",
@@ -4524,7 +4769,13 @@
         "#/paths/~1api~1node-plugins~1{uuid}/delete/responses/400",
         "#/paths/~1api~1node-plugins~1actions~1reorder/post/responses/400",
         "#/paths/~1api~1node-plugins~1actions~1clone/post/responses/400",
+        "#/paths/~1api~1node-plugins~1actions~1sync/post/responses/400",
         "#/paths/~1api~1node-plugins~1executor/post/responses/400",
+        "#/paths/~1api~1node-integrations/get/responses/400",
+        "#/paths/~1api~1node-integrations/post/responses/400",
+        "#/paths/~1api~1node-integrations/patch/responses/400",
+        "#/paths/~1api~1node-integrations~1{uuid}/get/responses/400",
+        "#/paths/~1api~1node-integrations~1{uuid}/delete/responses/400",
         "#/paths/~1api~1hosts~1tags/get/responses/400",
         "#/paths/~1api~1hosts/post/responses/400",
         "#/paths/~1api~1hosts/patch/responses/400",
@@ -4581,6 +4832,8 @@
         "#/paths/~1api~1connections~1drop/post/responses/400",
         "#/paths/~1api~1connections~1by-node~1{nodeUuid}/post/responses/400",
         "#/paths/~1api~1connections~1by-node~1{jobId}/get/responses/400",
+        "#/paths/~1api~1connections~1geocheck~1{nodeUuid}/post/responses/400",
+        "#/paths/~1api~1connections~1geocheck~1{jobId}/get/responses/400",
         "#/paths/~1api~1metadata~1user~1{userId}/get/responses/400",
         "#/paths/~1api~1metadata~1user~1{userId}/put/responses/400",
         "#/paths/~1api~1metadata~1node~1{uuid}/get/responses/400",
@@ -4594,7 +4847,7 @@
       "nicification": "ResourceNotFoundErrorDto",
       "status_code": "404",
       "is_error": true,
-      "occurrences": 191,
+      "occurrences": 205,
       "locations": [
         "#/paths/~1api~1remnawave-settings/get/responses/404",
         "#/paths/~1api~1remnawave-settings/patch/responses/404",
@@ -4719,6 +4972,12 @@
         "#/paths/~1api~1node-plugins~1torrent-blocker/get/responses/404",
         "#/paths/~1api~1node-plugins~1torrent-blocker~1stats/get/responses/404",
         "#/paths/~1api~1node-plugins~1torrent-blocker~1truncate/delete/responses/404",
+        "#/paths/~1api~1node-plugins~1shared-lists/get/responses/404",
+        "#/paths/~1api~1node-plugins~1shared-lists/post/responses/404",
+        "#/paths/~1api~1node-plugins~1shared-lists/patch/responses/404",
+        "#/paths/~1api~1node-plugins~1shared-lists~1{name}/get/responses/404",
+        "#/paths/~1api~1node-plugins~1shared-lists~1{name}/delete/responses/404",
+        "#/paths/~1api~1node-plugins~1shared-lists~1actions~1sync/post/responses/404",
         "#/paths/~1api~1node-plugins/get/responses/404",
         "#/paths/~1api~1node-plugins/patch/responses/404",
         "#/paths/~1api~1node-plugins/post/responses/404",
@@ -4726,7 +4985,13 @@
         "#/paths/~1api~1node-plugins~1{uuid}/delete/responses/404",
         "#/paths/~1api~1node-plugins~1actions~1reorder/post/responses/404",
         "#/paths/~1api~1node-plugins~1actions~1clone/post/responses/404",
+        "#/paths/~1api~1node-plugins~1actions~1sync/post/responses/404",
         "#/paths/~1api~1node-plugins~1executor/post/responses/404",
+        "#/paths/~1api~1node-integrations/get/responses/404",
+        "#/paths/~1api~1node-integrations/post/responses/404",
+        "#/paths/~1api~1node-integrations/patch/responses/404",
+        "#/paths/~1api~1node-integrations~1{uuid}/get/responses/404",
+        "#/paths/~1api~1node-integrations~1{uuid}/delete/responses/404",
         "#/paths/~1api~1hosts~1tags/get/responses/404",
         "#/paths/~1api~1hosts/post/responses/404",
         "#/paths/~1api~1hosts/patch/responses/404",
@@ -4783,6 +5048,8 @@
         "#/paths/~1api~1connections~1drop/post/responses/404",
         "#/paths/~1api~1connections~1by-node~1{nodeUuid}/post/responses/404",
         "#/paths/~1api~1connections~1by-node~1{jobId}/get/responses/404",
+        "#/paths/~1api~1connections~1geocheck~1{nodeUuid}/post/responses/404",
+        "#/paths/~1api~1connections~1geocheck~1{jobId}/get/responses/404",
         "#/paths/~1api~1metadata~1user~1{userId}/get/responses/404",
         "#/paths/~1api~1metadata~1user~1{userId}/put/responses/404",
         "#/paths/~1api~1metadata~1node~1{uuid}/get/responses/404",
@@ -4796,7 +5063,7 @@
       "nicification": "InternalServerError",
       "status_code": "500",
       "is_error": true,
-      "occurrences": 191,
+      "occurrences": 205,
       "locations": [
         "#/paths/~1api~1remnawave-settings/get/responses/500",
         "#/paths/~1api~1remnawave-settings/patch/responses/500",
@@ -4921,6 +5188,12 @@
         "#/paths/~1api~1node-plugins~1torrent-blocker/get/responses/500",
         "#/paths/~1api~1node-plugins~1torrent-blocker~1stats/get/responses/500",
         "#/paths/~1api~1node-plugins~1torrent-blocker~1truncate/delete/responses/500",
+        "#/paths/~1api~1node-plugins~1shared-lists/get/responses/500",
+        "#/paths/~1api~1node-plugins~1shared-lists/post/responses/500",
+        "#/paths/~1api~1node-plugins~1shared-lists/patch/responses/500",
+        "#/paths/~1api~1node-plugins~1shared-lists~1{name}/get/responses/500",
+        "#/paths/~1api~1node-plugins~1shared-lists~1{name}/delete/responses/500",
+        "#/paths/~1api~1node-plugins~1shared-lists~1actions~1sync/post/responses/500",
         "#/paths/~1api~1node-plugins/get/responses/500",
         "#/paths/~1api~1node-plugins/patch/responses/500",
         "#/paths/~1api~1node-plugins/post/responses/500",
@@ -4928,7 +5201,13 @@
         "#/paths/~1api~1node-plugins~1{uuid}/delete/responses/500",
         "#/paths/~1api~1node-plugins~1actions~1reorder/post/responses/500",
         "#/paths/~1api~1node-plugins~1actions~1clone/post/responses/500",
+        "#/paths/~1api~1node-plugins~1actions~1sync/post/responses/500",
         "#/paths/~1api~1node-plugins~1executor/post/responses/500",
+        "#/paths/~1api~1node-integrations/get/responses/500",
+        "#/paths/~1api~1node-integrations/post/responses/500",
+        "#/paths/~1api~1node-integrations/patch/responses/500",
+        "#/paths/~1api~1node-integrations~1{uuid}/get/responses/500",
+        "#/paths/~1api~1node-integrations~1{uuid}/delete/responses/500",
         "#/paths/~1api~1hosts~1tags/get/responses/500",
         "#/paths/~1api~1hosts/post/responses/500",
         "#/paths/~1api~1hosts/patch/responses/500",
@@ -4985,6 +5264,8 @@
         "#/paths/~1api~1connections~1drop/post/responses/500",
         "#/paths/~1api~1connections~1by-node~1{nodeUuid}/post/responses/500",
         "#/paths/~1api~1connections~1by-node~1{jobId}/get/responses/500",
+        "#/paths/~1api~1connections~1geocheck~1{nodeUuid}/post/responses/500",
+        "#/paths/~1api~1connections~1geocheck~1{jobId}/get/responses/500",
         "#/paths/~1api~1metadata~1user~1{userId}/get/responses/500",
         "#/paths/~1api~1metadata~1user~1{userId}/put/responses/500",
         "#/paths/~1api~1metadata~1node~1{uuid}/get/responses/500",
@@ -5052,7 +5333,7 @@
       "nicification": "BadRequestError",
       "status_code": "400",
       "is_error": true,
-      "occurrences": 191,
+      "occurrences": 205,
       "locations": [
         "#/paths/~1api~1remnawave-settings/get/responses/400",
         "#/paths/~1api~1remnawave-settings/patch/responses/400",
@@ -5177,6 +5458,12 @@
         "#/paths/~1api~1node-plugins~1torrent-blocker/get/responses/400",
         "#/paths/~1api~1node-plugins~1torrent-blocker~1stats/get/responses/400",
         "#/paths/~1api~1node-plugins~1torrent-blocker~1truncate/delete/responses/400",
+        "#/paths/~1api~1node-plugins~1shared-lists/get/responses/400",
+        "#/paths/~1api~1node-plugins~1shared-lists/post/responses/400",
+        "#/paths/~1api~1node-plugins~1shared-lists/patch/responses/400",
+        "#/paths/~1api~1node-plugins~1shared-lists~1{name}/get/responses/400",
+        "#/paths/~1api~1node-plugins~1shared-lists~1{name}/delete/responses/400",
+        "#/paths/~1api~1node-plugins~1shared-lists~1actions~1sync/post/responses/400",
         "#/paths/~1api~1node-plugins/get/responses/400",
         "#/paths/~1api~1node-plugins/patch/responses/400",
         "#/paths/~1api~1node-plugins/post/responses/400",
@@ -5184,7 +5471,13 @@
         "#/paths/~1api~1node-plugins~1{uuid}/delete/responses/400",
         "#/paths/~1api~1node-plugins~1actions~1reorder/post/responses/400",
         "#/paths/~1api~1node-plugins~1actions~1clone/post/responses/400",
+        "#/paths/~1api~1node-plugins~1actions~1sync/post/responses/400",
         "#/paths/~1api~1node-plugins~1executor/post/responses/400",
+        "#/paths/~1api~1node-integrations/get/responses/400",
+        "#/paths/~1api~1node-integrations/post/responses/400",
+        "#/paths/~1api~1node-integrations/patch/responses/400",
+        "#/paths/~1api~1node-integrations~1{uuid}/get/responses/400",
+        "#/paths/~1api~1node-integrations~1{uuid}/delete/responses/400",
         "#/paths/~1api~1hosts~1tags/get/responses/400",
         "#/paths/~1api~1hosts/post/responses/400",
         "#/paths/~1api~1hosts/patch/responses/400",
@@ -5241,6 +5534,8 @@
         "#/paths/~1api~1connections~1drop/post/responses/400",
         "#/paths/~1api~1connections~1by-node~1{nodeUuid}/post/responses/400",
         "#/paths/~1api~1connections~1by-node~1{jobId}/get/responses/400",
+        "#/paths/~1api~1connections~1geocheck~1{nodeUuid}/post/responses/400",
+        "#/paths/~1api~1connections~1geocheck~1{jobId}/get/responses/400",
         "#/paths/~1api~1metadata~1user~1{userId}/get/responses/400",
         "#/paths/~1api~1metadata~1user~1{userId}/put/responses/400",
         "#/paths/~1api~1metadata~1node~1{uuid}/get/responses/400",
@@ -5254,7 +5549,7 @@
       "nicification": "ResourceNotFoundErrorDto",
       "status_code": "404",
       "is_error": true,
-      "occurrences": 191,
+      "occurrences": 205,
       "locations": [
         "#/paths/~1api~1remnawave-settings/get/responses/404",
         "#/paths/~1api~1remnawave-settings/patch/responses/404",
@@ -5379,6 +5674,12 @@
         "#/paths/~1api~1node-plugins~1torrent-blocker/get/responses/404",
         "#/paths/~1api~1node-plugins~1torrent-blocker~1stats/get/responses/404",
         "#/paths/~1api~1node-plugins~1torrent-blocker~1truncate/delete/responses/404",
+        "#/paths/~1api~1node-plugins~1shared-lists/get/responses/404",
+        "#/paths/~1api~1node-plugins~1shared-lists/post/responses/404",
+        "#/paths/~1api~1node-plugins~1shared-lists/patch/responses/404",
+        "#/paths/~1api~1node-plugins~1shared-lists~1{name}/get/responses/404",
+        "#/paths/~1api~1node-plugins~1shared-lists~1{name}/delete/responses/404",
+        "#/paths/~1api~1node-plugins~1shared-lists~1actions~1sync/post/responses/404",
         "#/paths/~1api~1node-plugins/get/responses/404",
         "#/paths/~1api~1node-plugins/patch/responses/404",
         "#/paths/~1api~1node-plugins/post/responses/404",
@@ -5386,7 +5687,13 @@
         "#/paths/~1api~1node-plugins~1{uuid}/delete/responses/404",
         "#/paths/~1api~1node-plugins~1actions~1reorder/post/responses/404",
         "#/paths/~1api~1node-plugins~1actions~1clone/post/responses/404",
+        "#/paths/~1api~1node-plugins~1actions~1sync/post/responses/404",
         "#/paths/~1api~1node-plugins~1executor/post/responses/404",
+        "#/paths/~1api~1node-integrations/get/responses/404",
+        "#/paths/~1api~1node-integrations/post/responses/404",
+        "#/paths/~1api~1node-integrations/patch/responses/404",
+        "#/paths/~1api~1node-integrations~1{uuid}/get/responses/404",
+        "#/paths/~1api~1node-integrations~1{uuid}/delete/responses/404",
         "#/paths/~1api~1hosts~1tags/get/responses/404",
         "#/paths/~1api~1hosts/post/responses/404",
         "#/paths/~1api~1hosts/patch/responses/404",
@@ -5443,6 +5750,8 @@
         "#/paths/~1api~1connections~1drop/post/responses/404",
         "#/paths/~1api~1connections~1by-node~1{nodeUuid}/post/responses/404",
         "#/paths/~1api~1connections~1by-node~1{jobId}/get/responses/404",
+        "#/paths/~1api~1connections~1geocheck~1{nodeUuid}/post/responses/404",
+        "#/paths/~1api~1connections~1geocheck~1{jobId}/get/responses/404",
         "#/paths/~1api~1metadata~1user~1{userId}/get/responses/404",
         "#/paths/~1api~1metadata~1user~1{userId}/put/responses/404",
         "#/paths/~1api~1metadata~1node~1{uuid}/get/responses/404",
@@ -5456,7 +5765,7 @@
       "nicification": "InternalServerError",
       "status_code": "500",
       "is_error": true,
-      "occurrences": 191,
+      "occurrences": 205,
       "locations": [
         "#/paths/~1api~1remnawave-settings/get/responses/500",
         "#/paths/~1api~1remnawave-settings/patch/responses/500",
@@ -5581,6 +5890,12 @@
         "#/paths/~1api~1node-plugins~1torrent-blocker/get/responses/500",
         "#/paths/~1api~1node-plugins~1torrent-blocker~1stats/get/responses/500",
         "#/paths/~1api~1node-plugins~1torrent-blocker~1truncate/delete/responses/500",
+        "#/paths/~1api~1node-plugins~1shared-lists/get/responses/500",
+        "#/paths/~1api~1node-plugins~1shared-lists/post/responses/500",
+        "#/paths/~1api~1node-plugins~1shared-lists/patch/responses/500",
+        "#/paths/~1api~1node-plugins~1shared-lists~1{name}/get/responses/500",
+        "#/paths/~1api~1node-plugins~1shared-lists~1{name}/delete/responses/500",
+        "#/paths/~1api~1node-plugins~1shared-lists~1actions~1sync/post/responses/500",
         "#/paths/~1api~1node-plugins/get/responses/500",
         "#/paths/~1api~1node-plugins/patch/responses/500",
         "#/paths/~1api~1node-plugins/post/responses/500",
@@ -5588,7 +5903,13 @@
         "#/paths/~1api~1node-plugins~1{uuid}/delete/responses/500",
         "#/paths/~1api~1node-plugins~1actions~1reorder/post/responses/500",
         "#/paths/~1api~1node-plugins~1actions~1clone/post/responses/500",
+        "#/paths/~1api~1node-plugins~1actions~1sync/post/responses/500",
         "#/paths/~1api~1node-plugins~1executor/post/responses/500",
+        "#/paths/~1api~1node-integrations/get/responses/500",
+        "#/paths/~1api~1node-integrations/post/responses/500",
+        "#/paths/~1api~1node-integrations/patch/responses/500",
+        "#/paths/~1api~1node-integrations~1{uuid}/get/responses/500",
+        "#/paths/~1api~1node-integrations~1{uuid}/delete/responses/500",
         "#/paths/~1api~1hosts~1tags/get/responses/500",
         "#/paths/~1api~1hosts/post/responses/500",
         "#/paths/~1api~1hosts/patch/responses/500",
@@ -5645,6 +5966,8 @@
         "#/paths/~1api~1connections~1drop/post/responses/500",
         "#/paths/~1api~1connections~1by-node~1{nodeUuid}/post/responses/500",
         "#/paths/~1api~1connections~1by-node~1{jobId}/get/responses/500",
+        "#/paths/~1api~1connections~1geocheck~1{nodeUuid}/post/responses/500",
+        "#/paths/~1api~1connections~1geocheck~1{jobId}/get/responses/500",
         "#/paths/~1api~1metadata~1user~1{userId}/get/responses/500",
         "#/paths/~1api~1metadata~1user~1{userId}/put/responses/500",
         "#/paths/~1api~1metadata~1node~1{uuid}/get/responses/500",
@@ -5658,7 +5981,7 @@
       "nicification": "OperationSuccessfulNoContentReturnedResponse",
       "status_code": "204",
       "is_error": false,
-      "occurrences": 27,
+      "occurrences": 29,
       "locations": [
         "#/paths/~1api~1passkeys/delete/responses/204",
         "#/paths/~1api~1subscription-page-configs~1{uuid}/delete/responses/204",
@@ -5678,7 +6001,9 @@
         "#/paths/~1api~1nodes~1bulk-actions/post/responses/204",
         "#/paths/~1api~1nodes~1bulk-actions~1update/post/responses/204",
         "#/paths/~1api~1node-plugins~1torrent-blocker~1truncate/delete/responses/204",
+        "#/paths/~1api~1node-plugins~1shared-lists~1{name}/delete/responses/204",
         "#/paths/~1api~1node-plugins~1{uuid}/delete/responses/204",
+        "#/paths/~1api~1node-integrations~1{uuid}/delete/responses/204",
         "#/paths/~1api~1hosts~1{uuid}/delete/responses/204",
         "#/paths/~1api~1hosts~1bulk~1delete/post/responses/204",
         "#/paths/~1api~1hosts~1bulk~1disable/post/responses/204",
@@ -5696,7 +6021,7 @@
       "nicification": "OperationAcceptedAndWillBeProcessedInBackgroundResponse",
       "status_code": "202",
       "is_error": false,
-      "occurrences": 18,
+      "occurrences": 20,
       "locations": [
         "#/paths/~1api~1users~1bulk~1delete-by-status/post/responses/202",
         "#/paths/~1api~1users~1bulk~1revoke-subscription/post/responses/202",
@@ -5714,6 +6039,8 @@
         "#/paths/~1api~1external-squads~1{uuid}~1bulk-actions~1remove-users/delete/responses/202",
         "#/paths/~1api~1nodes~1{uuid}~1actions~1restart/post/responses/202",
         "#/paths/~1api~1nodes~1actions~1restart-all/post/responses/202",
+        "#/paths/~1api~1node-plugins~1shared-lists~1actions~1sync/post/responses/202",
+        "#/paths/~1api~1node-plugins~1actions~1sync/post/responses/202",
         "#/paths/~1api~1node-plugins~1executor/post/responses/202",
         "#/paths/~1api~1connections~1drop/post/responses/202"
       ],
@@ -5990,6 +6317,18 @@
     },
     {
       "action": "hoisted",
+      "name": "OkGeocheckByNodeResultResponse",
+      "nicification": "OkGeocheckByNodeResultResponse",
+      "status_code": "200",
+      "is_error": false,
+      "occurrences": 1,
+      "locations": [
+        "#/paths/~1api~1connections~1geocheck~1{jobId}/get/responses/200"
+      ],
+      "signature": "1715519f6f57cb8fd2ec82a42f5a303e169ee4fabe7ae0c8a69b9f7b2342abef"
+    },
+    {
+      "action": "hoisted",
       "name": "OkGetStatsNodeUsersUsageResponse",
       "nicification": "OkGetStatsNodeUsersUsageResponse",
       "status_code": "200",
@@ -6011,6 +6350,18 @@
         "#/paths/~1api~1nodes/post/responses/201"
       ],
       "signature": "1b30a36bc567eddfb93a697d188630914f723f79946f696071b5db8fd95e6273"
+    },
+    {
+      "action": "hoisted",
+      "name": "OkGetNodeIntegrationsResponse",
+      "nicification": "OkGetNodeIntegrationsResponse",
+      "status_code": "200",
+      "is_error": false,
+      "occurrences": 1,
+      "locations": [
+        "#/paths/~1api~1node-integrations/get/responses/200"
+      ],
+      "signature": "1b4f9f366c9c1c387fed58ea7c4c8420f38de4f4fdc87561ecd041dd895ca60e"
     },
     {
       "action": "hoisted",
@@ -6047,6 +6398,18 @@
         "#/paths/~1api~1subscriptions~1by-short-uuid~1{shortUuid}/get/responses/200"
       ],
       "signature": "26d19df723c89aeb2fed203f1b5b11a960d907bf5319a03bd0d179cf94fb7053"
+    },
+    {
+      "action": "hoisted",
+      "name": "CreatedCreateNodeIntegrationResponse",
+      "nicification": "CreatedCreateNodeIntegrationResponse",
+      "status_code": "201",
+      "is_error": false,
+      "occurrences": 1,
+      "locations": [
+        "#/paths/~1api~1node-integrations/post/responses/201"
+      ],
+      "signature": "27d3c6a0ba4ffed46c4bbd9e8200ac27f0ea30a6b119563fc9d915ed99aa30c5"
     },
     {
       "action": "hoisted",
@@ -6191,6 +6554,18 @@
         "#/paths/~1api~1system~1nodes~1metrics/get/responses/200"
       ],
       "signature": "436ac3febb5681f6fe1aa0cdaf65fac119f239153d26d98ad5d08cc8c82ca74e"
+    },
+    {
+      "action": "hoisted",
+      "name": "OkGetSharedListsResponse",
+      "nicification": "OkGetSharedListsResponse",
+      "status_code": "200",
+      "is_error": false,
+      "occurrences": 1,
+      "locations": [
+        "#/paths/~1api~1node-plugins~1shared-lists/get/responses/200"
+      ],
+      "signature": "4481c32426ce2cfa86c6c230a9cc267127d387b7faf63e1af64fd9e2344d43f2"
     },
     {
       "action": "hoisted",
@@ -6422,6 +6797,18 @@
     },
     {
       "action": "hoisted",
+      "name": "OkUpdateSharedListResponse",
+      "nicification": "OkUpdateSharedListResponse",
+      "status_code": "200",
+      "is_error": false,
+      "occurrences": 1,
+      "locations": [
+        "#/paths/~1api~1node-plugins~1shared-lists/patch/responses/200"
+      ],
+      "signature": "6ca6a5f93486d35a66f3a19a3dc9133cd1edc17396b5e127c69cb4cc81bf8d39"
+    },
+    {
+      "action": "hoisted",
       "name": "OkGetBandwidthStatsResponse",
       "nicification": "OkGetBandwidthStatsResponse",
       "status_code": "200",
@@ -6443,6 +6830,18 @@
         "#/paths/~1api~1subscriptions~1subpage-config~1{shortUuid}/get/responses/200"
       ],
       "signature": "71a0f97ecfa69529179607c570f97a2f082a267176e93f83861a1cbbec8896f3"
+    },
+    {
+      "action": "hoisted",
+      "name": "OkGetNodeIntegrationResponse",
+      "nicification": "OkGetNodeIntegrationResponse",
+      "status_code": "200",
+      "is_error": false,
+      "occurrences": 1,
+      "locations": [
+        "#/paths/~1api~1node-integrations~1{uuid}/get/responses/200"
+      ],
+      "signature": "71d76e8735f1b8d81fd0faa61baeadc35afbc709d7fda6f8c3f0d52de3e42d6c"
     },
     {
       "action": "hoisted",
@@ -6503,6 +6902,18 @@
         "#/paths/~1api~1hwid~1devices/get/responses/200"
       ],
       "signature": "7b2b2c6ec14f8ca3753273231f26e22ff2e5e37276dfe3fc4b19b4b3ec7463db"
+    },
+    {
+      "action": "hoisted",
+      "name": "CreatedGeocheckByNodeResponse",
+      "nicification": "CreatedGeocheckByNodeResponse",
+      "status_code": "201",
+      "is_error": false,
+      "occurrences": 1,
+      "locations": [
+        "#/paths/~1api~1connections~1geocheck~1{nodeUuid}/post/responses/201"
+      ],
+      "signature": "7b63a8b2e12b844a07ccec2de144683dad8f0dd6587dbf35db292bf47d0a9d4a"
     },
     {
       "action": "hoisted",
@@ -6755,6 +7166,30 @@
         "#/paths/~1api~1passkeys~1registration~1verify/post/responses/200"
       ],
       "signature": "984b927ffaaa0cf97b33369a740bfbda43611d9b8e5508998695174b314c2164"
+    },
+    {
+      "action": "hoisted",
+      "name": "CreatedCreateSharedListResponse",
+      "nicification": "CreatedCreateSharedListResponse",
+      "status_code": "201",
+      "is_error": false,
+      "occurrences": 1,
+      "locations": [
+        "#/paths/~1api~1node-plugins~1shared-lists/post/responses/201"
+      ],
+      "signature": "98772a685e122307e40c0786b96a6cc3a2613c03738605ad515381bcf5ad47f9"
+    },
+    {
+      "action": "hoisted",
+      "name": "OkGetSharedListResponse",
+      "nicification": "OkGetSharedListResponse",
+      "status_code": "200",
+      "is_error": false,
+      "occurrences": 1,
+      "locations": [
+        "#/paths/~1api~1node-plugins~1shared-lists~1{name}/get/responses/200"
+      ],
+      "signature": "9bdc9e4d81b890a10a3d14da9c01fcf3720fe4b614decf269a78d15b8f3da475"
     },
     {
       "action": "hoisted",
@@ -7202,6 +7637,18 @@
     },
     {
       "action": "hoisted",
+      "name": "OkUpdateNodeIntegrationResponse",
+      "nicification": "OkUpdateNodeIntegrationResponse",
+      "status_code": "200",
+      "is_error": false,
+      "occurrences": 1,
+      "locations": [
+        "#/paths/~1api~1node-integrations/patch/responses/200"
+      ],
+      "signature": "dfc6b18b6f8aae57d6676a903b1b8515222e821f5de847ec0a99f65244db71a7"
+    },
+    {
+      "action": "hoisted",
       "name": "OkUpdateSnippetResponse",
       "nicification": "OkUpdateSnippetResponse",
       "status_code": "200",
@@ -7563,12 +8010,28 @@
       "name": "TorrentBlockerReportsStatsResponseDto"
     },
     {
+      "old_name": "GetSharedListsResponseDto",
+      "name": "SharedListsResponseDto"
+    },
+    {
+      "old_name": "GetSharedListResponseDto",
+      "name": "SharedListResponseDto"
+    },
+    {
       "old_name": "GetNodePluginsResponseDto",
       "name": "NodePluginsResponseDto"
     },
     {
       "old_name": "GetNodePluginResponseDto",
       "name": "NodePluginResponseDto"
+    },
+    {
+      "old_name": "GetNodeIntegrationsResponseDto",
+      "name": "NodeIntegrationsResponseDto"
+    },
+    {
+      "old_name": "GetNodeIntegrationResponseDto",
+      "name": "NodeIntegrationResponseDto"
     },
     {
       "old_name": "GetHostsTagsResponseDto",
@@ -7701,7 +8164,7 @@
       "field": "fields",
       "parent": "BulkNodesUpdateBodyDto",
       "source": "#/components/schemas/BulkNodesUpdateBodyDto/properties/fields",
-      "signature": "edcfc1e1740e69677859e65199919155630b972a6f0e915f30bc894bade78f03"
+      "signature": "53587ec511b0bd72475b8d7c61506ee606bffdeb6b3a29c1631e0d6a0d1b89c2"
     },
     {
       "action": "hoisted",
@@ -7974,6 +8437,136 @@
       "signature": "f5c65083e65d9b7e20b5c74fe42cbb781e2ff1a6b88d7a1176d518899e9c41c6"
     },
     {
+      "action": "hoisted",
+      "name": "CreateHostBodyMapperDto",
+      "target": "CreateHostBodyMapperDto",
+      "nicification": "CreateHostBodyMapperDto",
+      "field": "mapper",
+      "parent": "CreateHostBodyDto",
+      "source": "#/components/schemas/CreateHostBodyDto/properties/mapper",
+      "signature": "b72e3dba5e88a96cb20fd1255dbfb79ce753cd2511130aede35acabd24500e0b"
+    },
+    {
+      "action": "reused",
+      "name": "CreateHostBodyMapperBase64Dto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperBase64Dto",
+      "nicification": "CreateHostBodyBase64Dto",
+      "field": "base64",
+      "parent": "CreateHostBodyMapperDto",
+      "source": "#/components/schemas/CreateHostBodyDto/properties/mapper/properties/base64/items/oneOf/0",
+      "signature": "04e587db48e59c22857addf4bf1e0e97a2ee8e816a79881d4862f5c28554636e"
+    },
+    {
+      "action": "hoisted",
+      "name": "CreateHostBodyMapperBase64Dto",
+      "target": "CreateHostBodyMapperBase64Dto",
+      "nicification": "CreateHostBodyBase64Dto2",
+      "field": "base64",
+      "parent": "CreateHostBodyMapperDto",
+      "source": "#/components/schemas/CreateHostBodyDto/properties/mapper/properties/base64/items/oneOf/1",
+      "signature": "da3e3f0d9015f6b8f6e95ce31f3f749b475e4d9f28857d964d021128fddb0c04"
+    },
+    {
+      "action": "reused",
+      "name": "CreateHostBodyMapperBase64Dto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperBase64Dto3",
+      "nicification": "CreateHostBodyBase64Dto3",
+      "field": "base64",
+      "parent": "CreateHostBodyMapperDto",
+      "source": "#/components/schemas/CreateHostBodyDto/properties/mapper/properties/base64/items/oneOf/2",
+      "signature": "20c0d332a8e5548eff7200eb7ea6c43696b8a73998c95d83724c403d27188ac7"
+    },
+    {
+      "action": "reused",
+      "name": "CreateHostBodyMapperMihomoDto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperMihomoDto",
+      "nicification": "CreateHostBodyMihomoDto",
+      "field": "mihomo",
+      "parent": "CreateHostBodyMapperDto",
+      "source": "#/components/schemas/CreateHostBodyDto/properties/mapper/properties/mihomo/items/oneOf/0",
+      "signature": "6587887a72deb010a44048f407ce03600f4debda4b7d0180d88ec85e6374c125"
+    },
+    {
+      "action": "hoisted",
+      "name": "CreateHostBodyMapperMihomoDto",
+      "target": "CreateHostBodyMapperMihomoDto",
+      "nicification": "CreateHostBodyMihomoDto2",
+      "field": "mihomo",
+      "parent": "CreateHostBodyMapperDto",
+      "source": "#/components/schemas/CreateHostBodyDto/properties/mapper/properties/mihomo/items/oneOf/1",
+      "signature": "8e9f55bd149a9bc5da9e3db2298772177b9fd817da35e9cf1fe293697a465766"
+    },
+    {
+      "action": "reused",
+      "name": "CreateHostBodyMapperMihomoDto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperMihomoDto3",
+      "nicification": "CreateHostBodyMihomoDto3",
+      "field": "mihomo",
+      "parent": "CreateHostBodyMapperDto",
+      "source": "#/components/schemas/CreateHostBodyDto/properties/mapper/properties/mihomo/items/oneOf/2",
+      "signature": "d588ffe7d47969cd47e49c45126f406a74829996c0db3afcec9f03918253aa49"
+    },
+    {
+      "action": "reused",
+      "name": "CreateHostBodyMapperSingboxDto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperSingboxDto",
+      "nicification": "CreateHostBodySingboxDto",
+      "field": "singbox",
+      "parent": "CreateHostBodyMapperDto",
+      "source": "#/components/schemas/CreateHostBodyDto/properties/mapper/properties/singbox/items/oneOf/0",
+      "signature": "78dccb393dd4668818a3243130b5e712f4ec315e15b52a420e889f9b517b60be"
+    },
+    {
+      "action": "hoisted",
+      "name": "CreateHostBodyMapperSingboxDto",
+      "target": "CreateHostBodyMapperSingboxDto",
+      "nicification": "CreateHostBodySingboxDto2",
+      "field": "singbox",
+      "parent": "CreateHostBodyMapperDto",
+      "source": "#/components/schemas/CreateHostBodyDto/properties/mapper/properties/singbox/items/oneOf/1",
+      "signature": "297b8bb098da2fdc967d4bf9160b33720b1ea65122d11e4ba2dad9b4439a6bf0"
+    },
+    {
+      "action": "reused",
+      "name": "CreateHostBodyMapperSingboxDto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperSingboxDto3",
+      "nicification": "CreateHostBodySingboxDto3",
+      "field": "singbox",
+      "parent": "CreateHostBodyMapperDto",
+      "source": "#/components/schemas/CreateHostBodyDto/properties/mapper/properties/singbox/items/oneOf/2",
+      "signature": "67ec1f8018927dba82e6e79fa3cac0f37066868cb34781615744d5c4b0c20fb3"
+    },
+    {
+      "action": "reused",
+      "name": "CreateHostBodyMapperXrayJsonDto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperXrayJsonDto",
+      "nicification": "CreateHostBodyXrayJsonDto",
+      "field": "xrayJson",
+      "parent": "CreateHostBodyMapperDto",
+      "source": "#/components/schemas/CreateHostBodyDto/properties/mapper/properties/xrayJson/items/oneOf/0",
+      "signature": "6ba7803e0a1fe6d7c3e3561e1b81ba61b0168615266e90f1207166f0fd221d38"
+    },
+    {
+      "action": "hoisted",
+      "name": "CreateHostBodyMapperXrayJsonDto",
+      "target": "CreateHostBodyMapperXrayJsonDto",
+      "nicification": "CreateHostBodyXrayJsonDto2",
+      "field": "xrayJson",
+      "parent": "CreateHostBodyMapperDto",
+      "source": "#/components/schemas/CreateHostBodyDto/properties/mapper/properties/xrayJson/items/oneOf/1",
+      "signature": "25404ce64c629f0d1f7c842660c129120ccb9ce0ceeeb00c9d65fab671438073"
+    },
+    {
+      "action": "reused",
+      "name": "CreateHostBodyMapperXrayJsonDto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperXrayJsonDto3",
+      "nicification": "CreateHostBodyXrayJsonDto3",
+      "field": "xrayJson",
+      "parent": "CreateHostBodyMapperDto",
+      "source": "#/components/schemas/CreateHostBodyDto/properties/mapper/properties/xrayJson/items/oneOf/2",
+      "signature": "0612296bd0c073b49c1b99898a5a5f216cdcc998a487464f757f813a49d75e3e"
+    },
+    {
       "action": "reused",
       "name": "CreateInfraBillingNodeResponse",
       "target": "InfraBillingNodesResponse",
@@ -8155,6 +8748,16 @@
     },
     {
       "action": "reused",
+      "name": "NodeIntegrationDto",
+      "target": "NodeIntegrationDto",
+      "nicification": "CreateNodeIntegrationResponse",
+      "field": "response",
+      "parent": "CreateNodeIntegrationResponseDto",
+      "source": "#/components/schemas/CreateNodeIntegrationResponseDto/properties/response",
+      "signature": "fe68134aa8a04e296a207b160c0c25ccf0b65c21757893764cf3a6b3628306de"
+    },
+    {
+      "action": "reused",
       "name": "NodePluginDto",
       "target": "NodePluginDto",
       "nicification": "CreateNodePluginResponse",
@@ -8162,6 +8765,16 @@
       "parent": "CreateNodePluginResponseDto",
       "source": "#/components/schemas/CreateNodePluginResponseDto/properties/response",
       "signature": "eba12bc31245c08cf8295dffa0ff089a745bc6c9292f8589fdbfca7811c286f8"
+    },
+    {
+      "action": "reused",
+      "name": "SharedListPreviewDto",
+      "target": "SharedListPreviewDto2",
+      "nicification": "CreateSharedListResponse",
+      "field": "response",
+      "parent": "CreateSharedListResponseDto",
+      "source": "#/components/schemas/CreateSharedListResponseDto/properties/response",
+      "signature": "522328153d1cd39be77cbccd4cd456cbc0d283b54bae1735897ce8530b8ea7db"
     },
     {
       "action": "reused",
@@ -8271,7 +8884,7 @@
       "field": "responseModifications",
       "parent": "ResponseRulesConfigRulesDto",
       "source": "#/components/schemas/DebugSrrMatcherBodyDto/properties/responseRules/properties/rules/items/properties/responseModifications",
-      "signature": "332e1776e0fdab641eafb465d2a7994ae7e7d8d0d8778482be0023fef1fc8c8e"
+      "signature": "cd13b3bde1723351f142213a3370d9a61871da4dd081f802af916afcdd2ef98f"
     },
     {
       "action": "reused",
@@ -8341,7 +8954,7 @@
       "field": "responseModifications",
       "parent": "DebugSrrMatcherResponseMatchedRuleDto",
       "source": "#/components/schemas/DebugSrrMatcherResponseDto/properties/response/properties/matchedRule/properties/responseModifications",
-      "signature": "332e1776e0fdab641eafb465d2a7994ae7e7d8d0d8778482be0023fef1fc8c8e"
+      "signature": "cd13b3bde1723351f142213a3370d9a61871da4dd081f802af916afcdd2ef98f"
     },
     {
       "action": "reused",
@@ -8462,6 +9075,56 @@
       "parent": "GenerateX25519ResponseModelDto",
       "source": "#/components/schemas/GenerateX25519ResponseDto/properties/response/properties/keypairs/items",
       "signature": "97edb35ab24e79d7538a21e9c6235f96ee855b95fd9056d8a4ae6d98fa532428"
+    },
+    {
+      "action": "reused",
+      "name": "GeocheckByNodeResponse",
+      "target": "ConnectionsByUserResponse",
+      "nicification": "GeocheckByNodeResponse",
+      "field": "response",
+      "parent": "GeocheckByNodeResponseDto",
+      "source": "#/components/schemas/GeocheckByNodeResponseDto/properties/response",
+      "signature": "4999bd4be5987173e71076b591588a073bb2b63706e7a5ccdb14140a482af9eb"
+    },
+    {
+      "action": "hoisted",
+      "name": "GeocheckByNodeResultResponse",
+      "target": "GeocheckByNodeResultResponse",
+      "nicification": "GeocheckByNodeResultResponse",
+      "field": "response",
+      "parent": "GeocheckByNodeResultResponseDto",
+      "source": "#/components/schemas/GeocheckByNodeResultResponseDto/properties/response",
+      "signature": "0526826199f4f8205afbed70bfe0d146f08b27e55944178d217587d2b11356ad"
+    },
+    {
+      "action": "hoisted",
+      "name": "GeocheckByNodeResultResponseResultDto",
+      "target": "GeocheckByNodeResultResponseResultDto",
+      "nicification": "GeocheckByNodeResultResponseResultDto",
+      "field": "result",
+      "parent": "GeocheckByNodeResultResponse",
+      "source": "#/components/schemas/GeocheckByNodeResultResponseDto/properties/response/properties/result",
+      "signature": "0ab47e9c18f002ee863480a3792badcf2bb904c517220b200a92671b23be1e6b"
+    },
+    {
+      "action": "hoisted",
+      "name": "GeocheckImageDto",
+      "target": "GeocheckImageDto",
+      "nicification": "ImageDto",
+      "field": "image",
+      "parent": "GeocheckByNodeResultResponseResultDto",
+      "source": "#/components/schemas/GeocheckByNodeResultResponseDto/properties/response/properties/result/properties/image",
+      "signature": "c8775f9c8962b62aa1152efdb1c719aacb342ad2a888d6432dfcd6cb70fb8285"
+    },
+    {
+      "action": "reused",
+      "name": "GeocheckByNodeResultResponseResultRawReportDto",
+      "target": "XhttpTransportOptionsExtraDto",
+      "nicification": "RawReportDto",
+      "field": "rawReport",
+      "parent": "GeocheckByNodeResultResponseResultDto",
+      "source": "#/components/schemas/GeocheckByNodeResultResponseDto/properties/response/properties/result/properties/rawReport",
+      "signature": "c65c1fbd5acfa076166e05c1ed4de4463bcc42098733caf4e818bbd0e2d638e7"
     },
     {
       "action": "hoisted",
@@ -8901,7 +9564,7 @@
       "field": "response",
       "parent": "GetHostsResponseDto",
       "source": "#/components/schemas/GetHostsResponseDto/properties/response/items",
-      "signature": "bbd9e9f593ef1eccf5d940ad8186df207633bb60e61077277f31c591e99e13b6"
+      "signature": "c851eff57a1a3dfe87139aca355077f9441f28effffcfbc6f89dce19afae9720"
     },
     {
       "action": "hoisted",
@@ -8912,6 +9575,136 @@
       "parent": "HostsDto",
       "source": "#/components/schemas/GetHostsResponseDto/properties/response/items/properties/inbound",
       "signature": "7b42ea98cbc10e1f9a3ba38f973a33747c8b03d5325cae1c52b25e566121b337"
+    },
+    {
+      "action": "hoisted",
+      "name": "HostsMapperDto",
+      "target": "HostsMapperDto",
+      "nicification": "GetHostsResponseMapperDto",
+      "field": "mapper",
+      "parent": "HostsDto",
+      "source": "#/components/schemas/GetHostsResponseDto/properties/response/items/properties/mapper",
+      "signature": "9f9756259547610f7d4117868a6ee699b4fccf51f124b28ee6fdcc7e8657de0b"
+    },
+    {
+      "action": "reused",
+      "name": "HostsMapperBase64Dto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperBase64Dto",
+      "nicification": "GetHostsResponseBase64Dto",
+      "field": "base64",
+      "parent": "HostsMapperDto",
+      "source": "#/components/schemas/GetHostsResponseDto/properties/response/items/properties/mapper/properties/base64/items/oneOf/0",
+      "signature": "04e587db48e59c22857addf4bf1e0e97a2ee8e816a79881d4862f5c28554636e"
+    },
+    {
+      "action": "hoisted",
+      "name": "HostsMapperBase64Dto",
+      "target": "HostsMapperBase64Dto",
+      "nicification": "GetHostsResponseBase64Dto2",
+      "field": "base64",
+      "parent": "HostsMapperDto",
+      "source": "#/components/schemas/GetHostsResponseDto/properties/response/items/properties/mapper/properties/base64/items/oneOf/1",
+      "signature": "66ea9f2968787de49bac0b1dbf1e44098a5acea2f3af6e3b08a4d846fc5313bc"
+    },
+    {
+      "action": "reused",
+      "name": "HostsMapperBase64Dto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperBase64Dto3",
+      "nicification": "GetHostsResponseBase64Dto3",
+      "field": "base64",
+      "parent": "HostsMapperDto",
+      "source": "#/components/schemas/GetHostsResponseDto/properties/response/items/properties/mapper/properties/base64/items/oneOf/2",
+      "signature": "20c0d332a8e5548eff7200eb7ea6c43696b8a73998c95d83724c403d27188ac7"
+    },
+    {
+      "action": "reused",
+      "name": "HostsMapperMihomoDto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperMihomoDto",
+      "nicification": "GetHostsResponseMihomoDto",
+      "field": "mihomo",
+      "parent": "HostsMapperDto",
+      "source": "#/components/schemas/GetHostsResponseDto/properties/response/items/properties/mapper/properties/mihomo/items/oneOf/0",
+      "signature": "6587887a72deb010a44048f407ce03600f4debda4b7d0180d88ec85e6374c125"
+    },
+    {
+      "action": "hoisted",
+      "name": "HostsMapperMihomoDto",
+      "target": "HostsMapperMihomoDto",
+      "nicification": "GetHostsResponseMihomoDto2",
+      "field": "mihomo",
+      "parent": "HostsMapperDto",
+      "source": "#/components/schemas/GetHostsResponseDto/properties/response/items/properties/mapper/properties/mihomo/items/oneOf/1",
+      "signature": "5287fd2916f20ff9873f1c5f6204391a88fdac295b6c47d17017783f1e0cd095"
+    },
+    {
+      "action": "reused",
+      "name": "HostsMapperMihomoDto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperMihomoDto3",
+      "nicification": "GetHostsResponseMihomoDto3",
+      "field": "mihomo",
+      "parent": "HostsMapperDto",
+      "source": "#/components/schemas/GetHostsResponseDto/properties/response/items/properties/mapper/properties/mihomo/items/oneOf/2",
+      "signature": "d588ffe7d47969cd47e49c45126f406a74829996c0db3afcec9f03918253aa49"
+    },
+    {
+      "action": "reused",
+      "name": "HostsMapperSingboxDto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperSingboxDto",
+      "nicification": "GetHostsResponseSingboxDto",
+      "field": "singbox",
+      "parent": "HostsMapperDto",
+      "source": "#/components/schemas/GetHostsResponseDto/properties/response/items/properties/mapper/properties/singbox/items/oneOf/0",
+      "signature": "78dccb393dd4668818a3243130b5e712f4ec315e15b52a420e889f9b517b60be"
+    },
+    {
+      "action": "hoisted",
+      "name": "HostsMapperSingboxDto",
+      "target": "HostsMapperSingboxDto",
+      "nicification": "GetHostsResponseSingboxDto2",
+      "field": "singbox",
+      "parent": "HostsMapperDto",
+      "source": "#/components/schemas/GetHostsResponseDto/properties/response/items/properties/mapper/properties/singbox/items/oneOf/1",
+      "signature": "283f704a572810a68e9d188e49dbbd5ea6a4ee3ae8b9515bcb793e325f059ac6"
+    },
+    {
+      "action": "reused",
+      "name": "HostsMapperSingboxDto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperSingboxDto3",
+      "nicification": "GetHostsResponseSingboxDto3",
+      "field": "singbox",
+      "parent": "HostsMapperDto",
+      "source": "#/components/schemas/GetHostsResponseDto/properties/response/items/properties/mapper/properties/singbox/items/oneOf/2",
+      "signature": "67ec1f8018927dba82e6e79fa3cac0f37066868cb34781615744d5c4b0c20fb3"
+    },
+    {
+      "action": "reused",
+      "name": "HostsMapperXrayJsonDto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperXrayJsonDto",
+      "nicification": "GetHostsResponseXrayJsonDto",
+      "field": "xrayJson",
+      "parent": "HostsMapperDto",
+      "source": "#/components/schemas/GetHostsResponseDto/properties/response/items/properties/mapper/properties/xrayJson/items/oneOf/0",
+      "signature": "6ba7803e0a1fe6d7c3e3561e1b81ba61b0168615266e90f1207166f0fd221d38"
+    },
+    {
+      "action": "hoisted",
+      "name": "HostsMapperXrayJsonDto",
+      "target": "HostsMapperXrayJsonDto",
+      "nicification": "GetHostsResponseXrayJsonDto2",
+      "field": "xrayJson",
+      "parent": "HostsMapperDto",
+      "source": "#/components/schemas/GetHostsResponseDto/properties/response/items/properties/mapper/properties/xrayJson/items/oneOf/1",
+      "signature": "9ee2070224ae1acfa0026a44f70e284d682cb25ae0d767c6b41733a9b85a57f7"
+    },
+    {
+      "action": "reused",
+      "name": "HostsMapperXrayJsonDto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperXrayJsonDto3",
+      "nicification": "GetHostsResponseXrayJsonDto3",
+      "field": "xrayJson",
+      "parent": "HostsMapperDto",
+      "source": "#/components/schemas/GetHostsResponseDto/properties/response/items/properties/mapper/properties/xrayJson/items/oneOf/2",
+      "signature": "0612296bd0c073b49c1b99898a5a5f216cdcc998a487464f757f813a49d75e3e"
     },
     {
       "action": "reused",
@@ -9395,6 +10188,36 @@
     },
     {
       "action": "reused",
+      "name": "NodeIntegrationDto",
+      "target": "NodeIntegrationDto",
+      "nicification": "GetNodeIntegrationResponse",
+      "field": "response",
+      "parent": "GetNodeIntegrationResponseDto",
+      "source": "#/components/schemas/GetNodeIntegrationResponseDto/properties/response",
+      "signature": "fe68134aa8a04e296a207b160c0c25ccf0b65c21757893764cf3a6b3628306de"
+    },
+    {
+      "action": "hoisted",
+      "name": "NodeIntegrationsResponse",
+      "target": "NodeIntegrationsResponse",
+      "nicification": "GetNodeIntegrationsResponse",
+      "field": "response",
+      "parent": "GetNodeIntegrationsResponseDto",
+      "source": "#/components/schemas/GetNodeIntegrationsResponseDto/properties/response",
+      "signature": "aae992b78dfd0d2e2b9b5c2c9105010f1a3701c46e24c4f4c44ea2fe600d8c8d"
+    },
+    {
+      "action": "hoisted",
+      "name": "NodeIntegrationDto",
+      "target": "NodeIntegrationDto",
+      "nicification": "NodeIntegrationsDto",
+      "field": "nodeIntegrations",
+      "parent": "NodeIntegrationsResponse",
+      "source": "#/components/schemas/GetNodeIntegrationsResponseDto/properties/response/properties/nodeIntegrations/items",
+      "signature": "fe68134aa8a04e296a207b160c0c25ccf0b65c21757893764cf3a6b3628306de"
+    },
+    {
+      "action": "reused",
       "name": "NodeMetadataResponse",
       "target": "MetadataResponse",
       "nicification": "GetNodeMetadataResponse",
@@ -9531,7 +10354,7 @@
       "field": "response",
       "parent": "GetNodesResponseDto",
       "source": "#/components/schemas/GetNodesResponseDto/properties/response/items",
-      "signature": "f7b57d51a248ff2749e85ad77251d369b3d570c0a793ffe1bf4100690cf1c86c"
+      "signature": "1c3994b901f8a7fcf7ed54c73a96f8003d1754e6938a25f7c26955fcf1bb9522"
     },
     {
       "action": "reused",
@@ -9681,7 +10504,7 @@
       "field": "response",
       "parent": "GetRawSubscriptionByShortUuidResponseDto",
       "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response",
-      "signature": "9deee25e229f902ac5495e4ed8a698b8f994b4093f1936990c4fb953533f8a16"
+      "signature": "6e8e9f25f0b6012edbc7cd9beeecac8c370e7d905ba0b6b7f79bf1821983a507"
     },
     {
       "action": "hoisted",
@@ -9705,23 +10528,153 @@
     },
     {
       "action": "hoisted",
-      "name": "ResolvedProxyConfigDto",
-      "target": "ResolvedProxyConfigDto",
-      "nicification": "ResolvedProxyConfigsDto",
+      "name": "ResolvedProxyConfigBaseDto",
+      "target": "ResolvedProxyConfigBaseDto",
+      "nicification": "GetRawSubscriptionByShortUuidResponseResolvedProxyConfigsDto",
       "field": "resolvedProxyConfigs",
       "parent": "RawSubscriptionByShortUuidResponse",
-      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items",
-      "signature": "6465e9a1638f6ea7633540436ce979f001f58c8eed53a4426dfa324f6699e422"
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/0",
+      "signature": "9bda23207d183f2cb64308e7ccece8d98879fc86214f96a5f4cc128365ec31eb"
     },
     {
       "action": "hoisted",
-      "name": "ResolvedProxyConfigClientOverridesDto",
-      "target": "ResolvedProxyConfigClientOverridesDto",
+      "name": "ResolvedProxyConfigBaseClientOverridesDto",
+      "target": "ResolvedProxyConfigBaseClientOverridesDto",
       "nicification": "ClientOverridesDto",
       "field": "clientOverrides",
-      "parent": "ResolvedProxyConfigDto",
-      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/properties/clientOverrides",
-      "signature": "44fd48d77258cb91428d6b9d3e4bfb404fb155c01fce20748fbf71ca0c35788f"
+      "parent": "ResolvedProxyConfigBaseDto",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/0/properties/clientOverrides",
+      "signature": "ca4664e6d4e52a1c112879e8f08ab318ff62829fb6ea723e4217697f01ba797a"
+    },
+    {
+      "action": "hoisted",
+      "name": "ResolvedProxyConfigBaseClientOverridesMapperDto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperDto",
+      "nicification": "GetRawSubscriptionByShortUuidResponseMapperDto",
+      "field": "mapper",
+      "parent": "ResolvedProxyConfigBaseClientOverridesDto",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/0/properties/clientOverrides/properties/mapper",
+      "signature": "4b0ed0f58a93fe5f616d7c68b17b035ba2b979dc25b342af7d7a19f07e61a468"
+    },
+    {
+      "action": "hoisted",
+      "name": "ResolvedProxyConfigBaseClientOverridesMapperBase64Dto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperBase64Dto",
+      "nicification": "GetRawSubscriptionByShortUuidResponseBase64Dto",
+      "field": "base64",
+      "parent": "ResolvedProxyConfigBaseClientOverridesMapperDto",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/0/properties/clientOverrides/properties/mapper/properties/base64/items/oneOf/0",
+      "signature": "04e587db48e59c22857addf4bf1e0e97a2ee8e816a79881d4862f5c28554636e"
+    },
+    {
+      "action": "hoisted",
+      "name": "ResolvedProxyConfigBaseClientOverridesMapperBase64Dto2",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperBase64Dto2",
+      "nicification": "GetRawSubscriptionByShortUuidResponseBase64Dto2",
+      "field": "base64",
+      "parent": "ResolvedProxyConfigBaseClientOverridesMapperDto",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/0/properties/clientOverrides/properties/mapper/properties/base64/items/oneOf/1",
+      "signature": "da63b9e421896557018f7781771146fcf193d63b075bade308eedf6bee54316b"
+    },
+    {
+      "action": "hoisted",
+      "name": "ResolvedProxyConfigBaseClientOverridesMapperBase64Dto3",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperBase64Dto3",
+      "nicification": "GetRawSubscriptionByShortUuidResponseBase64Dto3",
+      "field": "base64",
+      "parent": "ResolvedProxyConfigBaseClientOverridesMapperDto",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/0/properties/clientOverrides/properties/mapper/properties/base64/items/oneOf/2",
+      "signature": "20c0d332a8e5548eff7200eb7ea6c43696b8a73998c95d83724c403d27188ac7"
+    },
+    {
+      "action": "hoisted",
+      "name": "ResolvedProxyConfigBaseClientOverridesMapperMihomoDto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperMihomoDto",
+      "nicification": "GetRawSubscriptionByShortUuidResponseMihomoDto",
+      "field": "mihomo",
+      "parent": "ResolvedProxyConfigBaseClientOverridesMapperDto",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/0/properties/clientOverrides/properties/mapper/properties/mihomo/items/oneOf/0",
+      "signature": "6587887a72deb010a44048f407ce03600f4debda4b7d0180d88ec85e6374c125"
+    },
+    {
+      "action": "hoisted",
+      "name": "ResolvedProxyConfigBaseClientOverridesMapperMihomoDto2",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperMihomoDto2",
+      "nicification": "GetRawSubscriptionByShortUuidResponseMihomoDto2",
+      "field": "mihomo",
+      "parent": "ResolvedProxyConfigBaseClientOverridesMapperDto",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/0/properties/clientOverrides/properties/mapper/properties/mihomo/items/oneOf/1",
+      "signature": "7cf5f1a6ee45347b4eadbd9d1513f9daa9b96728aec5669b6e07002d6e819794"
+    },
+    {
+      "action": "hoisted",
+      "name": "ResolvedProxyConfigBaseClientOverridesMapperMihomoDto3",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperMihomoDto3",
+      "nicification": "GetRawSubscriptionByShortUuidResponseMihomoDto3",
+      "field": "mihomo",
+      "parent": "ResolvedProxyConfigBaseClientOverridesMapperDto",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/0/properties/clientOverrides/properties/mapper/properties/mihomo/items/oneOf/2",
+      "signature": "d588ffe7d47969cd47e49c45126f406a74829996c0db3afcec9f03918253aa49"
+    },
+    {
+      "action": "hoisted",
+      "name": "ResolvedProxyConfigBaseClientOverridesMapperSingboxDto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperSingboxDto",
+      "nicification": "GetRawSubscriptionByShortUuidResponseSingboxDto",
+      "field": "singbox",
+      "parent": "ResolvedProxyConfigBaseClientOverridesMapperDto",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/0/properties/clientOverrides/properties/mapper/properties/singbox/items/oneOf/0",
+      "signature": "78dccb393dd4668818a3243130b5e712f4ec315e15b52a420e889f9b517b60be"
+    },
+    {
+      "action": "hoisted",
+      "name": "ResolvedProxyConfigBaseClientOverridesMapperSingboxDto2",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperSingboxDto2",
+      "nicification": "GetRawSubscriptionByShortUuidResponseSingboxDto2",
+      "field": "singbox",
+      "parent": "ResolvedProxyConfigBaseClientOverridesMapperDto",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/0/properties/clientOverrides/properties/mapper/properties/singbox/items/oneOf/1",
+      "signature": "2b2a150c4f7ad453a6870e873afddfe11798d84a727662627e96241afcc5c783"
+    },
+    {
+      "action": "hoisted",
+      "name": "ResolvedProxyConfigBaseClientOverridesMapperSingboxDto3",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperSingboxDto3",
+      "nicification": "GetRawSubscriptionByShortUuidResponseSingboxDto3",
+      "field": "singbox",
+      "parent": "ResolvedProxyConfigBaseClientOverridesMapperDto",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/0/properties/clientOverrides/properties/mapper/properties/singbox/items/oneOf/2",
+      "signature": "67ec1f8018927dba82e6e79fa3cac0f37066868cb34781615744d5c4b0c20fb3"
+    },
+    {
+      "action": "hoisted",
+      "name": "ResolvedProxyConfigBaseClientOverridesMapperXrayJsonDto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperXrayJsonDto",
+      "nicification": "GetRawSubscriptionByShortUuidResponseXrayJsonDto",
+      "field": "xrayJson",
+      "parent": "ResolvedProxyConfigBaseClientOverridesMapperDto",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/0/properties/clientOverrides/properties/mapper/properties/xrayJson/items/oneOf/0",
+      "signature": "6ba7803e0a1fe6d7c3e3561e1b81ba61b0168615266e90f1207166f0fd221d38"
+    },
+    {
+      "action": "hoisted",
+      "name": "ResolvedProxyConfigBaseClientOverridesMapperXrayJsonDto2",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperXrayJsonDto2",
+      "nicification": "GetRawSubscriptionByShortUuidResponseXrayJsonDto2",
+      "field": "xrayJson",
+      "parent": "ResolvedProxyConfigBaseClientOverridesMapperDto",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/0/properties/clientOverrides/properties/mapper/properties/xrayJson/items/oneOf/1",
+      "signature": "564e3ac7065a2c69a7b66d5d8be95e188d2d5e751b7a4417df42c04c62c9fb41"
+    },
+    {
+      "action": "hoisted",
+      "name": "ResolvedProxyConfigBaseClientOverridesMapperXrayJsonDto3",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperXrayJsonDto3",
+      "nicification": "GetRawSubscriptionByShortUuidResponseXrayJsonDto3",
+      "field": "xrayJson",
+      "parent": "ResolvedProxyConfigBaseClientOverridesMapperDto",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/0/properties/clientOverrides/properties/mapper/properties/xrayJson/items/oneOf/2",
+      "signature": "0612296bd0c073b49c1b99898a5a5f216cdcc998a487464f757f813a49d75e3e"
     },
     {
       "action": "hoisted",
@@ -9729,9 +10682,29 @@
       "target": "ProxyEntryMetadataDto",
       "nicification": "GetRawSubscriptionByShortUuidResponseMetadataDto",
       "field": "metadata",
-      "parent": "ResolvedProxyConfigDto",
-      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/properties/metadata",
+      "parent": "ResolvedProxyConfigBaseDto",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/0/properties/metadata",
       "signature": "cb5ce10c83d7f6d97557d18b77c6f08647993ac37697ffb69b1b05340c14d0fd"
+    },
+    {
+      "action": "hoisted",
+      "name": "ResolvedProxyConfigBaseStreamOverridesDto",
+      "target": "ResolvedProxyConfigBaseStreamOverridesDto",
+      "nicification": "StreamOverridesDto",
+      "field": "streamOverrides",
+      "parent": "ResolvedProxyConfigBaseDto",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/0/properties/streamOverrides",
+      "signature": "dfe7d628162ffd5450d0d6b0e3b35049c31979b93295167f2ed130f1438989cb"
+    },
+    {
+      "action": "hoisted",
+      "name": "VlessProtocolDto",
+      "target": "VlessProtocolDto",
+      "nicification": "GetRawSubscriptionByShortUuidResponseResolvedProxyConfigsDto2",
+      "field": "resolvedProxyConfigs",
+      "parent": "RawSubscriptionByShortUuidResponse",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/1/oneOf/0",
+      "signature": "f399d636913827d2a321b857277672d62b5b9a9b911dc534db6a32b6b804333d"
     },
     {
       "action": "hoisted",
@@ -9739,9 +10712,19 @@
       "target": "VlessProtocolOptionsDto",
       "nicification": "GetRawSubscriptionByShortUuidResponseProtocolOptionsDto",
       "field": "protocolOptions",
-      "parent": "ResolvedProxyConfigDto",
-      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/properties/protocolOptions/anyOf/0",
+      "parent": "VlessProtocolDto",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/1/oneOf/0/properties/protocolOptions",
       "signature": "3488c62eec22ecec48708348ff4bfe88d288500935d03ab5b0fbc9850139c044"
+    },
+    {
+      "action": "hoisted",
+      "name": "TrojanProtocolDto",
+      "target": "TrojanProtocolDto",
+      "nicification": "GetRawSubscriptionByShortUuidResponseResolvedProxyConfigsDto3",
+      "field": "resolvedProxyConfigs",
+      "parent": "RawSubscriptionByShortUuidResponse",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/1/oneOf/1",
+      "signature": "5d1098e46e8184c6f93670b6905112287fab6403ecc1d08ef4936dfdb78126ce"
     },
     {
       "action": "hoisted",
@@ -9749,9 +10732,19 @@
       "target": "TrojanProtocolOptionsDto",
       "nicification": "GetRawSubscriptionByShortUuidResponseProtocolOptionsDto2",
       "field": "protocolOptions",
-      "parent": "ResolvedProxyConfigDto",
-      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/properties/protocolOptions/anyOf/1",
+      "parent": "TrojanProtocolDto",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/1/oneOf/1/properties/protocolOptions",
       "signature": "cc3969ef56a8a09abd92e4118146016a61c8a93302787bcb3d09746f7a211012"
+    },
+    {
+      "action": "hoisted",
+      "name": "ShadowsocksProtocolDto",
+      "target": "ShadowsocksProtocolDto",
+      "nicification": "GetRawSubscriptionByShortUuidResponseResolvedProxyConfigsDto4",
+      "field": "resolvedProxyConfigs",
+      "parent": "RawSubscriptionByShortUuidResponse",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/1/oneOf/2",
+      "signature": "2078afd4902764c5efda4cfc473fe1c5e8d3f39e46d1e25ea0d2102be42c3a60"
     },
     {
       "action": "hoisted",
@@ -9759,9 +10752,19 @@
       "target": "ShadowsocksProtocolOptionsDto",
       "nicification": "GetRawSubscriptionByShortUuidResponseProtocolOptionsDto3",
       "field": "protocolOptions",
-      "parent": "ResolvedProxyConfigDto",
-      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/properties/protocolOptions/anyOf/2",
+      "parent": "ShadowsocksProtocolDto",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/1/oneOf/2/properties/protocolOptions",
       "signature": "83a715b0ec5a7e8e0cdb0233fd0d1c764dbe1d137901545663f8a8bea739fed3"
+    },
+    {
+      "action": "hoisted",
+      "name": "HysteriaProtocolDto",
+      "target": "HysteriaProtocolDto",
+      "nicification": "GetRawSubscriptionByShortUuidResponseResolvedProxyConfigsDto5",
+      "field": "resolvedProxyConfigs",
+      "parent": "RawSubscriptionByShortUuidResponse",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/1/oneOf/3",
+      "signature": "520e0bf30d206d72fe46af401f57a446c8fdcec9c5912c9ba4519cd379b2c2ed"
     },
     {
       "action": "hoisted",
@@ -9769,39 +10772,19 @@
       "target": "HysteriaProtocolOptionsDto",
       "nicification": "GetRawSubscriptionByShortUuidResponseProtocolOptionsDto4",
       "field": "protocolOptions",
-      "parent": "ResolvedProxyConfigDto",
-      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/properties/protocolOptions/anyOf/3",
+      "parent": "HysteriaProtocolDto",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/1/oneOf/3/properties/protocolOptions",
       "signature": "978890c9d3c6ffe32170ac4782233139a3686625e42500aa55fb0e1088616cf1"
     },
     {
       "action": "hoisted",
-      "name": "TlsSecurityOptionsDto",
-      "target": "TlsSecurityOptionsDto",
-      "nicification": "GetRawSubscriptionByShortUuidResponseSecurityOptionsDto",
-      "field": "securityOptions",
-      "parent": "ResolvedProxyConfigDto",
-      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/properties/securityOptions/anyOf/0",
-      "signature": "70269572719c9a3ab7807d236d4d04421af5eb162d67d51bf6c3d77cdf071e9f"
-    },
-    {
-      "action": "hoisted",
-      "name": "RealitySecurityOptionsDto",
-      "target": "RealitySecurityOptionsDto",
-      "nicification": "GetRawSubscriptionByShortUuidResponseSecurityOptionsDto2",
-      "field": "securityOptions",
-      "parent": "ResolvedProxyConfigDto",
-      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/properties/securityOptions/anyOf/1",
-      "signature": "a1c66a490cbb129ef7c0191e0de06630f4b2f1d641995ab287180b7dad70ec47"
-    },
-    {
-      "action": "hoisted",
-      "name": "ResolvedProxyConfigStreamOverridesDto",
-      "target": "ResolvedProxyConfigStreamOverridesDto",
-      "nicification": "StreamOverridesDto",
-      "field": "streamOverrides",
-      "parent": "ResolvedProxyConfigDto",
-      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/properties/streamOverrides",
-      "signature": "dfe7d628162ffd5450d0d6b0e3b35049c31979b93295167f2ed130f1438989cb"
+      "name": "TcpTransportDto",
+      "target": "TcpTransportDto",
+      "nicification": "GetRawSubscriptionByShortUuidResponseResolvedProxyConfigsDto6",
+      "field": "resolvedProxyConfigs",
+      "parent": "RawSubscriptionByShortUuidResponse",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/2/oneOf/0",
+      "signature": "f335cdf717e128aceb1f50809249ceefa46f871372e41596d905a66465814868"
     },
     {
       "action": "hoisted",
@@ -9809,8 +10792,8 @@
       "target": "TcpTransportOptionsDto",
       "nicification": "GetRawSubscriptionByShortUuidResponseTransportOptionsDto",
       "field": "transportOptions",
-      "parent": "ResolvedProxyConfigDto",
-      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/properties/transportOptions/anyOf/0",
+      "parent": "TcpTransportDto",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/2/oneOf/0/properties/transportOptions",
       "signature": "fd5f4ed17b82ab9e1d18472e390ff8d3807714ef38ce045b70c8bb7f35b2fc2b"
     },
     {
@@ -9820,7 +10803,7 @@
       "nicification": "GetRawSubscriptionByShortUuidResponseHeaderDto",
       "field": "header",
       "parent": "TcpTransportOptionsDto",
-      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/properties/transportOptions/anyOf/0/properties/header/oneOf/0",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/2/oneOf/0/properties/transportOptions/properties/header/oneOf/0",
       "signature": "2df15463776955af73cd2b509b07a8b0543001248f18558ab1eed202f2d503cf"
     },
     {
@@ -9830,7 +10813,7 @@
       "nicification": "GetRawSubscriptionByShortUuidResponseHeaderDto2",
       "field": "header",
       "parent": "TcpTransportOptionsDto",
-      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/properties/transportOptions/anyOf/0/properties/header/oneOf/1",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/2/oneOf/0/properties/transportOptions/properties/header/oneOf/1",
       "signature": "1512907378581ef530873d4ada9341a17ae7981d33175161dd5e8d4200a850d4"
     },
     {
@@ -9840,7 +10823,7 @@
       "nicification": "RequestDto",
       "field": "request",
       "parent": "TcpHeaderHttpDto",
-      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/properties/transportOptions/anyOf/0/properties/header/oneOf/1/properties/request",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/2/oneOf/0/properties/transportOptions/properties/header/oneOf/1/properties/request",
       "signature": "9c78f4cad62a5387b9a8485c5c365c8e4fda67d2f1f4b5e428cb578ed85e0256"
     },
     {
@@ -9850,8 +10833,18 @@
       "nicification": "GetRawSubscriptionByShortUuidResponse2",
       "field": "response",
       "parent": "TcpHeaderHttpDto",
-      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/properties/transportOptions/anyOf/0/properties/header/oneOf/1/properties/response",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/2/oneOf/0/properties/transportOptions/properties/header/oneOf/1/properties/response",
       "signature": "0097dc432b64b2a82e81ca7f1d3c40eb923715e3b0fe8dfaae7dee79de294958"
+    },
+    {
+      "action": "hoisted",
+      "name": "XHttpTransportDto",
+      "target": "XHttpTransportDto",
+      "nicification": "GetRawSubscriptionByShortUuidResponseResolvedProxyConfigsDto7",
+      "field": "resolvedProxyConfigs",
+      "parent": "RawSubscriptionByShortUuidResponse",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/2/oneOf/1",
+      "signature": "2f595e77362bf0e8cd58fcd2bd4d12ec79fc1b4b625ffd4408c39fddb6d70fd0"
     },
     {
       "action": "hoisted",
@@ -9859,8 +10852,8 @@
       "target": "XhttpTransportOptionsDto",
       "nicification": "GetRawSubscriptionByShortUuidResponseTransportOptionsDto2",
       "field": "transportOptions",
-      "parent": "ResolvedProxyConfigDto",
-      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/properties/transportOptions/anyOf/1",
+      "parent": "XHttpTransportDto",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/2/oneOf/1/properties/transportOptions",
       "signature": "277f94cc6403b0c5e5b35f5dc549b7a3057b1345ba1a89aba15325a80101214c"
     },
     {
@@ -9870,8 +10863,18 @@
       "nicification": "ExtraDto",
       "field": "extra",
       "parent": "XhttpTransportOptionsDto",
-      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/properties/transportOptions/anyOf/1/properties/extra",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/2/oneOf/1/properties/transportOptions/properties/extra",
       "signature": "c65c1fbd5acfa076166e05c1ed4de4463bcc42098733caf4e818bbd0e2d638e7"
+    },
+    {
+      "action": "hoisted",
+      "name": "WsTransportDto",
+      "target": "WsTransportDto",
+      "nicification": "GetRawSubscriptionByShortUuidResponseResolvedProxyConfigsDto8",
+      "field": "resolvedProxyConfigs",
+      "parent": "RawSubscriptionByShortUuidResponse",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/2/oneOf/2",
+      "signature": "9a062775577666d6adb5f40df7f47df2cf1d028099e56d478437688b6e99ad57"
     },
     {
       "action": "hoisted",
@@ -9879,8 +10882,8 @@
       "target": "WsTransportOptionsDto",
       "nicification": "GetRawSubscriptionByShortUuidResponseTransportOptionsDto3",
       "field": "transportOptions",
-      "parent": "ResolvedProxyConfigDto",
-      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/properties/transportOptions/anyOf/2",
+      "parent": "WsTransportDto",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/2/oneOf/2/properties/transportOptions",
       "signature": "7b242db8c5da33ac10e772d3679dee01f9ee7e6bdee2f55946592824733cb55a"
     },
     {
@@ -9890,8 +10893,18 @@
       "nicification": "GetRawSubscriptionByShortUuidResponseHeadersDto",
       "field": "headers",
       "parent": "WsTransportOptionsDto",
-      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/properties/transportOptions/anyOf/2/properties/headers",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/2/oneOf/2/properties/transportOptions/properties/headers",
       "signature": "86408dfcaaac4be6d88ecee6ebdf819a00af60b8556d0d25319c9e0b958a57cd"
+    },
+    {
+      "action": "hoisted",
+      "name": "HttpUpgradeTransportDto",
+      "target": "HttpUpgradeTransportDto",
+      "nicification": "GetRawSubscriptionByShortUuidResponseResolvedProxyConfigsDto9",
+      "field": "resolvedProxyConfigs",
+      "parent": "RawSubscriptionByShortUuidResponse",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/2/oneOf/3",
+      "signature": "331e138eb7a83178b66936bc49fcbab60f3c42db65736f12597adfec699dc86e"
     },
     {
       "action": "hoisted",
@@ -9899,8 +10912,8 @@
       "target": "HttpUpgradeTransportOptionsDto",
       "nicification": "GetRawSubscriptionByShortUuidResponseTransportOptionsDto4",
       "field": "transportOptions",
-      "parent": "ResolvedProxyConfigDto",
-      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/properties/transportOptions/anyOf/3",
+      "parent": "HttpUpgradeTransportDto",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/2/oneOf/3/properties/transportOptions",
       "signature": "9b82e950086ad2543aea5dcb958450d3458babff707e773b9ccc62dafbb12d24"
     },
     {
@@ -9910,8 +10923,18 @@
       "nicification": "GetRawSubscriptionByShortUuidResponseHeadersDto2",
       "field": "headers",
       "parent": "HttpUpgradeTransportOptionsDto",
-      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/properties/transportOptions/anyOf/3/properties/headers",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/2/oneOf/3/properties/transportOptions/properties/headers",
       "signature": "86408dfcaaac4be6d88ecee6ebdf819a00af60b8556d0d25319c9e0b958a57cd"
+    },
+    {
+      "action": "hoisted",
+      "name": "GrpcTransportDto",
+      "target": "GrpcTransportDto",
+      "nicification": "GetRawSubscriptionByShortUuidResponseResolvedProxyConfigsDto10",
+      "field": "resolvedProxyConfigs",
+      "parent": "RawSubscriptionByShortUuidResponse",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/2/oneOf/4",
+      "signature": "2824a8363054338fb62040a697347bb640cd5b80e56401c95d2b75929725bc0d"
     },
     {
       "action": "hoisted",
@@ -9919,9 +10942,19 @@
       "target": "GrpcTransportOptionsDto",
       "nicification": "GetRawSubscriptionByShortUuidResponseTransportOptionsDto5",
       "field": "transportOptions",
-      "parent": "ResolvedProxyConfigDto",
-      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/properties/transportOptions/anyOf/4",
+      "parent": "GrpcTransportDto",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/2/oneOf/4/properties/transportOptions",
       "signature": "0b3f568564e9f6cafa6e61fe400519f1ff4ac9ddc4f56f19022b0ba27d25485d"
+    },
+    {
+      "action": "hoisted",
+      "name": "KcpTransportDto",
+      "target": "KcpTransportDto",
+      "nicification": "GetRawSubscriptionByShortUuidResponseResolvedProxyConfigsDto11",
+      "field": "resolvedProxyConfigs",
+      "parent": "RawSubscriptionByShortUuidResponse",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/2/oneOf/5",
+      "signature": "14cbc00ee02d7c873194debca64b0cda8b3985d19eeaabef559de595db0ff7e4"
     },
     {
       "action": "hoisted",
@@ -9929,9 +10962,19 @@
       "target": "KcpTransportOptionsDto",
       "nicification": "GetRawSubscriptionByShortUuidResponseTransportOptionsDto6",
       "field": "transportOptions",
-      "parent": "ResolvedProxyConfigDto",
-      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/properties/transportOptions/anyOf/5",
+      "parent": "KcpTransportDto",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/2/oneOf/5/properties/transportOptions",
       "signature": "c06a8ba609d47d3eedeb1ae314ce992d93282b427a03bd212dc6a3e2ddd4e78b"
+    },
+    {
+      "action": "hoisted",
+      "name": "HysteriaTransportDto",
+      "target": "HysteriaTransportDto",
+      "nicification": "GetRawSubscriptionByShortUuidResponseResolvedProxyConfigsDto12",
+      "field": "resolvedProxyConfigs",
+      "parent": "RawSubscriptionByShortUuidResponse",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/2/oneOf/6",
+      "signature": "0c29217ec1c7876c9ad0e44fe4ca210f89b2047daad96187e10a9fe4680a5a5d"
     },
     {
       "action": "hoisted",
@@ -9939,9 +10982,59 @@
       "target": "HysteriaTransportOptionsDto",
       "nicification": "GetRawSubscriptionByShortUuidResponseTransportOptionsDto7",
       "field": "transportOptions",
-      "parent": "ResolvedProxyConfigDto",
-      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/properties/transportOptions/anyOf/6",
+      "parent": "HysteriaTransportDto",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/2/oneOf/6/properties/transportOptions",
       "signature": "a5615f85071fcb476b0ef16ae5ae7fc1d4ef352eb1185c53d069d6211b21b108"
+    },
+    {
+      "action": "hoisted",
+      "name": "TlsSecurityDto",
+      "target": "TlsSecurityDto",
+      "nicification": "GetRawSubscriptionByShortUuidResponseResolvedProxyConfigsDto13",
+      "field": "resolvedProxyConfigs",
+      "parent": "RawSubscriptionByShortUuidResponse",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/3/oneOf/0",
+      "signature": "ba35ac315d8a134165734629eceb99fba1febfbb195317c5fb5a188c1d121a4a"
+    },
+    {
+      "action": "hoisted",
+      "name": "TlsSecurityOptionsDto",
+      "target": "TlsSecurityOptionsDto",
+      "nicification": "GetRawSubscriptionByShortUuidResponseSecurityOptionsDto",
+      "field": "securityOptions",
+      "parent": "TlsSecurityDto",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/3/oneOf/0/properties/securityOptions",
+      "signature": "70269572719c9a3ab7807d236d4d04421af5eb162d67d51bf6c3d77cdf071e9f"
+    },
+    {
+      "action": "hoisted",
+      "name": "RealitySecurityDto",
+      "target": "RealitySecurityDto",
+      "nicification": "GetRawSubscriptionByShortUuidResponseResolvedProxyConfigsDto14",
+      "field": "resolvedProxyConfigs",
+      "parent": "RawSubscriptionByShortUuidResponse",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/3/oneOf/1",
+      "signature": "42d72223aea30415c8f6f4c6e7812b8bd23002b246433c3333c5454115d60cce"
+    },
+    {
+      "action": "hoisted",
+      "name": "RealitySecurityOptionsDto",
+      "target": "RealitySecurityOptionsDto",
+      "nicification": "GetRawSubscriptionByShortUuidResponseSecurityOptionsDto2",
+      "field": "securityOptions",
+      "parent": "RealitySecurityDto",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/3/oneOf/1/properties/securityOptions",
+      "signature": "a1c66a490cbb129ef7c0191e0de06630f4b2f1d641995ab287180b7dad70ec47"
+    },
+    {
+      "action": "hoisted",
+      "name": "NoneSecurityDto",
+      "target": "NoneSecurityDto",
+      "nicification": "GetRawSubscriptionByShortUuidResponseResolvedProxyConfigsDto15",
+      "field": "resolvedProxyConfigs",
+      "parent": "RawSubscriptionByShortUuidResponse",
+      "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/3/oneOf/2",
+      "signature": "9c9c1fbc9c3ef3e438954f028c8f1f2666f59eaefbbac4cc3a44df4a51a7963c"
     },
     {
       "action": "reused",
@@ -10132,6 +11225,36 @@
       "parent": "RemnawaveSettingsDto",
       "source": "#/components/schemas/GetRemnawaveSettingsResponseDto/properties/response/properties/passwordSettings",
       "signature": "7a360f55297d55d27c75c763edc05997a55d24c21583c783d41fd0c58ead8b4d"
+    },
+    {
+      "action": "hoisted",
+      "name": "SharedListPreviewDto2",
+      "target": "SharedListPreviewDto2",
+      "nicification": "GetSharedListResponse",
+      "field": "response",
+      "parent": "GetSharedListResponseDto",
+      "source": "#/components/schemas/GetSharedListResponseDto/properties/response",
+      "signature": "522328153d1cd39be77cbccd4cd456cbc0d283b54bae1735897ce8530b8ea7db"
+    },
+    {
+      "action": "hoisted",
+      "name": "SharedListsResponse",
+      "target": "SharedListsResponse",
+      "nicification": "GetSharedListsResponse",
+      "field": "response",
+      "parent": "GetSharedListsResponseDto",
+      "source": "#/components/schemas/GetSharedListsResponseDto/properties/response",
+      "signature": "998a9320d1b9ee6b9490326b4c2c77b059152191f44cc72f9f4078661e75ff08"
+    },
+    {
+      "action": "hoisted",
+      "name": "SharedListPreviewDto",
+      "target": "SharedListPreviewDto",
+      "nicification": "SharedListsDto",
+      "field": "sharedLists",
+      "parent": "SharedListsResponse",
+      "source": "#/components/schemas/GetSharedListsResponseDto/properties/response/properties/sharedLists/items",
+      "signature": "91ecabb4ecec181e830fa67056ae762b1622959ee4338de9a37a1d7d72a383ba"
     },
     {
       "action": "hoisted",
@@ -10681,7 +11804,7 @@
       "field": "responseModifications",
       "parent": "ResponseRuleDto",
       "source": "#/components/schemas/GetSubscriptionSettingsResponseDto/properties/response/properties/responseRules/properties/rules/items/properties/responseModifications",
-      "signature": "332e1776e0fdab641eafb465d2a7994ae7e7d8d0d8778482be0023fef1fc8c8e"
+      "signature": "cd13b3bde1723351f142213a3370d9a61871da4dd081f802af916afcdd2ef98f"
     },
     {
       "action": "hoisted",
@@ -11084,14 +12207,14 @@
       "signature": "f92fefc4a8d3d701dacd7d8519b708601b628d5ffa7630e1af1b6211f481e0d4"
     },
     {
-      "action": "reused",
-      "name": "HostsDto",
-      "target": "HostsDto",
+      "action": "hoisted",
+      "name": "HostsDto2",
+      "target": "HostsDto2",
       "nicification": "HostResponse",
       "field": "response",
       "parent": "HostResponseDto",
       "source": "#/components/schemas/HostResponseDto/properties/response",
-      "signature": "bbd9e9f593ef1eccf5d940ad8186df207633bb60e61077277f31c591e99e13b6"
+      "signature": "9e26385a1ba5aebf85b8d5e01c56f94cce07cd350f24fb13d1603ba3a3f4f896"
     },
     {
       "action": "reused",
@@ -11102,6 +12225,136 @@
       "parent": "HostsDto",
       "source": "#/components/schemas/HostResponseDto/properties/response/properties/inbound",
       "signature": "7b42ea98cbc10e1f9a3ba38f973a33747c8b03d5325cae1c52b25e566121b337"
+    },
+    {
+      "action": "hoisted",
+      "name": "HostsMapperDto2",
+      "target": "HostsMapperDto2",
+      "nicification": "HostResponseMapperDto",
+      "field": "mapper",
+      "parent": "HostsDto",
+      "source": "#/components/schemas/HostResponseDto/properties/response/properties/mapper",
+      "signature": "746726ff3dc0235c9ce6877508ccac2d5ad45a6c2465b2e741a3ee50a60992bd"
+    },
+    {
+      "action": "reused",
+      "name": "HostsMapperBase64Dto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperBase64Dto",
+      "nicification": "HostResponseBase64Dto",
+      "field": "base64",
+      "parent": "HostsMapperDto",
+      "source": "#/components/schemas/HostResponseDto/properties/response/properties/mapper/properties/base64/items/oneOf/0",
+      "signature": "04e587db48e59c22857addf4bf1e0e97a2ee8e816a79881d4862f5c28554636e"
+    },
+    {
+      "action": "hoisted",
+      "name": "HostsMapperBase64Dto2",
+      "target": "HostsMapperBase64Dto2",
+      "nicification": "HostResponseBase64Dto2",
+      "field": "base64",
+      "parent": "HostsMapperDto",
+      "source": "#/components/schemas/HostResponseDto/properties/response/properties/mapper/properties/base64/items/oneOf/1",
+      "signature": "edbfe6276e357e8d37e3d726b8f1b7df5ee988e66989551871e9b1f912a1e396"
+    },
+    {
+      "action": "reused",
+      "name": "HostsMapperBase64Dto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperBase64Dto3",
+      "nicification": "HostResponseBase64Dto3",
+      "field": "base64",
+      "parent": "HostsMapperDto",
+      "source": "#/components/schemas/HostResponseDto/properties/response/properties/mapper/properties/base64/items/oneOf/2",
+      "signature": "20c0d332a8e5548eff7200eb7ea6c43696b8a73998c95d83724c403d27188ac7"
+    },
+    {
+      "action": "reused",
+      "name": "HostsMapperMihomoDto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperMihomoDto",
+      "nicification": "HostResponseMihomoDto",
+      "field": "mihomo",
+      "parent": "HostsMapperDto",
+      "source": "#/components/schemas/HostResponseDto/properties/response/properties/mapper/properties/mihomo/items/oneOf/0",
+      "signature": "6587887a72deb010a44048f407ce03600f4debda4b7d0180d88ec85e6374c125"
+    },
+    {
+      "action": "hoisted",
+      "name": "HostsMapperMihomoDto2",
+      "target": "HostsMapperMihomoDto2",
+      "nicification": "HostResponseMihomoDto2",
+      "field": "mihomo",
+      "parent": "HostsMapperDto",
+      "source": "#/components/schemas/HostResponseDto/properties/response/properties/mapper/properties/mihomo/items/oneOf/1",
+      "signature": "fe7ef0e54858eed5b6cd57b2c8ff9f01a23b88a63a1b3709042d1d4893188061"
+    },
+    {
+      "action": "reused",
+      "name": "HostsMapperMihomoDto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperMihomoDto3",
+      "nicification": "HostResponseMihomoDto3",
+      "field": "mihomo",
+      "parent": "HostsMapperDto",
+      "source": "#/components/schemas/HostResponseDto/properties/response/properties/mapper/properties/mihomo/items/oneOf/2",
+      "signature": "d588ffe7d47969cd47e49c45126f406a74829996c0db3afcec9f03918253aa49"
+    },
+    {
+      "action": "reused",
+      "name": "HostsMapperSingboxDto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperSingboxDto",
+      "nicification": "HostResponseSingboxDto",
+      "field": "singbox",
+      "parent": "HostsMapperDto",
+      "source": "#/components/schemas/HostResponseDto/properties/response/properties/mapper/properties/singbox/items/oneOf/0",
+      "signature": "78dccb393dd4668818a3243130b5e712f4ec315e15b52a420e889f9b517b60be"
+    },
+    {
+      "action": "hoisted",
+      "name": "HostsMapperSingboxDto2",
+      "target": "HostsMapperSingboxDto2",
+      "nicification": "HostResponseSingboxDto2",
+      "field": "singbox",
+      "parent": "HostsMapperDto",
+      "source": "#/components/schemas/HostResponseDto/properties/response/properties/mapper/properties/singbox/items/oneOf/1",
+      "signature": "b901c743a16a7aaf455704671496e00676470ecd36cf27cc224e1983640742ac"
+    },
+    {
+      "action": "reused",
+      "name": "HostsMapperSingboxDto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperSingboxDto3",
+      "nicification": "HostResponseSingboxDto3",
+      "field": "singbox",
+      "parent": "HostsMapperDto",
+      "source": "#/components/schemas/HostResponseDto/properties/response/properties/mapper/properties/singbox/items/oneOf/2",
+      "signature": "67ec1f8018927dba82e6e79fa3cac0f37066868cb34781615744d5c4b0c20fb3"
+    },
+    {
+      "action": "reused",
+      "name": "HostsMapperXrayJsonDto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperXrayJsonDto",
+      "nicification": "HostResponseXrayJsonDto",
+      "field": "xrayJson",
+      "parent": "HostsMapperDto",
+      "source": "#/components/schemas/HostResponseDto/properties/response/properties/mapper/properties/xrayJson/items/oneOf/0",
+      "signature": "6ba7803e0a1fe6d7c3e3561e1b81ba61b0168615266e90f1207166f0fd221d38"
+    },
+    {
+      "action": "hoisted",
+      "name": "HostsMapperXrayJsonDto2",
+      "target": "HostsMapperXrayJsonDto2",
+      "nicification": "HostResponseXrayJsonDto2",
+      "field": "xrayJson",
+      "parent": "HostsMapperDto",
+      "source": "#/components/schemas/HostResponseDto/properties/response/properties/mapper/properties/xrayJson/items/oneOf/1",
+      "signature": "0917731419796475408f549fe88c8d6f05773731b7232630e950a5e817262e43"
+    },
+    {
+      "action": "reused",
+      "name": "HostsMapperXrayJsonDto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperXrayJsonDto3",
+      "nicification": "HostResponseXrayJsonDto3",
+      "field": "xrayJson",
+      "parent": "HostsMapperDto",
+      "source": "#/components/schemas/HostResponseDto/properties/response/properties/mapper/properties/xrayJson/items/oneOf/2",
+      "signature": "0612296bd0c073b49c1b99898a5a5f216cdcc998a487464f757f813a49d75e3e"
     },
     {
       "action": "hoisted",
@@ -11121,7 +12374,7 @@
       "field": "response",
       "parent": "NodeResponseDto",
       "source": "#/components/schemas/NodeResponseDto/properties/response",
-      "signature": "f7b57d51a248ff2749e85ad77251d369b3d570c0a793ffe1bf4100690cf1c86c"
+      "signature": "1c3994b901f8a7fcf7ed54c73a96f8003d1754e6938a25f7c26955fcf1bb9522"
     },
     {
       "action": "reused",
@@ -11351,7 +12604,7 @@
       "field": "data",
       "parent": "RemnawaveWebhookNodeEventsDto",
       "source": "#/components/schemas/RemnawaveWebhookNodeEventsDto/properties/data",
-      "signature": "f7b57d51a248ff2749e85ad77251d369b3d570c0a793ffe1bf4100690cf1c86c"
+      "signature": "1c3994b901f8a7fcf7ed54c73a96f8003d1754e6938a25f7c26955fcf1bb9522"
     },
     {
       "action": "reused",
@@ -11501,7 +12754,7 @@
       "field": "node",
       "parent": "RemnawaveWebhookTorrentBlockerEventsDataDto",
       "source": "#/components/schemas/RemnawaveWebhookTorrentBlockerEventsDto/properties/data/properties/node",
-      "signature": "f7b57d51a248ff2749e85ad77251d369b3d570c0a793ffe1bf4100690cf1c86c"
+      "signature": "1c3994b901f8a7fcf7ed54c73a96f8003d1754e6938a25f7c26955fcf1bb9522"
     },
     {
       "action": "hoisted",
@@ -12001,7 +13254,7 @@
       "field": "response",
       "parent": "ReorderNodesResponseDto",
       "source": "#/components/schemas/ReorderNodesResponseDto/properties/response/items",
-      "signature": "f7b57d51a248ff2749e85ad77251d369b3d570c0a793ffe1bf4100690cf1c86c"
+      "signature": "1c3994b901f8a7fcf7ed54c73a96f8003d1754e6938a25f7c26955fcf1bb9522"
     },
     {
       "action": "reused",
@@ -12334,6 +13587,136 @@
       "signature": "f5c65083e65d9b7e20b5c74fe42cbb781e2ff1a6b88d7a1176d518899e9c41c6"
     },
     {
+      "action": "hoisted",
+      "name": "UpdateHostBodyMapperDto",
+      "target": "UpdateHostBodyMapperDto",
+      "nicification": "UpdateHostBodyMapperDto",
+      "field": "mapper",
+      "parent": "UpdateHostBodyDto",
+      "source": "#/components/schemas/UpdateHostBodyDto/properties/mapper",
+      "signature": "4a30509eb609b46bb5d99b33bb49e4d602671649029ac80202e869389b1ee1e8"
+    },
+    {
+      "action": "reused",
+      "name": "UpdateHostBodyMapperBase64Dto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperBase64Dto",
+      "nicification": "UpdateHostBodyBase64Dto",
+      "field": "base64",
+      "parent": "UpdateHostBodyMapperDto",
+      "source": "#/components/schemas/UpdateHostBodyDto/properties/mapper/properties/base64/items/oneOf/0",
+      "signature": "04e587db48e59c22857addf4bf1e0e97a2ee8e816a79881d4862f5c28554636e"
+    },
+    {
+      "action": "hoisted",
+      "name": "UpdateHostBodyMapperBase64Dto",
+      "target": "UpdateHostBodyMapperBase64Dto",
+      "nicification": "UpdateHostBodyBase64Dto2",
+      "field": "base64",
+      "parent": "UpdateHostBodyMapperDto",
+      "source": "#/components/schemas/UpdateHostBodyDto/properties/mapper/properties/base64/items/oneOf/1",
+      "signature": "7036ac7ec0a41b184cc5e4a1e35f8950c3bf93f4bfb5bbe6f72177e9cdaae575"
+    },
+    {
+      "action": "reused",
+      "name": "UpdateHostBodyMapperBase64Dto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperBase64Dto3",
+      "nicification": "UpdateHostBodyBase64Dto3",
+      "field": "base64",
+      "parent": "UpdateHostBodyMapperDto",
+      "source": "#/components/schemas/UpdateHostBodyDto/properties/mapper/properties/base64/items/oneOf/2",
+      "signature": "20c0d332a8e5548eff7200eb7ea6c43696b8a73998c95d83724c403d27188ac7"
+    },
+    {
+      "action": "reused",
+      "name": "UpdateHostBodyMapperMihomoDto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperMihomoDto",
+      "nicification": "UpdateHostBodyMihomoDto",
+      "field": "mihomo",
+      "parent": "UpdateHostBodyMapperDto",
+      "source": "#/components/schemas/UpdateHostBodyDto/properties/mapper/properties/mihomo/items/oneOf/0",
+      "signature": "6587887a72deb010a44048f407ce03600f4debda4b7d0180d88ec85e6374c125"
+    },
+    {
+      "action": "hoisted",
+      "name": "UpdateHostBodyMapperMihomoDto",
+      "target": "UpdateHostBodyMapperMihomoDto",
+      "nicification": "UpdateHostBodyMihomoDto2",
+      "field": "mihomo",
+      "parent": "UpdateHostBodyMapperDto",
+      "source": "#/components/schemas/UpdateHostBodyDto/properties/mapper/properties/mihomo/items/oneOf/1",
+      "signature": "7d25c0208beb00db3c496999ffdd37e3934c3a70a07c12d91e79221a1b8eeee8"
+    },
+    {
+      "action": "reused",
+      "name": "UpdateHostBodyMapperMihomoDto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperMihomoDto3",
+      "nicification": "UpdateHostBodyMihomoDto3",
+      "field": "mihomo",
+      "parent": "UpdateHostBodyMapperDto",
+      "source": "#/components/schemas/UpdateHostBodyDto/properties/mapper/properties/mihomo/items/oneOf/2",
+      "signature": "d588ffe7d47969cd47e49c45126f406a74829996c0db3afcec9f03918253aa49"
+    },
+    {
+      "action": "reused",
+      "name": "UpdateHostBodyMapperSingboxDto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperSingboxDto",
+      "nicification": "UpdateHostBodySingboxDto",
+      "field": "singbox",
+      "parent": "UpdateHostBodyMapperDto",
+      "source": "#/components/schemas/UpdateHostBodyDto/properties/mapper/properties/singbox/items/oneOf/0",
+      "signature": "78dccb393dd4668818a3243130b5e712f4ec315e15b52a420e889f9b517b60be"
+    },
+    {
+      "action": "hoisted",
+      "name": "UpdateHostBodyMapperSingboxDto",
+      "target": "UpdateHostBodyMapperSingboxDto",
+      "nicification": "UpdateHostBodySingboxDto2",
+      "field": "singbox",
+      "parent": "UpdateHostBodyMapperDto",
+      "source": "#/components/schemas/UpdateHostBodyDto/properties/mapper/properties/singbox/items/oneOf/1",
+      "signature": "d713226dd2ee26f4247e006923893d983d248841dc72f7c3c70988f7ae426ff0"
+    },
+    {
+      "action": "reused",
+      "name": "UpdateHostBodyMapperSingboxDto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperSingboxDto3",
+      "nicification": "UpdateHostBodySingboxDto3",
+      "field": "singbox",
+      "parent": "UpdateHostBodyMapperDto",
+      "source": "#/components/schemas/UpdateHostBodyDto/properties/mapper/properties/singbox/items/oneOf/2",
+      "signature": "67ec1f8018927dba82e6e79fa3cac0f37066868cb34781615744d5c4b0c20fb3"
+    },
+    {
+      "action": "reused",
+      "name": "UpdateHostBodyMapperXrayJsonDto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperXrayJsonDto",
+      "nicification": "UpdateHostBodyXrayJsonDto",
+      "field": "xrayJson",
+      "parent": "UpdateHostBodyMapperDto",
+      "source": "#/components/schemas/UpdateHostBodyDto/properties/mapper/properties/xrayJson/items/oneOf/0",
+      "signature": "6ba7803e0a1fe6d7c3e3561e1b81ba61b0168615266e90f1207166f0fd221d38"
+    },
+    {
+      "action": "hoisted",
+      "name": "UpdateHostBodyMapperXrayJsonDto",
+      "target": "UpdateHostBodyMapperXrayJsonDto",
+      "nicification": "UpdateHostBodyXrayJsonDto2",
+      "field": "xrayJson",
+      "parent": "UpdateHostBodyMapperDto",
+      "source": "#/components/schemas/UpdateHostBodyDto/properties/mapper/properties/xrayJson/items/oneOf/1",
+      "signature": "c3861f0a4075fa2a6d0623579ebb287757bed2e27a139d8b63ef2b767fa2fc67"
+    },
+    {
+      "action": "reused",
+      "name": "UpdateHostBodyMapperXrayJsonDto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperXrayJsonDto3",
+      "nicification": "UpdateHostBodyXrayJsonDto3",
+      "field": "xrayJson",
+      "parent": "UpdateHostBodyMapperDto",
+      "source": "#/components/schemas/UpdateHostBodyDto/properties/mapper/properties/xrayJson/items/oneOf/2",
+      "signature": "0612296bd0c073b49c1b99898a5a5f216cdcc998a487464f757f813a49d75e3e"
+    },
+    {
       "action": "reused",
       "name": "UpdateInfraBillingNodeResponse",
       "target": "InfraBillingNodesResponse",
@@ -12474,6 +13857,136 @@
       "signature": "f5c65083e65d9b7e20b5c74fe42cbb781e2ff1a6b88d7a1176d518899e9c41c6"
     },
     {
+      "action": "hoisted",
+      "name": "UpdateManyHostsBodyMapperDto",
+      "target": "UpdateManyHostsBodyMapperDto",
+      "nicification": "UpdateManyHostsBodyMapperDto",
+      "field": "mapper",
+      "parent": "UpdateManyHostsBodyDto",
+      "source": "#/components/schemas/UpdateManyHostsBodyDto/properties/mapper",
+      "signature": "a525ba15f35d8637280d71d48846fb6649d3c54c3ea796e78765505a8e90c7e1"
+    },
+    {
+      "action": "reused",
+      "name": "UpdateManyHostsBodyMapperBase64Dto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperBase64Dto",
+      "nicification": "UpdateManyHostsBodyBase64Dto",
+      "field": "base64",
+      "parent": "UpdateManyHostsBodyMapperDto",
+      "source": "#/components/schemas/UpdateManyHostsBodyDto/properties/mapper/properties/base64/items/oneOf/0",
+      "signature": "04e587db48e59c22857addf4bf1e0e97a2ee8e816a79881d4862f5c28554636e"
+    },
+    {
+      "action": "hoisted",
+      "name": "UpdateManyHostsBodyMapperBase64Dto",
+      "target": "UpdateManyHostsBodyMapperBase64Dto",
+      "nicification": "UpdateManyHostsBodyBase64Dto2",
+      "field": "base64",
+      "parent": "UpdateManyHostsBodyMapperDto",
+      "source": "#/components/schemas/UpdateManyHostsBodyDto/properties/mapper/properties/base64/items/oneOf/1",
+      "signature": "b0d7b4dac18eb7e0fb61d6c4cc427e5c044066b27e1d88df68abd9dc86069b5f"
+    },
+    {
+      "action": "reused",
+      "name": "UpdateManyHostsBodyMapperBase64Dto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperBase64Dto3",
+      "nicification": "UpdateManyHostsBodyBase64Dto3",
+      "field": "base64",
+      "parent": "UpdateManyHostsBodyMapperDto",
+      "source": "#/components/schemas/UpdateManyHostsBodyDto/properties/mapper/properties/base64/items/oneOf/2",
+      "signature": "20c0d332a8e5548eff7200eb7ea6c43696b8a73998c95d83724c403d27188ac7"
+    },
+    {
+      "action": "reused",
+      "name": "UpdateManyHostsBodyMapperMihomoDto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperMihomoDto",
+      "nicification": "UpdateManyHostsBodyMihomoDto",
+      "field": "mihomo",
+      "parent": "UpdateManyHostsBodyMapperDto",
+      "source": "#/components/schemas/UpdateManyHostsBodyDto/properties/mapper/properties/mihomo/items/oneOf/0",
+      "signature": "6587887a72deb010a44048f407ce03600f4debda4b7d0180d88ec85e6374c125"
+    },
+    {
+      "action": "hoisted",
+      "name": "UpdateManyHostsBodyMapperMihomoDto",
+      "target": "UpdateManyHostsBodyMapperMihomoDto",
+      "nicification": "UpdateManyHostsBodyMihomoDto2",
+      "field": "mihomo",
+      "parent": "UpdateManyHostsBodyMapperDto",
+      "source": "#/components/schemas/UpdateManyHostsBodyDto/properties/mapper/properties/mihomo/items/oneOf/1",
+      "signature": "26f42871bf5786de7af959652fa89ba5688e0340de00c37c5b446852aa823a5e"
+    },
+    {
+      "action": "reused",
+      "name": "UpdateManyHostsBodyMapperMihomoDto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperMihomoDto3",
+      "nicification": "UpdateManyHostsBodyMihomoDto3",
+      "field": "mihomo",
+      "parent": "UpdateManyHostsBodyMapperDto",
+      "source": "#/components/schemas/UpdateManyHostsBodyDto/properties/mapper/properties/mihomo/items/oneOf/2",
+      "signature": "d588ffe7d47969cd47e49c45126f406a74829996c0db3afcec9f03918253aa49"
+    },
+    {
+      "action": "reused",
+      "name": "UpdateManyHostsBodyMapperSingboxDto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperSingboxDto",
+      "nicification": "UpdateManyHostsBodySingboxDto",
+      "field": "singbox",
+      "parent": "UpdateManyHostsBodyMapperDto",
+      "source": "#/components/schemas/UpdateManyHostsBodyDto/properties/mapper/properties/singbox/items/oneOf/0",
+      "signature": "78dccb393dd4668818a3243130b5e712f4ec315e15b52a420e889f9b517b60be"
+    },
+    {
+      "action": "hoisted",
+      "name": "UpdateManyHostsBodyMapperSingboxDto",
+      "target": "UpdateManyHostsBodyMapperSingboxDto",
+      "nicification": "UpdateManyHostsBodySingboxDto2",
+      "field": "singbox",
+      "parent": "UpdateManyHostsBodyMapperDto",
+      "source": "#/components/schemas/UpdateManyHostsBodyDto/properties/mapper/properties/singbox/items/oneOf/1",
+      "signature": "705e5e0a19aa94c092b52dafa7371b7cbdc81a0c9110066a2a4454af4c5f41c6"
+    },
+    {
+      "action": "reused",
+      "name": "UpdateManyHostsBodyMapperSingboxDto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperSingboxDto3",
+      "nicification": "UpdateManyHostsBodySingboxDto3",
+      "field": "singbox",
+      "parent": "UpdateManyHostsBodyMapperDto",
+      "source": "#/components/schemas/UpdateManyHostsBodyDto/properties/mapper/properties/singbox/items/oneOf/2",
+      "signature": "67ec1f8018927dba82e6e79fa3cac0f37066868cb34781615744d5c4b0c20fb3"
+    },
+    {
+      "action": "reused",
+      "name": "UpdateManyHostsBodyMapperXrayJsonDto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperXrayJsonDto",
+      "nicification": "UpdateManyHostsBodyXrayJsonDto",
+      "field": "xrayJson",
+      "parent": "UpdateManyHostsBodyMapperDto",
+      "source": "#/components/schemas/UpdateManyHostsBodyDto/properties/mapper/properties/xrayJson/items/oneOf/0",
+      "signature": "6ba7803e0a1fe6d7c3e3561e1b81ba61b0168615266e90f1207166f0fd221d38"
+    },
+    {
+      "action": "hoisted",
+      "name": "UpdateManyHostsBodyMapperXrayJsonDto",
+      "target": "UpdateManyHostsBodyMapperXrayJsonDto",
+      "nicification": "UpdateManyHostsBodyXrayJsonDto2",
+      "field": "xrayJson",
+      "parent": "UpdateManyHostsBodyMapperDto",
+      "source": "#/components/schemas/UpdateManyHostsBodyDto/properties/mapper/properties/xrayJson/items/oneOf/1",
+      "signature": "95df59d4947faee41765e2499a4a0d3981ca8acac38bec9c7bd63b232f0b600a"
+    },
+    {
+      "action": "reused",
+      "name": "UpdateManyHostsBodyMapperXrayJsonDto",
+      "target": "ResolvedProxyConfigBaseClientOverridesMapperXrayJsonDto3",
+      "nicification": "UpdateManyHostsBodyXrayJsonDto3",
+      "field": "xrayJson",
+      "parent": "UpdateManyHostsBodyMapperDto",
+      "source": "#/components/schemas/UpdateManyHostsBodyDto/properties/mapper/properties/xrayJson/items/oneOf/2",
+      "signature": "0612296bd0c073b49c1b99898a5a5f216cdcc998a487464f757f813a49d75e3e"
+    },
+    {
       "action": "reused",
       "name": "UpdateNodeBodyConfigProfileDto",
       "target": "CreateNodeBodyConfigProfileDto",
@@ -12492,6 +14005,16 @@
       "parent": "UpdateNodeBodyDto",
       "source": "#/components/schemas/UpdateNodeBodyDto/properties/ips/items",
       "signature": "306b1042ec0a8b2edd35dbeb75b398ad1c1276b80a775b8428aacdf0d45a13e8"
+    },
+    {
+      "action": "reused",
+      "name": "NodeIntegrationDto",
+      "target": "NodeIntegrationDto",
+      "nicification": "UpdateNodeIntegrationResponse",
+      "field": "response",
+      "parent": "UpdateNodeIntegrationResponseDto",
+      "source": "#/components/schemas/UpdateNodeIntegrationResponseDto/properties/response",
+      "signature": "fe68134aa8a04e296a207b160c0c25ccf0b65c21757893764cf3a6b3628306de"
     },
     {
       "action": "reused",
@@ -12735,6 +14258,16 @@
     },
     {
       "action": "reused",
+      "name": "SharedListPreviewDto",
+      "target": "SharedListPreviewDto2",
+      "nicification": "UpdateSharedListResponse",
+      "field": "response",
+      "parent": "UpdateSharedListResponseDto",
+      "source": "#/components/schemas/UpdateSharedListResponseDto/properties/response",
+      "signature": "522328153d1cd39be77cbccd4cd456cbc0d283b54bae1735897ce8530b8ea7db"
+    },
+    {
+      "action": "reused",
       "name": "UpdateSnippetBodySnippetDto",
       "target": "MetadataResponseMetadataDto",
       "nicification": "UpdateSnippetBodySnippetDto",
@@ -12831,7 +14364,7 @@
       "field": "responseModifications",
       "parent": "ResponseRulesConfigRulesDto",
       "source": "#/components/schemas/UpdateSubscriptionSettingsBodyDto/properties/responseRules/properties/rules/items/properties/responseModifications",
-      "signature": "332e1776e0fdab641eafb465d2a7994ae7e7d8d0d8778482be0023fef1fc8c8e"
+      "signature": "cd13b3bde1723351f142213a3370d9a61871da4dd081f802af916afcdd2ef98f"
     },
     {
       "action": "reused",
@@ -12941,7 +14474,7 @@
       "field": "responseModifications",
       "parent": "ResponseRulesConfigRulesDto",
       "source": "#/components/schemas/UpdateSubscriptionSettingsResponseDto/properties/response/properties/responseRules/properties/rules/items/properties/responseModifications",
-      "signature": "332e1776e0fdab641eafb465d2a7994ae7e7d8d0d8778482be0023fef1fc8c8e"
+      "signature": "cd13b3bde1723351f142213a3370d9a61871da4dd081f802af916afcdd2ef98f"
     },
     {
       "action": "reused",
@@ -13104,5 +14637,18 @@
       "signature": "f00a3d2fab225bd2aa6c7c5f0bd903dd63ee0b2e20bd6b3f0e30fe315cdc2fb6"
     }
   ],
-  "deprecation_annotations": []
+  "deprecation_annotations": [
+    {
+      "kind": "schema",
+      "schema": "ResolvedProxyConfigStreamOverridesDto"
+    },
+    {
+      "kind": "schema",
+      "schema": "ResolvedProxyConfigClientOverridesDto"
+    },
+    {
+      "kind": "schema",
+      "schema": "ResolvedProxyConfigDto"
+    }
+  ]
 }
