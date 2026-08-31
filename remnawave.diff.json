@@ -1,24 +1,63 @@
 {
   "summary": {
     "deprecated_before": 0,
-    "deprecated_after": 3,
-    "enum_updates": 183,
+    "deprecated_after": 11,
+    "enum_updates": 189,
     "response_content_types": 2,
     "error_code_updates": 4,
     "hoisted_error_responses": 7,
-    "hoisted_responses": 152,
+    "hoisted_responses": 164,
     "renamed_responses": 0,
     "renamed_from_ref_responses": 2,
-    "renamed_response_schema_components": 78,
+    "renamed_response_schema_components": 84,
     "inlined_map_object_components": 0,
-    "hoisted_inline_objects": 301,
-    "reused_inline_objects": 347,
-    "deprecation_annotations": 3
+    "hoisted_inline_objects": 303,
+    "reused_inline_objects": 362,
+    "deprecation_annotations": 11
   },
   "deprecated": {
     "before": [],
     "after": [
       {
+        "kind": "field",
+        "schema": "CreateHostBodyDto",
+        "field": "excludedInternalSquads"
+      },
+      {
+        "kind": "field",
+        "schema": "HostsDto",
+        "field": "excludedInternalSquads"
+      },
+      {
+        "kind": "field",
+        "schema": "HostsDto2",
+        "field": "excludedInternalSquads"
+      },
+      {
+        "kind": "field",
+        "schema": "UpdateHostBodyDto",
+        "field": "excludedInternalSquads"
+      },
+      {
+        "kind": "field",
+        "schema": "UpdateManyHostsBodyDto",
+        "field": "excludedInternalSquads"
+      },
+      {
+        "kind": "parameter",
+        "path": "/api/node-plugins/shared-lists",
+        "method": "delete",
+        "location": "path",
+        "name": "name"
+      },
+      {
+        "kind": "parameter",
+        "path": "/api/node-plugins/shared-lists/by-name",
+        "method": "get",
+        "location": "path",
+        "name": "name"
+      },
+      {
         "kind": "schema",
         "schema": "ResolvedProxyConfigClientOverridesDto"
       },
@@ -29,10 +68,53 @@
       {
         "kind": "schema",
         "schema": "ResolvedProxyConfigStreamOverridesDto"
+      },
+      {
+        "kind": "schema",
+        "schema": "UsersTagsResponse"
       }
     ],
     "added": [
       {
+        "kind": "field",
+        "schema": "CreateHostBodyDto",
+        "field": "excludedInternalSquads"
+      },
+      {
+        "kind": "field",
+        "schema": "HostsDto",
+        "field": "excludedInternalSquads"
+      },
+      {
+        "kind": "field",
+        "schema": "HostsDto2",
+        "field": "excludedInternalSquads"
+      },
+      {
+        "kind": "field",
+        "schema": "UpdateHostBodyDto",
+        "field": "excludedInternalSquads"
+      },
+      {
+        "kind": "field",
+        "schema": "UpdateManyHostsBodyDto",
+        "field": "excludedInternalSquads"
+      },
+      {
+        "kind": "parameter",
+        "path": "/api/node-plugins/shared-lists",
+        "method": "delete",
+        "location": "path",
+        "name": "name"
+      },
+      {
+        "kind": "parameter",
+        "path": "/api/node-plugins/shared-lists/by-name",
+        "method": "get",
+        "location": "path",
+        "name": "name"
+      },
+      {
         "kind": "schema",
         "schema": "ResolvedProxyConfigClientOverridesDto"
       },
@@ -43,6 +125,10 @@
       {
         "kind": "schema",
         "schema": "ResolvedProxyConfigStreamOverridesDto"
+      },
+      {
+        "kind": "schema",
+        "schema": "UsersTagsResponse"
       }
     ],
     "removed": []
@@ -894,7 +980,10 @@
         "A248",
         "A249",
         "A250",
-        "A251"
+        "A251",
+        "A254",
+        "A256",
+        "A257"
       ],
       "values": [
         "A007",
@@ -1093,7 +1182,10 @@
         "A248",
         "A249",
         "A250",
-        "A251"
+        "A251",
+        "A254",
+        "A256",
+        "A257"
       ]
     },
     {
@@ -1519,7 +1611,10 @@
         "GET_SHARED_LIST_BY_NAME_ERROR",
         "CREATE_SHARED_LIST_ERROR",
         "UPDATE_SHARED_LIST_ERROR",
-        "DELETE_SHARED_LIST_ERROR"
+        "DELETE_SHARED_LIST_ERROR",
+        "CREATE_SSH_TICKET_ERROR",
+        "GET_TAGS_ERROR",
+        "SET_TAGS_ERROR"
       ],
       "values": [
         "Server error",
@@ -1693,7 +1788,23 @@
         "Get shared list by name error",
         "Create shared list error",
         "Update shared list error",
-        "Delete shared list error"
+        "Delete shared list error",
+        "Create SSH ticket error",
+        "Get tags error",
+        "Set tags error"
+      ]
+    },
+    {
+      "action": "component",
+      "schema": "CreateHostBodyMode",
+      "nicification": "create_host_body_mode",
+      "members": [
+        "EXCLUDE",
+        "ALLOW_ONLY"
+      ],
+      "values": [
+        "EXCLUDE",
+        "ALLOW_ONLY"
       ]
     },
     {
@@ -2708,6 +2819,17 @@
     },
     {
       "action": "referenced",
+      "schema": "CreateHostBodyMode",
+      "nicification": "create_host_body_mode",
+      "source": "#/components/schemas/CreateHostBodyDto/properties/internalSquads/properties/mode",
+      "ref": "#/components/schemas/CreateHostBodyMode",
+      "values": [
+        "EXCLUDE",
+        "ALLOW_ONLY"
+      ]
+    },
+    {
+      "action": "referenced",
       "schema": "SecurityLayer",
       "nicification": "security_layer",
       "source": "#/components/schemas/HostResponseDto/properties/response/properties/securityLayer",
@@ -2731,6 +2853,17 @@
         "STASH",
         "CLASH",
         "SINGBOX"
+      ]
+    },
+    {
+      "action": "referenced",
+      "schema": "CreateHostBodyMode",
+      "nicification": "create_host_body_mode",
+      "source": "#/components/schemas/HostResponseDto/properties/response/properties/internalSquads/properties/mode",
+      "ref": "#/components/schemas/CreateHostBodyMode",
+      "values": [
+        "EXCLUDE",
+        "ALLOW_ONLY"
       ]
     },
     {
@@ -2762,6 +2895,17 @@
     },
     {
       "action": "referenced",
+      "schema": "CreateHostBodyMode",
+      "nicification": "create_host_body_mode",
+      "source": "#/components/schemas/UpdateHostBodyDto/properties/internalSquads/properties/mode",
+      "ref": "#/components/schemas/CreateHostBodyMode",
+      "values": [
+        "EXCLUDE",
+        "ALLOW_ONLY"
+      ]
+    },
+    {
+      "action": "referenced",
       "schema": "SecurityLayer",
       "nicification": "security_layer",
       "source": "#/components/schemas/GetHostsResponseDto/properties/response/items/properties/securityLayer",
@@ -2789,6 +2933,17 @@
     },
     {
       "action": "referenced",
+      "schema": "CreateHostBodyMode",
+      "nicification": "create_host_body_mode",
+      "source": "#/components/schemas/GetHostsResponseDto/properties/response/items/properties/internalSquads/properties/mode",
+      "ref": "#/components/schemas/CreateHostBodyMode",
+      "values": [
+        "EXCLUDE",
+        "ALLOW_ONLY"
+      ]
+    },
+    {
+      "action": "referenced",
       "schema": "SecurityLayer",
       "nicification": "security_layer",
       "source": "#/components/schemas/UpdateManyHostsBodyDto/properties/securityLayer",
@@ -2812,6 +2967,17 @@
         "STASH",
         "CLASH",
         "SINGBOX"
+      ]
+    },
+    {
+      "action": "referenced",
+      "schema": "CreateHostBodyMode",
+      "nicification": "create_host_body_mode",
+      "source": "#/components/schemas/UpdateManyHostsBodyDto/properties/internalSquads/properties/mode",
+      "ref": "#/components/schemas/CreateHostBodyMode",
+      "values": [
+        "EXCLUDE",
+        "ALLOW_ONLY"
       ]
     },
     {
@@ -3512,6 +3678,177 @@
       ]
     },
     {
+      "action": "referenced",
+      "schema": "RemnawaveNotFoundErrorMessage",
+      "nicification": "remnawave_not_found_error_message",
+      "source": "#/components/schemas/RemnawaveNotFoundErrorDto/properties/message",
+      "ref": "#/components/schemas/RemnawaveNotFoundErrorMessage",
+      "values": [
+        "Requested token not found",
+        "Node not found",
+        "Configuration not found",
+        "User not found",
+        "Host not found",
+        "Users not found",
+        "User with specified params not found",
+        "Admin not found",
+        "Subscription settings not found",
+        "Inbound not found",
+        "Config profile not found",
+        "Internal squad not found",
+        "Config profile inbound not found in specified profile",
+        "Infra provider not found",
+        "OAuth2 provider not found",
+        "Snippet not found",
+        "Subscription template not found",
+        "External squad not found",
+        "Passkey not found",
+        "HWID device not found",
+        "Subscription page config not found",
+        "Job result fetch failed or job not found",
+        "Connected nodes not found",
+        "Node plugin not found",
+        "Metadata not found",
+        "Node integration not found",
+        "Shared list not found"
+      ]
+    },
+    {
+      "action": "variant_referenced",
+      "schema": "RemnawaveNotFoundErrorErrorCode",
+      "nicification": "remnawave_not_found_error_error_code",
+      "source": "#/components/schemas/RemnawaveNotFoundErrorDto/properties/errorCode",
+      "ref": "#/components/schemas/RemnawaveNotFoundErrorErrorCode",
+      "values": [
+        "A007",
+        "A011",
+        "A012",
+        "A025",
+        "A046",
+        "A062",
+        "A063",
+        "A065",
+        "A071",
+        "A076",
+        "A111",
+        "A118",
+        "A124",
+        "A128",
+        "A147",
+        "A162",
+        "A170",
+        "A182",
+        "A191",
+        "A204",
+        "A206",
+        "A218",
+        "A219",
+        "A220",
+        "A226",
+        "A238",
+        "A245"
+      ]
+    },
+    {
+      "action": "variant_referenced",
+      "schema": "RemnawaveBadRequestErrorMessage",
+      "nicification": "remnawave_bad_request_error_message",
+      "source": "#/components/schemas/RemnawaveBadRequestErrorDto/properties/message",
+      "ref": "#/components/schemas/RemnawaveBadRequestErrorMessage",
+      "values": [
+        "User username already exists",
+        "User short UUID already exists",
+        "User subscription UUID already exists",
+        "User already disabled",
+        "User already enabled",
+        "Node name already exists",
+        "Node address already exists",
+        "Host remark already exists",
+        "LIMITED and EXPIRED statuses are not allowed to be set manually.",
+        "User hwid device already exists",
+        "User hwid device limit reached",
+        "This name is reserved by Remnawave. Please use a different name.",
+        "Node is disabled",
+        "Name or config is required",
+        "Name or inbounds is required",
+        "Snippet name already exists",
+        "Snippet cannot be empty",
+        "Snippet cannot contain empty objects",
+        "This name is reserved. Please use a different name.",
+        "Template JSON is not allowed for YAML template",
+        "Template YAML is not allowed for JSON template",
+        "Template JSON and YAML cannot be updated simultaneously",
+        "Template name already exists for this type",
+        "Reserved template cannot be deleted",
+        "Template type not allowed",
+        "External squad name already exists",
+        "Name or templates are required",
+        "Passkeys not configured",
+        "Passkeys not enabled. Please enable it first.",
+        "Reserved config name",
+        "Config name already exists",
+        "Reserved subpage config cannot be deleted",
+        "Invalid subscription page config",
+        "Invalid Remnawave injector",
+        "Node plugin name already exists",
+        "One or more provided API token scopes are invalid",
+        "Either nodeUuid or name must be provided",
+        "Start date must be before or equal to end date",
+        "Node integration name already exists",
+        "Shared list name already exists"
+      ]
+    },
+    {
+      "action": "variant_referenced",
+      "schema": "RemnawaveBadRequestErrorErrorCode",
+      "nicification": "remnawave_bad_request_error_error_code",
+      "source": "#/components/schemas/RemnawaveBadRequestErrorDto/properties/errorCode",
+      "ref": "#/components/schemas/RemnawaveBadRequestErrorErrorCode",
+      "values": [
+        "A019",
+        "A020",
+        "A021",
+        "A029",
+        "A030",
+        "A033",
+        "A034",
+        "A045",
+        "A089",
+        "A098",
+        "A099",
+        "A144",
+        "A145",
+        "A149",
+        "A152",
+        "A153",
+        "A164",
+        "A166",
+        "A167",
+        "A172",
+        "A173",
+        "A174",
+        "A175",
+        "A176",
+        "A178",
+        "A180",
+        "A189",
+        "A190",
+        "A194",
+        "A195",
+        "A209",
+        "A210",
+        "A212",
+        "A215",
+        "A216",
+        "A223",
+        "A229",
+        "A230",
+        "A235",
+        "A244",
+        "A246"
+      ]
+    },
+    {
       "action": "variant_referenced",
       "schema": "RemnawaveInternalServerErrorMessage",
       "nicification": "remnawave_internal_server_error_message",
@@ -3688,7 +4025,10 @@
         "Get shared list by name error",
         "Create shared list error",
         "Update shared list error",
-        "Delete shared list error"
+        "Delete shared list error",
+        "Create SSH ticket error",
+        "Get tags error",
+        "Set tags error"
       ]
     },
     {
@@ -3868,178 +4208,10 @@
         "A248",
         "A249",
         "A250",
-        "A251"
-      ]
-    },
-    {
-      "action": "variant_referenced",
-      "schema": "RemnawaveBadRequestErrorMessage",
-      "nicification": "remnawave_bad_request_error_message",
-      "source": "#/components/schemas/RemnawaveBadRequestErrorDto/properties/message",
-      "ref": "#/components/schemas/RemnawaveBadRequestErrorMessage",
-      "values": [
-        "User username already exists",
-        "User short UUID already exists",
-        "User subscription UUID already exists",
-        "User already disabled",
-        "User already enabled",
-        "Node name already exists",
-        "Node address already exists",
-        "Host remark already exists",
-        "LIMITED and EXPIRED statuses are not allowed to be set manually.",
-        "User hwid device already exists",
-        "User hwid device limit reached",
-        "This name is reserved by Remnawave. Please use a different name.",
-        "Node is disabled",
-        "Name or config is required",
-        "Name or inbounds is required",
-        "Snippet name already exists",
-        "Snippet cannot be empty",
-        "Snippet cannot contain empty objects",
-        "This name is reserved. Please use a different name.",
-        "Template JSON is not allowed for YAML template",
-        "Template YAML is not allowed for JSON template",
-        "Template JSON and YAML cannot be updated simultaneously",
-        "Template name already exists for this type",
-        "Reserved template cannot be deleted",
-        "Template type not allowed",
-        "External squad name already exists",
-        "Name or templates are required",
-        "Passkeys not configured",
-        "Passkeys not enabled. Please enable it first.",
-        "Reserved config name",
-        "Config name already exists",
-        "Reserved subpage config cannot be deleted",
-        "Invalid subscription page config",
-        "Invalid Remnawave injector",
-        "Node plugin name already exists",
-        "One or more provided API token scopes are invalid",
-        "Either nodeUuid or name must be provided",
-        "Start date must be before or equal to end date",
-        "Node integration name already exists",
-        "Shared list name already exists"
-      ]
-    },
-    {
-      "action": "variant_referenced",
-      "schema": "RemnawaveBadRequestErrorErrorCode",
-      "nicification": "remnawave_bad_request_error_error_code",
-      "source": "#/components/schemas/RemnawaveBadRequestErrorDto/properties/errorCode",
-      "ref": "#/components/schemas/RemnawaveBadRequestErrorErrorCode",
-      "values": [
-        "A019",
-        "A020",
-        "A021",
-        "A029",
-        "A030",
-        "A033",
-        "A034",
-        "A045",
-        "A089",
-        "A098",
-        "A099",
-        "A144",
-        "A145",
-        "A149",
-        "A152",
-        "A153",
-        "A164",
-        "A166",
-        "A167",
-        "A172",
-        "A173",
-        "A174",
-        "A175",
-        "A176",
-        "A178",
-        "A180",
-        "A189",
-        "A190",
-        "A194",
-        "A195",
-        "A209",
-        "A210",
-        "A212",
-        "A215",
-        "A216",
-        "A223",
-        "A229",
-        "A230",
-        "A235",
-        "A244",
-        "A246"
-      ]
-    },
-    {
-      "action": "referenced",
-      "schema": "RemnawaveNotFoundErrorMessage",
-      "nicification": "remnawave_not_found_error_message",
-      "source": "#/components/schemas/RemnawaveNotFoundErrorDto/properties/message",
-      "ref": "#/components/schemas/RemnawaveNotFoundErrorMessage",
-      "values": [
-        "Requested token not found",
-        "Node not found",
-        "Configuration not found",
-        "User not found",
-        "Host not found",
-        "Users not found",
-        "User with specified params not found",
-        "Admin not found",
-        "Subscription settings not found",
-        "Inbound not found",
-        "Config profile not found",
-        "Internal squad not found",
-        "Config profile inbound not found in specified profile",
-        "Infra provider not found",
-        "OAuth2 provider not found",
-        "Snippet not found",
-        "Subscription template not found",
-        "External squad not found",
-        "Passkey not found",
-        "HWID device not found",
-        "Subscription page config not found",
-        "Job result fetch failed or job not found",
-        "Connected nodes not found",
-        "Node plugin not found",
-        "Metadata not found",
-        "Node integration not found",
-        "Shared list not found"
-      ]
-    },
-    {
-      "action": "variant_referenced",
-      "schema": "RemnawaveNotFoundErrorErrorCode",
-      "nicification": "remnawave_not_found_error_error_code",
-      "source": "#/components/schemas/RemnawaveNotFoundErrorDto/properties/errorCode",
-      "ref": "#/components/schemas/RemnawaveNotFoundErrorErrorCode",
-      "values": [
-        "A007",
-        "A011",
-        "A012",
-        "A025",
-        "A046",
-        "A062",
-        "A063",
-        "A065",
-        "A071",
-        "A076",
-        "A111",
-        "A118",
-        "A124",
-        "A128",
-        "A147",
-        "A162",
-        "A170",
-        "A182",
-        "A191",
-        "A204",
-        "A206",
-        "A218",
-        "A219",
-        "A220",
-        "A226",
-        "A238",
-        "A245"
+        "A251",
+        "A254",
+        "A256",
+        "A257"
       ]
     },
     {
@@ -4342,6 +4514,10 @@
         "UPDATE_SHARED_LIST_ERROR",
         "DELETE_SHARED_LIST_ERROR",
         "INVALID_SHARED_LIST_CONFIG",
+        "CREATE_SSH_TICKET_ERROR",
+        "EVALUATE_VAULT_ERROR",
+        "GET_ENTITY_TAGS_ERROR",
+        "SET_ENTITY_TAGS_ERROR",
         "E401",
         "E403",
         "E404",
@@ -4599,6 +4775,10 @@
         "A250",
         "A251",
         "A252",
+        "A254",
+        "A255",
+        "A256",
+        "A257",
         "E401",
         "E403",
         "E404",
@@ -4610,7 +4790,7 @@
     },
     {
       "action": "referenced",
-      "pointer": "#/components/schemas/RemnawaveInternalServerErrorDto/properties/errorCode",
+      "pointer": "#/components/schemas/RemnawaveNotFoundErrorDto/properties/errorCode",
       "ref": "#/components/schemas/ErrorCode"
     },
     {
@@ -4620,7 +4800,7 @@
     },
     {
       "action": "referenced",
-      "pointer": "#/components/schemas/RemnawaveNotFoundErrorDto/properties/errorCode",
+      "pointer": "#/components/schemas/RemnawaveInternalServerErrorDto/properties/errorCode",
       "ref": "#/components/schemas/ErrorCode"
     }
   ],
@@ -4631,7 +4811,7 @@
       "nicification": "BadRequestError",
       "status_code": "400",
       "is_error": true,
-      "occurrences": 205,
+      "occurrences": 217,
       "locations": [
         "#/paths/~1api~1remnawave-settings/get/responses/400",
         "#/paths/~1api~1remnawave-settings/patch/responses/400",
@@ -4647,6 +4827,8 @@
         "#/paths/~1api~1auth~1oauth2~1callback/post/responses/400",
         "#/paths/~1api~1auth~1passkey~1authentication~1options/get/responses/400",
         "#/paths/~1api~1auth~1passkey~1authentication~1verify/post/responses/400",
+        "#/paths/~1api~1subscription-page-configs~1tags/get/responses/400",
+        "#/paths/~1api~1subscription-page-configs~1tags/patch/responses/400",
         "#/paths/~1api~1subscription-page-configs/get/responses/400",
         "#/paths/~1api~1subscription-page-configs/patch/responses/400",
         "#/paths/~1api~1subscription-page-configs/post/responses/400",
@@ -4691,6 +4873,8 @@
         "#/paths/~1api~1subscriptions~1by-short-uuid~1{shortUuid}~1raw/get/responses/400",
         "#/paths/~1api~1subscriptions~1subpage-config~1{shortUuid}/get/responses/400",
         "#/paths/~1api~1subscriptions~1connection-keys~1{userId}/get/responses/400",
+        "#/paths/~1api~1subscription-templates~1tags/get/responses/400",
+        "#/paths/~1api~1subscription-templates~1tags/patch/responses/400",
         "#/paths/~1api~1subscription-templates/get/responses/400",
         "#/paths/~1api~1subscription-templates/patch/responses/400",
         "#/paths/~1api~1subscription-templates/post/responses/400",
@@ -4701,6 +4885,8 @@
         "#/paths/~1api~1tokens/get/responses/400",
         "#/paths/~1api~1tokens~1{uuid}/delete/responses/400",
         "#/paths/~1api~1tokens~1scopes/get/responses/400",
+        "#/paths/~1api~1config-profiles~1tags/get/responses/400",
+        "#/paths/~1api~1config-profiles~1tags/patch/responses/400",
         "#/paths/~1api~1config-profiles/get/responses/400",
         "#/paths/~1api~1config-profiles/post/responses/400",
         "#/paths/~1api~1config-profiles/patch/responses/400",
@@ -4715,6 +4901,8 @@
         "#/paths/~1api~1snippets/post/responses/400",
         "#/paths/~1api~1snippets/patch/responses/400",
         "#/paths/~1api~1snippets~1actions~1sync/post/responses/400",
+        "#/paths/~1api~1internal-squads~1tags/get/responses/400",
+        "#/paths/~1api~1internal-squads~1tags/patch/responses/400",
         "#/paths/~1api~1internal-squads/get/responses/400",
         "#/paths/~1api~1internal-squads/post/responses/400",
         "#/paths/~1api~1internal-squads/patch/responses/400",
@@ -4729,6 +4917,8 @@
         "#/paths/~1api~1internal-squads~1{uuid}~1bulk-actions~1remove-many-users/delete/responses/400",
         "#/paths/~1api~1bandwidth-stats~1internal-squads~1{uuid}~1usage/get/responses/400",
         "#/paths/~1api~1bandwidth-stats~1internal-squads~1{squadUuid}~1users~1{userId}~1usage/get/responses/400",
+        "#/paths/~1api~1external-squads~1tags/get/responses/400",
+        "#/paths/~1api~1external-squads~1tags/patch/responses/400",
         "#/paths/~1api~1external-squads/get/responses/400",
         "#/paths/~1api~1external-squads/post/responses/400",
         "#/paths/~1api~1external-squads/patch/responses/400",
@@ -4756,11 +4946,13 @@
         "#/paths/~1api~1node-plugins~1torrent-blocker/get/responses/400",
         "#/paths/~1api~1node-plugins~1torrent-blocker~1stats/get/responses/400",
         "#/paths/~1api~1node-plugins~1torrent-blocker~1truncate/delete/responses/400",
+        "#/paths/~1api~1node-plugins~1tags/get/responses/400",
+        "#/paths/~1api~1node-plugins~1tags/patch/responses/400",
         "#/paths/~1api~1node-plugins~1shared-lists/get/responses/400",
         "#/paths/~1api~1node-plugins~1shared-lists/post/responses/400",
         "#/paths/~1api~1node-plugins~1shared-lists/patch/responses/400",
-        "#/paths/~1api~1node-plugins~1shared-lists~1{name}/get/responses/400",
-        "#/paths/~1api~1node-plugins~1shared-lists~1{name}/delete/responses/400",
+        "#/paths/~1api~1node-plugins~1shared-lists/delete/responses/400",
+        "#/paths/~1api~1node-plugins~1shared-lists~1by-name/get/responses/400",
         "#/paths/~1api~1node-plugins~1shared-lists~1actions~1sync/post/responses/400",
         "#/paths/~1api~1node-plugins/get/responses/400",
         "#/paths/~1api~1node-plugins/patch/responses/400",
@@ -4847,7 +5039,7 @@
       "nicification": "ResourceNotFoundErrorDto",
       "status_code": "404",
       "is_error": true,
-      "occurrences": 205,
+      "occurrences": 217,
       "locations": [
         "#/paths/~1api~1remnawave-settings/get/responses/404",
         "#/paths/~1api~1remnawave-settings/patch/responses/404",
@@ -4863,6 +5055,8 @@
         "#/paths/~1api~1auth~1oauth2~1callback/post/responses/404",
         "#/paths/~1api~1auth~1passkey~1authentication~1options/get/responses/404",
         "#/paths/~1api~1auth~1passkey~1authentication~1verify/post/responses/404",
+        "#/paths/~1api~1subscription-page-configs~1tags/get/responses/404",
+        "#/paths/~1api~1subscription-page-configs~1tags/patch/responses/404",
         "#/paths/~1api~1subscription-page-configs/get/responses/404",
         "#/paths/~1api~1subscription-page-configs/patch/responses/404",
         "#/paths/~1api~1subscription-page-configs/post/responses/404",
@@ -4907,6 +5101,8 @@
         "#/paths/~1api~1subscriptions~1by-short-uuid~1{shortUuid}~1raw/get/responses/404",
         "#/paths/~1api~1subscriptions~1subpage-config~1{shortUuid}/get/responses/404",
         "#/paths/~1api~1subscriptions~1connection-keys~1{userId}/get/responses/404",
+        "#/paths/~1api~1subscription-templates~1tags/get/responses/404",
+        "#/paths/~1api~1subscription-templates~1tags/patch/responses/404",
         "#/paths/~1api~1subscription-templates/get/responses/404",
         "#/paths/~1api~1subscription-templates/patch/responses/404",
         "#/paths/~1api~1subscription-templates/post/responses/404",
@@ -4917,6 +5113,8 @@
         "#/paths/~1api~1tokens/get/responses/404",
         "#/paths/~1api~1tokens~1{uuid}/delete/responses/404",
         "#/paths/~1api~1tokens~1scopes/get/responses/404",
+        "#/paths/~1api~1config-profiles~1tags/get/responses/404",
+        "#/paths/~1api~1config-profiles~1tags/patch/responses/404",
         "#/paths/~1api~1config-profiles/get/responses/404",
         "#/paths/~1api~1config-profiles/post/responses/404",
         "#/paths/~1api~1config-profiles/patch/responses/404",
@@ -4931,6 +5129,8 @@
         "#/paths/~1api~1snippets/post/responses/404",
         "#/paths/~1api~1snippets/patch/responses/404",
         "#/paths/~1api~1snippets~1actions~1sync/post/responses/404",
+        "#/paths/~1api~1internal-squads~1tags/get/responses/404",
+        "#/paths/~1api~1internal-squads~1tags/patch/responses/404",
         "#/paths/~1api~1internal-squads/get/responses/404",
         "#/paths/~1api~1internal-squads/post/responses/404",
         "#/paths/~1api~1internal-squads/patch/responses/404",
@@ -4945,6 +5145,8 @@
         "#/paths/~1api~1internal-squads~1{uuid}~1bulk-actions~1remove-many-users/delete/responses/404",
         "#/paths/~1api~1bandwidth-stats~1internal-squads~1{uuid}~1usage/get/responses/404",
         "#/paths/~1api~1bandwidth-stats~1internal-squads~1{squadUuid}~1users~1{userId}~1usage/get/responses/404",
+        "#/paths/~1api~1external-squads~1tags/get/responses/404",
+        "#/paths/~1api~1external-squads~1tags/patch/responses/404",
         "#/paths/~1api~1external-squads/get/responses/404",
         "#/paths/~1api~1external-squads/post/responses/404",
         "#/paths/~1api~1external-squads/patch/responses/404",
@@ -4972,11 +5174,13 @@
         "#/paths/~1api~1node-plugins~1torrent-blocker/get/responses/404",
         "#/paths/~1api~1node-plugins~1torrent-blocker~1stats/get/responses/404",
         "#/paths/~1api~1node-plugins~1torrent-blocker~1truncate/delete/responses/404",
+        "#/paths/~1api~1node-plugins~1tags/get/responses/404",
+        "#/paths/~1api~1node-plugins~1tags/patch/responses/404",
         "#/paths/~1api~1node-plugins~1shared-lists/get/responses/404",
         "#/paths/~1api~1node-plugins~1shared-lists/post/responses/404",
         "#/paths/~1api~1node-plugins~1shared-lists/patch/responses/404",
-        "#/paths/~1api~1node-plugins~1shared-lists~1{name}/get/responses/404",
-        "#/paths/~1api~1node-plugins~1shared-lists~1{name}/delete/responses/404",
+        "#/paths/~1api~1node-plugins~1shared-lists/delete/responses/404",
+        "#/paths/~1api~1node-plugins~1shared-lists~1by-name/get/responses/404",
         "#/paths/~1api~1node-plugins~1shared-lists~1actions~1sync/post/responses/404",
         "#/paths/~1api~1node-plugins/get/responses/404",
         "#/paths/~1api~1node-plugins/patch/responses/404",
@@ -5063,7 +5267,7 @@
       "nicification": "InternalServerError",
       "status_code": "500",
       "is_error": true,
-      "occurrences": 205,
+      "occurrences": 217,
       "locations": [
         "#/paths/~1api~1remnawave-settings/get/responses/500",
         "#/paths/~1api~1remnawave-settings/patch/responses/500",
@@ -5079,6 +5283,8 @@
         "#/paths/~1api~1auth~1oauth2~1callback/post/responses/500",
         "#/paths/~1api~1auth~1passkey~1authentication~1options/get/responses/500",
         "#/paths/~1api~1auth~1passkey~1authentication~1verify/post/responses/500",
+        "#/paths/~1api~1subscription-page-configs~1tags/get/responses/500",
+        "#/paths/~1api~1subscription-page-configs~1tags/patch/responses/500",
         "#/paths/~1api~1subscription-page-configs/get/responses/500",
         "#/paths/~1api~1subscription-page-configs/patch/responses/500",
         "#/paths/~1api~1subscription-page-configs/post/responses/500",
@@ -5123,6 +5329,8 @@
         "#/paths/~1api~1subscriptions~1by-short-uuid~1{shortUuid}~1raw/get/responses/500",
         "#/paths/~1api~1subscriptions~1subpage-config~1{shortUuid}/get/responses/500",
         "#/paths/~1api~1subscriptions~1connection-keys~1{userId}/get/responses/500",
+        "#/paths/~1api~1subscription-templates~1tags/get/responses/500",
+        "#/paths/~1api~1subscription-templates~1tags/patch/responses/500",
         "#/paths/~1api~1subscription-templates/get/responses/500",
         "#/paths/~1api~1subscription-templates/patch/responses/500",
         "#/paths/~1api~1subscription-templates/post/responses/500",
@@ -5133,6 +5341,8 @@
         "#/paths/~1api~1tokens/get/responses/500",
         "#/paths/~1api~1tokens~1{uuid}/delete/responses/500",
         "#/paths/~1api~1tokens~1scopes/get/responses/500",
+        "#/paths/~1api~1config-profiles~1tags/get/responses/500",
+        "#/paths/~1api~1config-profiles~1tags/patch/responses/500",
         "#/paths/~1api~1config-profiles/get/responses/500",
         "#/paths/~1api~1config-profiles/post/responses/500",
         "#/paths/~1api~1config-profiles/patch/responses/500",
@@ -5147,6 +5357,8 @@
         "#/paths/~1api~1snippets/post/responses/500",
         "#/paths/~1api~1snippets/patch/responses/500",
         "#/paths/~1api~1snippets~1actions~1sync/post/responses/500",
+        "#/paths/~1api~1internal-squads~1tags/get/responses/500",
+        "#/paths/~1api~1internal-squads~1tags/patch/responses/500",
         "#/paths/~1api~1internal-squads/get/responses/500",
         "#/paths/~1api~1internal-squads/post/responses/500",
         "#/paths/~1api~1internal-squads/patch/responses/500",
@@ -5161,6 +5373,8 @@
         "#/paths/~1api~1internal-squads~1{uuid}~1bulk-actions~1remove-many-users/delete/responses/500",
         "#/paths/~1api~1bandwidth-stats~1internal-squads~1{uuid}~1usage/get/responses/500",
         "#/paths/~1api~1bandwidth-stats~1internal-squads~1{squadUuid}~1users~1{userId}~1usage/get/responses/500",
+        "#/paths/~1api~1external-squads~1tags/get/responses/500",
+        "#/paths/~1api~1external-squads~1tags/patch/responses/500",
         "#/paths/~1api~1external-squads/get/responses/500",
         "#/paths/~1api~1external-squads/post/responses/500",
         "#/paths/~1api~1external-squads/patch/responses/500",
@@ -5188,11 +5402,13 @@
         "#/paths/~1api~1node-plugins~1torrent-blocker/get/responses/500",
         "#/paths/~1api~1node-plugins~1torrent-blocker~1stats/get/responses/500",
         "#/paths/~1api~1node-plugins~1torrent-blocker~1truncate/delete/responses/500",
+        "#/paths/~1api~1node-plugins~1tags/get/responses/500",
+        "#/paths/~1api~1node-plugins~1tags/patch/responses/500",
         "#/paths/~1api~1node-plugins~1shared-lists/get/responses/500",
         "#/paths/~1api~1node-plugins~1shared-lists/post/responses/500",
         "#/paths/~1api~1node-plugins~1shared-lists/patch/responses/500",
-        "#/paths/~1api~1node-plugins~1shared-lists~1{name}/get/responses/500",
-        "#/paths/~1api~1node-plugins~1shared-lists~1{name}/delete/responses/500",
+        "#/paths/~1api~1node-plugins~1shared-lists/delete/responses/500",
+        "#/paths/~1api~1node-plugins~1shared-lists~1by-name/get/responses/500",
         "#/paths/~1api~1node-plugins~1shared-lists~1actions~1sync/post/responses/500",
         "#/paths/~1api~1node-plugins/get/responses/500",
         "#/paths/~1api~1node-plugins/patch/responses/500",
@@ -5333,7 +5549,7 @@
       "nicification": "BadRequestError",
       "status_code": "400",
       "is_error": true,
-      "occurrences": 205,
+      "occurrences": 217,
       "locations": [
         "#/paths/~1api~1remnawave-settings/get/responses/400",
         "#/paths/~1api~1remnawave-settings/patch/responses/400",
@@ -5349,6 +5565,8 @@
         "#/paths/~1api~1auth~1oauth2~1callback/post/responses/400",
         "#/paths/~1api~1auth~1passkey~1authentication~1options/get/responses/400",
         "#/paths/~1api~1auth~1passkey~1authentication~1verify/post/responses/400",
+        "#/paths/~1api~1subscription-page-configs~1tags/get/responses/400",
+        "#/paths/~1api~1subscription-page-configs~1tags/patch/responses/400",
         "#/paths/~1api~1subscription-page-configs/get/responses/400",
         "#/paths/~1api~1subscription-page-configs/patch/responses/400",
         "#/paths/~1api~1subscription-page-configs/post/responses/400",
@@ -5393,6 +5611,8 @@
         "#/paths/~1api~1subscriptions~1by-short-uuid~1{shortUuid}~1raw/get/responses/400",
         "#/paths/~1api~1subscriptions~1subpage-config~1{shortUuid}/get/responses/400",
         "#/paths/~1api~1subscriptions~1connection-keys~1{userId}/get/responses/400",
+        "#/paths/~1api~1subscription-templates~1tags/get/responses/400",
+        "#/paths/~1api~1subscription-templates~1tags/patch/responses/400",
         "#/paths/~1api~1subscription-templates/get/responses/400",
         "#/paths/~1api~1subscription-templates/patch/responses/400",
         "#/paths/~1api~1subscription-templates/post/responses/400",
@@ -5403,6 +5623,8 @@
         "#/paths/~1api~1tokens/get/responses/400",
         "#/paths/~1api~1tokens~1{uuid}/delete/responses/400",
         "#/paths/~1api~1tokens~1scopes/get/responses/400",
+        "#/paths/~1api~1config-profiles~1tags/get/responses/400",
+        "#/paths/~1api~1config-profiles~1tags/patch/responses/400",
         "#/paths/~1api~1config-profiles/get/responses/400",
         "#/paths/~1api~1config-profiles/post/responses/400",
         "#/paths/~1api~1config-profiles/patch/responses/400",
@@ -5417,6 +5639,8 @@
         "#/paths/~1api~1snippets/post/responses/400",
         "#/paths/~1api~1snippets/patch/responses/400",
         "#/paths/~1api~1snippets~1actions~1sync/post/responses/400",
+        "#/paths/~1api~1internal-squads~1tags/get/responses/400",
+        "#/paths/~1api~1internal-squads~1tags/patch/responses/400",
         "#/paths/~1api~1internal-squads/get/responses/400",
         "#/paths/~1api~1internal-squads/post/responses/400",
         "#/paths/~1api~1internal-squads/patch/responses/400",
@@ -5431,6 +5655,8 @@
         "#/paths/~1api~1internal-squads~1{uuid}~1bulk-actions~1remove-many-users/delete/responses/400",
         "#/paths/~1api~1bandwidth-stats~1internal-squads~1{uuid}~1usage/get/responses/400",
         "#/paths/~1api~1bandwidth-stats~1internal-squads~1{squadUuid}~1users~1{userId}~1usage/get/responses/400",
+        "#/paths/~1api~1external-squads~1tags/get/responses/400",
+        "#/paths/~1api~1external-squads~1tags/patch/responses/400",
         "#/paths/~1api~1external-squads/get/responses/400",
         "#/paths/~1api~1external-squads/post/responses/400",
         "#/paths/~1api~1external-squads/patch/responses/400",
@@ -5458,11 +5684,13 @@
         "#/paths/~1api~1node-plugins~1torrent-blocker/get/responses/400",
         "#/paths/~1api~1node-plugins~1torrent-blocker~1stats/get/responses/400",
         "#/paths/~1api~1node-plugins~1torrent-blocker~1truncate/delete/responses/400",
+        "#/paths/~1api~1node-plugins~1tags/get/responses/400",
+        "#/paths/~1api~1node-plugins~1tags/patch/responses/400",
         "#/paths/~1api~1node-plugins~1shared-lists/get/responses/400",
         "#/paths/~1api~1node-plugins~1shared-lists/post/responses/400",
         "#/paths/~1api~1node-plugins~1shared-lists/patch/responses/400",
-        "#/paths/~1api~1node-plugins~1shared-lists~1{name}/get/responses/400",
-        "#/paths/~1api~1node-plugins~1shared-lists~1{name}/delete/responses/400",
+        "#/paths/~1api~1node-plugins~1shared-lists/delete/responses/400",
+        "#/paths/~1api~1node-plugins~1shared-lists~1by-name/get/responses/400",
         "#/paths/~1api~1node-plugins~1shared-lists~1actions~1sync/post/responses/400",
         "#/paths/~1api~1node-plugins/get/responses/400",
         "#/paths/~1api~1node-plugins/patch/responses/400",
@@ -5549,7 +5777,7 @@
       "nicification": "ResourceNotFoundErrorDto",
       "status_code": "404",
       "is_error": true,
-      "occurrences": 205,
+      "occurrences": 217,
       "locations": [
         "#/paths/~1api~1remnawave-settings/get/responses/404",
         "#/paths/~1api~1remnawave-settings/patch/responses/404",
@@ -5565,6 +5793,8 @@
         "#/paths/~1api~1auth~1oauth2~1callback/post/responses/404",
         "#/paths/~1api~1auth~1passkey~1authentication~1options/get/responses/404",
         "#/paths/~1api~1auth~1passkey~1authentication~1verify/post/responses/404",
+        "#/paths/~1api~1subscription-page-configs~1tags/get/responses/404",
+        "#/paths/~1api~1subscription-page-configs~1tags/patch/responses/404",
         "#/paths/~1api~1subscription-page-configs/get/responses/404",
         "#/paths/~1api~1subscription-page-configs/patch/responses/404",
         "#/paths/~1api~1subscription-page-configs/post/responses/404",
@@ -5609,6 +5839,8 @@
         "#/paths/~1api~1subscriptions~1by-short-uuid~1{shortUuid}~1raw/get/responses/404",
         "#/paths/~1api~1subscriptions~1subpage-config~1{shortUuid}/get/responses/404",
         "#/paths/~1api~1subscriptions~1connection-keys~1{userId}/get/responses/404",
+        "#/paths/~1api~1subscription-templates~1tags/get/responses/404",
+        "#/paths/~1api~1subscription-templates~1tags/patch/responses/404",
         "#/paths/~1api~1subscription-templates/get/responses/404",
         "#/paths/~1api~1subscription-templates/patch/responses/404",
         "#/paths/~1api~1subscription-templates/post/responses/404",
@@ -5619,6 +5851,8 @@
         "#/paths/~1api~1tokens/get/responses/404",
         "#/paths/~1api~1tokens~1{uuid}/delete/responses/404",
         "#/paths/~1api~1tokens~1scopes/get/responses/404",
+        "#/paths/~1api~1config-profiles~1tags/get/responses/404",
+        "#/paths/~1api~1config-profiles~1tags/patch/responses/404",
         "#/paths/~1api~1config-profiles/get/responses/404",
         "#/paths/~1api~1config-profiles/post/responses/404",
         "#/paths/~1api~1config-profiles/patch/responses/404",
@@ -5633,6 +5867,8 @@
         "#/paths/~1api~1snippets/post/responses/404",
         "#/paths/~1api~1snippets/patch/responses/404",
         "#/paths/~1api~1snippets~1actions~1sync/post/responses/404",
+        "#/paths/~1api~1internal-squads~1tags/get/responses/404",
+        "#/paths/~1api~1internal-squads~1tags/patch/responses/404",
         "#/paths/~1api~1internal-squads/get/responses/404",
         "#/paths/~1api~1internal-squads/post/responses/404",
         "#/paths/~1api~1internal-squads/patch/responses/404",
@@ -5647,6 +5883,8 @@
         "#/paths/~1api~1internal-squads~1{uuid}~1bulk-actions~1remove-many-users/delete/responses/404",
         "#/paths/~1api~1bandwidth-stats~1internal-squads~1{uuid}~1usage/get/responses/404",
         "#/paths/~1api~1bandwidth-stats~1internal-squads~1{squadUuid}~1users~1{userId}~1usage/get/responses/404",
+        "#/paths/~1api~1external-squads~1tags/get/responses/404",
+        "#/paths/~1api~1external-squads~1tags/patch/responses/404",
         "#/paths/~1api~1external-squads/get/responses/404",
         "#/paths/~1api~1external-squads/post/responses/404",
         "#/paths/~1api~1external-squads/patch/responses/404",
@@ -5674,11 +5912,13 @@
         "#/paths/~1api~1node-plugins~1torrent-blocker/get/responses/404",
         "#/paths/~1api~1node-plugins~1torrent-blocker~1stats/get/responses/404",
         "#/paths/~1api~1node-plugins~1torrent-blocker~1truncate/delete/responses/404",
+        "#/paths/~1api~1node-plugins~1tags/get/responses/404",
+        "#/paths/~1api~1node-plugins~1tags/patch/responses/404",
         "#/paths/~1api~1node-plugins~1shared-lists/get/responses/404",
         "#/paths/~1api~1node-plugins~1shared-lists/post/responses/404",
         "#/paths/~1api~1node-plugins~1shared-lists/patch/responses/404",
-        "#/paths/~1api~1node-plugins~1shared-lists~1{name}/get/responses/404",
-        "#/paths/~1api~1node-plugins~1shared-lists~1{name}/delete/responses/404",
+        "#/paths/~1api~1node-plugins~1shared-lists/delete/responses/404",
+        "#/paths/~1api~1node-plugins~1shared-lists~1by-name/get/responses/404",
         "#/paths/~1api~1node-plugins~1shared-lists~1actions~1sync/post/responses/404",
         "#/paths/~1api~1node-plugins/get/responses/404",
         "#/paths/~1api~1node-plugins/patch/responses/404",
@@ -5765,7 +6005,7 @@
       "nicification": "InternalServerError",
       "status_code": "500",
       "is_error": true,
-      "occurrences": 205,
+      "occurrences": 217,
       "locations": [
         "#/paths/~1api~1remnawave-settings/get/responses/500",
         "#/paths/~1api~1remnawave-settings/patch/responses/500",
@@ -5781,6 +6021,8 @@
         "#/paths/~1api~1auth~1oauth2~1callback/post/responses/500",
         "#/paths/~1api~1auth~1passkey~1authentication~1options/get/responses/500",
         "#/paths/~1api~1auth~1passkey~1authentication~1verify/post/responses/500",
+        "#/paths/~1api~1subscription-page-configs~1tags/get/responses/500",
+        "#/paths/~1api~1subscription-page-configs~1tags/patch/responses/500",
         "#/paths/~1api~1subscription-page-configs/get/responses/500",
         "#/paths/~1api~1subscription-page-configs/patch/responses/500",
         "#/paths/~1api~1subscription-page-configs/post/responses/500",
@@ -5825,6 +6067,8 @@
         "#/paths/~1api~1subscriptions~1by-short-uuid~1{shortUuid}~1raw/get/responses/500",
         "#/paths/~1api~1subscriptions~1subpage-config~1{shortUuid}/get/responses/500",
         "#/paths/~1api~1subscriptions~1connection-keys~1{userId}/get/responses/500",
+        "#/paths/~1api~1subscription-templates~1tags/get/responses/500",
+        "#/paths/~1api~1subscription-templates~1tags/patch/responses/500",
         "#/paths/~1api~1subscription-templates/get/responses/500",
         "#/paths/~1api~1subscription-templates/patch/responses/500",
         "#/paths/~1api~1subscription-templates/post/responses/500",
@@ -5835,6 +6079,8 @@
         "#/paths/~1api~1tokens/get/responses/500",
         "#/paths/~1api~1tokens~1{uuid}/delete/responses/500",
         "#/paths/~1api~1tokens~1scopes/get/responses/500",
+        "#/paths/~1api~1config-profiles~1tags/get/responses/500",
+        "#/paths/~1api~1config-profiles~1tags/patch/responses/500",
         "#/paths/~1api~1config-profiles/get/responses/500",
         "#/paths/~1api~1config-profiles/post/responses/500",
         "#/paths/~1api~1config-profiles/patch/responses/500",
@@ -5849,6 +6095,8 @@
         "#/paths/~1api~1snippets/post/responses/500",
         "#/paths/~1api~1snippets/patch/responses/500",
         "#/paths/~1api~1snippets~1actions~1sync/post/responses/500",
+        "#/paths/~1api~1internal-squads~1tags/get/responses/500",
+        "#/paths/~1api~1internal-squads~1tags/patch/responses/500",
         "#/paths/~1api~1internal-squads/get/responses/500",
         "#/paths/~1api~1internal-squads/post/responses/500",
         "#/paths/~1api~1internal-squads/patch/responses/500",
@@ -5863,6 +6111,8 @@
         "#/paths/~1api~1internal-squads~1{uuid}~1bulk-actions~1remove-many-users/delete/responses/500",
         "#/paths/~1api~1bandwidth-stats~1internal-squads~1{uuid}~1usage/get/responses/500",
         "#/paths/~1api~1bandwidth-stats~1internal-squads~1{squadUuid}~1users~1{userId}~1usage/get/responses/500",
+        "#/paths/~1api~1external-squads~1tags/get/responses/500",
+        "#/paths/~1api~1external-squads~1tags/patch/responses/500",
         "#/paths/~1api~1external-squads/get/responses/500",
         "#/paths/~1api~1external-squads/post/responses/500",
         "#/paths/~1api~1external-squads/patch/responses/500",
@@ -5890,11 +6140,13 @@
         "#/paths/~1api~1node-plugins~1torrent-blocker/get/responses/500",
         "#/paths/~1api~1node-plugins~1torrent-blocker~1stats/get/responses/500",
         "#/paths/~1api~1node-plugins~1torrent-blocker~1truncate/delete/responses/500",
+        "#/paths/~1api~1node-plugins~1tags/get/responses/500",
+        "#/paths/~1api~1node-plugins~1tags/patch/responses/500",
         "#/paths/~1api~1node-plugins~1shared-lists/get/responses/500",
         "#/paths/~1api~1node-plugins~1shared-lists/post/responses/500",
         "#/paths/~1api~1node-plugins~1shared-lists/patch/responses/500",
-        "#/paths/~1api~1node-plugins~1shared-lists~1{name}/get/responses/500",
-        "#/paths/~1api~1node-plugins~1shared-lists~1{name}/delete/responses/500",
+        "#/paths/~1api~1node-plugins~1shared-lists/delete/responses/500",
+        "#/paths/~1api~1node-plugins~1shared-lists~1by-name/get/responses/500",
         "#/paths/~1api~1node-plugins~1shared-lists~1actions~1sync/post/responses/500",
         "#/paths/~1api~1node-plugins/get/responses/500",
         "#/paths/~1api~1node-plugins/patch/responses/500",
@@ -6001,7 +6253,7 @@
         "#/paths/~1api~1nodes~1bulk-actions/post/responses/204",
         "#/paths/~1api~1nodes~1bulk-actions~1update/post/responses/204",
         "#/paths/~1api~1node-plugins~1torrent-blocker~1truncate/delete/responses/204",
-        "#/paths/~1api~1node-plugins~1shared-lists~1{name}/delete/responses/204",
+        "#/paths/~1api~1node-plugins~1shared-lists/delete/responses/204",
         "#/paths/~1api~1node-plugins~1{uuid}/delete/responses/204",
         "#/paths/~1api~1node-integrations~1{uuid}/delete/responses/204",
         "#/paths/~1api~1hosts~1{uuid}/delete/responses/204",
@@ -6173,6 +6425,18 @@
     },
     {
       "action": "hoisted",
+      "name": "OkSetConfigProfilesTagsResponse",
+      "nicification": "OkSetConfigProfilesTagsResponse",
+      "status_code": "200",
+      "is_error": false,
+      "occurrences": 1,
+      "locations": [
+        "#/paths/~1api~1config-profiles~1tags/patch/responses/200"
+      ],
+      "signature": "00c971441a4ff03b02d1ce833891141b063dc71ebf1aebbb58eca382050226de"
+    },
+    {
+      "action": "hoisted",
       "name": "OkGetHostsTagsResponse",
       "nicification": "OkGetHostsTagsResponse",
       "status_code": "200",
@@ -6218,6 +6482,18 @@
         "#/paths/~1api~1system~1health/get/responses/200"
       ],
       "signature": "09b7885e94cbf3ff8488e200fbdc0c3f1c2a563c0350cdc109aea57d1d53c023"
+    },
+    {
+      "action": "hoisted",
+      "name": "OkSetSubscriptionTemplatesTagsResponse",
+      "nicification": "OkSetSubscriptionTemplatesTagsResponse",
+      "status_code": "200",
+      "is_error": false,
+      "occurrences": 1,
+      "locations": [
+        "#/paths/~1api~1subscription-templates~1tags/patch/responses/200"
+      ],
+      "signature": "0a8312be687db3e296102b6d796b7a79b3bef0caaa33ee313b79fd7c92740710"
     },
     {
       "action": "hoisted",
@@ -6377,6 +6653,18 @@
     },
     {
       "action": "hoisted",
+      "name": "OkGetNodePluginsTagsResponse",
+      "nicification": "OkGetNodePluginsTagsResponse",
+      "status_code": "200",
+      "is_error": false,
+      "occurrences": 1,
+      "locations": [
+        "#/paths/~1api~1node-plugins~1tags/get/responses/200"
+      ],
+      "signature": "1f5ab0d6bf7041d0a11d50e3bcad4f0f6a90f738d986cbc0cc77ada03a199cd6"
+    },
+    {
+      "action": "hoisted",
       "name": "OkUpsertNodeMetadataResponse",
       "nicification": "OkUpsertNodeMetadataResponse",
       "status_code": "200",
@@ -6422,6 +6710,18 @@
         "#/paths/~1api~1config-profiles~1{uuid}/get/responses/200"
       ],
       "signature": "2bfb2c9b29aaf78913b9445f285d4512ba0ba433b6a06053298c880ba5183867"
+    },
+    {
+      "action": "hoisted",
+      "name": "OkGetSubscriptionTemplatesTagsResponse",
+      "nicification": "OkGetSubscriptionTemplatesTagsResponse",
+      "status_code": "200",
+      "is_error": false,
+      "occurrences": 1,
+      "locations": [
+        "#/paths/~1api~1subscription-templates~1tags/get/responses/200"
+      ],
+      "signature": "2d420f60bb8016e722f7029146ef679d31f56bfac37f185b78fb2de3008ddbd8"
     },
     {
       "action": "hoisted",
@@ -6581,6 +6881,18 @@
     },
     {
       "action": "hoisted",
+      "name": "OkGetSubpageConfigsTagsResponse",
+      "nicification": "OkGetSubpageConfigsTagsResponse",
+      "status_code": "200",
+      "is_error": false,
+      "occurrences": 1,
+      "locations": [
+        "#/paths/~1api~1subscription-page-configs~1tags/get/responses/200"
+      ],
+      "signature": "4a0034baa87735069f597e21481cfdae28ee08904cfd6ddabdf8f0f77cd6f4d6"
+    },
+    {
+      "action": "hoisted",
       "name": "OkGetUserHwidDevicesResponse",
       "nicification": "OkGetUserHwidDevicesResponse",
       "status_code": "200",
@@ -6674,6 +6986,18 @@
         "#/paths/~1api~1subscription-page-configs/patch/responses/200"
       ],
       "signature": "57c1483da900721f53147db98d78cf61ef6b816f89361ace76c991be1ae50237"
+    },
+    {
+      "action": "hoisted",
+      "name": "OkGetConfigProfilesTagsResponse",
+      "nicification": "OkGetConfigProfilesTagsResponse",
+      "status_code": "200",
+      "is_error": false,
+      "occurrences": 1,
+      "locations": [
+        "#/paths/~1api~1config-profiles~1tags/get/responses/200"
+      ],
+      "signature": "58de943a9dd14651acc808f59fc2e53dd6524ef695dd6136d2d19b952bd13c76"
     },
     {
       "action": "hoisted",
@@ -6821,6 +7145,18 @@
     },
     {
       "action": "hoisted",
+      "name": "OkSetSubpageConfigsTagsResponse",
+      "nicification": "OkSetSubpageConfigsTagsResponse",
+      "status_code": "200",
+      "is_error": false,
+      "occurrences": 1,
+      "locations": [
+        "#/paths/~1api~1subscription-page-configs~1tags/patch/responses/200"
+      ],
+      "signature": "6eb2c83ccb27e3cf427a90c7c31be332e98d6849aabb84d9f28457612940c731"
+    },
+    {
+      "action": "hoisted",
       "name": "OkGetSubpageConfigByShortUuidResponse",
       "nicification": "OkGetSubpageConfigByShortUuidResponse",
       "status_code": "200",
@@ -6881,6 +7217,18 @@
     },
     {
       "action": "hoisted",
+      "name": "OkSetInternalSquadsTagsResponse",
+      "nicification": "OkSetInternalSquadsTagsResponse",
+      "status_code": "200",
+      "is_error": false,
+      "occurrences": 1,
+      "locations": [
+        "#/paths/~1api~1internal-squads~1tags/patch/responses/200"
+      ],
+      "signature": "7af3be5fea6faf23c2aa3b796e932cb2f71762ca8f0a7b21b23b45ccf6f84607"
+    },
+    {
+      "action": "hoisted",
       "name": "OkUpdatePasskeyResponse",
       "nicification": "OkUpdatePasskeyResponse",
       "status_code": "200",
@@ -6938,6 +7286,18 @@
         "#/paths/~1api~1config-profiles~1{uuid}~1inbounds/get/responses/200"
       ],
       "signature": "7e5e6ebc03cc4f1d18920f6d4841d5bb719e9731b5aa4f725f1509ce14560ec9"
+    },
+    {
+      "action": "hoisted",
+      "name": "OkGetInternalSquadsTagsResponse",
+      "nicification": "OkGetInternalSquadsTagsResponse",
+      "status_code": "200",
+      "is_error": false,
+      "occurrences": 1,
+      "locations": [
+        "#/paths/~1api~1internal-squads~1tags/get/responses/200"
+      ],
+      "signature": "805fa935e61d57f74253c7d4b42a2b54f253d53b4f8f075d0111048153d35974"
     },
     {
       "action": "hoisted",
@@ -7022,6 +7382,18 @@
         "#/paths/~1api~1users~1resolve/post/responses/200"
       ],
       "signature": "8655f64fd6d37bf0fd7acbe9ffd117a92fdbd0cddb056ec5fd6dbf7c7eb778cb"
+    },
+    {
+      "action": "hoisted",
+      "name": "OkSetExternalSquadsTagsResponse",
+      "nicification": "OkSetExternalSquadsTagsResponse",
+      "status_code": "200",
+      "is_error": false,
+      "occurrences": 1,
+      "locations": [
+        "#/paths/~1api~1external-squads~1tags/patch/responses/200"
+      ],
+      "signature": "8805c6dfc80e5225a81541fee2d1b6bf1ce4622ddeceb59ce930dbe55798849f"
     },
     {
       "action": "hoisted",
@@ -7121,6 +7493,18 @@
     },
     {
       "action": "hoisted",
+      "name": "OkSetNodePluginsTagsResponse",
+      "nicification": "OkSetNodePluginsTagsResponse",
+      "status_code": "200",
+      "is_error": false,
+      "occurrences": 1,
+      "locations": [
+        "#/paths/~1api~1node-plugins~1tags/patch/responses/200"
+      ],
+      "signature": "9537a88c767f65ad1059ace50506b80e2876595e4301939dd82f051e2e7faa66"
+    },
+    {
+      "action": "hoisted",
       "name": "OkCloneSubpageConfigResponse",
       "nicification": "OkCloneSubpageConfigResponse",
       "status_code": "200",
@@ -7187,7 +7571,7 @@
       "is_error": false,
       "occurrences": 1,
       "locations": [
-        "#/paths/~1api~1node-plugins~1shared-lists~1{name}/get/responses/200"
+        "#/paths/~1api~1node-plugins~1shared-lists~1by-name/get/responses/200"
       ],
       "signature": "9bdc9e4d81b890a10a3d14da9c01fcf3720fe4b614decf269a78d15b8f3da475"
     },
@@ -7202,6 +7586,18 @@
         "#/paths/~1api~1passkeys/get/responses/200"
       ],
       "signature": "9c1126a410c8cea584072b4a53399fdf3f912df0ba81707265b14fcd531018a9"
+    },
+    {
+      "action": "hoisted",
+      "name": "OkGetExternalSquadsTagsResponse",
+      "nicification": "OkGetExternalSquadsTagsResponse",
+      "status_code": "200",
+      "is_error": false,
+      "occurrences": 1,
+      "locations": [
+        "#/paths/~1api~1external-squads~1tags/get/responses/200"
+      ],
+      "signature": "a077ed612d0f643bb6c6e680f74caac2d11fd5ef9445da92fe3c5c8aec96a237"
     },
     {
       "action": "hoisted",
@@ -7862,6 +8258,10 @@
       "name": "PasskeyAuthenticationOptionsResponseDto"
     },
     {
+      "old_name": "GetSubpageConfigsTagsResponseDto",
+      "name": "SubpageConfigsTagsResponseDto"
+    },
+    {
       "old_name": "GetSubpageConfigsResponseDto",
       "name": "SubpageConfigsResponseDto"
     },
@@ -7922,6 +8322,10 @@
       "name": "ConnectionKeysByUserIdResponseDto"
     },
     {
+      "old_name": "GetSubscriptionTemplatesTagsResponseDto",
+      "name": "SubscriptionTemplatesTagsResponseDto"
+    },
+    {
       "old_name": "GetTemplatesResponseDto",
       "name": "TemplatesResponseDto"
     },
@@ -7936,6 +8340,10 @@
     {
       "old_name": "GetApiTokensResponseDto",
       "name": "ApiTokensResponseDto"
+    },
+    {
+      "old_name": "GetConfigProfilesTagsResponseDto",
+      "name": "ConfigProfilesTagsResponseDto"
     },
     {
       "old_name": "GetConfigProfilesResponseDto",
@@ -7962,6 +8370,10 @@
       "name": "SnippetsResponseDto"
     },
     {
+      "old_name": "GetInternalSquadsTagsResponseDto",
+      "name": "InternalSquadsTagsResponseDto"
+    },
+    {
       "old_name": "GetInternalSquadsResponseDto",
       "name": "InternalSquadsResponseDto"
     },
@@ -7980,6 +8392,10 @@
     {
       "old_name": "GetInternalSquadUserUsageResponseDto",
       "name": "InternalSquadUserUsageResponseDto"
+    },
+    {
+      "old_name": "GetExternalSquadsTagsResponseDto",
+      "name": "ExternalSquadsTagsResponseDto"
     },
     {
       "old_name": "GetExternalSquadsResponseDto",
@@ -8008,6 +8424,10 @@
     {
       "old_name": "GetTorrentBlockerReportsStatsResponseDto",
       "name": "TorrentBlockerReportsStatsResponseDto"
+    },
+    {
+      "old_name": "GetNodePluginsTagsResponseDto",
+      "name": "NodePluginsTagsResponseDto"
     },
     {
       "old_name": "GetSharedListsResponseDto",
@@ -8174,7 +8594,7 @@
       "field": "fields",
       "parent": "BulkUpdateUsersBodyDto",
       "source": "#/components/schemas/BulkUpdateUsersBodyDto/properties/fields",
-      "signature": "5459d7ccf8f317f87a59779de34197b29a8622d3c51ce3fadf2083ac6365f1ac"
+      "signature": "b14dca3e7462d93e81ef20bd9413b2b8113335a34885e5c54581fb387e9e20f5"
     },
     {
       "action": "reused",
@@ -8184,7 +8604,7 @@
       "field": "response",
       "parent": "CloneNodePluginResponseDto",
       "source": "#/components/schemas/CloneNodePluginResponseDto/properties/response",
-      "signature": "007708abc84b1f8835de26ffe3d96d39777845377d928a62bb134328a9c05e57"
+      "signature": "f04c677b8c17862434f6146f8969eacae23c89cc4b27f7f46423fac47bff13f0"
     },
     {
       "action": "reused",
@@ -8194,7 +8614,7 @@
       "field": "response",
       "parent": "CloneSubpageConfigResponseDto",
       "source": "#/components/schemas/CloneSubpageConfigResponseDto/properties/response",
-      "signature": "ccf0e80ea96bf03a1d2a3003d5e21a217f17f4878529429d99b8bb0fd7827796"
+      "signature": "48ee215472a5740a5d25702d3fbfe031b45c07c85aa756f73f3fb31a533b9f15"
     },
     {
       "action": "reused",
@@ -8244,7 +8664,7 @@
       "field": "ips",
       "parent": "NodeConnectionUserDto",
       "source": "#/components/schemas/ConnectionsByNodeResultResponseDto/properties/response/properties/result/properties/users/items/properties/ips/items",
-      "signature": "2ec806b1d500ba95c2a2272b0b432165921fdf48b311a34a6d2a92e300dbfa87"
+      "signature": "b605d9ee3166ce4362a6a39cf84de183f2ec5a3b30fe802127c7c7cdec45e746"
     },
     {
       "action": "hoisted",
@@ -8304,7 +8724,7 @@
       "field": "ips",
       "parent": "ConnectionsByUserResultResponseResultNodesDto",
       "source": "#/components/schemas/ConnectionsByUserResultResponseDto/properties/response/properties/result/properties/nodes/items/properties/ips/items",
-      "signature": "2ec806b1d500ba95c2a2272b0b432165921fdf48b311a34a6d2a92e300dbfa87"
+      "signature": "b605d9ee3166ce4362a6a39cf84de183f2ec5a3b30fe802127c7c7cdec45e746"
     },
     {
       "action": "hoisted",
@@ -8314,7 +8734,7 @@
       "field": "response",
       "parent": "CreateApiTokenResponseDto",
       "source": "#/components/schemas/CreateApiTokenResponseDto/properties/response",
-      "signature": "6a405df6ef68f36c35e5655434123993878fd9dba5863efe2cf0ac32b65a7651"
+      "signature": "3a579a45f855538d8c45193c4f48f05d58b80e9831bca5bd96aeeec04f1a1dd0"
     },
     {
       "action": "reused",
@@ -8334,7 +8754,7 @@
       "field": "response",
       "parent": "CreateConfigProfileResponseDto",
       "source": "#/components/schemas/CreateConfigProfileResponseDto/properties/response",
-      "signature": "c017f6fdcac50d14b05ffeeb9086df81c365dc9ac631e7a46fce147427e4fb09"
+      "signature": "81e3105c4ad45bf429407a8235b33d02ec27496f3061fc824524bd67521e934e"
     },
     {
       "action": "reused",
@@ -8364,7 +8784,7 @@
       "field": "response",
       "parent": "CreateExternalSquadResponseDto",
       "source": "#/components/schemas/CreateExternalSquadResponseDto/properties/response",
-      "signature": "fe09cb8ecc7496ed459fc791eafadc9a81b1bf9784885b581132ec0f4dbad9ad"
+      "signature": "d8751e26cfd48f1787a8560b111edc20f97768252393a4c88f2de430f0db58f4"
     },
     {
       "action": "reused",
@@ -8437,6 +8857,16 @@
       "signature": "f5c65083e65d9b7e20b5c74fe42cbb781e2ff1a6b88d7a1176d518899e9c41c6"
     },
     {
+      "action": "reused",
+      "name": "CreateHostBodyInternalSquadsDto",
+      "target": "HostsInternalSquadsDto",
+      "nicification": "CreateHostBodyInternalSquadsDto",
+      "field": "internalSquads",
+      "parent": "CreateHostBodyDto",
+      "source": "#/components/schemas/CreateHostBodyDto/properties/internalSquads",
+      "signature": "7881819cb4979ec73b07678ed4edddfee97546621b95e4b00af861100479a607"
+    },
+    {
       "action": "hoisted",
       "name": "CreateHostBodyMapperDto",
       "target": "CreateHostBodyMapperDto",
@@ -8444,7 +8874,7 @@
       "field": "mapper",
       "parent": "CreateHostBodyDto",
       "source": "#/components/schemas/CreateHostBodyDto/properties/mapper",
-      "signature": "b72e3dba5e88a96cb20fd1255dbfb79ce753cd2511130aede35acabd24500e0b"
+      "signature": "9872b02729a9a3dbf92c4f9fc0f75379403aea42e880ecb4dc7b5a9c8c5ba43a"
     },
     {
       "action": "reused",
@@ -8454,7 +8884,7 @@
       "field": "base64",
       "parent": "CreateHostBodyMapperDto",
       "source": "#/components/schemas/CreateHostBodyDto/properties/mapper/properties/base64/items/oneOf/0",
-      "signature": "04e587db48e59c22857addf4bf1e0e97a2ee8e816a79881d4862f5c28554636e"
+      "signature": "3dc21e92d93ae3073f41981a19651ba937cd26e1a257089f62fb99246e0c4530"
     },
     {
       "action": "hoisted",
@@ -8464,7 +8894,7 @@
       "field": "base64",
       "parent": "CreateHostBodyMapperDto",
       "source": "#/components/schemas/CreateHostBodyDto/properties/mapper/properties/base64/items/oneOf/1",
-      "signature": "da3e3f0d9015f6b8f6e95ce31f3f749b475e4d9f28857d964d021128fddb0c04"
+      "signature": "1bb4b9eb17ed8586df37b38876830c47f0e16d8adafd5f2dd133c821e2dca6f4"
     },
     {
       "action": "reused",
@@ -8474,7 +8904,7 @@
       "field": "base64",
       "parent": "CreateHostBodyMapperDto",
       "source": "#/components/schemas/CreateHostBodyDto/properties/mapper/properties/base64/items/oneOf/2",
-      "signature": "20c0d332a8e5548eff7200eb7ea6c43696b8a73998c95d83724c403d27188ac7"
+      "signature": "a67ac951825a0aad21f8b76f9b5bc83a3106885a1d1554d5d6286ab2427b7675"
     },
     {
       "action": "reused",
@@ -8594,7 +9024,7 @@
       "field": "billingNodes",
       "parent": "CreateInfraBillingNodeResponse",
       "source": "#/components/schemas/CreateInfraBillingNodeResponseDto/properties/response/properties/billingNodes/items",
-      "signature": "d7d4ca07b8d672632c427e1fa76610a8685929fca9f6432e81542285c2174bda"
+      "signature": "1ecf0bd3359db247617c167fe9f309b0fcbc5549acc5f3fc4862d617672474dd"
     },
     {
       "action": "reused",
@@ -8644,7 +9074,7 @@
       "field": "records",
       "parent": "CreateInfraBillingRecordResponse",
       "source": "#/components/schemas/CreateInfraBillingRecordResponseDto/properties/response/properties/records/items",
-      "signature": "658f06bc12200877c1b6ddd16ccff0d71a9bb4e7558263e477a60ec97a8dedf1"
+      "signature": "79356829e03a138b4e9b7fdf8db1ebc37933a3276dfd8caa1bb7429cf45f3b71"
     },
     {
       "action": "hoisted",
@@ -8664,7 +9094,7 @@
       "field": "response",
       "parent": "CreateInfraProviderResponseDto",
       "source": "#/components/schemas/CreateInfraProviderResponseDto/properties/response",
-      "signature": "d9efa5c972d083b98b55206d0d8c7daddc6270f0c10a267aa2be7de1b9b51137"
+      "signature": "4bef46dfdbe5657298eac2c8118f241d1d9cd65d659bd359f7e5b9a6fd7d9eea"
     },
     {
       "action": "reused",
@@ -8704,7 +9134,7 @@
       "field": "response",
       "parent": "CreateInternalSquadResponseDto",
       "source": "#/components/schemas/CreateInternalSquadResponseDto/properties/response",
-      "signature": "c45506e794ac9e80e7966c17225595740535aa21f2b9df2b9209639618ab314d"
+      "signature": "86f78ec7087a52af8bd8267aa4a6eb94b7a7798c013309391d2e57d4fbe4bc02"
     },
     {
       "action": "reused",
@@ -8764,7 +9194,7 @@
       "field": "response",
       "parent": "CreateNodePluginResponseDto",
       "source": "#/components/schemas/CreateNodePluginResponseDto/properties/response",
-      "signature": "eba12bc31245c08cf8295dffa0ff089a745bc6c9292f8589fdbfca7811c286f8"
+      "signature": "1d1b510ec66b45985a394d61a85d9104a7ec49d853427bac7c5c653b2a41570c"
     },
     {
       "action": "reused",
@@ -8774,7 +9204,7 @@
       "field": "response",
       "parent": "CreateSharedListResponseDto",
       "source": "#/components/schemas/CreateSharedListResponseDto/properties/response",
-      "signature": "522328153d1cd39be77cbccd4cd456cbc0d283b54bae1735897ce8530b8ea7db"
+      "signature": "ab8778cd61ef903159948d26e8f0d4e90e719964ba22fd108ec826f35e08d293"
     },
     {
       "action": "reused",
@@ -8814,7 +9244,7 @@
       "field": "response",
       "parent": "CreateSubpageConfigResponseDto",
       "source": "#/components/schemas/CreateSubpageConfigResponseDto/properties/response",
-      "signature": "99ceeaba1daf139407b7f284c57de097c1eb25d588565e663e8b26b161f001a5"
+      "signature": "00d78ad859b5212949f31b711f14bad72bd3090b56aa3d8968873a37d0de6de5"
     },
     {
       "action": "reused",
@@ -8824,7 +9254,7 @@
       "field": "response",
       "parent": "CreateSubscriptionTemplateResponseDto",
       "source": "#/components/schemas/CreateSubscriptionTemplateResponseDto/properties/response",
-      "signature": "ae21e34cb43a6845903e7285473808b9b3ce24fd3c9f36163fde2d4f0d0ab536"
+      "signature": "5a7e443f036873364b1f7737bb4ba14ce5bba9af7912d0a141fdb05d6d0562fb"
     },
     {
       "action": "reused",
@@ -8844,7 +9274,7 @@
       "field": "devices",
       "parent": "CreateUserHwidDeviceResponse",
       "source": "#/components/schemas/CreateUserHwidDeviceResponseDto/properties/response/properties/devices/items",
-      "signature": "ac29104af659589ea62f85b84dc4b46092a5f7b9da394fda6216f619acabf37e"
+      "signature": "8fa87919029bdacb054f8963eed8a026a3fb8d23dbca927575281e96fe5df757"
     },
     {
       "action": "reused",
@@ -8994,7 +9424,7 @@
       "field": "devices",
       "parent": "DeleteAllUserHwidDevicesResponse",
       "source": "#/components/schemas/DeleteAllUserHwidDevicesResponseDto/properties/response/properties/devices/items",
-      "signature": "ac29104af659589ea62f85b84dc4b46092a5f7b9da394fda6216f619acabf37e"
+      "signature": "8fa87919029bdacb054f8963eed8a026a3fb8d23dbca927575281e96fe5df757"
     },
     {
       "action": "reused",
@@ -9014,7 +9444,7 @@
       "field": "devices",
       "parent": "DeleteUserHwidDeviceResponse",
       "source": "#/components/schemas/DeleteUserHwidDeviceResponseDto/properties/response/properties/devices/items",
-      "signature": "ac29104af659589ea62f85b84dc4b46092a5f7b9da394fda6216f619acabf37e"
+      "signature": "8fa87919029bdacb054f8963eed8a026a3fb8d23dbca927575281e96fe5df757"
     },
     {
       "action": "hoisted",
@@ -9194,7 +9624,7 @@
       "field": "tokens",
       "parent": "ApiTokensResponse",
       "source": "#/components/schemas/GetApiTokensResponseDto/properties/response/properties/tokens/items",
-      "signature": "ca6b14a2e535c18bd79b0ebc60094f6061c871823f15d764f90d174b8015a596"
+      "signature": "30aec984063d19c17fc90234ceebddcd9daa9d597dadb1ce5b653f7857e32d61"
     },
     {
       "action": "hoisted",
@@ -9264,7 +9694,7 @@
       "field": "response",
       "parent": "GetComputedConfigProfileByUuidResponseDto",
       "source": "#/components/schemas/GetComputedConfigProfileByUuidResponseDto/properties/response",
-      "signature": "c017f6fdcac50d14b05ffeeb9086df81c365dc9ac631e7a46fce147427e4fb09"
+      "signature": "81e3105c4ad45bf429407a8235b33d02ec27496f3061fc824524bd67521e934e"
     },
     {
       "action": "reused",
@@ -9294,7 +9724,7 @@
       "field": "response",
       "parent": "GetConfigProfileByUuidResponseDto",
       "source": "#/components/schemas/GetConfigProfileByUuidResponseDto/properties/response",
-      "signature": "c017f6fdcac50d14b05ffeeb9086df81c365dc9ac631e7a46fce147427e4fb09"
+      "signature": "81e3105c4ad45bf429407a8235b33d02ec27496f3061fc824524bd67521e934e"
     },
     {
       "action": "reused",
@@ -9334,7 +9764,7 @@
       "field": "configProfiles",
       "parent": "ConfigProfilesResponse",
       "source": "#/components/schemas/GetConfigProfilesResponseDto/properties/response/properties/configProfiles/items",
-      "signature": "c017f6fdcac50d14b05ffeeb9086df81c365dc9ac631e7a46fce147427e4fb09"
+      "signature": "81e3105c4ad45bf429407a8235b33d02ec27496f3061fc824524bd67521e934e"
     },
     {
       "action": "reused",
@@ -9355,6 +9785,16 @@
       "parent": "ConfigProfileDto",
       "source": "#/components/schemas/GetConfigProfilesResponseDto/properties/response/properties/configProfiles/items/properties/nodes/items",
       "signature": "27e9b6fefd2065d852d56a716d1a8cfdd2471cecfb3a59545a1a488609903bdd"
+    },
+    {
+      "action": "reused",
+      "name": "ConfigProfilesTagsResponse",
+      "target": "SubpageConfigsTagsResponse",
+      "nicification": "GetConfigProfilesTagsResponse",
+      "field": "response",
+      "parent": "GetConfigProfilesTagsResponseDto",
+      "source": "#/components/schemas/GetConfigProfilesTagsResponseDto/properties/response",
+      "signature": "f92fefc4a8d3d701dacd7d8519b708601b628d5ffa7630e1af1b6211f481e0d4"
     },
     {
       "action": "hoisted",
@@ -9414,7 +9854,7 @@
       "field": "response",
       "parent": "GetExternalSquadByUuidResponseDto",
       "source": "#/components/schemas/GetExternalSquadByUuidResponseDto/properties/response",
-      "signature": "fe09cb8ecc7496ed459fc791eafadc9a81b1bf9784885b581132ec0f4dbad9ad"
+      "signature": "d8751e26cfd48f1787a8560b111edc20f97768252393a4c88f2de430f0db58f4"
     },
     {
       "action": "reused",
@@ -9494,7 +9934,7 @@
       "field": "externalSquads",
       "parent": "ExternalSquadsResponse",
       "source": "#/components/schemas/GetExternalSquadsResponseDto/properties/response/properties/externalSquads/items",
-      "signature": "fe09cb8ecc7496ed459fc791eafadc9a81b1bf9784885b581132ec0f4dbad9ad"
+      "signature": "d8751e26cfd48f1787a8560b111edc20f97768252393a4c88f2de430f0db58f4"
     },
     {
       "action": "hoisted",
@@ -9557,6 +9997,16 @@
       "signature": "36022b049c6d3bf7fb14b7ee8c14d6bf553c818b35ded90f20fa03b8f2456bdf"
     },
     {
+      "action": "reused",
+      "name": "ExternalSquadsTagsResponse",
+      "target": "SubpageConfigsTagsResponse",
+      "nicification": "GetExternalSquadsTagsResponse",
+      "field": "response",
+      "parent": "GetExternalSquadsTagsResponseDto",
+      "source": "#/components/schemas/GetExternalSquadsTagsResponseDto/properties/response",
+      "signature": "f92fefc4a8d3d701dacd7d8519b708601b628d5ffa7630e1af1b6211f481e0d4"
+    },
+    {
       "action": "hoisted",
       "name": "HostsDto",
       "target": "HostsDto",
@@ -9564,7 +10014,7 @@
       "field": "response",
       "parent": "GetHostsResponseDto",
       "source": "#/components/schemas/GetHostsResponseDto/properties/response/items",
-      "signature": "c851eff57a1a3dfe87139aca355077f9441f28effffcfbc6f89dce19afae9720"
+      "signature": "3b424d1de8f5143ded834cfcdef4e9417fa04b3e5947df3ec54420e0ad0aaaee"
     },
     {
       "action": "hoisted",
@@ -9578,13 +10028,23 @@
     },
     {
       "action": "hoisted",
+      "name": "HostsInternalSquadsDto",
+      "target": "HostsInternalSquadsDto",
+      "nicification": "GetHostsResponseInternalSquadsDto",
+      "field": "internalSquads",
+      "parent": "HostsDto",
+      "source": "#/components/schemas/GetHostsResponseDto/properties/response/items/properties/internalSquads",
+      "signature": "7881819cb4979ec73b07678ed4edddfee97546621b95e4b00af861100479a607"
+    },
+    {
+      "action": "hoisted",
       "name": "HostsMapperDto",
       "target": "HostsMapperDto",
       "nicification": "GetHostsResponseMapperDto",
       "field": "mapper",
       "parent": "HostsDto",
       "source": "#/components/schemas/GetHostsResponseDto/properties/response/items/properties/mapper",
-      "signature": "9f9756259547610f7d4117868a6ee699b4fccf51f124b28ee6fdcc7e8657de0b"
+      "signature": "fe88369ef088889210f3892914dda6c20c05b4d8cce7797102b2b49a389ae385"
     },
     {
       "action": "reused",
@@ -9594,7 +10054,7 @@
       "field": "base64",
       "parent": "HostsMapperDto",
       "source": "#/components/schemas/GetHostsResponseDto/properties/response/items/properties/mapper/properties/base64/items/oneOf/0",
-      "signature": "04e587db48e59c22857addf4bf1e0e97a2ee8e816a79881d4862f5c28554636e"
+      "signature": "3dc21e92d93ae3073f41981a19651ba937cd26e1a257089f62fb99246e0c4530"
     },
     {
       "action": "hoisted",
@@ -9604,7 +10064,7 @@
       "field": "base64",
       "parent": "HostsMapperDto",
       "source": "#/components/schemas/GetHostsResponseDto/properties/response/items/properties/mapper/properties/base64/items/oneOf/1",
-      "signature": "66ea9f2968787de49bac0b1dbf1e44098a5acea2f3af6e3b08a4d846fc5313bc"
+      "signature": "04fbf2fb53296f8afacda837be9ce277c6cc6691bdb0210b54e2715a87a53315"
     },
     {
       "action": "reused",
@@ -9614,7 +10074,7 @@
       "field": "base64",
       "parent": "HostsMapperDto",
       "source": "#/components/schemas/GetHostsResponseDto/properties/response/items/properties/mapper/properties/base64/items/oneOf/2",
-      "signature": "20c0d332a8e5548eff7200eb7ea6c43696b8a73998c95d83724c403d27188ac7"
+      "signature": "a67ac951825a0aad21f8b76f9b5bc83a3106885a1d1554d5d6286ab2427b7675"
     },
     {
       "action": "reused",
@@ -9709,7 +10169,7 @@
     {
       "action": "reused",
       "name": "HostsTagsResponse",
-      "target": "UsersTagsResponse",
+      "target": "SubpageConfigsTagsResponse",
       "nicification": "GetHostsTagsResponse",
       "field": "response",
       "parent": "GetHostsTagsResponseDto",
@@ -9754,7 +10214,7 @@
       "field": "devices",
       "parent": "HwidDevicesQueryResponse",
       "source": "#/components/schemas/GetHwidDevicesQueryResponseDto/properties/response/properties/devices/items",
-      "signature": "ac29104af659589ea62f85b84dc4b46092a5f7b9da394fda6216f619acabf37e"
+      "signature": "8fa87919029bdacb054f8963eed8a026a3fb8d23dbca927575281e96fe5df757"
     },
     {
       "action": "hoisted",
@@ -9844,7 +10304,7 @@
       "field": "billingNodes",
       "parent": "InfraBillingNodesResponse",
       "source": "#/components/schemas/GetInfraBillingNodesResponseDto/properties/response/properties/billingNodes/items",
-      "signature": "d7d4ca07b8d672632c427e1fa76610a8685929fca9f6432e81542285c2174bda"
+      "signature": "1ecf0bd3359db247617c167fe9f309b0fcbc5549acc5f3fc4862d617672474dd"
     },
     {
       "action": "reused",
@@ -9894,7 +10354,7 @@
       "field": "records",
       "parent": "InfraBillingRecordsResponse",
       "source": "#/components/schemas/GetInfraBillingRecordsResponseDto/properties/response/properties/records/items",
-      "signature": "658f06bc12200877c1b6ddd16ccff0d71a9bb4e7558263e477a60ec97a8dedf1"
+      "signature": "79356829e03a138b4e9b7fdf8db1ebc37933a3276dfd8caa1bb7429cf45f3b71"
     },
     {
       "action": "reused",
@@ -9914,7 +10374,7 @@
       "field": "response",
       "parent": "GetInfraProviderResponseDto",
       "source": "#/components/schemas/GetInfraProviderResponseDto/properties/response",
-      "signature": "d9efa5c972d083b98b55206d0d8c7daddc6270f0c10a267aa2be7de1b9b51137"
+      "signature": "4bef46dfdbe5657298eac2c8118f241d1d9cd65d659bd359f7e5b9a6fd7d9eea"
     },
     {
       "action": "reused",
@@ -9964,7 +10424,7 @@
       "field": "providers",
       "parent": "InfraProvidersResponse",
       "source": "#/components/schemas/GetInfraProvidersResponseDto/properties/response/properties/providers/items",
-      "signature": "d9efa5c972d083b98b55206d0d8c7daddc6270f0c10a267aa2be7de1b9b51137"
+      "signature": "4bef46dfdbe5657298eac2c8118f241d1d9cd65d659bd359f7e5b9a6fd7d9eea"
     },
     {
       "action": "hoisted",
@@ -10024,7 +10484,7 @@
       "field": "response",
       "parent": "GetInternalSquadResponseDto",
       "source": "#/components/schemas/GetInternalSquadResponseDto/properties/response",
-      "signature": "c45506e794ac9e80e7966c17225595740535aa21f2b9df2b9209639618ab314d"
+      "signature": "86f78ec7087a52af8bd8267aa4a6eb94b7a7798c013309391d2e57d4fbe4bc02"
     },
     {
       "action": "reused",
@@ -10114,7 +10574,7 @@
       "field": "internalSquads",
       "parent": "InternalSquadsResponse",
       "source": "#/components/schemas/GetInternalSquadsResponseDto/properties/response/properties/internalSquads/items",
-      "signature": "c45506e794ac9e80e7966c17225595740535aa21f2b9df2b9209639618ab314d"
+      "signature": "86f78ec7087a52af8bd8267aa4a6eb94b7a7798c013309391d2e57d4fbe4bc02"
     },
     {
       "action": "reused",
@@ -10135,6 +10595,16 @@
       "parent": "InternalSquadDto",
       "source": "#/components/schemas/GetInternalSquadsResponseDto/properties/response/properties/internalSquads/items/properties/info",
       "signature": "8c666c1cc3b1ee033d4f16462a030e61cde1ac19164eb4a99bf64a4168155770"
+    },
+    {
+      "action": "reused",
+      "name": "InternalSquadsTagsResponse",
+      "target": "SubpageConfigsTagsResponse",
+      "nicification": "GetInternalSquadsTagsResponse",
+      "field": "response",
+      "parent": "GetInternalSquadsTagsResponseDto",
+      "source": "#/components/schemas/GetInternalSquadsTagsResponseDto/properties/response",
+      "signature": "f92fefc4a8d3d701dacd7d8519b708601b628d5ffa7630e1af1b6211f481e0d4"
     },
     {
       "action": "hoisted",
@@ -10244,7 +10714,7 @@
       "field": "response",
       "parent": "GetNodePluginResponseDto",
       "source": "#/components/schemas/GetNodePluginResponseDto/properties/response",
-      "signature": "007708abc84b1f8835de26ffe3d96d39777845377d928a62bb134328a9c05e57"
+      "signature": "f04c677b8c17862434f6146f8969eacae23c89cc4b27f7f46423fac47bff13f0"
     },
     {
       "action": "hoisted",
@@ -10264,7 +10734,17 @@
       "field": "nodePlugins",
       "parent": "NodePluginsResponse",
       "source": "#/components/schemas/GetNodePluginsResponseDto/properties/response/properties/nodePlugins/items",
-      "signature": "eba12bc31245c08cf8295dffa0ff089a745bc6c9292f8589fdbfca7811c286f8"
+      "signature": "1d1b510ec66b45985a394d61a85d9104a7ec49d853427bac7c5c653b2a41570c"
+    },
+    {
+      "action": "reused",
+      "name": "NodePluginsTagsResponse",
+      "target": "SubpageConfigsTagsResponse",
+      "nicification": "GetNodePluginsTagsResponse",
+      "field": "response",
+      "parent": "GetNodePluginsTagsResponseDto",
+      "source": "#/components/schemas/GetNodePluginsTagsResponseDto/properties/response",
+      "signature": "f92fefc4a8d3d701dacd7d8519b708601b628d5ffa7630e1af1b6211f481e0d4"
     },
     {
       "action": "hoisted",
@@ -10354,7 +10834,7 @@
       "field": "response",
       "parent": "GetNodesResponseDto",
       "source": "#/components/schemas/GetNodesResponseDto/properties/response/items",
-      "signature": "1c3994b901f8a7fcf7ed54c73a96f8003d1754e6938a25f7c26955fcf1bb9522"
+      "signature": "2e6c5e52db544b618768c6275226f3b8c210c20499b10132052fb5d162bdf4f0"
     },
     {
       "action": "reused",
@@ -10394,7 +10874,7 @@
       "field": "provider",
       "parent": "NodesDto",
       "source": "#/components/schemas/GetNodesResponseDto/properties/response/items/properties/provider",
-      "signature": "2074e0b352bcb282e73bab77962ed86225abf711298c737d0c64fb958b52109d"
+      "signature": "bc727bd27c87fa8a34e448d5dc7d08efdf0c2f2535868198bebadd693ccaf14e"
     },
     {
       "action": "reused",
@@ -10469,7 +10949,7 @@
     {
       "action": "reused",
       "name": "NodesTagsResponse",
-      "target": "UsersTagsResponse",
+      "target": "SubpageConfigsTagsResponse",
       "nicification": "GetNodesTagsResponse",
       "field": "response",
       "parent": "GetNodesTagsResponseDto",
@@ -10494,7 +10974,7 @@
       "field": "passkeys",
       "parent": "PasskeysResponse",
       "source": "#/components/schemas/GetPasskeysResponseDto/properties/response/properties/passkeys/items",
-      "signature": "5147f3d3a7b8fe56fa7c65a5622c1d67663974ac44944499e3d417ea8ef958f0"
+      "signature": "8d3f9b86cc36707b3f7ee82579476f9bd0abce8042c1cca5a8810cc54177c698"
     },
     {
       "action": "hoisted",
@@ -10554,7 +11034,7 @@
       "field": "mapper",
       "parent": "ResolvedProxyConfigBaseClientOverridesDto",
       "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/0/properties/clientOverrides/properties/mapper",
-      "signature": "4b0ed0f58a93fe5f616d7c68b17b035ba2b979dc25b342af7d7a19f07e61a468"
+      "signature": "886069f935558f1f729bbc230006eaeb9c215082c990376b289df578fe05fc20"
     },
     {
       "action": "hoisted",
@@ -10564,7 +11044,7 @@
       "field": "base64",
       "parent": "ResolvedProxyConfigBaseClientOverridesMapperDto",
       "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/0/properties/clientOverrides/properties/mapper/properties/base64/items/oneOf/0",
-      "signature": "04e587db48e59c22857addf4bf1e0e97a2ee8e816a79881d4862f5c28554636e"
+      "signature": "3dc21e92d93ae3073f41981a19651ba937cd26e1a257089f62fb99246e0c4530"
     },
     {
       "action": "hoisted",
@@ -10574,7 +11054,7 @@
       "field": "base64",
       "parent": "ResolvedProxyConfigBaseClientOverridesMapperDto",
       "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/0/properties/clientOverrides/properties/mapper/properties/base64/items/oneOf/1",
-      "signature": "da63b9e421896557018f7781771146fcf193d63b075bade308eedf6bee54316b"
+      "signature": "fcb3abeffdc21bad8e5cc59f46a6ae17c8cc7cdd84fdb2be273f0c08c84d11b1"
     },
     {
       "action": "hoisted",
@@ -10584,7 +11064,7 @@
       "field": "base64",
       "parent": "ResolvedProxyConfigBaseClientOverridesMapperDto",
       "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/resolvedProxyConfigs/items/allOf/0/properties/clientOverrides/properties/mapper/properties/base64/items/oneOf/2",
-      "signature": "20c0d332a8e5548eff7200eb7ea6c43696b8a73998c95d83724c403d27188ac7"
+      "signature": "a67ac951825a0aad21f8b76f9b5bc83a3106885a1d1554d5d6286ab2427b7675"
     },
     {
       "action": "hoisted",
@@ -11044,7 +11524,7 @@
       "field": "user",
       "parent": "RawSubscriptionByShortUuidResponse",
       "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/user",
-      "signature": "740c88448ccde12acbf1a7a9c798e3770383689a55094696de9d9aa4dde63525"
+      "signature": "dbc07fca4e017ee99295e99242d6e110343dd2f5eaa82c95f725ed1e14979b0b"
     },
     {
       "action": "reused",
@@ -11064,7 +11544,7 @@
       "field": "userTraffic",
       "parent": "RawSubscriptionByShortUuidResponseUserDto",
       "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/user/properties/userTraffic",
-      "signature": "d24ba263168e464c5d16bb91a76f4c6ae1b4360f11e26d9a46e1664dde108430"
+      "signature": "7c6f81490dc4d6abc644e4e7bc9735d8dce1719b8da8b00c7aa9c21a63edd4ba"
     },
     {
       "action": "hoisted",
@@ -11074,7 +11554,7 @@
       "field": "response",
       "parent": "GetRecapResponseDto",
       "source": "#/components/schemas/GetRecapResponseDto/properties/response",
-      "signature": "16ef2a2884e4d32999f3dc0342f32e04e34fe53f0c28c6a4a78cfe94a6a43b69"
+      "signature": "46405493ebd017caaa21096c6d9b5973624ea4e239316641c8b381269ff08367"
     },
     {
       "action": "hoisted",
@@ -11234,7 +11714,7 @@
       "field": "response",
       "parent": "GetSharedListResponseDto",
       "source": "#/components/schemas/GetSharedListResponseDto/properties/response",
-      "signature": "522328153d1cd39be77cbccd4cd456cbc0d283b54bae1735897ce8530b8ea7db"
+      "signature": "ab8778cd61ef903159948d26e8f0d4e90e719964ba22fd108ec826f35e08d293"
     },
     {
       "action": "hoisted",
@@ -11254,7 +11734,7 @@
       "field": "sharedLists",
       "parent": "SharedListsResponse",
       "source": "#/components/schemas/GetSharedListsResponseDto/properties/response/properties/sharedLists/items",
-      "signature": "91ecabb4ecec181e830fa67056ae762b1622959ee4338de9a37a1d7d72a383ba"
+      "signature": "ef28ea205cae572d5492f7fd9707e217d7c8a513af6301de7a11a282a0fae86b"
     },
     {
       "action": "hoisted",
@@ -11574,7 +12054,7 @@
       "field": "response",
       "parent": "GetSubpageConfigResponseDto",
       "source": "#/components/schemas/GetSubpageConfigResponseDto/properties/response",
-      "signature": "ccf0e80ea96bf03a1d2a3003d5e21a217f17f4878529429d99b8bb0fd7827796"
+      "signature": "48ee215472a5740a5d25702d3fbfe031b45c07c85aa756f73f3fb31a533b9f15"
     },
     {
       "action": "hoisted",
@@ -11594,7 +12074,17 @@
       "field": "configs",
       "parent": "SubpageConfigsResponse",
       "source": "#/components/schemas/GetSubpageConfigsResponseDto/properties/response/properties/configs/items",
-      "signature": "99ceeaba1daf139407b7f284c57de097c1eb25d588565e663e8b26b161f001a5"
+      "signature": "00d78ad859b5212949f31b711f14bad72bd3090b56aa3d8968873a37d0de6de5"
+    },
+    {
+      "action": "hoisted",
+      "name": "SubpageConfigsTagsResponse",
+      "target": "SubpageConfigsTagsResponse",
+      "nicification": "GetSubpageConfigsTagsResponse",
+      "field": "response",
+      "parent": "GetSubpageConfigsTagsResponseDto",
+      "source": "#/components/schemas/GetSubpageConfigsTagsResponseDto/properties/response",
+      "signature": "f92fefc4a8d3d701dacd7d8519b708601b628d5ffa7630e1af1b6211f481e0d4"
     },
     {
       "action": "reused",
@@ -11614,7 +12104,7 @@
       "field": "user",
       "parent": "SubscriptionInfoDto",
       "source": "#/components/schemas/GetSubscriptionByIdResponseDto/properties/response/properties/user",
-      "signature": "32c1335669a7fdf33af16568a7be66fc65d094e13ec29033c6de70c6111ee92d"
+      "signature": "9a106a69e9372eb2702771bdea77596383a2f33241d441ff7844f436e52cd79c"
     },
     {
       "action": "reused",
@@ -11634,7 +12124,7 @@
       "field": "user",
       "parent": "SubscriptionInfoDto",
       "source": "#/components/schemas/GetSubscriptionByShortUuidProtectedResponseDto/properties/response/properties/user",
-      "signature": "32c1335669a7fdf33af16568a7be66fc65d094e13ec29033c6de70c6111ee92d"
+      "signature": "9a106a69e9372eb2702771bdea77596383a2f33241d441ff7844f436e52cd79c"
     },
     {
       "action": "reused",
@@ -11654,7 +12144,7 @@
       "field": "user",
       "parent": "SubscriptionInfoDto",
       "source": "#/components/schemas/GetSubscriptionByUsernameResponseDto/properties/response/properties/user",
-      "signature": "32c1335669a7fdf33af16568a7be66fc65d094e13ec29033c6de70c6111ee92d"
+      "signature": "9a106a69e9372eb2702771bdea77596383a2f33241d441ff7844f436e52cd79c"
     },
     {
       "action": "reused",
@@ -11674,7 +12164,7 @@
       "field": "user",
       "parent": "SubscriptionInfoDto",
       "source": "#/components/schemas/GetSubscriptionInfoResponseDto/properties/response/properties/user",
-      "signature": "32c1335669a7fdf33af16568a7be66fc65d094e13ec29033c6de70c6111ee92d"
+      "signature": "9a106a69e9372eb2702771bdea77596383a2f33241d441ff7844f436e52cd79c"
     },
     {
       "action": "hoisted",
@@ -11694,7 +12184,7 @@
       "field": "records",
       "parent": "SubscriptionRequestHistoryResponse",
       "source": "#/components/schemas/GetSubscriptionRequestHistoryResponseDto/properties/response/properties/records/items",
-      "signature": "34657b0f2d29f6ca0e277020fdf2f5d6c638a789f90172b260b9a2a7d8a9d802"
+      "signature": "8869f43b2e39954cd867b5aadb818b31e477f58d8a273a3e5f49298959f6593f"
     },
     {
       "action": "hoisted",
@@ -11724,7 +12214,7 @@
       "field": "hourlyRequestStats",
       "parent": "GetSubscriptionRequestHistoryStatsResponseModelDto",
       "source": "#/components/schemas/GetSubscriptionRequestHistoryStatsResponseDto/properties/response/properties/hourlyRequestStats/items",
-      "signature": "44ce2fb8a3f5b2c85cf1fc351cb49f5750146b03030a2ead982b67bb588b14c0"
+      "signature": "ee2eb91061ddec7811b0bde8f2cf9cff846e4abe0e7b952aac402a71e1049272"
     },
     {
       "action": "hoisted",
@@ -11734,7 +12224,7 @@
       "field": "response",
       "parent": "GetSubscriptionSettingsResponseDto",
       "source": "#/components/schemas/GetSubscriptionSettingsResponseDto/properties/response",
-      "signature": "7c0adce3ba40b51834d1eccbdfc313a058dc20b4d0476f12ebcbe6845c6dd63e"
+      "signature": "3b86f467057eebe0d953129166d458f0e73d958315cd193d10a6282bf25671ff"
     },
     {
       "action": "reused",
@@ -11837,6 +12327,16 @@
       "signature": "9dc697656d0d98814bf025f321f87f20b132af18f2de171bb98dbbee0a2b9336"
     },
     {
+      "action": "reused",
+      "name": "SubscriptionTemplatesTagsResponse",
+      "target": "SubpageConfigsTagsResponse",
+      "nicification": "GetSubscriptionTemplatesTagsResponse",
+      "field": "response",
+      "parent": "GetSubscriptionTemplatesTagsResponseDto",
+      "source": "#/components/schemas/GetSubscriptionTemplatesTagsResponseDto/properties/response",
+      "signature": "f92fefc4a8d3d701dacd7d8519b708601b628d5ffa7630e1af1b6211f481e0d4"
+    },
+    {
       "action": "hoisted",
       "name": "SubscriptionsResponse",
       "target": "SubscriptionsResponse",
@@ -11864,7 +12364,7 @@
       "field": "user",
       "parent": "SubscriptionInfoDto",
       "source": "#/components/schemas/GetSubscriptionsResponseDto/properties/response/properties/subscriptions/items/properties/user",
-      "signature": "32c1335669a7fdf33af16568a7be66fc65d094e13ec29033c6de70c6111ee92d"
+      "signature": "9a106a69e9372eb2702771bdea77596383a2f33241d441ff7844f436e52cd79c"
     },
     {
       "action": "reused",
@@ -11874,7 +12374,7 @@
       "field": "response",
       "parent": "GetTemplateResponseDto",
       "source": "#/components/schemas/GetTemplateResponseDto/properties/response",
-      "signature": "ae21e34cb43a6845903e7285473808b9b3ce24fd3c9f36163fde2d4f0d0ab536"
+      "signature": "5a7e443f036873364b1f7737bb4ba14ce5bba9af7912d0a141fdb05d6d0562fb"
     },
     {
       "action": "hoisted",
@@ -11894,7 +12394,7 @@
       "field": "templates",
       "parent": "TemplatesResponse",
       "source": "#/components/schemas/GetTemplatesResponseDto/properties/response/properties/templates/items",
-      "signature": "ae21e34cb43a6845903e7285473808b9b3ce24fd3c9f36163fde2d4f0d0ab536"
+      "signature": "5a7e443f036873364b1f7737bb4ba14ce5bba9af7912d0a141fdb05d6d0562fb"
     },
     {
       "action": "hoisted",
@@ -11934,7 +12434,7 @@
       "field": "records",
       "parent": "TorrentBlockerReportsResponse",
       "source": "#/components/schemas/GetTorrentBlockerReportsResponseDto/properties/response/properties/records/items",
-      "signature": "e8332c49d634d4397493bc384bfa1de1cd8fe0265e9ed804696d2a341b188ac8"
+      "signature": "a2dc03cc3f77144c16bf140d269ae9bd28e93bbd83020ae95c8e11ef3ea3c25e"
     },
     {
       "action": "reused",
@@ -11964,7 +12464,7 @@
       "field": "actionReport",
       "parent": "TorrentBlockerReportReportDto",
       "source": "#/components/schemas/GetTorrentBlockerReportsResponseDto/properties/response/properties/records/items/properties/report/properties/actionReport",
-      "signature": "e4a53468f3522354ab89902e3833957b0a61e65187e7f98f303c5d6fd61434f1"
+      "signature": "403cb07e315880ef768112f2610ad9081c35f9389d9335388d55a1c635122d18"
     },
     {
       "action": "hoisted",
@@ -12074,7 +12574,7 @@
       "field": "devices",
       "parent": "UserHwidDevicesResponse",
       "source": "#/components/schemas/GetUserHwidDevicesResponseDto/properties/response/properties/devices/items",
-      "signature": "ac29104af659589ea62f85b84dc4b46092a5f7b9da394fda6216f619acabf37e"
+      "signature": "8fa87919029bdacb054f8963eed8a026a3fb8d23dbca927575281e96fe5df757"
     },
     {
       "action": "hoisted",
@@ -12114,7 +12614,7 @@
       "field": "records",
       "parent": "UserSubscriptionRequestHistoryResponse",
       "source": "#/components/schemas/GetUserSubscriptionRequestHistoryResponseDto/properties/response/properties/records/items",
-      "signature": "ee199d1e30e8e67ab7e916b2859ddb6d9f5f039159e4ce2aec6ebac5f3e0f6c5"
+      "signature": "bb76556e449c723cc9334c91d9a28bf1c5289a3524fe92c3dc3be625ba357ff8"
     },
     {
       "action": "hoisted",
@@ -12134,7 +12634,7 @@
       "field": "users",
       "parent": "UsersResponse",
       "source": "#/components/schemas/GetUsersResponseDto/properties/response/properties/users/items",
-      "signature": "740c88448ccde12acbf1a7a9c798e3770383689a55094696de9d9aa4dde63525"
+      "signature": "dbc07fca4e017ee99295e99242d6e110343dd2f5eaa82c95f725ed1e14979b0b"
     },
     {
       "action": "hoisted",
@@ -12154,7 +12654,7 @@
       "field": "userTraffic",
       "parent": "UsersResponseUsersDto",
       "source": "#/components/schemas/GetUsersResponseDto/properties/response/properties/users/items/properties/userTraffic",
-      "signature": "d24ba263168e464c5d16bb91a76f4c6ae1b4360f11e26d9a46e1664dde108430"
+      "signature": "7c6f81490dc4d6abc644e4e7bc9735d8dce1719b8da8b00c7aa9c21a63edd4ba"
     },
     {
       "action": "hoisted",
@@ -12174,7 +12674,7 @@
       "field": "users",
       "parent": "GetUsersStreamResponseModelDto",
       "source": "#/components/schemas/GetUsersStreamResponseDto/properties/response/properties/users/items",
-      "signature": "740c88448ccde12acbf1a7a9c798e3770383689a55094696de9d9aa4dde63525"
+      "signature": "dbc07fca4e017ee99295e99242d6e110343dd2f5eaa82c95f725ed1e14979b0b"
     },
     {
       "action": "reused",
@@ -12194,12 +12694,12 @@
       "field": "userTraffic",
       "parent": "UsersStreamResponseModelUsersDto",
       "source": "#/components/schemas/GetUsersStreamResponseDto/properties/response/properties/users/items/properties/userTraffic",
-      "signature": "d24ba263168e464c5d16bb91a76f4c6ae1b4360f11e26d9a46e1664dde108430"
+      "signature": "7c6f81490dc4d6abc644e4e7bc9735d8dce1719b8da8b00c7aa9c21a63edd4ba"
     },
     {
-      "action": "hoisted",
+      "action": "reused",
       "name": "UsersTagsResponse",
-      "target": "UsersTagsResponse",
+      "target": "SubpageConfigsTagsResponse",
       "nicification": "GetUsersTagsResponse",
       "field": "response",
       "parent": "GetUsersTagsResponseDto",
@@ -12214,7 +12714,7 @@
       "field": "response",
       "parent": "HostResponseDto",
       "source": "#/components/schemas/HostResponseDto/properties/response",
-      "signature": "9e26385a1ba5aebf85b8d5e01c56f94cce07cd350f24fb13d1603ba3a3f4f896"
+      "signature": "977d20d28712730e052f9649458f6a27764ef9337105f8784692babec5e52613"
     },
     {
       "action": "reused",
@@ -12227,6 +12727,16 @@
       "signature": "7b42ea98cbc10e1f9a3ba38f973a33747c8b03d5325cae1c52b25e566121b337"
     },
     {
+      "action": "reused",
+      "name": "HostsInternalSquadsDto",
+      "target": "HostsInternalSquadsDto",
+      "nicification": "HostResponseInternalSquadsDto",
+      "field": "internalSquads",
+      "parent": "HostsDto",
+      "source": "#/components/schemas/HostResponseDto/properties/response/properties/internalSquads",
+      "signature": "7881819cb4979ec73b07678ed4edddfee97546621b95e4b00af861100479a607"
+    },
+    {
       "action": "hoisted",
       "name": "HostsMapperDto2",
       "target": "HostsMapperDto2",
@@ -12234,7 +12744,7 @@
       "field": "mapper",
       "parent": "HostsDto",
       "source": "#/components/schemas/HostResponseDto/properties/response/properties/mapper",
-      "signature": "746726ff3dc0235c9ce6877508ccac2d5ad45a6c2465b2e741a3ee50a60992bd"
+      "signature": "1094854c39a77c7a1174ad640e27ded7ad13a28b3cac53fada7a6dd1313b1222"
     },
     {
       "action": "reused",
@@ -12244,7 +12754,7 @@
       "field": "base64",
       "parent": "HostsMapperDto",
       "source": "#/components/schemas/HostResponseDto/properties/response/properties/mapper/properties/base64/items/oneOf/0",
-      "signature": "04e587db48e59c22857addf4bf1e0e97a2ee8e816a79881d4862f5c28554636e"
+      "signature": "3dc21e92d93ae3073f41981a19651ba937cd26e1a257089f62fb99246e0c4530"
     },
     {
       "action": "hoisted",
@@ -12254,7 +12764,7 @@
       "field": "base64",
       "parent": "HostsMapperDto",
       "source": "#/components/schemas/HostResponseDto/properties/response/properties/mapper/properties/base64/items/oneOf/1",
-      "signature": "edbfe6276e357e8d37e3d726b8f1b7df5ee988e66989551871e9b1f912a1e396"
+      "signature": "ea71ca3016c8d3e80d823af05dea2b4cf6b7a470f4f07d30dca3a737cc492528"
     },
     {
       "action": "reused",
@@ -12264,7 +12774,7 @@
       "field": "base64",
       "parent": "HostsMapperDto",
       "source": "#/components/schemas/HostResponseDto/properties/response/properties/mapper/properties/base64/items/oneOf/2",
-      "signature": "20c0d332a8e5548eff7200eb7ea6c43696b8a73998c95d83724c403d27188ac7"
+      "signature": "a67ac951825a0aad21f8b76f9b5bc83a3106885a1d1554d5d6286ab2427b7675"
     },
     {
       "action": "reused",
@@ -12374,7 +12884,7 @@
       "field": "response",
       "parent": "NodeResponseDto",
       "source": "#/components/schemas/NodeResponseDto/properties/response",
-      "signature": "1c3994b901f8a7fcf7ed54c73a96f8003d1754e6938a25f7c26955fcf1bb9522"
+      "signature": "2e6c5e52db544b618768c6275226f3b8c210c20499b10132052fb5d162bdf4f0"
     },
     {
       "action": "reused",
@@ -12414,7 +12924,7 @@
       "field": "provider",
       "parent": "NodesDto",
       "source": "#/components/schemas/NodeResponseDto/properties/response/properties/provider",
-      "signature": "2074e0b352bcb282e73bab77962ed86225abf711298c737d0c64fb958b52109d"
+      "signature": "bc727bd27c87fa8a34e448d5dc7d08efdf0c2f2535868198bebadd693ccaf14e"
     },
     {
       "action": "reused",
@@ -12584,7 +13094,7 @@
       "field": "data",
       "parent": "RemnawaveWebhookCrmEventsDto",
       "source": "#/components/schemas/RemnawaveWebhookCrmEventsDto/properties/data",
-      "signature": "3cbcc3b8b5c5a82735730677bdf6238f2201ff8758253c40e3acdd4b4c04a7a6"
+      "signature": "c5aa21ad571aafea083f2c330c93972a0b75a94b9d022b61cd1ee24a485a9345"
     },
     {
       "action": "hoisted",
@@ -12604,7 +13114,7 @@
       "field": "data",
       "parent": "RemnawaveWebhookNodeEventsDto",
       "source": "#/components/schemas/RemnawaveWebhookNodeEventsDto/properties/data",
-      "signature": "1c3994b901f8a7fcf7ed54c73a96f8003d1754e6938a25f7c26955fcf1bb9522"
+      "signature": "2e6c5e52db544b618768c6275226f3b8c210c20499b10132052fb5d162bdf4f0"
     },
     {
       "action": "reused",
@@ -12644,7 +13154,7 @@
       "field": "provider",
       "parent": "NodesDto",
       "source": "#/components/schemas/RemnawaveWebhookNodeEventsDto/properties/data/properties/provider",
-      "signature": "2074e0b352bcb282e73bab77962ed86225abf711298c737d0c64fb958b52109d"
+      "signature": "bc727bd27c87fa8a34e448d5dc7d08efdf0c2f2535868198bebadd693ccaf14e"
     },
     {
       "action": "reused",
@@ -12714,7 +13224,7 @@
       "field": "apiToken",
       "parent": "RemnawaveWebhookServiceEventsDataDto",
       "source": "#/components/schemas/RemnawaveWebhookServiceEventsDto/properties/data/properties/apiToken",
-      "signature": "286d4733ef0bb11c84cfc1b6a9ddbb3f99a416c8a27c1925495992f255efbd8b"
+      "signature": "1238ea8ad2151f95e749d7340a73930501eb165bcdabdc433d14c4ab7dc4e572"
     },
     {
       "action": "hoisted",
@@ -12754,7 +13264,7 @@
       "field": "node",
       "parent": "RemnawaveWebhookTorrentBlockerEventsDataDto",
       "source": "#/components/schemas/RemnawaveWebhookTorrentBlockerEventsDto/properties/data/properties/node",
-      "signature": "1c3994b901f8a7fcf7ed54c73a96f8003d1754e6938a25f7c26955fcf1bb9522"
+      "signature": "2e6c5e52db544b618768c6275226f3b8c210c20499b10132052fb5d162bdf4f0"
     },
     {
       "action": "hoisted",
@@ -12794,7 +13304,7 @@
       "field": "provider",
       "parent": "NodesDto",
       "source": "#/components/schemas/RemnawaveWebhookTorrentBlockerEventsDto/properties/data/properties/node/properties/provider",
-      "signature": "2074e0b352bcb282e73bab77962ed86225abf711298c737d0c64fb958b52109d"
+      "signature": "bc727bd27c87fa8a34e448d5dc7d08efdf0c2f2535868198bebadd693ccaf14e"
     },
     {
       "action": "hoisted",
@@ -12864,7 +13374,7 @@
       "field": "actionReport",
       "parent": "RemnawaveWebhookTorrentBlockerEventsDataReportDto",
       "source": "#/components/schemas/RemnawaveWebhookTorrentBlockerEventsDto/properties/data/properties/report/properties/actionReport",
-      "signature": "e4a53468f3522354ab89902e3833957b0a61e65187e7f98f303c5d6fd61434f1"
+      "signature": "403cb07e315880ef768112f2610ad9081c35f9389d9335388d55a1c635122d18"
     },
     {
       "action": "reused",
@@ -12884,7 +13394,7 @@
       "field": "user",
       "parent": "RemnawaveWebhookTorrentBlockerEventsDataDto",
       "source": "#/components/schemas/RemnawaveWebhookTorrentBlockerEventsDto/properties/data/properties/user",
-      "signature": "740c88448ccde12acbf1a7a9c798e3770383689a55094696de9d9aa4dde63525"
+      "signature": "dbc07fca4e017ee99295e99242d6e110343dd2f5eaa82c95f725ed1e14979b0b"
     },
     {
       "action": "reused",
@@ -12904,7 +13414,7 @@
       "field": "userTraffic",
       "parent": "RemnawaveWebhookTorrentBlockerEventsDataUserDto",
       "source": "#/components/schemas/RemnawaveWebhookTorrentBlockerEventsDto/properties/data/properties/user/properties/userTraffic",
-      "signature": "d24ba263168e464c5d16bb91a76f4c6ae1b4360f11e26d9a46e1664dde108430"
+      "signature": "7c6f81490dc4d6abc644e4e7bc9735d8dce1719b8da8b00c7aa9c21a63edd4ba"
     },
     {
       "action": "reused",
@@ -12914,7 +13424,7 @@
       "field": "data",
       "parent": "RemnawaveWebhookUserEventsDto",
       "source": "#/components/schemas/RemnawaveWebhookUserEventsDto/properties/data",
-      "signature": "740c88448ccde12acbf1a7a9c798e3770383689a55094696de9d9aa4dde63525"
+      "signature": "dbc07fca4e017ee99295e99242d6e110343dd2f5eaa82c95f725ed1e14979b0b"
     },
     {
       "action": "reused",
@@ -12934,7 +13444,7 @@
       "field": "userTraffic",
       "parent": "RemnawaveWebhookUserEventsDataDto",
       "source": "#/components/schemas/RemnawaveWebhookUserEventsDto/properties/data/properties/userTraffic",
-      "signature": "d24ba263168e464c5d16bb91a76f4c6ae1b4360f11e26d9a46e1664dde108430"
+      "signature": "7c6f81490dc4d6abc644e4e7bc9735d8dce1719b8da8b00c7aa9c21a63edd4ba"
     },
     {
       "action": "hoisted",
@@ -12964,7 +13474,7 @@
       "field": "hwidUserDevice",
       "parent": "RemnawaveWebhookUserHwidDevicesEventsDataDto",
       "source": "#/components/schemas/RemnawaveWebhookUserHwidDevicesEventsDto/properties/data/properties/hwidUserDevice",
-      "signature": "ac29104af659589ea62f85b84dc4b46092a5f7b9da394fda6216f619acabf37e"
+      "signature": "8fa87919029bdacb054f8963eed8a026a3fb8d23dbca927575281e96fe5df757"
     },
     {
       "action": "reused",
@@ -12974,7 +13484,7 @@
       "field": "user",
       "parent": "RemnawaveWebhookUserHwidDevicesEventsDataDto",
       "source": "#/components/schemas/RemnawaveWebhookUserHwidDevicesEventsDto/properties/data/properties/user",
-      "signature": "740c88448ccde12acbf1a7a9c798e3770383689a55094696de9d9aa4dde63525"
+      "signature": "dbc07fca4e017ee99295e99242d6e110343dd2f5eaa82c95f725ed1e14979b0b"
     },
     {
       "action": "reused",
@@ -12994,7 +13504,7 @@
       "field": "userTraffic",
       "parent": "RemnawaveWebhookUserHwidDevicesEventsDataUserDto",
       "source": "#/components/schemas/RemnawaveWebhookUserHwidDevicesEventsDto/properties/data/properties/user/properties/userTraffic",
-      "signature": "d24ba263168e464c5d16bb91a76f4c6ae1b4360f11e26d9a46e1664dde108430"
+      "signature": "7c6f81490dc4d6abc644e4e7bc9735d8dce1719b8da8b00c7aa9c21a63edd4ba"
     },
     {
       "action": "reused",
@@ -13024,7 +13534,7 @@
       "field": "configProfiles",
       "parent": "ReorderConfigProfilesResponse",
       "source": "#/components/schemas/ReorderConfigProfilesResponseDto/properties/response/properties/configProfiles/items",
-      "signature": "c017f6fdcac50d14b05ffeeb9086df81c365dc9ac631e7a46fce147427e4fb09"
+      "signature": "81e3105c4ad45bf429407a8235b33d02ec27496f3061fc824524bd67521e934e"
     },
     {
       "action": "reused",
@@ -13074,7 +13584,7 @@
       "field": "externalSquads",
       "parent": "ReorderExternalSquadsResponse",
       "source": "#/components/schemas/ReorderExternalSquadsResponseDto/properties/response/properties/externalSquads/items",
-      "signature": "fe09cb8ecc7496ed459fc791eafadc9a81b1bf9784885b581132ec0f4dbad9ad"
+      "signature": "d8751e26cfd48f1787a8560b111edc20f97768252393a4c88f2de430f0db58f4"
     },
     {
       "action": "reused",
@@ -13184,7 +13694,7 @@
       "field": "internalSquads",
       "parent": "ReorderInternalSquadsResponse",
       "source": "#/components/schemas/ReorderInternalSquadsResponseDto/properties/response/properties/internalSquads/items",
-      "signature": "c45506e794ac9e80e7966c17225595740535aa21f2b9df2b9209639618ab314d"
+      "signature": "86f78ec7087a52af8bd8267aa4a6eb94b7a7798c013309391d2e57d4fbe4bc02"
     },
     {
       "action": "reused",
@@ -13234,7 +13744,7 @@
       "field": "nodePlugins",
       "parent": "ReorderNodePluginsResponse",
       "source": "#/components/schemas/ReorderNodePluginsResponseDto/properties/response/properties/nodePlugins/items",
-      "signature": "eba12bc31245c08cf8295dffa0ff089a745bc6c9292f8589fdbfca7811c286f8"
+      "signature": "1d1b510ec66b45985a394d61a85d9104a7ec49d853427bac7c5c653b2a41570c"
     },
     {
       "action": "reused",
@@ -13254,7 +13764,7 @@
       "field": "response",
       "parent": "ReorderNodesResponseDto",
       "source": "#/components/schemas/ReorderNodesResponseDto/properties/response/items",
-      "signature": "1c3994b901f8a7fcf7ed54c73a96f8003d1754e6938a25f7c26955fcf1bb9522"
+      "signature": "2e6c5e52db544b618768c6275226f3b8c210c20499b10132052fb5d162bdf4f0"
     },
     {
       "action": "reused",
@@ -13294,7 +13804,7 @@
       "field": "provider",
       "parent": "NodesDto",
       "source": "#/components/schemas/ReorderNodesResponseDto/properties/response/items/properties/provider",
-      "signature": "2074e0b352bcb282e73bab77962ed86225abf711298c737d0c64fb958b52109d"
+      "signature": "bc727bd27c87fa8a34e448d5dc7d08efdf0c2f2535868198bebadd693ccaf14e"
     },
     {
       "action": "reused",
@@ -13374,7 +13884,7 @@
       "field": "configs",
       "parent": "ReorderSubpageConfigsResponse",
       "source": "#/components/schemas/ReorderSubpageConfigsResponseDto/properties/response/properties/configs/items",
-      "signature": "99ceeaba1daf139407b7f284c57de097c1eb25d588565e663e8b26b161f001a5"
+      "signature": "00d78ad859b5212949f31b711f14bad72bd3090b56aa3d8968873a37d0de6de5"
     },
     {
       "action": "reused",
@@ -13404,7 +13914,7 @@
       "field": "templates",
       "parent": "ReorderSubscriptionTemplatesResponse",
       "source": "#/components/schemas/ReorderSubscriptionTemplatesResponseDto/properties/response/properties/templates/items",
-      "signature": "ae21e34cb43a6845903e7285473808b9b3ce24fd3c9f36163fde2d4f0d0ab536"
+      "signature": "5a7e443f036873364b1f7737bb4ba14ce5bba9af7912d0a141fdb05d6d0562fb"
     },
     {
       "action": "hoisted",
@@ -13415,6 +13925,66 @@
       "parent": "ResolveUserResponseDto",
       "source": "#/components/schemas/ResolveUserResponseDto/properties/response",
       "signature": "ef779cc03e9016f151083d7b2b8eceae2e88612f699bd29aded946dc14bc0438"
+    },
+    {
+      "action": "reused",
+      "name": "SetConfigProfilesTagsResponse",
+      "target": "SetSubpageConfigsTagsResponse",
+      "nicification": "SetConfigProfilesTagsResponse",
+      "field": "response",
+      "parent": "SetConfigProfilesTagsResponseDto",
+      "source": "#/components/schemas/SetConfigProfilesTagsResponseDto/properties/response",
+      "signature": "9c76ba5ad63c5e2ce6dac69532b699158f7aba5a03a322a43fa02a6761b78edf"
+    },
+    {
+      "action": "reused",
+      "name": "SetExternalSquadsTagsResponse",
+      "target": "SetSubpageConfigsTagsResponse",
+      "nicification": "SetExternalSquadsTagsResponse",
+      "field": "response",
+      "parent": "SetExternalSquadsTagsResponseDto",
+      "source": "#/components/schemas/SetExternalSquadsTagsResponseDto/properties/response",
+      "signature": "9c76ba5ad63c5e2ce6dac69532b699158f7aba5a03a322a43fa02a6761b78edf"
+    },
+    {
+      "action": "reused",
+      "name": "SetInternalSquadsTagsResponse",
+      "target": "SetSubpageConfigsTagsResponse",
+      "nicification": "SetInternalSquadsTagsResponse",
+      "field": "response",
+      "parent": "SetInternalSquadsTagsResponseDto",
+      "source": "#/components/schemas/SetInternalSquadsTagsResponseDto/properties/response",
+      "signature": "9c76ba5ad63c5e2ce6dac69532b699158f7aba5a03a322a43fa02a6761b78edf"
+    },
+    {
+      "action": "reused",
+      "name": "SetNodePluginsTagsResponse",
+      "target": "SetSubpageConfigsTagsResponse",
+      "nicification": "SetNodePluginsTagsResponse",
+      "field": "response",
+      "parent": "SetNodePluginsTagsResponseDto",
+      "source": "#/components/schemas/SetNodePluginsTagsResponseDto/properties/response",
+      "signature": "9c76ba5ad63c5e2ce6dac69532b699158f7aba5a03a322a43fa02a6761b78edf"
+    },
+    {
+      "action": "hoisted",
+      "name": "SetSubpageConfigsTagsResponse",
+      "target": "SetSubpageConfigsTagsResponse",
+      "nicification": "SetSubpageConfigsTagsResponse",
+      "field": "response",
+      "parent": "SetSubpageConfigsTagsResponseDto",
+      "source": "#/components/schemas/SetSubpageConfigsTagsResponseDto/properties/response",
+      "signature": "9c76ba5ad63c5e2ce6dac69532b699158f7aba5a03a322a43fa02a6761b78edf"
+    },
+    {
+      "action": "reused",
+      "name": "SetSubscriptionTemplatesTagsResponse",
+      "target": "SetSubpageConfigsTagsResponse",
+      "nicification": "SetSubscriptionTemplatesTagsResponse",
+      "field": "response",
+      "parent": "SetSubscriptionTemplatesTagsResponseDto",
+      "source": "#/components/schemas/SetSubscriptionTemplatesTagsResponseDto/properties/response",
+      "signature": "9c76ba5ad63c5e2ce6dac69532b699158f7aba5a03a322a43fa02a6761b78edf"
     },
     {
       "action": "reused",
@@ -13434,7 +14004,7 @@
       "field": "response",
       "parent": "UpdateConfigProfileResponseDto",
       "source": "#/components/schemas/UpdateConfigProfileResponseDto/properties/response",
-      "signature": "c017f6fdcac50d14b05ffeeb9086df81c365dc9ac631e7a46fce147427e4fb09"
+      "signature": "81e3105c4ad45bf429407a8235b33d02ec27496f3061fc824524bd67521e934e"
     },
     {
       "action": "reused",
@@ -13514,7 +14084,7 @@
       "field": "response",
       "parent": "UpdateExternalSquadResponseDto",
       "source": "#/components/schemas/UpdateExternalSquadResponseDto/properties/response",
-      "signature": "fe09cb8ecc7496ed459fc791eafadc9a81b1bf9784885b581132ec0f4dbad9ad"
+      "signature": "d8751e26cfd48f1787a8560b111edc20f97768252393a4c88f2de430f0db58f4"
     },
     {
       "action": "reused",
@@ -13587,6 +14157,16 @@
       "signature": "f5c65083e65d9b7e20b5c74fe42cbb781e2ff1a6b88d7a1176d518899e9c41c6"
     },
     {
+      "action": "reused",
+      "name": "UpdateHostBodyInternalSquadsDto",
+      "target": "HostsInternalSquadsDto",
+      "nicification": "UpdateHostBodyInternalSquadsDto",
+      "field": "internalSquads",
+      "parent": "UpdateHostBodyDto",
+      "source": "#/components/schemas/UpdateHostBodyDto/properties/internalSquads",
+      "signature": "7881819cb4979ec73b07678ed4edddfee97546621b95e4b00af861100479a607"
+    },
+    {
       "action": "hoisted",
       "name": "UpdateHostBodyMapperDto",
       "target": "UpdateHostBodyMapperDto",
@@ -13594,7 +14174,7 @@
       "field": "mapper",
       "parent": "UpdateHostBodyDto",
       "source": "#/components/schemas/UpdateHostBodyDto/properties/mapper",
-      "signature": "4a30509eb609b46bb5d99b33bb49e4d602671649029ac80202e869389b1ee1e8"
+      "signature": "6d6c3395e5925dc65600fa2c128784dc829256e48794aed5e1ef2c519756df17"
     },
     {
       "action": "reused",
@@ -13604,7 +14184,7 @@
       "field": "base64",
       "parent": "UpdateHostBodyMapperDto",
       "source": "#/components/schemas/UpdateHostBodyDto/properties/mapper/properties/base64/items/oneOf/0",
-      "signature": "04e587db48e59c22857addf4bf1e0e97a2ee8e816a79881d4862f5c28554636e"
+      "signature": "3dc21e92d93ae3073f41981a19651ba937cd26e1a257089f62fb99246e0c4530"
     },
     {
       "action": "hoisted",
@@ -13614,7 +14194,7 @@
       "field": "base64",
       "parent": "UpdateHostBodyMapperDto",
       "source": "#/components/schemas/UpdateHostBodyDto/properties/mapper/properties/base64/items/oneOf/1",
-      "signature": "7036ac7ec0a41b184cc5e4a1e35f8950c3bf93f4bfb5bbe6f72177e9cdaae575"
+      "signature": "20dfa619b252368aaf23aebd80585cefa2cf5dc4b7b8c068827a0b4e4abe92ea"
     },
     {
       "action": "reused",
@@ -13624,7 +14204,7 @@
       "field": "base64",
       "parent": "UpdateHostBodyMapperDto",
       "source": "#/components/schemas/UpdateHostBodyDto/properties/mapper/properties/base64/items/oneOf/2",
-      "signature": "20c0d332a8e5548eff7200eb7ea6c43696b8a73998c95d83724c403d27188ac7"
+      "signature": "a67ac951825a0aad21f8b76f9b5bc83a3106885a1d1554d5d6286ab2427b7675"
     },
     {
       "action": "reused",
@@ -13744,7 +14324,7 @@
       "field": "billingNodes",
       "parent": "UpdateInfraBillingNodeResponse",
       "source": "#/components/schemas/UpdateInfraBillingNodeResponseDto/properties/response/properties/billingNodes/items",
-      "signature": "d7d4ca07b8d672632c427e1fa76610a8685929fca9f6432e81542285c2174bda"
+      "signature": "1ecf0bd3359db247617c167fe9f309b0fcbc5549acc5f3fc4862d617672474dd"
     },
     {
       "action": "reused",
@@ -13784,7 +14364,7 @@
       "field": "response",
       "parent": "UpdateInfraProviderResponseDto",
       "source": "#/components/schemas/UpdateInfraProviderResponseDto/properties/response",
-      "signature": "d9efa5c972d083b98b55206d0d8c7daddc6270f0c10a267aa2be7de1b9b51137"
+      "signature": "4bef46dfdbe5657298eac2c8118f241d1d9cd65d659bd359f7e5b9a6fd7d9eea"
     },
     {
       "action": "reused",
@@ -13824,7 +14404,7 @@
       "field": "response",
       "parent": "UpdateInternalSquadResponseDto",
       "source": "#/components/schemas/UpdateInternalSquadResponseDto/properties/response",
-      "signature": "c45506e794ac9e80e7966c17225595740535aa21f2b9df2b9209639618ab314d"
+      "signature": "86f78ec7087a52af8bd8267aa4a6eb94b7a7798c013309391d2e57d4fbe4bc02"
     },
     {
       "action": "reused",
@@ -13857,6 +14437,16 @@
       "signature": "f5c65083e65d9b7e20b5c74fe42cbb781e2ff1a6b88d7a1176d518899e9c41c6"
     },
     {
+      "action": "reused",
+      "name": "UpdateManyHostsBodyInternalSquadsDto",
+      "target": "HostsInternalSquadsDto",
+      "nicification": "UpdateManyHostsBodyInternalSquadsDto",
+      "field": "internalSquads",
+      "parent": "UpdateManyHostsBodyDto",
+      "source": "#/components/schemas/UpdateManyHostsBodyDto/properties/internalSquads",
+      "signature": "7881819cb4979ec73b07678ed4edddfee97546621b95e4b00af861100479a607"
+    },
+    {
       "action": "hoisted",
       "name": "UpdateManyHostsBodyMapperDto",
       "target": "UpdateManyHostsBodyMapperDto",
@@ -13864,7 +14454,7 @@
       "field": "mapper",
       "parent": "UpdateManyHostsBodyDto",
       "source": "#/components/schemas/UpdateManyHostsBodyDto/properties/mapper",
-      "signature": "a525ba15f35d8637280d71d48846fb6649d3c54c3ea796e78765505a8e90c7e1"
+      "signature": "669c8c732dd72ac5361f77a630ad22edf2d1686b7044da61334ff151f02f0d6a"
     },
     {
       "action": "reused",
@@ -13874,7 +14464,7 @@
       "field": "base64",
       "parent": "UpdateManyHostsBodyMapperDto",
       "source": "#/components/schemas/UpdateManyHostsBodyDto/properties/mapper/properties/base64/items/oneOf/0",
-      "signature": "04e587db48e59c22857addf4bf1e0e97a2ee8e816a79881d4862f5c28554636e"
+      "signature": "3dc21e92d93ae3073f41981a19651ba937cd26e1a257089f62fb99246e0c4530"
     },
     {
       "action": "hoisted",
@@ -13884,7 +14474,7 @@
       "field": "base64",
       "parent": "UpdateManyHostsBodyMapperDto",
       "source": "#/components/schemas/UpdateManyHostsBodyDto/properties/mapper/properties/base64/items/oneOf/1",
-      "signature": "b0d7b4dac18eb7e0fb61d6c4cc427e5c044066b27e1d88df68abd9dc86069b5f"
+      "signature": "c49c9d55e250082ed601198fe96c7a68cde0f194fd98dec5b47ccac5c3ad5797"
     },
     {
       "action": "reused",
@@ -13894,7 +14484,7 @@
       "field": "base64",
       "parent": "UpdateManyHostsBodyMapperDto",
       "source": "#/components/schemas/UpdateManyHostsBodyDto/properties/mapper/properties/base64/items/oneOf/2",
-      "signature": "20c0d332a8e5548eff7200eb7ea6c43696b8a73998c95d83724c403d27188ac7"
+      "signature": "a67ac951825a0aad21f8b76f9b5bc83a3106885a1d1554d5d6286ab2427b7675"
     },
     {
       "action": "reused",
@@ -14024,7 +14614,7 @@
       "field": "response",
       "parent": "UpdateNodePluginResponseDto",
       "source": "#/components/schemas/UpdateNodePluginResponseDto/properties/response",
-      "signature": "007708abc84b1f8835de26ffe3d96d39777845377d928a62bb134328a9c05e57"
+      "signature": "f04c677b8c17862434f6146f8969eacae23c89cc4b27f7f46423fac47bff13f0"
     },
     {
       "action": "reused",
@@ -14044,7 +14634,7 @@
       "field": "passkeys",
       "parent": "UpdatePasskeyResponse",
       "source": "#/components/schemas/UpdatePasskeyResponseDto/properties/response/properties/passkeys/items",
-      "signature": "5147f3d3a7b8fe56fa7c65a5622c1d67663974ac44944499e3d417ea8ef958f0"
+      "signature": "8d3f9b86cc36707b3f7ee82579476f9bd0abce8042c1cca5a8810cc54177c698"
     },
     {
       "action": "reused",
@@ -14264,7 +14854,7 @@
       "field": "response",
       "parent": "UpdateSharedListResponseDto",
       "source": "#/components/schemas/UpdateSharedListResponseDto/properties/response",
-      "signature": "522328153d1cd39be77cbccd4cd456cbc0d283b54bae1735897ce8530b8ea7db"
+      "signature": "ab8778cd61ef903159948d26e8f0d4e90e719964ba22fd108ec826f35e08d293"
     },
     {
       "action": "reused",
@@ -14304,7 +14894,7 @@
       "field": "response",
       "parent": "UpdateSubpageConfigResponseDto",
       "source": "#/components/schemas/UpdateSubpageConfigResponseDto/properties/response",
-      "signature": "ccf0e80ea96bf03a1d2a3003d5e21a217f17f4878529429d99b8bb0fd7827796"
+      "signature": "48ee215472a5740a5d25702d3fbfe031b45c07c85aa756f73f3fb31a533b9f15"
     },
     {
       "action": "reused",
@@ -14404,7 +14994,7 @@
       "field": "response",
       "parent": "UpdateSubscriptionSettingsResponseDto",
       "source": "#/components/schemas/UpdateSubscriptionSettingsResponseDto/properties/response",
-      "signature": "7c0adce3ba40b51834d1eccbdfc313a058dc20b4d0476f12ebcbe6845c6dd63e"
+      "signature": "3b86f467057eebe0d953129166d458f0e73d958315cd193d10a6282bf25671ff"
     },
     {
       "action": "reused",
@@ -14524,7 +15114,7 @@
       "field": "response",
       "parent": "UpdateTemplateResponseDto",
       "source": "#/components/schemas/UpdateTemplateResponseDto/properties/response",
-      "signature": "ae21e34cb43a6845903e7285473808b9b3ce24fd3c9f36163fde2d4f0d0ab536"
+      "signature": "5a7e443f036873364b1f7737bb4ba14ce5bba9af7912d0a141fdb05d6d0562fb"
     },
     {
       "action": "reused",
@@ -14594,7 +15184,7 @@
       "field": "response",
       "parent": "UserResponseDto",
       "source": "#/components/schemas/UserResponseDto/properties/response",
-      "signature": "740c88448ccde12acbf1a7a9c798e3770383689a55094696de9d9aa4dde63525"
+      "signature": "dbc07fca4e017ee99295e99242d6e110343dd2f5eaa82c95f725ed1e14979b0b"
     },
     {
       "action": "reused",
@@ -14614,7 +15204,7 @@
       "field": "userTraffic",
       "parent": "UserResponse",
       "source": "#/components/schemas/UserResponseDto/properties/response/properties/userTraffic",
-      "signature": "d24ba263168e464c5d16bb91a76f4c6ae1b4360f11e26d9a46e1664dde108430"
+      "signature": "7c6f81490dc4d6abc644e4e7bc9735d8dce1719b8da8b00c7aa9c21a63edd4ba"
     },
     {
       "action": "reused",
@@ -14638,6 +15228,49 @@
     }
   ],
   "deprecation_annotations": [
+    {
+      "kind": "parameter",
+      "path": "/api/node-plugins/shared-lists",
+      "method": "delete",
+      "location": "path",
+      "name": "name"
+    },
+    {
+      "kind": "parameter",
+      "path": "/api/node-plugins/shared-lists/by-name",
+      "method": "get",
+      "location": "path",
+      "name": "name"
+    },
+    {
+      "kind": "field",
+      "schema": "CreateHostBodyDto",
+      "field": "excludedInternalSquads"
+    },
+    {
+      "kind": "field",
+      "schema": "UpdateHostBodyDto",
+      "field": "excludedInternalSquads"
+    },
+    {
+      "kind": "field",
+      "schema": "UpdateManyHostsBodyDto",
+      "field": "excludedInternalSquads"
+    },
+    {
+      "kind": "field",
+      "schema": "HostsDto",
+      "field": "excludedInternalSquads"
+    },
+    {
+      "kind": "schema",
+      "schema": "UsersTagsResponse"
+    },
+    {
+      "kind": "field",
+      "schema": "HostsDto2",
+      "field": "excludedInternalSquads"
+    },
     {
       "kind": "schema",
       "schema": "ResolvedProxyConfigStreamOverridesDto"

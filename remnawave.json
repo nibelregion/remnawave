@@ -456,6 +456,72 @@
         ]
       }
     },
+    "/api/subscription-page-configs/tags": {
+      "get": {
+        "operationId": "SubscriptionPageConfigController_getTags",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OkGetSubpageConfigsTagsResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequestError"
+          },
+          "404": {
+            "$ref": "#/components/responses/RemnawaveNotFoundErrorDtoSchema"
+          },
+          "500": {
+            "$ref": "#/components/responses/RemnawaveInternalServerErrorDtoSchema"
+          }
+        },
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "summary": "Get tags of Subpage Configs",
+        "tags": [
+          "Subscription Page Configs Controller"
+        ]
+      },
+      "patch": {
+        "operationId": "SubscriptionPageConfigController_setTags",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetSubpageConfigsTagsBodyDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OkSetSubpageConfigsTagsResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequestError"
+          },
+          "404": {
+            "$ref": "#/components/responses/RemnawaveNotFoundErrorDtoSchema"
+          },
+          "500": {
+            "$ref": "#/components/responses/RemnawaveInternalServerErrorDtoSchema"
+          }
+        },
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "summary": "Set tags of Subpage Config",
+        "tags": [
+          "Subscription Page Configs Controller"
+        ]
+      }
+    },
     "/api/subscription-page-configs": {
       "get": {
         "operationId": "SubscriptionPageConfigController_getAllConfigs",
@@ -2351,6 +2417,72 @@
         ]
       }
     },
+    "/api/subscription-templates/tags": {
+      "get": {
+        "operationId": "SubscriptionTemplateController_getTags",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OkGetSubscriptionTemplatesTagsResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequestError"
+          },
+          "404": {
+            "$ref": "#/components/responses/RemnawaveNotFoundErrorDtoSchema"
+          },
+          "500": {
+            "$ref": "#/components/responses/RemnawaveInternalServerErrorDtoSchema"
+          }
+        },
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "summary": "Get tags of Subscription Templates",
+        "tags": [
+          "Subscription Template Controller"
+        ]
+      },
+      "patch": {
+        "operationId": "SubscriptionTemplateController_setTags",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetSubscriptionTemplatesTagsBodyDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OkSetSubscriptionTemplatesTagsResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequestError"
+          },
+          "404": {
+            "$ref": "#/components/responses/RemnawaveNotFoundErrorDtoSchema"
+          },
+          "500": {
+            "$ref": "#/components/responses/RemnawaveInternalServerErrorDtoSchema"
+          }
+        },
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "summary": "Set tags of Subscription Template",
+        "tags": [
+          "Subscription Template Controller"
+        ]
+      }
+    },
     "/api/subscription-templates": {
       "get": {
         "operationId": "SubscriptionTemplateController_getAllTemplates",
@@ -2708,6 +2840,72 @@
         "summary": "Get available API token scopes",
         "tags": [
           "API Tokens Controller"
+        ]
+      }
+    },
+    "/api/config-profiles/tags": {
+      "get": {
+        "operationId": "ConfigProfileController_getTags",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OkGetConfigProfilesTagsResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequestError"
+          },
+          "404": {
+            "$ref": "#/components/responses/RemnawaveNotFoundErrorDtoSchema"
+          },
+          "500": {
+            "$ref": "#/components/responses/RemnawaveInternalServerErrorDtoSchema"
+          }
+        },
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "summary": "Get tags of Config Profiles",
+        "tags": [
+          "Config Profiles Controller"
+        ]
+      },
+      "patch": {
+        "operationId": "ConfigProfileController_setTags",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetConfigProfilesTagsBodyDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OkSetConfigProfilesTagsResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequestError"
+          },
+          "404": {
+            "$ref": "#/components/responses/RemnawaveNotFoundErrorDtoSchema"
+          },
+          "500": {
+            "$ref": "#/components/responses/RemnawaveInternalServerErrorDtoSchema"
+          }
+        },
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "summary": "Set tags of Config Profile",
+        "tags": [
+          "Config Profiles Controller"
         ]
       }
     },
@@ -3231,6 +3429,72 @@
         "summary": "Sync snippet to affected config profiles",
         "tags": [
           "Snippets Controller"
+        ]
+      }
+    },
+    "/api/internal-squads/tags": {
+      "get": {
+        "operationId": "InternalSquadController_getTags",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OkGetInternalSquadsTagsResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequestError"
+          },
+          "404": {
+            "$ref": "#/components/responses/RemnawaveNotFoundErrorDtoSchema"
+          },
+          "500": {
+            "$ref": "#/components/responses/RemnawaveInternalServerErrorDtoSchema"
+          }
+        },
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "summary": "Get tags of Internal Squads",
+        "tags": [
+          "Internal Squads Controller"
+        ]
+      },
+      "patch": {
+        "operationId": "InternalSquadController_setTags",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetInternalSquadsTagsBodyDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OkSetInternalSquadsTagsResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequestError"
+          },
+          "404": {
+            "$ref": "#/components/responses/RemnawaveNotFoundErrorDtoSchema"
+          },
+          "500": {
+            "$ref": "#/components/responses/RemnawaveInternalServerErrorDtoSchema"
+          }
+        },
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "summary": "Set tags of Internal Squad",
+        "tags": [
+          "Internal Squads Controller"
         ]
       }
     },
@@ -3943,6 +4207,72 @@
         "summary": "Get a single user daily traffic usage on the internal squad nodes for a period",
         "tags": [
           "Bandwidth Stats Controller"
+        ]
+      }
+    },
+    "/api/external-squads/tags": {
+      "get": {
+        "operationId": "ExternalSquadController_getTags",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OkGetExternalSquadsTagsResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequestError"
+          },
+          "404": {
+            "$ref": "#/components/responses/RemnawaveNotFoundErrorDtoSchema"
+          },
+          "500": {
+            "$ref": "#/components/responses/RemnawaveInternalServerErrorDtoSchema"
+          }
+        },
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "summary": "Get tags of External Squads",
+        "tags": [
+          "External Squads Controller"
+        ]
+      },
+      "patch": {
+        "operationId": "ExternalSquadController_setTags",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetExternalSquadsTagsBodyDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OkSetExternalSquadsTagsResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequestError"
+          },
+          "404": {
+            "$ref": "#/components/responses/RemnawaveNotFoundErrorDtoSchema"
+          },
+          "500": {
+            "$ref": "#/components/responses/RemnawaveInternalServerErrorDtoSchema"
+          }
+        },
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "summary": "Set tags of External Squad",
+        "tags": [
+          "External Squads Controller"
         ]
       }
     },
@@ -5038,6 +5368,72 @@
         ]
       }
     },
+    "/api/node-plugins/tags": {
+      "get": {
+        "operationId": "NodePluginController_getTags",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OkGetNodePluginsTagsResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequestError"
+          },
+          "404": {
+            "$ref": "#/components/responses/RemnawaveNotFoundErrorDtoSchema"
+          },
+          "500": {
+            "$ref": "#/components/responses/RemnawaveInternalServerErrorDtoSchema"
+          }
+        },
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "summary": "Get tags of Node Plugins",
+        "tags": [
+          "Node Plugins Controller"
+        ]
+      },
+      "patch": {
+        "operationId": "NodePluginController_setTags",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetNodePluginsTagsBodyDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OkSetNodePluginsTagsResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequestError"
+          },
+          "404": {
+            "$ref": "#/components/responses/RemnawaveNotFoundErrorDtoSchema"
+          },
+          "500": {
+            "$ref": "#/components/responses/RemnawaveInternalServerErrorDtoSchema"
+          }
+        },
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "summary": "Set tags of Node Plugin",
+        "tags": [
+          "Node Plugins Controller"
+        ]
+      }
+    },
     "/api/node-plugins/shared-lists": {
       "get": {
         "description": "Returns only the name, type and item count of every shared list. Use \"Get Shared List by name\" to fetch the items themselves.",
@@ -5140,11 +5536,9 @@
         "tags": [
           "Node Plugins Controller"
         ]
-      }
-    },
-    "/api/node-plugins/shared-lists/{name}": {
-      "get": {
-        "operationId": "NodePluginController_getSharedListByName",
+      },
+      "delete": {
+        "operationId": "NodePluginController_deleteSharedList",
         "parameters": [
           {
             "name": "name",
@@ -5155,7 +5549,71 @@
               "maxLength": 255,
               "pattern": "^[A-Za-z0-9_-]+$",
               "type": "string"
+            },
+            "deprecated": true
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteSharedListBodyDto"
+              }
             }
+          }
+        },
+        "responses": {
+          "204": {
+            "$ref": "#/components/responses/OperationSuccessfulNoContentReturnedResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequestError"
+          },
+          "404": {
+            "$ref": "#/components/responses/RemnawaveNotFoundErrorDtoSchema"
+          },
+          "500": {
+            "$ref": "#/components/responses/RemnawaveInternalServerErrorDtoSchema"
+          }
+        },
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "summary": "Delete Shared List by name",
+        "tags": [
+          "Node Plugins Controller"
+        ]
+      }
+    },
+    "/api/node-plugins/shared-lists/by-name": {
+      "get": {
+        "operationId": "NodePluginController_getSharedListByName",
+        "parameters": [
+          {
+            "name": "name",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "minLength": 2,
+              "maxLength": 255,
+              "pattern": "^[A-Za-z0-9_-]+(\\/[A-Za-z0-9_-]+)*$",
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "minLength": 2,
+              "maxLength": 255,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "type": "string"
+            },
+            "deprecated": true
           }
         ],
         "responses": {
@@ -5178,45 +5636,6 @@
           }
         ],
         "summary": "Get Shared List by name",
-        "tags": [
-          "Node Plugins Controller"
-        ]
-      },
-      "delete": {
-        "operationId": "NodePluginController_deleteSharedList",
-        "parameters": [
-          {
-            "name": "name",
-            "required": true,
-            "in": "path",
-            "schema": {
-              "minLength": 2,
-              "maxLength": 255,
-              "pattern": "^[A-Za-z0-9_-]+$",
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "$ref": "#/components/responses/OperationSuccessfulNoContentReturnedResponse"
-          },
-          "400": {
-            "$ref": "#/components/responses/BadRequestError"
-          },
-          "404": {
-            "$ref": "#/components/responses/RemnawaveNotFoundErrorDtoSchema"
-          },
-          "500": {
-            "$ref": "#/components/responses/RemnawaveInternalServerErrorDtoSchema"
-          }
-        },
-        "security": [
-          {
-            "Authorization": []
-          }
-        ],
-        "summary": "Delete Shared List by name",
         "tags": [
           "Node Plugins Controller"
         ]
@@ -7818,7 +8237,7 @@
             "description": "Start of the range, ISO 8601 datetime with timezone (e.g. 2026-07-15T00:00:00Z). Inclusive.",
             "schema": {
               "format": "date-time",
-              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$",
               "type": "string"
             }
           },
@@ -7829,7 +8248,7 @@
             "description": "End of the range, ISO 8601 datetime with timezone (e.g. 2026-07-16T00:00:00Z). Exclusive.",
             "schema": {
               "format": "date-time",
-              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$",
               "type": "string"
             }
           }
@@ -8415,12 +8834,13 @@
           "Metadata Controller"
         ]
       }
-    }
+    },
+    "/api/node-plugins/shared-lists/{name}": {}
   },
   "info": {
-    "title": "Remnawave API v3.3.2",
-    "description": "\nRemnawave is a powerful proxy managment tool, built on top of Xray-core, with a focus on simplicity and ease of use.\n\n## Resources\n* https://t.me/remnawave\n* https://github.com/remnawave\n* https://docs.rw\n",
-    "version": "3.3.2",
+    "title": "Remnawave API v3.4.2",
+    "description": "\nRemnawave is a powerful proxy management tool, built on top of Xray-core, with a focus on simplicity and ease of use.\n\n## Resources\n* https://t.me/remnawave\n* https://github.com/remnawave\n* https://docs.rw\n",
+    "version": "3.4.2",
     "contact": {},
     "license": {
       "name": "AGPL-3.0",
@@ -8454,6 +8874,10 @@
     },
     {
       "name": "Node Plugins Controller",
+      "description": ""
+    },
+    {
+      "name": "Node SSH Controller",
       "description": ""
     },
     {
@@ -8776,6 +9200,40 @@
           "response"
         ]
       },
+      "SetSubpageConfigsTagsBodyDto": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "tags": {
+            "maxItems": 10,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 36,
+              "pattern": "^[A-Z0-9_:]+$"
+            }
+          }
+        },
+        "required": [
+          "uuid",
+          "tags"
+        ]
+      },
+      "SetSubpageConfigsTagsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/SetSubpageConfigsTagsResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
       "UpdateSubpageConfigBodyDto": {
         "type": "object",
         "properties": {
@@ -8952,20 +9410,17 @@
           "expireAt": {
             "description": "Account expiration date. Required. Format: 2025-01-17T15:38:45.065Z",
             "type": "string",
-            "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z||([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d))|(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?)$"
           },
           "createdAt": {
             "description": "Optional. Account creation date. Format: 2025-01-17T15:38:45.065Z",
             "type": "string",
-            "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z||([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d))|(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?)$"
           },
           "lastTrafficResetAt": {
             "description": "Optional. Date of last traffic reset. Format: 2025-01-17T15:38:45.065Z",
             "type": "string",
-            "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z||([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d))|(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?)$"
           },
           "description": {
             "description": "Optional. Additional notes or description for the user account.",
@@ -9072,8 +9527,7 @@
           "expireAt": {
             "description": "Expiration date: 2025-01-17T15:38:45.065Z",
             "type": "string",
-            "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z||([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d))|(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?)$"
           },
           "description": {
             "type": "string",
@@ -9354,8 +9808,7 @@
           "expireAt": {
             "description": "Expiration date: 2025-01-17T15:38:45.065Z",
             "type": "string",
-            "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z||([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d))|(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?)$"
           },
           "description": {
             "type": "string",
@@ -9620,6 +10073,40 @@
           "requestHeaders"
         ]
       },
+      "SetSubscriptionTemplatesTagsBodyDto": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "tags": {
+            "maxItems": 10,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 36,
+              "pattern": "^[A-Z0-9_:]+$"
+            }
+          }
+        },
+        "required": [
+          "uuid",
+          "tags"
+        ]
+      },
+      "SetSubscriptionTemplatesTagsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/SetSubpageConfigsTagsResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
       "UpdateTemplateBodyDto": {
         "type": "object",
         "properties": {
@@ -9751,6 +10238,40 @@
           "response"
         ]
       },
+      "SetConfigProfilesTagsBodyDto": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "tags": {
+            "maxItems": 10,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 36,
+              "pattern": "^[A-Z0-9_:]+$"
+            }
+          }
+        },
+        "required": [
+          "uuid",
+          "tags"
+        ]
+      },
+      "SetConfigProfilesTagsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/SetSubpageConfigsTagsResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
       "CreateConfigProfileBodyDto": {
         "type": "object",
         "properties": {
@@ -9845,7 +10366,7 @@
             "type": "string",
             "minLength": 2,
             "maxLength": 255,
-            "pattern": "^[A-Za-z0-9_\\s-]+$"
+            "pattern": "^[A-Za-z0-9_ -]+(\\/[A-Za-z0-9_ -]+)*$"
           }
         },
         "required": [
@@ -9859,7 +10380,7 @@
             "type": "string",
             "minLength": 2,
             "maxLength": 255,
-            "pattern": "^[A-Za-z0-9_\\s-]+$"
+            "pattern": "^[A-Za-z0-9_ -]+(\\/[A-Za-z0-9_ -]+)*$"
           }
         },
         "required": [
@@ -9873,7 +10394,7 @@
             "type": "string",
             "minLength": 2,
             "maxLength": 255,
-            "pattern": "^[A-Za-z0-9_\\s-]+$"
+            "pattern": "^[A-Za-z0-9_ -]+(\\/[A-Za-z0-9_ -]+)*$"
           },
           "snippet": {
             "type": "array",
@@ -9905,7 +10426,7 @@
             "type": "string",
             "minLength": 2,
             "maxLength": 255,
-            "pattern": "^[A-Za-z0-9_\\s-]+$"
+            "pattern": "^[A-Za-z0-9_ -]+(\\/[A-Za-z0-9_ -]+)*$"
           },
           "snippet": {
             "type": "array",
@@ -9924,6 +10445,40 @@
         "properties": {
           "response": {
             "$ref": "#/components/schemas/SnippetsResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "SetInternalSquadsTagsBodyDto": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "tags": {
+            "maxItems": 10,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 36,
+              "pattern": "^[A-Z0-9_:]+$"
+            }
+          }
+        },
+        "required": [
+          "uuid",
+          "tags"
+        ]
+      },
+      "SetInternalSquadsTagsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/SetSubpageConfigsTagsResponse"
           }
         },
         "required": [
@@ -10057,6 +10612,40 @@
         },
         "required": [
           "userIds"
+        ]
+      },
+      "SetExternalSquadsTagsBodyDto": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "tags": {
+            "maxItems": 10,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 36,
+              "pattern": "^[A-Z0-9_:]+$"
+            }
+          }
+        },
+        "required": [
+          "uuid",
+          "tags"
+        ]
+      },
+      "SetExternalSquadsTagsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/SetSubpageConfigsTagsResponse"
+          }
+        },
+        "required": [
+          "response"
         ]
       },
       "CreateExternalSquadBodyDto": {
@@ -10524,6 +11113,40 @@
           "fields"
         ]
       },
+      "SetNodePluginsTagsBodyDto": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "tags": {
+            "maxItems": 10,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 36,
+              "pattern": "^[A-Z0-9_:]+$"
+            }
+          }
+        },
+        "required": [
+          "uuid",
+          "tags"
+        ]
+      },
+      "SetNodePluginsTagsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/SetSubpageConfigsTagsResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
       "CreateSharedListBodyDto": {
         "type": "object",
         "properties": {
@@ -10531,7 +11154,7 @@
             "type": "string",
             "minLength": 2,
             "maxLength": 255,
-            "pattern": "^[A-Za-z0-9_-]+$"
+            "pattern": "^[A-Za-z0-9_-]+(\\/[A-Za-z0-9_-]+)*$"
           },
           "config": {
             "type": "object",
@@ -10561,7 +11184,7 @@
             "type": "string",
             "minLength": 2,
             "maxLength": 255,
-            "pattern": "^[A-Za-z0-9_-]+$"
+            "pattern": "^[A-Za-z0-9_-]+(\\/[A-Za-z0-9_-]+)*$"
           },
           "config": {
             "type": "object",
@@ -10591,7 +11214,21 @@
             "type": "string",
             "minLength": 2,
             "maxLength": 255,
-            "pattern": "^[A-Za-z0-9_-]+$"
+            "pattern": "^[A-Za-z0-9_-]+(\\/[A-Za-z0-9_-]+)*$"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "DeleteSharedListBodyDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 255,
+            "pattern": "^[A-Za-z0-9_-]+(\\/[A-Za-z0-9_-]+)*$"
           }
         },
         "required": [
@@ -11202,15 +11839,6 @@
             "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$",
             "nullable": true
           },
-          "excludedInternalSquads": {
-            "description": "Optional. Internal squads from which the host will be excluded.",
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uuid",
-              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-            }
-          },
           "excludeFromSubscriptionTypes": {
             "description": "Optional. Subscription types from which the host will be excluded from.",
             "type": "array",
@@ -11225,6 +11853,19 @@
               }
             ],
             "title": "Host Mapper"
+          },
+          "internalSquads": {
+            "$ref": "#/components/schemas/HostsInternalSquadsDto"
+          },
+          "excludedInternalSquads": {
+            "description": "Optional. Internal squads from which the host will be excluded.",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+            },
+            "deprecated": true
           }
         },
         "required": [
@@ -11715,7 +12356,6 @@
             "nullable": true
           },
           "isDisabled": {
-            "default": false,
             "type": "boolean"
           },
           "securityLayer": {
@@ -11802,15 +12442,6 @@
             "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$",
             "nullable": true
           },
-          "excludedInternalSquads": {
-            "description": "Optional. Internal squads from which the host will be excluded.",
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uuid",
-              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-            }
-          },
           "excludeFromSubscriptionTypes": {
             "description": "Optional. Subscription types from which the host will be excluded from.",
             "type": "array",
@@ -11825,6 +12456,19 @@
               }
             ],
             "title": "Host Mapper"
+          },
+          "internalSquads": {
+            "$ref": "#/components/schemas/HostsInternalSquadsDto"
+          },
+          "excludedInternalSquads": {
+            "description": "Optional. Internal squads from which the host will be excluded.",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+            },
+            "deprecated": true
           }
         },
         "required": [
@@ -12369,7 +13013,6 @@
             "nullable": true
           },
           "isDisabled": {
-            "default": false,
             "type": "boolean"
           },
           "securityLayer": {
@@ -12456,15 +13099,6 @@
             "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$",
             "nullable": true
           },
-          "excludedInternalSquads": {
-            "description": "Optional. Internal squads from which the host will be excluded.",
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uuid",
-              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-            }
-          },
           "excludeFromSubscriptionTypes": {
             "description": "Optional. Subscription types from which the host will be excluded from.",
             "type": "array",
@@ -12480,6 +13114,9 @@
             ],
             "title": "Host Mapper"
           },
+          "internalSquads": {
+            "$ref": "#/components/schemas/HostsInternalSquadsDto"
+          },
           "uuids": {
             "minItems": 1,
             "type": "array",
@@ -12488,6 +13125,16 @@
               "format": "uuid",
               "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
             }
+          },
+          "excludedInternalSquads": {
+            "description": "Optional. Internal squads from which the host will be excluded.",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+            },
+            "deprecated": true
           }
         },
         "required": [
@@ -12705,8 +13352,7 @@
           "billedAt": {
             "description": "Billing date. Format: 2025-01-17T15:38:45.065Z",
             "type": "string",
-            "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z||([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d))|(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?)$"
           }
         },
         "required": [
@@ -12739,8 +13385,7 @@
           },
           "nextBillingAt": {
             "type": "string",
-            "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z||([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d))|(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?)$"
           }
         },
         "required": [
@@ -12782,8 +13427,7 @@
           "nextBillingAt": {
             "description": "Next billing date. Format: 2025-01-17T15:38:45.065Z",
             "type": "string",
-            "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z||([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d))|(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?)$"
           }
         },
         "required": [
@@ -13114,7 +13758,7 @@
           "timestamp": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "data": {
             "$ref": "#/components/schemas/UsersResponseUsersDto"
@@ -13158,7 +13802,7 @@
           "timestamp": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "data": {
             "$ref": "#/components/schemas/RemnawaveWebhookUserHwidDevicesEventsDataDto"
@@ -13193,7 +13837,7 @@
           "timestamp": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "data": {
             "$ref": "#/components/schemas/NodesDto"
@@ -13228,7 +13872,7 @@
           "timestamp": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "data": {
             "$ref": "#/components/schemas/RemnawaveWebhookServiceEventsDataDto"
@@ -13263,7 +13907,7 @@
           "timestamp": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "data": {
             "$ref": "#/components/schemas/RemnawaveWebhookErrorsEventsDataDto"
@@ -13298,7 +13942,7 @@
           "timestamp": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "data": {
             "$ref": "#/components/schemas/RemnawaveWebhookCrmEventsDataDto"
@@ -13333,7 +13977,7 @@
           "timestamp": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "data": {
             "$ref": "#/components/schemas/RemnawaveWebhookTorrentBlockerEventsDataDto"
@@ -13344,6 +13988,151 @@
           "event",
           "timestamp",
           "data"
+        ]
+      },
+      "RemnawaveNotFoundErrorDto": {
+        "type": "object",
+        "properties": {
+          "timestamp": {
+            "type": "string",
+            "description": "Time when the error occurred, in ISO 8601 format."
+          },
+          "path": {
+            "type": "string",
+            "description": "Path of the request that caused the error."
+          },
+          "message": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/RemnawaveNotFoundErrorMessage"
+              }
+            ],
+            "description": "Human-readable error message."
+          },
+          "errorCode": {
+            "$ref": "#/components/schemas/ErrorCode"
+          }
+        },
+        "required": [
+          "timestamp",
+          "path",
+          "message",
+          "errorCode"
+        ]
+      },
+      "RemnawaveBadRequestErrorDto": {
+        "type": "object",
+        "properties": {
+          "timestamp": {
+            "type": "string",
+            "description": "Time when the error occurred, in ISO 8601 format."
+          },
+          "path": {
+            "type": "string",
+            "description": "Path of the request that caused the error."
+          },
+          "message": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/RemnawaveBadRequestErrorMessage"
+              }
+            ],
+            "enum": [
+              "User username already exists",
+              "User short UUID already exists",
+              "User subscription UUID already exists",
+              "User already disabled",
+              "User already enabled",
+              "Node name already exists",
+              "Node address already exists",
+              "Host remark already exists",
+              "LIMITED and EXPIRED statuses are not allowed to be set manually.",
+              "User hwid device already exists",
+              "User hwid device limit reached",
+              "This name is reserved by Remnawave. Please use a different name.",
+              "Node is disabled",
+              "Name or config is required",
+              "Name or inbounds is required",
+              "Snippet name already exists",
+              "Snippet cannot be empty",
+              "Snippet cannot contain empty objects",
+              "This name is reserved. Please use a different name.",
+              "Template JSON is not allowed for YAML template",
+              "Template YAML is not allowed for JSON template",
+              "Template JSON and YAML cannot be updated simultaneously",
+              "Template name already exists for this type",
+              "Reserved template cannot be deleted",
+              "Template type not allowed",
+              "External squad name already exists",
+              "Name or templates are required",
+              "Passkeys not configured",
+              "Passkeys not enabled. Please enable it first.",
+              "Reserved config name",
+              "Config name already exists",
+              "Reserved subpage config cannot be deleted",
+              "Invalid subscription page config",
+              "Invalid Remnawave injector",
+              "Node plugin name already exists",
+              "One or more provided API token scopes are invalid",
+              "Either nodeUuid or name must be provided",
+              "Start date must be before or equal to end date",
+              "Node integration name already exists",
+              "Shared list name already exists"
+            ],
+            "x-enum-ref": "#/components/schemas/RemnawaveBadRequestErrorMessage",
+            "x-enum-members": [
+              "USER_USERNAME_ALREADY_EXISTS",
+              "USER_SHORT_UUID_ALREADY_EXISTS",
+              "USER_SUBSCRIPTION_UUID_ALREADY_EXISTS",
+              "USER_ALREADY_DISABLED",
+              "USER_ALREADY_ENABLED",
+              "NODE_NAME_ALREADY_EXISTS",
+              "NODE_ADDRESS_ALREADY_EXISTS",
+              "HOST_REMARK_ALREADY_EXISTS",
+              "LIMITED_AND_EXPIRED_STATUSES_ARE_NOT_ALLOWED_TO_BE_SET_MANUALLY",
+              "USER_HWID_DEVICE_ALREADY_EXISTS",
+              "USER_HWID_DEVICE_LIMIT_REACHED",
+              "THIS_NAME_IS_RESERVED_BY_REMNAWAVE_PLEASE_USE_A_DIFFERENT_NAME",
+              "NODE_IS_DISABLED",
+              "NAME_OR_CONFIG_IS_REQUIRED",
+              "NAME_OR_INBOUNDS_IS_REQUIRED",
+              "SNIPPET_NAME_ALREADY_EXISTS",
+              "SNIPPET_CANNOT_BE_EMPTY",
+              "SNIPPET_CANNOT_CONTAIN_EMPTY_OBJECTS",
+              "THIS_NAME_IS_RESERVED_PLEASE_USE_A_DIFFERENT_NAME",
+              "TEMPLATE_JSON_IS_NOT_ALLOWED_FOR_YAML_TEMPLATE",
+              "TEMPLATE_YAML_IS_NOT_ALLOWED_FOR_JSON_TEMPLATE",
+              "TEMPLATE_JSON_AND_YAML_CANNOT_BE_UPDATED_SIMULTANEOUSLY",
+              "TEMPLATE_NAME_ALREADY_EXISTS_FOR_THIS_TYPE",
+              "RESERVED_TEMPLATE_CANNOT_BE_DELETED",
+              "TEMPLATE_TYPE_NOT_ALLOWED",
+              "EXTERNAL_SQUAD_NAME_ALREADY_EXISTS",
+              "NAME_OR_TEMPLATES_ARE_REQUIRED",
+              "PASSKEYS_NOT_CONFIGURED",
+              "PASSKEYS_NOT_ENABLED_PLEASE_ENABLE_IT_FIRST",
+              "RESERVED_CONFIG_NAME",
+              "CONFIG_NAME_ALREADY_EXISTS",
+              "RESERVED_SUBPAGE_CONFIG_CANNOT_BE_DELETED",
+              "INVALID_SUBSCRIPTION_PAGE_CONFIG",
+              "INVALID_REMNAWAVE_INJECTOR",
+              "NODE_PLUGIN_NAME_ALREADY_EXISTS",
+              "ONE_OR_MORE_PROVIDED_API_TOKEN_SCOPES_ARE_INVALID",
+              "EITHER_NODE_UUID_OR_NAME_MUST_BE_PROVIDED",
+              "START_DATE_MUST_BE_BEFORE_OR_EQUAL_TO_END_DATE",
+              "NODE_INTEGRATION_NAME_ALREADY_EXISTS",
+              "SHARED_LIST_NAME_ALREADY_EXISTS"
+            ],
+            "description": "Human-readable error message."
+          },
+          "errorCode": {
+            "$ref": "#/components/schemas/ErrorCode"
+          }
+        },
+        "required": [
+          "timestamp",
+          "path",
+          "message",
+          "errorCode"
         ]
       },
       "RemnawaveInternalServerErrorDto": {
@@ -13534,7 +14323,10 @@
               "Get shared list by name error",
               "Create shared list error",
               "Update shared list error",
-              "Delete shared list error"
+              "Delete shared list error",
+              "Create SSH ticket error",
+              "Get tags error",
+              "Set tags error"
             ],
             "x-enum-ref": "#/components/schemas/RemnawaveInternalServerErrorMessage",
             "x-enum-members": [
@@ -13708,7 +14500,10 @@
               "GET_SHARED_LIST_BY_NAME_ERROR",
               "CREATE_SHARED_LIST_ERROR",
               "UPDATE_SHARED_LIST_ERROR",
-              "DELETE_SHARED_LIST_ERROR"
+              "DELETE_SHARED_LIST_ERROR",
+              "CREATE_SSH_TICKET_ERROR",
+              "GET_TAGS_ERROR",
+              "SET_TAGS_ERROR"
             ],
             "description": "Human-readable error message."
           },
@@ -13748,151 +14543,6 @@
           "errors"
         ]
       },
-      "RemnawaveBadRequestErrorDto": {
-        "type": "object",
-        "properties": {
-          "timestamp": {
-            "type": "string",
-            "description": "Time when the error occurred, in ISO 8601 format."
-          },
-          "path": {
-            "type": "string",
-            "description": "Path of the request that caused the error."
-          },
-          "message": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/RemnawaveBadRequestErrorMessage"
-              }
-            ],
-            "enum": [
-              "User username already exists",
-              "User short UUID already exists",
-              "User subscription UUID already exists",
-              "User already disabled",
-              "User already enabled",
-              "Node name already exists",
-              "Node address already exists",
-              "Host remark already exists",
-              "LIMITED and EXPIRED statuses are not allowed to be set manually.",
-              "User hwid device already exists",
-              "User hwid device limit reached",
-              "This name is reserved by Remnawave. Please use a different name.",
-              "Node is disabled",
-              "Name or config is required",
-              "Name or inbounds is required",
-              "Snippet name already exists",
-              "Snippet cannot be empty",
-              "Snippet cannot contain empty objects",
-              "This name is reserved. Please use a different name.",
-              "Template JSON is not allowed for YAML template",
-              "Template YAML is not allowed for JSON template",
-              "Template JSON and YAML cannot be updated simultaneously",
-              "Template name already exists for this type",
-              "Reserved template cannot be deleted",
-              "Template type not allowed",
-              "External squad name already exists",
-              "Name or templates are required",
-              "Passkeys not configured",
-              "Passkeys not enabled. Please enable it first.",
-              "Reserved config name",
-              "Config name already exists",
-              "Reserved subpage config cannot be deleted",
-              "Invalid subscription page config",
-              "Invalid Remnawave injector",
-              "Node plugin name already exists",
-              "One or more provided API token scopes are invalid",
-              "Either nodeUuid or name must be provided",
-              "Start date must be before or equal to end date",
-              "Node integration name already exists",
-              "Shared list name already exists"
-            ],
-            "x-enum-ref": "#/components/schemas/RemnawaveBadRequestErrorMessage",
-            "x-enum-members": [
-              "USER_USERNAME_ALREADY_EXISTS",
-              "USER_SHORT_UUID_ALREADY_EXISTS",
-              "USER_SUBSCRIPTION_UUID_ALREADY_EXISTS",
-              "USER_ALREADY_DISABLED",
-              "USER_ALREADY_ENABLED",
-              "NODE_NAME_ALREADY_EXISTS",
-              "NODE_ADDRESS_ALREADY_EXISTS",
-              "HOST_REMARK_ALREADY_EXISTS",
-              "LIMITED_AND_EXPIRED_STATUSES_ARE_NOT_ALLOWED_TO_BE_SET_MANUALLY",
-              "USER_HWID_DEVICE_ALREADY_EXISTS",
-              "USER_HWID_DEVICE_LIMIT_REACHED",
-              "THIS_NAME_IS_RESERVED_BY_REMNAWAVE_PLEASE_USE_A_DIFFERENT_NAME",
-              "NODE_IS_DISABLED",
-              "NAME_OR_CONFIG_IS_REQUIRED",
-              "NAME_OR_INBOUNDS_IS_REQUIRED",
-              "SNIPPET_NAME_ALREADY_EXISTS",
-              "SNIPPET_CANNOT_BE_EMPTY",
-              "SNIPPET_CANNOT_CONTAIN_EMPTY_OBJECTS",
-              "THIS_NAME_IS_RESERVED_PLEASE_USE_A_DIFFERENT_NAME",
-              "TEMPLATE_JSON_IS_NOT_ALLOWED_FOR_YAML_TEMPLATE",
-              "TEMPLATE_YAML_IS_NOT_ALLOWED_FOR_JSON_TEMPLATE",
-              "TEMPLATE_JSON_AND_YAML_CANNOT_BE_UPDATED_SIMULTANEOUSLY",
-              "TEMPLATE_NAME_ALREADY_EXISTS_FOR_THIS_TYPE",
-              "RESERVED_TEMPLATE_CANNOT_BE_DELETED",
-              "TEMPLATE_TYPE_NOT_ALLOWED",
-              "EXTERNAL_SQUAD_NAME_ALREADY_EXISTS",
-              "NAME_OR_TEMPLATES_ARE_REQUIRED",
-              "PASSKEYS_NOT_CONFIGURED",
-              "PASSKEYS_NOT_ENABLED_PLEASE_ENABLE_IT_FIRST",
-              "RESERVED_CONFIG_NAME",
-              "CONFIG_NAME_ALREADY_EXISTS",
-              "RESERVED_SUBPAGE_CONFIG_CANNOT_BE_DELETED",
-              "INVALID_SUBSCRIPTION_PAGE_CONFIG",
-              "INVALID_REMNAWAVE_INJECTOR",
-              "NODE_PLUGIN_NAME_ALREADY_EXISTS",
-              "ONE_OR_MORE_PROVIDED_API_TOKEN_SCOPES_ARE_INVALID",
-              "EITHER_NODE_UUID_OR_NAME_MUST_BE_PROVIDED",
-              "START_DATE_MUST_BE_BEFORE_OR_EQUAL_TO_END_DATE",
-              "NODE_INTEGRATION_NAME_ALREADY_EXISTS",
-              "SHARED_LIST_NAME_ALREADY_EXISTS"
-            ],
-            "description": "Human-readable error message."
-          },
-          "errorCode": {
-            "$ref": "#/components/schemas/ErrorCode"
-          }
-        },
-        "required": [
-          "timestamp",
-          "path",
-          "message",
-          "errorCode"
-        ]
-      },
-      "RemnawaveNotFoundErrorDto": {
-        "type": "object",
-        "properties": {
-          "timestamp": {
-            "type": "string",
-            "description": "Time when the error occurred, in ISO 8601 format."
-          },
-          "path": {
-            "type": "string",
-            "description": "Path of the request that caused the error."
-          },
-          "message": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/RemnawaveNotFoundErrorMessage"
-              }
-            ],
-            "description": "Human-readable error message."
-          },
-          "errorCode": {
-            "$ref": "#/components/schemas/ErrorCode"
-          }
-        },
-        "required": [
-          "timestamp",
-          "path",
-          "message",
-          "errorCode"
-        ]
-      },
       "RemnawaveUserUsageStreamMessageDto": {
         "type": "object",
         "properties": {
@@ -13913,7 +14563,7 @@
             "description": "Time the batch was exported (ISO 8601, UTC).",
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "records": {
             "description": "User traffic deltas: \"userId:totalBytes\" pairs separated by \";\".",
@@ -13949,7 +14599,7 @@
             "description": "Time of the subscription request (ISO 8601, UTC).",
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "requestIp": {
             "description": "Client IP address, omitted if unknown.",
@@ -13996,7 +14646,7 @@
             "description": "Time the snapshot was exported (ISO 8601, UTC).",
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "users": {
             "description": "JSON-encoded array of users connected to the node with their IPs.\nExample:\n```json\n[{ \"userId\": \"42\", \"ips\": [{ \"ip\": \"1.2.3.4\", \"lastSeen\": \"2026-07-16T11:59:30.000Z\" }] }]\n```",
@@ -15292,7 +15942,10 @@
           "A248",
           "A249",
           "A250",
-          "A251"
+          "A251",
+          "A254",
+          "A256",
+          "A257"
         ],
         "x-enum-varnames": [
           "A007",
@@ -15491,7 +16144,10 @@
           "A248",
           "A249",
           "A250",
-          "A251"
+          "A251",
+          "A254",
+          "A256",
+          "A257"
         ],
         "x-enumNames": [
           "A007",
@@ -15690,7 +16346,10 @@
           "A248",
           "A249",
           "A250",
-          "A251"
+          "A251",
+          "A254",
+          "A256",
+          "A257"
         ]
       },
       "RemnawaveNotFoundErrorMessage": {
@@ -16224,7 +16883,10 @@
           "Get shared list by name error",
           "Create shared list error",
           "Update shared list error",
-          "Delete shared list error"
+          "Delete shared list error",
+          "Create SSH ticket error",
+          "Get tags error",
+          "Set tags error"
         ],
         "x-enum-varnames": [
           "SERVER_ERROR",
@@ -16398,7 +17060,10 @@
           "GET_SHARED_LIST_BY_NAME_ERROR",
           "CREATE_SHARED_LIST_ERROR",
           "UPDATE_SHARED_LIST_ERROR",
-          "DELETE_SHARED_LIST_ERROR"
+          "DELETE_SHARED_LIST_ERROR",
+          "CREATE_SSH_TICKET_ERROR",
+          "GET_TAGS_ERROR",
+          "SET_TAGS_ERROR"
         ],
         "x-enumNames": [
           "SERVER_ERROR",
@@ -16572,7 +17237,25 @@
           "GET_SHARED_LIST_BY_NAME_ERROR",
           "CREATE_SHARED_LIST_ERROR",
           "UPDATE_SHARED_LIST_ERROR",
-          "DELETE_SHARED_LIST_ERROR"
+          "DELETE_SHARED_LIST_ERROR",
+          "CREATE_SSH_TICKET_ERROR",
+          "GET_TAGS_ERROR",
+          "SET_TAGS_ERROR"
+        ]
+      },
+      "CreateHostBodyMode": {
+        "type": "string",
+        "enum": [
+          "EXCLUDE",
+          "ALLOW_ONLY"
+        ],
+        "x-enum-varnames": [
+          "EXCLUDE",
+          "ALLOW_ONLY"
+        ],
+        "x-enumNames": [
+          "EXCLUDE",
+          "ALLOW_ONLY"
         ]
       },
       "TcpHeaderHttpRequestDto": {
@@ -16980,8 +17663,13 @@
             "minLength": 1,
             "maxLength": 512,
             "title": "Target path",
-            "markdownDescription": "Dot-separated path inside the query string of the generated **share link**, counted from its root.\n\nMissing objects along the path are created. Array items are addressed by index, and keys with dashes are written as is (`ip-version`).\n\n> A path running through a value that is not an object – for example `path.foo`, where `path` holds a string – is refused, so an existing value is never destroyed.",
+            "markdownDescription": "Dot-separated path inside the query string of the generated **share link**, or the link itself with a `$link.` prefix, counted from its root.\n\nMissing objects along the path are created. Array items are addressed by index, and keys with dashes are written as is (`ip-version`).\n\n> A path running through a value that is not an object – for example `path.foo`, where `path` holds a string – is refused, so an existing value is never destroyed.",
             "examples": [
+              "$link.address",
+              "$link.port",
+              "$link.password",
+              "$link.remark",
+              "$link.method",
               "alpn",
               "authority",
               "cs",
@@ -17074,8 +17762,13 @@
             "minLength": 1,
             "maxLength": 512,
             "title": "Target path",
-            "markdownDescription": "Dot-separated path inside the query string of the generated **share link**, counted from its root.\n\nMissing objects along the path are created. Array items are addressed by index, and keys with dashes are written as is (`ip-version`).\n\n> A path running through a value that is not an object – for example `path.foo`, where `path` holds a string – is refused, so an existing value is never destroyed.",
+            "markdownDescription": "Dot-separated path inside the query string of the generated **share link**, or the link itself with a `$link.` prefix, counted from its root.\n\nMissing objects along the path are created. Array items are addressed by index, and keys with dashes are written as is (`ip-version`).\n\n> A path running through a value that is not an object – for example `path.foo`, where `path` holds a string – is refused, so an existing value is never destroyed.",
             "examples": [
+              "$link.address",
+              "$link.port",
+              "$link.password",
+              "$link.remark",
+              "$link.method",
               "alpn",
               "authority",
               "cs",
@@ -17141,8 +17834,13 @@
             "minLength": 1,
             "maxLength": 512,
             "title": "Target path",
-            "markdownDescription": "Dot-separated path inside the query string of the generated **share link**, counted from its root.\n\nMissing objects along the path are created. Array items are addressed by index, and keys with dashes are written as is (`ip-version`).\n\n> A path running through a value that is not an object – for example `path.foo`, where `path` holds a string – is refused, so an existing value is never destroyed.",
+            "markdownDescription": "Dot-separated path inside the query string of the generated **share link**, or the link itself with a `$link.` prefix, counted from its root.\n\nMissing objects along the path are created. Array items are addressed by index, and keys with dashes are written as is (`ip-version`).\n\n> A path running through a value that is not an object – for example `path.foo`, where `path` holds a string – is refused, so an existing value is never destroyed.",
             "examples": [
+              "$link.address",
+              "$link.port",
+              "$link.password",
+              "$link.remark",
+              "$link.method",
               "alpn",
               "authority",
               "cs",
@@ -17527,7 +18225,7 @@
           },
           "base64": {
             "title": "Base64",
-            "markdownDescription": "Operations applied to the **query string** of the share link generated for this host in the Base64 subscription.\n\n`to` is a plain query parameter name, not a path – dots carry no meaning here.\n\n```json\n[\n  {\n    \"op\": \"set\",\n    \"to\": \"fp\",\n    \"value\": \"chrome\"\n  },\n  {\n    \"op\": \"unset\",\n    \"to\": \"fm\"\n  }\n]\n```",
+            "markdownDescription": "Operations applied to the share link generated for this host in the Base64 subscription.\n\n`to` is a plain query parameter name, not a path – dots carry no meaning here.\n\nWith a `$link.` prefix the operation rewrites the link itself instead of its query string. Writable parts: `$link.address`, `$link.port`, `$link.password`, `$link.remark`, and `$link.method` for Shadowsocks. `$link.password` is the credential of the protocol.\n\n> A value that cannot make a valid link – an empty address, a port outside 1-65535 – is ignored, and the generated one is kept.\n\n```json\n[\n  {\n    \"op\": \"set\",\n    \"to\": \"fp\",\n    \"value\": \"chrome\"\n  },\n  {\n    \"op\": \"unset\",\n    \"to\": \"fm\"\n  },\n  {\n    \"op\": \"set\",\n    \"to\": \"$link.port\",\n    \"value\": 2053\n  },\n  {\n    \"op\": \"copy\",\n    \"from\": \"$host.securityOptions.serverName\",\n    \"to\": \"$link.address\"\n  }\n]\n```",
             "type": "array",
             "items": {
               "oneOf": [
@@ -18119,8 +18817,13 @@
             "minLength": 1,
             "maxLength": 512,
             "title": "Target path",
-            "markdownDescription": "Dot-separated path inside the query string of the generated **share link**, counted from its root.\n\nMissing objects along the path are created. Array items are addressed by index, and keys with dashes are written as is (`ip-version`).\n\n> A path running through a value that is not an object – for example `path.foo`, where `path` holds a string – is refused, so an existing value is never destroyed.",
+            "markdownDescription": "Dot-separated path inside the query string of the generated **share link**, or the link itself with a `$link.` prefix, counted from its root.\n\nMissing objects along the path are created. Array items are addressed by index, and keys with dashes are written as is (`ip-version`).\n\n> A path running through a value that is not an object – for example `path.foo`, where `path` holds a string – is refused, so an existing value is never destroyed.",
             "examples": [
+              "$link.address",
+              "$link.port",
+              "$link.password",
+              "$link.remark",
+              "$link.method",
               "alpn",
               "authority",
               "cs",
@@ -18328,8 +19031,7 @@
           },
           "lastSeen": {
             "type": "string",
-            "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z||([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d))|(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?)$"
           }
         },
         "required": [
@@ -18859,16 +19561,14 @@
           },
           "willUnblockAt": {
             "type": "string",
-            "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z||([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d))|(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?)$"
           },
           "userId": {
             "type": "string"
           },
           "processedAt": {
             "type": "string",
-            "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z||([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d))|(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?)$"
           }
         },
         "required": [
@@ -19130,8 +19830,13 @@
             "minLength": 1,
             "maxLength": 512,
             "title": "Target path",
-            "markdownDescription": "Dot-separated path inside the query string of the generated **share link**, counted from its root.\n\nMissing objects along the path are created. Array items are addressed by index, and keys with dashes are written as is (`ip-version`).\n\n> A path running through a value that is not an object – for example `path.foo`, where `path` holds a string – is refused, so an existing value is never destroyed.",
+            "markdownDescription": "Dot-separated path inside the query string of the generated **share link**, or the link itself with a `$link.` prefix, counted from its root.\n\nMissing objects along the path are created. Array items are addressed by index, and keys with dashes are written as is (`ip-version`).\n\n> A path running through a value that is not an object – for example `path.foo`, where `path` holds a string – is refused, so an existing value is never destroyed.",
             "examples": [
+              "$link.address",
+              "$link.port",
+              "$link.password",
+              "$link.remark",
+              "$link.method",
               "alpn",
               "authority",
               "cs",
@@ -19710,13 +20415,13 @@
           "onlineAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$",
             "nullable": true
           },
           "firstConnectedAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$",
             "nullable": true
           },
           "lastConnectedNodeUuid": {
@@ -19767,7 +20472,7 @@
           "expiresAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "isActive": {
             "type": "boolean"
@@ -20215,8 +20920,13 @@
             "minLength": 1,
             "maxLength": 512,
             "title": "Target path",
-            "markdownDescription": "Dot-separated path inside the query string of the generated **share link**, counted from its root.\n\nMissing objects along the path are created. Array items are addressed by index, and keys with dashes are written as is (`ip-version`).\n\n> A path running through a value that is not an object – for example `path.foo`, where `path` holds a string – is refused, so an existing value is never destroyed.",
+            "markdownDescription": "Dot-separated path inside the query string of the generated **share link**, or the link itself with a `$link.` prefix, counted from its root.\n\nMissing objects along the path are created. Array items are addressed by index, and keys with dashes are written as is (`ip-version`).\n\n> A path running through a value that is not an object – for example `path.foo`, where `path` holds a string – is refused, so an existing value is never destroyed.",
             "examples": [
+              "$link.address",
+              "$link.port",
+              "$link.password",
+              "$link.remark",
+              "$link.method",
               "alpn",
               "authority",
               "cs",
@@ -20519,8 +21229,13 @@
             "minLength": 1,
             "maxLength": 512,
             "title": "Target path",
-            "markdownDescription": "Dot-separated path inside the query string of the generated **share link**, counted from its root.\n\nMissing objects along the path are created. Array items are addressed by index, and keys with dashes are written as is (`ip-version`).\n\n> A path running through a value that is not an object – for example `path.foo`, where `path` holds a string – is refused, so an existing value is never destroyed.",
+            "markdownDescription": "Dot-separated path inside the query string of the generated **share link**, or the link itself with a `$link.` prefix, counted from its root.\n\nMissing objects along the path are created. Array items are addressed by index, and keys with dashes are written as is (`ip-version`).\n\n> A path running through a value that is not an object – for example `path.foo`, where `path` holds a string – is refused, so an existing value is never destroyed.",
             "examples": [
+              "$link.address",
+              "$link.port",
+              "$link.password",
+              "$link.remark",
+              "$link.method",
               "alpn",
               "authority",
               "cs",
@@ -20823,8 +21538,13 @@
             "minLength": 1,
             "maxLength": 512,
             "title": "Target path",
-            "markdownDescription": "Dot-separated path inside the query string of the generated **share link**, counted from its root.\n\nMissing objects along the path are created. Array items are addressed by index, and keys with dashes are written as is (`ip-version`).\n\n> A path running through a value that is not an object – for example `path.foo`, where `path` holds a string – is refused, so an existing value is never destroyed.",
+            "markdownDescription": "Dot-separated path inside the query string of the generated **share link**, or the link itself with a `$link.` prefix, counted from its root.\n\nMissing objects along the path are created. Array items are addressed by index, and keys with dashes are written as is (`ip-version`).\n\n> A path running through a value that is not an object – for example `path.foo`, where `path` holds a string – is refused, so an existing value is never destroyed.",
             "examples": [
+              "$link.address",
+              "$link.port",
+              "$link.password",
+              "$link.remark",
+              "$link.method",
               "alpn",
               "authority",
               "cs",
@@ -21608,12 +22328,12 @@
           "createdAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "updatedAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           }
         },
         "required": [
@@ -21667,14 +22387,12 @@
           "createdAt": {
             "description": "Created date. Format: 2025-01-17T15:38:45.065Z",
             "type": "string",
-            "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z||([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d))|(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?)$"
           },
           "lastUsedAt": {
             "description": "Last used date. Format: 2025-01-17T15:38:45.065Z",
             "type": "string",
-            "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z||([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d))|(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?)$"
           }
         },
         "required": [
@@ -21700,6 +22418,12 @@
           "name": {
             "type": "string"
           },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "config": {
             "nullable": true
           }
@@ -21708,6 +22432,7 @@
           "uuid",
           "viewPosition",
           "name",
+          "tags",
           "config"
         ]
       },
@@ -21757,7 +22482,7 @@
           "expireAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "telegramId": {
             "type": "number",
@@ -21808,24 +22533,24 @@
           "subRevokedAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$",
             "nullable": true
           },
           "lastTrafficResetAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$",
             "nullable": true
           },
           "createdAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "updatedAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "subscriptionUrl": {
             "type": "string"
@@ -21917,7 +22642,7 @@
           "requestAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "srrResponseType": {
             "type": "string"
@@ -21991,6 +22716,12 @@
           "name": {
             "type": "string"
           },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "templateType": {
             "$ref": "#/components/schemas/TemplateType"
           },
@@ -22006,6 +22737,7 @@
           "uuid",
           "viewPosition",
           "name",
+          "tags",
           "templateType",
           "templateJson",
           "encodedTemplateYaml"
@@ -22050,7 +22782,7 @@
           "expireAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "scopes": {
             "type": "array",
@@ -22061,12 +22793,12 @@
           "createdAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "updatedAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           }
         },
         "required": [
@@ -22094,6 +22826,12 @@
           "name": {
             "type": "string"
           },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "config": {},
           "inbounds": {
             "type": "array",
@@ -22110,18 +22848,19 @@
           "createdAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "updatedAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           }
         },
         "required": [
           "uuid",
           "viewPosition",
           "name",
+          "tags",
           "config",
           "inbounds",
           "nodes",
@@ -22213,6 +22952,12 @@
           "name": {
             "type": "string"
           },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "info": {
             "$ref": "#/components/schemas/InternalSquadInfoDto"
           },
@@ -22225,18 +22970,19 @@
           "createdAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "updatedAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           }
         },
         "required": [
           "uuid",
           "viewPosition",
           "name",
+          "tags",
           "info",
           "inbounds",
           "createdAt",
@@ -22316,6 +23062,12 @@
           "name": {
             "type": "string"
           },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "info": {
             "$ref": "#/components/schemas/ExternalSquadInfoDto"
           },
@@ -22378,18 +23130,19 @@
           "createdAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "updatedAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           }
         },
         "required": [
           "uuid",
           "viewPosition",
           "name",
+          "tags",
           "info",
           "templates",
           "subscriptionSettings",
@@ -22427,7 +23180,7 @@
           "createdAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           }
         },
         "required": [
@@ -22499,7 +23252,7 @@
             "type": "string",
             "minLength": 2,
             "maxLength": 255,
-            "pattern": "^[A-Za-z0-9_-]+$"
+            "pattern": "^[A-Za-z0-9_-]+(\\/[A-Za-z0-9_-]+)*$"
           },
           "type": {
             "type": "string"
@@ -22530,6 +23283,12 @@
           "name": {
             "type": "string"
           },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "pluginConfig": {
             "nullable": true
           }
@@ -22538,6 +23297,7 @@
           "uuid",
           "viewPosition",
           "name",
+          "tags",
           "pluginConfig"
         ]
       },
@@ -22664,7 +23424,7 @@
           },
           "base64": {
             "title": "Base64",
-            "markdownDescription": "Operations applied to the **query string** of the share link generated for this host in the Base64 subscription.\n\n`to` is a plain query parameter name, not a path – dots carry no meaning here.\n\n```json\n[\n  {\n    \"op\": \"set\",\n    \"to\": \"fp\",\n    \"value\": \"chrome\"\n  },\n  {\n    \"op\": \"unset\",\n    \"to\": \"fm\"\n  }\n]\n```",
+            "markdownDescription": "Operations applied to the share link generated for this host in the Base64 subscription.\n\n`to` is a plain query parameter name, not a path – dots carry no meaning here.\n\nWith a `$link.` prefix the operation rewrites the link itself instead of its query string. Writable parts: `$link.address`, `$link.port`, `$link.password`, `$link.remark`, and `$link.method` for Shadowsocks. `$link.password` is the credential of the protocol.\n\n> A value that cannot make a valid link – an empty address, a port outside 1-65535 – is ignored, and the generated one is kept.\n\n```json\n[\n  {\n    \"op\": \"set\",\n    \"to\": \"fp\",\n    \"value\": \"chrome\"\n  },\n  {\n    \"op\": \"unset\",\n    \"to\": \"fm\"\n  },\n  {\n    \"op\": \"set\",\n    \"to\": \"$link.port\",\n    \"value\": 2053\n  },\n  {\n    \"op\": \"copy\",\n    \"from\": \"$host.securityOptions.serverName\",\n    \"to\": \"$link.address\"\n  }\n]\n```",
             "type": "array",
             "items": {
               "oneOf": [
@@ -22734,6 +23494,26 @@
           }
         },
         "markdownDescription": "Rewrites the config generated for this host, per client type.\n\nOperations run **after** the generator has finished, so they can change or remove anything it produced.\n\nThe source for `copy` is the raw inbound of the config profile this host belongs to, or the host itself when the path starts with `$host.`.\n\n> `to` is never checked against the target client. A misspelled key is written exactly like a real one."
+      },
+      "HostsInternalSquadsDto": {
+        "type": "object",
+        "properties": {
+          "mode": {
+            "$ref": "#/components/schemas/CreateHostBodyMode"
+          },
+          "squads": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+            }
+          }
+        },
+        "required": [
+          "mode",
+          "squads"
+        ]
       },
       "NodeUsageResponseNodesDto": {
         "type": "object",
@@ -22871,12 +23651,12 @@
           "createdAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "updatedAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           }
         },
         "required": [
@@ -23019,12 +23799,12 @@
           "createdAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "updatedAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "billingHistory": {
             "$ref": "#/components/schemas/InfraProviderBillingHistoryDto"
@@ -23066,7 +23846,7 @@
           "billedAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "provider": {
             "$ref": "#/components/schemas/InfraBillingHistoryRecordProviderDto"
@@ -23117,17 +23897,17 @@
           "nextBillingAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "createdAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "updatedAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           }
         },
         "required": [
@@ -23169,7 +23949,7 @@
           "requestAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           }
         },
         "required": [
@@ -23188,7 +23968,7 @@
           "dateTime": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "requestCount": {
             "type": "number"
@@ -23750,7 +24530,7 @@
           },
           "base64": {
             "title": "Base64",
-            "markdownDescription": "Operations applied to the **query string** of the share link generated for this host in the Base64 subscription.\n\n`to` is a plain query parameter name, not a path – dots carry no meaning here.\n\n```json\n[\n  {\n    \"op\": \"set\",\n    \"to\": \"fp\",\n    \"value\": \"chrome\"\n  },\n  {\n    \"op\": \"unset\",\n    \"to\": \"fm\"\n  }\n]\n```",
+            "markdownDescription": "Operations applied to the share link generated for this host in the Base64 subscription.\n\n`to` is a plain query parameter name, not a path – dots carry no meaning here.\n\nWith a `$link.` prefix the operation rewrites the link itself instead of its query string. Writable parts: `$link.address`, `$link.port`, `$link.password`, `$link.remark`, and `$link.method` for Shadowsocks. `$link.password` is the credential of the protocol.\n\n> A value that cannot make a valid link – an empty address, a port outside 1-65535 – is ignored, and the generated one is kept.\n\n```json\n[\n  {\n    \"op\": \"set\",\n    \"to\": \"fp\",\n    \"value\": \"chrome\"\n  },\n  {\n    \"op\": \"unset\",\n    \"to\": \"fm\"\n  },\n  {\n    \"op\": \"set\",\n    \"to\": \"$link.port\",\n    \"value\": 2053\n  },\n  {\n    \"op\": \"copy\",\n    \"from\": \"$host.securityOptions.serverName\",\n    \"to\": \"$link.address\"\n  }\n]\n```",
             "type": "array",
             "items": {
               "oneOf": [
@@ -24434,7 +25214,7 @@
           "expireAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "scopes": {
             "type": "array",
@@ -24489,7 +25269,7 @@
           "lastStatusChange": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$",
             "nullable": true
           },
           "lastStatusMessage": {
@@ -24557,12 +25337,12 @@
           "createdAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "updatedAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "configProfile": {
             "$ref": "#/components/schemas/NodesConfigProfileDto"
@@ -24842,14 +25622,6 @@
             "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$",
             "nullable": true
           },
-          "excludedInternalSquads": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uuid",
-              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-            }
-          },
           "excludeFromSubscriptionTypes": {
             "type": "array",
             "items": {
@@ -24863,6 +25635,18 @@
               }
             ],
             "title": "Host Mapper"
+          },
+          "internalSquads": {
+            "$ref": "#/components/schemas/HostsInternalSquadsDto"
+          },
+          "excludedInternalSquads": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+            },
+            "deprecated": true
           }
         },
         "required": [
@@ -24891,9 +25675,9 @@
           "mihomoIpVersion",
           "nodes",
           "xrayJsonTemplateUuid",
-          "excludedInternalSquads",
           "excludeFromSubscriptionTypes",
-          "mapper"
+          "mapper",
+          "internalSquads"
         ]
       },
       "ValidationErrorItem": {
@@ -25046,6 +25830,40 @@
           "authorizationUrl"
         ]
       },
+      "SubpageConfigsTagsResponse": {
+        "type": "object",
+        "properties": {
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "tags"
+        ]
+      },
+      "SetSubpageConfigsTagsResponse": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "uuid",
+          "tags"
+        ]
+      },
       "SubpageConfigsResponse": {
         "type": "object",
         "properties": {
@@ -25080,12 +25898,19 @@
           "name": {
             "type": "string"
           },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "config": {}
         },
         "required": [
           "uuid",
           "viewPosition",
           "name",
+          "tags",
           "config"
         ]
       },
@@ -25130,20 +25955,6 @@
           "users",
           "nextCursor",
           "hasMore"
-        ]
-      },
-      "UsersTagsResponse": {
-        "type": "object",
-        "properties": {
-          "tags": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        },
-        "required": [
-          "tags"
         ]
       },
       "GetUserAccessibleNodesResponseModelDto": {
@@ -25240,8 +26051,7 @@
           "expireAt": {
             "description": "Expiration date: 2025-01-17T15:38:45.065Z",
             "type": "string",
-            "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z||([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d))|(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?)$"
           },
           "description": {
             "type": "string",
@@ -25531,7 +26341,7 @@
           "expireAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "scopes": {
             "type": "array",
@@ -25542,12 +26352,12 @@
           "createdAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "updatedAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "token": {
             "type": "string"
@@ -25928,7 +26738,7 @@
             "type": "string",
             "minLength": 2,
             "maxLength": 255,
-            "pattern": "^[A-Za-z0-9_-]+$"
+            "pattern": "^[A-Za-z0-9_-]+(\\/[A-Za-z0-9_-]+)*$"
           },
           "config": {
             "type": "object",
@@ -26070,7 +26880,7 @@
           },
           "base64": {
             "title": "Base64",
-            "markdownDescription": "Operations applied to the **query string** of the share link generated for this host in the Base64 subscription.\n\n`to` is a plain query parameter name, not a path – dots carry no meaning here.\n\n```json\n[\n  {\n    \"op\": \"set\",\n    \"to\": \"fp\",\n    \"value\": \"chrome\"\n  },\n  {\n    \"op\": \"unset\",\n    \"to\": \"fm\"\n  }\n]\n```",
+            "markdownDescription": "Operations applied to the share link generated for this host in the Base64 subscription.\n\n`to` is a plain query parameter name, not a path – dots carry no meaning here.\n\nWith a `$link.` prefix the operation rewrites the link itself instead of its query string. Writable parts: `$link.address`, `$link.port`, `$link.password`, `$link.remark`, and `$link.method` for Shadowsocks. `$link.password` is the credential of the protocol.\n\n> A value that cannot make a valid link – an empty address, a port outside 1-65535 – is ignored, and the generated one is kept.\n\n```json\n[\n  {\n    \"op\": \"set\",\n    \"to\": \"fp\",\n    \"value\": \"chrome\"\n  },\n  {\n    \"op\": \"unset\",\n    \"to\": \"fm\"\n  },\n  {\n    \"op\": \"set\",\n    \"to\": \"$link.port\",\n    \"value\": 2053\n  },\n  {\n    \"op\": \"copy\",\n    \"from\": \"$host.securityOptions.serverName\",\n    \"to\": \"$link.address\"\n  }\n]\n```",
             "type": "array",
             "items": {
               "oneOf": [
@@ -26290,14 +27100,6 @@
             "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$",
             "nullable": true
           },
-          "excludedInternalSquads": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uuid",
-              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-            }
-          },
           "excludeFromSubscriptionTypes": {
             "type": "array",
             "items": {
@@ -26311,6 +27113,18 @@
               }
             ],
             "title": "Host Mapper"
+          },
+          "internalSquads": {
+            "$ref": "#/components/schemas/HostsInternalSquadsDto"
+          },
+          "excludedInternalSquads": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+            },
+            "deprecated": true
           }
         },
         "required": [
@@ -26339,9 +27153,9 @@
           "mihomoIpVersion",
           "nodes",
           "xrayJsonTemplateUuid",
-          "excludedInternalSquads",
           "excludeFromSubscriptionTypes",
-          "mapper"
+          "mapper",
+          "internalSquads"
         ]
       },
       "UpdateHostBodyMapperDto": {
@@ -26419,7 +27233,7 @@
           },
           "base64": {
             "title": "Base64",
-            "markdownDescription": "Operations applied to the **query string** of the share link generated for this host in the Base64 subscription.\n\n`to` is a plain query parameter name, not a path – dots carry no meaning here.\n\n```json\n[\n  {\n    \"op\": \"set\",\n    \"to\": \"fp\",\n    \"value\": \"chrome\"\n  },\n  {\n    \"op\": \"unset\",\n    \"to\": \"fm\"\n  }\n]\n```",
+            "markdownDescription": "Operations applied to the share link generated for this host in the Base64 subscription.\n\n`to` is a plain query parameter name, not a path – dots carry no meaning here.\n\nWith a `$link.` prefix the operation rewrites the link itself instead of its query string. Writable parts: `$link.address`, `$link.port`, `$link.password`, `$link.remark`, and `$link.method` for Shadowsocks. `$link.password` is the credential of the protocol.\n\n> A value that cannot make a valid link – an empty address, a port outside 1-65535 – is ignored, and the generated one is kept.\n\n```json\n[\n  {\n    \"op\": \"set\",\n    \"to\": \"fp\",\n    \"value\": \"chrome\"\n  },\n  {\n    \"op\": \"unset\",\n    \"to\": \"fm\"\n  },\n  {\n    \"op\": \"set\",\n    \"to\": \"$link.port\",\n    \"value\": 2053\n  },\n  {\n    \"op\": \"copy\",\n    \"from\": \"$host.securityOptions.serverName\",\n    \"to\": \"$link.address\"\n  }\n]\n```",
             "type": "array",
             "items": {
               "oneOf": [
@@ -26576,7 +27390,7 @@
           },
           "base64": {
             "title": "Base64",
-            "markdownDescription": "Operations applied to the **query string** of the share link generated for this host in the Base64 subscription.\n\n`to` is a plain query parameter name, not a path – dots carry no meaning here.\n\n```json\n[\n  {\n    \"op\": \"set\",\n    \"to\": \"fp\",\n    \"value\": \"chrome\"\n  },\n  {\n    \"op\": \"unset\",\n    \"to\": \"fm\"\n  }\n]\n```",
+            "markdownDescription": "Operations applied to the share link generated for this host in the Base64 subscription.\n\n`to` is a plain query parameter name, not a path – dots carry no meaning here.\n\nWith a `$link.` prefix the operation rewrites the link itself instead of its query string. Writable parts: `$link.address`, `$link.port`, `$link.password`, `$link.remark`, and `$link.method` for Shadowsocks. `$link.password` is the credential of the protocol.\n\n> A value that cannot make a valid link – an empty address, a port outside 1-65535 – is ignored, and the generated one is kept.\n\n```json\n[\n  {\n    \"op\": \"set\",\n    \"to\": \"fp\",\n    \"value\": \"chrome\"\n  },\n  {\n    \"op\": \"unset\",\n    \"to\": \"fm\"\n  },\n  {\n    \"op\": \"set\",\n    \"to\": \"$link.port\",\n    \"value\": 2053\n  },\n  {\n    \"op\": \"copy\",\n    \"from\": \"$host.securityOptions.serverName\",\n    \"to\": \"$link.address\"\n  }\n]\n```",
             "type": "array",
             "items": {
               "oneOf": [
@@ -27130,8 +27944,7 @@
           },
           "initDate": {
             "type": "string",
-            "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z||([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d))|(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?)$"
           }
         },
         "required": [
@@ -27227,12 +28040,12 @@
           "createdAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "updatedAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           }
         },
         "required": [
@@ -27414,7 +28227,7 @@
           "nextBillingAt": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
           },
           "loginUrl": {
             "type": "string"
@@ -27497,6 +28310,17 @@
           "response"
         ]
       },
+      "SubpageConfigsTagsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/SubpageConfigsTagsResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
       "SubpageConfigsResponseDto": {
         "type": "object",
         "properties": {
@@ -27545,7 +28369,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/UsersTagsResponse"
+            "$ref": "#/components/schemas/SubpageConfigsTagsResponse"
           }
         },
         "required": [
@@ -27662,6 +28486,17 @@
           "response"
         ]
       },
+      "SubscriptionTemplatesTagsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/SubpageConfigsTagsResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
       "TemplatesResponseDto": {
         "type": "object",
         "properties": {
@@ -27700,6 +28535,17 @@
         "properties": {
           "response": {
             "$ref": "#/components/schemas/ApiTokensResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "ConfigProfilesTagsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/SubpageConfigsTagsResponse"
           }
         },
         "required": [
@@ -27772,6 +28618,17 @@
           "response"
         ]
       },
+      "InternalSquadsTagsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/SubpageConfigsTagsResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
       "InternalSquadsResponseDto": {
         "type": "object",
         "properties": {
@@ -27827,6 +28684,17 @@
           "response"
         ]
       },
+      "ExternalSquadsTagsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/SubpageConfigsTagsResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
       "ExternalSquadsResponseDto": {
         "type": "object",
         "properties": {
@@ -27864,7 +28732,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/UsersTagsResponse"
+            "$ref": "#/components/schemas/SubpageConfigsTagsResponse"
           }
         },
         "required": [
@@ -27901,6 +28769,17 @@
         "properties": {
           "response": {
             "$ref": "#/components/schemas/TorrentBlockerReportsStatsResponse"
+          }
+        },
+        "required": [
+          "response"
+        ]
+      },
+      "NodePluginsTagsResponseDto": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/SubpageConfigsTagsResponse"
           }
         },
         "required": [
@@ -27977,7 +28856,7 @@
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/UsersTagsResponse"
+            "$ref": "#/components/schemas/SubpageConfigsTagsResponse"
           }
         },
         "required": [
@@ -28557,6 +29436,10 @@
           "A250",
           "A251",
           "A252",
+          "A254",
+          "A255",
+          "A256",
+          "A257",
           "E401",
           "E403",
           "E404",
@@ -28814,6 +29697,10 @@
           "UPDATE_SHARED_LIST_ERROR",
           "DELETE_SHARED_LIST_ERROR",
           "INVALID_SHARED_LIST_CONFIG",
+          "CREATE_SSH_TICKET_ERROR",
+          "EVALUATE_VAULT_ERROR",
+          "GET_ENTITY_TAGS_ERROR",
+          "SET_ENTITY_TAGS_ERROR",
           "E401",
           "E403",
           "E404",
@@ -29071,6 +29958,10 @@
           "UPDATE_SHARED_LIST_ERROR",
           "DELETE_SHARED_LIST_ERROR",
           "INVALID_SHARED_LIST_CONFIG",
+          "CREATE_SSH_TICKET_ERROR",
+          "EVALUATE_VAULT_ERROR",
+          "GET_ENTITY_TAGS_ERROR",
+          "SET_ENTITY_TAGS_ERROR",
           "E401",
           "E403",
           "E404",
@@ -29329,10 +30220,29 @@
           "UPDATE_SHARED_LIST_ERROR": "Update shared list error. HTTP 500.",
           "DELETE_SHARED_LIST_ERROR": "Delete shared list error. HTTP 500.",
           "INVALID_SHARED_LIST_CONFIG": "Invalid shared list config. HTTP 400.",
+          "CREATE_SSH_TICKET_ERROR": "Create SSH ticket error. HTTP 500.",
+          "EVALUATE_VAULT_ERROR": "Vault evaluation refused. HTTP 429.",
+          "GET_ENTITY_TAGS_ERROR": "Get tags error. HTTP 500.",
+          "SET_ENTITY_TAGS_ERROR": "Set tags error. HTTP 500.",
           "E401": "Unauthorized. HTTP 401.",
           "E403": "Forbidden. HTTP 403.",
           "E500": "Internal server error. HTTP 500."
         }
+      },
+      "UsersTagsResponse": {
+        "type": "object",
+        "properties": {
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "tags"
+        ],
+        "deprecated": true
       },
       "ResolvedProxyConfigStreamOverridesDto": {
         "type": "object",
@@ -29579,6 +30489,16 @@
           }
         }
       },
+      "OkSetConfigProfilesTagsResponse": {
+        "description": "Operation successful",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/SetConfigProfilesTagsResponseDto"
+            }
+          }
+        }
+      },
       "OkGetHostsTagsResponse": {
         "description": "Operation successful",
         "content": {
@@ -29615,6 +30535,16 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/RemnawaveHealthResponseDto"
+            }
+          }
+        }
+      },
+      "OkSetSubscriptionTemplatesTagsResponse": {
+        "description": "Operation successful",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/SetSubscriptionTemplatesTagsResponseDto"
             }
           }
         }
@@ -29749,6 +30679,16 @@
           }
         }
       },
+      "OkGetNodePluginsTagsResponse": {
+        "description": "Operation successful",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/NodePluginsTagsResponseDto"
+            }
+          }
+        }
+      },
       "OkUpsertNodeMetadataResponse": {
         "description": "Operation successful",
         "content": {
@@ -29785,6 +30725,16 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/ConfigProfileByUuidResponseDto"
+            }
+          }
+        }
+      },
+      "OkGetSubscriptionTemplatesTagsResponse": {
+        "description": "Operation successful",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/SubscriptionTemplatesTagsResponseDto"
             }
           }
         }
@@ -29919,6 +30869,16 @@
           }
         }
       },
+      "OkGetSubpageConfigsTagsResponse": {
+        "description": "Operation successful",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/SubpageConfigsTagsResponseDto"
+            }
+          }
+        }
+      },
       "OkGetUserHwidDevicesResponse": {
         "description": "Operation successful",
         "content": {
@@ -29995,6 +30955,16 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/UpdateSubpageConfigResponseDto"
+            }
+          }
+        }
+      },
+      "OkGetConfigProfilesTagsResponse": {
+        "description": "Operation successful",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ConfigProfilesTagsResponseDto"
             }
           }
         }
@@ -30119,6 +31089,16 @@
           }
         }
       },
+      "OkSetSubpageConfigsTagsResponse": {
+        "description": "Operation successful",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/SetSubpageConfigsTagsResponseDto"
+            }
+          }
+        }
+      },
       "OkGetSubpageConfigByShortUuidResponse": {
         "description": "Operation successful",
         "content": {
@@ -30169,6 +31149,16 @@
           }
         }
       },
+      "OkSetInternalSquadsTagsResponse": {
+        "description": "Operation successful",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/SetInternalSquadsTagsResponseDto"
+            }
+          }
+        }
+      },
       "OkUpdatePasskeyResponse": {
         "description": "Operation successful",
         "content": {
@@ -30215,6 +31205,16 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/InboundsByProfileUuidResponseDto"
+            }
+          }
+        }
+      },
+      "OkGetInternalSquadsTagsResponse": {
+        "description": "Operation successful",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/InternalSquadsTagsResponseDto"
             }
           }
         }
@@ -30285,6 +31285,16 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/ResolveUserResponseDto"
+            }
+          }
+        }
+      },
+      "OkSetExternalSquadsTagsResponse": {
+        "description": "Operation successful",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/SetExternalSquadsTagsResponseDto"
             }
           }
         }
@@ -30369,6 +31379,16 @@
           }
         }
       },
+      "OkSetNodePluginsTagsResponse": {
+        "description": "Operation successful",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/SetNodePluginsTagsResponseDto"
+            }
+          }
+        }
+      },
       "OkCloneSubpageConfigResponse": {
         "description": "Operation successful",
         "content": {
@@ -30435,6 +31455,16 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/PasskeysResponseDto"
+            }
+          }
+        }
+      },
+      "OkGetExternalSquadsTagsResponse": {
+        "description": "Operation successful",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ExternalSquadsTagsResponseDto"
             }
           }
         }
