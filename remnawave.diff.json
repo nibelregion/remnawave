@@ -15263,13 +15263,13 @@
       "field": "excludedInternalSquads"
     },
     {
-      "kind": "schema",
-      "schema": "UsersTagsResponse"
-    },
-    {
       "kind": "field",
       "schema": "HostsDto2",
       "field": "excludedInternalSquads"
+    },
+    {
+      "kind": "schema",
+      "schema": "UsersTagsResponse"
     },
     {
       "kind": "schema",
