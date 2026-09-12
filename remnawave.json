@@ -6410,6 +6410,45 @@
         ]
       }
     },
+    "/api/hosts/actions/clone": {
+      "post": {
+        "operationId": "HostsController_cloneHost",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CloneHostBodyDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/CreatedHostResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequestError"
+          },
+          "404": {
+            "$ref": "#/components/responses/RemnawaveNotFoundErrorDtoSchema"
+          },
+          "500": {
+            "$ref": "#/components/responses/RemnawaveInternalServerErrorDtoSchema"
+          }
+        },
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "summary": "Clone host",
+        "tags": [
+          "Hosts Controller"
+        ]
+      }
+    },
     "/api/hosts/actions/reorder": {
       "post": {
         "operationId": "HostsController_reorderHosts",
@@ -8838,9 +8877,9 @@
     "/api/node-plugins/shared-lists/{name}": {}
   },
   "info": {
-    "title": "Remnawave API v3.4.3",
+    "title": "Remnawave API v3.4.4",
     "description": "\nRemnawave is a powerful proxy management tool, built on top of Xray-core, with a focus on simplicity and ease of use.\n\n## Resources\n* https://t.me/remnawave\n* https://github.com/remnawave\n* https://docs.rw\n",
-    "version": "3.4.3",
+    "version": "3.4.4",
     "contact": {},
     "license": {
       "name": "AGPL-3.0",
@@ -12683,6 +12722,19 @@
         ],
         "nullable": true
       },
+      "CloneHostBodyDto": {
+        "type": "object",
+        "properties": {
+          "cloneFromUuid": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          }
+        },
+        "required": [
+          "cloneFromUuid"
+        ]
+      },
       "ReorderHostsBodyDto": {
         "type": "object",
         "properties": {
@@ -14326,7 +14378,8 @@
               "Delete shared list error",
               "Create SSH ticket error",
               "Get tags error",
-              "Set tags error"
+              "Set tags error",
+              "Clone host error"
             ],
             "x-enum-ref": "#/components/schemas/RemnawaveInternalServerErrorMessage",
             "x-enum-members": [
@@ -14503,7 +14556,8 @@
               "DELETE_SHARED_LIST_ERROR",
               "CREATE_SSH_TICKET_ERROR",
               "GET_TAGS_ERROR",
-              "SET_TAGS_ERROR"
+              "SET_TAGS_ERROR",
+              "CLONE_HOST_ERROR"
             ],
             "description": "Human-readable error message."
           },
@@ -15945,7 +15999,8 @@
           "A251",
           "A254",
           "A256",
-          "A257"
+          "A257",
+          "A258"
         ],
         "x-enum-varnames": [
           "A007",
@@ -16147,7 +16202,8 @@
           "A251",
           "A254",
           "A256",
-          "A257"
+          "A257",
+          "A258"
         ],
         "x-enumNames": [
           "A007",
@@ -16349,7 +16405,8 @@
           "A251",
           "A254",
           "A256",
-          "A257"
+          "A257",
+          "A258"
         ]
       },
       "RemnawaveNotFoundErrorMessage": {
@@ -16886,7 +16943,8 @@
           "Delete shared list error",
           "Create SSH ticket error",
           "Get tags error",
-          "Set tags error"
+          "Set tags error",
+          "Clone host error"
         ],
         "x-enum-varnames": [
           "SERVER_ERROR",
@@ -17063,7 +17121,8 @@
           "DELETE_SHARED_LIST_ERROR",
           "CREATE_SSH_TICKET_ERROR",
           "GET_TAGS_ERROR",
-          "SET_TAGS_ERROR"
+          "SET_TAGS_ERROR",
+          "CLONE_HOST_ERROR"
         ],
         "x-enumNames": [
           "SERVER_ERROR",
@@ -17240,7 +17299,8 @@
           "DELETE_SHARED_LIST_ERROR",
           "CREATE_SSH_TICKET_ERROR",
           "GET_TAGS_ERROR",
-          "SET_TAGS_ERROR"
+          "SET_TAGS_ERROR",
+          "CLONE_HOST_ERROR"
         ]
       },
       "CreateHostBodyMode": {
@@ -29440,6 +29500,7 @@
           "A255",
           "A256",
           "A257",
+          "A258",
           "E401",
           "E403",
           "E404",
@@ -29701,6 +29762,7 @@
           "EVALUATE_VAULT_ERROR",
           "GET_ENTITY_TAGS_ERROR",
           "SET_ENTITY_TAGS_ERROR",
+          "CLONE_HOST_ERROR",
           "E401",
           "E403",
           "E404",
@@ -29962,6 +30024,7 @@
           "EVALUATE_VAULT_ERROR",
           "GET_ENTITY_TAGS_ERROR",
           "SET_ENTITY_TAGS_ERROR",
+          "CLONE_HOST_ERROR",
           "E401",
           "E403",
           "E404",
@@ -30224,6 +30287,7 @@
           "EVALUATE_VAULT_ERROR": "Vault evaluation refused. HTTP 429.",
           "GET_ENTITY_TAGS_ERROR": "Get tags error. HTTP 500.",
           "SET_ENTITY_TAGS_ERROR": "Set tags error. HTTP 500.",
+          "CLONE_HOST_ERROR": "Clone host error. HTTP 500.",
           "E401": "Unauthorized. HTTP 401.",
           "E403": "Forbidden. HTTP 403.",
           "E500": "Internal server error. HTTP 500."
@@ -30478,6 +30542,16 @@
       },
       "ExternalSquadAlreadyExistsError": {
         "description": "External squad already exists"
+      },
+      "CreatedHostResponse": {
+        "description": "Resource created successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/HostResponseDto"
+            }
+          }
+        }
       },
       "OkGetNodeSecretKeyResponse": {
         "description": "Operation successful",
@@ -31535,16 +31609,6 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/ConfigurationResponseDto"
-            }
-          }
-        }
-      },
-      "CreatedHostResponse": {
-        "description": "Resource created successfully",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/HostResponseDto"
             }
           }
         }

@@ -1802,6 +1802,7 @@ remnawave:
         - A254
         - A256
         - A257
+        - A258
         values:
         - A007
         - A011
@@ -2003,6 +2004,7 @@ remnawave:
         - A254
         - A256
         - A257
+        - A258
     - remnawave_not_found_error_message:
         name: RemnawaveNotFoundErrorMessage
         members:
@@ -2413,6 +2415,7 @@ remnawave:
         - CREATE_SSH_TICKET_ERROR
         - GET_TAGS_ERROR
         - SET_TAGS_ERROR
+        - CLONE_HOST_ERROR
         values:
         - Server error
         - Login error
@@ -2589,6 +2592,7 @@ remnawave:
         - Create SSH ticket error
         - Get tags error
         - Set tags error
+        - Clone host error
     - create_host_body_mode:
         name: CreateHostBodyMode
         members:

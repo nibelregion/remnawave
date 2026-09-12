@@ -983,7 +983,8 @@
         "A251",
         "A254",
         "A256",
-        "A257"
+        "A257",
+        "A258"
       ],
       "values": [
         "A007",
@@ -1185,7 +1186,8 @@
         "A251",
         "A254",
         "A256",
-        "A257"
+        "A257",
+        "A258"
       ]
     },
     {
@@ -1614,7 +1616,8 @@
         "DELETE_SHARED_LIST_ERROR",
         "CREATE_SSH_TICKET_ERROR",
         "GET_TAGS_ERROR",
-        "SET_TAGS_ERROR"
+        "SET_TAGS_ERROR",
+        "CLONE_HOST_ERROR"
       ],
       "values": [
         "Server error",
@@ -1791,7 +1794,8 @@
         "Delete shared list error",
         "Create SSH ticket error",
         "Get tags error",
-        "Set tags error"
+        "Set tags error",
+        "Clone host error"
       ]
     },
     {
@@ -4028,7 +4032,8 @@
         "Delete shared list error",
         "Create SSH ticket error",
         "Get tags error",
-        "Set tags error"
+        "Set tags error",
+        "Clone host error"
       ]
     },
     {
@@ -4211,7 +4216,8 @@
         "A251",
         "A254",
         "A256",
-        "A257"
+        "A257",
+        "A258"
       ]
     },
     {
@@ -4518,6 +4524,7 @@
         "EVALUATE_VAULT_ERROR",
         "GET_ENTITY_TAGS_ERROR",
         "SET_ENTITY_TAGS_ERROR",
+        "CLONE_HOST_ERROR",
         "E401",
         "E403",
         "E404",
@@ -4779,6 +4786,7 @@
         "A255",
         "A256",
         "A257",
+        "A258",
         "E401",
         "E403",
         "E404",
@@ -4811,7 +4819,7 @@
       "nicification": "BadRequestError",
       "status_code": "400",
       "is_error": true,
-      "occurrences": 217,
+      "occurrences": 218,
       "locations": [
         "#/paths/~1api~1remnawave-settings/get/responses/400",
         "#/paths/~1api~1remnawave-settings/patch/responses/400",
@@ -4974,6 +4982,7 @@
         "#/paths/~1api~1hosts/get/responses/400",
         "#/paths/~1api~1hosts~1{uuid}/get/responses/400",
         "#/paths/~1api~1hosts~1{uuid}/delete/responses/400",
+        "#/paths/~1api~1hosts~1actions~1clone/post/responses/400",
         "#/paths/~1api~1hosts~1actions~1reorder/post/responses/400",
         "#/paths/~1api~1hosts~1bulk~1delete/post/responses/400",
         "#/paths/~1api~1hosts~1bulk~1disable/post/responses/400",
@@ -5039,7 +5048,7 @@
       "nicification": "ResourceNotFoundErrorDto",
       "status_code": "404",
       "is_error": true,
-      "occurrences": 217,
+      "occurrences": 218,
       "locations": [
         "#/paths/~1api~1remnawave-settings/get/responses/404",
         "#/paths/~1api~1remnawave-settings/patch/responses/404",
@@ -5202,6 +5211,7 @@
         "#/paths/~1api~1hosts/get/responses/404",
         "#/paths/~1api~1hosts~1{uuid}/get/responses/404",
         "#/paths/~1api~1hosts~1{uuid}/delete/responses/404",
+        "#/paths/~1api~1hosts~1actions~1clone/post/responses/404",
         "#/paths/~1api~1hosts~1actions~1reorder/post/responses/404",
         "#/paths/~1api~1hosts~1bulk~1delete/post/responses/404",
         "#/paths/~1api~1hosts~1bulk~1disable/post/responses/404",
@@ -5267,7 +5277,7 @@
       "nicification": "InternalServerError",
       "status_code": "500",
       "is_error": true,
-      "occurrences": 217,
+      "occurrences": 218,
       "locations": [
         "#/paths/~1api~1remnawave-settings/get/responses/500",
         "#/paths/~1api~1remnawave-settings/patch/responses/500",
@@ -5430,6 +5440,7 @@
         "#/paths/~1api~1hosts/get/responses/500",
         "#/paths/~1api~1hosts~1{uuid}/get/responses/500",
         "#/paths/~1api~1hosts~1{uuid}/delete/responses/500",
+        "#/paths/~1api~1hosts~1actions~1clone/post/responses/500",
         "#/paths/~1api~1hosts~1actions~1reorder/post/responses/500",
         "#/paths/~1api~1hosts~1bulk~1delete/post/responses/500",
         "#/paths/~1api~1hosts~1bulk~1disable/post/responses/500",
@@ -5549,7 +5560,7 @@
       "nicification": "BadRequestError",
       "status_code": "400",
       "is_error": true,
-      "occurrences": 217,
+      "occurrences": 218,
       "locations": [
         "#/paths/~1api~1remnawave-settings/get/responses/400",
         "#/paths/~1api~1remnawave-settings/patch/responses/400",
@@ -5712,6 +5723,7 @@
         "#/paths/~1api~1hosts/get/responses/400",
         "#/paths/~1api~1hosts~1{uuid}/get/responses/400",
         "#/paths/~1api~1hosts~1{uuid}/delete/responses/400",
+        "#/paths/~1api~1hosts~1actions~1clone/post/responses/400",
         "#/paths/~1api~1hosts~1actions~1reorder/post/responses/400",
         "#/paths/~1api~1hosts~1bulk~1delete/post/responses/400",
         "#/paths/~1api~1hosts~1bulk~1disable/post/responses/400",
@@ -5777,7 +5789,7 @@
       "nicification": "ResourceNotFoundErrorDto",
       "status_code": "404",
       "is_error": true,
-      "occurrences": 217,
+      "occurrences": 218,
       "locations": [
         "#/paths/~1api~1remnawave-settings/get/responses/404",
         "#/paths/~1api~1remnawave-settings/patch/responses/404",
@@ -5940,6 +5952,7 @@
         "#/paths/~1api~1hosts/get/responses/404",
         "#/paths/~1api~1hosts~1{uuid}/get/responses/404",
         "#/paths/~1api~1hosts~1{uuid}/delete/responses/404",
+        "#/paths/~1api~1hosts~1actions~1clone/post/responses/404",
         "#/paths/~1api~1hosts~1actions~1reorder/post/responses/404",
         "#/paths/~1api~1hosts~1bulk~1delete/post/responses/404",
         "#/paths/~1api~1hosts~1bulk~1disable/post/responses/404",
@@ -6005,7 +6018,7 @@
       "nicification": "InternalServerError",
       "status_code": "500",
       "is_error": true,
-      "occurrences": 217,
+      "occurrences": 218,
       "locations": [
         "#/paths/~1api~1remnawave-settings/get/responses/500",
         "#/paths/~1api~1remnawave-settings/patch/responses/500",
@@ -6168,6 +6181,7 @@
         "#/paths/~1api~1hosts/get/responses/500",
         "#/paths/~1api~1hosts~1{uuid}/get/responses/500",
         "#/paths/~1api~1hosts~1{uuid}/delete/responses/500",
+        "#/paths/~1api~1hosts~1actions~1clone/post/responses/500",
         "#/paths/~1api~1hosts~1actions~1reorder/post/responses/500",
         "#/paths/~1api~1hosts~1bulk~1delete/post/responses/500",
         "#/paths/~1api~1hosts~1bulk~1disable/post/responses/500",
@@ -6410,6 +6424,19 @@
         "#/paths/~1api~1external-squads/patch/responses/409"
       ],
       "signature": "9ec39ea7b3de35ed8d7d6a371577a307114da24525ebbce7441c782def1415dd"
+    },
+    {
+      "action": "hoisted",
+      "name": "CreatedHostResponse",
+      "nicification": "CreatedHostResponse",
+      "status_code": "201",
+      "is_error": false,
+      "occurrences": 2,
+      "locations": [
+        "#/paths/~1api~1hosts/post/responses/201",
+        "#/paths/~1api~1hosts~1actions~1clone/post/responses/201"
+      ],
+      "signature": "a9cdc26be93bcd102ec2385117fb3aba646a760dfeb18275cbf70e60e9f28f63"
     },
     {
       "action": "hoisted",
@@ -7682,18 +7709,6 @@
         "#/paths/~1api~1system~1configuration/get/responses/200"
       ],
       "signature": "a94376d3b96e5f2f13cd5c73b4d9b1bc62fbbac575523e650922fb3e0df9a6b2"
-    },
-    {
-      "action": "hoisted",
-      "name": "CreatedHostResponse",
-      "nicification": "CreatedHostResponse",
-      "status_code": "201",
-      "is_error": false,
-      "occurrences": 1,
-      "locations": [
-        "#/paths/~1api~1hosts/post/responses/201"
-      ],
-      "signature": "a9cdc26be93bcd102ec2385117fb3aba646a760dfeb18275cbf70e60e9f28f63"
     },
     {
       "action": "hoisted",
