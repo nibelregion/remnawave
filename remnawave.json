@@ -8877,9 +8877,9 @@
     "/api/node-plugins/shared-lists/{name}": {}
   },
   "info": {
-    "title": "Remnawave API v3.4.4",
+    "title": "Remnawave API v3.4.5",
     "description": "\nRemnawave is a powerful proxy management tool, built on top of Xray-core, with a focus on simplicity and ease of use.\n\n## Resources\n* https://t.me/remnawave\n* https://github.com/remnawave\n* https://docs.rw\n",
-    "version": "3.4.4",
+    "version": "3.4.5",
     "contact": {},
     "license": {
       "name": "AGPL-3.0",
