@@ -8609,7 +8609,7 @@
       "field": "fields",
       "parent": "BulkUpdateUsersBodyDto",
       "source": "#/components/schemas/BulkUpdateUsersBodyDto/properties/fields",
-      "signature": "b14dca3e7462d93e81ef20bd9413b2b8113335a34885e5c54581fb387e9e20f5"
+      "signature": "02ac6eb94cc5485fd81f413a45fb1cf5b18d8f568b539298cd328b17c6f8f3c8"
     },
     {
       "action": "reused",
@@ -10029,7 +10029,7 @@
       "field": "response",
       "parent": "GetHostsResponseDto",
       "source": "#/components/schemas/GetHostsResponseDto/properties/response/items",
-      "signature": "3b424d1de8f5143ded834cfcdef4e9417fa04b3e5947df3ec54420e0ad0aaaee"
+      "signature": "48d65d08bda837ba53edb2fe8c9b07926a7cc9b360cec57ea3f3c92ffb56ef6a"
     },
     {
       "action": "hoisted",
@@ -11539,7 +11539,7 @@
       "field": "user",
       "parent": "RawSubscriptionByShortUuidResponse",
       "source": "#/components/schemas/GetRawSubscriptionByShortUuidResponseDto/properties/response/properties/user",
-      "signature": "dbc07fca4e017ee99295e99242d6e110343dd2f5eaa82c95f725ed1e14979b0b"
+      "signature": "c0c96952ff21bbad20e7dbf40b973af2af26902c12dd9f95aa7e3d47b416eb49"
     },
     {
       "action": "reused",
@@ -12649,7 +12649,7 @@
       "field": "users",
       "parent": "UsersResponse",
       "source": "#/components/schemas/GetUsersResponseDto/properties/response/properties/users/items",
-      "signature": "dbc07fca4e017ee99295e99242d6e110343dd2f5eaa82c95f725ed1e14979b0b"
+      "signature": "c0c96952ff21bbad20e7dbf40b973af2af26902c12dd9f95aa7e3d47b416eb49"
     },
     {
       "action": "hoisted",
@@ -12689,7 +12689,7 @@
       "field": "users",
       "parent": "GetUsersStreamResponseModelDto",
       "source": "#/components/schemas/GetUsersStreamResponseDto/properties/response/properties/users/items",
-      "signature": "dbc07fca4e017ee99295e99242d6e110343dd2f5eaa82c95f725ed1e14979b0b"
+      "signature": "c0c96952ff21bbad20e7dbf40b973af2af26902c12dd9f95aa7e3d47b416eb49"
     },
     {
       "action": "reused",
@@ -12729,7 +12729,7 @@
       "field": "response",
       "parent": "HostResponseDto",
       "source": "#/components/schemas/HostResponseDto/properties/response",
-      "signature": "977d20d28712730e052f9649458f6a27764ef9337105f8784692babec5e52613"
+      "signature": "8c94d06aabfca33648251b63f6293e54b596184115f8b84fcee82bf5a5e6f5dc"
     },
     {
       "action": "reused",
@@ -13409,7 +13409,7 @@
       "field": "user",
       "parent": "RemnawaveWebhookTorrentBlockerEventsDataDto",
       "source": "#/components/schemas/RemnawaveWebhookTorrentBlockerEventsDto/properties/data/properties/user",
-      "signature": "dbc07fca4e017ee99295e99242d6e110343dd2f5eaa82c95f725ed1e14979b0b"
+      "signature": "c0c96952ff21bbad20e7dbf40b973af2af26902c12dd9f95aa7e3d47b416eb49"
     },
     {
       "action": "reused",
@@ -13439,7 +13439,7 @@
       "field": "data",
       "parent": "RemnawaveWebhookUserEventsDto",
       "source": "#/components/schemas/RemnawaveWebhookUserEventsDto/properties/data",
-      "signature": "dbc07fca4e017ee99295e99242d6e110343dd2f5eaa82c95f725ed1e14979b0b"
+      "signature": "c0c96952ff21bbad20e7dbf40b973af2af26902c12dd9f95aa7e3d47b416eb49"
     },
     {
       "action": "reused",
@@ -13499,7 +13499,7 @@
       "field": "user",
       "parent": "RemnawaveWebhookUserHwidDevicesEventsDataDto",
       "source": "#/components/schemas/RemnawaveWebhookUserHwidDevicesEventsDto/properties/data/properties/user",
-      "signature": "dbc07fca4e017ee99295e99242d6e110343dd2f5eaa82c95f725ed1e14979b0b"
+      "signature": "c0c96952ff21bbad20e7dbf40b973af2af26902c12dd9f95aa7e3d47b416eb49"
     },
     {
       "action": "reused",
@@ -15199,7 +15199,7 @@
       "field": "response",
       "parent": "UserResponseDto",
       "source": "#/components/schemas/UserResponseDto/properties/response",
-      "signature": "dbc07fca4e017ee99295e99242d6e110343dd2f5eaa82c95f725ed1e14979b0b"
+      "signature": "c0c96952ff21bbad20e7dbf40b973af2af26902c12dd9f95aa7e3d47b416eb49"
     },
     {
       "action": "reused",

@@ -1130,7 +1130,7 @@
             "description": "Email to filter users by",
             "schema": {
               "format": "email",
-              "pattern": "^(?!\\.)(?!.*\\.\\.)([A-Za-z0-9_'+\\-\\.]*)[A-Za-z0-9_+-]@([A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$",
+              "pattern": "^(?:[A-Za-z0-9_'+\\-]+\\.)*[A-Za-z0-9_'+\\-]*[A-Za-z0-9_+-]@(?:[A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$",
               "type": "string"
             }
           },
@@ -8877,9 +8877,9 @@
     "/api/node-plugins/shared-lists/{name}": {}
   },
   "info": {
-    "title": "Remnawave API v3.4.8",
+    "title": "Remnawave API v3.4.9",
     "description": "\nRemnawave is a powerful proxy management tool, built on top of Xray-core, with a focus on simplicity and ease of use.\n\n## Resources\n* https://t.me/remnawave\n* https://github.com/remnawave\n* https://docs.rw\n",
-    "version": "3.4.8",
+    "version": "3.4.9",
     "contact": {},
     "license": {
       "name": "AGPL-3.0",
@@ -9473,14 +9473,14 @@
             "nullable": true
           },
           "telegramId": {
-            "type": "number",
             "description": "Optional. Telegram user ID for notifications. Must be an integer.",
+            "type": "number",
             "nullable": true
           },
           "email": {
             "type": "string",
             "format": "email",
-            "pattern": "^(?!\\.)(?!.*\\.\\.)([A-Za-z0-9_'+\\-\\.]*)[A-Za-z0-9_+-]@([A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$",
+            "pattern": "^(?:[A-Za-z0-9_'+\\-]+\\.)*[A-Za-z0-9_'+\\-]*[A-Za-z0-9_+-]@(?:[A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$",
             "description": "Optional. User email address. Must be a valid email format.",
             "nullable": true
           },
@@ -9585,7 +9585,7 @@
           "email": {
             "type": "string",
             "format": "email",
-            "pattern": "^(?!\\.)(?!.*\\.\\.)([A-Za-z0-9_'+\\-\\.]*)[A-Za-z0-9_+-]@([A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$",
+            "pattern": "^(?:[A-Za-z0-9_'+\\-]+\\.)*[A-Za-z0-9_'+\\-]*[A-Za-z0-9_+-]@(?:[A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$",
             "nullable": true
           },
           "hwidDeviceLimit": {
@@ -9860,7 +9860,7 @@
           "email": {
             "type": "string",
             "format": "email",
-            "pattern": "^(?!\\.)(?!.*\\.\\.)([A-Za-z0-9_'+\\-\\.]*)[A-Za-z0-9_+-]@([A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$",
+            "pattern": "^(?:[A-Za-z0-9_'+\\-]+\\.)*[A-Za-z0-9_'+\\-]*[A-Za-z0-9_+-]@(?:[A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$",
             "nullable": true
           },
           "tag": {
@@ -11893,6 +11893,12 @@
             ],
             "title": "Host Mapper"
           },
+          "includeInSrrRules": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "internalSquads": {
             "$ref": "#/components/schemas/HostsInternalSquadsDto"
           },
@@ -12495,6 +12501,12 @@
               }
             ],
             "title": "Host Mapper"
+          },
+          "includeInSrrRules": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "internalSquads": {
             "$ref": "#/components/schemas/HostsInternalSquadsDto"
@@ -13165,6 +13177,12 @@
               }
             ],
             "title": "Host Mapper"
+          },
+          "includeInSrrRules": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "internalSquads": {
             "$ref": "#/components/schemas/HostsInternalSquadsDto"
@@ -22551,7 +22569,7 @@
           "email": {
             "type": "string",
             "format": "email",
-            "pattern": "^(?!\\.)(?!.*\\.\\.)([A-Za-z0-9_'+\\-\\.]*)[A-Za-z0-9_+-]@([A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$",
+            "pattern": "^(?:[A-Za-z0-9_'+\\-]+\\.)*[A-Za-z0-9_'+\\-]*[A-Za-z0-9_+-]@(?:[A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$",
             "nullable": true
           },
           "description": {
@@ -25696,6 +25714,12 @@
             ],
             "title": "Host Mapper"
           },
+          "includeInSrrRules": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "internalSquads": {
             "$ref": "#/components/schemas/HostsInternalSquadsDto"
           },
@@ -25737,6 +25761,7 @@
           "xrayJsonTemplateUuid",
           "excludeFromSubscriptionTypes",
           "mapper",
+          "includeInSrrRules",
           "internalSquads"
         ]
       },
@@ -26002,8 +26027,8 @@
             }
           },
           "nextCursor": {
-            "type": "string",
             "description": "Cursor to fetch the next page, or null if there are no more results",
+            "type": "string",
             "nullable": true
           },
           "hasMore": {
@@ -26124,7 +26149,7 @@
           "email": {
             "type": "string",
             "format": "email",
-            "pattern": "^(?!\\.)(?!.*\\.\\.)([A-Za-z0-9_'+\\-\\.]*)[A-Za-z0-9_+-]@([A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$",
+            "pattern": "^(?:[A-Za-z0-9_'+\\-]+\\.)*[A-Za-z0-9_'+\\-]*[A-Za-z0-9_+-]@(?:[A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$",
             "nullable": true
           },
           "tag": {
@@ -26572,8 +26597,8 @@
             }
           },
           "nextCursor": {
-            "type": "string",
             "description": "Cursor to fetch the next page, or null if there are no more results",
+            "type": "string",
             "nullable": true
           },
           "hasMore": {
@@ -27174,6 +27199,12 @@
             ],
             "title": "Host Mapper"
           },
+          "includeInSrrRules": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "internalSquads": {
             "$ref": "#/components/schemas/HostsInternalSquadsDto"
           },
@@ -27215,6 +27246,7 @@
           "xrayJsonTemplateUuid",
           "excludeFromSubscriptionTypes",
           "mapper",
+          "includeInSrrRules",
           "internalSquads"
         ]
       },
